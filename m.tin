@@ -1,0 +1,23 @@
+#event {PROGRAM START} { 
+    #ses rpg arkadia.rpg.pl 23;
+    #map read /Users/eldakar/arkatt/tools/mapkatt.map;
+    #read /Users/eldakar/arkang/gmcp_message.tin;
+    #read /Users/eldakar/arkang/gmcp_char.tin;
+    #read /Users/eldakar/arkang/gmcp_object_hash.tin;
+
+    #config {debug telnet} {off};
+    #config {COMMAND ECHO} {off};
+    
+    #macro {\e[1;2A} {#buffer up};
+    #macro {\e[1;2B} {#buffer down};
+    #macro {\e[1;2P} {FOLDER};
+};
+
+#event {SESSION CONNECTED} {
+    #split 0 1;
+    #event {IAC WILL GMCP} {
+        #send {\xFF\xFD\xC9\};
+        #send {\xFF\xFA\xC9core.supports.set [ "Core", "Objects", "Room", "Char", "Messages", "Mail", "Gmcp_msgs"]\xFF\xF0\};
+    };
+    #session mapper 127.0.0.1 23923
+};

@@ -1,0 +1,121 @@
+#event {IAC SB GMCP gmcp_msgs IAC SE} {
+	#var GMCPMSGS {%0};
+	#nop var tmptext {$GMCPMSGS[text]};
+	#regex {$GMCPMSGS[text]} {{.*}\\n$} {
+		#var GMCPMSGS[text] {&1};
+	};
+	#switch {"$GMCPMSGS[type]"} {
+		#nop case {"other"}					{#sh $GMCPMSGS[text]};
+		#nop case {"room.contents.object"}	{#sh $GMCPMSGS[text]};
+		#nop case {"room.contents"}			{#sh $GMCPMSGS[text]};
+		#nop case {"room.combat"}			{#sh $GMCPMSGS[text]};
+
+		#nop case {"room.item"}		{#sh $GMCPMSGS[text]};
+		#nop case {"living.long"}	{#sh $GMCPMSGS[text]};
+		#nop case {"object.long"} 	{#sh $GMCPMSGS[text]};
+		#nop case {"system.login"} 	{#sh $GMCPMSGS[text]};
+		#nop case {"system"} 		{#sh $GMCPMSGS[text]};
+		#nop case {"notification"}	{#sh $GMCPMSGS[text]};
+		#nop case {"prompt"} 		{#sh $GMCPMSGS[text]};
+		#nop case {"emotes"} 		{#sh $GMCPMSGS[text]};
+		#nop case {"comm"}			{#sh $GMCPMSGS[text]};
+		#nop case {"mail"}			{#sh $GMCPMSGS[text]};	
+		#nop case {"editor"}		{#sh $GMCPMSGS[text]};
+		#nop case {"editor.mail"} 	{#sh $GMCPMSGS[text]};
+		#nop case {"notification.mail"} {#sh $GMCPMSGS[text]};
+		#nop case {"notification.common"} {#sh $GMCPMSGS[text]};
+		#nop case {"notification.knowledge"} {#sh $GMCPMSGS[text]};
+		#nop case {"notification.relations"} {#sh $GMCPMSGS[text]};
+		#nop case {"notification.boards"} {#sh $GMCPMSGS[text]};
+		#nop case {"notification"} {#sh $GMCPMSGS[text]};
+
+		#case {"room.contents.living"}	{
+			#list contentliving clear;
+			#var str_contentliving {$GMCPMSGS[text]};
+			#replace str_contentliving {{, | i }} {;};
+			#list contentliving create {$str_contentliving};
+			#list contentliving siz cls;
+			#nop math prmptbottomv {$cls + 2};
+			#var prmptbottomv 1;
+			#nop split $screen_r_half $prmptbottomv;
+			#sh $GMCPMSGS[text];
+		};
+
+		#case {"room.exits"} {
+			#sh {$GMCPMSGS[text]};
+			#line substitute {variables} {#line strip {#var current_room_exits {$GMCPMSGS[text]}}};
+			
+			#if {$MAPPER_SYNC == 0} {findme};
+		        
+				#nop echo {  $roza_lazik$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u] <088>};
+		        #nop echo { $roza_lazik$rozk2[w]$rozk2[w] o $rozk2[e]$rozk2[e]  <088>};
+		        #nop echo { $roza_lazik$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d]   $roza_custom<088>};
+		};
+		#case {"room.long"} {#sh $GMCPMSGS[text]};
+		#case {"room.short"} {
+			#var tmptext {$GMCPMSGS[text]};
+			#regex {$tmptext} {{.*}\\n$} {
+				#var GMCPMSGS[text] {&1};
+				#var outputtext {&1};
+			} {
+				#var outputtext {$tmptext};
+			};
+
+			#replace {outputtext} {\\n} {};
+			#sh ${outputtext};
+			#line strip {#var temp_short {$outputtext}};
+
+			#line substitute {variables} {
+				#if {$ROOM_INFO[map][x] > 0} {} {#line strip {#var current_room_short_desc {$outputtext}}}
+			};
+
+			#nop var abc $GMCPMSGS[text];
+			#nop replace {abc} {\\n} {};
+			#nop sh {$GMCPMSGS[text]};
+			#nop line strip {#if {$ROOM_INFO[map][x] > 0} {} {#line substitute variables {#var current_room_short_desc {$abc}}}};
+			#nop sh $abc;
+			#if {$MAPPER_SYNC == 0} {findme};
+			#if {"$voos_num" == "<178>i<088>"} {#echo {Zauwazasz notke...<088>}};
+			#if {$bind_found > 0} {
+				#line substitute {variables} {#macro {$KEY_QB} {$bind_run}};
+				#echo {${c_stan_sredni}BIND: $bind_run<088>};
+			};
+		};
+		
+		#case {"combat.team"} {
+			#var outputtext {$GMCPMSGS[text]};
+			#replace {outputtext} {\\n} {};
+			#sh ${outputtext};
+
+			#ticker {POWALCE} {
+#nop qb otul sie plaszczem;
+				#unticker {POWALCE};
+			} {35};
+		};
+		#case {"combat.others"} {
+			#var outputtext {$GMCPMSGS[text]};
+			#replace {outputtext} {\\n} {};
+			#sh ${outputtext};
+		};
+		#case {"combat.avatar"} {
+			#var outputtext {$GMCPMSGS[text]};
+			#replace {outputtext} {\\n} {};
+			#sh ${outputtext};
+			#unticker {POWALCE};
+			#ticker {POWALCE} {
+#nop qb otul sie plaszczem;
+				#unticker {POWALCE};
+			} {35};
+		};	
+		#default {#sh $GMCPMSGS[text]};
+	};		
+}
+#event {IAC SB GMCP mail.state IAC SE} {
+	#var MAILMSG {%0};
+	#var pr_poczta {  };
+	#if {"$MAILMSG[unreceived]" == "true"} {dzwiek_poczta;#var pr_poczta {<378>${c_stan_niski}  <088>};}; 	#nop nie odebrales, na czerwono;
+	#if {"$MAILMSG[unread]" == "true"} {dzwiek_poczta;#var pr_poczta {<378>${c_stan_sredni}  <088>};};		#nop nie przeczytales na zolto;
+	#if {"$MAILMSG[unsent]" == "true"} {#var pr_poczta {<378>${c_stan_wysoki}  <088>};};		#nop nie wyslales, zielono?;
+#echo {<118>hpbar<088>};
+}
+

@@ -1,0 +1,155 @@
+
+#event {PROGRAM START} {
+	#read /usr/local/lib/arkatt/tescik2.tin;
+	#read /usr/local/lib/arkatt/functions.tin;
+
+	#var roadmap_direction {h};
+	#var duch[0][bar] {                                          };
+
+	#loop {1} {30} {aabb} {
+		#var rowmap[$aabb] {0};
+	};
+
+	#script me {id -u `whoami`};
+	#var myport {$me[1]2};
+	#chat init $myport;
+	#chat name combat;
+
+
+	#var gildie[CN] {n};
+	#var gildie[ES] {n};
+	#var gildie[GL] {n};
+	#var gildie[GP] {n};
+	#var gildie[KG] {n};
+	#var gildie[KGKS] {n};
+	#var gildie[KM] {n};
+	#var gildie[KS] {n};
+	#var gildie[LE] {n};
+	#var gildie[MC] {n};
+	#var gildie[NA] {n}; #nop KG;
+	#var gildie[NPC] {n};
+	#var gildie[OHM] {n};
+	#var gildie[OK] {n};
+	#var gildie[OS] {n};
+	#var gildie[PE] {n};
+	#var gildie[RA] {n};
+	#var gildie[SC] {n};
+	#var gildie[SGW] {n};
+	#var gildie[TW] {n}; #nop LE;
+	#var gildie[VR] {n};
+	#var gildie[WKS] {n};
+	#var gildie[ZH] {n};
+	#var gildie[ZS] {n};
+	#var gildie[ZT] {n};
+
+
+	#var static_hpbar[hug] {68};
+	#var static_hpbar[big] {45}; #nop domyslny;
+	#var static_hpbar[med] {35}; #nop imie dlugosc 10;
+	#var static_hpbar[sma] {25}; #nop imie dlugosc 0;
+	#var static_hpbar[min] {15}; #nop ukrywa sume atakujacych, alias z klawisza, mniejszy odstep miedzy kolumnami;
+
+
+	#format screen_w {%C};
+	#var emptyline {};
+	#loop {1} {$screen_w} {bebe} {#var emptyline {$emptyline }};
+
+
+	#format screen_h {%R};
+	#nop math {screen_h} {$screen_h - 1};
+	#delay {3} {
+		#split $screen_h 0;
+		#system {clear};
+	};
+};
+
+
+
+#var c_stan_niski {<118>};
+#var c_stan_sredni {<138>};
+#var c_stan_wysoki {<128>};
+
+#var c_stan_niski2 {<FAA><178>};
+#var c_stan_sredni2 {<FAA><178>};
+#var c_stan_wysoki2 {<FAA><178>};
+
+#var healthbars2[6] {<088>${c_stan_wysoki}#######<088>}
+#var healthbars2[5] {<088>-${c_stan_wysoki}######<088>}
+#var healthbars2[4] {<088>--${c_stan_sredni}#####<088>}
+#var healthbars2[3] {<088>---${c_stan_sredni}####<088>}
+#var healthbars2[2] {<088>----${c_stan_niski}###<088>}
+#var healthbars2[1] {<088>-----${c_stan_niski}##<088>}
+#var healthbars2[0] {<088>------<FAA><fff>#<088>}
+
+#var healthbars3[6] {<088>${c_stan_wysoki2}#######<088>}
+#var healthbars3[5] {<088>-${c_stan_wysoki2}######<088>}
+#var healthbars3[4] {<088>--${c_stan_sredni2}#####<088>}
+#var healthbars3[3] {<088>---${c_stan_sredni2}####<088>}
+#var healthbars3[2] {<088>----${c_stan_niski2}###<088>}
+#var healthbars3[1] {<088>-----${c_stan_niski2}##<088>}
+#var healthbars3[0] {<088>------${c_stan_niski2}#<088>}
+
+#var healthbarsorc[6] {<088>${c_stan_wysoki}##############<088>}
+#var healthbarsorc[5] {<088>--${c_stan_wysoki}############<088>}
+#var healthbarsorc[4] {<088>----${c_stan_sredni}##########<088>}
+#var healthbarsorc[3] {<088>------${c_stan_sredni}########<088>}
+#var healthbarsorc[2] {<088>--------${c_stan_niski}######<088>}
+#var healthbarsorc[1] {<088>----------${c_stan_niski}####<088>}
+#var healthbarsorc[0] {<088>------------<FAA><fff>##<088>}
+
+#nop action {<CHAT>} {#line gag} {9};
+#nop action {CHAT} {#line gag};
+
+#alias {duszek} {
+	#nop cos tu zrandomizujemy;
+	#nop echo {<088><168>Duch elfa grzmi: <138>%0<088>};
+}
+#alias {duszekemote} {
+	#nop cos tu zrandomizujemy;
+	#nop echo {<088>Duch elfa %0<088>};
+}
+
+
+
+#action {chats to you, 'przyjaciele %1'} {
+	#local tmp {%1};
+	#replace tmp {,} {;};
+	#list przyjacieleDB create {$tmp};
+	#foreach {$przyjacieleDB[]} {pdb} {
+		#var gildie[$przyjacieleDB[$pdb]] {p}; 
+	};
+	#line gag;
+}
+
+#action {chats to you, 'wrogowie %1'} {
+	#local tmp {%1};
+	#replace tmp {,} {;};
+	#list wrogowieDB create {$tmp};
+	#foreach {$wrogowieDB[]} {wdb} {
+		#var gildie[$wrogowieDB[$wdb]] {w}; 
+	};
+	#line gag;
+}
+
+
+#action {chats to you, 'ROZPOZNAJ %69'} {
+	#list przedstawieni clear;
+	#var str_przedstawieni {%69};
+	#replace str_przedstawieni {{, | i }} {;};
+	#list przedstawieni create {$str_przedstawieni};
+
+	#foreach {$przedstawieni[]} {przedstawiony} {
+
+			#var test {$przedstawieni[$przedstawiony]};
+			#var test {${test}_};
+
+			#format {excheck} {%L} {$postac[$test][gildia]};
+
+			#if {$excheck > 1} {
+				#var tmpimie {$gildie[$postac[$test][gildia]] $postac[$test][gildia] $test};
+				#chat message all {POSTAC $tmpimie};
+			};
+	};
+	#line gag;
+};
+

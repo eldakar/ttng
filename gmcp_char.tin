@@ -1,0 +1,57 @@
+#event {IAC SB GMCP char.info IAC SE} {
+	#var CHAR_INFO {%0};
+	#var AVATAR_NAME {$CHAR_INFO[name]};
+	#var avatarid $CHAR_INFO[id];
+	#var obda2[$avatarid][desc] {$CHAR_INFO[name]};
+};
+
+#alias {psprawdz} {
+	#foreach {$profile_options[]} {po} {
+		#format {proftestlen} {%L} {$profile_options[$po]};
+		#if {$proftestlen < 1} {#sh {${c_arkatt}> ${c_stan_sredni}Ustaw popcje $po<088>};};
+	};
+};
+
+#alias {popcje$} {
+	#foreach {$profile_options[]} {po} {
+		#format {proftestlen} {%L} {$profile_options[$po]};
+		#if {$proftestlen > 0} {
+			#sh {$po $profile_options[$po]};
+		};
+	};
+};
+
+#alias {pzapisz} {
+	#var toload {${localpath}/${AVATAR_NAME} .tin};
+   	#replace {toload} { } {};
+	#system {rm $toload 2>/dev/null};
+
+	#foreach {$profile_options[]} {po} {
+		#format {proftestlen} {%L} {$profile_options[$po]};
+		#if {$proftestlen > 0} {
+			#line substitute {variables} {
+				#system {echo "popcje $po $profile_options[$po]" >> $toload};
+			};
+		};
+	};	
+}
+
+#EVENT {IAC SB GMCP char.state IAC SE} {
+	#var CHAR_STATE {%0};
+	#foreach {$CHAR_STATE[]} {s} {
+		#list {state} {find} {$s} {v}; 
+		#if {$v > 0} {
+			#list {state}{set}{$s}{$CHAR_STATE[$s]}
+		} {
+			#var {state[$s]} {$CHAR_STATE[$s]};
+		}
+	};
+}
+
+#event {VARIABLE UPDATE CHAR_STATE} {
+	hpbar;
+};
+
+#alias hpbar {
+	#sh {hp:$state[hp] pa:$state[panic] mn:$state[mana] fa:$state[fatigue] fo:$state[form] en:$state[encumbrance] in:$state[intox] -------------} {1};
+};
