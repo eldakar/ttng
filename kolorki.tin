@@ -1,0 +1,359 @@
+#highlight {Widzisz jak ogromny ognisty trojzab przysysa sie na moment do rany, a przez drzewce przebiegaja fale pulsujace w rytmie oszalalego serca napelniajace cie energia.} {<BAE><178>};
+#highlight {Z latwoscia dobywasz ogromnego ognistego trojzebu, a w twej glowie rozlega sie tajemniczy glos:} {<BAE><178>};
+#highlight {"Witaj, moj nowy Panie!"} {<BAE><178>};
+#highlight {Z zalem opuszczasz ogromny ognisty trojzab, a w twej glowie rozlega sie tajemniczy glos:} {<BAE><178>};
+#highlight {"Zegnaj, moj Panie!"} {<BAE><178>};
+
+#action {Dowiadujesz sie czegos wiecej o %1.$}
+{
+    #echo { };
+    #echo {<088>      ------------------------------- };
+    #echo {$c_stan_wysoki /\\\\  <088>Dowiadujesz sie czegos wiecej o };
+    #echo {$c_stan_wysoki \\\\/  <088>%1 };
+    #echo {<088>      ------------------------------- };
+    #echo { };    
+    #line gag;
+}
+#action {Dowiadujesz sie czegos nowego o %1.$}
+{
+    #echo { };
+    #echo {<088>      ------------------------------- };
+    #echo {$c_stan_wysoki /\\\\  <088>Dowiadujesz sie czegos nowego o };
+    #echo {$c_stan_wysoki \\\\/  <088>%1 };
+    #echo {<088>      ------------------------------- };
+    #echo { };    
+    #line gag;
+}
+#action {Wydaje ci sie, ze twoja wiedza o %1 wzrosla nieznacznie.$}
+{
+    #echo { };
+    #echo {<088>      ------------------------------- };
+    #echo {$c_stan_wysoki /\\\\  <fff>Wydaje ci sie ze twoja wiedza o };
+    #echo {$c_stan_wysoki \\\\/  <fff>%1 wzrosla nieznacznie.};
+    #echo {<088>      ------------------------------- };
+    #echo { };    
+    #line gag;
+}
+
+#nop action {^Masz nowa poczte od %1.$} {
+    #echo { };
+    #echo {<088>      ------------------------------- };
+    #sh {$c_stan_wysoki ***  <fff>Poczta od %1};
+    #echo {<088>      ------------------------------- };
+    #echo { };
+    #bell;
+    #line gag;
+} {2};
+
+#action {%* zaprasza cie do swojej druzyny.$}
+{
+    #echo { };
+    #echo {<088>      ------------------------------- };
+    #echo {$c_stan_wysoki  o   <088>%1 ZAPRASZA       };
+    #sh {$c_stan_wysoki /V\\       ${ci_stan_sredni}BIND: dolacz};
+    #echo {<088>      ------------------------------- };
+    #echo { }; 
+    #line gag;
+}
+
+
+#action {%* przekazuje ci {prowadzenie druzyny|dowodzenie nad swoja druzyna}.$}
+{
+    #echo { };
+    #echo {<088>      ------------------------------- };
+    #echo {$c_stan_sredni  o   Prowadzisz druzyne! };
+    #sh {$c_stan_sredni /V\\  %1 przekazal};
+    #echo {<088>      ------------------------------- };
+    #echo { };    
+    #line gag;
+}
+
+#action {Przekazujesz prowadzenie druzyny %1.$}
+{
+    #echo { };
+    #echo {<088>      ------------------------------- };
+    #echo {$c_stan_sredni  o   Przekazales prowadzenie! };
+    #sh {$c_stan_sredni /V\\   %1 prowadzi};
+    #echo {<088>      ------------------------------- };
+    #echo { };    
+    #line gag;
+}
+#action {^Gubisz gdzies za soba %1.$}
+{
+    #echo { };
+    #echo {<088>      ------------------------------- };
+    #sh {$c_stan_niski ###  <088>Gubisz za soba ${c_stan_niski}%1<088>};
+    #echo {<088>      ------------------------------- };
+    #echo { };
+    #bell;
+    #line gag;
+}
+
+#action {%1 porzuca twoja druzyne.$}
+{
+    #echo { };
+    #echo {<088>      ------------------------------- };
+    #sh {$c_stan_niski ###  <088>%1 porzuca druzyne! };
+    #echo {<088>      ------------------------------- };
+    #echo { };    
+    #var przewodzisz_druzynie 1;
+    #line gag;
+}
+
+#action {%1 zmusza %2 do opuszczenia druzyny.$}
+{
+    #echo { };
+    #echo {<088>      ------------------------------- };
+    #sh {$c_stan_sredni  o   <088>%1 zmusza %2  };
+    #sh {$c_stan_sredni /V\\  <088>do opuszczenia druzyny };
+    #echo {<088>      ------------------------------- };
+    #echo { };    
+    #line gag;
+}
+
+#action {Zmuszasz %1 do opuszczenia druzyny.$}
+{
+    #echo { };
+    #echo {<088>      ------------------------------- };
+    #sh {$c_stan_sredni  o   <088>Zmuszasz %1  };
+    #sh {$c_stan_sredni /V\\  <088>do opuszczenia druzyny };
+    #echo {<088>      ------------------------------- };
+    #echo { };    
+    #line gag;
+}
+
+#action {^%* zmusza cie do opuszczenia druzyny.$}
+{
+    #echo { };
+    #echo {<088>      ------------------------------- };
+    #sh {$c_stan_niski  o   <088>%1 zmusza cie };
+    #sh {$c_stan_niski /V\\  <088>do opuszczenia druzyny };
+    #echo {<088>      ------------------------------- };
+    #echo { };    
+    #line gag;
+}
+
+#action {^Porzucasz druzyne, ktorej przewodzil{|es|as}.$}
+{
+    #echo { };
+    #echo {<088>      ------------------------------- };
+    #sh {$c_stan_niski  X   ROZWIAZUJESZ DRUZYNE };
+    #echo {<088>      ------------------------------- };
+    #echo { };    
+    #line gag;
+}
+
+#action {^%* rozwiazuje druzyne.$}
+{
+    #echo { };
+    #echo {<088>      ------------------------------- };
+    #sh {$c_stan_niski  #   %1 ROZWIAZUJE DRUZYNE };
+    #echo {<088>      ------------------------------- };
+    #echo { };    
+    #line gag;
+}
+
+#action {^%* dolacza do twojej druzyny.}
+{
+    #echo { };
+    #echo {$c_stan_wysoki  #   <088>------------------------------- };
+    #sh {$c_stan_wysoki ###  %1 dolacza do druzyny };
+    #echo {$c_stan_wysoki  #   <088>------------------------------- };
+    #echo { };    
+    #line gag;
+}
+
+#high {^Pomiedzy skalami dostrzegasz ciemny otwor prowadzacy w dol.$} {<faa>%1}
+
+#ACTION {^W jednym z zaglebien terenu dostrzegasz szczeline prowadzaca pod ziemie.$}
+{
+  #echo {<118>%0<088>};#line gag;
+}
+#ACTION {^Posrod pajeczyn dostrzegasz niewielki wyrysowany kreda symbol - dokladnie taki, jaki pokazal ci starzec z wioski.$}
+{
+  #echo {<118>%0<088>};#line gag;
+}
+#ACTION {^Bagno odslonilo tu fragment kamiennej plyty %*.$}
+{
+  #echo {<118>%0<088>};#line gag;
+}
+
+#NOP CZERWONE
+
+#VAR {wazneNPC} {<118>};
+#HIGH {{rogaty smok chaosu|arlekin|kolorowowlosa rozesmiana elfka|zakapturzony zgarbiony mezczyzna}%w} {${wazneNPC}};
+
+#ACTION {^W powietrzu unosi sie gesta chmura pylu.$}
+{
+  #echo {<118>%0<088>};#line gag;
+}
+
+#ACTION {^Nad twoja glowa zbiera sie duza chmura %* pylu.$}
+{
+  #echo {<118>%0<088>};#line gag;
+}
+
+#ACTION {^Czujesz fale zimna, ktora blyskawicznie rozchodzi sie %*.$}
+{
+  #echo {<118>%0<088>};#line gag;
+}
+
+#ACTION {^%* Czujesz rozchodzacy sie po twoim ciele, pulsujacy bol!$}
+{
+  #echo {<118>%0<088>};#line gag;
+}
+
+#ACTION {^%* {rozpada sie!|peka!|rozpruwa sie.}$}
+{
+  #echo {<118>%0<088>};#line gag;
+}
+
+
+#ACTION {^Ku twojemu zdumieniu, %1 pojawil sie nagle tuz obok ciebie!$}
+{
+  #echo {<118>%0<088>};#line gag;
+}
+#ACTION {^{Kamienna plyta pod|Kamienna plyta, na ktorej}%*.$}
+{
+  #echo {<118>%0<088>};#line gag;
+}
+#ACTION {^Kamienna plyta z przerazliwym zgrzytem zamyka wejscie do grobowca!$}
+{
+  #echo {<118>%0<088>};#line gag;
+}
+
+
+#nop opisy pojemnikow;
+#sub {$ \(} {<138>$ <088>\(};
+#nop poziomy zuzycia;
+#high {(w znakomitym stanie)} {<118><afa>};
+#high {(lekko podniszczony)} {<038>};
+#high {(lekko podniszczona)} {<038>};
+#high {(lekko podniszczone)} {<038>};
+#high {(w kiepskim stanie)} {<018>};
+#high {(w oplakanym stanie)} {<118>};
+#high {(wymaga natychmiastowej konserwacji)} {<118>};
+#high {(w dobrym stanie)} {<028>};
+#high {(liczne walki wyryly na niej swoje pietno)} {<038>};
+#high {(liczne walki wyryly na nim swoje pietno)} {<038>};
+#high {(w bardzo zlym stanie)} {<018>};
+#high {(w zlym stanie)} {<018>};
+
+#nop poziomy magicznego zuzycia;
+#high {(posluzy bardzo dlugo, w znakomitym stanie)} {<028>};
+#high {(nie posluzy dluzej, w znakomitym stanie)} {<018>};
+
+#nop NA SOBIE;
+
+#high {Trzyma{|sz} %*.} {$c_trzyma};
+#high {Nosi{|sz} %*.} {$c_ponad};
+#high {Ma{|sz} na sobie %*.} {$c_stan_wysoki};
+#high {Ponad {jego|jej} %*.} {$c_ponad};
+#high {Do pasa ma{|sz} %*.} {$c_dopasa};
+
+#nop KOLORY PRZEDMIOTOW;
+#var kolor_pojemnik {<178>};
+#var kolor_skarbow {<038>};
+#var kolor_kamieni {<138>};
+#var kolor_gooditems {<128>};
+#var kolor_rareitems {<048>};
+
+#sub {Jego scianki poznaczone sa czerwienia, lecz fiolka jest zupelnie pusta.} {%0 ${c_stan_niski}0/4<088>};
+#sub {W niewielkiej czesci wypelnia je czerwona, kleista substancja.} {%0 ${c_stan_niski}1/4<088>};
+#sub {Okolo polowe jej objetosci zajmuje krwistoczerwony, gesty plyn.} {%0 ${c_stan_sredni}2/4<088>};
+#sub {Wieksza czesc fiolki wypelnia czerwony, gesty plyn.} {%0 ${c_stan_wysoki}3/4<088>};
+#sub {Fiolka jest pelna krwistoczerwonej, kleistej substancji.} {%0 ${c_stan_wysoki}4/4<088>};
+
+#nop gildie;
+#unaction {%*Noszony%*pierscien%*Kupcow%*.$} {#sh %0 (<118><fff> CN <088>);#line gag};
+#unaction {{Jego|Jej} nieustepliwe niczym skelliganskie sztormy spojrzenie i twarz wysmagana lodowatymi wichrami swiadcza o tym, ze masz %*.$} {#sh %0 (<118><faa> KS <088>);#line gag};
+#unaction {%*Klamre %* pasa zdobi %*.$} { };
+#unaction {%*noszony przez zaciezna piechote z Ochotniczego Hufca Mahakamu%*.$} {#sh %0 (<118><fff> OHM <088>);#line gag};
+#unaction {%*na ktorym wyryto otoczony czerwonymi rautami emblemat%*.$} { };
+#unaction {%* herb%* Rodziny Alderazzi%*.$} {#sh %0 (<118><fff> RA <088>);#line gag};
+#unaction {%*ze znakiem czarnego gryfa%*.$} {#sh %0 (<118><afa> KG <088>);#line gag};
+#unaction {Nosi wiewiorczy ogon%*.$} {#sh %0 (<118><ffa> SC <088>);#line gag};
+#unaction {%*biala tunika zakonna symbolizuje%*.$} {#sh %0 (<118><afa> ZS <088>);#line gag};
+#unaction {%*nosi piekna {zlota|srebrna|miedziana} obrecz {|wysadzana krwawymi rubinami|wysadzana kosztownymi kamieniami}.$} {#sh %0 (<118><faa> OK <088>);#line gag};
+#unaction {Nosi %* kubraczek, tradycyjny stroj Elfow z Gor Sinych.$} {#sh %0 (<118><fff> ES <088>);#line gag};
+#unaction {%*zamek ze znakiem Stowarzyszenia Gnomich Wynalazcow%*.$} {#sh %0 (<118><afa> SGW <088>);#line gag};
+#unaction {%*szyi, na skorzanym rzemieniu wisi%*.$} { };
+#unaction {%*Wzor i kolor kiltu swiadcza o przynaleznosci do Krasnoludow z Gor Kranca Swiata%*.$} {#sh %0 (<118><afa> KGKS <088>);#line gag};
+#unaction {%* pocieta jest %* wojownik.$} {#sh %0 (<118><afa> VR <088>);#line gag};
+#unaction {%* charakterystyczna dla mieszkancow Zajazdu %*.$} {#sh %0 (<118><fff> PE <088>);#line gag};
+#unaction {Od stop do glow zakut%* jest w stalowe plyty %* wygrawerowano symbole %*.$} {#sh %0 (<118><faa> MC <088>);#line gag};
+
+#nop jakies tam itemsy;
+#sub {polyskujacy zdobiony sztylet} {polyskujacy zdobiony sztylet (spaczony)};
+#high {(spaczony)} {$c_stan_sredni}
+
+
+#alias {show_web %*} {
+    #echo { };
+    #switch {"%1"} {
+        #case {"zachod"} {
+            #echo {$c_stan_niski   /\\\ \\  / /\\   <088>   #        };
+            #echo {$c_stan_niski  //\\\\ .. //\\\\ <088>   #         $c_stan_niski Zaplatales sie w pajecza siec!}; 
+            #echo {$c_stan_niski  //\\((  ))/\\\\   <088>##########  };
+            #echo {$c_stan_niski  /  < `' >  \\  <088>  #          ${ci_stan_sredni}BIND: Probuj na %1};
+            #echo {$c_stan_niski  \\          /  <088>   #};
+        };    
+        #case {"wschod"} {
+            #echo {$c_stan_niski   /\\\ \\  / /\\   <088>        #   };
+            #echo {$c_stan_niski  //\\\\ .. //\\\\ <088>          #  $c_stan_niski Zaplatales sie w pajecza siec!}; 
+            #echo {$c_stan_niski  //\\((  ))/\\\\   <088>##########  };
+            #echo {$c_stan_niski  /  < `' >  \\  <088>         #   ${ci_stan_sredni}BIND: Probuj na %1};
+            #echo {$c_stan_niski  \\          /  <088>        #};
+        };    
+        #case {"polnoc"} {
+            #echo {$c_stan_niski   /\\\ \\  / /\\   <088>     #      };
+            #echo {$c_stan_niski  //\\\\ .. //\\\\ <088>     # #     $c_stan_niski Zaplatales sie w pajecza siec!}; 
+            #echo {$c_stan_niski  //\\((  ))/\\\\   <088>  # # #   };
+            #echo {$c_stan_niski  /  < `' >  \\  <088>     #       ${ci_stan_sredni}BIND: Probuj na %1};
+            #echo {$c_stan_niski  \\          /  <088>     #};
+        };    
+        #case {"poludnie"} {
+            #echo {$c_stan_niski   /\\\ \\  / /\\   <088>     #      };
+            #echo {$c_stan_niski  //\\\\ .. //\\\\ <088>      #       $c_stan_niski Zaplatales sie w pajecza siec!}; 
+            #echo {$c_stan_niski  //\\((  ))/\\\\   <088>  # # #   };
+            #echo {$c_stan_niski  /  < `' >  \\  <088>    # #       ${ci_stan_sredni}BIND: Probuj na %1};
+            #echo {$c_stan_niski  \\          /  <088>     #};
+        };    
+        #case {"polnocny-wschod"} {
+            #echo {$c_stan_niski   /\\\ \\  / /\\   <088>      ####  };
+            #echo {$c_stan_niski  //\\\\ .. //\\\\  <088>        ##   $c_stan_niski Zaplatales sie w pajecza siec!}; 
+            #echo {$c_stan_niski  //\\((  ))/\\\\   <088>      # #   };
+            #echo {$c_stan_niski  /  < `' >  \\  <088>      #  #    ${ci_stan_sredni}BIND: Probuj na %1};
+            #echo {$c_stan_niski  \\          /  <088>     #     };
+        };    
+        #case {"polnocny-zachod"} {
+            #echo {$c_stan_niski   /\\\ \\  / /\\   <088>  ####     };
+            #echo {$c_stan_niski  //\\\\ .. //\\\\  <088>  ##         $c_stan_niski Zaplatales sie w pajecza siec!}; 
+            #echo {$c_stan_niski  //\\((  ))/\\\\   <088> # #      };
+            #echo {$c_stan_niski  /  < `' >  \\  <088>  #  #        ${ci_stan_sredni}BIND: Probuj na %1};
+            #echo {$c_stan_niski  \\          /  <088>      #  };
+        };
+        #case {"poludniowy-zachod"} {
+            #echo {$c_stan_niski   /\\\ \\  / /\\   <088>      #    };
+            #echo {$c_stan_niski  //\\\\ .. //\\\\  <088>     #       $c_stan_niski Zaplatales sie w pajecza siec!}; 
+            #echo {$c_stan_niski  //\\((  ))/\\\\   <088> # #      };
+            #echo {$c_stan_niski  /  < `' >  \\  <088>  ##          ${ci_stan_sredni}BIND: Probuj na %1};
+            #echo {$c_stan_niski  \\          /  <088>  #### };
+        };
+        #case {"poludniowy-wschod"} {
+            #echo {$c_stan_niski   /\\\ \\  / /\\   <088>     #     };
+            #echo {$c_stan_niski  //\\\\ .. //\\\\  <088>      #      $c_stan_niski Zaplatales sie w pajecza siec!}; 
+            #echo {$c_stan_niski  //\\((  ))/\\\\   <088>      # #   };
+            #echo {$c_stan_niski  /  < `' >  \\  <088>        ##    ${ci_stan_sredni}BIND: Probuj na %1};
+            #echo {$c_stan_niski  \\          /  <088>      #### };
+        };
+
+        #default {
+            #echo {$c_stan_niski   /\\\ \\  / /\\   <088>       };
+            #echo {$c_stan_niski  //\\\\ .. //\\\\  <088>             $c_stan_niski Zaplatales sie w pajecza siec!}; 
+            #echo {$c_stan_niski  //\\((  ))/\\\\   <088>       };
+            #echo {$c_stan_niski  /  < `' >  \\  <088>              ${ci_stan_sredni}BIND: Probuj na %1};
+            #echo {$c_stan_niski  \\          /  <088>          };            
+        };
+    };
+} {1};

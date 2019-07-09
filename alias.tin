@@ -1,0 +1,414 @@
+#nop Jesli jakis alias uzywa kolorow, trzeba ten plik go zaladowac po profilu;
+
+#alias {~/%*$} {
+  #echo {> Slucham?};
+} {1};
+
+#alias pkup {wym;kup %0;wlm}
+#alias {wbanku} {przejrzyj depozyt} 
+#alias {+kap} {naciagnij kaptur};
+#alias {-kap} {sciagnij kaptur};
+#alias {pij} {napij sie do syta};
+#alias {rygluj_wieze} {zamknij drzwi;zarygluj drzwi};
+
+#alias {_zabij_} 
+{
+	#parse {$pwskazywanie} {wskazanie_typ} {
+      #switch {"$wskazanie_typ"} {
+        #case {"d"} khpiesn;                      #nop druchii;
+        #case {"u"} drwskaz %0;                   #nop upiorny pancerz;
+        #case {"z"} zabijcmd %0;                  #nop komenda zabij;
+        #case {"w"} wskaz %0 jako cel ataku;      #nop wskazywanie;
+        #case {"r"} rozkaz druzynie zabic %0;     #nop rozkaz;
+        #nop case {"p"} przelam obrone celu ataku;#nop przelamanie TODO;
+      };
+    };
+}
+
+#alias {_zaznaczcel_} {
+  zabijcmd 1. wroga;
+  zabijcmd 2. wroga;
+  zabijcmd 3. wroga;
+  zabijcmd 4. wroga;
+  wesprzyj;
+  #parse {$pwskazywanie} {wskazanie_typ} {
+      #switch {"$wskazanie_typ"} {
+        #case {"d"} khpiesn;                             #nop druchii;
+        #case {"u"} drwskaz cel ataku;                   #nop upiorny pancerz;
+        #case {"z"} zabijcmd cel ataku;                  #nop komenda zabij;
+        #case {"w"} wskaz cel ataku jako cel ataku;      #nop wskazywanie;
+        #case {"r"} rozkaz druzynie zabic cel ataku;     #nop rozkaz;
+        #nop case {"p"} przelam obrone celu ataku;#nop przelamanie TODO;
+      };
+    };
+}
+
+#action {sie %1 {sztuk|sztuki}.} {
+  #var liczba_zabitych 0;
+  #switch {"%1"} {
+    #case {"jednej"} {#var liczba_zabitych {1}};
+    #case {"dwoch"} {#var liczba_zabitych {2}};
+    #case {"trzech"} {#var liczba_zabitych {3}};
+    #case {"czterech"} {#var liczba_zabitych {4}};
+    #case {"pieciu"} {#var liczba_zabitych {5}};
+    #case {"szesciu"} {#var liczba_zabitych {6}};
+    #case {"siedmiu"} {#var liczba_zabitych {7}};
+    #case {"osmiu"} {#var liczba_zabitych {8}};
+    #case {"dziewieciu"} {#var liczba_zabitych {9}};
+    #case {"dziesieciu"} {#var liczba_zabitych {10}};
+    #case {"jedenastu"} {#var liczba_zabitych {11}};    
+  };
+  #if {"$zbieranie_ready" == "true"} {
+    qb _zbierzloop_;
+  };
+}
+
+#alias {_zbierz_} {
+  policz ciala;
+  #var zbieranie_ready {true};
+}
+
+#alias {_zbierzloop_}
+{
+  #loop {1} {$liczba_zabitych} {liz} {
+    #parse {$pzbieranie} {zbierany_typ} {
+      #switch {"$zbierany_typ"} {
+        #case {"k"} {wez kamienie z $liz\. ciala;};
+        #case {"m"} {wez monety z $liz\. ciala;};
+        #case {"i"} {wez przedmioty z $liz\. ciala;};
+        #case {"d"} {khdorznij $liz\. cialo;obe fiolke};
+        #case {"h"} {hwodetnij ucho od $liz\. ciala;};
+      };
+    };
+  };
+  #var zbieranie_ready {false};
+};
+
+#alias {denominuj} {
+	zamien miedz na srebro;
+	zamien srebro na zloto;
+	zamien zloto na mithryl;
+};
+
+#alias {dziur} {
+	opusc bron;
+	otworz pierwszy przytroczony woreczek;
+	otworz drugi przytroczony woreczek;
+	otworz trzeci przytroczony woreczek;
+	otworz czwarty przytroczony woreczek;
+	wez czterokanciasta rozgaleziona lodyge z pierwszego przytroczonego woreczka;
+	wez czterokanciasta rozgaleziona lodyge z drugiego przytroczonego woreczka;
+	wez czterokanciasta rozgaleziona lodyge z trzeciego przytroczonego woreczka;
+	wez czterokanciasta rozgaleziona lodyge z czwartego przytroczonego woreczka;
+	rozgryz czterokanciasta rozgaleziona lodyge;
+	wloz lodygi do pierwszego woreczka;
+	wloz lodygi do drugiego woreczka;
+	wloz lodygi do trzeciego woreczka;
+	wloz lodygi do czwartego woreczka;
+	zamknij pierwszy przytroczony woreczek;
+	zamknij drugi przytroczony woreczek;
+	zamknij trzeci przytroczony woreczek;
+	zamknij czwarty przytroczony woreczek;
+	dobadz broni;
+}
+
+#alias {delion} {
+	opusc bron;
+	otworz pierwszy przytroczony woreczek;
+	otworz drugi przytroczony woreczek;
+	otworz trzeci przytroczony woreczek;
+	otworz czwarty przytroczony woreczek;
+	wez zolty jasny kwiat z pierwszego przytroczonego woreczka;
+	wez zolty jasny kwiat z drugiego przytroczonego woreczka;
+	wez zolty jasny kwiat z trzeciego przytroczonego woreczka;
+	wez zolty jasny kwiat z czwartego przytroczonego woreczka;
+	zjedz kwiat;
+	wloz kwiaty do pierwszego woreczka;
+	wloz kwiaty do drugiego woreczka;
+	wloz kwiaty do trzeciego woreczka;
+	wloz kwiaty do czwartego woreczka;
+	zamknij pierwszy przytroczony woreczek;
+	zamknij drugi przytroczony woreczek;
+	zamknij trzeci przytroczony woreczek;
+	zamknij czwarty przytroczony woreczek;
+	dobadz broni;
+}
+#alias {mandra} {
+	opusc bron;
+	otworz pierwszy przytroczony woreczek;
+	otworz drugi przytroczony woreczek;
+	otworz trzeci przytroczony woreczek;
+	otworz czwarty przytroczony woreczek;
+	wez bialy rozgaleziony korzen z pierwszego przytroczonego woreczka;
+	wez bialy rozgaleziony korzen z drugiego przytroczonego woreczka;
+	wez bialy rozgaleziony korzen z trzeciego przytroczonego woreczka;
+	wez bialy rozgaleziony korzen z czwartego przytroczonego woreczka;
+	przezuj korzen;
+	wloz korzenie do pierwszego woreczka;
+	wloz korzenie do drugiego woreczka;
+	wloz korzenie do trzeciego woreczka;
+	wloz korzenie do czwartego woreczka;
+	zamknij pierwszy przytroczony woreczek;
+	zamknij drugi przytroczony woreczek;
+	zamknij trzeci przytroczony woreczek;
+	zamknij czwarty przytroczony woreczek;
+	dobadz broni;
+}
+#alias {przelot3}
+{
+	opusc bron;
+	otworz pierwszy przytroczony woreczek;
+	otworz drugi przytroczony woreczek;
+	otworz trzeci przytroczony woreczek;
+	otworz czwarty przytroczony woreczek;
+	wez kremowe ususzone kwiaty z pierwszego przytroczonego woreczka;
+	wez kremowe ususzone kwiaty z drugiego przytroczonego woreczka;
+	wez kremowe ususzone kwiaty z trzeciego przytroczonego woreczka;
+	wez kremowe ususzone kwiaty z czwartego przytroczonego woreczka;
+	sproszkuj trzy kremowe ususzone kwiaty;
+	wloz kremowe kwiaty do pierwszego woreczka;
+	wloz kremowe kwiaty do drugiego woreczka;
+	wloz kremowe kwiaty do trzeciego woreczka;
+	wloz kremowe kwiaty do czwartego woreczka;
+	zamknij pierwszy przytroczony woreczek;
+	zamknij drugi przytroczony woreczek;
+	zamknij trzeci przytroczony woreczek;
+	zamknij czwarty przytroczony woreczek;
+	dobadz broni;
+}
+
+#alias {przelot}
+{
+	opusc bron;
+	otworz pierwszy przytroczony woreczek;
+	otworz drugi przytroczony woreczek;
+	otworz trzeci przytroczony woreczek;
+	otworz czwarty przytroczony woreczek;
+	wez kremowe ususzone kwiaty z pierwszego przytroczonego woreczka;
+	wez kremowe ususzone kwiaty z drugiego przytroczonego woreczka;
+	wez kremowe ususzone kwiaty z trzeciego przytroczonego woreczka;
+	wez kremowe ususzone kwiaty z czwartego przytroczonego woreczka;
+	sproszkuj kremowy ususzony kwiat;
+	wloz kremowe kwiaty do pierwszego woreczka;
+	wloz kremowe kwiaty do drugiego woreczka;
+	wloz kremowe kwiaty do trzeciego woreczka;
+	wloz kremowe kwiaty do czwartego woreczka;
+	zamknij pierwszy przytroczony woreczek;
+	zamknij drugi przytroczony woreczek;
+	zamknij trzeci przytroczony woreczek;
+	zamknij czwarty przytroczony woreczek;
+	dobadz broni;
+}
+
+#alias {szczaw} {
+	opusc bron;
+	otworz pierwszy przytroczony woreczek;
+	otworz drugi przytroczony woreczek;
+	otworz trzeci przytroczony woreczek;
+	otworz czwarty przytroczony woreczek;
+	wez strzalkowaty aromatyczny lisc z pierwszego przytroczonego woreczka;
+	wez strzalkowaty aromatyczny lisc z drugiego przytroczonego woreczka;
+	wez strzalkowaty aromatyczny lisc z trzeciego przytroczonego woreczka;
+	wez strzalkowaty aromatyczny lisc z czwartego przytroczonego woreczka;
+	przezuj strzalkowaty aromatyczny lisc;
+	wloz liscie do pierwszego woreczka;
+	wloz liscie do drugiego woreczka;
+	wloz liscie do trzeciego woreczka;
+	wloz liscie do czwartego woreczka;
+	zamknij pierwszy przytroczony woreczek;
+	zamknij drugi przytroczony woreczek;
+	zamknij trzeci przytroczony woreczek;
+	zamknij czwarty przytroczony woreczek;
+	dobadz broni;
+}
+
+
+#alias {szczaw5} {
+	opusc bron;
+	otworz pierwszy przytroczony woreczek;
+	otworz drugi przytroczony woreczek;
+	otworz trzeci przytroczony woreczek;
+	otworz czwarty przytroczony woreczek;
+	wez piec strzalkowatych aromatycznych lisci z pierwszego przytroczonego woreczka;
+	wez piec strzalkowatych aromatycznych lisci z drugiego przytroczonego woreczka;
+	wez strzalkowatych aromatycznych lisci z trzeciego przytroczonego woreczka;
+	wez strzalkowatych aromatycznych lisci z czwartego przytroczonego woreczka;
+	przezuj piec strzalkowatych aromatycznych lisci;
+	wloz liscie do pierwszego woreczka;
+	wloz liscie do drugiego woreczka;
+	wloz liscie do trzeciego woreczka;
+	wloz liscie do czwartego woreczka;
+	zamknij pierwszy przytroczony woreczek;
+	zamknij drugi przytroczony woreczek;
+	zamknij trzeci przytroczony woreczek;
+	zamknij czwarty przytroczony woreczek;
+	dobadz broni;
+}
+
+#alias {w_kuzni}
+{
+  wym;
+  naostrz bron;
+  naostrz druga bron;
+  napraw pierwsza zalozona zbroje;
+  napraw druga zalozona zbroje;
+  napraw trzecia zalozona zbroje;
+  napraw czwarta zalozona zbroje;
+  napraw piata zalozona zbroje;
+  napraw szosta zalozona zbroje;
+  napraw siodma zalozona zbroje;
+  wlm;
+}
+
+#alias {ziola}
+{
+  lecznicze;
+  #var pahc {1};
+  #var prompt_avatar[1] $prompt_avatar_herbs[1];
+  #math licznik {$ziolka_licznik - 10 + 5};
+  #loop {1} {$licznik} {paaah} {
+    #format {poh} {%L} {$prompt_objects_herbs[$pahc]};
+    #if {$poh > 11} {
+      #sh $prompt_objects_herbs[$pahc];
+    };
+    #math {pahc} {$pahc + 1};
+  };
+};
+
+#alias {u_diabla} {
+  usiadz na czwartej beczulce;
+  wym;
+  zamow zupe;zamow zupe;zamow zupe;
+  wlm;
+  wstan;
+}
+
+#alias {u_biedoty} {
+	usiadz przy stole;
+  wym;
+	zamow borowki;
+	zamow borowki;
+	zamow borowki;
+	zamow borowki;
+	zamow borowki;
+	zamow borowki;
+  wlm;
+	wstan;
+}
+
+#alias {u_bumkirka} {
+  usiadz za lawa;
+  wym;
+  zamow jaszczurke;
+  zamow jaszczurke;
+  zamow jaszczurke;
+  zamow jaszczurke;
+  zamow jaszczurke;
+  wlm;
+  wstan;
+}
+#alias {nuln_buleczka} {
+	wym;
+	zamow bulke;
+	zamow bulke;
+	zamow bulke;
+	zamow bulke;
+	zamow bulke;
+	zamow bulke;
+	zamow bulke;
+	zamow bulke;
+	zamow bulke;
+	wstan;
+}
+
+#alias {w_jadlodajni} {
+  usiadz przy lawie;
+  zamow bigos;
+  zamow bigos;
+  zamow bigos;
+  zamow bigos;
+  zamow bigos;
+  wy manierke;
+  wy buklak
+  wloz manierke do torby;
+  wstan;
+};
+
+
+#alias {qr} {
+  #line substitute {variables} {#macro {$KEY_QB} {%0}};
+  #line substitute {variables} {#macro {$KEY_PAD_MIDDLE} {%0}};
+
+  #format {show_bind_} {%h} { %0 };
+  #echo {${c_stan_sredni}$show_bind_};
+}
+
+#alias {qk} {
+  #var r @_print_war_bind{%0};
+  #var qkcommand %0;
+  #line substitute {variables} {#macro {$KEY_QK} {$qkcommand}};
+};
+
+#alias {qb} {
+    #line substitute {variables} {#macro {$KEY_QB} {%0}};
+    #line substitute {variables} {#macro {$KEY_PAD_MIDDLE} {%0}};
+    #nop show_bind %0;
+    #format {show_bind_} {%h} { %0 };
+    #echo {${c_stan_wysoki}$show_bind_};
+}
+
+#nop silently;
+#alias {qbs} {
+    #line substitute {variables} {#macro {$KEY_QB} {%0}};
+    #line substitute {variables} {#macro {$KEY_PAD_MIDDLE} {%0}};
+}
+
+#alias {QB} {
+    #var bind_found 1;
+    #var bind_run {%0};
+}
+
+
+
+#alias {qm} {
+    #line substitute {variables} {#macro {$KEY_QB} {%0}};
+    #line substitute {variables} {#macro {$KEY_PAD_MIDDLE} {%0}};
+    #format {show_bind_} {%h} { %0 };
+    #echo {${c_stan_niski}$show_bind_}
+  
+    #if {$profiles_follow == 1} {
+        #var magiczny_wytrych 1;
+        #if {$magiczny_wytrych == 1} {
+            #format stamp {%t} {%Y-%m-%d %H:%M:%S};
+            #echo {${c_arkatt}> ${c_stan_niski}$stamp [magiczny_wytrych] czekam $rva_total na %0<088>};
+            #var magiczny_wytrych 2;
+            #delay {$global_delay_current} {
+                #var magiczny_wytrych 1;
+                #echo {${c_arkatt}> ${c_stan_niski}$stamp [magiczny_wytrych] wykonuje %0.<088>};
+                %0;
+            };
+        };
+    };
+}
+
+#alias {qbk} {
+    #line substitute {variables} {#macro {$KEY_QB} {%0}};
+}
+
+#alias {zasuwa_zamknij} {
+	zamknij drzwi;
+	przesun zasuwe;
+}
+
+#alias {zasuwa_otworz} {
+	odsun zasuwe;
+	otworz drzwi;
+}
+
+#alias {wez fenia %*} {
+  #format feniolen {%L} {%1};
+  #if {$feniolen > 1} {
+    wez strzelisty zasniedzialy helm %1;
+    wez stary matowy pancerz %1;
+  };
+} {1}

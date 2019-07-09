@@ -1,0 +1,6 @@
+#action {Czujesz jak powoli} {podliczexp};
+#action {Otwierasz oczy, twoj umysl powraca do normalnego dzialania. Po chwili konsternacji wstajesz z podlogi.} {podliczexp};
+#action {Wynurzajac sie z otchlani wlasnego umyslu, odzyskujesz powoli zmysly. Czujesz sie bardzo wypoczety i zrelaksowany, gdy w koncu powstajesz.} {podliczexp};
+#action {Czujesz sie jakbys wydobywal sie z glebokiej otchlani} {podliczexp};
+#action {Wstajesz z posadzki, otrzepujac pyl ze swojego ubrania. Moze to i dobrze ze kamienie tu} {podliczexp};
+#action {Odblokowujesz swoje zmysly. Po krotkiej chwili, kiedy bodzce z zewnatrz zalewaja twa glowe niczym fala} {podliczexp};

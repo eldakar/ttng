@@ -1,0 +1,266 @@
+#alias {popcje klawisze_funkcyjne %1} {
+	#var toload3 {${path}/%1 .tin};
+   	#replace {toload3} { } {};
+   	#read $toload3;
+	#var profile_options[klawisze_funkcyjne] {%1};
+}
+
+#alias {popcje zadania %1} {
+	#var str_zadania {%1};
+	#replace str_zadania {,} {;};
+	#list zadania create {$str_zadania};
+	#var profile_options[zadania] {%1};
+}
+
+#alias {popcje przyjaciele %1} {
+	#var profile_options[przyjaciele] {%1};
+	#chat message combat {przyjaciele %1};
+};
+
+#alias {popcje wrogowie %1} {
+	#var profile_options[wrogowie] {%1};
+	#chat message combat {wrogowie %1};
+} {1};
+
+#alias {popcje zabijcmd %1} {
+	#alias zabijcmd %1;
+	#var profile_options[zabijcmd] {%1};
+}
+#alias {popcje celataku %1} {
+	 #switch {"%1"} {
+	 	#case {"shifttylda"} {#macro {~} {_zaznaczcel_}};
+	 	#case {"tylda"} {#macro {`} {_zaznaczcel_}};
+	 	#case {"nkl"} {#macro {[} {_zaznaczcel_}};
+	 	#case {"nkr"} {#macro {]} {_zaznaczcel_}};
+	 	#case {"slash"} {#macro {/} {_zaznaczcel_}};
+	 	#case {"backslash"} {#macro {\} {_zaznaczcel_}};
+	 };
+	 #var profile_options[celataku] {%1};
+}
+
+#alias {popcje celobrony %1} {
+	 #switch {"%1"} {
+	 	#case {"shifttylda"} {#macro {~} {zaslon cel obrony}};
+	 	#case {"tylda"} {#macro {`} {zaslon cel obrony}};
+	 	#case {"nkl"} {#macro {[} {zaslon cel obrony}};
+	 	#case {"nkr"} {#macro {]} {zaslon cel obrony}};
+	 	#case {"slash"} {#macro {/} {zaslon cel obrony}};
+	 	#case {"backslash"} {#macro {\} {zaslon cel obrony}};
+	 };
+	 #var profile_options[celobrony] {%1};
+}
+
+#alias {popcje lazik %1} {
+	 #switch {"%1"} {
+	 	#case {"shifttylda"} {#macro {~} {lazik_idz}};
+	 	#case {"tylda"} {#macro {`} {lazik_idz}};
+	 	#case {"nkl"} {#macro {[} {lazik_idz}};
+	 	#case {"nkr"} {#macro {]} {lazik_idz}};
+	 	#case {"slash"} {#macro {/} {lazik_idz}};
+	 	#case {"backslash"} {#macro {\} {lazik_idz}};
+	 };
+	 #var profile_options[lazik] {%1};
+}
+
+
+#alias {popcje zdjeciezaslon %1} {
+	 #switch {"%1"} {
+	 	#case {"shifttylda"} {#macro {~} {_niezaslaniaj_}};
+	 	#case {"tylda"} {#macro {`} {_niezaslaniaj_}};
+	 	#case {"nkl"} {#macro {[} {_niezaslaniaj_}};
+	 	#case {"nkr"} {#macro {]} {_niezaslaniaj_}};
+	 	#case {"slash"} {#macro {/} {_niezaslaniaj_}};
+	 	#case {"backslash"} {#macro {\} {_niezaslaniaj_}};
+	 };
+	 #var profile_options[zdjeciezaslon] {%1};
+	 #var profiles_zdjeciezaslon %1;
+}
+
+#alias {popcje quickbind %1} {
+	 #switch {"%1"} {
+	 	#case {"shifttylda"} {#var KEY_QB {~}};
+	 	#case {"tylda"} {#var KEY_QB {`}};
+	 	#case {"nkl"} {#var KEY_QB {[}};
+	 	#case {"nkr"} {#var KEY_QB {]}};
+	 	#case {"slash"} {#var KEY_QB {/}};
+	 	#case {"backslash"} {#var KEY_QB {\}};
+	 };
+	 #var profile_options[quickbind] {%1};
+}
+
+#alias {popcje custombind %1} {
+	 #switch {"%1"} {
+	 	#case {"shifttylda"} {#var KEY_QK {~}};
+	 	#case {"tylda"} {#var KEY_QK {`}};
+	 	#case {"nkl"} {#var KEY_QK {[}};
+	 	#case {"nkr"} {#var KEY_QK {]}};
+	 	#case {"slash"} {#var KEY_QK {/}};
+	 	#case {"backslash"} {#var KEY_QK {\}};
+	 };
+	 #var profile_options[custombind] {%1};
+}
+
+
+#alias {popcje %1 %2} {
+	#line substitute variables {
+		#class profile open;
+		#var profiles_%1 %2;
+		#var profile_options[%1] {%2};
+		#class profile close;
+	};
+} {8};
+
+#alias {_popcje %1 %2} {
+	#line substitute variables {
+		#class profile open;
+		#var profiles_%1 %2;
+		#var profile_options[%1] {%2};
+		#class profile close;
+	};
+} {8};
+
+
+#alias {dbb} {
+	#nop ####################################
+	#nop PIERWSZA BRON;
+	#if {"$ppochwa" == "uprzaz"} {
+		#if {"$pzawod" == "wks"} {powyciagnij bron z pierwszej uprzezy;gzdobadz broni};
+		#else {podobadz broni z pierwszej uprzezy};
+	};
+	#elseif {"$ppochwa" == "pochwa"} {
+		#if {"$pzawod" == "kg"} {gzdobadz szybko};
+		#else {podobadz broni z pierwszej pochwy};
+	};
+	#elseif {"$ppochwa" == "temblak"} {
+		podobadz broni z pierwszego temblaka;
+	};
+	#elseif {"$ppochwa" == "plecak"} {
+		wy bron;
+		dobadz broni;
+	};
+	#nop ####################################
+	#nop DRUGA BRON;
+	#if {"$ppochwa2" == "tarcza"} {
+		#if {"$pzawod" == "ks"} {gzzarzuc tarcze};
+		#else {zaloz tarcze};
+	};
+	#elseif {"$ppochwa2" == "pawez"} {
+		#if {"$pzawod" == "ks"} {gzzarzuc pawez};
+		#else {zaloz pawez};
+	};
+	#elseif {"$ppochwa2" == "temblak"} {
+		podobadz broni z drugiego temblaka;
+	};		
+	#elseif {"$ppochwa2" == "pochwa"} {
+		podobadz broni z drugiej pochwy;
+	}
+}
+#alias {obb} {
+	#nop ####################################
+	#nop PIERWSZA BRON;
+	#if {"$ppochwa" == "uprzaz"} {
+		#if {"$pzawod" == "wks"} {gzopusc bron;powsun bron do pierwszej uprzezy};
+		#else {powsun dobyta bron do pierwszej uprzezy};
+	};
+	#elseif {"$ppochwa" == "pochwa"} {
+		#if {"$pzawod" == "kg"} {gzprzewies dobyty miecz};
+		#else {powsun dobyta bron do pierwszej pochwy};
+	};
+	#elseif {"$ppochwa" == "temblak"} {
+		powsun bron do pierwszego temblaka;
+	};
+	#elseif {"$ppochwa" == "plecak"} {
+		opusc bron;
+		wl ja;
+	}
+	#nop ####################################
+	#nop DRUGA BRON;
+	#if {"$ppochwa2" == "tarcza"} {
+		#if {"$pzawod" == "ks"} {gzzdejmij};
+		#else {zdejmij zalozona tarcze};
+	};
+	#elseif {"$ppochwa2" == "pawez"} {
+		#if {"$profiles_zawod" == "ks"} {gzzdejmij};
+		#else {zdejmij zalozona pawez};
+	};	
+	#elseif {"$ppochwa2" == "temblak"} {
+		powsun dobyta bron do drugiego temblaka;
+	};
+	#elseif {"$ppochwa2" == "pochwa"} {
+		powsun dobyta bron do drugiej pochwy;
+	};	
+}
+
+
+
+#nop PLECAK ITP;
+
+
+#alias {wy} {
+	#format inamelen {%L} {%1};
+	#if {$inamelen < 2} {
+		#if {"$pplecak" == "sakwa"} {zajrzyj do zalozonej sakwy};
+		#if {"$pplecak" == "plecak"} {zajrzyj do zalozonego plecaka};
+		#if {"$pplecak" == "torba"} {zajrzyj do zalozonej torby};
+		#if {"$pplecak" == "wor"} {zajrzyj do zalozonego wora};
+	};
+	#else {
+		#if {"$pplecak" == "sakwa"} {otworz zalozona sakwe;wez %1 z zalozonej sakwy;zamknij zalozona sakwe};
+		#if {"$pplecak" == "plecak"} {otworz zalozony plecak;wez %1 z zalozonego plecaka;zamknij zalozony plecak};
+		#if {"$pplecak" == "torba"} {otworz zalozona torbe;wez %1 z zalozonej torby;zamknij zalozona torbe};
+		#if {"$pplecak" == "wor"} {otworz zalozony wor;wez %1 z zalozonego wora;zamknij zalozony wor};
+	};
+}
+#alias {wl} {
+	#if {"$pplecak" == "sakwa"} {otworz zalozona sakwe;wloz %1 do zalozonej sakwy;zamknij zalozona sakwe};
+	#if {"$pplecak" == "plecak"} {otworz zalozony plecak;wloz %1 do zalozonego plecaka;zamknij zalozony plecak};
+	#if {"$pplecak" == "torba"} {otworz zalozona torbe;wloz %1 do zalozonej torby;zamknij zalozona torbe};
+	#if {"$pplecak" == "wor"} {otworz zalozony wor;wloz %1 do zalozonego wora;zamknij zalozony wor};
+}
+#alias {sak} {wy};
+#alias {dsak} {wl};
+
+
+#alias {wym}
+{
+	#switch {"$psakiewka"}
+	{		
+		#case {"sakiewka"} {otworz swoja sakiewke;wez monety ze swojej sakiewki;zamknij swoja sakiewke;};
+		#case {"szkatulka"} {otworz swoja szkatulke;wez monety ze swojej szkatulki;zamknij swoja szkatulke;};
+		#case {"sakwa"} {otworz swoja sakwe;wez monety ze swojej sakwy;zamknij swoja sakwe;};
+		#default {
+			#switch {"$pplecak"} 
+			{
+				#case {"plecak"} {otworz zalozony plecak;wez monety z zalozonego plecaka;zamknij zalozony plecak;};
+				#case {"sakwa"} {otworz zalozona sakwe;wez monety z zalozonej sakwy;zamknij zalozona sakwe;};
+				#case {"torba"} {otworz zalozona torbe;wez monety z zalozonej torby;zamknij zalozona torbe;};
+				#case {"wor"} {otworz zalozony wor;wez monety z zalozonego wora;zamknij zalozony wor;};
+				#default {otworz zalozony plecak;wez monety z zalozonego plecaka;zamknij zalozony plecak;};
+			};
+
+		};
+	};
+}
+#alias {wlm}
+{
+	#switch {"$psakiewka"}
+	{		
+		#case {"sakiewka"} {otworz swoja sakiewke;wloz monety do swojej sakiewki;zamknij swoja sakiewke;};
+		#case {"szkatulka"} {otworz swoja szkatulke;wloz monety do swojej szkatulki;zamknij swoja szkatulke;};
+		#case {"sakwa"} {otworz swoja sakwe;wloz monety do swojej sakwy;zamknij swoja sakwe;};
+		#default {
+			#switch {"$pplecak"} 
+			{
+				#case {"plecak"} {otworz zalozony plecak;wloz monety do zalozonego plecaka;zamknij zalozony plecak;};
+				#case {"sakwa"} {otworz zalozona sakwe;wloz monety do zalozonej sakwy;zamknij zalozona sakwe;};
+				#case {"torba"} {otworz zalozona torbe;wloz monety do zalozonej torby;zamknij zalozona torbe;};
+				#case {"wor"} {otworz zalozony wor;wloz monety do zalozonego wora;zamknij zalozony wor;};
+				#default {otworz zalozony plecak;wloz monety do zalozonego plecaka;zamknij zalozony plecak;};
+			};
+
+		};
+	};	
+}
+
+#var profile_loaded 0;
+

@@ -1,14 +1,28 @@
+#event {IAC SB GMCP char.colors IAC SE} {
+	#var CHAR_COLORS {%0};
+	#read gmcp_color.tin;
+};
 #event {IAC SB GMCP char.info IAC SE} {
 	#var CHAR_INFO {%0};
 	#var AVATAR_NAME {$CHAR_INFO[name]};
 	#var avatarid $CHAR_INFO[id];
 	#var obda2[$avatarid][desc] {$CHAR_INFO[name]};
+	#line substitute {variables} {
+		#class profile read $AVATAR_NAME;
+		#class profile size profile_size;
+		#if {$profile_size < 1} {
+			#class profile read profile_default;
+			#class profile write $AVATAR_NAME;
+		};
+	};
 };
 
-#alias {psprawdz} {
-	#foreach {$profile_options[]} {po} {
-		#format {proftestlen} {%L} {$profile_options[$po]};
-		#if {$proftestlen < 1} {#sh {${c_arkatt}> ${c_stan_sredni}Ustaw popcje $po<088>};};
+#alias {p{klawisze|zadania|przyjaciele|wrogowie|zabijcmd|celataku|celobrony|lazik|zdjeciezaslon|quickbind|pochwa|pochwa2|zawod|plecak|sakiewka|zbieranie|wskazywanie} %+} {
+	#line substitute variables {
+		#class profile open;
+		#var p%1 {%2};
+		#class profile close;
+		#class profile write $AVATAR_NAME;
 	};
 };
 
@@ -53,5 +67,7 @@
 };
 
 #alias hpbar {
-	#sh {hp:$state[hp] pa:$state[panic] mn:$state[mana] fa:$state[fatigue] fo:$state[form] en:$state[encumbrance] in:$state[intox] -------------} {1};
+	#if {$unfolded > 0} {
+		#sh {$temp_short <088>hp:$state[hp] pa:$state[panic] mn:$state[mana] fa:$state[fatigue] fo:$state[form] en:$state[encumbrance] in:$state[intox]              } {-$screen_r_half_title};
+	};
 };

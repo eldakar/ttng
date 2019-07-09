@@ -1,25 +1,9 @@
-#nop Obsluga mapki TINTINA;
-#nop #################################################################################;
-#nop PLIKI;
-#nop #################################################################################;
-
-#map read /usr/local/lib/arkatt/tools/mapkatt.map;  #nop Mapa arkadii;
 #map goto 1;
 #var MAPPER_SYNC 0;
 #map flag vtmap on;
 #map flag unicodegraphics on;
 #map flag static on;
 
-#read /usr/local/lib/arkatt/data/ttfollow.tin;      #nop Podazanie za kims;
-#read /usr/local/lib/arkatt/data/ttundo.tin;        #nop Blokery na nieudany ruch;
-#read /usr/local/lib/arkatt/tools/mapevents2.tin;   #nop Pokoje skryptowane recznie - labirynty;
-#read /usr/local/lib/arkatt/maps/teleporty.tin;     #nop Triggery na teleporty;
-#read /usr/local/lib/arkatt/data/ttfreeze.tin;      #nop Komendy blokujace ruch (wspinaczka itp);
-#read /usr/local/lib/arkatt/data/ttsync.tin;        #nop Eventy 'gubiace' mapke celowo;
-
-#nop #################################################################################;
-#nop RUCH;
-#nop #################################################################################;
 #alias {move_n} {#send n;#var trytomove 1;#var movedir {polnoc}};
 #alias {move_s} {#send s;#var trytomove 1;#var movedir {poludnie}};
 #alias {move_e} {#send e;#var trytomove 1;#var movedir {wschod}};
@@ -84,25 +68,33 @@
     #if {"$voos_num" == "<178>i<088>"} {
         #var note_found 1;
     };
-
-    #map get roomdata rd;
-    #if {"$rd" == ""} {} {
-        #mapper {#send lookup:$rd};
-    };
 };
 
 #alias {UNFOLD} {
     #if {"$unfolded" != "1"} {
         #format screen_r {%R};
         #math screen_r_half {($screen_r / 3) - 2};
+        #math screen_r_half_title {($screen_r / 3) - 2 - 1};
         #split $screen_r_half $prmptbottomv;
         hpbar;
         #var unfolded 1;
     };
 };
 
+#alias {UNFOLD2} {
+    #if {"$unfolded" != "2"} {
+        #format screen_r {%R};
+        #math screen_r_half {$screen_r / 2};
+        #math screen_r_half_title {($screen_r / 2) - 1};
+        #split $screen_r_half $prmptbottomv;
+        hpbar;
+        #var unfolded 2;
+    };
+};
+
+
 #alias {FOLD} {
-    #if {"$unfolded" == "1"} {
+    #if {$unfolded > 0} {
         #var screen_r_half 0;
         #split $screen_r_half $prmptbottomv;
         hpbar;
@@ -111,15 +103,15 @@
 };
 
 #alias {FOLDER} {
-    #if {"$unfolded" == "1"} {
-        FOLD;
-    } {
-        UNFOLD;
-    };
+	#switch {"$unfolded"} {
+		#case {"1"} {UNFOLD2};
+		#case {"2"} {FOLD};
+		#default {UNFOLD};
+	};
 }
 
 
-#var zadania[1] {quest};
+#nop var zadania[1] {quest};
 
 #alias {/zadania} {
     #var cpcmd {1};
@@ -177,7 +169,10 @@
     #nop funkcja szukajaca;
     #nop map list <name> <exits> <desc> <area> <note> <terrain>;
     #nop ##################################;
+#var current_room_short_desc {unknown};
+#var current_room_exits {unknown};
 #alias {/f$} {findme} {1}?; 
+#nop alias findme {#echo a};
 #alias findme {
         #map get roomvnum rmvnum;
         #var widocznewyjscia {$ROOM_INFO[exits]};
@@ -196,8 +191,8 @@
 
         #nop var k @_print_warn{Szukam pokoju <118><aff>$current_room_short_desc<088>};
         #map list {} {} {$current_room_short_desc} {variable} {vexits};
-        #list vexitslist create {$vexits};
-        #list vexitslist {size} {listsize};
+ 	#list vexitslist create {$vexits};
+ 	#list vexitslist {size} {listsize};
         #if {$listsize == 2} {
             #var roomfound {1};
             #if {$vexitslist[1] != $rmvnum} {
@@ -218,7 +213,7 @@
         #var vexits {};
         #list vexitslist clear;
         #map list {$current_room_exits} {} {$current_room_short_desc} {variable} {vexits};
-        #list vexitslist create {$vexits};
+ 	#list vexitslist create {$vexits};
         #list vexitslist {size} {listsize};
         #list vexitslist_filter clear;
         #var velf 0;

@@ -1,0 +1,21 @@
+#CLASS {profile} OPEN
+
+#VARIABLE         {pklawisze}  {macos}
+#VARIABLE         {pzadania}  {info}
+#VARIABLE         {pprzyjaciele}  {}
+#VARIABLE         {pwrogowie}  {}
+#VARIABLE         {pzabijcmd}  {zabij}
+#VARIABLE         {pcelataku}  {}
+#VARIABLE         {pcelobrony}  {}
+#VARIABLE         {plazik}  {}
+#VARIABLE         {pzdjeciezaslon}  {off}
+#VARIABLE         {pquickbind}  {}
+#VARIABLE         {ppochwa}  {}
+#VARIABLE         {ppochwa2}  {}
+#VARIABLE         {pzawod}  {}
+#VARIABLE         {pplecak}  {}
+#VARIABLE         {psakiewka}  {}
+#VARIABLE         {pwskazywanie} {}
+#VARIABLE         {pzbieranie} {}
+
+#CLASS {profile} CLOSE

@@ -440,6 +440,7 @@
 
 #event {IAC SB GMCP objects.nums IAC SE}
 {
+    TRIGGER_VMAP;
     #var objects_num_list_changed 1;
 	#var {obnu} {%0};
 	#foreach {$obda2[]} {bubu} {
@@ -448,12 +449,13 @@
 			#unvar {obda2[$bubu]};
          };
     };
-	update_teams;
+    update_teams;
     push_obda;
 }
 
 #event {IAC SB GMCP objects.data IAC SE}
 {
+  TRIGGER_VMAP;
   #var {obda} {%0};
   #foreach {$obda[]} {vob} {
     #foreach {$obda[$vob][]} {bubu} {
@@ -540,9 +542,8 @@
 
 
 #alias {render_h2} {
-    #var r_curLineCnt {$prmptbottomv};
+    #var r_curLineCnt {1};
 
-    #nop loop {$prmptbottomv} {2} {a} {#sh {                                                                                  } {$a}};
     #list team_offenders cle;
     #list team_offenders cre;
     #foreach {$duch[]} {du} {#var duch[$du][shown] {0}};
@@ -553,8 +554,9 @@
         #if {$duch[$avatarid][attack_num] > 0} {
             #list team_offenders add {$duch[$avatarid][attack_num]};
         } {
-            #sh {$duch[$avatarid][bar][orc]};
-            #math r_curLineCnt {$r_curLineCnt - 1};
+        #nop sh {$duch[$avatarid][bar][orc]};
+            #sh {$duch[$avatarid][bar][orc]} {-$r_curLineCnt};
+            #math r_curLineCnt {$r_curLineCnt + 1};
             #var duch[$avatarid][shown] {1};
         };
 
@@ -565,8 +567,9 @@
                 #if {$duch[$team[$ti]][attack_num] > 0} {
                     #list team_offenders add $duch[$team[$ti]][attack_num];
                 } {
-                    #sh {$duch[$team[$ti]][bar][orc]};
-                    #math r_curLineCnt {$r_curLineCnt - 1};
+                #nop sh {$duch[$team[$ti]][bar][orc]};
+                    #sh {$duch[$team[$ti]][bar][orc]} {-$r_curLineCnt};
+                    #math r_curLineCnt {$r_curLineCnt + 1};
                     #var duch[$team[$ti]][shown] {1};
                 };
             };
@@ -585,14 +588,15 @@
                 #if {"$duch[$ti][attack_num]" == "$team_offenders[$to]"} {
                     #if {$tmpnavigator == 1} {
                         #var tmpnavigator 0;
-                        #nop #sh {$duch[$ti][bar][hug]} {-$r_curLineCnt};
-                        #sh {$duch[$ti][bar][orc] ${c_stan_niski}---><088> $duch[$duch[$ti][attack_num]][bar][orc]};
+                    #nop sh {$duch[$ti][bar][orc] ${c_stan_niski}---><088> $duch[$duch[$ti][attack_num]][bar][orc]};
+                        #sh {$duch[$ti][bar][orc] ${c_stan_niski}---><088> $duch[$duch[$ti][attack_num]][bar][orc]} {-$r_curLineCnt};
 
-                        #math r_curLineCnt {$r_curLineCnt - 1};
+                        #math r_curLineCnt {$r_curLineCnt + 1};
                         #var duch[$team_offenders[$to]][shown] {1};
                     } {
-                        #sh {$duch[$ti][bar][orc] ${c_stan_niski}_/};
-                        #math r_curLineCnt {$r_curLineCnt - 1};
+                    #nop sh {$duch[$ti][bar][orc] ${c_stan_niski}_/};
+                        #sh {$duch[$ti][bar][orc] ${c_stan_niski}_/} {-$r_curLineCnt};
+                        #math r_curLineCnt {$r_curLineCnt + 1};
                     };
                     #var duch[$ti][shown] {1};
                 };
@@ -603,8 +607,9 @@
 #nop RESZTA WALCZACYCH WROGOW;
     #foreach {$wrogi[]} {to} {
         #if {$duch[$wrogi[$to]][shown] < 1} {
-            #sh {                                            $duch[$wrogi[$to]][bar][orc]};
-            #math r_curLineCnt {$r_curLineCnt - 1};
+        #nop sh {                                            $duch[$wrogi[$to]][bar][orc]};
+            #sh {                                            $duch[$wrogi[$to]][bar][orc]} {-$r_curLineCnt};
+            #math r_curLineCnt {$r_curLineCnt + 1};
             #var duch[$wrogi[$to]][shown] {1};
         };
     };
@@ -615,8 +620,9 @@
             #if {$duch[$wrogi[$wr]][attack_num] > 0} {
                 #echo { };
             } {
-                #sh {$duch[$wrogi[$wr]][bar][hug]} {$r_curLineCnt};
-                #math r_curLineCnt {$r_curLineCnt - 1};
+            #nop sh {$duch[$wrogi[$wr]][bar][hug]} {$r_curLineCnt};
+                #sh {$duch[$wrogi[$wr]][bar][hug]} {$r_curLineCnt} {-$r_curLineCnt};
+                #math r_curLineCnt {$r_curLineCnt + 1};
                 #var duch[$wrogi[$wr]][shown] {1};
             };
         };
@@ -624,8 +630,9 @@
 #nop RESZTA wszystkiego gdzie shown == 0;
     #foreach {$duch[]} {wr} {
         #if {$duch[$wr][shown] < 1} {
-            #sh {                                            $duch[$wr][bar][orc]};
-            #math r_curLineCnt {$r_curLineCnt - 1};
+        #nop sh {                                            $duch[$wr][bar][orc]};
+            #sh {                                            $duch[$wr][bar][orc]} {-$r_curLineCnt};
+            #math r_curLineCnt {$r_curLineCnt + 1};
             #var duch[$wr][shown] {1};
         };
     };
@@ -870,16 +877,19 @@
 
         #math {negativecounter} {$negativecounter + 1};
     };
-        #nop render_h;
-        #nop render_h2;
+        render_h2;
 }
 
 #alias {k} {render_h2};
 
-#var healthbars2[6] {<088>#######<088>}
-#var healthbars2[5] {<088>-######<088>}
-#var healthbars2[4] {<088>--#####<088>}
-#var healthbars2[3] {<088>---####<088>}
-#var healthbars2[2] {<088>----###<088>}
-#var healthbars2[1] {<088>-----##<088>}
-#var healthbars2[0] {<088>------#<088>}
+#event {MAP UPDATED VTMAP} {
+	#if {"$triggered_vmap" == "1"} {
+		render_h2;
+		#var triggered_vmap 0;
+	};
+	hpbar;
+};
+#alias {TRIGGER_VMAP} {
+	#var triggered_vmap 1;
+	#map at {1} {#map set roomsymbol a};
+};
