@@ -1,32 +1,22 @@
-#alias {popcje klawisze_funkcyjne %1} {
-	#var toload3 {${path}/%1 .tin};
-   	#replace {toload3} { } {};
-   	#read $toload3;
-	#var profile_options[klawisze_funkcyjne] {%1};
-}
 
-#alias {popcje zadania %1} {
+#nop ZADANIA;
 	#var str_zadania {%1};
 	#replace str_zadania {,} {;};
 	#list zadania create {$str_zadania};
 	#var profile_options[zadania] {%1};
-}
 
-#alias {popcje przyjaciele %1} {
+#nop PRZYJACIELE;
 	#var profile_options[przyjaciele] {%1};
 	#chat message combat {przyjaciele %1};
-};
 
-#alias {popcje wrogowie %1} {
+#nop WROGOWIE;	
 	#var profile_options[wrogowie] {%1};
 	#chat message combat {wrogowie %1};
-} {1};
 
-#alias {popcje zabijcmd %1} {
+#nop ZABIJCMD;
 	#alias zabijcmd %1;
-	#var profile_options[zabijcmd] {%1};
-}
-#alias {popcje celataku %1} {
+
+#nop CELATAKU;
 	 #switch {"%1"} {
 	 	#case {"shifttylda"} {#macro {~} {_zaznaczcel_}};
 	 	#case {"tylda"} {#macro {`} {_zaznaczcel_}};
@@ -35,11 +25,9 @@
 	 	#case {"slash"} {#macro {/} {_zaznaczcel_}};
 	 	#case {"backslash"} {#macro {\} {_zaznaczcel_}};
 	 };
-	 #var profile_options[celataku] {%1};
-}
 
-#alias {popcje celobrony %1} {
-	 #switch {"%1"} {
+#nop CELOBRONY; 
+	#switch {"%1"} {
 	 	#case {"shifttylda"} {#macro {~} {zaslon cel obrony}};
 	 	#case {"tylda"} {#macro {`} {zaslon cel obrony}};
 	 	#case {"nkl"} {#macro {[} {zaslon cel obrony}};
@@ -47,10 +35,8 @@
 	 	#case {"slash"} {#macro {/} {zaslon cel obrony}};
 	 	#case {"backslash"} {#macro {\} {zaslon cel obrony}};
 	 };
-	 #var profile_options[celobrony] {%1};
-}
 
-#alias {popcje lazik %1} {
+#nop LAZIK;
 	 #switch {"%1"} {
 	 	#case {"shifttylda"} {#macro {~} {lazik_idz}};
 	 	#case {"tylda"} {#macro {`} {lazik_idz}};
@@ -59,11 +45,8 @@
 	 	#case {"slash"} {#macro {/} {lazik_idz}};
 	 	#case {"backslash"} {#macro {\} {lazik_idz}};
 	 };
-	 #var profile_options[lazik] {%1};
-}
 
-
-#alias {popcje zdjeciezaslon %1} {
+#nop ZDJECIEZASLON;
 	 #switch {"%1"} {
 	 	#case {"shifttylda"} {#macro {~} {_niezaslaniaj_}};
 	 	#case {"tylda"} {#macro {`} {_niezaslaniaj_}};
@@ -72,11 +55,8 @@
 	 	#case {"slash"} {#macro {/} {_niezaslaniaj_}};
 	 	#case {"backslash"} {#macro {\} {_niezaslaniaj_}};
 	 };
-	 #var profile_options[zdjeciezaslon] {%1};
-	 #var profiles_zdjeciezaslon %1;
-}
 
-#alias {popcje quickbind %1} {
+#nop QUICKBIND
 	 #switch {"%1"} {
 	 	#case {"shifttylda"} {#var KEY_QB {~}};
 	 	#case {"tylda"} {#var KEY_QB {`}};
@@ -85,40 +65,6 @@
 	 	#case {"slash"} {#var KEY_QB {/}};
 	 	#case {"backslash"} {#var KEY_QB {\}};
 	 };
-	 #var profile_options[quickbind] {%1};
-}
-
-#alias {popcje custombind %1} {
-	 #switch {"%1"} {
-	 	#case {"shifttylda"} {#var KEY_QK {~}};
-	 	#case {"tylda"} {#var KEY_QK {`}};
-	 	#case {"nkl"} {#var KEY_QK {[}};
-	 	#case {"nkr"} {#var KEY_QK {]}};
-	 	#case {"slash"} {#var KEY_QK {/}};
-	 	#case {"backslash"} {#var KEY_QK {\}};
-	 };
-	 #var profile_options[custombind] {%1};
-}
-
-
-#alias {popcje %1 %2} {
-	#line substitute variables {
-		#class profile open;
-		#var profiles_%1 %2;
-		#var profile_options[%1] {%2};
-		#class profile close;
-	};
-} {8};
-
-#alias {_popcje %1 %2} {
-	#line substitute variables {
-		#class profile open;
-		#var profiles_%1 %2;
-		#var profile_options[%1] {%2};
-		#class profile close;
-	};
-} {8};
-
 
 #alias {dbb} {
 	#nop ####################################
@@ -193,9 +139,6 @@
 
 
 
-#nop PLECAK ITP;
-
-
 #alias {wy} {
 	#format inamelen {%L} {%1};
 	#if {$inamelen < 2} {
@@ -262,5 +205,4 @@
 	};	
 }
 
-#var profile_loaded 0;
 

@@ -412,3 +412,145 @@
     wez stary matowy pancerz %1;
   };
 } {1}
+
+
+#alias {dbb} {
+	#nop ####################################
+	#nop PIERWSZA BRON;
+	#if {"$ppochwa" == "uprzaz"} {
+		#if {"$pzawod" == "wks"} {powyciagnij bron z pierwszej uprzezy;gzdobadz broni};
+		#else {podobadz broni z pierwszej uprzezy};
+	};
+	#elseif {"$ppochwa" == "pochwa"} {
+		#if {"$pzawod" == "kg"} {gzdobadz szybko};
+		#else {podobadz broni z pierwszej pochwy};
+	};
+	#elseif {"$ppochwa" == "temblak"} {
+		podobadz broni z pierwszego temblaka;
+	};
+	#elseif {"$ppochwa" == "plecak"} {
+		wy bron;
+		dobadz broni;
+	};
+	#nop ####################################
+	#nop DRUGA BRON;
+	#if {"$ppochwa2" == "tarcza"} {
+		#if {"$pzawod" == "ks"} {gzzarzuc tarcze};
+		#else {zaloz tarcze};
+	};
+	#elseif {"$ppochwa2" == "pawez"} {
+		#if {"$pzawod" == "ks"} {gzzarzuc pawez};
+		#else {zaloz pawez};
+	};
+	#elseif {"$ppochwa2" == "temblak"} {
+		podobadz broni z drugiego temblaka;
+	};		
+	#elseif {"$ppochwa2" == "pochwa"} {
+		podobadz broni z drugiej pochwy;
+	}
+}
+#alias {obb} {
+	#nop ####################################
+	#nop PIERWSZA BRON;
+	#if {"$ppochwa" == "uprzaz"} {
+		#if {"$pzawod" == "wks"} {gzopusc bron;powsun bron do pierwszej uprzezy};
+		#else {powsun dobyta bron do pierwszej uprzezy};
+	};
+	#elseif {"$ppochwa" == "pochwa"} {
+		#if {"$pzawod" == "kg"} {gzprzewies dobyty miecz};
+		#else {powsun dobyta bron do pierwszej pochwy};
+	};
+	#elseif {"$ppochwa" == "temblak"} {
+		powsun bron do pierwszego temblaka;
+	};
+	#elseif {"$ppochwa" == "plecak"} {
+		opusc bron;
+		wl ja;
+	}
+	#nop ####################################
+	#nop DRUGA BRON;
+	#if {"$ppochwa2" == "tarcza"} {
+		#if {"$pzawod" == "ks"} {gzzdejmij};
+		#else {zdejmij zalozona tarcze};
+	};
+	#elseif {"$ppochwa2" == "pawez"} {
+		#if {"$profiles_zawod" == "ks"} {gzzdejmij};
+		#else {zdejmij zalozona pawez};
+	};	
+	#elseif {"$ppochwa2" == "temblak"} {
+		powsun dobyta bron do drugiego temblaka;
+	};
+	#elseif {"$ppochwa2" == "pochwa"} {
+		powsun dobyta bron do drugiej pochwy;
+	};	
+}
+
+
+
+#alias {wy} {
+	#format inamelen {%L} {%1};
+	#if {$inamelen < 2} {
+		#if {"$pplecak" == "sakwa"} {zajrzyj do zalozonej sakwy};
+		#if {"$pplecak" == "plecak"} {zajrzyj do zalozonego plecaka};
+		#if {"$pplecak" == "torba"} {zajrzyj do zalozonej torby};
+		#if {"$pplecak" == "wor"} {zajrzyj do zalozonego wora};
+	};
+	#else {
+		#if {"$pplecak" == "sakwa"} {otworz zalozona sakwe;wez %1 z zalozonej sakwy;zamknij zalozona sakwe};
+		#if {"$pplecak" == "plecak"} {otworz zalozony plecak;wez %1 z zalozonego plecaka;zamknij zalozony plecak};
+		#if {"$pplecak" == "torba"} {otworz zalozona torbe;wez %1 z zalozonej torby;zamknij zalozona torbe};
+		#if {"$pplecak" == "wor"} {otworz zalozony wor;wez %1 z zalozonego wora;zamknij zalozony wor};
+	};
+}
+#alias {wl} {
+	#if {"$pplecak" == "sakwa"} {otworz zalozona sakwe;wloz %1 do zalozonej sakwy;zamknij zalozona sakwe};
+	#if {"$pplecak" == "plecak"} {otworz zalozony plecak;wloz %1 do zalozonego plecaka;zamknij zalozony plecak};
+	#if {"$pplecak" == "torba"} {otworz zalozona torbe;wloz %1 do zalozonej torby;zamknij zalozona torbe};
+	#if {"$pplecak" == "wor"} {otworz zalozony wor;wloz %1 do zalozonego wora;zamknij zalozony wor};
+}
+#alias {sak} {wy};
+#alias {dsak} {wl};
+
+
+#alias {wym}
+{
+	#switch {"$psakiewka"}
+	{		
+		#case {"sakiewka"} {otworz swoja sakiewke;wez monety ze swojej sakiewki;zamknij swoja sakiewke;};
+		#case {"szkatulka"} {otworz swoja szkatulke;wez monety ze swojej szkatulki;zamknij swoja szkatulke;};
+		#case {"sakwa"} {otworz swoja sakwe;wez monety ze swojej sakwy;zamknij swoja sakwe;};
+		#default {
+			#switch {"$pplecak"} 
+			{
+				#case {"plecak"} {otworz zalozony plecak;wez monety z zalozonego plecaka;zamknij zalozony plecak;};
+				#case {"sakwa"} {otworz zalozona sakwe;wez monety z zalozonej sakwy;zamknij zalozona sakwe;};
+				#case {"torba"} {otworz zalozona torbe;wez monety z zalozonej torby;zamknij zalozona torbe;};
+				#case {"wor"} {otworz zalozony wor;wez monety z zalozonego wora;zamknij zalozony wor;};
+				#default {otworz zalozony plecak;wez monety z zalozonego plecaka;zamknij zalozony plecak;};
+			};
+
+		};
+	};
+}
+#alias {wlm}
+{
+	#switch {"$psakiewka"}
+	{		
+		#case {"sakiewka"} {otworz swoja sakiewke;wloz monety do swojej sakiewki;zamknij swoja sakiewke;};
+		#case {"szkatulka"} {otworz swoja szkatulke;wloz monety do swojej szkatulki;zamknij swoja szkatulke;};
+		#case {"sakwa"} {otworz swoja sakwe;wloz monety do swojej sakwy;zamknij swoja sakwe;};
+		#default {
+			#switch {"$pplecak"} 
+			{
+				#case {"plecak"} {otworz zalozony plecak;wloz monety do zalozonego plecaka;zamknij zalozony plecak;};
+				#case {"sakwa"} {otworz zalozona sakwe;wloz monety do zalozonej sakwy;zamknij zalozona sakwe;};
+				#case {"torba"} {otworz zalozona torbe;wloz monety do zalozonej torby;zamknij zalozona torbe;};
+				#case {"wor"} {otworz zalozony wor;wloz monety do zalozonego wora;zamknij zalozony wor;};
+				#default {otworz zalozony plecak;wloz monety do zalozonego plecaka;zamknij zalozony plecak;};
+			};
+
+		};
+	};	
+}
+
+

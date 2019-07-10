@@ -10,16 +10,6 @@
 #var healthbars[1] {<088>[-----${c_stan_niski}##<088>]}
 #var healthbars[0] {<088>[------<FAA><fff>#<088>]}
 
-
-#var healthbars2[6] {<088>${c_stan_wysoki}#######<088>}
-#var healthbars2[5] {<088>-${c_stan_wysoki}######<088>}
-#var healthbars2[4] {<088>--${c_stan_sredni}#####<088>}
-#var healthbars2[3] {<088>---${c_stan_sredni}####<088>}
-#var healthbars2[2] {<088>----${c_stan_niski}###<088>}
-#var healthbars2[1] {<088>-----${c_stan_niski}##<088>}
-#var healthbars2[0] {<088>------<FAA><fff>#<088>}
-
-
 #var healthbar[6] {<088>${c_stan_wysoki}#######<088>}
 #var healthbar[5] {<088>-${c_stan_wysoki}######<088>}
 #var healthbar[4] {<088>--${c_stan_sredni}#####<088>}
@@ -440,7 +430,7 @@
 
 #event {IAC SB GMCP objects.nums IAC SE}
 {
-    TRIGGER_VMAP;
+ #nop   TRIGGER_VMAP;
     #var objects_num_list_changed 1;
 	#var {obnu} {%0};
 	#foreach {$obda2[]} {bubu} {
@@ -455,7 +445,7 @@
 
 #event {IAC SB GMCP objects.data IAC SE}
 {
-  TRIGGER_VMAP;
+ #nop TRIGGER_VMAP;
   #var {obda} {%0};
   #foreach {$obda[]} {vob} {
     #foreach {$obda[$vob][]} {bubu} {
@@ -540,8 +530,15 @@
         };
 };
 
-
+#var emptyline {                                                                               };
 #alias {render_h2} {
+	#if {$r_curLineCnt < 2} {
+		#format screen_r {%R};
+  		#loop {1} {$screen_r} {bubu} {#sh {$emptyline} {-$bubu}};
+  	} {
+		#math {r_curLineCnt} {$r_curLineCnt - 1};
+  		#loop {1} {$r_curLineCnt} {bubu} {#sh {$emptyline} {-$bubu}};
+  	};
     #var r_curLineCnt {1};
 
     #list team_offenders cle;
@@ -883,7 +880,7 @@
 #alias {k} {render_h2};
 
 #event {MAP UPDATED VTMAP} {
-	#if {"$triggered_vmap" == "1"} {
+	#nop if {"$triggered_vmap" == "1"} {
 		render_h2;
 		#var triggered_vmap 0;
 	};
@@ -891,5 +888,5 @@
 };
 #alias {TRIGGER_VMAP} {
 	#var triggered_vmap 1;
-	#map at {1} {#map set roomsymbol a};
+	#map at {1} {#nop};
 };

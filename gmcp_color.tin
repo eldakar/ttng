@@ -251,6 +251,8 @@
 #var c_stan_sredni {<$c_ansi_map[$CHAR_COLORS[medium_state]]>};
 #var c_stan_wysoki {<$c_ansi_map[$CHAR_COLORS[high_state]]>};
 #var c_mana {<$c_ansi_map[$CHAR_COLORS[defence_target]]>};
+#var c_noob {<$c_ansi_map[$CHAR_COLORS[noob]]>};
+#var c_talk {<$c_ansi_map[$CHAR_COLORS[talk]]>};
 #var c_wrog {<$c_ansi_map[$CHAR_COLORS[enemy]]>};
 #var c_cel_ataku {<788><$c_ansi_map[$CHAR_COLORS[attack_target]]>};
 #var c_wrog_lokacji {<$c_ansi_map[$CHAR_COLORS[defence_target]]>};
@@ -286,3 +288,16 @@
 #var c_rooms[knowledge] {<078>};
 #var c_rooms[training] {<038>};
 #var c_rooms[storage] {<118><fca>};
+
+
+
+
+#var healthbars2[6] {<088>${c_stan_wysoki}#######<088>}
+#var healthbars2[5] {<088>-${c_stan_wysoki}######<088>}
+#var healthbars2[4] {<088>--${c_stan_sredni}#####<088>}
+#var healthbars2[3] {<088>---${c_stan_sredni}####<088>}
+#var healthbars2[2] {<088>----${c_stan_niski}###<088>}
+#var healthbars2[1] {<088>-----${c_stan_niski}##<088>}
+#var healthbars2[0] {<088>------<FAA><fff>#<088>}
+
+

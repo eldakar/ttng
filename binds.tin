@@ -2,14 +2,25 @@
 #var KEY_F2 {\eOQ};
 #var KEY_F3 {\eOR};
 #var KEY_F4 {\eOS};
-#var KEY_F5 {\e[15~};
-#var KEY_F6 {\e[17~};
-#var KEY_F7 {\e[18~};
-#var KEY_F8 {\e[19~};
-#var KEY_F9 {\e[20~};
-#var KEY_F10 {\e[21~};
-#var KEY_F11 {\e[23~};
-#var KEY_F12 {\e[24~};
+
+#var KEY_F5_A {\e[15~};
+#var KEY_F6_A {\e[17~};
+#var KEY_F7_A {\e[18~};
+#var KEY_F8_A {\e[19~};
+#var KEY_F9_A {\e[20~};
+#var KEY_F10_A {\e[21~};
+#var KEY_F11_A {\e[23~};
+#var KEY_F12_A {\e[24~};
+
+#var KEY_F5_B {\eOT};
+#var KEY_F6_B {\eOU};
+#var KEY_F7_B {\eOV};
+#var KEY_F8_B {\eOW};
+#var KEY_F9_B {\eOX};
+#var KEY_F10_B {\eOY};
+#var KEY_F11_B {\eOZ};
+#var KEY_F12_B {\eO[};
+
 #var KEY_SF1 {\e[1;2P};
 #var KEY_SF2 {\e[1;2Q};
 #var KEY_SF3 {\e[1;2R};
@@ -22,6 +33,7 @@
 #var KEY_SF10 {\e[21;2~};
 #var KEY_SF11 {\e[23;2~};
 #var KEY_SF12 {\e[24;2~};
+
 #var KEY_PAD_N {\eOx};
 #var KEY_PAD_S {\eOr};
 #var KEY_PAD_E {\eOv};
@@ -30,21 +42,9 @@
 #var KEY_PAD_NE {\eOy};
 #var KEY_PAD_SW {\eOq};
 #var KEY_PAD_SE {\eOs};
-#var KEY_PAD_U {\eOm};
-#var KEY_PAD_D {\eOk};
-#var KEY_PAD_MIDDLE {\eOu};
-#var KEY_WARMODE_1 {§};
-#var KEY_LEFT_HAND {\ez}
-#var KEY_RIGHT_HAND {\ex}
-#var KEY_CELATAKU {[};
-#var KEY_PRZELAM {[};
-#var KEY_WYJDZ {]};
-#var KEY_PRZESTAN {]};
-#var KEY_CELATAKU2 {\eOo};
-#var KEY_PRZELAM2 {\eOo};
-#var KEY_WYJDZ2 {\eOj};
-#var KEY_PRZESTAN2 {\eOj};
-#var KEY_QB {`};
 
-#read $path/macros.tin;
+#var KEY_PAD_U_A {\eOm};
+#var KEY_PAD_D_A {\eOk};
+#var KEY_PAD_U_B {\eOu};
+#var KEY_PAD_D_B {\eOp};
 

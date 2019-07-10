@@ -15,7 +15,8 @@
     #read alias.tin;		#nop Aliasy do obslugi glownych funkcji;
     #read mapevents.tin;	#nop Eventy na pokojach;
     #read binds.tin;		#nop Kody klawiszy;
-    #read kolorki.tin;		#nop Kolorowanie;
+    #read exp.tin;		#nop Liczenie expo;
+    #read ttexp.tin;		#nop Regexy na liczenie expo;
 
     #read profiles.tin;
 

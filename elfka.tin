@@ -1,0 +1,15 @@
+#var elfka_nazwa {${c_noob}Duch zakapturzonej eterycznej elfki<088>};
+#var elfka_mowi {$elfka_nazwa nuci melodyjnie do ciebie:${c_talk}};
+#event {MAP ENTER ROOM 14130} {
+	#echo {$elfka_nazwa unosi sie w powietrzu.};
+};
+
+#alias {zapytaj ducha o pomoc$} {
+	#delay {1} {#echo {$elfka_nazwa kiwa glowa nieobecnie.}};
+	#delay {2.5} {#echo {$elfka_mowi Moge Ci opowiedziec nastepujace historie:}};
+	#delay {3.5} {#echo {$elfka_mowi Komendy, maper, ziola, walka.}};
+};
+
+#alias {zapytaj ducha o %*$} {
+	#delay {1} {#echo {$elfka_nazwa kiwa przeczaco glowa.}};
+} {8};
