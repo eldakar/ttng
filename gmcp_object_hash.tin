@@ -18,6 +18,33 @@
 #var healthbar[1] {<088>-----${c_stan_niski}##<088>}
 #var healthbar[0] {<088>------<FAA><fff>#<088>}
 
+#var gildie[CN] {n};
+#var gildie[CKN] {n};
+#var gildie[ES] {n};
+#var gildie[GL] {n};
+#var gildie[GP] {n};
+#var gildie[KG] {n};
+#var gildie[KGKS] {n};
+#var gildie[KM] {n};
+#var gildie[KS] {n};
+#var gildie[LE] {n};
+#var gildie[MC] {n};
+#var gildie[NA] {n}; #nop KG;
+#var gildie[NPC] {n};
+#var gildie[OHM] {n};
+#var gildie[OK] {n};
+#var gildie[OS] {n};
+#var gildie[PE] {n};
+#var gildie[RA] {n};
+#var gildie[SC] {n};
+#var gildie[SGW] {n};
+#var gildie[TW] {n}; #nop LE;
+#var gildie[VR] {n};
+#var gildie[WKS] {n};
+#var gildie[ZH] {n};
+#var gildie[ZS] {n};
+#var gildie[ZT] {n};
+
 #alias {update_party}
 {
     #var team_index {1};
@@ -476,6 +503,7 @@
 
             #var test {$duch[$dudu][desc]};
             #replace test { } {_};
+            #var test {${test}_};
             #line {substitute} {variables} {
         #nop ENEMIES;
                 #if {"$gildie[$postac[$test][gildia]]" == "w"} {
@@ -491,25 +519,36 @@
             #var imietype {};
             #var tmpim {};
             #var confirmed {};
+	    #var tmpimietype 0;
             #if {$gncheck > 1} {
                 #var confirmed {$postac[$postac[$test][imie]][cached]};
                 #var tmpim $postac[$test][imie];
-                #var tmpimie {$gildie[$postac[$test][gildia]] $postac[$test][gildia] $postac[$test][imie] $test};
+                #var tmpimie {$gildie[$postac[$test][gildia]] $postac[$test][gildia] $postac[$test][imie] $duch[dudu][desc]};
+		#var tmpimietype 1;
             } {
                 #var confirmed {$postac[$test][cached]};
                 #var tmpim $test;
                 #var tmpimie {$gildie[$postac[$test][gildia]] $postac[$test][gildia] $test};
+		#var tmpimietype 2;
             };
             #if {"$confirmed" == "true"} {
-                #sh {0} {0};
+                #nop;
             } {
                 #if {$excheck > 0} {
                     #var postac[$tmpim][cached] {true};
 
                     #if {"$duch[$dudu][avatar]" == "true"} {
-                        #echo {0} {0};
+                        #nop;
                     } {
-                        #nop chat message all {POSTAC $tmpimie};
+			#if {"$tmpimietype" == "1"} {
+				#nop;
+			};
+			#if {"$tmpimietype" == "2"} {
+				#line substitute variables {
+				#sub {$duch[$dudu][desc]} {$duch[$dudu][desc]($postac[$test][gildia])};
+				#high {$duch[$dudu][desc]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
+				};
+			};
                     }
                 };
             };
@@ -713,7 +752,8 @@
         #nop TO REDO;
         #var wrog_sugerowany $wrog_najslabszy;
         #var duch[$wrog_najslabszy][bot] {SA1};
-        #nop chat message all {SA1 $wrog_najslabszy};
+
+	#macro {$KEY_F1} {_zabij_ ob_$wrog_najslabszy};
     };
 }
 
@@ -783,6 +823,9 @@
         #var duch[$team_najslabszy][bot] {SO1};
         #var team_sugerowany $team_najslabszy;
         #nop chat message all {SO1 $team_najslabszy};
+	#macro {$KEY_F2} {
+		zaslon ob_$team_najslabszy;
+	};
     };
 }
 
@@ -874,7 +917,9 @@
 
         #math {negativecounter} {$negativecounter + 1};
     };
-        render_h2;
+	#if {$unfolded > 0} {
+        	render_h2;
+	};
 }
 
 #alias {k} {render_h2};
@@ -890,3 +935,51 @@
 	#var triggered_vmap 1;
 	#map at {1} {#nop};
 };
+
+#action {Zapamietane przez ciebie imiona to %* i %2.} {
+	#list przedstawieni clear;
+	#var str_przedstawieni {%1};
+	#replace str_przedstawieni {{, | i }} {;};
+	#list przedstawieni create {$str_przedstawieni};
+
+	#foreach {$przedstawieni[]} {przedstawiony} {
+
+			#var test {$przedstawieni[$przedstawiony]};
+			#var test {${test}_};
+
+			#format {excheck} {%L} {$postac[$test][gildia]};
+
+			#if {$excheck > 1} {
+    				#line substitute variables {
+        				#sub {$przedstawieni[$przedstawiony]} {$przedstawieni[$przedstawiony]($postac[$test][gildia])};
+				        #high {$przedstawieni[$przedstawiony]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
+				};
+			};
+	};
+};
+
+
+#action {Osoby, ktore zostaly ci ostatnio przedstawione, to %1 i %2.} {
+	#list przedstawieni clear;
+	#var str_przedstawieni {%1};
+	#replace str_przedstawieni {{, | i }} {;};
+	#list przedstawieni create {$str_przedstawieni};
+
+	#foreach {$przedstawieni[]} {przedstawiony} {
+
+			#var test {$przedstawieni[$przedstawiony]};
+			#var test {${test}_};
+
+			#format {excheck} {%L} {$postac[$test][gildia]};
+
+			#if {$excheck > 1} {
+    				#line substitute variables {
+        				#sub {$przedstawieni[$przedstawiony]} {$przedstawieni[$przedstawiony]($postac[$test][gildia])};
+				        #high {$przedstawieni[$przedstawiony]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
+				};
+			};
+	};
+};
+
+
+

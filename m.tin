@@ -18,7 +18,8 @@
     #read exp.tin;		#nop Liczenie expo;
     #read ttexp.tin;		#nop Regexy na liczenie expo;
 
-    #read profiles.tin;
+    #read qbs.tin;		#nop Bindy na podazanie za kims;
+    #read tescik2.tin;
 
     #config {debug telnet} {off};
     #config {COMMAND ECHO} {off};

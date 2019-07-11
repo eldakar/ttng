@@ -300,4 +300,7 @@
 #var healthbars2[1] {<088>-----${c_stan_niski}##<088>}
 #var healthbars2[0] {<088>------<FAA><fff>#<088>}
 
+#var c_char_h_mode[w] {$c_wrog_gildii};
+#var c_char_h_mode[n] {<$c_ansi_map[$CHAR_COLORS[other_char]]>};
+#var c_char_h_mode[p] {<$c_ansi_map[$CHAR_COLORS[team_member]]>};
 

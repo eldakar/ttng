@@ -14,6 +14,8 @@
 		#if {$profile_size < 1} {
 			#class profile read profile_default;
 			#class profile write $AVATAR_NAME;
+		} {
+			pupdate;
 		};
 	};
 };
@@ -62,8 +64,19 @@
 	#var profile_options[zadania] {%1};
 
 #nop PRZYJACIELE;
+	#local tmp {$pprzyjaciele};
+	#replace tmp {,} {;};
+	#list przyjacieleDB create {$tmp};
+	#foreach {$przyjacieleDB[]} {pdb} {
+		#var gildie[$przyjacieleDB[$pdb]] {p}; 
+	};
 #nop WROGOWIE;	
-
+	#local tmp {$pwrogowie};
+	#replace tmp {,} {;};
+	#list wrogowieDB create {$tmp};
+	#foreach {$wrogowieDB[]} {wdb} {
+		#var gildie[$wrogowieDB[$wdb]] {w}; 
+	};
 #nop ZABIJCMD;
 	#alias zabijcmd $pzabijcmd;
 
