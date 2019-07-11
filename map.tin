@@ -169,8 +169,8 @@
     #nop funkcja szukajaca;
     #nop map list <name> <exits> <desc> <area> <note> <terrain>;
     #nop ##################################;
-#var current_room_short_desc {unknown};
-#var current_room_exits {unknown};
+#var current_room_short_desc {unknown2};
+#var current_room_exits {unknown2};
 #alias {/f$} {findme} {1}?; 
 #nop alias findme {#echo a};
 #alias findme {
@@ -313,6 +313,6 @@
 #nop WYJATKI I SMIECI;
 #nop #################################################################################;
 #action {Ciemne miejsce.} {
-    #var current_room_short_desc {unknown};
+    #var current_room_short_desc {unknown2};
     qr zapal lampe;
 };

@@ -48,3 +48,6 @@
 #var KEY_PAD_U_B {\eOu};
 #var KEY_PAD_D_B {\eOp};
 
+#macro {\e[1;2A} {#buffer up};		#nop shift-kursor-gora;
+#macro {\e[1;2B} {#buffer down};	#nop shift-kursor-dol;
+#macro {\e[1;2P} {FOLDER};		#nop shift-f1;

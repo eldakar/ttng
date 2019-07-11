@@ -499,7 +499,7 @@
             #var duch[$dudu][shown] {0};
             #if {"$duch[$dudu][avatar]" == "true"} {
                 #var avatarid {$dudu};
-            };
+            } {
 
             #var test {$duch[$dudu][desc]};
             #replace test { } {_};
@@ -542,6 +542,11 @@
                     } {
 			#if {"$tmpimietype" == "1"} {
 				#nop;
+				#var dudu2 {%n} {$duch[$dudu][desc]};
+				#line substitute variables {
+				#sub {$duch[$dudu][desc]} {$duch[$dudu][desc]($postac[$test][gildia]};
+				#sub {$dudu2} {$dudu2($postac[$test][gildia]};
+				};
 			};
 			#if {"$tmpimietype" == "2"} {
 				#line substitute variables {
@@ -566,14 +571,14 @@
             #var rowmap[$rcnt] {$dudu};
             #math {localcnt} {$localcnt + 1};
 
-        };
+	};
+    };
 };
 
 #var emptyline {                                                                               };
 #alias {render_h2} {
 	#if {$r_curLineCnt < 2} {
-		#format screen_r {%R};
-  		#loop {1} {$screen_r} {bubu} {#sh {$emptyline} {-$bubu}};
+  		#loop {1} {$screen_r_half} {bubu} {#sh {$emptyline} {-$bubu}};
   	} {
 		#math {r_curLineCnt} {$r_curLineCnt - 1};
   		#loop {1} {$r_curLineCnt} {bubu} {#sh {$emptyline} {-$bubu}};

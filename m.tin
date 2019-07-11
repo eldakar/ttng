@@ -8,13 +8,13 @@
     #read gmcp_object_hash.tin;
     #read ttfollow.tin;      	#nop Podazanie za kims;
     #read ttundo.tin;        	#nop Blokery na nieudany ruch;
-    #read mapevents2.tin;   	#nop Pokoje skryptowane recznie - labirynty;
-    #read teleporty.tin;     	#nop Triggery na teleporty;
+    #nop read mapevents2.tin;   	#nop Pokoje skryptowane recznie - labirynty;
+    #nop read teleporty.tin;     	#nop Triggery na teleporty;
     #read ttfreeze.tin;      	#nop Komendy blokujace ruch (wspinaczka itp);
     #read ttsync.tin;        	#nop Eventy 'gubiace' mapke celowo;
     #read alias.tin;		#nop Aliasy do obslugi glownych funkcji;
     #read mapevents.tin;	#nop Eventy na pokojach;
-    #read binds.tin;		#nop Kody klawiszy;
+    #read macros.tin;		#nop Kody klawiszy;
     #read exp.tin;		#nop Liczenie expo;
     #read ttexp.tin;		#nop Regexy na liczenie expo;
 
@@ -24,9 +24,6 @@
     #config {debug telnet} {off};
     #config {COMMAND ECHO} {off};
     #config {mouse} {on};
-    #macro {\e[1;2A} {#buffer up};	#nop shift-kursor-gora;
-    #macro {\e[1;2B} {#buffer down};	#nop shift-kursor-dol;
-    #macro {\e[1;2P} {FOLDER};		#nop shift-f1;
 };
 
 #event {SESSION CONNECTED} {
