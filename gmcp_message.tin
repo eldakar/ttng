@@ -88,7 +88,7 @@
 			#sh ${outputtext};
 
 			#ticker {POWALCE} {
-#nop qb otul sie plaszczem;
+				qb otul sie plaszczem;
 				#unticker {POWALCE};
 			} {35};
 		};
@@ -103,7 +103,7 @@
 			#sh ${outputtext};
 			#unticker {POWALCE};
 			#ticker {POWALCE} {
-#nop qb otul sie plaszczem;
+				qb otul sie plaszczem;
 				#unticker {POWALCE};
 			} {35};
 		};	
@@ -116,6 +116,5 @@
 	#if {"$MAILMSG[unreceived]" == "true"} {dzwiek_poczta;#var pr_poczta {<378>${c_stan_niski}  <088>};}; 	#nop nie odebrales, na czerwono;
 	#if {"$MAILMSG[unread]" == "true"} {dzwiek_poczta;#var pr_poczta {<378>${c_stan_sredni}  <088>};};		#nop nie przeczytales na zolto;
 	#if {"$MAILMSG[unsent]" == "true"} {#var pr_poczta {<378>${c_stan_wysoki}  <088>};};		#nop nie wyslales, zielono?;
-#echo {<118>hpbar<088>};
 }
 

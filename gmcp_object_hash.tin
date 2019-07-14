@@ -184,11 +184,11 @@
             #line substitute {variables} {
                 #alias z$indexchar {zaslon ob_$team[$team_index][tag];#if {"$profiles_zdjeciezaslon" == "auto"} {przestan zaslaniac;}};
             };
-            #line substitute {variables} {#alias wz${indexchar} {gzwycofaj sie za ob_$team[$team_index][tag];#if {"$profiles_zdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+            #line substitute {variables} {#alias wz${indexchar} {gzwycofaj sie za ob_$team[$team_index][tag];#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
 
-            #line substitute {variables} {#alias z${indexchar}2 {opcje grupa 2;zaslon ob_$team[$team_index][tag];opcje grupa 1;#if {"$profiles_zdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-            #line substitute {variables} {#alias z${indexchar}3 {opcje grupa 3;zaslon ob_$team[$team_index][tag];opcje grupa 1;#if {"$profiles_zdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-            #line substitute {variables} {#alias z${indexchar}4 {opcje grupa 4;zaslon ob_$team[$team_index][tag];opcje grupa 1;#if {"$profiles_zdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+            #line substitute {variables} {#alias z${indexchar}2 {opcje grupa 2;zaslon ob_$team[$team_index][tag];opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+            #line substitute {variables} {#alias z${indexchar}3 {opcje grupa 3;zaslon ob_$team[$team_index][tag];opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+            #line substitute {variables} {#alias z${indexchar}4 {opcje grupa 4;zaslon ob_$team[$team_index][tag];opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
             #line substitute {variables} {#alias macro_$$team_bind_index {zaslon ob_$team[$team_index][tag]}};
             #math {team_index} {$team_index + 1};
             #math {team_bind_index} {$team_bind_index + 1};
@@ -575,7 +575,7 @@
     };
 };
 
-#var emptyline {                                                                               };
+#var emptyline {                                                                                           };
 #alias {render_h2} {
 	#if {$r_curLineCnt < 2} {
   		#loop {1} {$screen_r_half} {bubu} {#sh {$emptyline} {-$bubu}};
@@ -649,7 +649,7 @@
     #foreach {$wrogi[]} {to} {
         #if {$duch[$wrogi[$to]][shown] < 1} {
         #nop sh {                                            $duch[$wrogi[$to]][bar][orc]};
-            #sh {                                            $duch[$wrogi[$to]][bar][orc]} {-$r_curLineCnt};
+            #sh {                                               $duch[$wrogi[$to]][bar][orc]} {-$r_curLineCnt};
             #math r_curLineCnt {$r_curLineCnt + 1};
             #var duch[$wrogi[$to]][shown] {1};
         };
@@ -672,7 +672,7 @@
     #foreach {$duch[]} {wr} {
         #if {$duch[$wr][shown] < 1} {
         #nop sh {                                            $duch[$wr][bar][orc]};
-            #sh {                                            $duch[$wr][bar][orc]} {-$r_curLineCnt};
+            #sh {                                              $duch[$wr][bar][orc]} {-$r_curLineCnt};
             #math r_curLineCnt {$r_curLineCnt + 1};
             #var duch[$wr][shown] {1};
         };
@@ -830,6 +830,9 @@
         #nop chat message all {SO1 $team_najslabszy};
 	#macro {$KEY_F2} {
 		zaslon ob_$team_najslabszy;
+        #if {"$pzdjeciezaslon" == "auto"} {
+            przestan zaslaniac;
+        };
 	};
     };
 }
