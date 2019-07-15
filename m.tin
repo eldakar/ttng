@@ -22,6 +22,8 @@
     #read tescik2.tin;
 
     #read korsarze.tin;		#nop Pirackie skrypty;
+    #read brain.tin;		#nop Pirackie skrypty 2 - mozg;
+
     #read statki.tin;		#nop Obsluga statkow;
 
     #config {debug telnet} {off};	#nop debug;
