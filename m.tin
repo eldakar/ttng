@@ -16,14 +16,12 @@
     #read mapevents.tin;	#nop Eventy na pokojach;
     #read macros.tin;		#nop Kody klawiszy;
     #read exp.tin;		#nop Liczenie expo;
+    #read oceny.tin;        #nop Oceny zbroi i broni;
     #read ttexp.tin;		#nop Regexy na liczenie expo;
-
     #read qbs.tin;		#nop Bindy na podazanie za kims;
     #read tescik2.tin;
-
     #read korsarze.tin;		#nop Pirackie skrypty;
     #read brain.tin;		#nop Pirackie skrypty 2 - mozg;
-
     #read statki.tin;		#nop Obsluga statkow;
 
     #config {debug telnet} {off};	#nop debug;

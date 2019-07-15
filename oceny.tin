@@ -1,0 +1,90 @@
+#nop ocenazbroi.tin
+#nop Na podstawie statow zbroi dodaje dodatkowy wiersz z informacja
+
+#nop niezle przed obrazeniami klutymi i obuchowymi oraz dosc dobrze przed cietymi.;
+
+#action {jak na %1 chron{i|ia} {on|ona|one} %2 przed obrazeniami %3 i %4 oraz %5 przed %6.}{
+#var {jakosc1}{@jakazbroja{%2}};
+#var {jakosc2}{@jakazbroja{%5}};
+#echo {<dee>%1:<088> %3: $jakosc1<088>, %4: $jakosc1<088>, %6: $jakosc2<088>.}
+}
+
+#nop dobrze przed obrazeniami klutymi, cietymi i obuchowymi;
+#action {jak na %1 chron{i|ia} {on|ona|one} %2 przed obrazeniami %3, %4 przed %5 i %6 przed %7.}{
+#var {jakosc1}{@jakazbroja{%2}};
+#var {jakosc2}{@jakazbroja{%4}};
+#var {jakosc3}{@jakazbroja{%6}};
+#echo {<dee>%1:<088> %3: $jakosc1<088>, %5: $jakosc2<088>, %7: $jakosc3<088>.}
+}
+
+#nop jak na ciezka zbroje chroni on dosc dobrze przed obrazeniami klutymi, cietymi i obuchowymi.;
+#action {jak na %1 chron{i|ia} {on|ona|one} %2 przed obrazeniami klutymi, cietymi i obuchowymi.}{
+#var {jakosc}{@jakazbroja{%2}};
+#echo {<dee>%1:<088> cietymi: $jakosc<088>, klutymi: $jakosc<088>, obuchowymi: $jakosc<088>.}
+}
+
+#function {jakazbroja}{
+  #var {obr}{%1};
+  #replace {obr}{wyjatkowo zle}{${c_stan_niski}1};
+  #replace {obr}{bardzo zle}{${c_stan_niski}2};
+  #replace {obr}{niezle}{${c_stan_niski}3};
+  #replace {obr}{zle}{${c_stan_niski}4};
+  #replace {obr}{bardzo kiepsko}{${c_stan_niski}5};
+  #replace {obr}{kiepsko}{${c_stan_sredni}6};
+  #replace {obr}{przyzwoicie}{${c_stan_sredni}7};
+  #replace {obr}{dosc dobrze}{${c_stan_sredni}8};
+  #replace {obr}{bardzo dobrze}{${c_stan_sredni}9};
+  #replace {obr}{dobrze}{${c_stan_wysoki}10};
+  #replace {obr}{doskonale}{${c_stan_wysoki}11};
+  #replace {obr}{perfekcyjnie}{${c_stan_wysoki}12};
+
+  #return $obr
+}
+
+#function {jakwywazona}{
+  #var {obr}{%1};
+  #replace {obr}{zle}{${c_stan_niski}3};
+  #replace {obr}{kiepsko}{${c_stan_niski}5};
+  #replace {obr}{dobrze}{${c_stan_sredni}10}; 
+  #replace {obr}{wyjatkowo zle}{${c_stan_niski}1};
+  #replace {obr}{bardzo zle}{${c_stan_niski}2};
+  #replace {obr}{bardzo kiepsko}{${c_stan_niski}4};
+  #replace {obr}{przyzwoicie}{${c_stan_niski}6};
+  #replace {obr}{srednio}{${c_stan_sredni}7};
+  #replace {obr}{niezle}{${c_stan_sredni}8};
+  #replace {obr}{bardzo dobrze}{${c_stan_wysoki}11};
+  #replace {obr}{dosc dobrze}{${c_stan_sredni}9};
+  #replace {obr}{doskonale}{${c_stan_wysoki}12};
+  #replace {obr}{perfekcyjnie}{${c_stan_wysoki}13};  
+  #replace {obr}{genialnie}{${c_stan_wysoki}14};  
+
+  #return $obr
+}
+
+
+
+#function {jakskuteczna} {
+  #var {obr}{%1};
+  #replace {obr}{kompletnie nieskuteczn}{${c_stan_niski}1};
+  #replace {obr}{strasznie nieskuteczn}{${c_stan_niski}2};
+  #replace {obr}{bardzo nieskuteczn}{${c_stan_niski}3};
+  #replace {obr}{raczej nieskuteczn}{${c_stan_niski}4};
+  #replace {obr}{malo skuteczn}{${c_stan_niski}5};
+  #replace {obr}{niezbyt skuteczn}{${c_stan_niski}6};
+  #replace {obr}{raczej skuteczn}{${c_stan_sredni}7};
+  #replace {obr}{dosyc skuteczn}{${c_stan_sredni}8};
+  #replace {obr}{calkiem skuteczn}{${c_stan_sredni}9};
+  #replace {obr}{bardzo skuteczn}{${c_stan_sredni}10};
+  #replace {obr}{niezwykle skuteczn}{${c_stan_wysoki}11};
+  #replace {obr}{wyjatkowo skuteczn}{${c_stan_wysoki}12};
+  #replace {obr}{zabojczo skuteczn}{${c_stan_wysoki}13};
+  #replace {obr}{fantastycznie skuteczn}{${c_stan_wysoki}14};  
+
+  #return $obr;
+}
+
+#action {jak na bron %1 jest {on|ona} %3 i %4.} {
+  #var jakosc1 {@jakwywazona{%3}};
+  #var jakosc2 {@jakskuteczna{%4}};
+  #echo {<dee>bron %1:<088> wywazenie: $jakosc1<088>, skutecznosc: $jakosc2<088>.};
+}

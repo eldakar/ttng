@@ -418,7 +418,7 @@
 	#nop ####################################
 	#nop PIERWSZA BRON;
 	#if {"$ppochwa" == "uprzaz"} {
-		#if {"$pzawod" == "wks"} {powyciagnij bron z pierwszej uprzezy;gzdobadz broni};
+		#if {"$pzawod" == "wks"} {powyciagnij bron z pierwszej uprzezy;gzdobadz jej};
 		#else {podobadz broni z pierwszej uprzezy};
 	};
 	#elseif {"$ppochwa" == "pochwa"} {
@@ -453,7 +453,7 @@
 	#nop ####################################
 	#nop PIERWSZA BRON;
 	#if {"$ppochwa" == "uprzaz"} {
-		#if {"$pzawod" == "wks"} {gzopusc bron;powsun bron do pierwszej uprzezy};
+		#if {"$pzawod" == "wks"} {gzopusc bron;powsun ja do pierwszej uprzezy};
 		#else {powsun dobyta bron do pierwszej uprzezy};
 	};
 	#elseif {"$ppochwa" == "pochwa"} {

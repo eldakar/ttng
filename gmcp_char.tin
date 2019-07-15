@@ -20,7 +20,7 @@
 	};
 };
 
-#alias {p{klawisze|zadania|przyjaciele|wrogowie|zabijcmd|celataku|celobrony|lazik|zdjeciezaslon|quickbind|pochwa|pochwa2|zawod|plecak|sakiewka|zbieranie|wskazywanie} %+} {
+#alias {p{klawisze|zadania|przyjaciele|wrogowie|zabijcmd|celataku|celobrony|lazik|zdjeciezaslon|quickbind|pochwa|pochwa2|zawod|plecak|sakiewka|zbieranie|wskazywanie|brainip|brainport|chatname} %+} {
 	#line substitute variables {
 		#class profile open;
 		#var p%1 {%2};
@@ -57,6 +57,17 @@
 
 
 #alias {pupdate} {
+#nop BRAIN;
+	#if {"$pbrainip" <> ""} {
+		#chat init;
+		#chat call $pbrainip $pbrainport;
+	};
+#nop CHAT;
+	#if {"$pchatname" <> ""} {
+		#line substitute variables {
+			#chat name $pchatname;
+		};
+	};
 #nop ZADANIA;
 	#var str_zadania {$pzadania};
 	#replace str_zadania {,} {;};
