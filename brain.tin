@@ -3,33 +3,40 @@
 #nop #################################################################################;
 #action {brain chats to everyone, 'MCREATE %1 %2'} {
     #map at {%1} {#map dig %2};
+    #line gag;
 } {1};
 
 #action {brain chats to everyone, 'MARK %d %w'} {
     #map at {%1} {#map set roomarea %2};
+	#line gag;
 } {1};
 
 #action {brain chats to everyone, 'MARK %d %w %*'} {
     #map at {%1} {#map set roomarea %2};
     #map at {%1} {#map set roomnote %3};
+	#line gag;
 } {1};
 
 #action {brain chats to everyone, 'DEL %1 %2'} {
     #map at {%1} {#map del %2};
+	#line gag;
 } {1};
 
 #action {brain chats to everyone, 'NOTE %1 %*'} {
     #map at {%1} {#map set roomsymbol {<178>i<088>}};
+	#line gag;
 } {1};
 
 #action {brain chats to everyone, 'EVENT %d %*'} {
     #map at {%1} {#map set roomsymbol {<168>@<088>}};
     #event {MAP ENTER ROOM $tmproomvnum} {QB %2};
+	#line gag;
 } {1};
 
 #action {brain chats to everyone, 'COMMAND %d %*'} {
     #map at {%1} {#map set roomsymbol {<138>E<088>}};
     #event {MAP ENTER ROOM $tmproomvnum} {%2};
+	#line gag;
 } {1};
 
 #action {brain chats to everyone, 'ROOMSHORT %d %*'} {
@@ -37,6 +44,7 @@
         #map set roomdesc {%2};
         #chat message mapka {ROOMSHORT %1};
     };
+	#line gag;
 };
 
 #action {brain chats to everyone, 'ROOMEXITS %d %*'} {
@@ -44,24 +52,28 @@
         #map set roomname {%2};
         #chat message mapka {ROOMEXITS %1};
     };
+	#line gag;
 };
 
 #action {brain chats to everyone, 'NAME %d %*'} {
     #map at {%1} {
         #map set roomnote {%2};
     };
+	#line gag;
 }
 
 #action {brain chats to everyone, 'HIDE %d %w'} {
     #map at {%1} {
         #line substitute variables {#map exitflag %2 hide on};
     };
+	#line gag;
 }
 
 #action {brain chats to everyone, 'UNHIDE %d %w'} {
     #map at {%1} {
         #line substitute variables {#map exitflag %2 hide off};
     };
+	#line gag;
 };
 
 #action {brain chats to everyone, 'LINKB %d %w %d'} {
@@ -70,6 +82,7 @@
             #map link %2 %3 both;
         };
     };
+	#line gag;
 };
 
 #action {brain chats to everyone, 'UNLINKB %d %w'} {
@@ -78,6 +91,7 @@
             #map unlink %2 both;            
         };
     };
+	#line gag;
 };
 
 #action {brain chats to everyone, 'LINK %d %w %d'} {
@@ -86,6 +100,7 @@
             #map link %2 %3;
         };
     };
+	#line gag;
 };
 
 #action {brain chats to everyone, 'UNLINK %d %w'} {
@@ -94,6 +109,7 @@
             #map unlink %2;         
         };
     };
+	#line gag;
 };
 
 #nop MEXIT INFO;
@@ -106,10 +122,12 @@
         #map exit %2 command {%4};
         #map link {%4} %3;
     };
+	#line gag;
 };
 
 #action {brain chats to everyone, 'COLOR %d %S'} {
     #nop;
+	#line gag;
 };
 
 #alias {show_ponged_error} {
@@ -184,10 +202,6 @@
     #map get roomvnum voom;
     #chat message brain {UNHIDE $voom %1};
     } {show_ponged_error};
-} {1};
-
-#alias {/map$} {
-    man_read mapka;
 } {1};
 
 #alias {/map dig %w} {
