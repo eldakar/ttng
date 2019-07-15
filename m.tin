@@ -2,10 +2,10 @@
     #ses rpg arkadia.rpg.pl 23;
 
     #map read mapkatt.map;
-    #read map.tin;
-    #read gmcp_message.tin;
-    #read gmcp_char.tin;
-    #read gmcp_object_hash.tin;
+    #read map.tin;		#nop Obsluga mapy;
+    #read gmcp_message.tin;	#nop GMCP;
+    #read gmcp_char.tin;	#nop GMCP;
+    #read gmcp_object_hash.tin;	#nop GMCP;
     #read ttfollow.tin;      	#nop Podazanie za kims;
     #read ttundo.tin;        	#nop Blokery na nieudany ruch;
     #nop read mapevents2.tin;   	#nop Pokoje skryptowane recznie - labirynty;
@@ -21,9 +21,12 @@
     #read qbs.tin;		#nop Bindy na podazanie za kims;
     #read tescik2.tin;
 
-    #config {debug telnet} {off};
-    #config {COMMAND ECHO} {off};
-    #config {mouse} {on};
+    #read korsarze.tin;		#nop Pirackie skrypty;
+    #read statki.tin;		#nop Obsluga statkow;
+
+    #config {debug telnet} {off};	#nop debug;
+    #config {COMMAND ECHO} {off};	#nop wyswietlanie komend;
+    #config {mouse} {on};		#nop obsluga myszy
 };
 
 #event {SESSION CONNECTED} {
