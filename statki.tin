@@ -1,0 +1,187 @@
+#var na_statku 0;
+
+#nop DYLIZANSE;
+
+#alias {DYLIZANS_IN} {
+	#if {$frozen_status == 1} {przestan;};
+	wym;wsiadz do dylizansu;wlm;
+};
+#alias {STATEK_IN}
+{	#if {$frozen_status == 1} {przestan;};
+	wym;kup bilet;wsiadz na statek;wlm;
+};
+#alias {STATEK_OUT}
+{
+	#if {$frozen_status == 1} {przestan;};
+	#var na_statku 0;
+	#var MAPPER_SYNC {0};
+	zejdz ze statku;
+};
+
+#action {Powoli pojazd zaczyna tracic predkosc, by po chwili zatrzymac sie.}
+{
+		qb DYLIZANS_OUT;
+}
+#action {Monotonne kolysanie ustaje w koncu i woz zatrzymuje sie.}
+{
+		qb DYLIZANS_OUT;
+}
+#action {{.*} dylizans powoli zatrzymuje sie.}
+{
+		qb DYLIZANS_IN;
+}
+
+#nop STATKI;
+
+#action {%*{rypa|tratwa|rom|knara} przybija do brzegu.} {
+			qbs STATEK_IN;
+};
+#action {%*{Wszyscy na poklad!.*|przybija wielki trojmasztowy galeon.}} {
+			qbs STATEK_IN;
+};
+#action {%*{Doplynelismy.*(Mozna|w calej swej)|Marynarze sprawnie cumuja}} {
+			qb STATEK_OUT;
+};
+
+#action {^Tratwa.$}
+{
+	qb STATEK_IN;
+};
+#action {^Rzeczna tratwa.$}
+{
+	qb STATEK_IN;
+};
+#action {^{[a-zA-Z]+} {[a-z]+} prom{[^a-z]}$}
+{
+	qb STATEK_IN;
+};
+#action {^Prom.$}
+{
+	qb STATEK_IN;
+};
+#action {^Barka.$}
+{
+	qb STATEK_IN;
+};
+#action {^{[A-Za-z]+} {statek|knara}.$}
+{
+	qb STATEK_IN;	
+};
+#action {^{[a-zA-Z]+} {[a-z]+} statek.$}
+{
+	qb STATEK_IN;
+};
+#action {Tajemniczy okret.$}
+{
+	qb STATEK_IN;
+};
+#action {Wielki trojmasztowy galeon.$}
+{
+	qb STATEK_IN;
+};
+#action {Wielka galera.$}
+{
+	qb STATEK_IN;
+};
+#action {Stara niewielka szkuta.$}
+{
+	qb STATEK_IN;
+};
+#action {Smukly drakkar.$}
+{
+	qb STATEK_IN;
+};
+#action {Szeroka knara.$}
+{
+	qb STATEK_IN;
+};
+#action {Mala feluka.$}
+{
+	qb STATEK_IN;
+};
+#action {Stara szkuta.$}
+{
+	qb STATEK_IN;
+};
+#action {Stara niewielka szkuta.$}
+{
+	qb STATEK_IN;
+};
+#action {Stary buzar.$}
+{
+	qb STATEK_IN;
+};
+#action {Smukly bryg.$}
+{
+	qb STATEK_IN;
+};
+#action {Smukly majestatyczny bryg.$}
+{
+	qb STATEK_IN;
+};
+#action {Nieduzy barkas.$}
+{
+	qb STATEK_IN;
+};
+#action {Nieduza rzeczna barka.$}
+{
+	qb STATEK_IN;
+};
+
+#alias {narysuj %1 %2} {
+	#switch {"%1"} {
+		#case {"statek"} {
+#echo {       _~        };
+#echo {    _~ )_)_~     };
+#echo {    )_))_))_)  %2};
+#echo {    _!__!__!_    };
+#echo {    \\______t/    };
+#echo {  ~~~~~~~~~~~~~  };
+		};
+		#case {"drakkar"} {
+#echo {    __4___  };
+#echo {  _ \\ \\ \\ \\  };
+#echo { <'\ /_/_/_/    	%2};
+#echo {  ((____!___/)  };
+#echo {   \\0\\0\\0\\0\\/   };
+#echo {  ~~~~~~~~~~~	};		
+		};
+		#case {"snekkar"} {
+#echo {     .___  };
+#echo {     \\ \\ \\  };
+#echo {     /_/_/    	%2};
+#echo {  (\\__!___/)  };
+#echo {   \\0\\0\\0\\/   };
+#echo {  ~~~~~~~~~~~	};		
+		};
+		#case {"knara"} {
+#echo {     .___  };
+#echo {     \\ \\ \\  };
+#echo {     /_/_/    	%2};
+#echo {  (\\__!___/)  };
+#echo {   \\0\\0\\0\\/   };
+#echo {  ~~~~~~~~~~~	};		
+		};
+		#case {"stocznia"} {
+#echo {             };
+#echo {         +--------------------------------------------------.  };			
+#echo {          \\                                                  \\ };
+#echo {           |               Komendy w stoczni                  | };
+#echo {           |                                                  | };
+#echo {           |  napraw ............... Oddanie okretu do        | };
+#echo {           |                         naprawy                  | };
+#echo {           |  modernizuj ........... Modernizacja okretu      | };
+#echo {           |  nazwa ................ Zmiana nazwy okretu      | };
+#echo {           |  zegluj ............... Dolaczenie do zalogi     | };
+#echo {           |                         kogos kupujacego okret   | };
+#echo {           |  sprzedaj ............. Sprzedaz okretu          | };
+#echo {  ___     _|  kup .................. Kupno nowego okretu      |  ___};
+#echo { /\\  \\__/\\ |  przejrzyj ............ Cennik okretow           |_/\\  \\};
+#echo {|  |  |__ ||                                                  |_| |  |};
+#echo { \\/__/ |\\/_|                                                  | \\/__/};
+#echo {        \\_/__________________________________________________/};
+#echo {				  };
+		};
+	};
+};
+
