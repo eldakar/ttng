@@ -47,9 +47,10 @@
 			
 			#if {$MAPPER_SYNC == 0} {findme};
 		        
-				#nop echo {  $roza_lazik$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u] <088>};
-		        #nop echo { $roza_lazik$rozk2[w]$rozk2[w] o $rozk2[e]$rozk2[e]  <088>};
-		        #nop echo { $roza_lazik$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d]   $roza_custom<088>};
+
+				#echo {  $rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u] <088>};
+		        #echo { $rozk2[w]$rozk2[w] o $rozk2[e]$rozk2[e]  <088>};
+		        #echo { $rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d]   $roza_custom<088>};
 		};
 		#case {"room.long"} {#sh $GMCPMSGS[text]};
 		#case {"room.short"} {

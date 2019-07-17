@@ -43,18 +43,24 @@
 
 #action {brain chats to everyone, 'ROOMSHORT %d %*'} {
     #map at {%1} {
+        #map get roomsymbol vroomsymbol;
         #map set roomdesc {%2};
-        #chat message mapka {ROOMSHORT %1};
+        #if {"$vroomsymbol" == "<faa>?<088>"} {
+            #map set roomsymbol {};
+        };
     };
-	#line gag;
+	#nop line gag;
 };
 
 #action {brain chats to everyone, 'ROOMEXITS %d %*'} {
     #map at {%1} {
         #map set roomname {%2};
-        #chat message mapka {ROOMEXITS %1};
+        #map get roomcolor vroomcolor;
+        #if {"$vroomcolor" == "<faa>"} {
+            #map set roomcolor {};
+        };
     };
-	#line gag;
+	#nop line gag;
 };
 
 #action {brain chats to everyone, 'NAME %d %*'} {

@@ -137,6 +137,7 @@
 #action {%1 wdrapuje sie po kamiennych schodkach.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz po schodkach}};
 #action {%1 kladzie sie na posadzce i znika w dziurze w scianie.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie przez szczeline}};
 #action {%1 przeciska sie przez pekniecie.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie przez szczeline}};
+#action {%1 schodzki po kamiennych schodkach.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zejdz po schodkach}};
 
 #action {%* chwyta za galke i przekreca ja lekko.} {#var klpr @set_quickbind_blue_move{galka};#var kk @_print_bind{%0};#line gag};
 #action {%* zsuwa sie ostroznie do studziennego otworu.} {#var klpr @set_quickbind_blue_move{kratka};#var kk @_print_bind{%0};#line gag};
