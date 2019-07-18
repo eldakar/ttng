@@ -89,7 +89,6 @@
 
 #event {MAP ENTER ROOM} {
     #var r_curLineCnt 2;
-    #var prmptbottomv 1;
     #map get roomvnum voom;
     #map get roomsymbol {voos_num};
     #var note_found 0;

@@ -3,9 +3,10 @@
 
     #map read mapkatt.map;
     #read map.tin;		#nop Obsluga mapy;
+    #read gmcp_char.tin;    #nop GMCP;
     #read gmcp_message.tin;	#nop GMCP;
-    #read gmcp_char.tin;	#nop GMCP;
     #read gmcp_object_hash.tin;	#nop GMCP;
+    #read prompt.tin		#nop historia komend na dolnym pasku;
     #read ttfollow.tin;      	#nop Podazanie za kims;
     #read ttundo.tin;        	#nop Blokery na nieudany ruch;
     #nop read mapevents2.tin;   	#nop Pokoje skryptowane recznie - labirynty;

@@ -1,0 +1,23 @@
+#CLASS {prompt} OPEN
+
+#event {SEND OUTPUT} {
+	#var prompt_history[2] {$prompt_history[1]};
+	#var prompt_history[1] {%0};
+	prompt_history;
+};
+
+#var prmptbottomv 3;
+#var prompt_history[1] {};
+#var prompt_history[2] {};
+
+#alias {prompt_history} {
+	#format {test} {%h} {};
+	#replace test {#} { };
+	#sh {$test} {1};
+	#sh {$test} {2};
+	#sh {> $prompt_history[1]} {1};
+	#sh {> $prompt_history[2]} {2};
+};
+
+#CLASS {prompt} CLOSE
+

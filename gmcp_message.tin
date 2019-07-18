@@ -35,9 +35,6 @@
 			#replace str_contentliving {{, | i }} {;};
 			#list contentliving create {$str_contentliving};
 			#list contentliving siz cls;
-			#nop math prmptbottomv {$cls + 2};
-			#var prmptbottomv 1;
-			#nop split $screen_r_half $prmptbottomv;
 			#sh $GMCPMSGS[text];
 		};
 
@@ -47,13 +44,14 @@
 			
 			#if {$MAPPER_SYNC == 0} {findme};
 		        
-
 				#echo {  $rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u] <088>};
 		        #echo { $rozk2[w]$rozk2[w] o $rozk2[e]$rozk2[e]  <088>};
 		        #echo { $rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d]   $roza_custom<088>};
 		};
 		#case {"room.long"} {#sh $GMCPMSGS[text]};
 		#case {"room.short"} {
+			#var shortnote {};
+			#var shortbind {};
 			#var tmptext {$GMCPMSGS[text]};
 			#regex {$tmptext} {{.*}\\n$} {
 				#var GMCPMSGS[text] {&1};
@@ -63,7 +61,15 @@
 			};
 
 			#replace {outputtext} {\\n} {};
-			#sh ${outputtext};
+
+			#if {"$voos_num" == "<178>i<088>"} {#var shortnote {[${c_nasobie}Notka<088>]}};
+			#if {$bind_found > 0} {
+				#line substitute {variables} {#macro {$KEY_QB} {$bind_run}};
+				#nop echo {${c_stan_sredni}BIND: $bind_run<088>};
+				#var shortbind {[${c_stan_sredni}$bind_run<088>]};
+			};
+
+			#sh {${outputtext} [$roomId] $shortbind $shortnote};
 			#line strip {#var temp_short {$outputtext}};
 
 			#line substitute {variables} {
@@ -76,11 +82,6 @@
 			#nop line strip {#if {$ROOM_INFO[map][x] > 0} {} {#line substitute variables {#var current_room_short_desc {$abc}}}};
 			#nop sh $abc;
 			#if {$MAPPER_SYNC == 0} {findme};
-			#if {"$voos_num" == "<178>i<088>"} {#echo {Zauwazasz notke...<088>}};
-			#if {$bind_found > 0} {
-				#line substitute {variables} {#macro {$KEY_QB} {$bind_run}};
-				#echo {${c_stan_sredni}BIND: $bind_run<088>};
-			};
 		};
 		
 		#case {"combat.team"} {
@@ -114,8 +115,8 @@
 #event {IAC SB GMCP mail.state IAC SE} {
 	#var MAILMSG {%0};
 	#var pr_poczta {  };
-	#if {"$MAILMSG[unreceived]" == "true"} {dzwiek_poczta;#var pr_poczta {<378>${c_stan_niski}  <088>};}; 	#nop nie odebrales, na czerwono;
-	#if {"$MAILMSG[unread]" == "true"} {dzwiek_poczta;#var pr_poczta {<378>${c_stan_sredni}  <088>};};		#nop nie przeczytales na zolto;
+	#if {"$MAILMSG[unreceived]" == "true"} {#var pr_poczta {<378>${c_stan_niski}  <088>};}; 	#nop nie odebrales, na czerwono;
+	#if {"$MAILMSG[unread]" == "true"} {#var pr_poczta {<378>${c_stan_sredni}  <088>};};		#nop nie przeczytales na zolto;
 	#if {"$MAILMSG[unsent]" == "true"} {#var pr_poczta {<378>${c_stan_wysoki}  <088>};};		#nop nie wyslales, zielono?;
 }
 

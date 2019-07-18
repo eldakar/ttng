@@ -1,10 +1,13 @@
-#action {{k|$K}orsarski drakkar Czarna Perla{.| }} {wejdz_na_korsarski Korsarski drakkar Czarna Perla} {1};
-#action {{k|$K}orsarski snekkar Wloczega Morz{.| }} {wejdz_na_korsarski Korsarski snekkar Wloczega Morz} {1};
-#action {{s|$S}kelliganski drakkar Zwiastun Smierci{.| }} {wejdz_na_korsarski Skelliganski drakkar Zwiastun Smierci} {1};
-#action {{k|$K}orsarski drakkar Demon{.| }} {wejdz_na_korsarski Korsarski drakkar Demon} {1};
-#action {{s|$S}kelliganski drakkar Krakken{.| }} {wejdz_na_korsarski Skelliganski drakkar Krakken} {1};
-#action {{s|$S}kelliganski drakkar Zlocisty Feniks{.| }} {wejdz_na_korsarski Skelliganski drakkar Zlocisty Feniks} {1};
-#action {{k|$K}orsarski drakkar Straznik Czasu{.| }} {wejdz_na_korsarski Korsarski drakkar Straznik Czasu} {1};
+#action {Skelliganski drakkar Zlocisty Feniks - Zlocisty Feniks} {
+	#nop;
+} {1};
+#action {{k|K}orsarski drakkar Czarna Perla{.| }} {wejdz_na_korsarski Korsarski drakkar Czarna Perla} {1};
+#action {{k|K}orsarski snekkar Wloczega Morz{.| }} {wejdz_na_korsarski Korsarski snekkar Wloczega Morz} {1};
+#action {{s|S}kelliganski drakkar Zwiastun Smierci{.| }} {wejdz_na_korsarski Skelliganski drakkar Zwiastun Smierci} {1};
+#action {{k|K}orsarski drakkar Demon{.| }} {wejdz_na_korsarski Korsarski drakkar Demon} {1};
+#action {{s|S}kelliganski drakkar Krakken{.| }} {wejdz_na_korsarski Skelliganski drakkar Krakken} {1};
+#action {{s|S}kelliganski drakkar Zlocisty Feniks{.| }} {wejdz_na_korsarski Skelliganski drakkar Zlocisty Feniks} {2};
+#action {{k|K}orsarski drakkar Straznik Czasu{.| }} {wejdz_na_korsarski Korsarski drakkar Straznik Czasu} {1};
 
 #alias {wejdz_na_korsarski %*} {
 	#format lowerc {%l} {%1};
@@ -17,7 +20,7 @@
 		#case {"Skelliganski drakkar Zlocisty Feniks"} {#var tmpdrakkarname krakken;};
 		#case {"Korsarski drakkar Straznik Czasu"} {#var tmpdrakkarname demon;};
 	};
-	narysuj drakkar %1;
+	#nop narysuj drakkar %1;
 	qbs wejdz na $lowerc;
 	#bell;
 	#map get roomvnum krakkenat;

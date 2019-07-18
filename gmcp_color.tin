@@ -236,40 +236,41 @@
 #var c_ansi_map[229] {ffd};
 #var c_ansi_map[230] {ffe};
 #var c_ansi_map[231] {fff};
-#foreach {$CHAR_COLORS[]} {cco} {
-	#var ccotmp {$CHAR_COLORS[$cco]};
+#foreach {$colors[]} {cco} {
+	#var ccotmp {$colors[$cco]};
 	#if {"$ccotmp" == "null"} {
 		#var ccotmp {088};
-		#var CHAR_COLORS[$cco] {088};
+		#var colors[$cco] {088};
 	} {
 		#math {ccotmp} {$ccotmp - 1};
 	};
 };
-#var ci_stan_sredni {$ci_ansi_map[$CHAR_COLORS[medium_state]]};
-#var ci_stan_wysoki {$ci_ansi_map[$CHAR_COLORS[high_state]]};
-#var c_stan_niski {<$c_ansi_map[$CHAR_COLORS[low_state]]>};
-#var c_stan_sredni {<$c_ansi_map[$CHAR_COLORS[medium_state]]>};
-#var c_stan_wysoki {<$c_ansi_map[$CHAR_COLORS[high_state]]>};
-#var c_mana {<$c_ansi_map[$CHAR_COLORS[defence_target]]>};
-#var c_noob {<$c_ansi_map[$CHAR_COLORS[noob]]>};
-#var c_talk {<$c_ansi_map[$CHAR_COLORS[talk]]>};
-#var c_wrog {<$c_ansi_map[$CHAR_COLORS[enemy]]>};
-#var c_cel_ataku {<788><$c_ansi_map[$CHAR_COLORS[attack_target]]>};
-#var c_wrog_lokacji {<$c_ansi_map[$CHAR_COLORS[defence_target]]>};
+#var ci_stan_sredni {$ci_ansi_map[$colors[medium_state]]};
+#var ci_stan_wysoki {$ci_ansi_map[$colors[high_state]]};
+#var c_stan_niski {<$c_ansi_map[$colors[low_state]]>};
+#var c_stan_sredni {<$c_ansi_map[$colors[medium_state]]>};
+#var c_stan_wysoki {<$c_ansi_map[$colors[high_state]]>};
+#var c_mana {<$c_ansi_map[$colors[defence_target]]>};
+#var c_noob {<$c_ansi_map[$colors[noob]]>};
+#var c_talk {<$c_ansi_map[$colors[talk]]>};
+#var c_wrog {<$c_ansi_map[$colors[enemy]]>};
+#var c_cel_ataku {<788><$c_ansi_map[$colors[attack_target]]>};
+#var c_wrog_lokacji {<$c_ansi_map[$colors[defence_target]]>};
 #var c_wrog_gildii {<FAA><118><fff>};
 #var c_neutralni {<dcb>};
-#var c_druzyna {<$c_ansi_map[$CHAR_COLORS[team_member]]>};
+#var c_druzyna {<$c_ansi_map[$colors[team_member]]>};
 #var c_zaslony {<ABA><178>};
-#var c_ciosy {{<$c_ansi_map[$CHAR_COLORS[general_combat]]>};};
-#var c_uniki {{<$c_ansi_map[$CHAR_COLORS[general_combat]]>};};
+#var c_ciosy {{<$c_ansi_map[$colors[general_combat]]>};};
+#var c_uniki {{<$c_ansi_map[$colors[general_combat]]>};};
 #var c_panelbg {<AAB>};
 #var c_spec {<128>};
 #var c_info {<ABA><178>};
 #var c_bind {<AAB><178>};
-#var c_trzyma {<$c_ansi_map[$CHAR_COLORS[current_target]]>};
-#var c_nasobie {<$c_ansi_map[$CHAR_COLORS[team_member]]>};
-#var c_dopasa  {<$c_ansi_map[$CHAR_COLORS[team_member]]>};;
-#var c_roza_opisy {<788><$c_ansi_map[$CHAR_COLORS[noob]]>};
+#var c_trzyma {<$c_ansi_map[$colors[low_state]]>};
+#var c_nasobie {<$c_ansi_map[$colors[team_member]]>};
+#var c_ponad  {<$c_ansi_map[$colors[team_member]]>};;
+#var c_dopasa  {<$c_ansi_map[$colors[team_member]]>};;
+#var c_roza_opisy {<788><$c_ansi_map[$colors[noob]]>};
 #var c_arkatt {<168>};
 #var c_rooms[vendor] {<158>};
 #var c_rooms[checkpoint] {<168>};
@@ -301,6 +302,6 @@
 #var healthbars2[0] {<088>------<FAA><fff>#<088>}
 
 #var c_char_h_mode[w] {$c_wrog_gildii};
-#var c_char_h_mode[n] {<$c_ansi_map[$CHAR_COLORS[other_char]]>};
-#var c_char_h_mode[p] {<$c_ansi_map[$CHAR_COLORS[team_member]]>};
+#var c_char_h_mode[n] {<$c_ansi_map[$colors[other_char]]>};
+#var c_char_h_mode[p] {<$c_ansi_map[$colors[team_member]]>};
 
