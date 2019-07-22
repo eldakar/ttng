@@ -1,6 +1,8 @@
 #event {IAC SB GMCP gmcp_msgs IAC SE} {
 	#var GMCPMSGS {%0};
 	#nop var tmptext {$GMCPMSGS[text]};
+
+#nop line sub escape #showme ough;
 	#regex {$GMCPMSGS[text]} {{.*}\\n$} {
 		#var GMCPMSGS[text] {&1};
 	};
@@ -109,6 +111,7 @@
 				#unticker {POWALCE};
 			} {35};
 		};	
+		#case {"object.long"} 	{#sh $GMCPMSGS[text]};
 		#default {#sh $GMCPMSGS[text]};
 	};		
 }

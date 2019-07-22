@@ -63,59 +63,17 @@
     #if {$obda2[$vob][hp] >= 0} {
     
         #if {"$obda2[$vob][avatar]" == "true"} {
-            #if {"$obda2[$vob][team_leader]" == "true"} {
-                #var przewodzisz_druzynie {1};
-                #var team_lead {CPT};
-            } {
-                #var przewodzisz_druzynie {0};
-                #var team_lead {-  };
-            };
             #var self_id {$vob};
+            #var obda2[$vob][desc] {$AVATAR_NAME};
             #var myattackers {0};
-
-            #if {"$obda2[$vob][paralyzed]" == "true"} {
-                #var avatar_paralyzed true;
-            } {
-                #var avatar_paralyzed false;
-            };
-            #if {"$obda2[$vob][editing]" == "true"} {
-                #var avatar_editing true;
-            } {
-                #var avatar_editing false;
-            };
-  #nop    hidden - BOOLEAN, czy obiekt jest ukryty;
-  #nop    can_see_in_room - BOOLEAN, czy postac gracza widzi cos na lokacji;
             #foreach {$obda2[]} {vos} {
                 #if {"$obda2[$vos][attack_num]" == "$vob"} {
-                    #if {$obda2[$self_id][hp] == 6} {#var obda2[$vos][enemies] {<G02> @__alias_77{CIEBIE!}}};
-                    #if {$obda2[$self_id][hp] == 5} {#var obda2[$vos][enemies] {<G02> @__alias_67{CIEBIE!}}};
-                    #if {$obda2[$self_id][hp] == 4} {#var obda2[$vos][enemies] {<G02> @__alias_57{CIEBIE!}}};
-                    #if {$obda2[$self_id][hp] == 3} {#var obda2[$vos][enemies] {<G02> @__alias_47{CIEBIE!}}};
-                    #if {$obda2[$self_id][hp] == 2} {#var obda2[$vos][enemies] {<G02> @__alias_37{CIEBIE!}}};
-                    #if {$obda2[$self_id][hp] == 1} {#var obda2[$vos][enemies] {<G02> @__alias_27{CIEBIE!}}};
-                    #if {$obda2[$self_id][hp] == 0} {#var obda2[$vos][enemies] {<G02> @__alias_17{CIEBIE!}}};
                     #math {myattackers} {$myattackers + 1};
-                    #var obda2[$vos][enemylist] {$obda2[$vos][enemylist]TY, };
                 };
             };
             #var obda2[$vob][enemy_count] {$myattackers};
+
             #var obda2[$vob][alias_value] {x};
-            #if {"$myattackers" == "0"} {#var myattackers {  }};
-            #format pr_wrog {%+2s} $myattackers;
-            #var enemy_shortcut $obda2[$vob][enemies];
-            #format {esl} {%L} {$enemy_shortcut};
-            #if {$esl < 2} {#var enemy_shortcut {        }};
-            #if {$obda2[$vob][hp] == 6} {#var team_current_prompt_nick {@__alias_77{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 5} {#var team_current_prompt_nick {@__alias_67{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 4} {#var team_current_prompt_nick {@__alias_57{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 3} {#var team_current_prompt_nick {@__alias_47{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 2} {#var team_current_prompt_nick {@__alias_37{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 1} {#var team_current_prompt_nick {@__alias_27{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 0} {#var team_current_prompt_nick {@__alias_17{$obda2[$vob][desc]}}};
-            #var prompt_avatar_kondycja[1] {  <118>$pr_wrog$healthbars[$obda2[$self_id][hp]]          };#nop $enemy_shortcut;
-            #var prompt_avatar[1] {  <118>$pr_wrog$healthbars[$obda2[$self_id][hp]] TY       };#nop $enemy_shortcut;
-            #var prompt_avatar1 {  <118>$pr_wrog$team_current_prompt_nick<088>};#nop $enemy_shortcut;
-            #var prompt_avatar1_mid {$pr_wrog$healthbars2[$obda2[$vob][hp]]<088>};#nop $enemy_shortcut;
         };
         #elseif {"$obda2[$vob][team]" == "true"} {
             #if {"$obda2[$vob][team_leader]" == "true"} {
@@ -123,8 +81,7 @@
                 #format team_lead_lower {%l} {$obda2[$vob][desc]};
             };
             #regex {$obda2[$vob][desc]} {%w %w %w} {#var team_curr_nick {&3}} {#var team_curr_nick {$obda2[$vob][desc]}};
-            #format {team_curr_nick} {%-8s} {$team_curr_nick};
-            #format {team_curr_nick} {%.8s} {$team_curr_nick};
+
             #var team[$team_index][enemies] 0;
             #var team[$team_index][tag] $vob;
             #math indexvalue {96 + $team_bind_index};
@@ -133,12 +90,7 @@
             };
             #format indexchar {%a} {$indexvalue};
             #line substitute {variables} {#alias bind_T_F$team_bind_index {zaslon ob_$team[$team_index][tag]}};
-            #nop if {$team_bind_index < 10} {
-                #math {functionbindvalue} {$team_bind_index};
-                #line substitute {variables} {#var kill_functionkey {F$functionbindvalue}};
-            } {
-                #var kill_functionkey {- };
-            };
+
     		#foreach {$obda2[]} {vos} {
                         #if {"$obda2[$vos][attack_num]" == "$vob"} {
 
@@ -157,27 +109,6 @@
             #var obda2[$vob][enemy_count] {$team[$team_index][enemies]};
             #var obda2[$vob][alias_value] {$indexchar};
 
-            #format team_enemies {%+2s} {$team[$team_index][enemies]};
-            #if {"$team_enemies" == " 0"} {#var team_enemies {  }};
-            #var team[$team_index][enemies] {$team_enemies};
-            #math tmp {$team_index + 1};
-
-            #var enemy_shortcut $obda2[$vob][enemies];
-            #format {esl} {%L} {$enemy_shortcut};
-            #if {$esl < 2} {#var enemy_shortcut {        }};
-            
-            #var druzyna_prompt[$team_index] {<088>$indexchar <118>$team_enemies<088>$healthbars[$obda2[$vob][hp]] <088>$team_curr_nick};#nop $enemy_shortcut;
-
-            #if {$obda2[$vob][hp] == 6} {#var team_current_prompt_nick {@__alias_77{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 5} {#var team_current_prompt_nick {@__alias_67{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 4} {#var team_current_prompt_nick {@__alias_57{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 3} {#var team_current_prompt_nick {@__alias_47{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 2} {#var team_current_prompt_nick {@__alias_37{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 1} {#var team_current_prompt_nick {@__alias_27{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 0} {#var team_current_prompt_nick {@__alias_17{$obda2[$vob][desc]}}};
-
-            #var druzyna_prompt2[$team_index] {<088>$indexchar <118>$team_enemies<088>$team_current_prompt_nick<088>};#nop $enemy_shortcut;
-
             #line substitute {variables} {#alias rz$indexchar {wskaz ob_$team[$team_index][tag] jako cel obrony;rozkaz druzynie zaslonic ob_$team[$team_index][tag]}};
             #line substitute {variables} {#alias ws$indexchar {wskaz ob_$team[$team_index][tag] jako cel obrony;}};
 
@@ -195,13 +126,9 @@
         };
         #elseif {"$obda2[$vob][enemy]" == "true"} {
             #nop regex {$obda2[$vob][desc]} {%w %w %w} {#var other_curr_nick {&3}} {#var other_curr_nick {$obda2[$vob][desc]}};
-            #nop format {other_curr_nick} {%-8s} {$other_curr_nick};
-            #nop format {other_curr_nick} {%.8s} {$other_curr_nick};
           
             #var other_curr_nick {$obda2[$vob][desc]};
-            #format {other_curr_nick} {%-25s} {$other_curr_nick};
-            #format {other_curr_nick} {%.25s} {$other_curr_nick};
-
+ 
             #var othe[$othe_index][enemies] 0;
             #var othe[$othe_index][tag] $vob;
             #math indexvalue { };
@@ -214,61 +141,14 @@
             #line substitute {variables} {#alias zp$indexchar {zaslon przed ob_$othe[$othe_index][tag]}};
             #line substitute {variables} {#alias b$indexchar {zablokuj ob_$othe[$othe_index][tag]}};
             #line substitute {variables} {#alias p$indexchar {przelam obrone ob_$othe[$othe_index][tag]}};
-      
-            #if {$othe_bind_index < 10} {
-                #math {functionbindvalue} {$othe_bind_index};
-                #line substitute {variables} {#var kill_functionkey {F$functionbindvalue}};
-                #nop line substitute {variables} {#macro {$KEY_F$functionbindvalue} {_zabij_ ob_$othe[$othe_index][tag]}};
-            } {
-                #var kill_functionkey {- };
-            };
-
+     
             #foreach {$obda2[]} {vos} {
                 #if {"$obda2[$vos][attack_num]" == "$vob"} {
-
-                    #if {$obda2[$vob][hp] == 6} {#var obda2[$vos][enemies] {<G02> @__alias_77{$obda2[$vob][desc]}}};
-                    #if {$obda2[$vob][hp] == 5} {#var obda2[$vos][enemies] {<G02> @__alias_67{$obda2[$vob][desc]}}};
-                    #if {$obda2[$vob][hp] == 4} {#var obda2[$vos][enemies] {<G02> @__alias_57{$obda2[$vob][desc]}}};
-                    #if {$obda2[$vob][hp] == 3} {#var obda2[$vos][enemies] {<G02> @__alias_47{$obda2[$vob][desc]}}};
-                    #if {$obda2[$vob][hp] == 2} {#var obda2[$vos][enemies] {<G02> @__alias_37{$obda2[$vob][desc]}}};
-                    #if {$obda2[$vob][hp] == 1} {#var obda2[$vos][enemies] {<G02> @__alias_27{$obda2[$vob][desc]}}};
-                    #if {$obda2[$vob][hp] == 0} {#var obda2[$vos][enemies] {<G02> @__alias_17{$obda2[$vob][desc]}}};
-
                     #math {othe[$othe_index][enemies]} {$othe[$othe_index][enemies] + 1};
-                    #var obda2[$vos][enemylist] {$obda2[$vos][enemylist]$indexchar, };
                 };
             };
             #var obda2[$vob][enemy_count] {$othe[$othe_index][enemies]};
             #var obda2[$vob][alias_value] {$indexchar};
-
-            #format other_enemies {%+2s} {$othe[$othe_index][enemies]};
-            #if {"$other_enemies" == " 0"} {#var other_enemies {  }};
-            #var othe[$othe_index][enemies] {$other_enemies};
-            #math tmp {$othe_index + 1};
-
-            #if {$obda2[$vob][hp] == 6} {#var enem_current_prompt_nick {@__alias_77{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 5} {#var enem_current_prompt_nick {@__alias_67{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 4} {#var enem_current_prompt_nick {@__alias_57{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 3} {#var enem_current_prompt_nick {@__alias_47{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 2} {#var enem_current_prompt_nick {@__alias_37{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 1} {#var enem_current_prompt_nick {@__alias_27{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 0} {#var enem_current_prompt_nick {@__alias_17{$obda2[$vob][desc]}}};
-
-            #var enemy_shortcut $obda2[$vob][enemies];
-            #format {esl} {%L} {$enemy_shortcut};
-            #if {$esl < 2} {#var enemy_shortcut {         }};
-
-                #if {"$obda2[$vob][attack_target]" == "true"} {
-                    #var wrogowie_prompt[$othe_index] {${c_cel_ataku}$kill_functionkey<088><128>$other_enemies<088>$healthbars[$obda2[$vob][hp]]<118> ${c_cel_ataku}$other_curr_nick<088>};#nop $enemy_shortcut;
-                    #var wrogowie_prompt2[$othe_index] {${c_cel_ataku}$kill_functionkey<088><128>$other_enemies<088>$enem_current_prompt_nick<088>};#nop $enemy_shortcut;
-                    #format {bar_celataku} {%.10s} {$obda2[$vob][desc]};
-                    #format {bar_celataku} {%-10s} {$bar_celataku};
-                    #format {hpb_celataku} {$healthbar[$obda2[$vob][hp]]};
-                };
-                #else {
-                    #var wrogowie_prompt[$othe_index] {${c_wrog_lokacji}$kill_functionkey<128>$other_enemies<088>$healthbars[$obda2[$vob][hp]] ${c_wrog_lokacji}$other_curr_nick<088>};#nop $enemy_shortcut;
-                    #var wrogowie_prompt2[$othe_index] {${c_wrog_lokacji}$kill_functionkey<128>$other_enemies<088>$enem_current_prompt_nick<088>};#nop $enemy_shortcut;
-                };
 
             #line substitute {variables} {
                 #alias oc$indexchar {
@@ -279,9 +159,7 @@
                     #var cmp_obj $othe_index;
                 };
             };
-            #line substitute {variables} {#alias zp$indexchar {zaslon przed ob_$othe[$othe_index][tag]}};
-            #line substitute {variables} {#alias b$indexchar {zablokuj ob_$othe[$othe_index][tag]}};
-            #line substitute {variables} {#alias p$indexchar {przelam obrone ob_$othe[$othe_index][tag]}};
+
             #math {othe_index} {$othe_index + 1};
             #math {othe_bind_index} {$othe_bind_index + 1};
         };
@@ -407,24 +285,6 @@
     #foreach {$obda2[]} {vob} {
         #format obd2desclen {%L} {$obda2[$vob][desc]};
         #if {$obda2[$vob][hp] >= 0} {
-
-            #var obd2[a] $obda2[$vob][avatar];
-            #var obd2[b] $obda2[$vob][team_leader];
-            #var obd2[c] $obda2[$vob][paralyzed];
-            #var obd2[d] $obda2[$vob][editing];
-            #var obd2[e] $obda2[$vob][attack_num];
-            #var obd2[f] $obda2[$vob][hp];
-            #var obd2[g] $obda2[$vob][desc];
-            #var obd2[h] $obda2[$vob][living];
-            #var obd2[i] $obda2[$vob][enemy];
-            #var obd2[j] $obda2[$vob][team];
-            #var obd2[k] $obda2[$vob][avatar_target];
-            #var obd2[l] $obda2[$vob][attack_target];
-            #var obd2[m] $obda2[$vob][defense_target];
-            #var obd2[n] $obda2[$vob][hidden];
-            #var obd2[o] $obda2[$vob][can_see_in_room];
-            #var obd2[p] $obda2[$vob][enemy_count];
-            #var obd2[q] $obda2[$vob][alias_value];
 
             #var dID $vob;
             #var duch[$dID][avatar] {$obda2[$vob][avatar]};
@@ -849,6 +709,12 @@
     #foreach {$duch[]} {du} {
         #nop format tmpen {%+2s} {<118>$duch[$du][enemies]<088>};
 
+        #regex {$duch[$du][desc]} {%w %w %w} {
+            #var other_curr_nick {&3}
+        } {
+            #var other_curr_nick {$obda2[$vob][desc]};
+        };
+          
         #format tmpna {%-15s} {$duch[$du][desc]};
         #format tmpna {%.15s} {$tmpna};
         #format tmpna_med {%-10s} {$duch[$du][desc]};
@@ -893,6 +759,11 @@
         #nop if {"$duch[$du][avatar]" == "true"} {#var tmpkol {<BAF><178>}};
 
         #if {"$duch[$du][team_leader]" == "true"} {#var tmpled {<138>*<088>}};
+        
+        #if {"$duch[$du][team]" == "true"} {
+            #format tmpna_orc {%-8s} {$duch[$du][desc]};
+            #format tmpna_orc {%.8s} {$tmpna_orc};
+        };
 
         #if {"$duch[$du][bot]" == "SA1"} {#var tmpsug {<128>F1 <088>}};
         #if {"$duch[$du][bot]" == "SA2"} {#var tmpsug {SA2}};

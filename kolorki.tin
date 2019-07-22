@@ -96,7 +96,6 @@
     #sh {$c_stan_niski ###  <088>%1 porzuca druzyne! };
     #echo {<088>      ------------------------------- };
     #echo { };    
-    #var przewodzisz_druzynie 1;
     #line gag;
 }
 

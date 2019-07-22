@@ -241,6 +241,24 @@
 		#case {12} {#var twojpoziom {ktos kto widzial i doswiadczyl wszystkiego}};
 		#case {13} {#var twojpoziom {osoba owiana legenda}};
 	};
-	#echo {Wydaje ci sie, ze wygladasz jak ${c_stan_sredni}${twojpoziom}<088>. Do nastepnego poziomu brakuje Ci ${c_stan_niski}$needp <088>podcech.};
+	#echo {Wydaje ci sie, ze wygladasz jak ${c_stan_sredni}${twojpoziom} ($level)<088>. Do nastepnego poziomu brakuje Ci ${c_stan_niski}$needp <088>podcech.};
 }
 
+#action {Jestes %w %w %w, znan{ym|a} jako:} {
+	#switch {$level} {
+		#case {1} {#var twojpoziom {ktos niedoswiadczony}};
+		#case {2} {#var twojpoziom {ktos kto widzial juz to i owo}};
+		#case {3} {#var twojpoziom {ktos kto pewnie stapa po swiecie}};
+		#case {4} {#var twojpoziom {ktos kto niejedno widzial}};
+		#case {5} {#var twojpoziom {ktos kto swoje przezyl}};
+		#case {6} {#var twojpoziom {ktos doswiadczony}};
+		#case {7} {#var twojpoziom {ktos kto wiele przeszedl}};
+		#case {8} {#var twojpoziom {ktos kto widzial kawal swiata}};
+		#case {9} {#var twojpoziom {ktos bardzo doswiadczony}};
+		#case {10} {#var twojpoziom {ktos kto zwiedzil caly swiat}};
+		#case {11} {#var twojpoziom {ktos wielce doswiadczony}};
+		#case {12} {#var twojpoziom {ktos kto widzial i doswiadczyl wszystkiego}};
+		#case {13} {#var twojpoziom {osoba owiana legenda}};
+	};
+	#echo {Wygladasz jak ${twojpoziom}.};
+}

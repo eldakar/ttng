@@ -170,7 +170,19 @@
   #sh {<118><afa>PLYTKI %1 OK<088>};
 }
 
+#action {Zapalasz} {
+	#ticker lampa {
+		qb napelnij lampe olejem;
+	} {200};
+};
 
+#action {Gasisz olejna lampe} {
+	#untick lampa;
+};
+
+#action {wypala sie i gasnie} {
+	#untick lampa;
+};
 
 #action {~^Plytki zostaly wykonane z marmuru w %1 kolorze. Wyraznie odcinaja sie od reszty kamieni, jakimi wybrukowano most. Ich rozmiar odpowiada dokladnie rozmiarowi stopy ogra. Dostrzegasz, iz sa lekko zaglebione w powierzchni mostu.$}
 {
