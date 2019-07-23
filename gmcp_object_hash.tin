@@ -38,7 +38,7 @@
     szukaj_wroga;
     szukaj_team;
     tabela_odswiez;
-#if {$unfolded > 0} {
+	#if {$unfolded > 0} {
         	render_h2;
 	};
 
@@ -46,19 +46,14 @@
 
 #event {IAC SB GMCP objects.data IAC SE}
 {
-  #var {obda} {%0};
-  #foreach {$obda[]} {vob} {
-    #foreach {$obda[$vob][]} {bubu} {
-      #var {duch[$vob][$bubu]} {$obda[$vob][$bubu]};
-    };
-  };
+  #var {duch} {$duch} {%0};
     assign_type;
-    szukaj_wroga;szukaj_team;
+    szukaj_wroga;
+    szukaj_team;
     tabela_odswiez;
-#if {$unfolded > 0} {
+    #if {$unfolded > 0} {
         	render_h2;
-	};
-
+   };
 }
 
 
@@ -74,8 +69,19 @@
 
     #format {screenrows} {%R};
     #var localcnt {1};
+
     #foreach {$duch[]} {dudu} {
-            #var duch[$dudu][shown] {0};
+	#var duch[$dudu][enemies] {0};
+    };
+
+    #foreach {$duch[]} {dudu} {
+ 	#var duch[$dudu][bot] {};
+        #var duch[$dudu][shown] {0};
+ 
+            #if {$duch[$dudu][attack_num] > 0} {
+   	         #math duch[$duch[$dudu][attack_num]][enemies] {$duch[$duch[$dudu][attack_num]][enemies] + 1};
+            };
+ 
             #if {"$duch[$dudu][avatar]" == "true"} {
                 #var avatarid {$dudu};
                 #var duch[$dudu][desc] {$AVATAR_NAME};
@@ -136,7 +142,7 @@
 			};
                     };
                 };
-            };
+              };
             
 	    #var duch[$dudu][rownr] {$localcnt};
             #var rowmap[$rcnt] {$dudu};
@@ -146,21 +152,21 @@
 
 	
 	    #if {"$duch[$dudu][enemy]" == "true"} {
-            #math wrogi_index {$wrogi_index + 1};
-            #list wrogi {insert} {$wrogi_index} {$dudu};
-        };
-		#if {"$duch[$dudu][team]" == "false"} {
-            #if {"$duch[$dudu][enemy]" == "false"} {
-                #math neut_index {$neut_index + 1};
-                #list neut {insert} {$neut_index} {$dudu};
+	        #math wrogi_index {$wrogi_index + 1};
+		#list wrogi {insert} {$wrogi_index} {$dudu};
             };
-        };
-        #if {"$duch[$dudu][team]" == "true"} {
-            #math team_index {$team_index + 1};
-            #list team {insert} {$team_index} {$dudu};
-        };
+	    #if {"$duch[$dudu][team]" == "false"} {
+                #if {"$duch[$dudu][enemy]" == "false"} {
+                	#math neut_index {$neut_index + 1};
+                	#list neut {insert} {$neut_index} {$dudu};
+                };
+            };
+            #if {"$duch[$dudu][team]" == "true"} {
+                #math team_index {$team_index + 1};
+                #list team {insert} {$team_index} {$dudu};
+            };
 
-    };
+    }; #nop foreach duch;
 };
 
 #var emptyline {                                                                                           };
@@ -377,9 +383,9 @@
         #var team_sugerowany $team_najslabszy;
 	#macro {$KEY_F2} {
 		zaslon ob_$team_najslabszy;
-        #if {"$pzdjeciezaslon" == "auto"} {
-            przestan zaslaniac;
-        };
+        	#if {"$pzdjeciezaslon" == "auto"} {
+            		przestan zaslaniac;
+        	};
 	};
     };
 
@@ -396,8 +402,6 @@
             };
         };
     };
-
-    
 }
 
 #alias {tabela_odswiez} {
@@ -412,15 +416,14 @@
     #var iterator {0};
 
     #foreach {$duch[]} {du} {
-	#var duch[$du][enemies] {0};
-	#var duch{$du][bot] {};
-    };
-    #foreach {$duch[]} {du} {
+         
+ 
+            #nop if {$duch[$dudu][attack_num] > 0} {
+   	         #math duch[$duch[$dudu][attack_num]][enemies] {$duch[$duch[$dudu][attack_num]][enemies] + 1};
+            };
+        
         #math iterator {$iterator + 1};
-        #if {$duch[$du][attack_num] > 0} {
-            #math duch[$duch[$du][attack_num]][enemies] {$duch[$duch[$du][attack_num]][enemies] + 1};
-        };
-      
+     
         #math indexvalue {96 + $iterator};
         #if {$indexvalue > 122} {
             #var indexvalue {88};  
@@ -432,7 +435,7 @@
         #line substitute {variables} {#alias zp$indexchar {zaslon przed ob_$du}};
         #line substitute {variables} {#alias b$indexchar {zablokuj ob_$du}};
         #line substitute {variables} {#alias p$indexchar {przelam obrone ob_$du}};
-        #line substitute {variables} {#alias z$indexchar {zaslon ob_$du;#if {"$profiles_zdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+        #line substitute {variables} {#alias z$indexchar {zaslon ob_$du;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
         #line substitute {variables} {#alias wz${indexchar} {gzwycofaj sie za ob_$du;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
         #line substitute {variables} {#alias z${indexchar}2 {opcje grupa 2;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
         #line substitute {variables} {#alias z${indexchar}3 {opcje grupa 3;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
@@ -452,13 +455,6 @@
         #var tmpsug {   };
         #var tmpkol {<088>};
         #var tmpled { };
-        #if {$healthbars2[$duch[$duch[$du][attack_num]][hp]] > 0} {
-            #format attacktargetdesc {%-10s} {$duch[$duch[$du][attack_num]][desc]};
-            #var attacktargethp {-<148>><158>><168>><138>> <088>[$healthbars2[$duch[$duch[$du][attack_num]][hp]]] $attacktargetdesc};
-        } {
-            #var attacktargethp { };
-        };
-        #nop  {-<148>><158>><168>><138>> [$attacktargethp] $duch[$duch[$du][attack_num]][desc]};
         #var tmptar {};
 
         #var tmpen {  };
@@ -470,17 +466,16 @@
             #var tmpen {[$tmpen]};
         };
 
-        #if {"$duch[$du][enemy]" == "true"} {#var tmpkol {<118>}};
-        #if {"$duch[$du][team]" == "true"} {#var tmpkol {<148>}};
-        #if {"$duch[$du][typ]" == "wrog"} {#var tmpkol {<FAA><178>}};
-        #if {"$duch[$du][typ]" == "boss"} {#var tmpkol {<118><fca>}};
+        #if {"$duch[$du][enemy]" == "true"} {#var tmpkol {<118>};};
+        #if {"$duch[$du][team]" == "true"} {#var tmpkol {<148>}};;
+        #if {"$duch[$du][typ]" == "wrog"} {#var tmpkol {<FAA><178>};};
+        #if {"$duch[$du][typ]" == "boss"} {#var tmpkol {<118><fca>};};
 
-        #if {"$duch[$du][attack_target]" == "true"} {#var tmpcel {CEL};#var tmpkol {<FAC><178>}};
-        #if {"$duch[$du][defense_target]" == "true"} {#var tmpcel {COB};#var tmpkol {<AAB><178>}};
-        #if {"$duch[$du][avatar_target]" == "true"} {#var tmpava {<FAA>  <088>}};
-        #nop if {"$duch[$du][avatar]" == "true"} {#var tmpkol {<BAF><178>}};
+        #if {"$duch[$du][attack_target]" == "true"} {#var tmpcel {CEL};#var tmpkol {<FAC><178>};};
+        #if {"$duch[$du][defense_target]" == "true"} {#var tmpcel {COB};#var tmpkol {<AAB><178>};};
+        #if {"$duch[$du][avatar_target]" == "true"} {#var tmpava {<FAA>  <088>};};
 
-        #if {"$duch[$du][team_leader]" == "true"} {#var tmpled {<138>*<088>}};
+        #if {"$duch[$du][team_leader]" == "true"} {#var tmpled {<138>*<088>};};
         
         #if {"$duch[$du][team]" == "true"} {
             #format tmpna_orc {%-8s} {$duch[$du][desc]};
@@ -494,7 +489,7 @@
 
         #if {"$duch[$du][bot]" == "SO1"} {
             #if {"$duch[$du][avatar]" == "true"} {
-                #var tmpsug {<FAA><178>F2<088> };
+                #var tmpsug {<FAA><178>!!<088> };
             } {
                 #var tmpsug {<138>F2 <088>};                
             };
