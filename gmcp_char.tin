@@ -25,7 +25,7 @@
 			#class profile read profile_default;
 			#class profile write $AVATAR_NAME;
 		} {
-			pupdate;
+			#nop pupdate;
 		};
 	};
 };
