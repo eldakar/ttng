@@ -1,0 +1,19 @@
+#nop GMCP_OBJECT;
+#event {IAC SB GMCP objects.nums IAC SE}
+{
+	#var {obnu} {%0};
+	#foreach {$duch[]} {duchtmp} {#var duch[$duchtmp][how] {0}};
+	#foreach {$obnu[]} {nu} {#var duch[$nu][show] {1}};
+	#foreach {$obnu[]} {nu} {#var duch[$nu][show] {1};#echo $obnu[$nu]};
+}
+
+#event {IAC SB GMCP objects.data IAC SE}
+{
+	#var {obda} {%0};
+	#foreach {$obda[]} {vob} {
+		#foreach {$duch[$vob][]} {bubu} {
+		  #var {duch[$vob][$bubu]} {$obda[$vob][$bubu]};
+		};
+	};
+	#echo {<118>%0<088>};
+}

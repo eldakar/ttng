@@ -71,7 +71,7 @@
 
 #alias {pupdate} {
 #nop BRAIN;
-	#if {"$pbrainip" != ""} {
+	#nop if {"$pbrainip" != ""} {
 		#chat init;
 		#chat name {$AVATAR_NAME};
 		#delay {2} {#chat call $pbrainip $pbrainport};

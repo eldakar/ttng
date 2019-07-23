@@ -31,7 +31,7 @@
 };
 
 #event {SESSION CONNECTED} {
-    #split 0 1;
+    #split 0 3;
     #event {IAC WILL GMCP} {
         #send {\xFF\xFD\xC9\};
         #send {\xFF\xFA\xC9core.supports.set [ "Core", "Objects", "Room", "Char", "Messages", "Mail", "Gmcp_msgs"]\xFF\xF0\};

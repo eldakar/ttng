@@ -45,235 +45,6 @@
 #var gildie[ZS] {n};
 #var gildie[ZT] {n};
 
-#alias {update_party}
-{
-    #var team_index {1};
-    #var team_bind_index {1};
-    #var count_enemies {0};
-    #var othe_index {1};
-    #var othe_bind_index {1};
-#nop zakladam ze nie wiecej niz 20 wrogow mamy na lokacji;
-    #var neut_index {20};
-    #var neut_bind_index {20};
-
-    #foreach {$obda2[]} {vob} {
-
-    #format {voblen} {%L} {$obda2[$vob][desc]};
-    
-    #if {$obda2[$vob][hp] >= 0} {
-    
-        #if {"$obda2[$vob][avatar]" == "true"} {
-            #var self_id {$vob};
-            #var obda2[$vob][desc] {$AVATAR_NAME};
-            #var myattackers {0};
-            #foreach {$obda2[]} {vos} {
-                #if {"$obda2[$vos][attack_num]" == "$vob"} {
-                    #math {myattackers} {$myattackers + 1};
-                };
-            };
-            #var obda2[$vob][enemy_count] {$myattackers};
-
-            #var obda2[$vob][alias_value] {x};
-        };
-        #elseif {"$obda2[$vob][team]" == "true"} {
-            #if {"$obda2[$vob][team_leader]" == "true"} {
-                #var obda_team_leader {$vob};
-                #format team_lead_lower {%l} {$obda2[$vob][desc]};
-            };
-            #regex {$obda2[$vob][desc]} {%w %w %w} {#var team_curr_nick {&3}} {#var team_curr_nick {$obda2[$vob][desc]}};
-
-            #var team[$team_index][enemies] 0;
-            #var team[$team_index][tag] $vob;
-            #math indexvalue {96 + $team_bind_index};
-            #if {$indexvalue > 122} {
-                #var indexvalue {88};  
-            };
-            #format indexchar {%a} {$indexvalue};
-            #line substitute {variables} {#alias bind_T_F$team_bind_index {zaslon ob_$team[$team_index][tag]}};
-
-    		#foreach {$obda2[]} {vos} {
-                        #if {"$obda2[$vos][attack_num]" == "$vob"} {
-
-                            #if {$obda2[$vob][hp] == 6} {#var obda2[$vos][enemies] {<G02> @__alias_77{$obda2[$vob][desc]}}};
-                            #if {$obda2[$vob][hp] == 5} {#var obda2[$vos][enemies] {<G02> @__alias_67{$obda2[$vob][desc]}}};
-                            #if {$obda2[$vob][hp] == 4} {#var obda2[$vos][enemies] {<G02> @__alias_57{$obda2[$vob][desc]}}};
-                            #if {$obda2[$vob][hp] == 3} {#var obda2[$vos][enemies] {<G02> @__alias_47{$obda2[$vob][desc]}}};
-                            #if {$obda2[$vob][hp] == 2} {#var obda2[$vos][enemies] {<G02> @__alias_37{$obda2[$vob][desc]}}};
-                            #if {$obda2[$vob][hp] == 1} {#var obda2[$vos][enemies] {<G02> @__alias_27{$obda2[$vob][desc]}}};
-                            #if {$obda2[$vob][hp] == 0} {#var obda2[$vos][enemies] {<G02> @__alias_17{$obda2[$vob][desc]}}};
-
-                            #math {team[$team_index][enemies]} {$team[$team_index][enemies] + 1};
-                            #var obda2[$vos][enemylist] {$obda2[$vos][enemylist]$indexchar, };
-                        };
-            };
-            #var obda2[$vob][enemy_count] {$team[$team_index][enemies]};
-            #var obda2[$vob][alias_value] {$indexchar};
-
-            #line substitute {variables} {#alias rz$indexchar {wskaz ob_$team[$team_index][tag] jako cel obrony;rozkaz druzynie zaslonic ob_$team[$team_index][tag]}};
-            #line substitute {variables} {#alias ws$indexchar {wskaz ob_$team[$team_index][tag] jako cel obrony;}};
-
-            #line substitute {variables} {
-                #alias z$indexchar {zaslon ob_$team[$team_index][tag];#if {"$profiles_zdjeciezaslon" == "auto"} {przestan zaslaniac;}};
-            };
-            #line substitute {variables} {#alias wz${indexchar} {gzwycofaj sie za ob_$team[$team_index][tag];#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-
-            #line substitute {variables} {#alias z${indexchar}2 {opcje grupa 2;zaslon ob_$team[$team_index][tag];opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-            #line substitute {variables} {#alias z${indexchar}3 {opcje grupa 3;zaslon ob_$team[$team_index][tag];opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-            #line substitute {variables} {#alias z${indexchar}4 {opcje grupa 4;zaslon ob_$team[$team_index][tag];opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-            #line substitute {variables} {#alias macro_$$team_bind_index {zaslon ob_$team[$team_index][tag]}};
-            #math {team_index} {$team_index + 1};
-            #math {team_bind_index} {$team_bind_index + 1};
-        };
-        #elseif {"$obda2[$vob][enemy]" == "true"} {
-            #nop regex {$obda2[$vob][desc]} {%w %w %w} {#var other_curr_nick {&3}} {#var other_curr_nick {$obda2[$vob][desc]}};
-          
-            #var other_curr_nick {$obda2[$vob][desc]};
- 
-            #var othe[$othe_index][enemies] 0;
-            #var othe[$othe_index][tag] $vob;
-            #math indexvalue { };
-            #math indexvalue {96 + $othe_bind_index};
-            #if {$indexvalue > 122} {
-                #var indexvalue {88};  
-            };
-            #format indexchar {%a} {$indexvalue};
-            #line substitute {variables} {#alias k$indexchar {_zabij_ ob_$othe[$othe_index][tag]}};
-            #line substitute {variables} {#alias zp$indexchar {zaslon przed ob_$othe[$othe_index][tag]}};
-            #line substitute {variables} {#alias b$indexchar {zablokuj ob_$othe[$othe_index][tag]}};
-            #line substitute {variables} {#alias p$indexchar {przelam obrone ob_$othe[$othe_index][tag]}};
-     
-            #foreach {$obda2[]} {vos} {
-                #if {"$obda2[$vos][attack_num]" == "$vob"} {
-                    #math {othe[$othe_index][enemies]} {$othe[$othe_index][enemies] + 1};
-                };
-            };
-            #var obda2[$vob][enemy_count] {$othe[$othe_index][enemies]};
-            #var obda2[$vob][alias_value] {$indexchar};
-
-            #line substitute {variables} {
-                #alias oc$indexchar {
-                    ocen ob_$othe[$othe_index][tag];
-                    porownaj sile z ob_$othe[$othe_index][tag];
-                    porownaj zrecznosc z ob_$othe[$othe_index][tag];
-                    porownaj wytrzymalosc z ob_$othe[$othe_index][tag];
-                    #var cmp_obj $othe_index;
-                };
-            };
-
-            #math {othe_index} {$othe_index + 1};
-            #math {othe_bind_index} {$othe_bind_index + 1};
-        };
-        #else {
-            #var neutral_curr_nick {$obda2[$vob][desc]};
-            #format {neutral_curr_nick} {%-25s} {$neutral_curr_nick};
-            #format {neutral_curr_nick} {%.25s} {$neutral_curr_nick};
-
-
-            #var neut[$neut_index][enemies] 0;
-            #var neut[$neut_index][tag] $vob;
-            #math indexvalue { };
-            #math indexvalue {96 + $neut_bind_index};            
-            #if {$indexvalue > 122} {
-                #var indexvalue {88};  
-            };
-            #format indexchar {%a} {$indexvalue};
-            #if {$neut_bind_index < 10} {
-                #math {functionbindvalue} {$neut_bind_index};
-                #line substitute {variables} {#var kill_functionkey {F$functionbindvalue}};
-            } {
-                #var kill_functionkey {- };
-            };
-            #if {$neut_index < 5} {#math attack_bind {1 + $neut_index};};
-            #foreach {$obda2[]} {vos} {
-                #if {"$obda2[$vos][attack_num]" == "$vob"} {
-
-                    #if {$obda2[$vob][hp] == 6} {#var obda2[$vos][enemies] {<G02> @__alias_77{$obda2[$vob][desc]}}};
-                    #if {$obda2[$vob][hp] == 5} {#var obda2[$vos][enemies] {<G02> @__alias_67{$obda2[$vob][desc]}}};
-                    #if {$obda2[$vob][hp] == 4} {#var obda2[$vos][enemies] {<G02> @__alias_57{$obda2[$vob][desc]}}};
-                    #if {$obda2[$vob][hp] == 3} {#var obda2[$vos][enemies] {<G02> @__alias_47{$obda2[$vob][desc]}}};
-                    #if {$obda2[$vob][hp] == 2} {#var obda2[$vos][enemies] {<G02> @__alias_37{$obda2[$vob][desc]}}};
-                    #if {$obda2[$vob][hp] == 1} {#var obda2[$vos][enemies] {<G02> @__alias_27{$obda2[$vob][desc]}}};
-                    #if {$obda2[$vob][hp] == 0} {#var obda2[$vos][enemies] {<G02> @__alias_17{$obda2[$vob][desc]}}};
-                    #math {neut[$neut_index][enemies]} {$neut[$neut_index][enemies] + 1};
-                };
-            };
-
-            #var obda2[$vob][enemy_count] {$neut[$neut_index][enemies]};
-            #var obda2[$vob][alias_value] {$indexchar};
-            
-            #if {$obda2[$vob][hp] == 6} {#var enem_current_prompt_nick {@__alias_77{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 5} {#var enem_current_prompt_nick {@__alias_67{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 4} {#var enem_current_prompt_nick {@__alias_57{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 3} {#var enem_current_prompt_nick {@__alias_47{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 2} {#var enem_current_prompt_nick {@__alias_37{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 1} {#var enem_current_prompt_nick {@__alias_27{$obda2[$vob][desc]}}};
-            #if {$obda2[$vob][hp] == 0} {#var enem_current_prompt_nick {@__alias_17{$obda2[$vob][desc]}}};
-
-            #format neutral_enemies {%+2s} {$neut[$neut_index][enemies]};
-            #if {"$neutral_enemies" == " 0"} {#var neutral_enemies {  }};
-            #var neut[$neut_index][enemies] {$neut_enemies};
-            #math tmp {$neut_index + 1};
-
-            #var enemy_shortcut $obda2[$vob][enemies];
-            #format {esl} {%L} {$enemy_shortcut};
-            #if {$esl < 2} {#var enemy_shortcut {        }};
-
-            #var wrogowie_prompt[$neut_index] {<eda>$kill_functionkey$neutral_enemies<eda>$healthbars[$obda2[$vob][hp]] <eda>$neutral_curr_nick};#nop $enemy_shortcut;
-            #var wrogowie_prompt2[$neut_index] {<eda>$kill_functionkey$neutral_enemies<eda>$enem_current_prompt_nick<088>};#nop $enemy_shortcut;
-
-            #line substitute {variables} {
-                #alias oc$functionbindvalue {
-                    ocen ob_$neut[$neut_index][tag];
-                    porownaj sile z ob_$neut[$neut_index][tag];
-                    porownaj zrecznosc z ob_$neut[$neut_index][tag];
-                    porownaj wytrzymalosc z ob_$neut[$neut_index][tag];
-                    #var cmp_obj $neut_index;
-                };
-            };
-            #line substitute {variables} {#alias k$indexchar {_zabij_ ob_$neut[$neut_index][tag]}};
-            #line substitute {variables} {#alias zp$indexchar {zaslon przed ob_$neut[$neut_index][tag]}};
-            #line substitute {variables} {#alias b$indexchar {zablokuj ob_$neut[$neut_index][tag]}};
-            #line substitute {variables} {#alias p$indexchar {przelam obrone ob_$neut[$neut_index][tag]}};
-
-
-            #math {neut_index} {$neut_index + 1};
-            #var {othe_index} {$neut_index};
-            #math {neut_bind_index} {$neut_bind_index + 1};
-        };
-    };
-    };
-};
-
-#alias {update_teams}
-{
-    #unvar team {};
-    #unvar othe {};
-    #unvar neut {};
-    #var team[][desc] {};
-    #unvar team_enemies {};
-    #unvar othe_enemies {};
-    #unvar neut_enemies {};
-    #var team_index 1;
-    #var othe_index 1;
-    #var neut_index 1;
-    #var self_id {};
-    #var bar_celataku {          };
-    #var hpb_celataku {       };
-    #unvar druzyna_prompt;
-    #unvar wrogowie_prompt;
-    #unvar neutral_prompt;
-    #unvar druzyna_prompt2;
-    #unvar wrogowie_prompt2;
-    #unvar neutral_prompt2;
-
-    #unvar prompt_objects_druzyna;
-    #var prompt_index 1;
-
-    update_party;
-
-    #var objects_num_list_changed 1;
-}
-
 #alias {push_obda} {
     #if {$flipper > 0} {
         #var flipper 0;
@@ -326,7 +97,6 @@
 			#unvar {obda2[$bubu]};
          };
     };
-    update_teams;
     push_obda;
 }
 
@@ -341,7 +111,6 @@
       #var {obda2[$vob][enemylist]} {};      
     };
   };
-  update_teams;
   push_obda;
 }
 
@@ -349,16 +118,13 @@
 #nop ###################################################################;
 #nop dla kazdej postaci w tablicy przypozadkuj dany typ;
 #alias {assign_type} {
-    #loop {1} {30} {aabb} {
-        #var rowmap[$aabb] {0};
-    };
-
     #format {screenrows} {%R};
     #var localcnt {1};
     #foreach {$duch[]} {dudu} {
             #var duch[$dudu][shown] {0};
             #if {"$duch[$dudu][avatar]" == "true"} {
                 #var avatarid {$dudu};
+                #var duch[$dudu][desc] {$AVATAR_NAME};
             } {
 
             #var test {$duch[$dudu][desc]};
@@ -509,7 +275,7 @@
     #foreach {$wrogi[]} {to} {
         #if {$duch[$wrogi[$to]][shown] < 1} {
         #nop sh {                                            $duch[$wrogi[$to]][bar][orc]};
-            #sh {                                               $duch[$wrogi[$to]][bar][orc]} {-$r_curLineCnt};
+            #sh {                                  $duch[$wrogi[$to]][bar][orc]} {-$r_curLineCnt};
             #math r_curLineCnt {$r_curLineCnt + 1};
             #var duch[$wrogi[$to]][shown] {1};
         };
@@ -532,7 +298,8 @@
     #foreach {$duch[]} {wr} {
         #if {$duch[$wr][shown] < 1} {
         #nop sh {                                            $duch[$wr][bar][orc]};
-            #sh {                                              $duch[$wr][bar][orc]} {-$r_curLineCnt};
+            #sh {                                  $duch[$wr][bar][orc]} {-$r_curLineCnt};
+
             #math r_curLineCnt {$r_curLineCnt + 1};
             #var duch[$wr][shown] {1};
         };
@@ -699,21 +466,36 @@
 
 #alias {tabela_odswiez} {
     #var maxLinesPerType {};
-    #nop system {clear};
+
     #list wrogi size {wros};
     #list neut size {neus};
     #list team size {teas};
     #var negativecounter 1;
     #format windowh {%R};
 
+    #var iterator {0};
     #foreach {$duch[]} {du} {
-        #nop format tmpen {%+2s} {<118>$duch[$du][enemies]<088>};
-
-        #regex {$duch[$du][desc]} {%w %w %w} {
-            #var other_curr_nick {&3}
-        } {
-            #var other_curr_nick {$obda2[$vob][desc]};
+        #math iterator {$iterator + 1};
+        #if {$duch[$du][attack_num] > 0} {
+            #math duch[$duch[$du][attack_num]][enemies] {$duch[$duch[$du][attack_num]][enemies] + 1};
         };
+      
+        #math indexvalue {96 + $iterator};
+        #if {$indexvalue > 122} {
+            #var indexvalue {88};  
+        };
+        #format indexchar {%a} {$indexvalue};
+        #var duch[$du][alias_value] {$indexchar};
+     
+        #line substitute {variables} {#alias k$indexchar {_zabij_ ob_$du}};
+        #line substitute {variables} {#alias zp$indexchar {zaslon przed ob_$du}};
+        #line substitute {variables} {#alias b$indexchar {zablokuj ob_$du}};
+        #line substitute {variables} {#alias p$indexchar {przelam obrone ob_$du}};
+        #line substitute {variables} {#alias z$indexchar {zaslon ob_$du;#if {"$profiles_zdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+        #line substitute {variables} {#alias wz${indexchar} {gzwycofaj sie za ob_$du;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+        #line substitute {variables} {#alias z${indexchar}2 {opcje grupa 2;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+        #line substitute {variables} {#alias z${indexchar}3 {opcje grupa 3;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+        #line substitute {variables} {#alias z${indexchar}4 {opcje grupa 4;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
           
         #format tmpna {%-15s} {$duch[$du][desc]};
         #format tmpna {%.15s} {$tmpna};
@@ -801,19 +583,7 @@
 	};
 }
 
-#alias {k} {render_h2};
 
-#event {MAP UPDATED VTMAP} {
-	#nop if {"$triggered_vmap" == "1"} {
-		render_h2;
-		#var triggered_vmap 0;
-	};
-	hpbar;
-};
-#alias {TRIGGER_VMAP} {
-	#var triggered_vmap 1;
-	#map at {1} {#nop};
-};
 
 #action {Zapamietane przez ciebie imiona to %* i %2.} {
 	#list przedstawieni clear;
