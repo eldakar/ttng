@@ -1,23 +1,3 @@
-#var team_index 1;
-#var othe_index 1;
-#var przewodzisz_druzynie 0;
-
-#var healthbars[6] {<088>[${c_stan_wysoki}#######<088>]}
-#var healthbars[5] {<088>[-${c_stan_wysoki}######<088>]}
-#var healthbars[4] {<088>[--${c_stan_sredni}#####<088>]}
-#var healthbars[3] {<088>[---${c_stan_sredni}####<088>]}
-#var healthbars[2] {<088>[----${c_stan_niski}###<088>]}
-#var healthbars[1] {<088>[-----${c_stan_niski}##<088>]}
-#var healthbars[0] {<088>[------<FAA><fff>#<088>]}
-
-#var healthbar[6] {<088>${c_stan_wysoki}#######<088>}
-#var healthbar[5] {<088>-${c_stan_wysoki}######<088>}
-#var healthbar[4] {<088>--${c_stan_sredni}#####<088>}
-#var healthbar[3] {<088>---${c_stan_sredni}####<088>}
-#var healthbar[2] {<088>----${c_stan_niski}###<088>}
-#var healthbar[1] {<088>-----${c_stan_niski}##<088>}
-#var healthbar[0] {<088>------<FAA><fff>#<088>}
-
 #var gildie[CN] {n};
 #var gildie[CKN] {n};
 #var gildie[ES] {n};
@@ -45,79 +25,53 @@
 #var gildie[ZS] {n};
 #var gildie[ZT] {n};
 
-#alias {push_obda} {
-    #if {$flipper > 0} {
-        #var flipper 0;
-    } {
-        #var flipper 1;
-    };
-
-    #unvar duch;
-    #foreach {$obda2[]} {vob} {
-        #format obd2desclen {%L} {$obda2[$vob][desc]};
-        #if {$obda2[$vob][hp] >= 0} {
-
-            #var dID $vob;
-            #var duch[$dID][avatar] {$obda2[$vob][avatar]};
-            #var duch[$dID][team_leader] {$obda2[$vob][team_leader]};
-            #var duch[$dID][paralyzed] {$obda2[$vob][paralyzed]};
-            #var duch[$dID][editing] {$obda2[$vob][editing]};
-            #var duch[$dID][attack_num] {$obda2[$vob][attack_num]};
-            #var duch[$dID][hp] {$obda2[$vob][hp]};
-            #var duch[$dID][desc] {$obda2[$vob][desc]};
-            #var duch[$dID][living] {$obda2[$vob][living]};
-            #var duch[$dID][enemy] {$obda2[$vob][enemy]};
-            #var duch[$dID][team] {$obda2[$vob][team]};
-            #var duch[$dID][avatar_target] {$obda2[$vob][avatar_target]};
-            #var duch[$dID][attack_target] {$obda2[$vob][attack_target]};
-            #var duch[$dID][defense_target] {$obda2[$vob][defence_target]};
-            #var duch[$dID][hidden] {$obda2[$vob][hidden]};
-            #var duch[$dID][can_see_in_room] {$obda2[$vob][can_see_in_room]};
-            #var duch[$dID][enemies] {$obda2[$vob][enemy_count]};
-            #var duch[$dID][alias_value] {$obda2[$vob][alias_value]};
-            #var duch[$dID][flipper] {$flipper};
-            #var duch[$dID][bot] {};
-        };
-    };
+#event {IAC SB GMCP objects.nums IAC SE}
+{
+	#var {obnu} {%0};
+	#foreach {$duch[]} {bubu} {
+		#list {obnu} find {$bubu} {vfob};
+		#if {"$vfob" == "0"} {
+			#unvar {duch[$bubu]};
+         	}; 
+    	};
     assign_type;
     szukaj_wroga;
     szukaj_team;
-    szukaj_neut;
     tabela_odswiez;
-};
+#if {$unfolded > 0} {
+        	render_h2;
+	};
 
-#event {IAC SB GMCP objects.nums IAC SE}
-{
- #nop   TRIGGER_VMAP;
-    #var objects_num_list_changed 1;
-	#var {obnu} {%0};
-	#foreach {$obda2[]} {bubu} {
-		#list {obnu} find {$bubu} {vfob};
-		#if {"$vfob" == "0"} {
-			#unvar {obda2[$bubu]};
-         };
-    };
-    push_obda;
 }
 
 #event {IAC SB GMCP objects.data IAC SE}
 {
- #nop TRIGGER_VMAP;
   #var {obda} {%0};
   #foreach {$obda[]} {vob} {
     #foreach {$obda[$vob][]} {bubu} {
-      #var {obda2[$vob][$bubu]} {$obda[$vob][$bubu]};
-      #var {obda2[$vob][enemies]} {};
-      #var {obda2[$vob][enemylist]} {};      
+      #var {duch[$vob][$bubu]} {$obda[$vob][$bubu]};
     };
   };
-  push_obda;
+    assign_type;
+    szukaj_wroga;szukaj_team;
+    tabela_odswiez;
+#if {$unfolded > 0} {
+        	render_h2;
+	};
+
 }
 
 
 #nop ###################################################################;
 #nop dla kazdej postaci w tablicy przypozadkuj dany typ;
 #alias {assign_type} {
+ #list wrogi {clear};
+ #var wrogi_index 0;
+     #var neut_index 0;
+    #list neut {clear};
+	    #var team_index 0;
+    #list team {clear};
+
     #format {screenrows} {%R};
     #var localcnt {1};
     #foreach {$duch[]} {dudu} {
@@ -176,28 +130,36 @@
 			};
 			#if {"$tmpimietype" == "2"} {
 				#line substitute variables {
-				#sub {$duch[$dudu][desc]} {$duch[$dudu][desc]($postac[$test][gildia])};
-				#high {$duch[$dudu][desc]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
+					#sub {$duch[$dudu][desc]} {$duch[$dudu][desc]($postac[$test][gildia])};
+					#high {$duch[$dudu][desc]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
 				};
 			};
-                    }
-                };
-            };
-            #nop REINDEX;
-            #if {"$duch[$dudu][rownr]" == ""} {
-                #loop {1} {30} {rcnt} {
-                    #if {"$rowmap[$rcnt]" == "0"} {
-                        #var duch[$dudu][rownr] {$rcnt};
-                        #var rowmap[$rcnt] {$dudu};
-                        #break;
                     };
                 };
             };
-            #var duch[$dudu][rownr] {$localcnt};
+            
+	    #var duch[$dudu][rownr] {$localcnt};
             #var rowmap[$rcnt] {$dudu};
             #math {localcnt} {$localcnt + 1};
 
-	};
+	    };
+
+	
+	    #if {"$duch[$dudu][enemy]" == "true"} {
+            #math wrogi_index {$wrogi_index + 1};
+            #list wrogi {insert} {$wrogi_index} {$dudu};
+        };
+		#if {"$duch[$dudu][team]" == "false"} {
+            #if {"$duch[$dudu][enemy]" == "false"} {
+                #math neut_index {$neut_index + 1};
+                #list neut {insert} {$neut_index} {$dudu};
+            };
+        };
+        #if {"$duch[$dudu][team]" == "true"} {
+            #math team_index {$team_index + 1};
+            #list team {insert} {$team_index} {$dudu};
+        };
+
     };
 };
 
@@ -313,14 +275,6 @@
     #nop ##############;
     #nop buduje liste wrogow;
     #nop ##############;
-    #var wrogi_index 0;
-    #list wrogi {clear};
-    #foreach {$duch[]} {dudu} {
-        #if {"$duch[$dudu][enemy]" == "true"} {
-            #math wrogi_index {$wrogi_index + 1};
-            #list wrogi {insert} {$wrogi_index} {$dudu};
-        };
-    };
     #list wrogi size {wros};
 
     #var wrog_najslabszy 0;
@@ -391,30 +345,8 @@
 
 
 
-#alias {szukaj_neut}
-{
-    #var neut_index 0;
-    #list neut {clear};
-    #foreach {$duch[]} {dudu} {
-        #if {"$duch[$dudu][team]" == "false"} {
-            #if {"$duch[$dudu][enemy]" == "false"} {
-                #math neut_index {$neut_index + 1};
-                #list neut {insert} {$neut_index} {$dudu};
-            };
-        };      
-    }
-}
 #alias {szukaj_team}
 {
-    #var team_index 0;
-    #list team {clear};
-    #foreach {$duch[]} {dudu} {
-        #if {"$duch[$dudu][team]" == "true"} {
-            #math team_index {$team_index + 1};
-            #list team {insert} {$team_index} {$dudu};
-        };
-    };
-
     #list team size {teas};
     #var team_najslabszy 0;
     #var team_najslabszy_hp 10;
@@ -440,21 +372,9 @@
         };
     }
 
-    #nop jesli nie jestesmy dowodca druzyny i jest ustawiony cel obrony;
-    #nop nadpisujemy wybor sugerowanego do obrony;
-    #if {"$duch[$avatarid][team_leader]" == "false"} {
-        #foreach {$team[]} {www} {
-            #if {"$duch[$team[$www]][defence_target]" == "true"} {
-                #var team_najslabszy $team[$www];
-                #var team_najslabszy_hp $duch[$team[$www]][hp];         
-            };
-        };
-    };
-    
     #if {$team_najslabszy_hp < 10} {
         #var duch[$team_najslabszy][bot] {SO1};
         #var team_sugerowany $team_najslabszy;
-        #nop chat message all {SO1 $team_najslabszy};
 	#macro {$KEY_F2} {
 		zaslon ob_$team_najslabszy;
         #if {"$pzdjeciezaslon" == "auto"} {
@@ -462,6 +382,22 @@
         };
 	};
     };
+
+    #nop jesli nie jestesmy dowodca druzyny i jest ustawiony cel obrony;
+    #nop nadpisujemy wybor sugerowanego do obrony;
+    #if {"$duch[$avatarid][team_leader]" == "false"} {
+        #foreach {$team[]} {www} {
+            #if {"$duch[$team[$www]][defence_target]" == "true"} {
+		#var duch[$team[$www][bot] {SO2};
+		#macro {$KEY_F4} {
+			zaslon ob_$team[$www];
+        		#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac};
+		};
+            };
+        };
+    };
+
+    
 }
 
 #alias {tabela_odswiez} {
@@ -474,6 +410,11 @@
     #format windowh {%R};
 
     #var iterator {0};
+
+    #foreach {$duch[]} {du} {
+	#var duch[$du][enemies] {0};
+	#var duch{$du][bot] {};
+    };
     #foreach {$duch[]} {du} {
         #math iterator {$iterator + 1};
         #if {$duch[$du][attack_num] > 0} {
@@ -506,7 +447,6 @@
 
         #var tmpna_sma {};
         #var tmphp {$healthbars2[$duch[$du][hp]]};
-        #var tmphp_orc {$healthbarsorc[$duch[$du][hp]]}; 
         #var tmpcel {   };
         #var tmpava {  };
         #var tmpsug {   };
@@ -578,9 +518,6 @@
 
         #math {negativecounter} {$negativecounter + 1};
     };
-	#if {$unfolded > 0} {
-        	render_h2;
-	};
 }
 
 
