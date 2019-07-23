@@ -4,6 +4,7 @@
     #map read mapkatt.map;
     #read map.tin;		#nop Obsluga mapy;
     #read gmcp_char.tin;    #nop GMCP;
+    #read staty.tin;		#nop Zliczanie statystyk;
     #read gmcp_message.tin;	#nop GMCP;
     #read gmcp_object_hash.tin;	#nop GMCP;
     #read prompt.tin		#nop historia komend na dolnym pasku;
