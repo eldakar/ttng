@@ -20,6 +20,7 @@
 	#var obda2[$avatarid][desc] {$CHAR_INFO[name]};
 	#line substitute {variables} {
 		#class profile read $AVATAR_NAME;
+		#class stats read stats-$AVATAR_NAME;
 		#class profile size profile_size;
 		#if {$profile_size < 1} {
 			#class profile read profile_default;
@@ -53,6 +54,7 @@
 			#var {state[$s]} {$CHAR_STATE[$s]};
 		};
 	};
+	#if {"$CHAR_STATE[improve]" != ""} {dodaj_postep $CHAR_STATE[improve]};
 }
 
 #event {VARIABLE UPDATE CHAR_STATE} {

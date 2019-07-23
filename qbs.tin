@@ -173,7 +173,7 @@
 #action {Zapalasz} {
 	#ticker lampa {
 		qb napelnij lampe olejem;
-	} {200};
+	} {100};
 };
 
 #action {Gasisz olejna lampe} {
