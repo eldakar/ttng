@@ -250,6 +250,9 @@
 #high {Ponad {jego|jej} %*.} {$c_ponad};
 #high {Do pasa ma{|sz} %*.} {$c_dopasa};
 
+#nop DO WALKI;
+#high {^%* atakuje cie!$} {<FAA><178>};
+
 #nop KOLORY PRZEDMIOTOW;
 #var kolor_pojemnik {<178>};
 #var kolor_skarbow {<038>};
