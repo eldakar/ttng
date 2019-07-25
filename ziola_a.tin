@@ -1,0 +1,1061 @@
+#var ziola[Deliona] {0};
+#var ziola[Mieta] {0};
+#var ziola[Babka] {0};
+#var ziola[Mniszek] {0};
+#var ziola[Szafran] {0};
+#var ziola[BorowikSzatanski] {0};
+#var ziola[Glog] {0};
+#var ziola[plucnica] {0};
+#var ziola[Muchomor_Czerwony] {0};
+#var ziola[Oset] {0};
+#var ziola[Bariwnek] {0};
+#var ziola[Nagietek] {0};
+#var ziola[Szczaw] {0};
+#var ziola[Lawenda] {0};
+#var ziola[SzalwiaLekarska] {0};
+#var ziola[SerceKapitana] {0};
+#var ziola[Melisa] {0};
+#var ziola[Arnika] {0};
+#var ziola[Ranog] {0};
+#var ziola[Siezygron] {0};
+#var ziola[Bagiennik] {0};
+#var ziola[Grabiorog] {0};
+#var ziola[Pierscieniak1] {0};
+#var ziola[Pierscieniak3] {0};
+#var ziola[Pierscieniak4] {0};
+#var ziola[Pierscieniak5] {0};
+#var ziola[Lulek_Czarny] {0};
+#var ziola[Muchomor_Sromotnikowy] {0};
+#var ziola[Stulicha] {0};
+#var ziola[Stroczek] {0};
+#var ziola[Szalej] {0};
+#var ziola[Casur] {0};
+#var ziola[Drath] {0};
+#var ziola[Konopie] {0};
+#var ziola[Ogorecznik] {0};
+#var ziola[Roza] {0};
+#var ziola[Borowka] {0};
+#var ziola[Jagoda] {0};
+#var ziola[Jerzyna] {0};
+#var ziola[Malina] {0};
+#var ziola[Poziomka] {0};
+#var ziola[Maslak] {0};
+#var ziola[Hubka] {0};
+#var ziola[Podgrzybek_Brunatny] {0};
+#var ziola[Muchomor_Cesarski] {0};
+#var ziola[Borowik_Krolewski] {0};
+#var ziola[Borowik_Szlachetny] {0};
+#var ziola[Drabik_Drzewikowaty] {0};
+#var ziola[Kozlarz_Czerwony] {0};
+#var ziola[Trawa] {0};
+#var ziola[Rabarbar] {0};
+#var ziola[Centuria] {0};
+#var ziola[Rdest] {0};
+#var ziola[Mak] {0};
+#var ziola[Macznica] {0};
+#var ziola[Pieciornik] {0};
+#var ziola[Dziurawiec] {0};
+#var ziola[Naparstnica] {0};
+#var ziola[Nostrzyk] {0};
+#var ziola[Bylica] {0};
+#var ziola[Kasztanowiec] {0};
+#var ziola[Przelot] {0};
+#var ziola[Bielun] {0};
+#var ziola[Deren] {0};
+#var ziola[Komosa] {0};
+#var ziola[Wrotycz] {0};
+#var ziola[Mandragora] {0};
+#var ziola[Aralia] {0};
+#var ziola[Kola] {0};
+#var ziola[Przesl] {0};
+#var ziola[Lulecznica] {0};
+#var ziola[Konwalia] {0};
+#var ziola[Lak] {0};
+#var ziola[Rumianek] {0};
+#var ziola[Chaber] {0};
+#var ziola[Bez] {0};
+#var ziola[Krzyzownica] {0};
+#var ziola[Nawloc] {0};
+#var ziola[Kulczyba] {0};
+#var ziola[Szczwol] {0};
+#var ziola[Jemiola] {0};
+#var ziola[Ciemiernik] {0};
+#var ziola[Bobotrutka] {0};
+#var ziola[Rojnik] {0};
+#var ziola[Potoslin] {0};
+#var ziola[Pokrzyk] {0};
+#var ziola[Rauwolfia] {0};
+#var ziola[Kurzyslad] {0};
+#var ziola[Tojad] {0};
+#var ziola[Ostrozeczka] {0};
+#var ziola[Stroiczka] {0};
+#var ziola[Ciemiezyca] {0};
+#var ziola[Starzec] {0};
+#var ziola[Jaskier] {0};
+#var ziola[Urzet] {0};
+#var ziola[Boldoa] {0};
+#var ziola[Marzanna] {0};
+#var ziola[Podbial] {0};
+#var ziola[Ostrozen] {0};
+#var ziola[Poziewnik] {0};
+#var ziola[Sliwa] {0};
+#var ziola[Bulawinka] {0};
+#var ziola[Kociomietka] {0};
+#var ziola[Skrzyp] {0};
+#var ziola[Cebula] {0};
+#var ziola[Kruszyna] {0};
+#var ziola[Hyzop] {0};
+#var ziola[Lukrecja] {0};
+#var ziola[Pokrzywa] {0};
+#var ziola[Janowiec] {0};
+#var ziola[Lubczyk] {0};
+#var ziola[NieznanyPCK] {0};
+
+
+
+#var ziolan[Deliona] {zolty jasny kwiat};
+#var ziolan[Mieta] {okraglawy aromatyczny lisc};
+#var ziolan[Babka] {rozetkowaty lancetowaty lisc};
+#var ziolan[Mniszek] {zlocistozolty kwiat};
+#var ziolan[Szafran] {jasnofioletowy delikatny kwiat};
+#var ziolan[Szatan] {gruby szarawy grzyb};
+#var ziolan[Glog] {bialy maly kwiat};
+#var ziolan[Plucnica] {szarozielony gabczasty porost};
+#var ziolan[Muchomor] {delikatny czerwony grzyb};
+#var ziolan[Oset] {kolczasta wysuszona roslina};
+#var ziolan[Barwinek] {fioletowy lejkowaty kwiat};
+#var ziolan[Nagietek] {jasnopomaranczowy kwiat};
+#var ziolan[Szczaw] {strzalkowaty aromatyczny lisc};
+#var ziolan[Lawenda] {fioletowy zwarty kwiatostan};
+#var ziolan[SzalwiaLekarska] {zaostrzony podluzny lisc};
+#var ziolan[Serce] {maly czerwony kwiat};
+#var ziolan[Melisa] {owlosiony aromatyczny lisc};
+#var ziolan[Arnika] {zlocistopomaranczowy duzy kwiat};
+#var ziolan[Ranog] {zoltoszary niepozorny korzen};
+#var ziolan[Siezygron] {duza granatowa jagoda};
+#var ziolan[Bagiennik] {brudnobrazowa cuchnaca galaz};
+#var ziolan[Grabiorog] {brazowawy fosforyzujacy mech};
+#var ziolan[Pierscieniak1] {zielony sluzowaty grzyb};
+#var ziolan[Pierscieniak3] {ciemnoniebiesky sluzowaty grzyb};
+#var ziolan[Pierscieniak4] {niebieskiy sluzowaty grzyb};
+#var ziolan[Pierscieniak5] {miedziany sluzowaty grzyb};
+#var ziolan[Lulek] {brudnozolty fioletowo-zylkowany kwiat};
+#var ziolan[Sromotnik] {delikatny jasny grzyb};
+#var ziolan[Stulicha] {jaskrawozolty drobny kwiat};
+#var ziolan[Stroczek] {bialy zmutowany grzyb};
+#var ziolan[Szalej] {pomaranczowy maly korzen};
+#var ziolan[Casur] {mazisty bulwiasty grzyb};
+#var ziolan[Drath] {soczysty karminowy mech};
+#var ziolan[Konopie] {dluga lodyga};
+#var ziolan[Ogorecznik] {eliptyczny zaostrzony lisc};
+#var ziolan[Roza] {rozowy pachnacy kwiat};
+#var ziolan[Borowka] {twardy czerwony owoc};
+#var ziolan[Jagoda] {maly fioletowy owoc};
+#var ziolan[Jezyna] {maly czarny owoc};
+#var ziolan[Malina] {maly czerwony owoc};
+#var ziolan[Poziomka] {niewielky czerwony owoc};
+#var ziolan[Maslak] {nieduzy brazowy grzyb};
+#var ziolan[Hubka] {grzyb suchy kapelusz};
+#var ziolan[Podgrzybek] {sredniy kasztanowobrazowy grzyb};
+#var ziolan[Muchomor] {miedzianozielony fosforyzujacy grzyb};
+#var ziolan[Borowik] {gruby brazowy grzyb};
+#var ziolan[Borowik] {wysoky jasnobrazowy grzyb};
+#var ziolan[Drabik] {zielona postrzepiona galaz};
+#var ziolan[Kozlarz] {wysoky czerwonawy grzyb};
+#var ziolan[Trawa] {zielone lancetowate liscie};
+#var ziolan[Rabarbar] {czerwonawy duzy lisc};
+#var ziolan[Centuria] {smukla jasnozielona lodyga};
+#var ziolan[Rdest] {zielony galezisty ped};
+#var ziolan[Mak] {okazaly pachnacy kwiat};
+#var ziolan[Macznica] {zdrewniala rozgaleziona krzewinka};
+#var ziolan[Pieciornik] {ciemna poskrecana klacz};
+#var ziolan[Dziurawiec] {czterokanciasta rozgaleziona lodyga};
+#var ziolan[Naparstnica] {srebrzystoszary owlosiony lisc};
+#var ziolan[Nostrzyk] {smukla zielona lodyga};
+#var ziolan[Bylica] {kanciasta rozgaleziona lodyga};
+#var ziolan[Kasztanowiec] {kosmatoowlosiony kwiatostan};
+#var ziolan[Przelot] {kremowy owlosiony kwiat};
+#var ziolan[Przelot_] {kremowy owlosiony ususzony kwiat};
+#var ziolan[Bielun] {duzy bialy kwiat};
+#var ziolan[Deren] {lsniacy czerwony owoc};
+#var ziolan[Komosa] {macznistoowlosiona szarawa roslina};
+#var ziolan[Wrotycz] {zolty rurkowaty kwiat};
+#var ziolan[Mandragora] {bialy rozgaleziony korzen};
+#var ziolan[Aralia] {szary kolczasty korzen};
+#var ziolan[Kola] {brazowe okragle nasionko};
+#var ziolan[Przesl] {rozgowata zoltozielona galaz};
+#var ziolan[Lulecznica] {jasnozielona nieowlosiona lodyga};
+#var ziolan[Konwalia] {wonny dzwonkowaty kwiat};
+#var ziolan[Lak] {sztywna smukla lodyga};
+#var ziolan[Rumianek] {drobny bialy kwiat};
+#var ziolan[Chaber] {wysoky blekitny kwiat};
+#var ziolan[Bez] {jasnobrunatna popekana galaz};
+#var ziolan[Krzyzownica] {zoltawy powyginany korzen};
+#var ziolan[Nawloc] {jasnobrazowa ulistniona lodyga};
+#var ziolan[Kulczyba] {dziwne zoltoszare nasionko};
+#var ziolan[Szczwol] {rozdeta aromatyczna lodyga};
+#var ziolan[Jemiola] {oliwkowozielona gietka galaz};
+#var ziolan[Ciemiernik] {ciemny splatany korzen};
+#var ziolan[Bobotrutka] {czarna blyszczaca fasolka};
+#var ziolan[Rojnik] {ciemnozielona rozwarta rozyczka};
+#var ziolan[Potoslin] {pierzasty ogonky lisc};
+#var ziolan[Pokrzyk] {gruby walcowaty klacz};
+#var ziolan[Rauwolfia] {szarawy pogiety klacz};
+#var ziolan[Kurzyslad] {wiotka drobna lodyzka};
+#var ziolan[Tojad] {wzniesiona ukwiecona lodyga};
+#var ziolan[Ostrozeczka] {duzy fioletowy kwiat};
+#var ziolan[Stroiczka] {rozgaleziona owlosiona lodyga};
+#var ziolan[Ciemiezyca] {zielony miesisty kwiat};
+#var ziolan[Starzec] {wysoky zolty kwiat};
+#var ziolan[Jaskier] {rozgaleziona wzniesiona lodyga};
+#var ziolan[Urzet] {niepozorna sinozielona roslina};
+#var ziolan[Boldoa] {szarozielony szorstky lisc};
+#var ziolan[Marzanna] {rozwiniety korzen};
+#var ziolan[Podbial] {zolty jaskrawy kwiat};
+#var ziolan[Ostrozen] {galezista sinozielona lodyga};
+#var ziolan[Poziewnik] {szorstka ciemnozielona galaz};
+#var ziolan[Sliwa] {czarny niewielki owoc};
+#var ziolan[Bulawinka] {czarne aromatyczne ziarenko};
+#var ziolan[Kociomietka] {wzniesiona owlosiona lodyga};
+#var ziolan[Skrzyp] {zielona trzeszczaca galaz};
+#var ziolan[Cebula] {zlociste spore ziolo};
+#var ziolan[Kruszyna] {zdretwiala zwinieta rurka};
+#var ziolan[Hyzop] {zielona kwitnaca lodyga};
+#var ziolan[Lukrecja] {sztywny rozgaleziony korzen};
+#var ziolan[Pokrzywa] {kanciasta parzaca lodyga};
+#var ziolan[Janowiec] {wiotka kwitnaca galaz};
+#var ziolan[Lubczyk] {czarny aromatyczny korzen};
+#var ziolan[NieznanyPCK] {piekny czerwony kwiat};
+
+#var worekA_nazwa {brak}
+#var worekA_pojemnosc {0}
+#var worekA_razem {0}
+#list worekA_zawartosc_nazwa {clear}
+#list worekA_zawartosc_ilosc {clear}
+#list worekA_zawartosc {clear}
+
+#var worekB_nazwa {brak}
+#var worekB_pojemnosc {0}
+#var worekB_razem {0}
+#list worekB_zawartosc_nazwa {clear}
+#list worekB_zawartosc_ilosc {clear}
+#list worekB_zawartosc {clear}
+
+#var worekC_nazwa {brak}
+#var worekC_pojemnosc {0}
+#var worekC_razem {0}
+#list worekC_zawartosc_nazwa {clear}
+#list worekC_zawartosc_ilosc {clear}
+#list worekC_zawartosc {clear}
+
+#var worekD_nazwa {brak}
+#var worekD_pojemnosc {0}
+#var worekD_razem {0}
+#list worekD_zawartosc_nazwa {clear}
+#list worekD_zawartosc_ilosc {clear}
+#list worekD_zawartosc {clear}
+
+#alias {wa} {#var currentworek A;zajrzyj do pierwszego przytroczonego woreczka;}
+#alias {wb} {zajrzyj do drugiego przytroczonego woreczka;}
+#alias {wc} {zajrzyj do trzeciego przytroczonego woreczka;}
+#alias {wd} {zajrzyj do czwartego przytroczonego woreczka;}
+
+#alias {worki} {
+  #var sortujemy {true};
+  #var ziola[Deliona] {0};
+  #var ziola[Mieta] {0};
+  #var ziola[Babka] {0};
+  #var ziola[Mniszek] {0};
+  #var ziola[Szafran] {0};
+  #var ziola[BorowikSzatanski] {0};
+  #var ziola[Glog] {0};
+  #var ziola[plucnica] {0};
+  #var ziola[Muchomor_Czerwony] {0};
+  #var ziola[Oset] {0};
+  #var ziola[Bariwnek] {0};
+  #var ziola[Nagietek] {0};
+  #var ziola[Szczaw] {0};
+  #var ziola[Lawenda] {0};
+  #var ziola[SzalwiaLekarska] {0};
+  #var ziola[SerceKapitana] {0};
+  #var ziola[Melisa] {0};
+  #var ziola[Arnika] {0};
+  #var ziola[Ranog] {0};
+  #var ziola[Siezygron] {0};
+  #var ziola[Bagiennik] {0};
+  #var ziola[Grabiorog] {0};
+  #var ziola[Pierscieniak1] {0};
+  #var ziola[Pierscieniak3] {0};
+  #var ziola[Pierscieniak4] {0};
+  #var ziola[Pierscieniak5] {0};
+  #var ziola[Lulek_Czarny] {0};
+  #var ziola[Muchomor_Sromotnikowy] {0};
+  #var ziola[Stulicha] {0};
+  #var ziola[Stroczek] {0};
+  #var ziola[Szalej] {0};
+  #var ziola[Casur] {0};
+  #var ziola[Drath] {0};
+  #var ziola[Konopie] {0};
+  #var ziola[Ogorecznik] {0};
+  #var ziola[Roza] {0};
+  #var ziola[Borowka] {0};
+  #var ziola[Jagoda] {0};
+  #var ziola[Jerzyna] {0};
+  #var ziola[Malina] {0};
+  #var ziola[Poziomka] {0};
+  #var ziola[Maslak] {0};
+  #var ziola[Hubka] {0};
+  #var ziola[Podgrzybek_Brunatny] {0};
+  #var ziola[Muchomor_Cesarski] {0};
+  #var ziola[Borowik_Krolewski] {0};
+  #var ziola[Borowik_Szlachetny] {0};
+  #var ziola[Drabik_Drzewikowaty] {0};
+  #var ziola[Kozlarz_Czerwony] {0};
+  #var ziola[Trawa] {0};
+  #var ziola[Rabarbar] {0};
+  #var ziola[Centuria] {0};
+  #var ziola[Rdest] {0};
+  #var ziola[Mak] {0};
+  #var ziola[Macznica] {0};
+  #var ziola[Pieciornik] {0};
+  #var ziola[Dziurawiec] {0};
+  #var ziola[Naparstnica] {0};
+  #var ziola[Nostrzyk] {0};
+  #var ziola[Rosiczka] {0};
+  #var ziola[Bylica] {0};
+  #var ziola[Kasztanowiec] {0};
+  #var ziola[Przelot] {0};
+  #var ziola[Bielun] {0};
+  #var ziola[Deren] {0};
+  #var ziola[Komosa] {0};
+  #var ziola[Wrotycz] {0};
+  #var ziola[Mandragora] {0};
+  #var ziola[Aralia] {0};
+  #var ziola[Kola] {0};
+  #var ziola[Przesl] {0};
+  #var ziola[Lulecznica] {0};
+  #var ziola[Konwalia] {0};
+  #var ziola[Lak] {0};
+  #var ziola[Rumianek] {0};
+  #var ziola[Chaber] {0};
+  #var ziola[Bez] {0};
+  #var ziola[Krzyzownica] {0};
+  #var ziola[Nawloc] {0};
+  #var ziola[Kulczyba] {0};
+  #var ziola[Szczwol] {0};
+  #var ziola[Jemiola] {0};
+  #var ziola[Ciemiernik] {0};
+  #var ziola[Bobotrutka] {0};
+  #var ziola[Rojnik] {0};
+  #var ziola[Potoslin] {0};
+  #var ziola[Pokrzyk] {0};
+  #var ziola[Rauwolfia] {0};
+  #var ziola[Kurzyslad] {0};
+  #var ziola[Tojad] {0};
+  #var ziola[Ostrozeczka] {0};
+  #var ziola[Stroiczka] {0};
+  #var ziola[Ciemiezyca] {0};
+  #var ziola[Starzec] {0};
+  #var ziola[Jaskier] {0};
+  #var ziola[Urzet] {0};
+  #var ziola[Boldoa] {0};
+  #var ziola[Marzanna] {0};
+  #var ziola[Podbial] {0};
+  #var ziola[Ostrozen] {0};
+  #var ziola[Poziewnik] {0};
+  #var ziola[Sliwa] {0};
+  #var ziola[Bulawinka] {0};
+  #var ziola[Kociomietka] {0};
+  #var ziola[Skrzyp] {0};
+  #var ziola[Cebula] {0};
+  #var ziola[Kruszyna] {0};
+  #var ziola[Hyzop] {0};
+  #var ziola[Lukrecja] {0};
+  #var ziola[Pokrzywa] {0};
+  #var ziola[Janowiec] {0};
+  #var ziola[Lubczyk] {0};
+  #var ziola[NieznanyPCK] {0};
+
+#var zioladb[Deliona][ilosc] {0};
+#var zioladb[Mieta][ilosc] {0};
+#var zioladb[Babka][ilosc] {0};
+#var zioladb[Barwinek][ilosc] {0};
+#var zioladb[Mniszek][ilosc] {0};
+#var zioladb[Szafran][ilosc] {0};
+#var zioladb[BorowikSzatanski][ilosc] {0};
+#var zioladb[Glog][ilosc] {0};
+#var zioladb[plucnica][ilosc] {0};
+#var zioladb[Muchomor_Czerwony][ilosc] {0};
+#var zioladb[Oset][ilosc] {0};
+#var zioladb[Bariwnek][ilosc] {0};
+#var zioladb[Nagietek][ilosc] {0};
+#var zioladb[Szczaw][ilosc] {0};
+#var zioladb[Lawenda][ilosc] {0};
+#var zioladb[SzalwiaLekarska][ilosc] {0};
+#var zioladb[SerceKapitana][ilosc] {0};
+#var zioladb[Melisa][ilosc] {0};
+#var zioladb[Arnika][ilosc] {0};
+#var zioladb[Ranog][ilosc] {0};
+#var zioladb[Siezygron][ilosc] {0};
+#var zioladb[Bagiennik][ilosc] {0};
+#var zioladb[Grabiorog][ilosc] {0};
+#var zioladb[Pierscieniak1][ilosc] {0};
+#var zioladb[Pierscieniak3][ilosc] {0};
+#var zioladb[Pierscieniak4][ilosc] {0};
+#var zioladb[Pierscieniak5][ilosc] {0};
+#var zioladb[Lulek_Czarny][ilosc] {0};
+#var zioladb[Muchomor_Sromotnikowy][ilosc] {0};
+#var zioladb[Stulicha][ilosc] {0};
+#var zioladb[Rosiczka][ilosc] {0};
+#var zioladb[Stroczek][ilosc] {0};
+#var zioladb[Szalej][ilosc] {0};
+#var zioladb[Casur][ilosc] {0};
+#var zioladb[Drath][ilosc] {0};
+#var zioladb[Konopie][ilosc] {0};
+#var zioladb[Ogorecznik][ilosc] {0};
+#var zioladb[Roza][ilosc] {0};
+#var zioladb[Borowka][ilosc] {0};
+#var zioladb[Jagoda][ilosc] {0};
+#var zioladb[Jerzyna][ilosc] {0};
+#var zioladb[Malina][ilosc] {0};
+#var zioladb[Poziomka][ilosc] {0};
+#var zioladb[Maslak][ilosc] {0};
+#var zioladb[Hubka][ilosc] {0};
+#var zioladb[Podgrzybek_Brunatny][ilosc] {0};
+#var zioladb[Muchomor_Cesarski][ilosc] {0};
+#var zioladb[Borowik_Krolewski][ilosc] {0};
+#var zioladb[Borowik_Szlachetny][ilosc] {0};
+#var zioladb[Drabik_Drzewikowaty][ilosc] {0};
+#var zioladb[Kozlarz_Czerwony][ilosc] {0};
+#var zioladb[Trawa][ilosc] {0};
+#var zioladb[Rabarbar][ilosc] {0};
+#var zioladb[Centuria][ilosc] {0};
+#var zioladb[Rdest][ilosc] {0};
+#var zioladb[Mak][ilosc] {0};
+#var zioladb[Macznica][ilosc] {0};
+#var zioladb[Pieciornik][ilosc] {0};
+#var zioladb[Dziurawiec][ilosc] {0};
+#var zioladb[Naparstnica][ilosc] {0};
+#var zioladb[Nostrzyk][ilosc] {0};
+#var zioladb[Bylica][ilosc] {0};
+#var zioladb[Kasztanowiec][ilosc] {0};
+#var zioladb[Przelot][ilosc] {0};
+#var zioladb[Bielun][ilosc] {0};
+#var zioladb[Deren][ilosc] {0};
+#var zioladb[Komosa][ilosc] {0};
+#var zioladb[Wrotycz][ilosc] {0};
+#var zioladb[Mandragora][ilosc] {0};
+#var zioladb[Aralia][ilosc] {0};
+#var zioladb[Kola][ilosc] {0};
+#var zioladb[Przesl][ilosc] {0};
+#var zioladb[Lulecznica][ilosc] {0};
+#var zioladb[Konwalia][ilosc] {0};
+#var zioladb[Lak][ilosc] {0};
+#var zioladb[Rumianek][ilosc] {0};
+#var zioladb[Chaber][ilosc] {0};
+#var zioladb[Bez][ilosc] {0};
+#var zioladb[Krzyzownica][ilosc] {0};
+#var zioladb[Nawloc][ilosc] {0};
+#var zioladb[Kulczyba][ilosc] {0};
+#var zioladb[Szczwol][ilosc] {0};
+#var zioladb[Jemiola][ilosc] {0};
+#var zioladb[Ciemiernik][ilosc] {0};
+#var zioladb[Bobotrutka][ilosc] {0};
+#var zioladb[Rojnik][ilosc] {0};
+#var zioladb[Potoslin][ilosc] {0};
+#var zioladb[Pokrzyk][ilosc] {0};
+#var zioladb[Rauwolfia][ilosc] {0};
+#var zioladb[Kurzyslad][ilosc] {0};
+#var zioladb[Tojad][ilosc] {0};
+#var zioladb[Ostrozeczka][ilosc] {0};
+#var zioladb[Stroiczka][ilosc] {0};
+#var zioladb[Ciemiezyca][ilosc] {0};
+#var zioladb[Starzec][ilosc] {0};
+#var zioladb[Jaskier][ilosc] {0};
+#var zioladb[Urzet][ilosc] {0};
+#var zioladb[Boldoa][ilosc] {0};
+#var zioladb[Marzanna][ilosc] {0};
+#var zioladb[Podbial][ilosc] {0};
+#var zioladb[Ostrozen][ilosc] {0};
+#var zioladb[Poziewnik][ilosc] {0};
+#var zioladb[Sliwa][ilosc] {0};
+#var zioladb[Bulawinka][ilosc] {0};
+#var zioladb[Kociomietka][ilosc] {0};
+#var zioladb[Skrzyp][ilosc] {0};
+#var zioladb[Cebula][ilosc] {0};
+#var zioladb[Kruszyna][ilosc] {0};
+#var zioladb[Hyzop][ilosc] {0};
+#var zioladb[Lukrecja][ilosc] {0};
+#var zioladb[Pokrzywa][ilosc] {0};
+#var zioladb[Janowiec][ilosc] {0};
+#var zioladb[Lubczyk][ilosc] {0};
+#var zioladb[NieznanyPCK][ilosc] {0};
+  wa;wb;wc;wd;
+}
+
+
+#action {Rozwiazujesz na chwile rzemyk, sprawdzajac zawartosc swojego %1. W srodku dostrzegasz %69.} {
+  #if {"$sortujemy" == "true"} {
+    #var ret @sortuj_worek{%69};
+  };
+}
+#action {Rozwiazujesz na chwile rzemyk, sprawdzajac zawartosc swojego %1. W jego srodku nic jednak nie ma.} {
+  #if {"$sortujemy" == "true"} {
+    #var ret @sortuj_worek{zero niczego};
+  };
+}
+#action {Uwaznie ogladasz zawartosc %1. W jego srodku nic jednak nie ma.} {
+  #var ret @sortuj_worek{zero niczego};
+  #nop if {"$sortujemy" == "true"} {#line gag;};
+}
+#action {Uwaznie ogladasz zawartosc %1. W srodku dostrzegasz %69.} {
+  #var ret @sortuj_worek{%69};
+  #nop if {"$sortujemy" == "true"} {#line gag;};
+}
+
+#unaction {Zajrzyj do czego?} {}
+
+#function {cyfruj_ilosc} {
+  #var ret %1;
+  #replace ret {zero} {0};
+  #replace ret {dziesiec} {10};
+  #replace ret {jedenascie} {11};
+  #replace ret {dwanascie} {12};
+  #replace ret {trzynascie} {13};
+  #replace ret {czternascie} {14};
+  #replace ret {pietnascie} {15};
+  #replace ret {szesnascie} {16};
+  #replace ret {siedemnascie} {17};
+  #replace ret {osiemnascie} {18};
+  #replace ret {dziewietnascie} {19};
+  #replace ret {dwadziescia} {20};
+
+  #replace ret {dwie} {2} {7};
+  #replace ret {dwa} {2} {7};
+  #replace ret {trzy} {3} {7};
+  #replace ret {cztery} {4} {7};
+  #replace ret {piec} {5} {7};
+  #replace ret {szesc} {6} {7};
+  #replace ret {siedem} {7} {7};
+  #replace ret {osiem} {8} {7};
+  #replace ret {dziewiec} {9} {7};
+  #replace ret {wiele} {$wiele};
+  #return $ret;
+}
+
+#function {sortuj_worek} {
+#if {"$sortujemy" == "true"} {
+  #var szawartosc {%1};
+  #replace szawartosc {{ i |, }} {;};
+  #replace szawartosc {zolt%w jasn%w kwiat%w} {Deliona};
+  #replace szawartosc {okraglaw%w aromatyczn%w lisc%w} {Mieta};
+  #replace szawartosc {rozetkowat%w lancetowat%w lisc%w} {Babka};
+  #replace szawartosc {zlocistozolt%w kwiat%w} {Mniszek};
+  #replace szawartosc {jasnofioletow%w delikatn%w kwiat%w} {Szafran};
+  #replace szawartosc {grub%w szaraw%w grzyb%w} {BorowikSzatanski};
+  #replace szawartosc {bial%w mal%w kwiat%w} {Glog};
+  #replace szawartosc {szarozielon%w gabczast%w porost%w} {Plucnica};
+  #replace szawartosc {delikatn%w czerwon%w grzyb%w} {Muchomor_Czerwony};
+  #replace szawartosc {kolczast%w wysuszon%w roslin%w} {Oset};
+  #replace szawartosc {fioletow%w lejkowat%w kwiat%w} {Bariwnek};
+  #replace szawartosc {jasnopomaranczow%w kwiat%w} {Nagietek};
+  #replace szawartosc {strzalkowat%w aromatyczn%w lisc%w} {Szczaw};
+  #replace szawartosc {fioletow%w zwart%w kwiatostan%w} {Lawenda};
+  #replace szawartosc {zaostrzon%w podluzn%w lisc%w} {SzalwiaLekarska};
+  #replace szawartosc {mal%w czerwon%w kwiat%w} {SerceKapitana};
+  #replace szawartosc {owlosion%w aromatyczn%w lisc%w} {Melisa};
+  #replace szawartosc {zlocistopomaranczow%w duz%w kwiat%w} {Arnika};
+  #replace szawartosc {zoltoszar%w niepozorn%w korzen%w} {Ranog};
+  #replace szawartosc {duz%w granatow%w jagod%w} {Siezygron};
+  #replace szawartosc {brudnobrazow%w cuchnac%w galaz%w} {Bagiennik};
+  #replace szawartosc {brazowaw%w fosforyzujac%w m%w} {Grabiorog};
+  #replace szawartosc {zielon%w sluzowat%w grzyb%w} {Pierscieniak1};
+  #replace szawartosc {ciemnoniebiesk%w sluzowat%w grzyb%w} {Pierscieniak3};
+  #replace szawartosc {niebieski%w sluzowat%w grzyb%w} {Pierscieniak4};
+  #replace szawartosc {miedzian%w sluzowat%w grzyb%w} {Pierscieniak5};
+  #replace szawartosc {brudnozolt%w fioletowo-zylkowan%w kwiat%w} {Lulek_Czarny};
+  #replace szawartosc {delikatn%w jasn%w grzyb%w} {Muchomor_Sromotnikowy};
+  #replace szawartosc {jaskrawozolt%w drobn%w kwiat%w} {Stulicha};
+  #replace szawartosc {bial%w zmutowan%w grzyb%w} {Stroczek};
+  #replace szawartosc {pomaranczow%w mal%w korzen%w} {Szalej};
+  #replace szawartosc {mazist%w bulwiast%w grzyb%w} {Casur};
+  #replace szawartosc {soczyst%w karminow%w m%w} {Drath};
+  #replace szawartosc {dlug%w lodyg%w} {Konopie};
+  #replace szawartosc {eliptyczn%w zaostrzon%w lisc%w} {Ogorecznik};
+  #replace szawartosc {rozow%w pachnac%w kwiat%w} {Roza};
+  #replace szawartosc {tward%w czerwon%w owoc%w} {Borowka};
+  #replace szawartosc {mal%w fioletow%w owoc%w} {Jagoda};
+  #replace szawartosc {mal%w czarn%w owoc%w} {Jerzyna};
+  #replace szawartosc {mal%w czerwon%w owoc%w} {Malina};
+  #replace szawartosc {niewielk%w czerwon%w owoc%w} {Poziomka};
+  #replace szawartosc {nieduz%w brazow%w grzyb%w} {Maslak};
+  #replace szawartosc {grzyb%w such%w kapelusz%w} {Hubka};
+  #replace szawartosc {sredni%w kasztanowobrazow%w grzyb%w} {Podgrzybek_Brunatny};
+  #replace szawartosc {miedzianozielon%w fosforyzujac%w grzyb%w} {Muchomor_Cesarski};
+  #replace szawartosc {grub%w brazow%w grzyb%w} {Borowik_Krolewski};
+  #replace szawartosc {wysok%w jasnobrazow%w grzyb%w} {Borowik_Szlachetny};
+  #replace szawartosc {zielon%w postrzepion%w galaz%w} {Drabik_Drzewikowaty};
+  #replace szawartosc {wysok%w czerwonaw%w grzyb%w} {Kozlarz_Czerwony};
+  #replace szawartosc {zielon%w lancetowat%w lisci%w} {Trawa};
+  #replace szawartosc {czerwonaw%w duz%w lisc%w} {Rabarbar};
+  #replace szawartosc {smukl%w jasnozielon%w lodyg%w} {Centuria};
+  #replace szawartosc {zielon%w galezist%w ped%w} {Rdest};
+  #replace szawartosc {okazal%w pachnac%w kwiat%w} {Mak};
+  #replace szawartosc {zdrewnial%w rozgalezion%w krzewin%w} {Macznica};
+  #replace szawartosc {ciemn%w poskrecan%w klacz%w} {Pieciornik};
+  #replace szawartosc {czterokanciast%w rozgalezion%w lodyg%w} {Dziurawiec};
+  #replace szawartosc {srebrzystoszar%w owlosion%w lisc%w} {Naparstnica};
+  #replace szawartosc {smukl%w zielon%w lodyg%w} {Nostrzyk};
+  #replace szawartosc {kanciast%w rozgalezion%w lodyg%w} {Bylica};
+  #replace szawartosc {kosmatoowlosion%w kwiatostan%w} {Kasztanowiec};
+  #replace szawartosc {kremow%w owlosion%w kwiat%w} {Przelot};
+  #replace szawartosc {kremow%w owlosion%w ususzon%w kwiat%w} {Przelot_};
+  #replace szawartosc {duz%w bial%w kwiat%w} {Bielun};
+  #replace szawartosc {lsniac%w czerwon%w owoc%w} {Deren};
+  #replace szawartosc {macznistoowlosion%w szaraw%w roslin%w} {Komosa};
+  #replace szawartosc {zolt%w rurkowat%w kwiat%w} {Wrotycz};
+  #replace szawartosc {bial%w rozgalezion%w korzen%w} {Mandragora};
+  #replace szawartosc {szar%w kolczast%w korzen%w} {Aralia};
+  #replace szawartosc {brazow%w okragl%w nasion%w} {Kola};
+  #replace szawartosc {rozgowat%w zoltozielon%w galaz%w} {Przesl};
+  #replace szawartosc {jasnozielon%w nieowlosion%w lodyg%w} {Lulecznica};
+  #replace szawartosc {wonn%w dzwonkowat%w kwiat%w} {Konwalia};
+  #replace szawartosc {sztywn%w smukl%w lodyg%w} {Lak};
+  #replace szawartosc {drobn%w bial%w kwiat%w} {Rumianek};
+  #replace szawartosc {wysok%w blekitn%w kwiat%w} {Chaber};
+  #replace szawartosc {jasnobrunatn%w popekan%w galaz%w} {Bez};
+  #replace szawartosc {zoltaw%w powyginan%w korzen%w} {Krzyzownica};
+  #replace szawartosc {jasnobrazow%w ulistnion%w lodyg%w} {Nawloc};
+  #replace szawartosc {dziwn%w zoltoszar%w nasion%w} {Kulczyba};
+  #replace szawartosc {rozdet%w aromatyczn%w lodyg%w} {Szczwol};
+  #replace szawartosc {oliwkowozielon%w gietk%w galaz%w} {Jemiola};
+  #replace szawartosc {ciemn%w splatan%w korzen%w} {Ciemiernik};
+  #replace szawartosc {czarn%w blyszczac%w fasolk%w} {Bobotrutka};
+  #replace szawartosc {ciemnozielon%w rozwart%w rozyczk%w} {Rojnik};
+  #replace szawartosc {pierzast%w ogonk%w lisc%w} {Potoslin};
+  #replace szawartosc {grub%w walcowat%w klacz%w} {Pokrzyk};
+  #replace szawartosc {szaraw%w pogiet%w klacz%w} {Rauwolfia};
+  #replace szawartosc {wiotk%w drobn%w lodyz%w} {Kurzyslad};
+  #replace szawartosc {wzniesion%w ukwiecon%w lodyg%w} {Tojad};
+  #replace szawartosc {duz%w fioletow%w kwiat%w} {Ostrozeczka};
+  #replace szawartosc {rozgalezion%w owlosion%w lodyg%w} {Stroiczka};
+  #replace szawartosc {zielon%w miesist%w kwiat%w} {Ciemiezyca};
+  #replace szawartosc {wysok%w zolt%w kwiat%w} {Starzec};
+  #replace szawartosc {rozgalezion%w wzniesion%w lodyg%w} {Jaskier};
+  #replace szawartosc {niepozorn%w sinozielon%w roslin%w} {Urzet};
+  #replace szawartosc {szarozielon%w szorstk%w lisc%w} {Boldoa};
+  #replace szawartosc {rozwiniet%w korzen%w} {Marzanna};
+  #replace szawartosc {zolt%w jaskraw%w kwiat%w} {Podbial};
+  #replace szawartosc {galezist%w sinozielon%w lodyg%w} {Ostrozen};
+  #replace szawartosc {szorstk%w ciemnozielon%w galaz%w} {Poziewnik};
+  #replace szawartosc {czarn%w niewielk%w owoc%w} {Sliwa};
+  #replace szawartosc {czarn%w aromatyczn%w ziaren%w} {Bulawinka};
+  #replace szawartosc {wzniesion%w owlosion%w lodyg%w} {Kociomietka};
+  #replace szawartosc {zielon%w trzeszczac%w galaz%w} {Skrzyp};
+  #replace szawartosc {zlocist%w spor%w ziol%w} {Cebula};
+  #replace szawartosc {zdretwial%w zwiniet%w rur%w} {Kruszyna};
+  #replace szawartosc {zielon%w kwitnac%w lodyg%w} {Hyzop};
+  #replace szawartosc {sztywn%w rozgalezion%w korzen%w} {Lukrecja};
+  #replace szawartosc {kanciast%w parzac%w lodyg%w} {Pokrzywa};
+  #replace szawartosc {wiotk%w kwitnac%w galaz%w} {Janowiec};
+  #replace szawartosc {czarn%w aromatyczn%w korzen%w} {Lubczyk};
+  #replace szawartosc {piekn%w czerwon%w kwia%w} {NieznanyPCK};
+
+  #list worekA_zawartosc create {$szawartosc};
+  #list worekA_zawartosc_ilosc {clear};
+  #list worekA_zawartosc_nazwa {clear};
+  #var worekA_pojemnosc {44};
+  #var worekA_razem {0};
+  
+  #foreach {$worekA_zawartosc[]} {i} {
+    #regex {$worekA_zawartosc[$i]} {%S %S}
+      {
+	#var ret @cyfruj_ilosc{&1};
+	#math ziola[&2] {$ziola[&2] + $ret};
+    #math zioladb[&2][ilosc] {$zioladb[&2][ilosc] + $ret};
+      }
+      {
+	#math ziola[$worekA_zawartosc[$i]] {$ziola[$worekA_zawartosc[$i]] + 1};
+    #math zioladb[$worekA_zawartosc[$i]][ilosc] {$zioladb[$worekA_zawartosc[$i]][ilosc] + 1};
+      };
+  };
+  #if {"$currentworek" == "A"} {
+    #var currentworek {B};
+    #if {$ilosc_workow == 1} {
+        #var sortujemy {false};
+    };
+  };
+  #elseif {"$currentworek" == "B"} {
+    #var currentworek {C};
+    #if {$ilosc_workow == 2} {
+        #var sortujemy {false};
+    };
+  };
+  #elseif {"$currentworek" == "C"} {
+    #var currentworek {D};
+    #if {$ilosc_workow == 3} {
+        #var sortujemy {false};
+    };
+  };
+  #elseif {"$currentworek" == "D"} {
+      #var sortujemy {false};
+  };
+};
+}
+
+
+#alias {lecznicze}
+{
+    #unvar ziolka_prompt;
+    #unvar prompt_objects_herbs;
+    #var ziolka_licznik {10};
+
+    #math party_prompt_len {$neut_index + $othe_index + $team_index - 3};
+
+    #var ziolka_prompt_index {1};
+
+    #foreach {$zioladb[]} {ziolkonazwa} {
+        #format {_ziolko_opis} {%-15s} {$ziolkonazwa};#format {_ziolko_opis} {%.10s} {$_ziolko_opis};
+        #format {_ziolko_ilos} {%+2s} {$zioladb[$ziolkonazwa][ilosc]};
+
+        #format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][kn]};
+        #if {$sposoblen > 1} {
+            #format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][kn]};
+            #if {$zioladb[$ziolkonazwa][ilosc] > 0} {
+                #var prompt_objects_herbs[$ziolka_prompt_index] {<118><G00><118><afa>z$ziolka_licznik <ccc>(<afa>$_ziolko_ilos<ccc>) $_ziolko_opis<088> - $ziolan[$ziolkonazwa]};
+                #line substitute {variables} {
+                    #alias z$ziolka_licznik {
+                        otworz pierwszy przytroczony woreczek;
+                        otworz drugi przytroczony woreczek;
+                        otworz trzeci przytroczony woreczek;
+                        otworz czwarty przytroczony woreczek;
+                        wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+                        opusc bron;
+                        $zioladb[$ziolkonazwa][sposob][kn] $zioladb[$ziolkonazwa][odmiana];
+                        dobadz broni;
+wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
+                        zamknij pierwszy przytroczony woreczek;
+                        zamknij drugi przytroczony woreczek;
+                        zamknij trzeci przytroczony woreczek;
+                        zamknij czwarty przytroczony woreczek;
+                    };
+                };
+                #math {ziolka_licznik} {$ziolka_licznik + 1};
+                #math {ziolka_prompt_index} {$ziolka_prompt_index + 1};
+            };
+        };
+    };
+
+
+    #foreach {$zioladb[]} {ziolkonazwa} {
+        #format {_ziolko_opis} {%-15s} {$ziolkonazwa};#format {_ziolko_opis} {%.10s} {$_ziolko_opis};
+        #format {_ziolko_ilos} {%+2s} {$zioladb[$ziolkonazwa][ilosc]};
+
+        #format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][zm]};
+        #if {$sposoblen > 1} {
+            #format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][zm]};
+            #if {$zioladb[$ziolkonazwa][ilosc] > 0} {
+                #var prompt_objects_herbs[$ziolka_prompt_index] {<118><G00><118><faf>z$ziolka_licznik <ccc>(<afa>$_ziolko_ilos<ccc>) $_ziolko_opis<088> - $ziolan[$ziolkonazwa]};
+                #line substitute {variables} {
+                    #alias z$ziolka_licznik {
+                        otworz pierwszy przytroczony woreczek;
+                        otworz drugi przytroczony woreczek;
+                        otworz trzeci przytroczony woreczek;
+                        otworz czwarty przytroczony woreczek;
+                        wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+                        opusc bron;
+                        $zioladb[$ziolkonazwa][sposob][zm] $zioladb[$ziolkonazwa][odmiana];
+                        dobadz broni;
+wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
+
+                        zamknij pierwszy przytroczony woreczek;
+                        zamknij drugi przytroczony woreczek;
+                        zamknij trzeci przytroczony woreczek;
+                        zamknij czwarty przytroczony woreczek;
+                    };
+                };
+                #math {ziolka_licznik} {$ziolka_licznik + 1};
+                #math {ziolka_prompt_index} {$ziolka_prompt_index + 1};
+            };
+        };
+    };
+
+    #foreach {$zioladb[]} {ziolkonazwa} {
+        #format {_ziolko_opis} {%-15s} {$ziolkonazwa};#format {_ziolko_opis} {%.10s} {$_ziolko_opis};
+        #format {_ziolko_ilos} {%+2s} {$zioladb[$ziolkonazwa][ilosc]};
+
+        #format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][wt]};
+        #if {$sposoblen > 1} {
+            #format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][wt]};
+            #if {$zioladb[$ziolkonazwa][ilosc] > 0} {
+                #var prompt_objects_herbs[$ziolka_prompt_index] {<118><G00><118><aff>z$ziolka_licznik <ccc>(<afa>$_ziolko_ilos<ccc>) $_ziolko_opis<088> - $ziolan[$ziolkonazwa]};
+                #line substitute {variables} {
+                    #alias z$ziolka_licznik {
+                        otworz pierwszy przytroczony woreczek;
+                        otworz drugi przytroczony woreczek;
+                        otworz trzeci przytroczony woreczek;
+                        otworz czwarty przytroczony woreczek;
+                        wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+                        opusc bron;
+                        $zioladb[$ziolkonazwa][sposob][wt] $zioladb[$ziolkonazwa][odmiana];
+                        dobadz broni;
+wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
+
+                        zamknij pierwszy przytroczony woreczek;
+                        zamknij drugi przytroczony woreczek;
+                        zamknij trzeci przytroczony woreczek;
+                        zamknij czwarty przytroczony woreczek;
+                    };
+                };
+                #math {ziolka_licznik} {$ziolka_licznik + 1};
+                #math {ziolka_prompt_index} {$ziolka_prompt_index + 1};
+            };
+        };
+    };
+    #foreach {$zioladb[]} {ziolkonazwa} {
+        #format {_ziolko_opis} {%-15s} {$ziolkonazwa};#format {_ziolko_opis} {%.10s} {$_ziolko_opis};
+        #format {_ziolko_ilos} {%+2s} {$zioladb[$ziolkonazwa][ilosc]};
+
+        #format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][s]};
+        #if {$sposoblen > 1} {
+            #format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][s]};
+            #if {$zioladb[$ziolkonazwa][ilosc] > 0} {
+                #var prompt_objects_herbs[$ziolka_prompt_index] {<118><G00><118><aff>z$ziolka_licznik <ccc>(<afa>$_ziolko_ilos<ccc>) $_ziolko_opis<088> - $ziolan[$ziolkonazwa]};
+                #line substitute {variables} {
+                    #alias z$ziolka_licznik {
+                        otworz pierwszy przytroczony woreczek;
+                        otworz drugi przytroczony woreczek;
+                        otworz trzeci przytroczony woreczek;
+                        otworz czwarty przytroczony woreczek;
+                        wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+                        opusc bron;
+                        $zioladb[$ziolkonazwa][sposob][s] $zioladb[$ziolkonazwa][odmiana];
+                        dobadz broni;
+wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
+
+                        zamknij pierwszy przytroczony woreczek;
+                        zamknij drugi przytroczony woreczek;
+                        zamknij trzeci przytroczony woreczek;
+                        zamknij czwarty przytroczony woreczek;
+                    };
+                };
+                #math {ziolka_licznik} {$ziolka_licznik + 1};
+#math {ziolka_prompt_index} {$ziolka_prompt_index + 1};
+            };
+        };
+    };
+#foreach {$zioladb[]} {ziolkonazwa} {
+#format {_ziolko_opis} {%-15s} {$ziolkonazwa};#format {_ziolko_opis} {%.10s} {$_ziolko_opis};
+#format {_ziolko_ilos} {%+2s} {$zioladb[$ziolkonazwa][ilosc]};
+
+#format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][odw]};
+#if {$sposoblen > 1} {
+#format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][odw]};
+#if {$zioladb[$ziolkonazwa][ilosc] > 0} {
+#var prompt_objects_herbs[$ziolka_prompt_index] {<118><G00><118><aff>z$ziolka_licznik <ccc>(<afa>$_ziolko_ilos<ccc>) $_ziolko_opis<088> - $ziolan[$ziolkonazwa]};
+#line substitute {variables} {
+#alias z$ziolka_licznik {
+otworz pierwszy przytroczony woreczek;
+otworz drugi przytroczony woreczek;
+otworz trzeci przytroczony woreczek;
+otworz czwarty przytroczony woreczek;
+wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
+wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
+wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
+wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+opusc bron;
+$zioladb[$ziolkonazwa][sposob][odw] $zioladb[$ziolkonazwa][odmiana];
+dobadz broni;
+wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
+
+zamknij pierwszy przytroczony woreczek;
+zamknij drugi przytroczony woreczek;
+zamknij trzeci przytroczony woreczek;
+zamknij czwarty przytroczony woreczek;
+};
+};
+#math {ziolka_licznik} {$ziolka_licznik + 1};
+#math {ziolka_prompt_index} {$ziolka_prompt_index + 1};
+};
+};
+};
+
+#foreach {$zioladb[]} {ziolkonazwa} {
+#format {_ziolko_opis} {%-15s} {$ziolkonazwa};#format {_ziolko_opis} {%.10s} {$_ziolko_opis};
+#format {_ziolko_ilos} {%+2s} {$zioladb[$ziolkonazwa][ilosc]};
+
+#format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][mn]};
+#if {$sposoblen > 1} {
+#format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][mn]};
+#if {$zioladb[$ziolkonazwa][ilosc] > 0} {
+#var prompt_objects_herbs[$ziolka_prompt_index] {<118><G00><118><aaf>z$ziolka_licznik <ccc>(<afa>$_ziolko_ilos<ccc>) $_ziolko_opis<088> - $ziolan[$ziolkonazwa]};
+#line substitute {variables} {
+#alias z$ziolka_licznik {
+otworz pierwszy przytroczony woreczek;
+otworz drugi przytroczony woreczek;
+otworz trzeci przytroczony woreczek;
+otworz czwarty przytroczony woreczek;
+wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
+wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
+wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
+wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+opusc bron;
+$zioladb[$ziolkonazwa][sposob][mn] $zioladb[$ziolkonazwa][odmiana];
+dobadz broni;
+wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
+
+zamknij pierwszy przytroczony woreczek;
+zamknij drugi przytroczony woreczek;
+zamknij trzeci przytroczony woreczek;
+zamknij czwarty przytroczony woreczek;
+};
+};
+#math {ziolka_licznik} {$ziolka_licznik + 1};
+#math {ziolka_prompt_index} {$ziolka_prompt_index + 1};
+};
+};
+};
+
+#foreach {$zioladb[]} {ziolkonazwa} {
+#format {_ziolko_opis} {%-15s} {$ziolkonazwa};#format {_ziolko_opis} {%.10s} {$_ziolko_opis};
+#format {_ziolko_ilos} {%+2s} {$zioladb[$ziolkonazwa][ilosc]};
+
+#format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][gl]};
+#if {$sposoblen > 1} {
+#format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][gl]};
+#if {$zioladb[$ziolkonazwa][ilosc] > 0} {
+#var prompt_objects_herbs[$ziolka_prompt_index] {<118><G00><118><ffa>z$ziolka_licznik <ccc>(<afa>$_ziolko_ilos<ccc>) $_ziolko_opis<088> - $ziolan[$ziolkonazwa]};
+#line substitute {variables} {
+#alias z$ziolka_licznik {
+otworz pierwszy przytroczony woreczek;
+otworz drugi przytroczony woreczek;
+otworz trzeci przytroczony woreczek;
+otworz czwarty przytroczony woreczek;
+wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
+wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
+wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
+wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+opusc bron;
+$zioladb[$ziolkonazwa][sposob][gl] $zioladb[$ziolkonazwa][odmiana];
+dobadz broni;
+wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
+
+zamknij pierwszy przytroczony woreczek;
+zamknij drugi przytroczony woreczek;
+zamknij trzeci przytroczony woreczek;
+zamknij czwarty przytroczony woreczek;
+};
+};
+#math {ziolka_licznik} {$ziolka_licznik + 1};
+#math {ziolka_prompt_index} {$ziolka_prompt_index + 1};
+};
+};
+};
+
+
+#foreach {$zioladb[]} {ziolkonazwa} {
+#format {_ziolko_opis} {%-15s} {$ziolkonazwa};#format {_ziolko_opis} {%.10s} {$_ziolko_opis};
+#format {_ziolko_ilos} {%+2s} {$zioladb[$ziolkonazwa][ilosc]};
+
+#format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][o]};
+#if {$sposoblen > 1} {
+#format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][o]};
+#if {$zioladb[$ziolkonazwa][ilosc] > 0} {
+#var prompt_objects_herbs[$ziolka_prompt_index] {<118><G00><118><faa>z$ziolka_licznik <ccc>(<afa>$_ziolko_ilos<ccc>) $_ziolko_opis<088> - $ziolan[$ziolkonazwa]};
+#line substitute {variables} {
+#alias z$ziolka_licznik {
+otworz pierwszy przytroczony woreczek;
+otworz drugi przytroczony woreczek;
+otworz trzeci przytroczony woreczek;
+otworz czwarty przytroczony woreczek;
+wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
+wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
+wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
+wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+opusc bron;
+$zioladb[$ziolkonazwa][sposob][o] $zioladb[$ziolkonazwa][odmiana];
+dobadz broni;
+wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
+wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
+
+zamknij pierwszy przytroczony woreczek;
+zamknij drugi przytroczony woreczek;
+zamknij trzeci przytroczony woreczek;
+zamknij czwarty przytroczony woreczek;
+};
+};
+#math {ziolka_licznik} {$ziolka_licznik + 1};
+#math {ziolka_prompt_index} {$ziolka_prompt_index + 1};
+};
+};
+};
+
+}
+
+#alias {wezziola}
+{
+  otworz pierwszy przytroczony woreczek;
+  otworz drugi przytroczony woreczek;
+  otworz trzeci przytroczony woreczek;
+  otworz czwarty przytroczony woreczek;
+  wez %0 z pierwszego przytroczonego woreczka;
+  wez %0 z drugiego przytroczonego woreczka;
+  wez %0 z trzeciego przytroczonego woreczka;
+  wez %0 z czwartego przytroczonego woreczka;
+  zamknij pierwszy przytroczony woreczek;
+  zamknij drugi przytroczony woreczek;
+  zamknij trzeci przytroczony woreczek;
+  zamknij czwarty przytroczony woreczek;
+}
+
+#alias {wlziola}
+{
+  otworz pierwszy przytroczony woreczek;
+  otworz drugi przytroczony woreczek;
+  otworz trzeci przytroczony woreczek;
+  otworz czwarty przytroczony woreczek;
+  wloz ziola do pierwszego przytroczonego woreczka;
+  wloz ziola do drugiego przytroczonego woreczka;
+  wloz ziola do trzeciego przytroczonego woreczka;
+  wloz ziola do czwartego przytroczonego woreczka;
+  zamknij pierwszy przytroczony woreczek;
+  zamknij drugi przytroczony woreczek;
+  zamknij trzeci przytroczony woreczek;
+  zamknij czwarty przytroczony woreczek;
+}
+
