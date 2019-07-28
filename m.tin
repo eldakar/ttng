@@ -26,6 +26,9 @@
     #read brain.tin;		#nop Pirackie skrypty 2 - mozg;
     #read statki.tin;		#nop Obsluga statkow;
 
+    #read ziola_a.tin;		#nop Obsluga woreczkow do ziol;
+    #read ziola_b.tin;		#nop Ziolka definicje;
+
     #config {debug telnet} {off};	#nop debug;
     #config {COMMAND ECHO} {off};	#nop wyswietlanie komend;
     #config {mouse} {on};		#nop obsluga myszy;
