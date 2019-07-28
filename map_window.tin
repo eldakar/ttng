@@ -1,0 +1,15 @@
+#event {PROGRAM START} {
+	#chat init %0;
+	#map read mapkatt.map;
+	#map flag vtmap on;
+	#map flag unicodegraphics on;
+	#delay {3} {
+		#format sw {%R};
+		#split $sw 0;
+	};
+};
+
+#action {chats to you, '%d'} {
+	#map goto %1;
+	#line gag;
+};

@@ -84,6 +84,9 @@
     #if {$trytomove > 0} {
         #var trytomove 0;
         #map get roomvnum roomId;
+        #if {$pexternal == 1} {
+            #chat message TinTin {$roomId};
+        };
     };
 };
 

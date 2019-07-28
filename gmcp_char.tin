@@ -16,6 +16,7 @@
 #event {IAC SB GMCP char.info IAC SE} {
 	#var CHAR_INFO {%0};
 	#var AVATAR_NAME {$CHAR_INFO[name]};
+	#chat name $AVATAR_NAME;
 	#var avatarid $CHAR_INFO[id];
 	#var obda2[$avatarid][desc] {$CHAR_INFO[name]};
 	#line substitute {variables} {
