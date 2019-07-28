@@ -1,0 +1,22 @@
+#!/bin/bash
+
+export TERM=xterm-256color
+
+TSESSION="tintin"
+TSERVER="ttserver"
+
+myid=`id -u`
+
+port1=$myid"0"
+port2=$myid"1"
+
+# Check if the session exists, if so attach it, else make Barsawia
+if [ $(tmux -L ${TSERVER} ls 2>/dev/null | grep -c "^${TSESSION}:") != 0 ]; then
+        tmux -L ${TSERVER} att -t ${TSESSION}
+        exit 0;
+else
+        tmux -L ${TSERVER} new -d -s ${TSESSION} "tt++ m.tin $port1"
+        tmux -L ${TSERVER} split-window -t ${TSESSION} -h "tt++ map_window.tin $port2"
+        tmux -L ${TSERVER} select-pane -R -t 1
+        tmux -L ${TSERVER} att -t ${TSESSION}
+fi
