@@ -135,7 +135,7 @@
 				#nop;
 				#var dudu2 {%n} {$duch[$dudu][desc]};
 				#line substitute variables {
-				#sub {$duch[$dudu][desc]} {$duch[$dudu][desc]($postac[$test][gildia]};
+				#sub {$duch[$dudu][desc]} {$duch[$dudu][desc]($postac[$test][gildia])};
 				#sub {$dudu2} {$dudu2($postac[$test][gildia]};
 				};
 			};

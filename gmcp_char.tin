@@ -72,17 +72,13 @@
 };
 
 
-#alias {/mozg$} {
-	#chat init;
-	#chat name $AVATAR_NAME;
-	#chat call $pbrainip $pbrainport;
-} {1};
-
 #alias {pupdate} {
 #nop MAPSIZE;
 	#if {$pmapsize > 0} {
 		#var unfolded 1;
 		#split $pmapsize 3;
+	} {
+		#split 0 3;
 	};
 #nop BRAIN;
 	#if {"$pbrainip" != ""} {
@@ -90,9 +86,10 @@
 			#delay {0.5} {#chat call $pbrainip $pbrainport};
 		};
 	};
-	#if {$pexternal > 0} {
+	#if {$cport > 0} {
 		#if {"$MAPPED" != "1"} {
-			#delay {1.0} {#chat call 127.0.0.1 5011};
+			#delay {1.0} {#line substitute {variables} {#chat call 127.0.0.1 {${cport}1}}};
+			#action {You chat to} {#line gag} {9};
 		};
 	};
 #nop CHAT;

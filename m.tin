@@ -33,11 +33,11 @@
     #config {COMMAND ECHO} {off};	#nop wyswietlanie komend;
     #config {mouse} {on};		#nop obsluga myszy;
 
-    #chat init %0;
+    #var cport %0;
+    #line substitute {variables} {#chat init {${cport}0}};
 };
 
 #event {SESSION CONNECTED} {
-    #split 0 3;
     #event {IAC WILL GMCP} {
         #send {\xFF\xFD\xC9\};
         #send {\xFF\xFA\xC9core.supports.set [ "Core", "Objects", "Room", "Char", "Messages", "Mail", "Gmcp_msgs"]\xFF\xF0\};

@@ -84,10 +84,7 @@
     #if {$trytomove > 0} {
         #var trytomove 0;
         #map get roomvnum roomId;
-        #if {$pexternal == 1} {
-            #chat message TinTin {$roomId};
-        };
-    };
+   };
 };
 
 #event {MAP ENTER ROOM} {
@@ -99,6 +96,9 @@
     #if {"$voos_num" == "<178>i<088>"} {
         #var note_found 1;
     };
+     #if {$cport > 0} {
+            #chat message TinTin {$voom};
+     };
 };
 
 #alias {UNFOLD} {

@@ -1,5 +1,6 @@
 #event {PROGRAM START} {
-	#chat init %0;
+	#var cport %0;
+	#line substitute {variables} {#chat init {${cport}1}};
 	#map read mapkatt.map;
 	#map flag vtmap on;
 	#map flag unicodegraphics on;
