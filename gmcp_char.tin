@@ -32,7 +32,7 @@
 	};
 };
 
-#alias {p{klawisze|zadania|przyjaciele|wrogowie|zabijcmd|celataku|celobrony|lazik|zdjeciezaslon|quickbind|pochwa|pochwa2|zawod|plecak|sakiewka|zbieranie|wskazywanie|brainip|brainport|chatname|mapsize} %+} {
+#alias {p{klawisze|zadania|przyjaciele|wrogowie|zabijcmd|celataku|celobrony|lazik|zdjeciezaslon|quickbind|pochwa|pochwa2|zawod|plecak|sakiewka|zbieranie|wskazywanie|brainip|brainport|chatname|mapsize|external} %+} {
 	#line substitute variables {
 		#class profile open;
 		#var p%1 {%2};
@@ -85,11 +85,14 @@
 		#split $pmapsize 3;
 	};
 #nop BRAIN;
-	#nop if {"$pbrainip" != ""} {
+	#if {"$pbrainip" != ""} {
 		#if {"$PONGED" != "1"} {
-			#chat init;
-			#chat name {$AVATAR_NAME};
-			#delay {2} {#chat call $pbrainip $pbrainport};
+			#delay {0.5} {#chat call $pbrainip $pbrainport};
+		};
+	};
+	#if {$pexternal > 0} {
+		#if {"$MAPPED" != "1"} {
+			#delay {1.0} {#chat call 127.0.0.1 5011};
 		};
 	};
 #nop CHAT;

@@ -4,35 +4,23 @@
 	#var prompt_history[2] {$prompt_history[1]};
 	#var prompt_history[1] {%0};
 	prompt_history;
-	#line ignore #showme {> } {0};	
+	#line ignore #showme {> } {-1};	
 };
 
 #var prmptbottomv 3;
 #var prompt_history[1] {};
 #var prompt_history[2] {};
 
-#var prompt_full {false};
-
 #alias {prompt_history} {
-	#format {test} {%h} {};
-	#replace test {#} { };
-	#sh {$test} {1};
-	#sh {$test} {2};
-	#sh {> $prompt_history[1]} {1};
-	#sh {> $prompt_history[2]} {2};
+	#sh {> $prompt_history[1]} {-2};
+	#sh {> $prompt_history[2]} {-3};
 };
 
 #function {cmd_prompt_add} {
-	#format {test} {%h} {};
-	#replace test {#} { };
-	#sh {$test} {1};
-	#sh {$test} {2};
-
 	#var prompt_history[2] {$prompt_history[1]};
 	#var prompt_history[1] {%0};
-
-	#sh {> $prompt_history[1]} {1};
-	#sh {> $prompt_history[2]} {2};	
+	#sh {> $prompt_history[1]} {-2};
+	#sh {> $prompt_history[2]} {-3};	
 };
 
 

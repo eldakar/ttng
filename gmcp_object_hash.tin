@@ -195,7 +195,7 @@
             #list team_offenders add {$duch[$avatarid][attack_num]};
         } {
         #nop sh {$duch[$avatarid][bar][orc]};
-            #sh {$duch[$avatarid][bar][orc]} {-$r_curLineCnt};
+            #sh {$duch[$avatarid][bar][orc]} {$r_curLineCnt} {1};
             #math r_curLineCnt {$r_curLineCnt + 1};
             #var duch[$avatarid][shown] {1};
         };
@@ -208,7 +208,7 @@
                     #list team_offenders add $duch[$team[$ti]][attack_num];
                 } {
                 #nop sh {$duch[$team[$ti]][bar][orc]};
-                    #sh {$duch[$team[$ti]][bar][orc]} {-$r_curLineCnt};
+                    #sh {$duch[$team[$ti]][bar][orc]} {$r_curLineCnt} {1};
                     #math r_curLineCnt {$r_curLineCnt + 1};
                     #var duch[$team[$ti]][shown] {1};
                 };
@@ -229,13 +229,13 @@
                     #if {$tmpnavigator == 1} {
                         #var tmpnavigator 0;
                     #nop sh {$duch[$ti][bar][orc] ${c_stan_niski}---><088> $duch[$duch[$ti][attack_num]][bar][orc]};
-                        #sh {$duch[$ti][bar][orc] ${c_stan_niski}---><088> $duch[$duch[$ti][attack_num]][bar][orc]} {-$r_curLineCnt};
+                        #sh {$duch[$ti][bar][orc] ${c_stan_niski}---><088> $duch[$duch[$ti][attack_num]][bar][orc]} {$r_curLineCnt} {1};
 
                         #math r_curLineCnt {$r_curLineCnt + 1};
                         #var duch[$team_offenders[$to]][shown] {1};
                     } {
                     #nop sh {$duch[$ti][bar][orc] ${c_stan_niski}_/};
-                        #sh {$duch[$ti][bar][orc] ${c_stan_niski}_/} {-$r_curLineCnt};
+                        #sh {$duch[$ti][bar][orc] ${c_stan_niski}_/} {$r_curLineCnt} {1};
                         #math r_curLineCnt {$r_curLineCnt + 1};
                     };
                     #var duch[$ti][shown] {1};
@@ -248,7 +248,7 @@
     #foreach {$wrogi[]} {to} {
         #if {$duch[$wrogi[$to]][shown] < 1} {
         #nop sh {                                            $duch[$wrogi[$to]][bar][orc]};
-            #sh {$duch[$wrogi[$to]][bar][orc]} {-$r_curLineCnt};
+            #sh {$duch[$wrogi[$to]][bar][orc]} {$r_curLineCnt} {1};
             #math r_curLineCnt {$r_curLineCnt + 1};
             #var duch[$wrogi[$to]][shown] {1};
         };
@@ -261,7 +261,7 @@
                 #echo { };
             } {
             #nop sh {$duch[$wrogi[$wr]][bar][hug]} {$r_curLineCnt};
-                #sh {$duch[$wrogi[$wr]][bar][hug]} {$r_curLineCnt} {-$r_curLineCnt};
+                #sh {$duch[$wrogi[$wr]][bar][hug]} {$r_curLineCnt} {$r_curLineCnt} {1};
                 #math r_curLineCnt {$r_curLineCnt + 1};
                 #var duch[$wrogi[$wr]][shown] {1};
             };
@@ -271,7 +271,7 @@
     #foreach {$duch[]} {wr} {
         #if {$duch[$wr][shown] < 1} {
         #nop sh {                                            $duch[$wr][bar][orc]};
-            #sh {$duch[$wr][bar][orc]} {-$r_curLineCnt};
+            #sh {$duch[$wr][bar][orc]} {$r_curLineCnt} {1};
 
             #math r_curLineCnt {$r_curLineCnt + 1};
             #var duch[$wr][shown] {1};

@@ -23,7 +23,7 @@
     #read qbs.tin;		#nop Bindy na podazanie za kims;
     #read tescik2.tin;
     #read korsarze.tin;		#nop Pirackie skrypty;
-    #read brain.tin;		#nop Pirackie skrypty 2 - mozg;
+    #read ../ttng-brain/client.tin;		#nop Pirackie skrypty 2 - mozg;
     #read statki.tin;		#nop Obsluga statkow;
 
     #read ziola_a.tin;		#nop Obsluga woreczkow do ziol;
