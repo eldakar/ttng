@@ -5,6 +5,9 @@
 #nop NAME ###########;
 #var bundle_name {TTMapFreezer};
 
+#nop IS DATA PRESENT #;
+#var bundle_data {1};
+
 #nop ############################;
 #nop EVENT SLOTS ##########;
 #nop Every listed event slot has to be empty;
@@ -36,6 +39,9 @@
 #line substitute variables {
 	#CLASS {$bundle_name} OPEN;
 	#read bundles/$bundle_name/content.tin;
+	#if {$bundle_data > 0} {
+		#read bundles/$bundle_name/data.tin;
+	};
 	#CLASS {$bundle_name} CLOSE;
 };
 
