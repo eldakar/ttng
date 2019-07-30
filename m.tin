@@ -9,7 +9,9 @@
     #read bundles/TTMapSigns/manifest.tin;
     #read bundles/LevelCalculator/manifest.tin;
     #read bundles/gmcpDefaultColorManager/manifest.tin;
-    
+
+    #var r @bundleops_loadglobals{};
+
     #read gmcp_char.tin;    #nop GMCP;
     #read staty.tin;		#nop Zliczanie statystyk;
     #read gmcp_message.tin;	#nop GMCP;
