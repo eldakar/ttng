@@ -2,12 +2,14 @@
     #ses rpg arkadia.rpg.pl 23;
 
     #read bundles/bundle_ops.tin;
+    #read bundles/gmcpDefaultColorManager/manifest.tin;
     #read bundles/CommandHistory/manifest.tin;
     #read bundles/TTMap/manifest.tin;
     #read bundles/TTMapFollow/manifest.tin;
     #read bundles/TTMapFreezer/manifest.tin;
     #read bundles/TTMapSigns/manifest.tin;
     #read bundles/LevelCalculator/manifest.tin;
+    #read bundles/DefaultColorHighlighting/manifest.tin;
     
     #read gmcp_char.tin;    #nop GMCP;
     #read staty.tin;		#nop Zliczanie statystyk;
