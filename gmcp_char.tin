@@ -58,19 +58,6 @@
 	#if {"$CHAR_STATE[improve]" != ""} {dodaj_postep $CHAR_STATE[improve]};
 }
 
-#event {VARIABLE UPDATE CHAR_STATE} {
-	hpbar;
-};
-
-#alias hpbar {
-	#nop if {$unfolded > 0} {
-		#sh {$temp_short <088>hp:$state[hp] pa:$state[panic] mn:$state[mana] fa:$state[fatigue] fo:$state[form] en:$state[encumbrance] in:$state[intox]              } {-$screen_r_half_title};
-	};
-	#if {$prmptbottomv > 1} {
-		prompt_history;
-	};
-};
-
 
 #alias {pupdate} {
 #nop MAPSIZE;

@@ -1,0 +1,46 @@
+#nop ####################;
+#nop Bundle manager;
+#nop ####################;
+
+#unvar bundlemanager_slots;
+#unvar bundlemanager_bundles;
+
+#var global_bundle_slots_values[prompt][top] {0};
+#var global_bundle_slots_values[prompt][bottom] {0};
+
+#nop ####################;
+#nop GLOBAL: validate event slot availablity;
+#nop ####################;
+
+#function {bundleops_validate} {
+	#var ret 0;
+	#foreach {$bundle_slots[]} {bs} {
+		#list {bundlemanager_slots} find {$bundle_slots[$bs]} {vbms};
+		#if {$vbms > 0} {
+			#echo {<118>Bundle Error: <168>$bundle_name <118>Slot in use: $bundle_slots[$bs]<088>};
+			#var ret 1;
+		};
+	};
+
+	#foreach {$bundle_deps[]} {bd} {
+		#list {bundlemanager_bundles} find {$bundle_deps[$bd]} {vbmb};
+		#if {"$vbmb" == "0"} {
+			#echo {<118>Bundle Error: <168>$bundle_name <118>Dependency missing <138>$bundle_deps[$bd]<088>};
+			#var ret 1;
+		};
+	};	
+
+	#if {$ret < 1} {
+		#nop Looks good;
+		#foreach {$bundle_slots[]} {bs} {
+			#list bundlemanager_slots add {$bundle_slots[$bs]};
+		};
+		#list bundlemanager_bundles add {$bundle_name};
+		#echo {<128>Bundle Loaded: <168>$bundle_name<088>};
+	};
+	#return $ret;
+};
+
+#function {bundleops_loadglobals} {
+	#split $global_bundle_slots_values[prompt][top] $global_bundle_slots_values[prompt][bottom];
+}

@@ -1,3 +1,4 @@
+#map read bundles/TTMap/map.map;
 #map goto 1;
 #var MAPPER_SYNC 0;
 #map flag vtmap on;
@@ -101,101 +102,14 @@
      };
 };
 
-#alias {UNFOLD} {
-    #if {"$unfolded" != "1"} {
-        #format screen_r {%R};
-        #math screen_r_half {($screen_r / 3) - 2};
-        #math screen_r_half_title {($screen_r / 3) - 2 - 1};
-        #split $screen_r_half $prmptbottomv;
-        hpbar;
-        #var unfolded 1;
-    };
-};
-
-#alias {UNFOLD2} {
-    #if {"$unfolded" != "2"} {
-        #format screen_r {%R};
-        #math screen_r_half {$screen_r / 2};
-        #math screen_r_half_title {($screen_r / 2) - 1};
-        #split $screen_r_half $prmptbottomv;
-        hpbar;
-        #var unfolded 2;
-    };
-};
-
-
-#alias {FOLD} {
-    #if {$unfolded > 0} {
-        #var screen_r_half 0;
-        #split $screen_r_half $prmptbottomv;
-        hpbar;
-        #var unfolded 0;
-    };
-};
-
-#alias {FOLDER} {
-	#switch {"$unfolded"} {
-		#case {"1"} {UNFOLD2};
-		#case {"2"} {FOLD};
-		#default {UNFOLD};
-	};
-}
-
-
-#nop var zadania[1] {quest};
-
-#alias {/zadania} {
-    #var cpcmd {1};
-
-    #foreach {$zadania[]} {zadd} {
-        #unvar checkpoints;
-        #map list {} {} {} {$zadania[$zadd]} {variable} {checkpoints};
-        #list vcp create {$checkpoints};
-        #list vcp {size} {vcpSize};
-
-        #foreach {$checkpoints[]} {vcpv} {
-            #if {$checkpoints[$vcpv] > 1} {
-                #if {$checkpoints[$vcpv] < 100} {
-
-                    #map at {$vcpv} {
-                        #map get roomnote cp_roomnote;
-                        #map get roomdesc cp_roomdesc;
-                        #map get roomarea cp_roomarea;
-                    };
-
-                    #var {cp_command} {run${cpcmd}};
-                    #var {cp_command2} {safe${cpcmd}};
-                    #line substitute {variables} {#alias {$cp_command} {
-                        semifrozen_set;#map run {$vcpv} {0.5};
-                        #math semifrozen_steps {$checkpoints[$vcpv] - 1};
-                    }};
-                    #line substitute {variables} {#alias {$cp_command2} {
-                        semifrozen_set;#map run {$vcpv} {0.2};
-                        #math semifrozen_steps {$checkpoints[$vcpv] - 1};
-                    }};
-
-                    #format {cpd_runcmd} {%-2s %.2s} {$cpcmd};
-                    #format {cpd_area} {%-7s %.7s} {$cp_roomarea};
-                    #format {cpd_distance} {%+6s %.6s} {$checkpoints[$vcpv]};
-                    #format {cpd_note} {%-20s %.20s} {$cp_roomnote};
-                    #format {cpd_short} {%-20s %.20s} {$cp_roomdesc};
-                    #format {cpd_roomid} {%+6s %.6s} {$vcpv};
-                    #format {cp_command} {%+6s} {run${cpcmd}};
-                    #nop echo {$checkpoints[$vcpv] $vcpv $cp_roomarea $cp_roomdesc};
-                    #echo {$cpd_runcmd Dyst: $cpd_distance $c_rooms[$zadania[$zadd]]$cpd_area:<088> $cp_roomnote};
-                    #math {cpcmd} {$cpcmd +1};
-                };
-            };
-        };
-    };
-
-} {1};
-
-
-
 #nop #################################################################################;
 #nop ODNAJDYWANIE SIE NA MAPIE
 #nop #################################################################################;
+#action {Schodzisz z %1.} {#var MAPPER_SYNC {0};}
+#action {Oplacasz podroz u woznicy i wsiadasz do %1.} {#var MAPPER_SYNC {0}};
+#action {Wykonuje komende 'idz %1'} {#var MAPPER_SYNC {0};}
+#action {Bierzesz rozbieg i zeskakujesz z drakkara na brzeg.} {#var MAPPER_SYNC {0};}
+
     #nop ##################################;
     #nop funkcja szukajaca;
     #nop map list <name> <exits> <desc> <area> <note> <terrain>;
@@ -278,18 +192,7 @@
         };
     };
 };
-#alias {mfind} {
-    #loop {1} {17500} {i} {
-        #map at {$i} {#map get roomdesc mfindroomdesc};
-        #regex {$mfindroomdesc} {%0} {#sh $i};
-    }
-}
 
-
-
-#nop #################################################################################;
-#nop KOMENDY UNDO I FREEZE;
-#nop #################################################################################;
 #alias undo {
     #if {$trytomove == 1} {
         #map undo;
@@ -301,49 +204,3 @@
         #undelay {PATH %*}; #nop zatrzymuje reszte komendy;
     };
 }
-#alias {semifrozen_set} {
-    #var c_panelbg {<BBA>};
-    #var semifrozen_status {1};
-    hpbar;    
-}
-#alias {semifrozen_unset} {
-    #var c_panelbg {<AAB>};
-    #var semifrozen_status {0};
-    hpbar;
-}
-#alias {frozen_set} {
-    #var c_panelbg {<BAA>};
-    #var frozen_status {1};
-    #alias {move_n} {#echo {${c_stan_niski}Nie mozesz teraz sie ruszyc.}};
-    #alias {move_s} {#echo {${c_stan_niski}Nie mozesz teraz sie ruszyc.}};
-    #alias {move_e} {#echo {${c_stan_niski}Nie mozesz teraz sie ruszyc.}};
-    #alias {move_w} {#echo {${c_stan_niski}Nie mozesz teraz sie ruszyc.}};
-    #alias {move_d} {#echo {${c_stan_niski}Nie mozesz teraz sie ruszyc.}};
-    #alias {move_u} {#echo {${c_stan_niski}Nie mozesz teraz sie ruszyc.}};
-    #alias {move_ne} {#echo {${c_stan_niski}Nie mozesz teraz sie ruszyc.}};
-    #alias {move_nw} {#echo {${c_stan_niski}Nie mozesz teraz sie ruszyc.}};
-    #alias {move_sw} {#echo {${c_stan_niski}Nie mozesz teraz sie ruszyc.}};
-    #alias {move_se} {#echo {${c_stan_niski}Nie mozesz teraz sie ruszyc.}};
-    hpbar;    
-}
-#alias {frozen_unset} {
-    #var c_panelbg {<AAB>};
-    #var frozen_status {0};
-    #alias {move_n} {#send n;#var trytomove 1;#var movedir {polnoc}};
-    #alias {move_s} {#send s;#var trytomove 1;#var movedir {poludnie}};
-    #alias {move_e} {#send e;#var trytomove 1;#var movedir {wschod}};
-    #alias {move_w} {#send w;#var trytomove 1;#var movedir {zachod}};
-    #alias {move_d} {#send d;#var trytomove 1;#var movedir {dol}};
-    #alias {move_u} {#send u;#var trytomove 1;#var movedir {gora}};
-    #alias {move_ne} {#send ne;#var trytomove 1;#var movedir {polnocny-wschod}};
-    #alias {move_nw} {#send nw;#var trytomove 1;#var movedir {polnocny-zachod}};
-    #alias {move_sw} {#send sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
-    #alias {move_se} {#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};
-    hpbar;
-}
-#nop WYJATKI I SMIECI;
-#nop #################################################################################;
-#action {Ciemne miejsce.} {
-    #var current_room_short_desc {unknown2};
-    qr zapal lampe;
-};

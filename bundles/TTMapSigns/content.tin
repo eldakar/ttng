@@ -1,0 +1,46 @@
+#alias {/zadania} {
+    #var cpcmd {1};
+
+    #foreach {$zadania[]} {zadd} {
+        #unvar checkpoints;
+        #map list {} {} {} {$zadania[$zadd]} {variable} {checkpoints};
+        #list vcp create {$checkpoints};
+        #list vcp {size} {vcpSize};
+
+        #foreach {$checkpoints[]} {vcpv} {
+            #if {$checkpoints[$vcpv] > 1} {
+                #if {$checkpoints[$vcpv] < 100} {
+
+                    #map at {$vcpv} {
+                        #map get roomnote cp_roomnote;
+                        #map get roomdesc cp_roomdesc;
+                        #map get roomarea cp_roomarea;
+                    };
+
+                    #var {cp_command} {run${cpcmd}};
+                    #var {cp_command2} {safe${cpcmd}};
+                    #line substitute {variables} {#alias {$cp_command} {
+                        semifrozen_set;#map run {$vcpv} {0.5};
+                        #math semifrozen_steps {$checkpoints[$vcpv] - 1};
+                    }};
+                    #line substitute {variables} {#alias {$cp_command2} {
+                        semifrozen_set;#map run {$vcpv} {0.2};
+                        #math semifrozen_steps {$checkpoints[$vcpv] - 1};
+                    }};
+
+                    #format {cpd_runcmd} {%-2s %.2s} {$cpcmd};
+                    #format {cpd_area} {%-7s %.7s} {$cp_roomarea};
+                    #format {cpd_distance} {%+6s %.6s} {$checkpoints[$vcpv]};
+                    #format {cpd_note} {%-20s %.20s} {$cp_roomnote};
+                    #format {cpd_short} {%-20s %.20s} {$cp_roomdesc};
+                    #format {cpd_roomid} {%+6s %.6s} {$vcpv};
+                    #format {cp_command} {%+6s} {run${cpcmd}};
+                    #nop echo {$checkpoints[$vcpv] $vcpv $cp_roomarea $cp_roomdesc};
+                    #echo {$cpd_runcmd Dyst: $cpd_distance $c_rooms[$zadania[$zadd]]$cpd_area:<088> $cp_roomnote};
+                    #math {cpcmd} {$cpcmd +1};
+                };
+            };
+        };
+    };
+
+} {1};

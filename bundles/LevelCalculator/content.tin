@@ -1,0 +1,271 @@
+#nop przeliczanie poziomu doswiadczenia;
+#alias {exp_test} {
+#sh Nie poczyniles zadnych postepow, od kiedy wszedles do gry.;
+#sh Jestes mocny, gibki, twardy, inteligentny i odwazny.;
+#sh Wydaje ci sie, ze troche ci brakuje, zebys mogl wyzej ocenic swa sile.;
+#sh Wydaje ci sie, ze niewiele ci brakuje, zebys mogl wyzej ocenic swa zrecznosc.;
+#sh Wydaje ci sie, ze troche ci brakuje, zebys mogl wyzej ocenic swa wytrzymalosc.;
+#sh Wydaje ci sie, ze troche ci brakuje, zebys mogl wyzej ocenic swoj intelekt.;
+#sh Wydaje ci sie, ze bardzo duzo ci brakuje, zebys mogl wyzej ocenic swa odwage.;
+}
+
+
+#var bylwgp 0
+#function {poziomsily}
+{
+	#if {"%1" == "slabiutki"} {#return 0};
+	#if {"%1" == "watly"} {#return 5};
+	#if {"%1" == "slaby"} {#return 10};
+	#if {"%1" == "krzepki"} {#return 15};
+	#if {"%1" == "silny"} {#return 20};
+	#if {"%1" == "mocny"} {#return 25};
+	#if {"%1" == "potezny"} {#return 30};
+	#if {"%1" == "mocarny"} {#return 35};	
+	#if {"%1" == "slabiutka"} {#return 0};
+	#if {"%1" == "watla"} {#return 5};
+	#if {"%1" == "slaba"} {#return 10};
+	#if {"%1" == "krzepka"} {#return 15};
+	#if {"%1" == "silna"} {#return 20};
+	#if {"%1" == "mocna"} {#return 25};
+	#if {"%1" == "potezna"} {#return 30};
+	#if {"%1" == "mocarna"} {#return 35};	
+}
+#function {poziomzrecznosci}
+{
+	#if {"%1" == "nieskoordynowany"} {#return 0};
+	#if {"%1" == "niezreczny"} {#return 5};
+	#if {"%1" == "niezgrabny"} {#return 10};
+	#if {"%1" == "sprawny"} {#return 15};
+	#if {"%1" == "zwinny"} {#return 20};
+	#if {"%1" == "zreczny"} {#return 25};
+	#if {"%1" == "gibki"} {#return 30};
+	#if {"%1" == "akrobatyczny"} {#return 35};	
+	#if {"%1" == "nieskoordynowana"} {#return 0};
+	#if {"%1" == "niezreczna"} {#return 5};
+	#if {"%1" == "niezgrabna"} {#return 10};
+	#if {"%1" == "sprawna"} {#return 15};
+	#if {"%1" == "zwinna"} {#return 20};
+	#if {"%1" == "zreczna"} {#return 25};
+	#if {"%1" == "gibka"} {#return 30};
+	#if {"%1" == "akrobatyczna"} {#return 35};	
+}
+#function {poziomwytrzymalosci}
+{
+	#if {"%1" == "cherlawy"} {#return 0};
+	#if {"%1" == "rachityczny"} {#return 5};
+	#if {"%1" == "mizerny"} {#return 10};
+	#if {"%1" == "dobrze zbudowany"} {#return 15};
+	#if {"%1" == "wytrzymaly"} {#return 20};
+	#if {"%1" == "twardy"} {#return 25};
+	#if {"%1" == "muskularny"} {#return 30};
+	#if {"%1" == "atletyczny"} {#return 35};	
+	#if {"%1" == "cherlawa"} {#return 0};
+	#if {"%1" == "rachityczna"} {#return 5};
+	#if {"%1" == "mizerna"} {#return 10};
+	#if {"%1" == "dobrze zbudowana"} {#return 15};
+	#if {"%1" == "wytrzymala"} {#return 20};
+	#if {"%1" == "twarda"} {#return 25};
+	#if {"%1" == "muskularna"} {#return 30};
+	#if {"%1" == "atletyczna"} {#return 35};	
+}
+#function {poziominteligencji}
+{
+	#if {"%1" == "bezmyslny"} {#return 0};
+	#if {"%1" == "tepy"} {#return 5};
+	#if {"%1" == "ograniczony"} {#return 10};
+	#if {"%1" == "pojetny"} {#return 15};
+	#if {"%1" == "inteligentny"} {#return 20};
+	#if {"%1" == "bystry"} {#return 25};
+	#if {"%1" == "blyskotliwy"} {#return 30};
+	#if {"%1" == "genialny"} {#return 35};	
+	#if {"%1" == "bezmyslna"} {#return 0};
+	#if {"%1" == "tepa"} {#return 5};
+	#if {"%1" == "ograniczona"} {#return 10};
+	#if {"%1" == "pojetna"} {#return 15};
+	#if {"%1" == "inteligentna"} {#return 20};
+	#if {"%1" == "bystra"} {#return 25};
+	#if {"%1" == "blyskotliwa"} {#return 30};
+	#if {"%1" == "genialna"} {#return 35};	
+}
+
+#function {poziomodwagi}
+{
+	#if {"%1" == "tchorzliwy"} {#return 0};
+	#if {"%1" == "strachliwy"} {#return 5};
+	#if {"%1" == "niepewny"} {#return 10};
+	#if {"%1" == "zdecydowany"} {#return 15};
+	#if {"%1" == "odwazny"} {#return 20};
+	#if {"%1" == "dzielny"} {#return 25};
+	#if {"%1" == "nieugiety"} {#return 30};
+	#if {"%1" == "nieustraszony"} {#return 35};	
+	#if {"%1" == "tchorzliwa"} {#return 0};
+	#if {"%1" == "strachliwa"} {#return 5};
+	#if {"%1" == "niepewna"} {#return 10};
+	#if {"%1" == "zdecydowana"} {#return 15};
+	#if {"%1" == "odwazna"} {#return 20};
+	#if {"%1" == "dzielna"} {#return 25};
+	#if {"%1" == "nieugieta"} {#return 30};
+	#if {"%1" == "nieustraszona"} {#return 35};	
+}
+#function {brakuje}
+{
+	#if {"%1" == "bardzo duzo"} {#return 0};
+	#if {"%1" == "duzo"} {#return 1};
+	#if {"%1" == "troche"} {#return 2};
+	#if {"%1" == "niewiele"} {#return 3};
+	#if {"%1" == "bardzo niewiele"} {#return 4};
+}
+
+#action {Wydaje ci sie, ze %1 ci brakuje, zebys mogla wyzej ocenic sw{a|oj} %3.}
+{
+	#var ret @brakuje{%1};
+	#if {"%3" == "sile"} {#var p_str_left $ret};
+	#if {"%3" == "zrecznosc"} {#var p_dex_left $ret};
+	#if {"%3" == "wytrzymalosc"} {#var p_sta_left $ret};
+	#if {"%3" == "intelekt"} {#var p_int_left $ret};
+	#if {"%3" == "odwage"} {#var p_bra_left $ret};
+}
+
+
+#action {Wydaje ci sie, ze %1 ci brakuje, zebys mogl wyzej ocenic sw{a|oj} %3.}
+{
+	#var ret @brakuje{%1};
+	#if {"%3" == "sile"} {#var p_str_left $ret};
+	#if {"%3" == "zrecznosc"} {#var p_dex_left $ret};
+	#if {"%3" == "wytrzymalosc"} {#var p_sta_left $ret};
+	#if {"%3" == "intelekt"} {#var p_int_left $ret};
+	#if {"%3" == "odwage"} {#var p_bra_left $ret};
+}
+
+#action {Masz epicka %1.}
+{
+	#if {"%1" == "zrecznosc"} {#var p_dex 40};	
+}
+#action {Twa %1 osiagnela nadludzki poziom.}
+{
+	#if {"%1" == "zrecznosc"} {#var p_dex 45};	
+}
+
+#action {Jestes %1, %2, %3, %4 i %5.}
+{
+	#var p_str @poziomsily{%1};
+	#var p_dex @poziomzrecznosci{%2};
+	#var p_sta @poziomwytrzymalosci{%3};
+	#var p_int @poziominteligencji{%4};
+	#var p_bra @poziomodwagi{%5};
+}
+#function {policz_punkt}
+{
+	#math {poziom1} {$poz_tmp - 1};
+	#math {poziom2} {$poziom1 * 17};
+	#math {brak1_1} {5 - $brak_tmp};
+	#math {brak1_2} {$brak1_1 * 3};
+	#math {brak2_1} {5 - %2};
+	#math {brak2_2} {$brak2_1 + 1};
+	#math {brak2_3} {$brak2_2 / 2};
+	#math {punkt} {$poziom2 + $brak1_2 + $brak2_3};
+	#return $punkt;	
+
+}
+
+#function {policz2}
+{
+	#math {strpoint} {$p_str_left + $p_str};
+	#math {dexpoint} {$p_dex_left + $p_dex};
+	#math {stapoint} {$p_sta_left + $p_sta};
+	#math {intpoint} {$p_int_left + $p_int};
+	#math {brapoint} {$p_bra_left + $p_bra};
+	
+	#math {pointstotal} {$strpoint + $dexpoint + $stapoint + $intpoint + $brapoint};
+	#math {average} {pointstotal / 5};
+	#math {cechylevel} {($pointstotal - 34) / 12};
+	#math {cechyleft} {($pointstotal - 34) % 12};
+
+	#var level $cechylevel;
+	#var levelpp $cechyleft;
+	#math {needp} {12 - $cechyleft};
+}
+
+#alias {exp} 
+{
+	#var p_str_left 0;
+	#var p_dex_left 0;
+	#var p_sta_left 0;
+	#var p_int_left 0;
+	#var p_bra_left 0;
+	#var p_str 0;
+	#var p_dex 0;
+	#var p_sta 0;
+	#var p_int 0;
+	#var p_bra 0;
+	zamknij drzwi;
+	medytuj;
+	cechy;
+	ocen cechy;
+	powstan;
+	otworz drzwi;
+}
+
+#alias podliczexp_old {
+	#var r @policz2{};
+	#showme { | stat | base | left | math };
+	#showme { |  str |    $p_str |    $p_str_left |  $strpoint };
+	#showme { |  dex |    $p_dex |    $p_dex_left |  $dexpoint };
+	#showme { |  sta |    $p_sta |    $p_sta_left |  $stapoint };
+	#showme { |  int |    $p_int |    $p_int_left |  $intpoint };
+	#showme { |  bra |    $p_bra |    $p_bra_left |  $brapoint };
+	#showme { +--------------------------- };
+	#showme { |  total            $pointstotal };
+	#showme { |  sublevels        $levelpp };
+	#showme { |  to next level    $needp };
+	#showme { |  your level       $level };	
+}
+
+
+#alias podliczexp {
+	#var r @policz2{};
+	#var twojpoziom {};
+	#switch {$level} {
+		#case {1} {#var twojpoziom {ktos niedoswiadczony}};
+		#case {2} {#var twojpoziom {ktos kto widzial juz to i owo}};
+		#case {3} {#var twojpoziom {ktos kto pewnie stapa po swiecie}};
+		#case {4} {#var twojpoziom {ktos kto niejedno widzial}};
+		#case {5} {#var twojpoziom {ktos kto swoje przezyl}};
+		#case {6} {#var twojpoziom {ktos doswiadczony}};
+		#case {7} {#var twojpoziom {ktos kto wiele przeszedl}};
+		#case {8} {#var twojpoziom {ktos kto widzial kawal swiata}};
+		#case {9} {#var twojpoziom {ktos bardzo doswiadczony}};
+		#case {10} {#var twojpoziom {ktos kto zwiedzil caly swiat}};
+		#case {11} {#var twojpoziom {ktos wielce doswiadczony}};
+		#case {12} {#var twojpoziom {ktos kto widzial i doswiadczyl wszystkiego}};
+		#case {13} {#var twojpoziom {osoba owiana legenda}};
+	};
+	#echo {Wydaje ci sie, ze wygladasz jak ${c_stan_sredni}${twojpoziom} ($level)<088>. Do nastepnego poziomu brakuje Ci ${c_stan_niski}$needp <088>podcech.};
+}
+
+#action {Jestes %w %w %w, znan{ym|a} jako:} {
+	#switch {$level} {
+		#case {1} {#var twojpoziom {ktos niedoswiadczony}};
+		#case {2} {#var twojpoziom {ktos kto widzial juz to i owo}};
+		#case {3} {#var twojpoziom {ktos kto pewnie stapa po swiecie}};
+		#case {4} {#var twojpoziom {ktos kto niejedno widzial}};
+		#case {5} {#var twojpoziom {ktos kto swoje przezyl}};
+		#case {6} {#var twojpoziom {ktos doswiadczony}};
+		#case {7} {#var twojpoziom {ktos kto wiele przeszedl}};
+		#case {8} {#var twojpoziom {ktos kto widzial kawal swiata}};
+		#case {9} {#var twojpoziom {ktos bardzo doswiadczony}};
+		#case {10} {#var twojpoziom {ktos kto zwiedzil caly swiat}};
+		#case {11} {#var twojpoziom {ktos wielce doswiadczony}};
+		#case {12} {#var twojpoziom {ktos kto widzial i doswiadczyl wszystkiego}};
+		#case {13} {#var twojpoziom {osoba owiana legenda}};
+	};
+	#echo {Wygladasz jak ${twojpoziom}.};
+}
+
+
+#action {Czujesz jak powoli} {podliczexp};
+#action {Otwierasz oczy, twoj umysl powraca do normalnego dzialania. Po chwili konsternacji wstajesz z podlogi.} {podliczexp};
+#action {Wynurzajac sie z otchlani wlasnego umyslu, odzyskujesz powoli zmysly. Czujesz sie bardzo wypoczety i zrelaksowany, gdy w koncu powstajesz.} {podliczexp};
+#action {Czujesz sie jakbys wydobywal sie z glebokiej otchlani} {podliczexp};
+#action {Wstajesz z posadzki, otrzepujac pyl ze swojego ubrania. Moze to i dobrze ze kamienie tu} {podliczexp};
+#action {Odblokowujesz swoje zmysly. Po krotkiej chwili, kiedy bodzce z zewnatrz zalewaja twa glowe niczym fala} {podliczexp};

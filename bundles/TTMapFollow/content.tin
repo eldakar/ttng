@@ -1,5 +1,3 @@
-#nop follows do TT mappera;
-#nop Woz przerabiamy na normalne chodzenie;
 #action {Wraz z %1 jedziesz %2 na %3.} {#sh Wraz z %1 podazasz za %2 na %3.}
 #nop reszta;
 #action {%*{Podazasz|podazasz} za %1} {#sh <faa>CATCH %1 [$ROOM_INFO] $current_room_id;#var MAPPER_SYNC 0} {8};

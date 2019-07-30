@@ -1,25 +1,25 @@
 #event {PROGRAM START} { 
     #ses rpg arkadia.rpg.pl 23;
 
-    #map read mapkatt.map;
-    #read map.tin;		#nop Obsluga mapy;
+    #read bundles/bundle_ops.tin;
+    #read bundles/CommandHistory/manifest.tin;
+    #read bundles/TTMap/manifest.tin;
+    #read bundles/TTMapFollow/manifest.tin;
+    #read bundles/TTMapFreezer/manifest.tin;
+    #read bundles/TTMapSigns/manifest.tin;
+    #read bundles/LevelCalculator/manifest.tin;
+    
     #read gmcp_char.tin;    #nop GMCP;
     #read staty.tin;		#nop Zliczanie statystyk;
     #read gmcp_message.tin;	#nop GMCP;
     #read gmcp_object_hash.tin;	#nop GMCP;
-    #read prompt.tin		#nop historia komend na dolnym pasku;
-    #read ttfollow.tin;      	#nop Podazanie za kims;
     #read ttundo.tin;        	#nop Blokery na nieudany ruch;
     #nop read mapevents2.tin;   	#nop Pokoje skryptowane recznie - labirynty;
     #nop read teleporty.tin;     	#nop Triggery na teleporty;
-    #read ttfreeze.tin;      	#nop Komendy blokujace ruch (wspinaczka itp);
-    #read ttsync.tin;        	#nop Eventy 'gubiace' mapke celowo;
     #read alias.tin;		#nop Aliasy do obslugi glownych funkcji;
     #read mapevents.tin;	#nop Eventy na pokojach;
     #read macros.tin;		#nop Kody klawiszy;
-    #read exp.tin;		#nop Liczenie expo;
     #read oceny.tin;        #nop Oceny zbroi i broni;
-    #read ttexp.tin;		#nop Regexy na liczenie expo;
     #read qbs.tin;		#nop Bindy na podazanie za kims;
     #read tescik2.tin;
     #read korsarze.tin;		#nop Pirackie skrypty;

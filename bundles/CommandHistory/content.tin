@@ -1,19 +1,13 @@
-#CLASS {prompt} OPEN
+#var global_bundle_slots_values[prompt][bottom] {3};
+#var prompt_history[1] {};
+#var prompt_history[2] {};
 
 #event {SEND OUTPUT} {
 	#var prompt_history[2] {$prompt_history[1]};
 	#var prompt_history[1] {%0};
-	prompt_history;
-	#line ignore #showme {> } {-1};	
-};
-
-#var prmptbottomv 3;
-#var prompt_history[1] {};
-#var prompt_history[2] {};
-
-#alias {prompt_history} {
 	#sh {> $prompt_history[1]} {-2};
 	#sh {> $prompt_history[2]} {-3};
+	#line ignore #showme {> } {-1};	
 };
 
 #function {cmd_prompt_add} {
@@ -22,6 +16,3 @@
 	#sh {> $prompt_history[1]} {-2};
 	#sh {> $prompt_history[2]} {-3};	
 };
-
-
-#CLASS {prompt} CLOSE
