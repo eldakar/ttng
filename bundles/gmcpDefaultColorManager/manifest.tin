@@ -15,21 +15,19 @@
 #nop in order to load the bundle;
 #nop ############################;
 #list bundle_slots clear;
-#list bundle_slots add {gmcp.
+#list bundle_slots add {gmcp.char.colors};
 
 #nop ############################;
 #nop BUNDLE DEPENDENCIES ###;
 #nop All dependencies have to be met;
 #nop ############################;
 #list bundle_deps clear;
-#list bundle_deps add {TTMap};
 
 #nop ############################;
 #nop BUNDLE ALIASES ########;
 #nop Check if any alias already in use;
 #nop ############################;
 #list bundle_alias clear;
-#list bundle_alias add {/zadania};
 
 #nop ############################;
 #nop Validate configuration;
