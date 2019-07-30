@@ -12,23 +12,26 @@
 
     #var r @bundleops_loadglobals{};
 
+#nop TODO;
+    #read bundles/PlayerDB/tescik2.tin;
+    #read bundles/TTMapUndo/data.tin;
+    #read bundles/NumPad/content.tin;
+    #read bundles/ItemQualitySimple/oceny.tin;
+    
+    #read bundles/Herbs/ziola_a.tin;		#nop Obsluga woreczkow do ziol;
+    #read bundles/Herbs/ziola_b.tin;		#nop Ziolka definicje;
+
+
     #read gmcp_char.tin;    #nop GMCP;
     #read staty.tin;		#nop Zliczanie statystyk;
     #read gmcp_message.tin;	#nop GMCP;
     #read gmcp_object_hash.tin;	#nop GMCP;
-    #read ttundo.tin;        	#nop Blokery na nieudany ruch;
     #read alias.tin;		#nop Aliasy do obslugi glownych funkcji;
     #read mapevents.tin;	#nop Eventy na pokojach;
-    #read macros.tin;		#nop Kody klawiszy;
-    #read oceny.tin;        #nop Oceny zbroi i broni;
     #read qbs.tin;		#nop Bindy na podazanie za kims;
-    #read tescik2.tin;
     #read korsarze.tin;		#nop Pirackie skrypty;
     #read ../ttng-brain/client.tin;		#nop Pirackie skrypty 2 - mozg;
     #read statki.tin;		#nop Obsluga statkow;
-
-    #read ziola_a.tin;		#nop Obsluga woreczkow do ziol;
-    #read ziola_b.tin;		#nop Ziolka definicje;
 
     #config {debug telnet} {off};	#nop debug;
     #config {COMMAND ECHO} {off};	#nop wyswietlanie komend;

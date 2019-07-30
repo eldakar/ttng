@@ -1059,3 +1059,174 @@ zamknij czwarty przytroczony woreczek;
   zamknij czwarty przytroczony woreczek;
 }
 
+#alias {ziola}
+{
+  lecznicze;
+  #var pahc {1};
+  #var prompt_avatar[1] $prompt_avatar_herbs[1];
+  #math licznik {$ziolka_licznik - 10 + 5};
+  #loop {1} {$licznik} {paaah} {
+    #format {poh} {%L} {$prompt_objects_herbs[$pahc]};
+    #if {$poh > 11} {
+      #sh $prompt_objects_herbs[$pahc];
+    };
+    #math {pahc} {$pahc + 1};
+  };
+};
+
+
+#alias {dziur} {
+  opusc bron;
+  otworz pierwszy przytroczony woreczek;
+  otworz drugi przytroczony woreczek;
+  otworz trzeci przytroczony woreczek;
+  otworz czwarty przytroczony woreczek;
+  wez czterokanciasta rozgaleziona lodyge z pierwszego przytroczonego woreczka;
+  wez czterokanciasta rozgaleziona lodyge z drugiego przytroczonego woreczka;
+  wez czterokanciasta rozgaleziona lodyge z trzeciego przytroczonego woreczka;
+  wez czterokanciasta rozgaleziona lodyge z czwartego przytroczonego woreczka;
+  rozgryz czterokanciasta rozgaleziona lodyge;
+  wloz lodygi do pierwszego woreczka;
+  wloz lodygi do drugiego woreczka;
+  wloz lodygi do trzeciego woreczka;
+  wloz lodygi do czwartego woreczka;
+  zamknij pierwszy przytroczony woreczek;
+  zamknij drugi przytroczony woreczek;
+  zamknij trzeci przytroczony woreczek;
+  zamknij czwarty przytroczony woreczek;
+  dobadz broni;
+}
+
+#alias {delion} {
+  opusc bron;
+  otworz pierwszy przytroczony woreczek;
+  otworz drugi przytroczony woreczek;
+  otworz trzeci przytroczony woreczek;
+  otworz czwarty przytroczony woreczek;
+  wez zolty jasny kwiat z pierwszego przytroczonego woreczka;
+  wez zolty jasny kwiat z drugiego przytroczonego woreczka;
+  wez zolty jasny kwiat z trzeciego przytroczonego woreczka;
+  wez zolty jasny kwiat z czwartego przytroczonego woreczka;
+  zjedz kwiat;
+  wloz kwiaty do pierwszego woreczka;
+  wloz kwiaty do drugiego woreczka;
+  wloz kwiaty do trzeciego woreczka;
+  wloz kwiaty do czwartego woreczka;
+  zamknij pierwszy przytroczony woreczek;
+  zamknij drugi przytroczony woreczek;
+  zamknij trzeci przytroczony woreczek;
+  zamknij czwarty przytroczony woreczek;
+  dobadz broni;
+}
+#alias {mandra} {
+  opusc bron;
+  otworz pierwszy przytroczony woreczek;
+  otworz drugi przytroczony woreczek;
+  otworz trzeci przytroczony woreczek;
+  otworz czwarty przytroczony woreczek;
+  wez bialy rozgaleziony korzen z pierwszego przytroczonego woreczka;
+  wez bialy rozgaleziony korzen z drugiego przytroczonego woreczka;
+  wez bialy rozgaleziony korzen z trzeciego przytroczonego woreczka;
+  wez bialy rozgaleziony korzen z czwartego przytroczonego woreczka;
+  przezuj korzen;
+  wloz korzenie do pierwszego woreczka;
+  wloz korzenie do drugiego woreczka;
+  wloz korzenie do trzeciego woreczka;
+  wloz korzenie do czwartego woreczka;
+  zamknij pierwszy przytroczony woreczek;
+  zamknij drugi przytroczony woreczek;
+  zamknij trzeci przytroczony woreczek;
+  zamknij czwarty przytroczony woreczek;
+  dobadz broni;
+}
+#alias {przelot3}
+{
+  opusc bron;
+  otworz pierwszy przytroczony woreczek;
+  otworz drugi przytroczony woreczek;
+  otworz trzeci przytroczony woreczek;
+  otworz czwarty przytroczony woreczek;
+  wez kremowe ususzone kwiaty z pierwszego przytroczonego woreczka;
+  wez kremowe ususzone kwiaty z drugiego przytroczonego woreczka;
+  wez kremowe ususzone kwiaty z trzeciego przytroczonego woreczka;
+  wez kremowe ususzone kwiaty z czwartego przytroczonego woreczka;
+  sproszkuj trzy kremowe ususzone kwiaty;
+  wloz kremowe kwiaty do pierwszego woreczka;
+  wloz kremowe kwiaty do drugiego woreczka;
+  wloz kremowe kwiaty do trzeciego woreczka;
+  wloz kremowe kwiaty do czwartego woreczka;
+  zamknij pierwszy przytroczony woreczek;
+  zamknij drugi przytroczony woreczek;
+  zamknij trzeci przytroczony woreczek;
+  zamknij czwarty przytroczony woreczek;
+  dobadz broni;
+}
+
+#alias {przelot}
+{
+  opusc bron;
+  otworz pierwszy przytroczony woreczek;
+  otworz drugi przytroczony woreczek;
+  otworz trzeci przytroczony woreczek;
+  otworz czwarty przytroczony woreczek;
+  wez kremowe ususzone kwiaty z pierwszego przytroczonego woreczka;
+  wez kremowe ususzone kwiaty z drugiego przytroczonego woreczka;
+  wez kremowe ususzone kwiaty z trzeciego przytroczonego woreczka;
+  wez kremowe ususzone kwiaty z czwartego przytroczonego woreczka;
+  sproszkuj kremowy ususzony kwiat;
+  wloz kremowe kwiaty do pierwszego woreczka;
+  wloz kremowe kwiaty do drugiego woreczka;
+  wloz kremowe kwiaty do trzeciego woreczka;
+  wloz kremowe kwiaty do czwartego woreczka;
+  zamknij pierwszy przytroczony woreczek;
+  zamknij drugi przytroczony woreczek;
+  zamknij trzeci przytroczony woreczek;
+  zamknij czwarty przytroczony woreczek;
+  dobadz broni;
+}
+
+#alias {szczaw} {
+  opusc bron;
+  otworz pierwszy przytroczony woreczek;
+  otworz drugi przytroczony woreczek;
+  otworz trzeci przytroczony woreczek;
+  otworz czwarty przytroczony woreczek;
+  wez strzalkowaty aromatyczny lisc z pierwszego przytroczonego woreczka;
+  wez strzalkowaty aromatyczny lisc z drugiego przytroczonego woreczka;
+  wez strzalkowaty aromatyczny lisc z trzeciego przytroczonego woreczka;
+  wez strzalkowaty aromatyczny lisc z czwartego przytroczonego woreczka;
+  przezuj strzalkowaty aromatyczny lisc;
+  wloz liscie do pierwszego woreczka;
+  wloz liscie do drugiego woreczka;
+  wloz liscie do trzeciego woreczka;
+  wloz liscie do czwartego woreczka;
+  zamknij pierwszy przytroczony woreczek;
+  zamknij drugi przytroczony woreczek;
+  zamknij trzeci przytroczony woreczek;
+  zamknij czwarty przytroczony woreczek;
+  dobadz broni;
+}
+
+
+#alias {szczaw5} {
+  opusc bron;
+  otworz pierwszy przytroczony woreczek;
+  otworz drugi przytroczony woreczek;
+  otworz trzeci przytroczony woreczek;
+  otworz czwarty przytroczony woreczek;
+  wez piec strzalkowatych aromatycznych lisci z pierwszego przytroczonego woreczka;
+  wez piec strzalkowatych aromatycznych lisci z drugiego przytroczonego woreczka;
+  wez strzalkowatych aromatycznych lisci z trzeciego przytroczonego woreczka;
+  wez strzalkowatych aromatycznych lisci z czwartego przytroczonego woreczka;
+  przezuj piec strzalkowatych aromatycznych lisci;
+  wloz liscie do pierwszego woreczka;
+  wloz liscie do drugiego woreczka;
+  wloz liscie do trzeciego woreczka;
+  wloz liscie do czwartego woreczka;
+  zamknij pierwszy przytroczony woreczek;
+  zamknij drugi przytroczony woreczek;
+  zamknij trzeci przytroczony woreczek;
+  zamknij czwarty przytroczony woreczek;
+  dobadz broni;
+}
+

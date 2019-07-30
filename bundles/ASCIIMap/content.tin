@@ -1,0 +1,38 @@
+#alias {am}
+{
+    #format screen_h {%R};
+    #format screen_w {%C};
+    #var asciimap_h $screen_h;
+    #var asciimap_w $screen_w;
+    #unvar asciimapv;
+    #format wpadder {%+${asciimap_w}s} {};
+    #loop 1 $asciimap_h loopcnt {
+        #var asciimapv[$loopcnt] {$wpadder};
+    };
+    #var roominfomapname {$ROOM_INFO[map][name]};
+    #var roominfomapname {$roominfomapname .map};
+    #replace {roominfomapname} { } {};
+    #script {asciimapv} {maps/showmap2 maps/$roominfomapname $ROOM_INFO[map][x] $ROOM_INFO[map][y] $asciimap_w $asciimap_h};
+    
+    #loop 1 $asciimap_h loopcnt {
+        #var tmpline {$asciimapv[$loopcnt]};
+        #line substitute variables {#format {tmpline} {%-${asciimap_w}s} {$tmpline}};
+        #nop replace {tmpline} {\\} {\\\};
+        #replace {tmpline} {9} {\\};
+        #replace {tmpline} {.} { };
+        #replace {tmpline} {G} {<faf>G<088>};
+        #replace {tmpline} {#} {<118><fbb>#<088>};
+        #replace {tmpline} {P} {<afa>P<088>};
+        #replace {tmpline} {S} {<ffa>S<088>};
+        #replace {tmpline} {K} {<afa>K<088>};
+        #replace {tmpline} {L} {<acf>L<088>};
+        #replace {tmpline} {T} {<fff>T<088>};
+        #replace {tmpline} {N} {<aaf>N<088>};
+        #replace {tmpline} {F} {<acf>F<088>};
+        #replace {tmpline} {B} {<ffa>B<088>};
+        #var asciimapv[$loopcnt] {$tmpline};
+        #var asciimapv[$loopcnt] {$tmpline};
+        #nop line log {$localpath/ascii.txt} {$asciimapv[$loopcnt]};
+        #echo $tmpline;
+    };
+}
