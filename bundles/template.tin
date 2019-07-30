@@ -5,6 +5,9 @@
 #nop NAME ###########;
 #var bundle_name {TTMapSigns};
 
+#nop IS DATA PRESENT #;
+#var bundle_data {1};
+
 #nop ############################;
 #nop EVENT SLOTS ##########;
 #nop Every listed event slot has to be empty;
