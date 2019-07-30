@@ -8,6 +8,15 @@
 #nop IS DATA PRESENT #;
 #var bundle_data {0};
 
+#nop IS CONTENT PRESENT;
+#var bundle_content {1};
+
+#nop IS CONFIG PRSENT;
+#var bundle_config {0};
+
+#nop IS HELP PRESENT;
+#var bundle_help {0};
+
 #nop ############################;
 #nop EVENT SLOTS ##########;
 #nop Every listed event slot has to be empty;
@@ -34,18 +43,3 @@
 #nop ############################;
 #var bundle_ready @bundleops_validate{};
 
-#nop ############################;
-#if {$bundle_ready < 1} {
-#nop ############################;
-#line substitute variables {
-	#CLASS {$bundle_name} OPEN;
-	#read bundles/$bundle_name/content.tin;
-	#if {$bundle_data > 0} {
-		#read bundles/$bundle_name/data.tin;
-	};
-	#CLASS {$bundle_name} CLOSE;
-};
-
-#nop ############################;
-};
-#nop ############################;
