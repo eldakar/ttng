@@ -1,6 +1,5 @@
 #event {IAC SB GMCP char.colors IAC SE} {
 	#var CHAR_COLORS {%0};
-
 	#foreach {$CHAR_COLORS[]} {s} {
 		#list {colors} {find} {$s} {v};
 		#if {$v > 0} {
@@ -9,4 +8,7 @@
 			#var {colors[$s]} {$CHAR_COLORS[$s]};
 		};
 	};
+	#read bundles/gmcpDefaultColorManager/data.tin;
+	#read bundles/gmcpDefaultColorManager/data2.tin;
 };
+

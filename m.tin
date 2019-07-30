@@ -1,23 +1,20 @@
 #event {PROGRAM START} { 
-    #ses rpg arkadia.rpg.pl 23;
+    #ses rpg arkadia.rpg.pl {23};
 
     #read bundles/bundle_ops.tin;
-    #read bundles/gmcpDefaultColorManager/manifest.tin;
     #read bundles/CommandHistory/manifest.tin;
     #read bundles/TTMap/manifest.tin;
     #read bundles/TTMapFollow/manifest.tin;
     #read bundles/TTMapFreezer/manifest.tin;
     #read bundles/TTMapSigns/manifest.tin;
     #read bundles/LevelCalculator/manifest.tin;
-    #read bundles/DefaultColorHighlighting/manifest.tin;
+    #read bundles/gmcpDefaultColorManager/manifest.tin;
     
     #read gmcp_char.tin;    #nop GMCP;
     #read staty.tin;		#nop Zliczanie statystyk;
     #read gmcp_message.tin;	#nop GMCP;
     #read gmcp_object_hash.tin;	#nop GMCP;
     #read ttundo.tin;        	#nop Blokery na nieudany ruch;
-    #nop read mapevents2.tin;   	#nop Pokoje skryptowane recznie - labirynty;
-    #nop read teleporty.tin;     	#nop Triggery na teleporty;
     #read alias.tin;		#nop Aliasy do obslugi glownych funkcji;
     #read mapevents.tin;	#nop Eventy na pokojach;
     #read macros.tin;		#nop Kody klawiszy;

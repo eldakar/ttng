@@ -6,7 +6,7 @@
 #var bundle_name {gmcpDefaultColorManager};
 
 #nop IS DATA PRESENT #;
-#var bundle_data {1};
+#var bundle_data {0};
 
 #nop ############################;
 #nop EVENT SLOTS ##########;
@@ -39,7 +39,7 @@
 #line substitute variables {
 	#CLASS {$bundle_name} OPEN;
 	#read bundles/$bundle_name/content.tin;
-	#if {$bundle_data > 0} {
+	#if {"$bundle_data" == "1"} {
 		#read bundles/$bundle_name/data.tin;
 	};
 	#CLASS {$bundle_name} CLOSE;

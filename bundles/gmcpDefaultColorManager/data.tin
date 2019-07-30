@@ -1,20 +1,21 @@
-#var c_ansi_map[0] {108}
-#var c_ansi_map[1] {818}
+#nop DATA;
+#var c_ansi_map[0] {108};
+#var c_ansi_map[1] {818};
 #var ci_ansi_map[1] {<788><818>};
-#var c_ansi_map[2] {828}
+#var c_ansi_map[2] {828};
 #var ci_ansi_map[2] {<788><828>};
-#var c_ansi_map[3] {838}
+#var c_ansi_map[3] {838};
 #var ci_ansi_map[3] {<788><838>};
-#var c_ansi_map[4] {848}
+#var c_ansi_map[4] {848};
 #var ci_ansi_map[4] {<788><848>};
-#var c_ansi_map[5] {858}
-#var c_ansi_map[6] {868}
-#var c_ansi_map[7] {878}
-#var c_ansi_map[8] {108}
-#var c_ansi_map[9] {118}
-#var c_ansi_map[10] {128}
+#var c_ansi_map[5] {858};
+#var c_ansi_map[6] {868};
+#var c_ansi_map[7] {878};
+#var c_ansi_map[8] {108};
+#var c_ansi_map[9] {118};
+#var c_ansi_map[10] {128};
 #var ci_ansi_map[10] {<788><128>};
-#var c_ansi_map[11] {138}
+#var c_ansi_map[11] {138};
 #var ci_ansi_map[11] {<788><138>};
 #var c_ansi_map[12] {148};
 #var c_ansi_map[13] {158};
@@ -289,18 +290,13 @@
 #var c_rooms[knowledge] {<078>};
 #var c_rooms[training] {<038>};
 #var c_rooms[storage] {<118><fca>};
-
-
-
-
-#var healthbars2[6] {<088>${c_stan_wysoki}#######<088>}
-#var healthbars2[5] {<088>-${c_stan_wysoki}######<088>}
-#var healthbars2[4] {<088>--${c_stan_sredni}#####<088>}
-#var healthbars2[3] {<088>---${c_stan_sredni}####<088>}
-#var healthbars2[2] {<088>----${c_stan_niski}###<088>}
-#var healthbars2[1] {<088>-----${c_stan_niski}##<088>}
-#var healthbars2[0] {<088>------<FAA><fff>#<088>}
-
+#var healthbars2[6] {<088>${c_stan_wysoki}#######<088>};
+#var healthbars2[5] {<088>-${c_stan_wysoki}######<088>};
+#var healthbars2[4] {<088>--${c_stan_sredni}#####<088>};
+#var healthbars2[3] {<088>---${c_stan_sredni}####<088>};
+#var healthbars2[2] {<088>----${c_stan_niski}###<088>};
+#var healthbars2[1] {<088>-----${c_stan_niski}##<088>};
+#var healthbars2[0] {<088>------<FAA><fff>#<088>};
 #var c_char_h_mode[w] {$c_wrog_gildii};
 #var c_char_h_mode[n] {<$c_ansi_map[$colors[other_char]]>};
 #var c_char_h_mode[p] {<$c_ansi_map[$colors[team_member]]>};
