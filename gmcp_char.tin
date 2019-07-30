@@ -1,18 +1,3 @@
-#event {IAC SB GMCP char.colors IAC SE} {
-	#var CHAR_COLORS {%0};
-
-	#foreach {$CHAR_COLORS[]} {s} {
-		#list {colors} {find} {$s} {v};
-		#if {$v > 0} {
-			#list {colors}{set}{$s}{$CHAR_COLORS[$s]};
-		} {
-			#var {colors[$s]} {$CHAR_COLORS[$s]};
-		};
-	};
-
-	#read gmcp_color.tin;
-	#read kolorki.tin;
-};
 #event {IAC SB GMCP char.info IAC SE} {
 	#var CHAR_INFO {%0};
 	#var AVATAR_NAME {$CHAR_INFO[name]};
