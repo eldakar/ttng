@@ -33,29 +33,3 @@
     #alias {move_se} {#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};
 };
 
-#action {Przytrzymujac sie wanty zaczynasz wspinac sie na bocianie gniazdo.} {frozen_set};
-#action {Przytrzymujac sie wanty zaczynasz schodzic na dol.} {frozen_set};
-#action {Zaczynasz wspinac sie na gore.} {frozen_set};
-#action {Zaczynasz schodzic na dol.} {frozen_set};
-#action {Zaczynasz przeszukiwac %*.} {frozen_set; qr przestan;};
-#action {Zaczynasz plynac %*.} {frozen_set};
-#action {Zaczynasz szukac ziol.} {frozen_set};
-
-#action {Zaczynasz wioslowac.} {frozen_set};
-#action {Skryt{a|y} za %* zaczynasz plynac na} {frozen_set};
-#action {Nie udalo ci sie znalezc niczego interesujacego.} {frozen_unset};
-
-#action {Zapierasz sie nogami o grunt i probujesz uniesc stalowa krate.} {frozen_set};
-
-#action {Przestajesz probowac uniesc krate.} {frozen_unset};
-#action {Udaje ci sie uniesc stalowa krate, otwierajac przejscie.} {frozen_unset};
-#action {Wynurzasz sie z wody.} {frozen_unset};
-#action {Klekasz szukajac sladow.} {frozen_set;qr przestan;}
-#action {Przestajesz szukac sladow.} {frozen_unset};
-#action {Przestajesz szukac ziol.} {frozen_unset};
-#action {Nie znajdujesz zadnych sladow.} {frozen_unset};
-#action {Znajdujesz %*.} {frozen_unset};
-#action {Przestajesz przeszukiwac %*.} {frozen_unset};
-#action {Jestes w stanie wyroznic kilka sladow na ziemi.} {frozen_unset};
-#action {Szukasz wszedzie, ale nie znajdujesz zadnych ziol.} {frozen_unset};
-#action {Znajdujesz %*.} {frozen_unset;}
