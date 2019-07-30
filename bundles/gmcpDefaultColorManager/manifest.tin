@@ -1,0 +1,53 @@
+    
+#nop ############################;
+#nop Bundle template v1;
+#nop ############################;
+
+#nop NAME ###########;
+#var bundle_name {gmcpDefaultColorManager};
+
+#nop IS DATA PRESENT #;
+#var bundle_data {1};
+
+#nop ############################;
+#nop EVENT SLOTS ##########;
+#nop Every listed event slot has to be empty;
+#nop in order to load the bundle;
+#nop ############################;
+#list bundle_slots clear;
+#list bundle_slots add {gmcp.
+
+#nop ############################;
+#nop BUNDLE DEPENDENCIES ###;
+#nop All dependencies have to be met;
+#nop ############################;
+#list bundle_deps clear;
+#list bundle_deps add {TTMap};
+
+#nop ############################;
+#nop BUNDLE ALIASES ########;
+#nop Check if any alias already in use;
+#nop ############################;
+#list bundle_alias clear;
+#list bundle_alias add {/zadania};
+
+#nop ############################;
+#nop Validate configuration;
+#nop ############################;
+#var bundle_ready @bundleops_validate{};
+
+#nop ############################;
+#if {$bundle_ready < 1} {
+#nop ############################;
+#line substitute variables {
+	#CLASS {$bundle_name} OPEN;
+	#read bundles/$bundle_name/content.tin;
+	#if {$bundle_data > 0} {
+		#read bundles/$bundle_name/data.tin;
+	};
+	#CLASS {$bundle_name} CLOSE;
+};
+
+#nop ############################;
+};
+#nop ############################;
