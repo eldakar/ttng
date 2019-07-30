@@ -3,10 +3,10 @@
 #nop ############################;
 
 #nop NAME ###########;
-#var bundle_name {TTMapSigns};
+#var bundle_name {BundleName};
 
 #nop IS DATA PRESENT #;
-#var bundle_data {1};
+#var bundle_data {0};
 
 #nop ############################;
 #nop EVENT SLOTS ##########;
@@ -20,14 +20,12 @@
 #nop All dependencies have to be met;
 #nop ############################;
 #list bundle_deps clear;
-#list bundle_deps add {TTMap};
 
 #nop ############################;
 #nop BUNDLE ALIASES ########;
 #nop Check if any alias already in use;
 #nop ############################;
 #list bundle_alias clear;
-#list bundle_alias add {/zadania};
 
 #nop ############################;
 #nop Validate configuration;
