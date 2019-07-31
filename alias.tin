@@ -167,66 +167,6 @@
 };
 
 
-#alias {qr} {
-  #line substitute {variables} {#macro {$KEY_QB} {%0}};
-  #line substitute {variables} {#macro {$KEY_PAD_MIDDLE} {%0}};
-
-  #format {show_bind_} {%h} { %0 };
-  #echo {${c_stan_sredni}$show_bind_};
-}
-
-#alias {qk} {
-  #var r @_print_war_bind{%0};
-  #var qkcommand %0;
-  #line substitute {variables} {#macro {$KEY_QK} {$qkcommand}};
-};
-
-#alias {qb} {
-    #line substitute {variables} {#macro {$KEY_QB} {%0}};
-    #line substitute {variables} {#macro {$KEY_PAD_MIDDLE} {%0}};
-    #nop show_bind %0;
-    #format {show_bind_} {%h} { %0 };
-    #echo {${c_stan_wysoki}$show_bind_};
-}
-
-#nop silently;
-#alias {qbs} {
-    #line substitute {variables} {#macro {$KEY_QB} {%0}};
-    #line substitute {variables} {#macro {$KEY_PAD_MIDDLE} {%0}};
-}
-
-#alias {QB} {
-    #var bind_found 1;
-    #var bind_run {%0};
-}
-
-
-
-#alias {qm} {
-    #line substitute {variables} {#macro {$KEY_QB} {%0}};
-    #line substitute {variables} {#macro {$KEY_PAD_MIDDLE} {%0}};
-    #format {show_bind_} {%h} { %0 };
-    #echo {${c_stan_niski}$show_bind_}
-  
-    #if {$profiles_follow == 1} {
-        #var magiczny_wytrych 1;
-        #if {$magiczny_wytrych == 1} {
-            #format stamp {%t} {%Y-%m-%d %H:%M:%S};
-            #echo {${c_arkatt}> ${c_stan_niski}$stamp [magiczny_wytrych] czekam $rva_total na %0<088>};
-            #var magiczny_wytrych 2;
-            #delay {$global_delay_current} {
-                #var magiczny_wytrych 1;
-                #echo {${c_arkatt}> ${c_stan_niski}$stamp [magiczny_wytrych] wykonuje %0.<088>};
-                %0;
-            };
-        };
-    };
-}
-
-#alias {qbk} {
-    #line substitute {variables} {#macro {$KEY_QB} {%0}};
-}
-
 #alias {zasuwa_zamknij} {
 	zamknij drzwi;
 	przesun zasuwe;

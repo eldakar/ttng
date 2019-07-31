@@ -1,0 +1,45 @@
+#nop ############################;
+#nop Bundle template v1;
+#nop ############################;
+
+#nop NAME ###########;
+#var bundle_name {MobKiller};
+
+#nop IS DATA PRESENT #;
+#var bundle_data {0};
+
+#nop IS CONTENT PRESENT;
+#var bundle_content {1};
+
+#nop IS CONFIG PRSENT;
+#var bundle_config {0};
+
+#nop IS HELP PRESENT;
+#var bundle_help {0};
+
+#nop ############################;
+#nop EVENT SLOTS ##########;
+#nop Every listed event slot has to be empty;
+#nop in order to load the bundle;
+#nop ############################;
+#list bundle_slots clear;
+
+#nop ############################;
+#nop BUNDLE DEPENDENCIES ###;
+#nop All dependencies have to be met;
+#nop ############################;
+#list bundle_deps clear;
+#list bundle_deps add {TTMap};
+#list bundle_deps add {gmcpDefaultColorManager};
+
+#nop ############################;
+#nop BUNDLE ALIASES ########;
+#nop Check if any alias already in use;
+#nop ############################;
+#list bundle_alias clear;
+
+#nop ############################;
+#nop Validate configuration;
+#nop ############################;
+#var bundle_ready @bundleops_validate{};
+
