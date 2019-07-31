@@ -9,19 +9,14 @@
     #read bundles/TTMapSigns/manifest.tin;
     #read bundles/LevelCalculator/manifest.tin;
     #read bundles/gmcpDefaultColorManager/manifest.tin;
-
-    #var r @bundleops_loadglobals{};
-
-#nop TODO;
     #read bundles/PlayerDB/manifest.tin;
     #read bundles/TTMapUndo/manifest.tin;
     #read bundles/NumPad/manifest.tin;
     #read bundles/ItemQualitySimple/manifest.tin;
     #read bundles/Quickdbind/manifest.tin;
-    
-    #read bundles/Herbs/ziola_a.tin;		#nop Obsluga woreczkow do ziol;
-    #read bundles/Herbs/ziola_b.tin;		#nop Ziolka definicje;
+    #read bundles/Herbs/manifest.tin;
 
+    #var r @bundleops_loadglobals{};
 
     #read gmcp_char.tin;    #nop GMCP;
     #read staty.tin;		#nop Zliczanie statystyk;

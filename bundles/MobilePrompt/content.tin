@@ -1,0 +1,24 @@
+#var MobilePromptButtonInactive {<G02>     <088>};
+#var MobilePromptButtonActive {<AFA>     <088>};
+#var MobilePromptCentreNormal {<128> NOR <088>};
+
+#var MobilePromptButtonHotKey {<FCA>                           <088>};
+#var MobilePromptButtonAttack {<BAA>                           <088>};
+#var MobilePromptButtonDefend {<AAB>                           <088>};
+
+
+#alias MobilePromptDraw {
+	#sh { $MobilePromptButtonActive   $MobilePromptButtonHotKey     $MobilePromptButtonActive   $MobilePromptButtonInactive   $MobilePromptButtonActive };
+	#sh { $MobilePromptButtonActive   $MobilePromptButtonHotKey     $MobilePromptButtonActive   $MobilePromptButtonInactive   $MobilePromptButtonActive };
+	#sh { $MobilePromptButtonActive   $MobilePromptButtonHotKey     $MobilePromptButtonActive   $MobilePromptButtonInactive   $MobilePromptButtonActive };
+	#sh { };
+        #sh {         $MobilePromptButtonAttack     $MobilePromptButtonInactive           $MobilePromptButtonInactive};
+        #sh {         $MobilePromptButtonAttack     $MobilePromptButtonInactive   $MobilePromptCentreNormal   $MobilePromptButtonInactive};
+        #sh {         $MobilePromptButtonAttack     $MobilePromptButtonInactive           $MobilePromptButtonInactive};
+	#sh { };
+	#sh { $MobilePromptButtonActive   $MobilePromptButtonDefend     $MobilePromptButtonActive   $MobilePromptButtonInactive   $MobilePromptButtonActive };
+	#sh { $MobilePromptButtonActive   $MobilePromptButtonDefend     $MobilePromptButtonActive   $MobilePromptButtonInactive   $MobilePromptButtonActive };
+	#sh { $MobilePromptButtonActive   $MobilePromptButtonDefend     $MobilePromptButtonActive   $MobilePromptButtonInactive   $MobilePromptButtonActive };
+};
+
+MobilePromptDraw
