@@ -1,0 +1,101 @@
+#alias {render_h2} {
+    #var a {%0};
+  	#loop {1} {10} {bubu} {#sh { } {$bubu} {}};
+  	#var r_curLineCnt {1};
+
+    #list team_offenders cle;
+    #list team_offenders cre;
+    #foreach {$duch[]} {du} {#var duch[$du][shown] {0}};
+    #list team siz ts;
+
+    #if {$ts < 1} {
+
+        #if {$duch[$avatarid][attack_num] > 0} {
+            #list team_offenders add {$duch[$avatarid][attack_num]};
+        } {
+        #nop sh {$duch[$avatarid][bar][orc]};
+            #sh {$duch[$avatarid][bar][orc]} {$r_curLineCnt} {1} {};
+            #math r_curLineCnt {$r_curLineCnt + 1};
+            #var duch[$avatarid][shown] {1};
+        };
+
+    } {
+
+        #foreach {$team[]} {ti} {
+            #if {$duch[$team[$ti]][shown] < 1} {
+                #if {$duch[$team[$ti]][attack_num] > 0} {
+                    #list team_offenders add $duch[$team[$ti]][attack_num];
+                } {
+                #nop sh {$duch[$team[$ti]][bar][orc]};
+                    #sh {$duch[$team[$ti]][bar][orc]} {$r_curLineCnt} {1} {};
+                    #math r_curLineCnt {$r_curLineCnt + 1};
+                    #var duch[$team[$ti]][shown] {1};
+                };
+            };
+                #nop var duch[$team[$ti]][shown] {1};
+        };
+
+    };
+
+
+#nop PRZECIWNICY DRUZYNY LUB AVATARA;
+    #foreach {$team_offenders[]} {to} {
+        #var tmpnavigator {1};
+        #foreach {$duch[]} {ti} {
+            #if {$duch[$ti][shown] < 1} {
+
+                #if {"$duch[$ti][attack_num]" == "$team_offenders[$to]"} {
+                    #if {$tmpnavigator == 1} {
+                        #var tmpnavigator 0;
+                    #nop sh {$duch[$ti][bar][orc] ${c_stan_niski}---><088> $duch[$duch[$ti][attack_num]][bar][orc]};
+                        #sh {$duch[$ti][bar][orc] ${c_stan_niski}---><088> $duch[$duch[$ti][attack_num]][bar][orc]} {$r_curLineCnt} {1} {};
+
+                        #math r_curLineCnt {$r_curLineCnt + 1};
+                        #var duch[$team_offenders[$to]][shown] {1};
+                    } {
+                    #nop sh {$duch[$ti][bar][orc] ${c_stan_niski}_/};
+                        #sh {$duch[$ti][bar][orc] ${c_stan_niski}_/} {$r_curLineCnt} {1} {};
+                        #math r_curLineCnt {$r_curLineCnt + 1};
+                    };
+                    #var duch[$ti][shown] {1};
+                };
+            };
+        };  
+    };
+
+#nop RESZTA WALCZACYCH WROGOW;
+    #foreach {$wrogi[]} {to} {
+        #if {$duch[$wrogi[$to]][shown] < 1} {
+        #nop sh {                                            $duch[$wrogi[$to]][bar][orc]};
+            #sh {$duch[$wrogi[$to]][bar][orc]} {$r_curLineCnt} {1} {};
+            #math r_curLineCnt {$r_curLineCnt + 1};
+            #var duch[$wrogi[$to]][shown] {1};
+        };
+    };
+
+#nop WROGOWIE niewalczacy;
+    #foreach {$wrogi[]} {wr} {
+        #if {$duch[$wrogi[$wr]][shown] < 1} {
+            #if {$duch[$wrogi[$wr]][attack_num] > 0} {
+                #echo { };
+            } {
+            #nop sh {$duch[$wrogi[$wr]][bar][hug]} {$r_curLineCnt};
+                #sh {$duch[$wrogi[$wr]][bar][hug]} {$r_curLineCnt} {$r_curLineCnt} {1} {};
+                #math r_curLineCnt {$r_curLineCnt + 1};
+                #var duch[$wrogi[$wr]][shown] {1};
+            };
+        };
+    };
+#nop RESZTA wszystkiego gdzie shown == 0;
+    #foreach {$duch[]} {wr} {
+        #if {$duch[$wr][shown] < 1} {
+        #nop sh {                                            $duch[$wr][bar][orc]};
+            #sh {$duch[$wr][bar][orc]} {$r_curLineCnt} {1} {};
+
+            #math r_curLineCnt {$r_curLineCnt + 1};
+            #var duch[$wr][shown] {1};
+        };
+    };
+    
+};
+

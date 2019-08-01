@@ -1,7 +1,6 @@
 #map read bundles/TTMap/map.map;
 #map goto 1;
 #var MAPPER_SYNC 0;
-#map flag vtmap on;
 #map flag unicodegraphics on;
 #map flag static on;
 

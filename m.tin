@@ -2,6 +2,7 @@
     #ses rpg arkadia.rpg.pl {23};
 
     #read bundles/bundle_ops.tin;
+
     #read bundles/CommandHistory/manifest.tin;
     #read bundles/TTMap/manifest.tin;
     #read bundles/TTMapFollow/manifest.tin;
@@ -9,23 +10,23 @@
     #read bundles/TTMapSigns/manifest.tin;
     #read bundles/LevelCalculator/manifest.tin;
     #read bundles/gmcpDefaultColorManager/manifest.tin;
-    #read bundles/PlayerDB/manifest.tin;
     #read bundles/TTMapUndo/manifest.tin;
     #read bundles/NumPad/manifest.tin;
     #read bundles/ItemQualitySimple/manifest.tin;
     #read bundles/QuickBind/manifest.tin;
     #read bundles/Herbs/manifest.tin;
+    #read bundles/Drakkary/manifest.tin;
+    #read bundles/GMCPObjects/manifest.tin;
+    #read bundles/RaidTable/manifest.tin;
+    #read bundles/RaidBar/manifest.tin;
 
     #var r @bundleops_loadglobals{};
 
     #read gmcp_char.tin;    #nop GMCP;
     #read staty.tin;		#nop Zliczanie statystyk;
     #read gmcp_message.tin;	#nop GMCP;
-    #read gmcp_object_hash.tin;	#nop GMCP;
     #read alias.tin;		#nop Aliasy do obslugi glownych funkcji;
-    #read mapevents.tin;	#nop Eventy na pokojach;
-    #read qbs.tin;		#nop Bindy na podazanie za kims;
-    #read korsarze.tin;		#nop Pirackie skrypty;
+    #read mapevents.tin;	#nop Eventy na pokojach;    
     #read ../ttng-brain/client.tin;		#nop Pirackie skrypty 2 - mozg;
     #read statki.tin;		#nop Obsluga statkow;
 
@@ -44,4 +45,3 @@
     };
 };
 
-#event {MAP DOUBLE-CLICKED MOUSE BUTTON ONE} {#map run {%0} {0.25}}
