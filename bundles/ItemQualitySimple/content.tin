@@ -83,7 +83,7 @@
   #return $obr;
 }
 
-#action {jak na bron %1 jest {on|ona} %3 i %4.} {
+#action {jak na %1 jest {on|ona} %3 i %4.} {
   #var jakosc1 {@jakwywazona{%3}};
   #var jakosc2 {@jakskuteczna{%4}};
   #echo {<dee>bron %1:<088> wywazenie: $jakosc1<088>, skutecznosc: $jakosc2<088>.};

@@ -13,7 +13,7 @@
     #read bundles/TTMapUndo/manifest.tin;
     #read bundles/NumPad/manifest.tin;
     #read bundles/ItemQualitySimple/manifest.tin;
-    #read bundles/Quickdbind/manifest.tin;
+    #read bundles/QuickBind/manifest.tin;
     #read bundles/Herbs/manifest.tin;
 
     #var r @bundleops_loadglobals{};
