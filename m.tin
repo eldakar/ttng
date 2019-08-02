@@ -1,5 +1,5 @@
 #event {PROGRAM START} { 
-    #nop ses rpg arkadia.rpg.pl {23};
+    #ses rpg arkadia.rpg.pl {23};
 
     #read bundles/bundle_ops.tin;
 
