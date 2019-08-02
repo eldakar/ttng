@@ -36,7 +36,7 @@
 };
 
 #alias {CombatMacrosConfigAttackFlags} {
-	#var wskazanie_typ $ConfigManager_Configs[CombatMacrosConfigAttackFlags];
+	#var pwskazywanie $ConfigManager_Configs[CombatMacrosConfigAttackFlags];
 };
 
 #alias {CombatMacrosConfigAttackCommand} {

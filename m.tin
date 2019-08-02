@@ -18,7 +18,7 @@
     #read bundles/NumPad/manifest.tin;
     #read bundles/ItemQualitySimple/manifest.tin;
     #read bundles/QuickBind/manifest.tin;
-    #read bundles/Herbs/manifest.tin;
+    #nop read bundles/Herbs/manifest.tin;
     #read bundles/Drakkary/manifest.tin;
     #read bundles/GMCPObjects/manifest.tin;
     #read bundles/RaidTable/manifest.tin;
@@ -39,7 +39,12 @@
     #config {mouse} {on};		#nop obsluga myszy;
     
     #var cport %0;
-    #line substitute {variables} {#chat init {${cport}0}};
+    #line substitute {variables} {
+        #chat init {${cport}0};
+        #chat name eldek;
+        #delay {1.0} {#chat call 127.0.0.1 {${cport}1}};
+    };
+    #action {You chat to} {#line gag} {9};
 };
 
 #event {SESSION CONNECTED} {
@@ -47,13 +52,5 @@
         #send {\xFF\xFD\xC9\};
         #send {\xFF\xFA\xC9core.supports.set [ "Core", "Objects", "Room", "Char", "Messages", "Mail", "Gmcp_msgs"]\xFF\xF0\};
     };
-
-    #if {$cport > 0} {
-        #if {"$MAPPED" != "1"} {
-            #delay {1.0} {#line substitute {variables} {#chat call 127.0.0.1 {${cport}1}}};
-            #action {You chat to} {#line gag} {9};
-        };
-    };
-
 };
 
