@@ -3,6 +3,7 @@
 #var MAPPER_SYNC 0;
 #map flag unicodegraphics on;
 #map flag static on;
+#map flag vtmap off;
 
 #alias {move_n} {#send n;#var trytomove 1;#var movedir {polnoc}};
 #alias {move_s} {#send s;#var trytomove 1;#var movedir {poludnie}};
