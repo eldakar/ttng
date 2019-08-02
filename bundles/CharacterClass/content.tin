@@ -1,0 +1,7 @@
+#alias CharacterClassProfession {
+	#var pzawod $ConfigManager_configs[CharacterClassProfession];
+};
+
+#alias CharacterClassGuild {
+	#var pgildia $ConfigManager_configs[CharacterClassGuild];
+};

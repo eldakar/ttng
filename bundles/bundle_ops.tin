@@ -4,6 +4,7 @@
 
 #unvar bundlemanager_slots;
 #unvar bundlemanager_bundles;
+#unvar bundlemanager_configs;
 
 #var global_bundle_slots_values[prompt][top] {0};
 #var global_bundle_slots_values[prompt][bottom] {0};
@@ -17,7 +18,15 @@
 	#foreach {$bundle_slots[]} {bs} {
 		#list {bundlemanager_slots} find {$bundle_slots[$bs]} {vbms};
 		#if {$vbms > 0} {
-			#echo {<118>Bundle Error: <168>$bundle_name <118>Slot in use: $bundle_slots[$bs]<088>};
+			#echo {<118>Bundle Error: <168>$bundle_name <118>Slot already used: $bundle_slots[$bs]<088>};
+			#var ret 1;
+		};
+	};
+
+	#foreach {$bundle_configs[]} {bc} {
+		#list {bundlemanager_configs} find {$bundle_configs[$bc]} {vbmc};
+		#if {$vbmc > 0} {
+			#echo {<118>Bundle Error: <168>$bundle_name <118>Config value already in use: $bundle_configs[$bs]<088>};
 			#var ret 1;
 		};
 	};
@@ -35,6 +44,10 @@
 		#foreach {$bundle_slots[]} {bs} {
 			#list bundlemanager_slots add {$bundle_slots[$bs]};
 		};
+		#foreach {$bundle_configs[]} {bc} {
+			#list bundlemanager_configs add {$bundle_configs[$bc]};
+			#echo {<118>DEBUG $bundle_configs[$bc]};
+		};
 		#list bundlemanager_bundles add {$bundle_name};
 		#var bundles_$bundle_name {1};
 		#echo {<128>Bundle Loaded: <168>$bundle_name<088>};
@@ -49,6 +62,9 @@
 			#CLASS {$bundle_name} CLOSE;
 		};
 	};
+	#list bundle_configs clear;
+	#list bundle_slots clear;
+	#list bundle_deps clear;
 	#return $ret;
 };
 

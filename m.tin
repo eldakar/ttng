@@ -3,6 +3,9 @@
 
     #read bundles/bundle_ops.tin;
 
+    #read bundles/GMCPChar/manifest.tin;
+    #read bundles/ConfigManager/manifest.tin;
+    #read bundles/CharacterClass/manifest.tin;
     #read bundles/CommandHistory/manifest.tin;
     #read bundles/TTMap/manifest.tin;
     #read bundles/TTMapFollow/manifest.tin;
@@ -22,7 +25,7 @@
 
     #var r @bundleops_loadglobals{};
 
-    #read gmcp_char.tin;    #nop GMCP;
+    #nop read gmcp_char.tin;    #nop GMCP;
     #read staty.tin;		#nop Zliczanie statystyk;
     #read gmcp_message.tin;	#nop GMCP;
     #read alias.tin;		#nop Aliasy do obslugi glownych funkcji;
