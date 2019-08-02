@@ -1,0 +1,5 @@
+#CLASS {ConfigManagerProfile} OPEN
+
+#VARIABLE         {ConfigManager_Configs}   {{CharacterClassGuild}{ks}{CharacterClassProfession}{wks}{CombatMacrosAttackTarget}{lkn}{CombatMacrosBreakingDefense}{nkr}{CombatMacrosConfigAttackCommand}{ksatakuj}{CombatMacrosConfigAttackFlags}{zwr}{CombatMacrosShieldDown}{auto}{QuickBindMacroKey}{tylda}{dummy}{0}}
+
+#CLASS {ConfigManagerProfile} CLOSE

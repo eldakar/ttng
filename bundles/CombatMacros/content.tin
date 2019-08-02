@@ -31,8 +31,8 @@
    };
 };
 
-#alias {CombatMacrosShieldDown} {
-	#var zdjeciezaslon $ConfigManager_Configs[CombatMacrosShieldDown];
+#alias {CombatMacrosConfigShieldDown} {
+	#var zdjeciezaslon $ConfigManager_Configs[CombatMacrosConfigShieldDown];
 };
 
 #alias {CombatMacrosConfigAttackFlags} {

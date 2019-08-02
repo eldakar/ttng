@@ -17,8 +17,8 @@
 		};
 	};
 	#if {$profile_size > 0} {
-		#foreach {$ConfigManager_Configs[]} {cmc} {
-			#if {"$cmc" != "dummy"} {$cmc};
+		#foreach {$bundlemanager_configs[]} {cmc} {
+			#if {"$bundlemanager_configs[cmc]" != "dummy"} {$bundlemanager_configs[$cmc]};
 		};
 	};
 

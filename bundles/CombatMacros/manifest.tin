@@ -5,10 +5,11 @@
 #list bundle_configs clear;
 	#list bundle_configs add {CombatMacrosConfigAttackCommand};
 	#list bundle_configs add {CombatMacrosConfigAttackFlags};
+	#list bundle_configs add {CombatMacrosConfigShieldDown};
 	#list bundle_configs add {CombatMacrosAttackTarget};
 	#list bundle_configs add {CombatMacrosDefendTarget};
 	#list bundle_configs add {CombatMacrosBreakingDefense};
-	#list bundle_configs add {CombatMacrosShieldDown};
+	
 
 #nop IS HELP PRESENT;
 #var bundle_help {0};

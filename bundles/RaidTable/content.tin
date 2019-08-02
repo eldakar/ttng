@@ -68,6 +68,8 @@
     };
 
     #foreach {$duch[]} {dudu} {
+#if {$duch[$dudu][hp] > -1} {
+
  	#var duch[$dudu][bot] {};
         #var duch[$dudu][shown] {0};
  
@@ -158,6 +160,7 @@
                 #math team_index {$team_index + 1};
                 #list team {insert} {$team_index} {$dudu};
             };
+};
 
     }; #nop foreach duch;
 };

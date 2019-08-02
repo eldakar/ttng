@@ -47,5 +47,13 @@
         #send {\xFF\xFD\xC9\};
         #send {\xFF\xFA\xC9core.supports.set [ "Core", "Objects", "Room", "Char", "Messages", "Mail", "Gmcp_msgs"]\xFF\xF0\};
     };
+
+    #if {$cport > 0} {
+        #if {"$MAPPED" != "1"} {
+            #delay {1.0} {#line substitute {variables} {#chat call 127.0.0.1 {${cport}1}}};
+            #action {You chat to} {#line gag} {9};
+        };
+    };
+
 };
 
