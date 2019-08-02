@@ -1,3 +1,4 @@
+#var global_bundle_slots_values[prompt][top] {10};
 #alias {render_h2} {
     #var a {%0};
   	#loop {1} {10} {bubu} {#sh { } {$bubu} {}};

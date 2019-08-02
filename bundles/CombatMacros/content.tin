@@ -1,0 +1,76 @@
+#alias {CombatMacrosAttackTarget} {
+   #switch {"$ConfigManager_Configs[CombatMacrosAttackTarget]"} {
+	 	#case {"shifttylda"} {#macro {~} {_zaznaczcel_}};
+	 	#case {"tylda"} {#macro {`} {_zaznaczcel_}};
+	 	#case {"nkl"} {#macro {[} {_zaznaczcel_}};
+	 	#case {"nkr"} {#macro {]} {_zaznaczcel_}};
+	 	#case {"slash"} {#macro {/} {_zaznaczcel_}};
+	 	#case {"backslash"} {#macro {\} {_zaznaczcel_}};
+   };
+};
+
+#alias {CombatMacrosDefendTarget} {
+   #switch {"$ConfigManager_Configs[CombatMacrosDefendTarget]"} {
+	 	#case {"shifttylda"} {#macro {~} {zaslon cel obrony}};
+	 	#case {"tylda"} {#macro {`} {zaslon cel obrony}};
+	 	#case {"nkl"} {#macro {[} {zaslon cel obrony}};
+	 	#case {"nkr"} {#macro {]} {zaslon cel obrony}};
+	 	#case {"slash"} {#macro {/} {zaslon cel obrony}};
+	 	#case {"backslash"} {#macro {\} {zaslon cel obrony}};
+   };
+};
+
+#alias {CombatMacrosBreakingDefense} {
+   #switch {"$ConfigManager_Configs[CombatMacrosBreakingDefense]"} {
+	 	#case {"shifttylda"} {#macro {~} {przelam obrone celu ataku}};
+	 	#case {"tylda"} {#macro {`} {przelam obrone celu ataku}};
+	 	#case {"nkl"} {#macro {[} {przelam obrone celu ataku}};
+	 	#case {"nkr"} {#macro {]} {przelam obrone celu ataku}};
+	 	#case {"slash"} {#macro {/} {przelam obrone celu ataku}};
+	 	#case {"backslash"} {#macro {\} {przelam obrone celu ataku}};
+   };
+};
+
+#alias {CombatMacrosShieldDown} {
+	#var zdjeciezaslon $ConfigManager_Configs[CombatMacrosShieldDown];
+};
+
+#alias {CombatMacrosConfigAttackFlags} {
+	#var wskazanie_typ $ConfigManager_Configs[CombatMacrosConfigAttackFlags];
+};
+
+#alias {CombatMacrosConfigAttackCommand} {
+	#alias zabijcmd $ConfigManager_Configs[CombatMacrosAttackCommand];
+};
+
+#alias {_zabij_} 
+{
+	#parse {$pwskazywanie} {wskazanie_typ} {
+      #switch {"$wskazanie_typ"} {
+        #case {"d"} khpiesn;                      #nop druchii;
+        #case {"u"} drwskaz %0;                   #nop upiorny pancerz;
+        #case {"z"} zabijcmd %0;                  #nop komenda zabij;
+        #case {"w"} wskaz %0 jako cel ataku;      #nop wskazywanie;
+        #case {"r"} rozkaz druzynie zabic %0;     #nop rozkaz;
+        #nop case {"p"} przelam obrone celu ataku;#nop przelamanie TODO;
+      };
+    };
+}
+
+#alias {_zaznaczcel_} {
+  zabijcmd 1. wroga;
+  zabijcmd 2. wroga;
+  zabijcmd 3. wroga;
+  zabijcmd 4. wroga;
+  wesprzyj;
+  #parse {$pwskazywanie} {wskazanie_typ} {
+      #switch {"$wskazanie_typ"} {
+        #case {"d"} khpiesn;                             #nop druchii;
+        #case {"u"} drwskaz cel ataku;                   #nop upiorny pancerz;
+        #case {"z"} zabijcmd cel ataku;                  #nop komenda zabij;
+        #case {"w"} wskaz cel ataku jako cel ataku;      #nop wskazywanie;
+        #case {"r"} rozkaz druzynie zabic cel ataku;     #nop rozkaz;
+        #nop case {"p"} przelam obrone celu ataku;#nop przelamanie TODO;
+      };
+    };
+}

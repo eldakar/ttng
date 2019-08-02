@@ -1,29 +1,40 @@
+#class ConfigManagerProfile open;
+#var ConfigManager_Configs[dummy] {0};
+#class ConfigManagerProfile close;
+
 #alias {ConfigManager_gmcp_char_info} {
 	#var CHAR_INFO {%0};
 	#var AVATAR_NAME {$CHAR_INFO[name]};
 	#var avatarid $CHAR_INFO[id];
-	#list ConfigManager_Configs clear;
 	#line substitute {variables} {
-		#class ConfigManagerProfile read bundles/ConfigManager/profiles/$AVATAR_NAME;
+		#class ConfigManagerProfile read bundles/ConfigManager/Profiles/$AVATAR_NAME;
 		#class ConfigManagerProfile size profile_size;
 		#if {$profile_size < 1} {
 			#echo {<138>ConfigManager: <168>No configuration found for <138>$AVATAR_NAME<088>};
 		} {
-			#echo {<138>ConfigManager: <128>Configuration found for <138>$AVATAR_NAME<088>};
+			#echo {<138>ConfigManager: <128>Configuration found for <138>$AVATAR_NAME!<088>};
+			#echo {<138>ConfigManager: <128>Loading...<088>};
 		};
 	};
+	#if {$profile_size > 0} {
+		#foreach {$ConfigManager_Configs[]} {cmc} {
+			#if {"$cmc" != "dummy"} {$cmc};
+		};
+	};
+
 	#list bundlemanager_configs size bmc_size;
+	
 	#if {$bmc_size > 0} {
 		#echo {<138>ConfigManager: <128>$bmc_size <138> bundle settings present.<088>};
 	};
 };
 
-#alias {/conf %w %d$} {
+#alias {/conf %w %*} {
 	#var confid 0;
-	#foreach {$bundlemanager_configs[]} {$bc} {
-		#if {"$bc" == "%2"} {
+	#foreach {$bundlemanager_configs[]} {bc} {
+		#if {"$bundlemanager_configs[$bc]" == "%1"} {
 			#class ConfigManagerProfile open;
-			#var ConfigManager_Configs[%2] {%3};
+			#var ConfigManager_Configs[%1] {%2};
 			#class ConfigManagerProfile close;
 			#class ConfigManagerProfile write bundles/ConfigManager/profiles/$AVATAR_NAME;
 			#var confid 1;
@@ -33,13 +44,13 @@
 		#echo {<138>ConfigManager: <118>Syntax error. Make sure to load the right bundle!<088>};
 	} {
 		#echo {<138>ConfigManager: <128>Ok.<088>};
-		$bc;
+		%1;
 	};
 } {1};
 
 #alias {/conf$} {
-	#echo {<138>ConfigManager: <168>List of the available commands:<088>};
-	#foreach {$bundlemanager_configs[]} {$bc} {
-		#echo {<068>   $bc    <118>$bundlemanager_configs[$bc]<088>};
+	#echo {<138>ConfigManager: <168>Available configurations:<088>};
+	#foreach {$bundlemanager_configs[]} {bc} {
+		#echo {<068>   $bundlemanager_configs[$bc] <118>$ConfigManager_Configs[$bundlemanager_configs[$bc]]<088>};
 	};
 } {1};

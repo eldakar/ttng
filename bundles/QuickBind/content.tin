@@ -1,3 +1,14 @@
+#alias {QuickBindMacroKey} {
+   #switch {"$ConfigManager_Configs[QuickBindMacroKey]"} {
+    #case {"shifttylda"} {#var KEY_QB {~}};
+    #case {"tylda"} {#var KEY_QB {`}};
+    #case {"nkl"} {#var KEY_QB {[}};
+    #case {"nkr"} {#var KEY_QB {]}};
+    #case {"slash"} {#var KEY_QB {/}};
+    #case {"backslash"} {#var KEY_QB {\}};
+   };
+};
+
 #alias {qr} {
   #line substitute {variables} {#macro {$KEY_QB} {%0}};
   #line substitute {variables} {#macro {$KEY_PAD_MIDDLE} {%0}};

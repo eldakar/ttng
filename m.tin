@@ -1,11 +1,12 @@
 #event {PROGRAM START} { 
-    #ses rpg arkadia.rpg.pl {23};
+    #nop ses rpg arkadia.rpg.pl {23};
 
     #read bundles/bundle_ops.tin;
 
     #read bundles/GMCPChar/manifest.tin;
     #read bundles/ConfigManager/manifest.tin;
     #read bundles/CharacterClass/manifest.tin;
+    #read bundles/CombatMacros/manifest.tin;
     #read bundles/CommandHistory/manifest.tin;
     #read bundles/TTMap/manifest.tin;
     #read bundles/TTMapFollow/manifest.tin;
@@ -26,17 +27,17 @@
     #var r @bundleops_loadglobals{};
 
     #nop read gmcp_char.tin;    #nop GMCP;
-    #read staty.tin;		#nop Zliczanie statystyk;
+    #nop read staty.tin;		#nop Zliczanie statystyk;
     #read gmcp_message.tin;	#nop GMCP;
     #read alias.tin;		#nop Aliasy do obslugi glownych funkcji;
-    #read mapevents.tin;	#nop Eventy na pokojach;    
-    #read ../ttng-brain/client.tin;		#nop Pirackie skrypty 2 - mozg;
-    #read statki.tin;		#nop Obsluga statkow;
+    #nop read mapevents.tin;	#nop Eventy na pokojach;    
+    #nop read ../ttng-brain/client.tin;		#nop Pirackie skrypty 2 - mozg;
+    #nop read statki.tin;		#nop Obsluga statkow;
 
     #config {debug telnet} {off};	#nop debug;
     #config {COMMAND ECHO} {off};	#nop wyswietlanie komend;
     #config {mouse} {on};		#nop obsluga myszy;
-
+    
     #var cport %0;
     #line substitute {variables} {#chat init {${cport}0}};
 };

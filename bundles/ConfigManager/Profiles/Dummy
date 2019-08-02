@@ -1,0 +1,5 @@
+#CLASS {ConfigManagerProfile} OPEN
+
+#VARIABLE         {conf}  {{abcd}{dasa}}
+
+#CLASS {ConfigManagerProfile} CLOSE
