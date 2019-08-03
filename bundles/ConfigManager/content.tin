@@ -36,7 +36,7 @@
 			#class ConfigManagerProfile open;
 			#var ConfigManager_Configs[%1] {%2};
 			#class ConfigManagerProfile close;
-			#class ConfigManagerProfile write bundles/ConfigManager/profiles/$AVATAR_NAME;
+			#class ConfigManagerProfile write bundles/ConfigManager/Profiles/$AVATAR_NAME;
 			#var confid 1;
 		};
 	};

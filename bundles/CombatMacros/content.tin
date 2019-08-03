@@ -40,7 +40,7 @@
 };
 
 #alias {CombatMacrosConfigAttackCommand} {
-	#alias zabijcmd $ConfigManager_Configs[CombatMacrosAttackCommand];
+	#alias zabijcmd {$ConfigManager_Configs[CombatMacrosConfigAttackCommand]};
 };
 
 #alias {_zabij_} 
