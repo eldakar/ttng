@@ -317,7 +317,7 @@
         #line substitute {variables} {#alias z${indexchar}2 {opcje grupa 2;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
         #line substitute {variables} {#alias z${indexchar}3 {opcje grupa 3;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
         #line substitute {variables} {#alias z${indexchar}4 {opcje grupa 4;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-          
+        #line substitute {variables} {#alias w$indexchar {wskaz ob_$du jako cel obrony}};
         #format tmpna {%-15s} {$duch[$du][desc]};
         #format tmpna {%.15s} {$tmpna};
         #format tmpna_med {%-10s} {$duch[$du][desc]};

@@ -20,7 +20,9 @@
 	#line gag;
 };
 
-#event {MAP DOUBLE-CLICKED MOUSE BUTTON ONE} {#sh {%0}};
+#event {MAP DOUBLE-CLICKED MOUSE BUTTON ONE} {
+    #chat message all {WALK %0};
+};
 
 
 #event {PRESSED MOUSE BUTTON ONE}

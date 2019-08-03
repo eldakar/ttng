@@ -32,7 +32,7 @@
 };
 
 #alias {CombatMacrosConfigShieldDown} {
-	#var zdjeciezaslon $ConfigManager_Configs[CombatMacrosConfigShieldDown];
+	#var pzdjeciezaslon $ConfigManager_Configs[CombatMacrosConfigShieldDown];
 };
 
 #alias {CombatMacrosConfigAttackFlags} {
