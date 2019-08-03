@@ -1,0 +1,23 @@
+#var bundle_name {Equipment};
+#var bundle_data {0};
+#var bundle_content {1};
+
+#list bundle_configs clear;
+	#list bundle_configs add {EquipmentScabbardOne};
+	#list bundle_configs add {EquipmentScabbardTwo};
+	#list bundle_configs add {EquipmentBackpack};
+	#list bundle_configs add {EquipmentGoldContainer};
+	
+
+#nop IS HELP PRESENT;
+#var bundle_help {0};
+
+#list bundle_slots clear;
+	#list bundle_slots add {equipment};
+
+#list bundle_deps clear;
+	#list bundle_deps add {ConfigManager};
+
+#list bundle_alias clear;
+
+#var bundle_ready @bundleops_validate{};
