@@ -4,9 +4,14 @@
 	#map read bundles/TTMap/map.map;
 	#map flag vtmap on;
 	#map flag unicodegraphics on;
+	#config mouse on;
 	#delay {3} {
 		#format sw {%R};
 		#split $sw 0;
+		#format {screen_rows} {%R};
+	    #format {screen_cols} {%C};
+	    #math deltaY {$screen_cols / 10};
+	    #math deltaX {$splitrows / 10};
 	};
 };
 
@@ -16,3 +21,77 @@
 };
 
 #event {MAP DOUBLE-CLICKED MOUSE BUTTON ONE} {#sh {%0}};
+
+
+#event {PRESSED MOUSE BUTTON ONE}
+{
+    #var PRESSED 1;
+    #var centreY {%0};
+    #var centreX {%1};
+}
+
+#event {RELEASED MOUSE BUTTON ONE}
+{
+    #var PRESSED 0;
+    #if {"$moving" == "true"} {
+        #undelay {PATH %*}
+    };
+}
+
+#var eventcounter 0;
+#event {MOVED MOUSE BUTTON ONE}
+{
+    #math {eventcounter} {$eventcounter + 1};
+
+#if {$eventcounter > 2} {
+    #var eventcounter 0;
+
+    #if {$PRESSED > 0}
+    {
+        #var currentX {%1};
+        #var currentY {%0};
+
+#nop DIFF Y;
+        #if {$currentY > $centreY} {
+            #math diffY {$currentY - $centreY};
+        } {
+            #math diffY {$centreY - $currentY};
+        };
+#nop DIFF X;
+        #if {$currentX > $centreX} {
+            #math diffX {$currentX - $centreX};
+        } {
+            #math diffX {$centreX - $currentX};
+        };
+
+        #echo {<128>CTR:(Y:$centreY X:$centreX) <118>NOW:(Y:$currentX X:$currentX)<088>};
+
+        #if {$currentY > $centreY} {
+            #var dirH {n};
+        };
+        #elseif {$currentY < $centreY} {
+            #var dirH {s};
+        };
+        #else {
+            #var dirH {};
+        };
+
+        #if {$currentX > $centreX} {
+            #var dirV {w}
+        };
+        #elseif {$currentX < $centreX} {
+            #var dirV {e};
+        };
+        #else {
+            #var dirV {};
+        };
+        #var dir {${dirH}${dirV}};
+        #map get roomexits currentroomexits;
+
+        #if {$currentroomexits[$dir] > 0} {
+            #map move $dir;
+        };
+        #echo {<178>$dir};
+    };
+};
+}
