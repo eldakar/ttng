@@ -204,3 +204,5 @@
         #undelay {PATH %*}; #nop zatrzymuje reszte komendy;
     };
 }
+
+#action {mapka chats to everyone, 'WALK %d'} {#map run {%d} {0.50}};
