@@ -145,8 +145,8 @@
 				#nop;
 				#format dudu2 {%n} {$duch[$dudu][desc]};
 				#line substitute variables {
- #nop OPISY;        #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] - $postac[$test][imie]$postac[$test][gildia]};
-    				#sub {$dudu2} {$dudu2 - $postac[$test][imie]$postac[$test][gildia]};
+ #nop OPISY;        #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] - $postac[$test][imie]($postac[$test][gildia])};
+    				#sub {$dudu2} {$dudu2 - $postac[$test][imie]($postac[$test][gildia])};
  #nop WSTAW GILDIE; #nop sub {$postac[$test][imie]} {$postac[$test][imie]($postac[$test][gildia])};
  #nop POKOLORUJ;    #high {$duch[$dudu][desc]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};                     
  #nop POKOLORUJ;    #high {$dudu2} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};                     
