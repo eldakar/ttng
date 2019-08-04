@@ -255,10 +255,10 @@
 #list worekD_zawartosc_ilosc {clear}
 #list worekD_zawartosc {clear}
 
-#alias {wa} {#var currentworek A;zajrzyj do pierwszego przytroczonego woreczka;}
-#alias {wb} {zajrzyj do drugiego przytroczonego woreczka;}
-#alias {wc} {zajrzyj do trzeciego przytroczonego woreczka;}
-#alias {wd} {zajrzyj do czwartego przytroczonego woreczka;}
+#alias {_woreczeka_} {#var currentworek A;zajrzyj do pierwszego przytroczonego woreczka;}
+#alias {_woreczeka_} {zajrzyj do drugiego przytroczonego woreczka;}
+#alias {_woreczeka_} {zajrzyj do trzeciego przytroczonego woreczka;}
+#alias {_woreczeka_} {zajrzyj do czwartego przytroczonego woreczka;}
 
 #alias {worki} {
   #var sortujemy {true};
@@ -490,7 +490,10 @@
 #var zioladb[Janowiec][ilosc] {0};
 #var zioladb[Lubczyk][ilosc] {0};
 #var zioladb[NieznanyPCK][ilosc] {0};
-  wa;wb;wc;wd;
+  _woreczeka_;
+  _woreczekb_;
+  _woreczekc_;
+  _woreczekd_
 }
 
 

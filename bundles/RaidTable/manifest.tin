@@ -11,8 +11,10 @@
 #nop IS CONTENT PRESENT;
 #var bundle_content {1};
 
-#nop IS CONFIG PRSENT;
-#var bundle_config {0};
+#list bundle_configs clear;
+	#list bundle_configs add {RaidTableGuildEnemies};
+	#list bundle_configs add {RaidTableGuildFriends};
+
 
 #nop IS HELP PRESENT;
 #var bundle_help {0};
@@ -34,6 +36,7 @@
 	#list bundle_handler_objects_nums add {RaidTable_GMCP_Objects_Nums};
 	#list bundle_handler_objects_data add {RaidTable_GMCP_Objects_Data};
 
+#list bundle_deps add {ConfigManager};
 
 #nop ############################;
 #nop BUNDLE ALIASES ########;

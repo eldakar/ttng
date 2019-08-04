@@ -49,7 +49,7 @@
 } {1};
 
 #alias {/conf$} {
-	#echo {<138>ConfigManager: <168>Available configurations:<088>};
+	#echo {<138>ConfigManager: <158>Available configurations:<088>};
 	#foreach {$bundlemanager_configs[]} {bc} {
 		#echo {<068>   $bundlemanager_configs[$bc] <118>$ConfigManager_Configs[$bundlemanager_configs[$bc]]<088>};
 	};

@@ -8,6 +8,7 @@
 #action {{s|S}kelliganski drakkar Krakken{.| }} {wejdz_na_korsarski Skelliganski drakkar Krakken} {1};
 #action {{s|S}kelliganski drakkar Zlocisty Feniks{.| }} {wejdz_na_korsarski Skelliganski drakkar Zlocisty Feniks} {2};
 #action {{k|K}orsarski drakkar Straznik Czasu{.| }} {wejdz_na_korsarski Korsarski drakkar Straznik Czasu} {1};
+#action {{s|S}kelliganski drakkar Obronca Archipelagu{.| }} {wejdz_na_korsarski Skelliganski drakkar Obronca Archipelagu} {2};
 
 #alias {wejdz_na_korsarski %*} {
 	#format lowerc {%l} {%1};
@@ -18,6 +19,7 @@
 		#case {"Korsarski drakkar Demon"} {#var tmpdrakkarname demon;};	
 		#case {"Skelliganski drakkar Krakken"} {#var tmpdrakkarname krakken;};
 		#case {"Skelliganski drakkar Zlocisty Feniks"} {#var tmpdrakkarname krakken;};
+		#case {"Skelliganski drakkar Obronca Archipelagu"} {#var tmpdrakkarname krakken;};
 		#case {"Korsarski drakkar Straznik Czasu"} {#var tmpdrakkarname demon;};
 	};
 	#nop narysuj drakkar %1;

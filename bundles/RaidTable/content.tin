@@ -1,3 +1,23 @@
+#alias {RaidTableGuildEnemies} {
+    #local tmp {$ConfigManager_Configs[RaidTableGuildEnemies]};
+    #replace tmp {,} {;};
+    #list wrogowieDB create {$tmp};
+    #foreach {$wrogowieDB[]} {wdb} {
+        #var gildie[$wrogowieDB[$wdb]] {w}; 
+    };
+
+};
+
+#alias {RaidTableGuildFriends} {
+    #local tmp {$ConfigManager_Configs[RaidTableGuildFriends]};
+    #replace tmp {,} {;};
+    #list przyjacieleDB create {$tmp};
+    #foreach {$przyjacieleDB[]} {pdb} {
+        #var gildie[$przyjacieleDB[$pdb]] {p}; 
+    };
+
+};
+
 #var gildie[CN] {n};
 #var gildie[CKN] {n};
 #var gildie[ES] {n};
@@ -122,16 +142,20 @@
                     } {
 			#if {"$tmpimietype" == "1"} {
 				#nop;
-				#var dudu2 {%n} {$duch[$dudu][desc]};
+				#format dudu2 {%n} {$duch[$dudu][desc]};
 				#line substitute variables {
-				#sub {$duch[$dudu][desc]} {$duch[$dudu][desc]($postac[$test][gildia])};
-				#sub {$dudu2} {$dudu2($postac[$test][gildia]};
+ #nop OPISY;        #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] - $postac[$test][imie]};
+    				#sub {$dudu2} {$dudu2 - $postac[$test][imie]};
+ #nop WSTAW GILDIE; #sub {$postac[$test][imie]} {$postac[$test][imie]($postac[$test][gildia])};
+ #nop POKOLORUJ;    #high {$duch[$dudu][desc]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};                     
+ #nop POKOLORUJ;    #high {$dudu2} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};                     
 				};
 			};
 			#if {"$tmpimietype" == "2"} {
+ #nop IMIE;                
 				#line substitute variables {
-					#sub {$duch[$dudu][desc]} {$duch[$dudu][desc]($postac[$test][gildia])};
-					#high {$duch[$dudu][desc]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
+ #nop WSTAW GILDIE;	#sub {$duch[$dudu][desc]} {$duch[$dudu][desc]($postac[$test][gildia])};
+ #nop POKOLORUJ;	#high {$duch[$dudu][desc]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]}; 
 				};
 			};
                     };
