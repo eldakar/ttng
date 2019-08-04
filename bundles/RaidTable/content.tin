@@ -44,6 +44,7 @@
 #var gildie[ZH] {n};
 #var gildie[ZS] {n};
 #var gildie[ZT] {n};
+#var gildie[BOSS] {b};
 
 #alias {RaidTable_GMCP_Objects_Nums} {
 	#var {obnu} {%0};
@@ -144,9 +145,9 @@
 				#nop;
 				#format dudu2 {%n} {$duch[$dudu][desc]};
 				#line substitute variables {
- #nop OPISY;        #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] - $postac[$test][imie]};
-    				#sub {$dudu2} {$dudu2 - $postac[$test][imie]};
- #nop WSTAW GILDIE; #sub {$postac[$test][imie]} {$postac[$test][imie]($postac[$test][gildia])};
+ #nop OPISY;        #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] - $postac[$test][imie]$postac[$test][gildia]};
+    				#sub {$dudu2} {$dudu2 - $postac[$test][imie]$postac[$test][gildia]};
+ #nop WSTAW GILDIE; #nop sub {$postac[$test][imie]} {$postac[$test][imie]($postac[$test][gildia])};
  #nop POKOLORUJ;    #high {$duch[$dudu][desc]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};                     
  #nop POKOLORUJ;    #high {$dudu2} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};                     
 				};
@@ -465,5 +466,17 @@
 	};
 };
 
+#alias {PrzedstawTest} {
+            #var test {%1};
+            #var test {${test}_};
 
+            #format {excheck} {%L} {$postac[$test][gildia]};
+
+            #if {$excheck > 1} {
+                    #line substitute variables {
+                        #sub {%1} {%1($postac[$test][gildia])};
+                        #high {%1($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
+                };
+            };    
+}
 

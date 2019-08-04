@@ -300,3 +300,4 @@
 #var c_char_h_mode[w] {$c_wrog_gildii};
 #var c_char_h_mode[n] {<$c_ansi_map[$colors[other_char]]>};
 #var c_char_h_mode[p] {<$c_ansi_map[$colors[team_member]]>};
+#var c_char_h_mode[b] {<CAF><178>};
