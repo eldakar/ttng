@@ -205,4 +205,4 @@
     };
 }
 
-#action {mapka chats to everyone, 'WALK %d'} {#map run {%d} {0.50}};
+#action {mapka chats to everyone, 'WALK %d'} {#map run {%1} {0.50}};
