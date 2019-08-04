@@ -1,6 +1,8 @@
 #event {PROGRAM START} { 
     #ses rpg arkadia.rpg.pl {23};
 
+    #nop event {SEND OUTPUT} {#echo {<118>COMMAND : %0<088>}};
+
     #read bundles/bundle_ops.tin;
 
     #read bundles/GMCPChar/manifest.tin;
@@ -24,6 +26,7 @@
     #read bundles/GMCPObjects/manifest.tin;
     #read bundles/RaidTable/manifest.tin;
     #read bundles/RaidBar/manifest.tin;
+    #read bundles/TTMapEditor/manifest.tin;
 
     #var r @bundleops_loadglobals{};
 
@@ -32,7 +35,6 @@
     #read gmcp_message.tin;	#nop GMCP;
     #read alias.tin;		#nop Aliasy do obslugi glownych funkcji;
     #nop read mapevents.tin;	#nop Eventy na pokojach;    
-    #nop read ../ttng-brain/client.tin;		#nop Pirackie skrypty 2 - mozg;
     #nop read statki.tin;		#nop Obsluga statkow;
 
     #config {debug telnet} {off};	#nop debug;

@@ -98,7 +98,7 @@
         #var note_found 1;
     };
      #if {$cport > 0} {
-            #chat message TinTin {$voom};
+            #chat message mapka {$voom};
      };
 };
 

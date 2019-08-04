@@ -1,6 +1,6 @@
 #event {PROGRAM START} {
 	#var cport %0;
-	#line substitute {variables} {#chat init {${cport}1}};
+	#line substitute {variables} {#chat init {${cport}1};#chat name mapka};
 	#map read bundles/TTMap/map.map;
 	#map flag vtmap on;
 	#map flag unicodegraphics on;
@@ -97,3 +97,168 @@
     };
 };
 }
+
+
+#action {<CHAT> %S chats to you, 'MCREATE %d %w'} {
+    #map at {%2} {#map dig %3};
+    loading_banner;
+    #line gag;
+} {1};
+
+#action {<CHAT> %S chats to you, 'MARK %1 %2'} {
+    #map at {%1} {#map set roomarea %2};
+    #map at {%1} {#map set roomcolor $c_rooms[%2]};
+    loading_banner;
+    #line gag;
+} {1};
+
+
+#action {<CHAT> %S chats to you, 'DEL %1 %2'} {
+    #map at {%1} {#map del %2};
+    loading_banner;
+    #line gag;
+} {1};
+
+
+#action {<CHAT> %S chats to you, 'NOTE %1'} {
+    #map at {%1} {#map set roomsymbol {<178>!<088>}}
+    loading_banner;
+    #line gag;
+} {1};
+
+
+#action {<CHAT> %S chats to you, 'HIDE %1 %2'} {
+    #map at {%1} {
+        #line substitute variables {
+            #map exitflag %2 hide on;
+        };
+    };
+    loading_banner;
+    #line gag;
+} {1};
+
+#action {<CHAT> %S chats to you, 'UNHIDE %1 %2'} {
+    #map at {%1} {
+        #line substitute variables {
+            #map exitflag %2 hide off;
+        };
+    };
+    loading_banner;
+    #line gag;
+} {1};
+
+#action {<CHAT> %S chats to you, 'LINKB %d %w %d'} {
+    #map at {%2} {
+        #line substitute variables {
+            #map link %3 %4 both;
+        };
+    };
+    #line gag;
+} {1};
+
+#action {<CHAT> %S chats to you, 'UNLINKB %d %w'} {
+    #map at {%2} {
+        #line substitute variables {
+            #map unlink %3 both;            
+        };
+    };
+    loading_banner;
+    #line gag;
+} {1};
+
+#action {<CHAT> %S chats to you, 'LINK %d %w %d'} {
+    #map at {%2} {
+        #line substitute variables {
+            #map link %3 %4;
+        };
+    };
+    loading_banner;
+    #line gag;
+} {1};
+
+#action {<CHAT> %S chats to you, 'UNLINK %d %w'} {
+    #map at {%2} {
+        #line substitute variables {
+            #map unlink %3;         
+        };
+    };
+    loading_banner;
+    #line gag;
+} {1};
+
+
+#action {<CHAT> %S chats to you, 'MEXIT %d %w %*'} {
+    #map goto %2;
+    #map exit %3 command {%4};
+    #map move %3;
+    #map get roomvnum tmproomvnum;
+    #map undo;
+    #map link {%4} $tmproomvnum;
+    loading_banner;
+    #line gag;
+};
+
+
+#alias {loading_banner} {
+    #sh {<FFA><118><aaa>WCZYTUJE...<088>} {0};
+    #undelay {quickbinddelay};
+    #delay {quickbinddelay} {#sh { } {0};} {2};
+};
+
+#alias {downloading_banner} {
+    #sh {<FFA><128><aaa>SCIAGAM %1<088>} {0};
+    #undelay {downloader};
+    #delay {downloader} {#sh { } {0};} {1};
+};
+
+#alias {loading_banner} {
+    #sh {<FFA><118><aaa>WCZYTUJE...<088>} {0};
+    #undelay {quickbinddelay};
+    #delay {quickbinddelay} {#sh { } {0};} {2};
+};
+
+#alias {downloading_banner} {
+    #sh {<FFA><128><aaa>SCIAGAM %1<088>} {0};
+    #undelay {downloader};
+    #delay {downloader} {#sh { } {0};} {1};
+};
+
+
+#action {chats to you, 'EVENT %d'} {
+    #map at {%1} {#map set roomsymbol {<168>@<088>}};
+    loading_banner;
+    #line gag;
+} {1};
+
+#action {chats to you, 'ROOMSHORT %d'} {
+    #map at {%1} {
+        #map get roomsymbol vroomsymbol;
+        #if {"$vroomsymbol" == "<faa>?<088>"} {
+            #map set roomsymbol {};
+        };
+    };
+    loading_banner;
+    #line gag;
+};
+
+#action {chats to you, 'ROOMEXITS %d'} {
+    #map at {%1} {
+        #map get roomcolor vroomcolor;
+        #if {"$vroomcolor" == "<faa>"} {
+            #map set roomcolor {};
+        };
+    };
+    loading_banner;
+    #line gag;
+};
+
+#action {chats to you, 'COLOR %d %S'} {
+    #var tmpsymbol {%2};
+    #replace {tmpsymbol} {-} {<};
+    #replace {tmpsymbol} {+} {>};
+    #map at {%1} {#map set roomcolor {$tmpsymbol}};
+    loading_banner;
+    #line gag;
+};
+
+

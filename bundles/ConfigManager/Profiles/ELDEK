@@ -1,5 +1,0 @@
-#CLASS {ConfigManagerProfile} OPEN
-
-#VARIABLE         {ConfigManager_Configs}   {{CharacterClassGuild}{ks}{CharacterClassProfession}{wks}{QuickBindMacroKey}{nkl}{dummy}{0}}
-
-#CLASS {ConfigManagerProfile} CLOSE
