@@ -424,7 +424,7 @@
 } {1};
 
 #action {<CHAT> receive_block} {
-    #chat message mapka {DONWLOAD MAP};
+    #chat message mapka {DOWNLOAD MAP};
     #line gag;
 }
 #action {<CHAT> Transfer of mapkatt.map completed} {
