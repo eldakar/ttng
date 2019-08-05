@@ -26,7 +26,7 @@
 	qbs wejdz na $lowerc;
 	#bell;
 	#map get roomvnum krakkenat;
-	#if {$PONGED == 1} {
+	#if {$PONGED > 0} {
 		#chat message brain {DRAKKAR $krakkenat $tmpdrakkarname};
 	};
 }

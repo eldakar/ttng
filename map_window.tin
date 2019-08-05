@@ -261,4 +261,8 @@
     #line gag;
 };
 
+#action {chats to you, 'DOWNLOAD MAP'} {
+    downloading_banner MAPKE;
+};
+
 

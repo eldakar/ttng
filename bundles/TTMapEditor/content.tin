@@ -1,12 +1,14 @@
 #nop #################################################################################;
 #nop Edycja map;
 #nop #################################################################################;
+#var PONGED 0;
+
 #alias {TTMapEditorAddress} {
     #var tmp {$ConfigManager_Configs[TTMapEditorAddress]};
     #replace tmp {,} {;};
     #list connstr create {$tmp};
     #unvar tmp;
-    #if {"$PONGED" == "1"} {
+    #if {"$PONGED" != "0"} {
         #chat zap brain;
     } {
         #if {"$connstr[1]" != ""} {
@@ -22,7 +24,6 @@
 
 #action {Connection made to brain.} {
     #var PONGED 1;
-    #nop action {<CHAT>} {#line gag} {8};
 };
 
 #action {brain chats to everyone, 'MCREATE %1 %2'} {
@@ -233,6 +234,10 @@
     #echo {${c_stan_niski}> Mapa: niepolaczona!};
 };
 
+#alias {show_ponged_error2} {
+    #echo {${c_stan_niski}> Mapa: polaczona, lecz nie mozna zapisywac.};
+};
+
 #alias {/r$} {
     #if {$PONGED == 1} {
         #map get roomvnum tmproomvnum;
@@ -253,64 +258,64 @@
 } {1};
 
 #alias {/disc$} {
-    #if {$PONGED == 1} {
-    #map get roomvnum voom;
-    #chat message brain {ROOMEXITS $voom $current_room_exits};
-    #chat message brain {ROOMSHORT $voom $current_room_short_desc};
-    } {show_ponged_error};
+    #if {$PONGED == 2} {
+        #map get roomvnum voom;
+        #chat message brain {ROOMEXITS $voom $current_room_exits};
+        #chat message brain {ROOMSHORT $voom $current_room_short_desc};
+    } {show_ponged_error2};
 } {1};
 
 #alias {/map link %w %d} {
-    #if {$PONGED == 1} {
+    #if {$PONGED == 2} {
     #map get roomvnum voom;
     #chat message brain {LINK $voom %1 %2};
-    } {show_ponged_error};
+    } {show_ponged_error2};
 } {1};
 
 #alias {/map linkb %w %d} {
-    #if {$PONGED == 1} {
+    #if {$PONGED == 2} {
     #map get roomvnum voom;
     #chat message brain {LINKB $voom %1 %2};
-    } {show_ponged_error};
+    } {show_ponged_error2};
 } {1};
 
 #alias {/map unlinkb %w} {
-    #if {$PONGED == 1} {
+    #if {$PONGED == 2} {
     #map get roomvnum voom;
     #chat message brain {UNLINKB $voom %1};
-    } {show_ponged_error};
+    } {show_ponged_error2};
 } {1};
 
 #alias {/map unlink %w} {
-    #if {$PONGED == 1} {
+    #if {$PONGED == 2} {
     #map get roomvnum voom;
     #chat message brain {UNLINK $voom %1};
-    } {show_ponged_error};
+    } {show_ponged_error2};
 } {1};
 
 #alias {/map hide %w} {
-    #if {$PONGED == 1} {
+    #if {$PONGED == 2} {
     #map get roomvnum voom;
     #chat message brain {HIDE $voom %1};
-    } {show_ponged_error};
+    } {show_ponged_error2};
 } {1};
 
 #alias {/map unhide %w} {
-    #if {$PONGED == 1} {
+    #if {$PONGED == 2} {
     #map get roomvnum voom;
     #chat message brain {UNHIDE $voom %1};
-    } {show_ponged_error};
+    } {show_ponged_error2};
 } {1};
 
 #alias {/map dig %w} {
-    #if {$PONGED == 1} {
+    #if {$PONGED == 2} {
     #map get roomvnum v;
     #chat message brain {MCREATE $v %1};
-    } {show_ponged_error};
+    } {show_ponged_error2};
 } {1};
 
 #alias {/mark as %w$} {
-    #if {$PONGED == 1} {
+    #if {$PONGED == 2} {
 
     #switch {"%1"} {
         #case {"vendor"} {};
@@ -337,11 +342,11 @@
     }
     #map get roomvnum v;
     #chat message brain {MARK $v %1 $temp_short};
-    } {show_ponged_error};
+    } {show_ponged_error2};
 } {1};
 
 #alias {/mark as %w %*} {
-    #if {$PONGED == 1} {
+    #if {$PONGED == 2} {
 
     #switch {"%1"} {
         #case {"vendor"} {};
@@ -368,52 +373,68 @@
     }
     #map get roomvnum v;
     #chat message brain {MARK $v %1 %2};
-    } {show_ponged_error};
+    } {show_ponged_error2};
 } {1};
 
 #alias {/name} {
-    #if {$PONGED == 1} {
+    #if {$PONGED == 2} {
 
     #map get roomvnum v;
     #chat message brain {NAME $v %0};
-    } {show_ponged_error};
+    } {show_ponged_error2};
 } {1};
 
 #alias {/map del %w} {
-    #if {$PONGED == 1} {
+    #if {$PONGED == 2} {
     #map get roomvnum v;
     #chat message brain {DEL $v %1};
-    } {show_ponged_error};
+    } {show_ponged_error2};
 } {1};
 
 #alias {/map wyj %w %*} {
-    #if {$PONGED == 1} {
+    #if {$PONGED == 2} {
     #map get roomvnum v;
     #chat message brain {MEXIT $v %1 %2};
     #nop chat message mapka {MEXIT $v %1 %2};
-    } {show_ponged_error};
+    } {show_ponged_error2};
 } {1};
 
 #alias {/note %*} {
-    #if {$PONGED == 1} {
+    #if {$PONGED == 2} {
         #map get roomvnum voom;
         #chat message brain {NOTE $voom %1};
-    } {show_ponged_error};
+    } {show_ponged_error2};
 } {1};
 
 #alias {/note$} {
     #map get roomvnum voom;
 } {1};
 
-#action {<CHAT> File transfer from brain, file: %d, size: %d.} {
-    #chat message mapka {DOWNLOAD notke %1};
-    #chat accept brain;
+#action {brain chats to you, 'CHECKSUM %d'} {
+    #map at 1 {#map get roomdata rudu};
+    #chat message brain {CHECKSUM $rudu};
+} {1};
+#action {brain chats to you, 'CHECKSUM OK'} {
+    #var PONGED 2;
 } {1};
 
-#action {<CHAT> Transfer of %d completed} {
-    #line substitute {variables} {
-        #system {mv %1 $path/notes/%1};
-    };
+#action {<CHAT> File transfer from brain, file: mapkatt.map} {
+    #chat message mapka {DOWNLOAD MAP};
+    #delay {2} {#chat accept brain 10};
+} {1};
+
+#action {<CHAT> receive_block} {
+    #chat message mapka {DONWLOAD MAP};
+    #line gag;
+}
+#action {<CHAT> Transfer of mapkatt.map completed} {
+    #map get roomvnum troom;
+    #map read mapkatt.map;
+    #map goto $troom;
+    #map write bundles/TTMap/map.map;
+
+    #map at 1 {#map get roomdata rudu};
+    #chat message brain {CHECKSUM $rudu};
 } {1};
 
 #alias {/event %*} {
