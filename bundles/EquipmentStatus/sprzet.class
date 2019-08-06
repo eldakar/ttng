@@ -1,0 +1,34 @@
+#CLASS {_stuff_sprzet} OPEN
+
+#ACTION {OPISYWANIE walki:}
+{
+	#echo {};
+	#echo {+----------------------------------------------------------------------+};
+	#foreach {$items[]} {current}
+	{
+		#variable {stanbr} {@jakistanbroni{@jakistanzbroi{$items[$current][cond]}}};
+		#format {line} {| %-40s | %-25s |} {$items[$current][name]} {$stanbr/5 $items[$current][cond]<088>};
+		#echo {$line}
+	};
+	#echo {+----------------------------------------------------------------------+};
+	#echo {};
+	#line gag;
+	#delay {1} {#class {_stuff_sprzet} {kill};}
+}
+{1}
+
+#ACTION {Oceniasz starannie %1}
+{
+	#math {_stuff_curr} {$_stuff_curr +1 }
+}
+{1}
+
+#ACTION {Wyglada na to, ze jest %1.\n\nOceniasz, ze %2 wazy}
+{
+	#variable items[$_stuff_curr][cond] {%1};
+	#variable items[$_stuff_curr][name] {%2}
+}
+{1}
+
+
+#CLASS {_stuff_sprzet} CLOSE
