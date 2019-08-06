@@ -21,7 +21,7 @@
   #replace {obr}{w bardzo zlym stanie}{${c_stan_niski}1};
   #replace {obr}{w zlym stanie}{${c_stan_niski}2};
   #replace {obr}{liczne walki wyryly na niej swoje pietno}{${c_stan_sredni}3};
-  #replace {obr}{w dorbym stanie}{${c_stan_wysoki}4};
+  #replace {obr}{w dobrym stanie}{${c_stan_wysoki}4};
   #replace {obr}{w znakomitym stanie}{${c_stan_wysoki}5};
 
   #return $obr

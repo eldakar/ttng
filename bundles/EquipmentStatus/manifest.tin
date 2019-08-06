@@ -11,7 +11,7 @@
 	#list bundle_slots add {equipment.status};
 
 #list bundle_deps clear;
-
+	#list bundle_deps add {gmcpDefaultColorManager};
 #list bundle_alias clear;
 
 #var bundle_ready @bundleops_validate{};
