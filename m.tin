@@ -44,6 +44,7 @@
     #script mylogin {whoami};
     #var cport %0;
     #line substitute {variables} {
+        #chat uninit {${cport}0};
         #chat init {${cport}0};
         #chat name {$mylogin[1]};
         #delay {1.0} {#chat call 127.0.0.1 {${cport}1}};
@@ -58,3 +59,8 @@
     };
 };
 
+#event {SESSION DISCONNECTED} {
+    #if {"%0" == "rpg"} {
+        #chat message mapka {+++EXIT+++};
+    };
+};

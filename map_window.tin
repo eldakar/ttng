@@ -1,6 +1,10 @@
 #event {PROGRAM START} {
 	#var cport %0;
-	#line substitute {variables} {#chat init {${cport}1};#chat name mapka};
+	#line substitute {variables} {
+		#chat uninit {${cport}1};
+		#chat init {${cport}1};
+		#chat name mapka
+	};
 	#map read bundles/TTMap/map.map;
 	#map flag vtmap on;
 	#map flag unicodegraphics on;
@@ -351,4 +355,8 @@
         };
     };
 
+} {1};
+
+#action {+++EXIT+++} {
+    #end;
 } {1};
