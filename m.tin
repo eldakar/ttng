@@ -28,7 +28,8 @@
     #read bundles/RaidBar/manifest.tin;
     #read bundles/TTMapEditor/manifest.tin;
     #read bundles/PlayerDB/manifest.tin;
-
+    #read bundles/EquipmentManager/manifest.tin;
+    
     #var r @bundleops_loadglobals{};
 
     #nop read gmcp_char.tin;    #nop GMCP;
@@ -63,6 +64,9 @@
 #event {SESSION DISCONNECTED} {
     #if {"%0" == "rpg"} {
         #chat message mapka {+++EXIT+++};
+        #chat zap brain;
+        #chat zap mapka;
+        #chat uninit;
         #end;
     };
 };

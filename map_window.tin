@@ -3,7 +3,7 @@
 	#line substitute {variables} {
 		#chat uninit {${cport}1};
 		#chat init {${cport}1};
-		#chat name mapka
+		#chat name mapka;
 	};
 	#map read bundles/TTMap/map.map;
 	#map flag vtmap on;
@@ -358,5 +358,6 @@
 } {1};
 
 #action {+++EXIT+++} {
+    #chat uninit;
     #end;
 } {1};
