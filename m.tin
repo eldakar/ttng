@@ -62,5 +62,6 @@
 #event {SESSION DISCONNECTED} {
     #if {"%0" == "rpg"} {
         #chat message mapka {+++EXIT+++};
+        #end;
     };
 };
