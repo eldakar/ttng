@@ -1,0 +1,69 @@
+#nop #################################################################################;
+#nop Rozne map;
+#nop #################################################################################;
+
+#nop Sprzet class;
+
+#function {jakistanzbroi}{
+  #var {obr}{%1};
+  #replace {obr}{gotowa rozpasc sie w kazdej chwili}{${c_stan_niski}1};
+  #replace {obr}{w oplakanym stanie}{${c_stan_niski}2};
+  #replace {obr}{w kiepskim stanie}{${c_stan_sredni}3};
+  #replace {obr}{lekko podniszczon{a|y}}{${c_stan_sredni}4};
+  #replace {obr}{w znakomitym stanie}{${c_stan_wysoki}5};
+
+  #return $obr
+}
+
+#function {jakistanbroni}{
+  #var {obr}{%1};
+  #replace {obr}{wymaga natychmiastowej konserwacji i moze peknac w kazdej chwili}{${c_stan_niski}1};
+  #replace {obr}{w bardzo zlym stanie}{${c_stan_niski}1};
+  #replace {obr}{w zlym stanie}{${c_stan_niski}2};
+  #replace {obr}{liczne walki wyryly na niej swoje pietno}{${c_stan_sredni}3};
+  #replace {obr}{w dorbym stanie}{${c_stan_wysoki}4};
+  #replace {obr}{w znakomitym stanie}{${c_stan_wysoki}5};
+
+  #return $obr
+}
+
+#class {_stuff_sprzet} OPEN;
+
+#action {Oceniasz starannie %1} {
+	#math {_stuff_curr} {$_stuff_curr +1 }
+}{1};
+
+#action {Wyglada na to, ze jest %1.\n\nOceniasz, ze %2 wazy} {
+	#var items[$_stuff_curr][cond] {%1};
+	#var items[$_stuff_curr][name] {%2};
+}{1};
+
+#action {OPISYWANIE walki:} {
+	#echo {};
+	#echo {+----------------------------------------------------------------------+};
+	#foreach {$items[]} {current} {
+		#var {stanbr} {@jakistanbroni{@jakistanzbroi{$items[$current][cond]}}};
+		#format {line} {| %-40s | %-25s |} {$items[$current][name]} {$stanbr/5 $items[$current][cond]<088>};
+		#echo {$line};
+	};
+	#echo {+----------------------------------------------------------------------+};
+	#echo {};
+	#line gag;
+	#delay {1} {#class {_stuff_sprzet} {kill};};
+}{1};
+
+#class {_stuff_sprzet} {close};
+
+#class {_stuff_sprzet} {write} {bundles/EquipmentStatus/sprzet.class};
+#class {_stuff_sprzet} {kill};
+
+#alias {/sprzet} {
+	#var {_stuff_curr} {0};
+
+	#class {_stuff_sprzet} {read} {bundles/EquipmentStatus/sprzet.class};
+
+	ocen wszystkie dobyte bronie;
+	ocen wszystkie zalozone zbroje;
+	ocen zalozona tarcze;
+	opcje opisywanie;
+} {1};
