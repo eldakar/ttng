@@ -1,0 +1,118 @@
+#alias {PlayerDBAddress} {
+    #var tmp {$ConfigManager_Configs[PlayerDBAddress]};
+    #replace tmp {,} {;};
+    #list connstrdb create {$tmp};
+    #unvar tmp;
+	#var {mysqlcommand} {mysql --user=$connstrdb[3] --password=$connstrdb[4] --host=$connstrdb[1] --database=$connstrdb[2] --execute=};
+};
+
+#alias {/baza_update$} {
+	#echo {<138>PlayerDB: <118>Odswiezam definicje postaci.<088>};
+    #var tmp {$ConfigManager_Configs[PlayerDBAddress]};
+    #replace tmp {,} {;};
+    #list connstrdb create {$tmp};
+    #unvar tmp;
+    #system {sh bundles/PlayerDB/baza_update.sh $connstrdb[1] $connstrdb[2] $connstrdb[3] $connstrdb[4] > bundles/RaidTable/data.tin};	
+    #read {bundles/RaidTable/data.tin};
+    #class bazapostaci write bundles/RaidTable/data.tin;
+    #echo {<138>PlayerDB: <128>Zaladowane.<088>};
+} {1};
+
+#alias {/baza$}
+{
+	#nop man_read baza_dodaj;
+	#echo {<138>PlayerDB: <158>Help<088>};
+	#echo {    /baza_dodaj [gildia] [imie]};			#nop 2;
+	#echo {    /baza_dodaj [gildia] [opis]};			#nop 4;
+	#echo {    /baza_dodaj [gildia] [opis] [imie]};		#nop 5;
+	#echo {    /baza_update [imie] [nowa_gildia]};
+	#echo {    /baza_update [opis] [nowa_gildia]};
+	#echo {    /baza_imie [opis] [nowe_imie]};
+	#echo {    /ktoto [opis]};
+	#echo {    <018>/baza_update<088>};
+} {1};
+
+#alias {/baza_dodaj %w %w$} {
+	#format {gildiacapital} {%u} {%1};
+	#format {imiewielblad} {%l} {%2};
+	#format {imiewielblad} {%n} {$imiewielblad};
+
+	#line substitute {variables} {
+		#system {$mysqlcommand"insert into bazapostaci (ImieM, Gildia, KtoDodal) values ('$imiewielblad', '$gildiacapital', '$AVATAR_NAME');" 2>/dev/null}
+	};
+	#echo {<138>PlayerDB: <158>Od teraz $imiewielblad nalezy do $gildiacapital<088>};
+} {1};
+
+
+#alias {/baza_dodaj %w %w %w %w$} {
+	#format {gildiacapital} {%u} {%1};
+	#format {opislower} {%l} {%2 %3 %4};
+
+	#line substitute {variables} {
+		#system {$mysqlcommand"insert into bazapostaci (OpisM, Gildia, KtoDodal) values ('$opislower', '$gildiacapital', '$AVATAR_NAME');" 2>/dev/null}
+	};
+	#echo {<138>PlayerDB: <158>Od teraz $opislower nalezy do $gildiacapital<088>};
+} {1};
+
+#alias {/baza_dodaj %w %w %w %w %S$} {
+	#format {gildiacapital} {%u} {%1};
+
+	#format {imiewielblad} {%l} {%5};
+	#format {imiewielblad} {%n} {$imiewielblad};
+
+	#format {opislower} {%l} {%2 %3 %4};
+
+	#line substitute {variables} {
+		#system {$mysqlcommand"insert into bazapostaci (OpisM, ImieM, Gildia, KtoDodal) values ('$opislower','$imiewielblad','$gildiacapital', '$AVATAR_NAME');" 2>/dev/null}
+	};
+	#echo {<138>PlayerDB: <158>Od teraz $imiewielblad z opisem $opislower nalezy do $gildiacapital<088>};
+} {1};
+
+#alias {/baza_update %w %w$} {
+	#format {gildiacapital} {%u} {%2};
+	#format {imiewielblad} {%l} {%1};
+	#format {imiewielblad} {%n} {$imiewielblad};
+
+	#line substitute {variables} {
+		#system {$mysqlcommand"update bazapostaci set Gildia = '$gildiacapital' where ImieM = '$imiewielblad';" 2>/dev/null}
+	};
+	#echo {<138>PlayerDB: <158>Od teraz $imiewielblad nalezy do $gildiacapital<088>};
+} {1};
+
+
+#alias {/baza_update %w %w %w %w$} {
+	#format {gildiacapital} {%u} {%4};
+	#format {opislower} {%l} {%1 %2 %3};
+
+	#line substitute {variables} {
+		#system {$mysqlcommand"update bazapostaci set Gildia = '$gildiacapital' where OpisM = '$opislower' and ImieM is not NULL;" 2>/dev/null}
+	};
+	#echo {<138>PlayerDB: <158>Ok.<088>};
+} {1};
+
+#alias {/baza_imie %w %w %w %w$} {
+	#format {opislower} {%l} {%1 %2 %3};
+	#format {imiewielblad} {%l} {%4};
+	#format {imiewielblad} {%n} {$imiewielblad};
+
+	#line substitute {variables} {
+		#system {$mysqlcommand"update bazapostaci set ImieM = '$imiewielblad' where ImieM is NULL and OpisM='$opislower';" 2>/dev/null}
+	};
+	#echo {<138>PlayerDB: <158>Ok.<088>};
+} {1};
+
+#alias {/ktoto %w %w %w$} {
+	#format {opislower} {%l} {%1 %2 %3};
+	#line substitute {variables} {
+		#system {$mysqlcommand"select ImieM, OpisM, Gildia from bazapostaci where OpisM = '$opislower';" 2>/dev/null}
+	};	
+} {1};
+
+#alias {/ktoto %w$} {
+	#format {imiewielblad} {%l} {%1};
+	#format {imiewielblad} {%n} {$imiewielblad};
+	#line substitute {variables} {
+		#system {$mysqlcommand"select ImieM, OpisM, Gildia from bazapostaci where ImieM = '$imiewielblad';" 2>/dev/null}
+	};	
+} {1};
+

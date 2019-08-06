@@ -27,6 +27,7 @@
     #read bundles/RaidTable/manifest.tin;
     #read bundles/RaidBar/manifest.tin;
     #read bundles/TTMapEditor/manifest.tin;
+    #read bundles/PlayerDB/manifest.tin;
 
     #var r @bundleops_loadglobals{};
 
