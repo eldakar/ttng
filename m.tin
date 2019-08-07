@@ -29,6 +29,8 @@
     #read bundles/TTMapEditor/manifest.tin;
     #read bundles/PlayerDB/manifest.tin;
     #read bundles/EquipmentStatus/manifest.tin;
+
+    #read bundles/Vehicles/manifest.tin;
     
     #var r @bundleops_loadglobals{};
 
@@ -37,7 +39,6 @@
     #read gmcp_message.tin;	#nop GMCP;
     #read alias.tin;		#nop Aliasy do obslugi glownych funkcji;
     #nop read mapevents.tin;	#nop Eventy na pokojach;    
-    #nop read statki.tin;		#nop Obsluga statkow;
 
     #config {debug telnet} {off};	#nop debug;
     #config {COMMAND ECHO} {off};	#nop wyswietlanie komend;
