@@ -6,6 +6,12 @@
 	#if {$frozen_status == 1} {przestan;};
 	wym;wsiadz do dylizansu;wlm;
 };
+
+#alias {DYLIZANS_OUT} {
+	#if {$frozen_status == 1} {przestan;};
+	wyjscie;
+};
+
 #alias {STATEK_IN}
 {	#if {$frozen_status == 1} {przestan;};
 	wym;kup bilet;wsiadz na statek;wlm;
@@ -43,7 +49,7 @@
 			qb STATEK_OUT;
 };
 
-#action {^Tratwa.$}
+#action {%*{^Tratwa.$}}
 {
 	qb STATEK_IN;
 };
