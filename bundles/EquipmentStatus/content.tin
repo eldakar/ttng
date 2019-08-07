@@ -64,6 +64,5 @@
 
 	ocen wszystkie dobyte bronie;
 	ocen wszystkie zalozone zbroje;
-	ocen zalozona tarcze;
 	opcje opisywanie;
 } {1};
