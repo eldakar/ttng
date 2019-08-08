@@ -53,14 +53,43 @@
 };
 
 
+#var MapLegendFolded {1};
+
 #event {PRESSED MOUSE BUTTON ONE}
 {
     #var PRESSED 1;
     #var centreY {%0};
     #var centreX {%1};
 
-    #if {$centreX < 4} {
-        walk$centreY;
+#sh {$centreY $centreX $MapLegendFolded};
+    #if {$centreY == 1} {
+	#if {$centreX < 7} {
+		#if {$MapLegendFolded == 1} {
+			#var MapLegendFolded 0;
+        		/zadania;
+	#delay {0.3} {
+    			#sh {<ABA><178> MAPA <088>} {1} {1};
+			#foreach {$cplist} {cpl} {
+				#if {$cpl <= $sw} {
+					#if {$cpl > 1} {
+					#sh {$cplist[$cpl]} {$cpl} {1};
+					};
+        			};
+    			};    
+			#nop UNFOLD;
+	};
+		} {
+			#var MapLegendFolded 1;
+			#map goto $currentRoom;
+			#nop FOLD;
+		};
+	};
+    } {
+	#if {$MapLegendFolded == 0} {
+	    	#if {$centreX < 4} {
+        		walk$centreY;
+    		};
+    	};
     };
 }
 
@@ -298,16 +327,11 @@
 };
 
 #event {MAP UPDATED VTMAP} {
-    #foreach {$cplist} {cpl} {
-        #if {$cpl <= $sw} {
-            #sh {$cplist[$cpl]} {$cpl} {1};
-        };
-    };    
+    #sh {<ABA><178> MAPA <088>} {1} {1};
 };
 #event {MAP ENTER ROOM} {
-    #if {$PRESSED < 1} {
-        /zadania;
-    }
+    #var MapLegendFolded 1;
+    #map get roomvnum CurrentRoom;
 };
 
 #var zadania[1] {quest};
@@ -348,13 +372,14 @@
                     #format {cpd_roomid} {%+6s %.6s} {$vcpv};
                     #format {cp_command} {%+6s} {run${cpcmd}};
                     #var cplist[$cpcmd] {$cpd_distance $c_rooms[$zadania[$zadd]]$cpd_area:<088> $cp_roomnote};
-                    #nop echo {$cpd_runcmd Dyst: $cpd_distance $c_rooms[$zadania[$zadd]]$cpd_area:<088> $cp_roomnote};
+                    #nop sh {$cpd_runcmd Dyst: $cpd_distance $c_rooms[$zadania[$zadd]]$cpd_area:<088> $cp_roomnote} {$cpcmd} {1};
                     #math {cpcmd} {$cpcmd + 1};
                 };
             };
         };
     };
 
+    #sh {<ABA><178> MAPA <088>} {1} {1};
 } {1};
 
 #action {+++EXIT+++} {
