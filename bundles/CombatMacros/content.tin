@@ -52,7 +52,7 @@
         #case {"z"} zabijcmd %0;                  #nop komenda zabij;
         #case {"w"} wskaz %0 jako cel ataku;      #nop wskazywanie;
         #case {"r"} rozkaz druzynie zabic %0;     #nop rozkaz;
-	#case {"k"} {ksznienawidz %0;	          #nop korki;
+	#case {"k"} ksznienawidz %0;	          #nop korki;
         #nop case {"p"} przelam obrone celu ataku;#nop przelamanie TODO;
       };
     };
