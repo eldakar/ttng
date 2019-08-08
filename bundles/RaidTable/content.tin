@@ -52,6 +52,10 @@
 		#list {obnu} find {$bubu} {vfob};
 		#if {"$vfob" == "0"} {
 			#unvar {duch[$bubu]};
+            #unvar {duch[$bubu][bot]};
+            #unvar {duch[$bubu][enemys]};
+            #unvar {duch[$bubu][rownr]};
+            #unvar {duch[$bubu][shown]};
          	}; 
     	};
     assign_type;

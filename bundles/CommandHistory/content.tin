@@ -6,8 +6,8 @@
 	#var prompt_history[2] {$prompt_history[1]};
 	#var prompt_history[1] {%0};
 	#sh {> $prompt_history[1]} {-2};
-	#sh {> $prompt_history[2]} {-3};
-	#line ignore #showme {> } {-1};	
+    #sh {> $prompt_history[2]} {-3};
+    #line ignore #showme {> } {-1};	
 };
 
 #function {cmd_prompt_add} {
@@ -15,4 +15,9 @@
 	#var prompt_history[1] {%0};
 	#sh {> $prompt_history[1]} {-2};
 	#sh {> $prompt_history[2]} {-3};	
+};
+
+#alias {CommandHistoryPromptRefresh} {
+	#sh {> $prompt_history[1]} {-2};
+    #sh {> $prompt_history[2]} {-3};
 };

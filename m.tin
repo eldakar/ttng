@@ -7,6 +7,7 @@
 
     #read bundles/GMCPChar/manifest.tin;
     #read bundles/ConfigManager/manifest.tin;
+    #read bundles/SplitRefresh/manifest.tin;
     #read bundles/CharacterClass/manifest.tin;
     #read bundles/CombatMacros/manifest.tin;
     #read bundles/Equipment/manifest.tin;

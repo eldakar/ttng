@@ -1,50 +1,20 @@
-#nop ############################;
-#nop Bundle template v1;
-#nop ############################;
-
-#nop NAME ###########;
 #var bundle_name {RaidBar};
-
-#nop IS DATA PRESENT #;
 #var bundle_data {0};
-
-#nop IS CONTENT PRESENT;
 #var bundle_content {1};
-
-#nop IS CONFIG PRSENT;
 #var bundle_config {1};
-
-#nop IS HELP PRESENT;
+#list bundle_configs clear;
+	#list bundle_configs add {RaidBarDynamicTop};
 #var bundle_help {0};
-
-#nop ############################;
-#nop EVENT SLOTS ##########;
-#nop Every listed event slot has to be empty;
-#nop in order to load the bundle;
-#nop ############################;
 #list bundle_slots clear;
-#list bundle_slots add {prompt.top};
-
-#nop ############################;
-#nop BUNDLE DEPENDENCIES ###;
-#nop All dependencies have to be met;
-#nop ############################;
+	#list bundle_slots add {prompt.top};
 #list bundle_deps clear;
-
-#list bundle_deps add {RaidTable};
-#list bundle_deps add {GMCPObjects};
-	#list bundle_handler_objects_nums add {render_h2};
-	#list bundle_handler_objects_data add {render_h2};
-
-
-#nop ############################;
-#nop BUNDLE ALIASES ########;
-#nop Check if any alias already in use;
-#nop ############################;
+	#list bundle_deps add {ConfigManager};	
+	#list bundle_deps add {RaidTable};
+	#list bundle_deps add {GMCPObjects};
+		#list bundle_handler_objects_nums add {render_h2};
+		#list bundle_handler_objects_data add {render_h2};
+	#list bundle_deps add {SplitRefresh};
+		#list bundle_handler_split_request add {render_h2};
 #list bundle_alias clear;
 
-#nop ############################;
-#nop Validate configuration;
-#nop ############################;
 #var bundle_ready @bundleops_validate{};
-

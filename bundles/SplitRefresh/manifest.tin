@@ -3,7 +3,7 @@
 #nop ############################;
 
 #nop NAME ###########;
-#var bundle_name {CommandHistory};
+#var bundle_name {SplitRefresh};
 
 #nop IS DATA PRESENT #;
 #var bundle_data {0};
@@ -13,25 +13,26 @@
 
 #nop IS CONFIG PRSENT;
 #var bundle_config {0};
-
 #nop IS HELP PRESENT;
 #var bundle_help {0};
 
+#list bundle_configs clear;
 #nop ############################;
 #nop EVENT SLOTS ##########;
 #nop Every listed event slot has to be empty;
 #nop in order to load the bundle;
 #nop ############################;
 #list bundle_slots clear;
-#list bundle_slots add {event.send.output};
+#list bundle_slots add {requests.split.refresh};
+
+#list bundle_handler_split_request clear;
 
 #nop ############################;
 #nop BUNDLE DEPENDENCIES ###;
 #nop All dependencies have to be met;
 #nop ############################;
 #list bundle_deps clear;
-#list bundle_deps {SplitRefresh};
-	#list bundle_handler_split_request add {CommandHistoryPromptRefresh};
+
 #nop ############################;
 #nop BUNDLE ALIASES ########;
 #nop Check if any alias already in use;
@@ -42,3 +43,4 @@
 #nop Validate configuration;
 #nop ############################;
 #var bundle_ready @bundleops_validate{};
+

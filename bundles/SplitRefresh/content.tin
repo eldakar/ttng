@@ -1,0 +1,7 @@
+#alias {SplitRefreshRequestRefresh}
+{
+	#split $global_bundle_slots_values[prompt][top] $global_bundle_slots_values[prompt][bottom];
+    #foreach {$bundle_handler_split_request} {bhon} {
+        $bundle_handler_split_request[$bhon] %0;
+    };
+}

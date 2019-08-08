@@ -43,7 +43,7 @@
 	#if {$confid < 1} {
 		#echo {<138>ConfigManager: <118>Syntax error. Make sure to load the right bundle!<088>};
 	} {
-		#echo {<138>ConfigManager: <128>Ok.<088>};
+		#echo {<138>ConfigManager: <128>%1 <088>= <118>%2<088>};
 		%1;
 	};
 } {1};
