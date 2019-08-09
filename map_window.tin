@@ -1,10 +1,8 @@
 #event {PROGRAM START} {
 	#var cport %0;
-	#line substitute {variables} {
-		#chat uninit {${cport}1};
-		#chat init {${cport}1};
-		#chat name mapka;
-	};
+    #port uninit ${cport}5;
+    #port init mapka ${cport}5;
+    
 	#map read bundles/TTMap/map.map;
 	#map flag vtmap on;
 	#map flag unicodegraphics on;
@@ -382,6 +380,13 @@
     #sh {<ABA><178> MAPA <088>} {1} {1};
 } {1};
 
+#action {<PORT> Closing connection} {
+    #port uninit;
+    #end {Polaczenie zostalo przerwane. Uzyj komendy<128>./ttmux<088> aby uruchomic ponowie};
+}
+#action {<PORT> GOTO %d} {
+    #map goto %1;
+}
 #action {+++EXIT+++} {
     #chat uninit;
     #end;

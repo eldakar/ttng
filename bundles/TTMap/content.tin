@@ -98,7 +98,7 @@
         #var note_found 1;
     };
      #if {$cport > 0} {
-            #chat message mapka {$voom};
+            #mapka {GOTO $voom};
      };
 };
 
@@ -207,4 +207,10 @@
 
 #action {mapka chats to everyone, 'WALK %d'} {#map run {%1} {0.50}};
 
+#nop ################################################################;
+#nop ################################################################;
+#nop ################################################################;
+#nop ################################################################;
 
+#mapka #alias {GOTO %d} {#port send $connectorId {GOTO %1};};
+#mapka #action {<PORT> Connection made to %S.} {#var connectorId %1;};

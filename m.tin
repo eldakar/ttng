@@ -1,4 +1,13 @@
-#event {PROGRAM START} { 
+#event {PROGRAM START} {
+    #script mylogin {whoami};
+    #var cport %0;
+
+    #if {$cport > 0} {
+        #port uninit ${cport}2;
+        #port uninit ${cport}3;
+        #port init brain ${cport}2;
+        #port init mapka ${cport}3;
+    };
     #ses rpg arkadia.rpg.pl {23};
 
     #nop event {SEND OUTPUT} {#echo {<118>COMMAND : %0<088>}};
@@ -44,15 +53,7 @@
     #config {COMMAND ECHO} {off};	#nop wyswietlanie komend;
     #config {mouse} {on};		#nop obsluga myszy;
     
-    #script mylogin {whoami};
-    #var cport %0;
-    #line substitute {variables} {
-        #chat uninit {${cport}0};
-        #chat init {${cport}0};
-        #chat name {$mylogin[1]};
-        #delay {1.0} {#chat call 127.0.0.1 {${cport}1}};
-    };
-    #action {You chat to} {#line gag} {9};
+    #line substitute {variables} {#delay {2.0} {#mapka #port call 127.0.0.1 {${cport}5}};};
 };
 
 #event {SESSION CONNECTED} {
@@ -64,10 +65,6 @@
 
 #event {SESSION DISCONNECTED} {
     #if {"%0" == "rpg"} {
-        #chat message mapka {+++EXIT+++};
-        #chat zap brain;
-        #chat zap mapka;
-        #chat uninit;
         #end;
     };
 };
