@@ -1,0 +1,358 @@
+#nop INIT;
+#port uninit;
+#port init brain 5016;
+#map read tools/mapkatt.map;
+#map goto 1;
+#list userList clear;
+#unvar userDetails;
+#map at {1} {#map get roomdata MapStampValue};
+
+#nop ACCEPT NEW CONNECTIONS;
+#action {<PORT> New connection: %* D%d.} {
+	#list userList add {%2};
+	#var userDetails[%2][host] {%1};
+	serverinfo %2;
+
+#nop SEND DYNAMICS;
+    refresh_dynamics;
+    refresh_beacons;
+#nop wyslij checksum;
+    #map at {1} {#map get roomdata vrd};
+    #port send %2 CHECKSUM $vrd;
+#nop TODO EVENTS;
+#nop TODO NOTES;
+};
+
+#action {<PORT> Closing connection to %* D%d.} {
+	#list userList find %2 ulfv;
+	#list userList del $ulfv;
+};
+
+#alias {broadcast} {
+	#foreach {$userList[]} {user} {#port send $userList[$user] {%0};};
+};
+
+
+
+
+
+#nop #######################################################;
+#nop #######################################################;
+#nop #######################################################;
+#nop #######################################################;
+
+
+#alias {serverinfo} {
+	#list userList size uls;
+	#port send %0 {INFO: Welcome to the TTMap server.};
+	#port send %0 {INFO: Number of active sessions: $uls.};
+	#port send %0 {INFO: Map stamp = $MapStampValue};
+};
+
+#alias refresh_dynamics {
+	#foreach {$drakkary[]} {drakkar} {
+ 		broadcast LINKB $drakkary[$drakkar][foundat] $drakkary[$drakkar][linkto] $drakkary[$drakkar][id];
+    	broadcast MEXIT $drakkary[$drakkar][foundat] $drakkary[$drakkar][linkto] $drakkary[$drakkar][id] wejdz na drakkar;
+	};
+};
+#alias unload_dynamics {
+       #map at {$drakkary[demon][foundat]} {#map unlink $drakkary[demon][linkto] both};
+       #map at {$drakkary[perla][foundat]} {#map unlink $drakkary[perla][linkto] both};
+       #map at {$drakkary[krakken][foundat]} {#map unlink $drakkary[krakken][linkto] both};
+       #map at {$drakkary[zwiastun][foundat]} {#map unlink $drakkary[zwiastun][linkto] both};
+       #map at {$drakkary[wloczega][foundat]} {#map unlink $drakkary[wloczega][linkto] both};
+};
+#alias load_dynamics {
+       #map at {$drakkary[demon][foundat]} {#map link $drakkary[demon][linkto] $drakkary[demon][id] both;};
+       #map at {$drakkary[perla][foundat]} {#map link $drakkary[perla][linkto] $drakkary[perla][id] both;};
+       #map at {$drakkary[krakken][foundat]} {#map link $drakkary[krakken][linkto] $drakkary[krakken][id] both;};
+       #map at {$drakkary[zwiastun][foundat]} {#map link $drakkary[zwiastun][linkto] $drakkary[zwiastun][id] both;};
+       #map at {$drakkary[wloczega][foundat]} {#map link $drakkary[wloczega][linkto] $drakkary[wloczega][id] both;};
+};
+
+#alias mapsave {
+	unload_dynamics;
+	#map at {1} {#map get roomdata vroomdata};
+	#math vroomdata {$vroomdata + 1};
+	#map at {1} {#map set roomdata $vroomdata};
+	#map write tools/mapkatt.map;
+	load_dynamics;
+};
+
+#nop ###################################;
+#nop tworze pokoj w mapce glownej, zapisuje, wysylam komende wszystkim;
+#nop ###################################;
+#action {<PORT> MCREATE %d %w} {
+	#map at {%1} {#map dig %2};
+	broadcast MCREATE %1 %2;
+    mapsave;
+};
+
+#action {<PORT> DEL %d %w} {
+    #map at {%1} {#map del %2};
+    broadcast DEL %1 %2;
+    mapsave;
+};
+
+#action {<PORT> MEXIT %d %w %*} {
+    #map goto %1;
+    #map exit %2 command {%3};
+    #map move %2;
+    #map get roomvnum tmproomvnum;
+    #map undo;
+    #map link {%3} $tmproomvnum;
+    broadcast MEXIT %1 %2 $tmproomvnum %3;
+    mapsave;
+};
+
+#action {<PORT> MARK %d %w'} {
+    #map goto %1;
+    #map set roomarea {%2};
+    broadcast MARK %1 %2;
+    #map at {%1} {#map set roomcolor $c_rooms[%2]};
+    mapsave;
+};
+
+#action {<PORT> MARK %d %w %*} {
+    #map goto %1;
+    #map set roomarea {%2};
+    #map set roomnote {%3};
+    broadcast MARK %1 %2 %3;
+    #map at {%1} {#map set roomcolor $c_rooms[%2]};
+    mapsave;
+};
+
+#action {<PORT> HIDE %d %w} {
+    #map goto %1;
+    #line substitute variables {#map exitflag %2 hide on};
+    broadcast HIDE %1 %2;
+    mapsave;
+};
+
+#action {<PORT> UNHIDE %d %w} {
+    #map goto %1;
+    #line substitute variables {#map exitflag %2 hide off};
+    broadcast UNHIDE %1 %2;
+    mapsave;
+};
+
+#action {<PORT> NOTE %d %*} {
+    #map goto %1;
+    #map get roomvnum voom;
+    #map set roomsymbol {<178>i<088>};
+    #format {_p_c_stamp_} {%t} {%Y-%m-%d %H:%M:%S};
+    #line substitute variables {
+        #system {echo "$_p_c_stamp_ %2" 2>/dev/null >> notes/%1};
+    };
+    broadcast NOTE %1;
+    mapsave;
+} {1};
+
+#action {<PORT> ROOMSHORT %d %*} {
+    #map goto %1;
+    #map set roomdesc {%2};
+    #map get roomsymbol vroomsymbol;
+    #if {"$vroomsymbol" == "<faa>?<088>"} {
+        #map set roomsymbol {};
+    };
+    broadcast ROOMSHORT %1 %2;
+    mapsave;
+};
+
+#action {<PORT> ROOMEXITS %d %*} {
+    #map goto %1;
+    #map set roomname {%2};
+    #map get roomcolor vroomcolor;
+    #if {"$vroomcolor" == "<faa>"} {
+        #map set roomcolor {};
+    };
+    broadcast ROOMEXITS %1 %2;
+    mapsave;
+};
+
+#action {<PORT> LINKB %d %w %d} {
+    #map at {%1} {
+        #line substitute variables {
+            #map link %2 %3 both;
+        };
+    };
+    broadcast LINKB %1 %2 %3;
+    mapsave;
+} {1};
+
+#action {<PORT> UNLINKB %d %w} {
+    #map at {%1} {
+        #line substitute variables {
+            #map unlink %2 both;            
+        };
+    };
+    broadcast UNLINKB %1 %2;
+    mapsave;
+} {1};
+
+#action {<PORT> LINK %d %w %d} {
+    #map at {%1} {
+        #line substitute variables {
+            #map link %2 %3;
+        };
+    };
+    broadcast LINK %1 %2 %3;
+    mapsave;
+} {1};
+
+#action {<PORT> UNLINK %d %w'} {
+    #map at {%1} {
+        #line substitute variables {
+            #map unlink %2;         
+        };
+    };
+    broadcast UNLINK %1 %2;
+    mapsave;    
+} {1};
+
+#var beacon[Y][symbol] {-FFA+};
+#var beacon[Y][roomid] {0};
+#var beacon[Y][oldsym] {0};
+
+#var beacon[R][symbol] {-FAA+};
+#var beacon[R][roomid] {0};
+#var beacon[R][oldsym] {0};
+
+#var beacon[G][symbol] {-AFA+};
+#var beacon[G][roomid] {0};
+#var beacon[G][oldsym] {0};
+
+#var beacon[B][symbol] {-AAF+};
+#var beacon[B][roomid] {0};
+#var beacon[B][oldsym] {0};
+
+
+#action {<PORT> COLOR %d %.} {
+    #nop UNCOLOR THE PREVIOUS ROOM IF SET;
+    #if {$beacon[%2][roomid] > 0} {
+        broadcast {COLOR $beacon[%2][roomid] $beacon[%2][oldsym]};
+    };
+    #map at {%1} {#map get roomcolor tmpsymbol};
+    #replace {tmpsymbol} {<} {-};
+    #replace {tmpsymbol} {>} {+};
+    #var beacon[%2][oldsym] {$tmpsymbol};
+    #var beacon[%2][roomid] {%1};
+    broadcast COLOR %1 $beacon[%2][symbol];
+};
+
+#action {<PORT> CLEAR} {
+    #foreach {$beacon[]} {bebe} {
+	  	#if {$beacon[$bebe][roomid] > 0} {
+       	 	broadcast COLOR $beacon[$bebe][roomid] $beacon[$bebe][oldsym];
+         	#var beacon[$bebe][roomid] {0};
+    	};    
+    };
+}
+
+#alias {refresh_beacons} {
+    #foreach {$beacon[]} {bebe} {
+  	#if {$beacon[$bebe][roomid] > 0} {
+       	 	broadcast COLOR $beacon[$bebe][roomid] $beacon[$bebe][symbol];
+    	};    
+    };
+}
+
+
+#nop ###################################;
+#nop new event, subscribers' mapevents.tin should be reloaded;
+#nop ###################################;
+#action {<PORT> EVENT %d %*} {
+    broadcast {EVENT %1 %2};
+    #map at {%1} {#map set roomsymbol {<168>@<088>}};
+    #line substitute {variables} {
+        #system {echo "#event {MAP ENTER ROOM %1} {%2};" >> mapevents.tin};
+    };
+	broadcast EVENT %1 %2;
+    mapsave;
+};
+
+#action {<PORT> COMMAND %d %*} {
+    broadcast {COMMAND %1 %2};
+    #map at {%1} {#map set roomsymbol {<138>E<088>}};
+    #line substitute {variables} {
+        #system {echo "#event {MAP ENTER ROOM %1} {%2};" >> mapevents.tin};
+    };
+	broadcast COMMAND %1 %2;
+    mapsave;
+};
+
+
+#nop KORSARSKIE DRAKKARY;
+#var drakkary[krakken][id] {23583};
+#var drakkary[krakken][ka] {eldakar};
+#var drakkary[krakken][foundat] {0};
+#var drakkary[krakken][linkto] {0};
+#var drakkary[krakken][typ] {drakkar};
+
+#var drakkary[demon][id] {23587};
+#var drakkary[demon][ka] {grumsh};
+#var drakkary[demon][foundat] {0};
+#var drakkary[demon][linkto] {0};
+#var drakkary[demon][typ] {drakkar};
+
+#var drakkary[perla][id] {23588};
+#var drakkary[perla][ka] {kallian};
+#var drakkary[perla][foundat] {0};
+#var drakkary[perla][linkto] {0};
+#var drakkary[perla][typ] {drakkar};
+
+#var drakkary[zwiastun][id] {23589};
+#var drakkary[zwiastun][ka] {chor};
+#var drakkary[zwiastun][foundat] {0};
+#var drakkary[zwiastun][linkto] {0};
+#var drakkary[zwiastun][typ] {drakkar};
+
+#var drakkary[wloczega][id] {23590};
+#var drakkary[wloczega][ka] {marcinson};
+#var drakkary[wloczega][foundat] {0};
+#var drakkary[wloczega][linkto] {0};
+#var drakkary[wloczega][typ] {snekkar};
+#var kierunki[1] {n};
+#var kierunki[2] {se};
+#var kierunki[3] {nw};
+#var kierunki[4] {s};
+#var kierunki[5] {sw};
+#var kierunki[6] {ne};
+#var kierunki[7] {e};
+#var kierunki[8] {w};
+
+
+#action {<PORT> DRAKKAR %d %w'} {
+    #var tmpdrakkid {$drakkary[%2][id]};
+    #var tmpfoundat {$drakkary[%2][foundat]};
+    #var tmplinkto {$drakkary[%2][linkto]};
+
+    broadcast ZNALEZIONY $tmpdrakkid $tmpfoundat (%1) $tmplinkto;
+    #nop jesli dany drakar byl juz widziany;
+    #nop ale gdzie indziej;
+    #if {"$tmpfoundat" != "%1"} {
+        #if {"$tmpfoundat" != "0"} {
+    	    #nop odepnij go od mapy;
+            #map at {$drakkary[%2][foundat]} {#map unlink $drakkary[%2][linkto] both};
+            broadcast UNLINKB $drakkary[%2][foundat] $drakkary[%2][linkto];
+            #var drakkary[%2][linkto] {0};
+        };
+	#nop uaktualnij jego lokacje;
+    	#var drakkary[%2][foundat] {%1};
+    	#nop znajdz miejsce na cume;
+   	#map at {%1} {
+       		#map get roomexits tmproomexits;
+       		#map get roomvnum tmproomvnum;
+    	};
+
+	#foreach {$kierunki[]} {kierunek} { 
+    		#if {"$tmproomexits[$kierunki[$kierunek]]" == ""} {
+       		 	#var drakkary[%2][linkto] {$kierunki[$kierunek]};
+       		 	#map at {$drakkary[%2][foundat]} {#map link $drakkary[%2][linkto] $drakkary[%2][id] both;};
+        		broadcast LINKB $drakkary[%2][foundat] $drakkary[%2][linkto] $drakkary[%2][id];
+    			broadcast MEXIT $drakkary[%2][foundat] $drakkary[%2][linkto] $drakkary[%2][id] wejdz na $drakkary[%2][typ];
+			#break;
+		};
+	};
+     };
+} {1};
