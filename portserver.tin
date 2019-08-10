@@ -1,7 +1,7 @@
 #nop INIT;
 #port uninit;
 #port init brain 5016;
-#map read tools/mapkatt.map;
+#map read bundles/TTMap/map.amp;
 #map goto 1;
 #list userList clear;
 #unvar userDetails;
@@ -75,7 +75,7 @@
 	#map at {1} {#map get roomdata vroomdata};
 	#math vroomdata {$vroomdata + 1};
 	#map at {1} {#map set roomdata $vroomdata};
-	#map write tools/mapkatt.map;
+	#map write bundles/TTMap/map.map;
 	load_dynamics;
 };
 
@@ -142,7 +142,7 @@
     #map set roomsymbol {<178>i<088>};
     #format {_p_c_stamp_} {%t} {%Y-%m-%d %H:%M:%S};
     #line substitute variables {
-        #system {echo "$_p_c_stamp_ %2" 2>/dev/null >> notes/%1};
+        #system {echo "$_p_c_stamp_ %2" 2>/dev/null >> bundles/TTMap/%1};
     };
     broadcast NOTE %1;
     mapsave;
