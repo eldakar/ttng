@@ -163,32 +163,25 @@
 #action {<PORT> MCREATE %d %w} {
     #map at {%1} {#map dig %2};
     loading_banner;
-    #line gag;
 } {1};
 
 #action {<PORT> MARK %1 %2} {
     #map at {%1} {#map set roomarea %2};
     #map at {%1} {#map set roomcolor $c_rooms[%2]};
     loading_banner;
-    #line gag;
 } {1};
 
 
 #action {<PORT> DEL %1 %2} {
     #map at {%1} {#map del %2};
     loading_banner;
-    #line gag;
 } {1};
 
 
 #action {<PORT> NOTE %1} {
     #map at {%1} {#map set roomsymbol {<178>!<088>}};
     loading_banner;
-    #line gag;
 } {1};
-
-
-
 
 #action {<PORT> HIDE %1 %2} {
     #map at {%1} {
@@ -197,7 +190,6 @@
         };
     };
     loading_banner;
-    #line gag;
 } {1};
 
 #action {<PORT> UNHIDE %1 %2} {
@@ -207,7 +199,6 @@
         };
     };
     loading_banner;
-    #line gag;
 } {1};
 
 #action {<PORT> LINKB %d %w %d} {
@@ -216,7 +207,6 @@
             #map link %2 %3 both;
         };
     };
-    #line gag;
 } {1};
 
 #action {<PORT> UNLINKB %d %w} {
@@ -226,7 +216,6 @@
         };
     };
     loading_banner;
-    #line gag;
 } {1};
 
 #action {<PORT> LINK %d %w %d} {
@@ -236,7 +225,6 @@
         };
     };
     loading_banner;
-    #line gag;
 } {1};
 
 #action {<PORT> UNLINK %d %w} {
@@ -246,7 +234,6 @@
         };
     };
     loading_banner;
-    #line gag;
 } {1};
 
 
@@ -258,7 +245,6 @@
     #map undo;
     #map link {%3} $tmproomvnum;
     loading_banner;
-    #line gag;
 };
 
 
@@ -289,7 +275,6 @@
 #action {<PORT> EVENT %d} {
     #map at {%1} {#map set roomsymbol {<168>@<088>}};
     loading_banner;
-    #line gag;
 } {1};
 
 #action {<PORT> ROOMSHORT %d} {
@@ -300,9 +285,7 @@
         };
     };
     loading_banner;
-    #line gag;
 };
-
 
 #action {<PORT> ROOMEXITS %d} {
     #map at {%1} {
@@ -312,12 +295,7 @@
         };
     };
     loading_banner;
-    #line gag;
 };
-
-
-
-
 
 #action {<PORT> COLOR %d %S} {
     #var tmpsymbol {%2};
@@ -325,7 +303,6 @@
     #replace {tmpsymbol} {+} {>};
     #map at {%1} {#map set roomcolor {$tmpsymbol}};
     loading_banner;
-    #line gag;
 };
 
 #action {chats to you, 'DOWNLOAD MAP'} {

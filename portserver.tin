@@ -322,7 +322,7 @@
 #var kierunki[8] {w};
 
 
-#action {<PORT> DRAKKAR %d %w'} {
+#action {<PORT> DRAKKAR %d %w} {
     #var tmpdrakkid {$drakkary[%2][id]};
     #var tmpfoundat {$drakkary[%2][foundat]};
     #var tmplinkto {$drakkary[%2][linkto]};
