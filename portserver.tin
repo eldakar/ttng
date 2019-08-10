@@ -230,7 +230,7 @@
 #action {<PORT> COLOR %d %.} {
     #nop UNCOLOR THE PREVIOUS ROOM IF SET;
     #if {$beacon[%2][roomid] > 0} {
-        broadcast {COLOR $beacon[%2][roomid] $beacon[%2][oldsym]};
+        broadcast COLOR $beacon[%2][roomid] $beacon[%2][oldsym];
     };
     #map at {%1} {#map get roomcolor tmpsymbol};
     #replace {tmpsymbol} {<} {-};
@@ -262,7 +262,7 @@
 #nop new event, subscribers' mapevents.tin should be reloaded;
 #nop ###################################;
 #action {<PORT> EVENT %d %*} {
-    broadcast {EVENT %1 %2};
+    broadcast EVENT %1 %2;
     #map at {%1} {#map set roomsymbol {<168>@<088>}};
     #line substitute {variables} {
         #system {echo "#event {MAP ENTER ROOM %1} {%2};" >> mapevents.tin};
@@ -272,7 +272,7 @@
 };
 
 #action {<PORT> COMMAND %d %*} {
-    broadcast {COMMAND %1 %2};
+    broadcast COMMAND %1 %2;
     #map at {%1} {#map set roomsymbol {<138>E<088>}};
     #line substitute {variables} {
         #system {echo "#event {MAP ENTER ROOM %1} {%2};" >> mapevents.tin};

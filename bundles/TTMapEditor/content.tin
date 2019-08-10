@@ -184,7 +184,8 @@
     #replace {tmpsymbol} {+} {>};
     #line substitute {variables} {
         #rpg #map at {%1} {#map set roomcolor {$tmpsymbol}};
-        #mapka {COLOR %1 %2};
+        #mapka #port send $mapkaId COLOR %1 %2;
+        #nop mapka {COLOR %1 %2};
     };
 };
 
@@ -193,6 +194,8 @@
         #rpg #var brainId %1;
     };
 };
+
+#mapka #action {<PORT> }
 
 #alias {show_ponged_error} {
     #echo {${c_stan_niski}> Mapa: niepolaczona!};

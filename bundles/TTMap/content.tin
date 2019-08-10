@@ -213,5 +213,11 @@
 #nop ################################################################;
 
 #mapka #alias {GOTO %d} {#port send $connectorId {GOTO %1};};
-#mapka #action {<PORT> Connection made to %S.} {#var connectorId %1;};
+#mapka #action {<PORT> Connection made to %S.} {
+    #var connectorId %1;
+    #line substitute {variables} {
+        #rpg #var mapkaId %1;
+    };
+
+};
 #mapka #action {<PORT> WALK %d} {#line substitute {variables} {#rpg #map run {%1} {0.5}}};
