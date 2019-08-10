@@ -11,6 +11,7 @@
     #if {"$connstr[1]" != ""} {
         #if {"$connstr[2]" != ""} {
             #delay {1} {
+                #echo {<158>TTMapEditor: Probing $connstr[1] @ $connstr[2]};
                 #brain #port call {$connstr[1]} {$connstr[2]}
             };
             #delay {1.5} {
@@ -195,34 +196,49 @@
 };
 
 #brain #action {<PORT> Connection made to %S.} {
+    #echo {<158>TTMapEditor: <118>Connected.};
     #line substitute {variables} {
         #rpg #var brainId %1;
     };
 };
 
+#brain #action {<PORT> CHECKSUM %d} {
+    #line substitute {variables} {
+        #rpg {
+            #map at {1} {#map get roomdata tmprd};
+            #if {"$tmprd" == "%1"} {
+                #echo {<158>TTMapEditor: <128>Maps are in sync, writing is enabled!};
+                #var PONGED 2;
+            } {
+                #echo {<158>TTMapEditor: <138>Maps are not in sync, writing is disabled!};
+                #var PONGED 1;
+            };
+        };
+    };
+}
 #alias {show_ponged_error} {
-    #echo {${c_stan_niski}> Mapa: niepolaczona!};
+    #echo {<158>TTMapEditor: <118>You are not connected!<088>};
 };
 
 #alias {show_ponged_error2} {
-    #echo {${c_stan_niski}> Mapa: polaczona, lecz nie mozna zapisywac.};
+    #echo {<158>TTMapEditor: <138>Read-only mode: Please pull the latest map.<088>};
 };
 
 #alias {/r$} {
-    #if {$PONGED == 1} {
+    #if {$PONGED > 0} {
         #map get roomvnum tmproomvnum;
         #line substitute {variables} {#brain {#port send $brainId {COLOR $tmproomvnum R}}}; 
     } {show_ponged_error};
 } {1};
 #alias {/y$} {
-    #if {$PONGED == 1} {
+    #if {$PONGED > 0} {
         #map get roomvnum tmproomvnum;
         #line substitute {variables} {#brain {#port send $brainId {COLOR $tmproomvnum Y}}};
     } {show_ponged_error};
 } {1};
 
 #alias {/c$} {
-    #if {$PONGED == 1} {
+    #if {$PONGED > 0} {
         #line substitute {variables} {#brain {#port send $brainId {CLEAR}}};
     } {show_ponged_error};
 } {1};

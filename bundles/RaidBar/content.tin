@@ -123,7 +123,7 @@
     };
 };
 
-#ticker {RaidTableRefresh} {
+#unticker {RaidTableRefresh} {
     #list duch size {RaidTableAdjustValue};
     #if {$global_bundle_slots_values[prompt][top] > $RaidTableAdjustValue} {
         

@@ -16,7 +16,7 @@
 #nop SEND DYNAMICS;
     refresh_dynamics;
     refresh_beacons;
-#nop wyslij checksum;
+#nop wyslij checksum;   
     #map at {1} {#map get roomdata vrd};
     #port send %2 CHECKSUM $vrd;
 #nop TODO EVENTS;
@@ -43,6 +43,7 @@
 
 
 #alias {serverinfo} {
+    #map at {1} {#map get roomdata MapStampValue};
 	#list userList size uls;
 	#port send %0 {INFO: Welcome to the TTMap server.};
 	#port send %0 {INFO: Number of active sessions: $uls.};
@@ -75,6 +76,7 @@
 	#map at {1} {#map get roomdata vroomdata};
 	#math vroomdata {$vroomdata + 1};
 	#map at {1} {#map set roomdata $vroomdata};
+    #map at {1} {#map get roomdata MapStampValue};
 	#map write bundles/TTMap/map.map;
 	load_dynamics;
 };
