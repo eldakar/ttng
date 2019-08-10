@@ -311,7 +311,7 @@
     #line gag;
 };
 
-#action {chats to you, 'COLOR %d %S'} {
+#action {<PORT> COLOR %d %S} {
     #var tmpsymbol {%2};
     #replace {tmpsymbol} {-} {<};
     #replace {tmpsymbol} {+} {>};
