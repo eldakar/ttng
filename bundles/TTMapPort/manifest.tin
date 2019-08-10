@@ -1,0 +1,15 @@
+#var bundle_name {TTMapPort};
+#var bundle_data {0};
+#var bundle_content {1};
+
+#list bundle_configs clear;
+	#list bundle_configs add {TTMapPortAddress};
+	
+#list bundle_slots clear;
+
+#list bundle_deps clear;
+	#list bundle_deps add {TTMap};
+
+#list bundle_alias clear;
+
+#var bundle_ready @bundleops_validate{};

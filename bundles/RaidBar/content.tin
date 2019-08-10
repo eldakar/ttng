@@ -125,7 +125,7 @@
 
 #ticker {RaidTableRefresh} {
     #list duch size {RaidTableAdjustValue};
-    #if {$global_bundle_slots_values[prompt][top] != $RaidTableAdjustValue} {
+    #if {$global_bundle_slots_values[prompt][top] > $RaidTableAdjustValue} {
         
         #math global_bundle_slots_values[prompt][top] {$ConfigManager_Configs[RaidBarDynamicTop] + 0};
 
@@ -136,5 +136,17 @@
         #nop Dependency: SplitRefresh;
         SplitRefreshRequestRefresh;
     };
+    #elseif {$global_bundle_slots_values[prompt][top] < $RaidTableAdjustValue} {
+        
+        #math global_bundle_slots_values[prompt][top] {$ConfigManager_Configs[RaidBarDynamicTop] + 0};
+
+        #if {$global_bundle_slots_values[prompt][top] < 1} {
+            #var ConfigManager_Configs[RaidBarDynamicTop] {10};
+            #var global_bundle_slots_values[prompt][top] {10};
+        };
+        #nop Dependency: SplitRefresh;
+        SplitRefreshRequestRefresh;
+    };
+
 } {3};
 

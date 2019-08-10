@@ -282,7 +282,7 @@
 #alias {/map dig %w} {
     #if {$PONGED == 2} {
     #map get roomvnum v;
-    #chat message brain {MCREATE $v %1};
+    #line substitute {variables} {#brain {#port send $brainId {MCREATE $v %1}}};
     } {show_ponged_error2};
 } {1};
 

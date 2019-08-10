@@ -27,7 +27,7 @@
 	#bell;
 	#map get roomvnum krakkenat;
 	#if {$PONGED > 0} {
-		#chat message brain {DRAKKAR $krakkenat $tmpdrakkarname};
+		#line substitute {variables} {#brain {#port send $brainId {DRAKKAR $krakkenat $tmpdrakkarname}}};
 	};
 }
 

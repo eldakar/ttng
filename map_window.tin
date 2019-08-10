@@ -158,13 +158,13 @@
 }
 
 
-#action {<CHAT> %S chats to you, 'MCREATE %d %w'} {
-    #map at {%2} {#map dig %3};
+#action {<PORT> MCREATE %d %w} {
+    #map at {%1} {#map dig %2};
     loading_banner;
     #line gag;
 } {1};
 
-#action {<CHAT> %S chats to you, 'MARK %1 %2'} {
+#action {<PORT> MARK %1 %2} {
     #map at {%1} {#map set roomarea %2};
     #map at {%1} {#map set roomcolor $c_rooms[%2]};
     loading_banner;
@@ -172,21 +172,21 @@
 } {1};
 
 
-#action {<CHAT> %S chats to you, 'DEL %1 %2'} {
+#action {<PORT> DEL %1 %2} {
     #map at {%1} {#map del %2};
     loading_banner;
     #line gag;
 } {1};
 
 
-#action {<CHAT> %S chats to you, 'NOTE %1'} {
+#action {<PORT> NOTE %1} {
     #map at {%1} {#map set roomsymbol {<178>!<088>}}
     loading_banner;
     #line gag;
 } {1};
 
 
-#action {<CHAT> %S chats to you, 'HIDE %1 %2'} {
+#action {<PORT> HIDE %1 %2} {
     #map at {%1} {
         #line substitute variables {
             #map exitflag %2 hide on;
@@ -196,7 +196,7 @@
     #line gag;
 } {1};
 
-#action {<CHAT> %S chats to you, 'UNHIDE %1 %2'} {
+#action {<PORT> UNHIDE %1 %2} {
     #map at {%1} {
         #line substitute variables {
             #map exitflag %2 hide off;
@@ -206,39 +206,39 @@
     #line gag;
 } {1};
 
-#action {<CHAT> %S chats to you, 'LINKB %d %w %d'} {
-    #map at {%2} {
+#action {<PORT> LINKB %d %w %d} {
+    #map at {%1} {
         #line substitute variables {
-            #map link %3 %4 both;
+            #map link %2 %3 both;
         };
     };
     #line gag;
 } {1};
 
-#action {<CHAT> %S chats to you, 'UNLINKB %d %w'} {
-    #map at {%2} {
+#action {<PORT> UNLINKB %d %w} {
+    #map at {%1} {
         #line substitute variables {
-            #map unlink %3 both;            
-        };
-    };
-    loading_banner;
-    #line gag;
-} {1};
-
-#action {<CHAT> %S chats to you, 'LINK %d %w %d'} {
-    #map at {%2} {
-        #line substitute variables {
-            #map link %3 %4;
+            #map unlink %2 both;            
         };
     };
     loading_banner;
     #line gag;
 } {1};
 
-#action {<CHAT> %S chats to you, 'UNLINK %d %w'} {
-    #map at {%2} {
+#action {<PORT> LINK %d %w %d} {
+    #map at {%1} {
         #line substitute variables {
-            #map unlink %3;         
+            #map link %2 %3;
+        };
+    };
+    loading_banner;
+    #line gag;
+} {1};
+
+#action {<PORT> UNLINK %d %w} {
+    #map at {%1} {
+        #line substitute variables {
+            #map unlink %2;         
         };
     };
     loading_banner;
@@ -246,13 +246,13 @@
 } {1};
 
 
-#action {<CHAT> %S chats to you, 'MEXIT %d %w %*'} {
-    #map goto %2;
-    #map exit %3 command {%4};
-    #map move %3;
+#action {<PORT> MEXIT %d %w %*} {
+    #map goto %1;
+    #map exit %2 command {%3};
+    #map move %2;
     #map get roomvnum tmproomvnum;
     #map undo;
-    #map link {%4} $tmproomvnum;
+    #map link {%3} $tmproomvnum;
     loading_banner;
     #line gag;
 };
@@ -283,13 +283,13 @@
 };
 
 
-#action {chats to you, 'EVENT %d'} {
+#action {<PORT> EVENT %d} {
     #map at {%1} {#map set roomsymbol {<168>@<088>}};
     loading_banner;
     #line gag;
 } {1};
 
-#action {chats to you, 'ROOMSHORT %d'} {
+#action {<PORT> ROOMSHORT %d} {
     #map at {%1} {
         #map get roomsymbol vroomsymbol;
         #if {"$vroomsymbol" == "<faa>?<088>"} {
@@ -300,7 +300,7 @@
     #line gag;
 };
 
-#action {chats to you, 'ROOMEXITS %d'} {
+#action {<PORT> ROOMEXITS %d' {
     #map at {%1} {
         #map get roomcolor vroomcolor;
         #if {"$vroomcolor" == "<faa>"} {
