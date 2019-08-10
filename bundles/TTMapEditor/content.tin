@@ -15,7 +15,7 @@
             };
             #delay {1.5} {
                 #line substitute variables {
-                    #brain #var mapkaId %1;
+                    #brain #var mapkaId $mapkaId;
                 };
             }
         };
