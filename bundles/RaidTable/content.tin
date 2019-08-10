@@ -78,21 +78,24 @@
 #nop ###################################################################;
 #nop dla kazdej postaci w tablicy przypozadkuj dany typ;
 #alias {assign_type} {
- #list wrogi {clear};
- #var wrogi_index 0;
+    #list wrogi {clear};
+    #var wrogi_index 0;
      #var neut_index 0;
     #list neut {clear};
-	    #var team_index 0;
+        #var team_index 0;
     #list team {clear};
 
     #format {screenrows} {%R};
     #var localcnt {1};
 
     #foreach {$duch[]} {dudu} {
-	   #var duch[$dudu][enemies] {0};
+       #var duch[$dudu][enemies] {0};
     };
 
     #foreach {$duch[]} {dudu} {
+
+#format {duchtrue} {%L} {$duch[$dudu][living]};
+#if {$duchtrue > 2} {
 
  	#var duch[$dudu][bot] {};
         #var duch[$dudu][shown] {0};
@@ -188,6 +191,9 @@
                 #math team_index {$team_index + 1};
                 #list team {insert} {$team_index} {$dudu};
             };
+
+};
+
 
     }; #nop foreach duch;
 };

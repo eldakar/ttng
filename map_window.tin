@@ -357,9 +357,9 @@
                         #map get roomarea cp_roomarea;
                     };
                     #line substitute variables {
-                    #alias {walk$cpcmd} {
-                        #chat message all {WALK $vcpv};
-                    };
+                        #alias {walk$cpcmd} {
+                            #port send $connectorId {WALK $vcpv};
+                        };
                     };
                     
                     #format {cpd_runcmd} {%-2s %.2s} {$cpcmd};
@@ -380,14 +380,11 @@
     #sh {<ABA><178> MAPA <088>} {1} {1};
 } {1};
 
-#action {<PORT> Closing connection} {
+#action {<PORT> New connection: %* D%d.} {#var connectorId %2;};
+#action {<PORT> Closing connection to %*} {
     #port uninit;
     #end {Polaczenie zostalo przerwane. Uzyj komendy<128>./ttmux<088> aby uruchomic ponowie};
 }
 #action {<PORT> GOTO %d} {
     #map goto %1;
 }
-#action {+++EXIT+++} {
-    #chat uninit;
-    #end;
-} {1};

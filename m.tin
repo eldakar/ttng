@@ -20,7 +20,7 @@
     #read bundles/CharacterClass/manifest.tin;
     #read bundles/CombatMacros/manifest.tin;
     #read bundles/Equipment/manifest.tin;
-    #read bundles/CommandHistory/manifest.tin;
+    #nop read bundles/CommandHistory/manifest.tin;
     #read bundles/TTMap/manifest.tin;
     #read bundles/TTMapFollow/manifest.tin;
     #read bundles/TTMapFreezer/manifest.tin;
