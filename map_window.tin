@@ -1,21 +1,21 @@
 #event {PROGRAM START} {
-	#var cport %0;
+    #var cport %0;
     #port uninit ${cport}5;
     #port init mapka ${cport}5;
     
-	#map read bundles/TTMap/map.map;
-	#map flag vtmap on;
-	#map flag unicodegraphics on;
+    #map read bundles/TTMap/map.map;
+    #map flag vtmap on;
+    #map flag unicodegraphics on;
     #map goto 1;
-	#config mouse on;
-	#delay {3} {
-		#format sw {%R};
-		#split $sw 0;
-		#format {screen_rows} {%R};
-	    #format {screen_cols} {%C};
-	    #math deltaY {$screen_cols / 10};
-	    #math deltaX {$splitrows / 10};
-	};
+    #config mouse on;
+    #delay {3} {
+        #format sw {%R};
+        #split $sw 0;
+        #format {screen_rows} {%R};
+        #format {screen_cols} {%C};
+        #math deltaY {$screen_cols / 10};
+        #math deltaX {$splitrows / 10};
+    };
 };
 #event {SCREEN RESIZE} {
     #format sw {%R};
@@ -42,8 +42,8 @@
 #var c_rooms[storage] {<118><fca>};
 
 #action {chats to you, '%d'} {
-	#map goto %1;
-	#line gag;
+    #map goto %1;
+    #line gag;
 };
 
 #event {MAP DOUBLE-CLICKED MOUSE BUTTON ONE} {
@@ -61,33 +61,33 @@
 
 #sh {$centreY $centreX $MapLegendFolded};
     #if {$centreY == 1} {
-	#if {$centreX < 7} {
-		#if {$MapLegendFolded == 1} {
-			#var MapLegendFolded 0;
-        		/zadania;
-	#delay {0.3} {
-    			#sh {<ABA><178> MAPA <088>} {1} {1};
-			#foreach {$cplist} {cpl} {
-				#if {$cpl <= $sw} {
-					#if {$cpl > 1} {
-					#sh {$cplist[$cpl]} {$cpl} {1};
-					};
-        			};
-    			};    
-			#nop UNFOLD;
-	};
-		} {
-			#var MapLegendFolded 1;
-			#map goto $currentRoom;
-			#nop FOLD;
-		};
-	};
+    #if {$centreX < 7} {
+        #if {$MapLegendFolded == 1} {
+            #var MapLegendFolded 0;
+                /zadania;
+    #delay {0.3} {
+                #sh {<ABA><178> MAPA <088>} {1} {1};
+            #foreach {$cplist} {cpl} {
+                #if {$cpl <= $sw} {
+                    #if {$cpl > 1} {
+                    #sh {$cplist[$cpl]} {$cpl} {1};
+                    };
+                    };
+                };    
+            #nop UNFOLD;
+    };
+        } {
+            #var MapLegendFolded 1;
+            #map goto $currentRoom;
+            #nop FOLD;
+        };
+    };
     } {
-	#if {$MapLegendFolded == 0} {
-	    	#if {$centreX < 4} {
-        		walk$centreY;
-    		};
-    	};
+    #if {$MapLegendFolded == 0} {
+            #if {$centreX < 4} {
+                walk$centreY;
+            };
+        };
     };
 }
 
@@ -98,6 +98,8 @@
         #undelay {PATH %*}
     };
 }
+
+
 
 #var eventcounter 0;
 #event {MOVED MOUSE BUTTON ONE}
@@ -180,10 +182,12 @@
 
 
 #action {<PORT> NOTE %1} {
-    #map at {%1} {#map set roomsymbol {<178>!<088>}}
+    #map at {%1} {#map set roomsymbol {<178>!<088>}};
     loading_banner;
     #line gag;
 } {1};
+
+
 
 
 #action {<PORT> HIDE %1 %2} {
@@ -282,7 +286,6 @@
     #delay {downloader} {#sh { } {-3};} {1};
 };
 
-
 #action {<PORT> EVENT %d} {
     #map at {%1} {#map set roomsymbol {<168>@<088>}};
     loading_banner;
@@ -300,7 +303,8 @@
     #line gag;
 };
 
-#action {<PORT> ROOMEXITS %d' {
+
+#action {<PORT> ROOMEXITS %d} {
     #map at {%1} {
         #map get roomcolor vroomcolor;
         #if {"$vroomcolor" == "<faa>"} {
@@ -310,6 +314,10 @@
     loading_banner;
     #line gag;
 };
+
+
+
+
 
 #action {<PORT> COLOR %d %S} {
     #var tmpsymbol {%2};
@@ -388,3 +396,6 @@
 #action {<PORT> GOTO %d} {
     #map goto %1;
 }
+
+
+
