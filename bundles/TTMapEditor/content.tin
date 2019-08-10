@@ -13,6 +13,11 @@
             #delay {1} {
                 #brain #port call {$connstr[1]} {$connstr[2]}
             };
+            #delay {1.5} {
+                #line substitute variables {
+                    #brain ##var mapkaId %1;
+                };
+            }
         };
     };
 };
