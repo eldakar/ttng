@@ -8,226 +8,190 @@
     #replace tmp {,} {;};
     #list connstr create {$tmp};
     #unvar tmp;
-    #if {"$PONGED" != "0"} {
-        #chat zap brain;
-    } {
-        #if {"$connstr[1]" != ""} {
-            #if {"$connstr[2]" != ""} {
-                #delay {3} {#chat call {$connstr[1]} {$connstr[2]}};
+    #if {"$connstr[1]" != ""} {
+        #if {"$connstr[2]" != ""} {
+            #delay {1} {
+                #brain #port call {$connstr[1]} {$connstr[2]}
             };
         };
     };
 };
-#action {<CHAT> %*ZNALEZIONY} {
-    #line gag;
-} {8};
 
-#action {Connection made to brain.} {
-    #var PONGED 1;
-};
-
-#action {brain chats to everyone, 'MCREATE %1 %2'} {
-    #map at {%1} {#map dig %2};
-    #chat message mapka {MCREATE %1 %2};
-    #if {$profiles_mapdebug == 1} {
-        #echo {${c_arkatt}> Mapa: Tworze pokoj.<088>};
+#brain #action {<PORT> MCREATE %1 %2} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {#map dig %2};
+        #mapka {MCREATE %1 %2};
     };
-    #line gag;
 } {1};
 
-#action {brain chats to everyone, 'MARK %d %w'} {
-    #map at {%1} {#map set roomarea %2};
-    #map at {%1} {#map set roomcolor $c_rooms[%2]};
-    #map at {%1} {#map set roomarea %2};
-    #if {$profiles_mapdebug == 1} {
-        #echo {${c_arkatt}> Mapa: Ustawiam kolor.<088>};
+#brain #action {<PORT> MARK %d %w} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {#map set roomarea %2};
+        #rpg #map at {%1} {#map set roomcolor $c_rooms[%2]};
+        #rpg #map at {%1} {#map set roomarea %2};
+        #mapka {MARK %1 %2};
     };
-    #chat message mapka {MARK %1 %2};
-    #line gag;
 } {1};
 
-#action {brain chats to everyone, 'MARK %d %w %*'} {
-    #map at {%1} {#map set roomarea %2};
-    #map at {%1} {#map set roomcolor $c_rooms[%2]};
-    #map at {%1} {#map set roomnote %3};
-    #if {$profiles_mapdebug == 1} {
-        #echo {${c_arkatt}> Mapa: Ustawiam kolor.<088>};
-    };
-    #chat message mapka {MARK %1 %2};    
-	#line gag;
+#brain #action {<PORT> MARK %d %w %*} {
+    #line substitute {variables} {
+        #map at {%1} {#map set roomarea %2};
+        #map at {%1} {#map set roomcolor $c_rooms[%2]};
+        #map at {%1} {#map set roomnote %3};
+        #mapka {MARK %1 %2};    
+	};
 } {1};
 
-#action {brain chats to everyone, 'DEL %1 %2'} {
-    #map at {%1} {#map del %2};
-    #chat message mapka {DEL %1 %2};
-    #if {$profiles_mapdebug == 1} {
-        #echo {${c_arkatt}> Mapa: Usuwam pokoj.<088>};  
+#brain #action {<PORT> DEL %1 %2} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {#map del %2};
+        #mapka {DEL %1 %2};
     };
-    #line gag;
 } {1};
 
-#action {brain chats to everyone, 'NOTE %1 %*'} {
-    #map at {%1} {#map set roomsymbol {<178>i<088>}};
-    #chat message mapka {NOTE %1};
-    #if {$profiles_mapdebug == 1} {
-        #echo {${c_arkatt}> Mapa: Dodaje notke.<088>};
+#brain #action {<PORT> NOTE %1 %*} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {#map set roomsymbol {<178>i<088>}};
+        #mapka {NOTE %1};
     };
-    #line gag;
 } {1};
 
-#action {brain chats to everyone, 'EVENT %d %*'} {
-    #map at {%1} {#map set roomsymbol {<168>@<088>}};
-    #chat message mapka {EVENT %1};
-    #if {$profiles_mapdebug == 1} {
-        #echo {${c_arkatt}> Mapa: Dodaje event.<088>};
+#brain #action {<PORT> EVENT %d %*} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {#map set roomsymbol {<168>@<088>}};
+        #rpg #event {MAP ENTER ROOM $tmproomvnum} {QB %2};
+        #mapka {EVENT %1};
     };
-    #event {MAP ENTER ROOM $tmproomvnum} {QB %2};
-    #line gag;
 } {1};
 
-#action {brain chats to everyone, 'COMMAND %d %*'} {
-    #map at {%1} {#map set roomsymbol {<138>E<088>}};
-    #chat message mapka {COMMAND %1};
-    #if {$profiles_mapdebug == 1} {
-        #echo {${c_arkatt}> Mapa: Dodaje auto-komende.<088>};
+#brain #action {<PORT> COMMAND %d %*} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {#map set roomsymbol {<138>E<088>}};
+        #mapka {COMMAND %1};
+        #rpg #event {MAP ENTER ROOM $tmproomvnum} {%2};
     };
-    #event {MAP ENTER ROOM $tmproomvnum} {%2};
-    #line gag;
 } {1};
 
 
-#action {brain chats to everyone, 'ROOMSHORT %d %*'} {
-    #map at {%1} {
-        #map get roomsymbol vroomsymbol;
-        #map set roomdesc {%2};
-        #chat message mapka {ROOMSHORT %1};
-        #if {"$vroomsymbol" == "<faa>?<088>"} {
-            #map set roomsymbol {};
+#brain #action {<PORT> ROOMSHORT %d %*} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {
+            #map get roomsymbol vroomsymbol;
+            #map set roomdesc {%2};
+            #if {"$vroomsymbol" == "<faa>?<088>"} {
+                #map set roomsymbol {};
+            };
         };
-
+        #mapka {ROOMSHORT %1};
     };
-    #if {$profiles_mapdebug == 1} {
-        #echo {${c_arkatt}> Mapa: Dodaje krotki opis.<088>};
-    };
-    #line gag;
 };
 
-#action {brain chats to everyone, 'ROOMEXITS %d %*'} {
-    #map at {%1} {
-        #map set roomname {%2};
-        #map get roomcolor vroomcolor;
-        #if {"$vroomcolor" == "<faa>"} {
-            #map set roomcolor {};
+#brain #action {<PORT> ROOMEXITS %d %*} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {
+            #map set roomname {%2};
+            #map get roomcolor vroomcolor;
+            #if {"$vroomcolor" == "<faa>"} {
+                #map set roomcolor {};
+            };
         };
+        #mapka {ROOMEXITS %1};
     };
-    #if {$profiles_mapdebug == 1} {
-        #echo {${c_arkatt}> Mapa: Dodaje dostepne wyjscia.<088>};
-    };    
-	#nop line gag;
 };
 
-#action {brain chats to everyone, 'NAME %d %*'} {
-    #map at {%1} {
-        #map set roomnote {%2};
-    };
-    #if {$profiles_mapdebug == 1} {
-        #echo {${c_arkatt}> Mapa: Dodaje typ pokoju.<088>};
-    };    
-	#line gag;
+#brain #action {<PORT> NAME %d %*} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {
+            #map set roomnote {%2};
+        };
+	};
 }
 
-#action {brain chats to everyone, 'HIDE %d %w'} {
-    #map at {%1} {
-        #line substitute variables {#map exitflag %2 hide on};
+#brain #action {<PORT> HIDE %d %w} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {
+            #line substitute variables {#map exitflag %2 hide on};
+        };
+        #mapka {HIDE %1 %2};
     };
-    #if {$profiles_mapdebug == 1} {
-        #echo {${c_arkatt}> Mapa: Ukrywam pokoj.<088>};
-    };
-    #chat message mapka {HIDE %1 %2};
-    #line gag;
 }
 
-#action {brain chats to everyone, 'UNHIDE %d %w'} {
-    #map at {%1} {
-        #line substitute variables {#map exitflag %2 hide off};
+#brain #action {<PORT> UNHIDE %d %w} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {
+            #line substitute variables {#map exitflag %2 hide off};
+        };
+        #mapka {UNHIDE %1 %2};
     };
-    #if {$profiles_mapdebug == 1} {
-        #echo {${c_arkatt}> Mapa: Odslaniam pokoj.<088>};
-    };
-    #chat message mapka {UNHIDE %1 %2};
-    #line gag;
 };
 
-#action {brain chats to everyone, 'LINKB %d %w %d'} {
-    #map at {%1} {
-        #line substitute variables {
-            #map link %2 %3 both;
+#brain #action {<PORT> LINKB %d %w %d} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {
+            #line substitute variables {
+                #map link %2 %3 both;
+            };
+        };
+        #mapka {LINKB %1 %2 %3};
+    };
+};
+
+#brain #action {<PORT> UNLINKB %d %w} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {
+            #line substitute variables {
+                #map unlink %2 both;            
+            };
+        };
+        #mapka {UNLINKB %1 %2};
+	};
+};
+
+#brain #action {<PORT> LINK %d %w %d} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {
+            #line substitute variables {
+                #map link %2 %3;
+            };
+        };
+        #mapka {LINK %1 %2 %3};
+    };
+};
+
+#brain #action {<PORT> UNLINK %d %w} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {
+            #line substitute variables {
+                #map unlink %2;         
+            };
+        };
+        #mapka {UNLINK %1 %2};
+    };
+};
+
+#brain #action {<PORT> MEXIT %d %w %d %*} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {
+            #map exit %2 command {%4};
+            #map link {%4} %3;
         };
     };
-    #chat message mapka {LINKB %1 %2 %3};
-    #if {$profiles_mapdebug == 1} {
-        #echo {${c_arkatt}> Mapa: Lacze pokoje dwostronnie.<088>};
-    };    
-	#line gag;
 };
 
-#action {brain chats to everyone, 'UNLINKB %d %w'} {
-    #map at {%1} {
-        #line substitute variables {
-            #map unlink %2 both;            
-        };
-    };
-    #chat message mapka {UNLINKB %1 %2};
-    #if {$profiles_mapdebug == 1} {
-        #echo {${c_arkatt}> Mapa: Rozlaczam pokoje dwostronnie.<088>};
-    };    
-	#line gag;
-};
-
-#action {brain chats to everyone, 'LINK %d %w %d'} {
-    #map at {%1} {
-        #line substitute variables {
-            #map link %2 %3;
-        };
-    };
-     #chat message mapka {LINK %1 %2 %3};
-    #if {$profiles_mapdebug == 1} {
-        #echo {${c_arkatt}> Mapa: Lacze pokoje jednostronnie.<088>};
-    };   
-	#line gag;
-};
-
-#action {brain chats to everyone, 'UNLINK %d %w'} {
-    #map at {%1} {
-        #line substitute variables {
-            #map unlink %2;         
-        };
-    };
-    #chat message mapka {UNLINK %1 %2};
-    #if {$profiles_mapdebug == 1} {
-        #echo {${c_arkatt}> Mapa: Rozlaczam pokoje jednostronnie.<088>};
-    };    
-	#line gag;
-};
-
-#action {brain chats to everyone, 'MEXIT %d %w %d %*'} {
-    #map at {%1} {
-        #map exit %2 command {%4};
-        #map link {%4} %3;
-    };
-    #if {$profiles_mapdebug == 1} {
-        #echo {${c_arkatt}> Mapa: Dodaje wyjscie specjalne.<088>};
-    };    
-	#line gag;
-};
-
-#action {brain chats to everyone, 'COLOR %d %S'} {
+#brain #action {<PORT> COLOR %d %S} {
     #var tmpsymbol {%2};
     #replace {tmpsymbol} {-} {<};
     #replace {tmpsymbol} {+} {>};
-    #map at {%1} {#map set roomcolor {$tmpsymbol}};
-    #chat message mapka {COLOR %1 %2};
-    #line gag;
+    #line substitute {variables} {
+        #rpg #map at {%1} {#map set roomcolor {$tmpsymbol}};
+        #mapka {COLOR %1 %2};
+    };
+};
+
+#brain #action {<PORT> Connection made to %S.} {
+    #line substitute {variables} {
+        #rpg #var brainId %1;
+    };
 };
 
 #alias {show_ponged_error} {
@@ -241,69 +205,69 @@
 #alias {/r$} {
     #if {$PONGED == 1} {
         #map get roomvnum tmproomvnum;
-        #chat message brain {COLOR $tmproomvnum R}    
+        #line substitute {variables} {#brain {#port send $brainId {COLOR $tmproomvnum R}}}; 
     } {show_ponged_error};
 } {1};
 #alias {/y$} {
     #if {$PONGED == 1} {
-    #map get roomvnum tmproomvnum;
-    #chat message brain {COLOR $tmproomvnum Y}
+        #map get roomvnum tmproomvnum;
+        #line substitute {variables} {#brain {#port send $brainId {COLOR $tmproomvnum Y}}};
     } {show_ponged_error};
 } {1};
 
 #alias {/c$} {
     #if {$PONGED == 1} {
-    #chat message brain {CLEAR};
+        #line substitute {variables} {#brain {#port send $brainId {CLEAR}}};
     } {show_ponged_error};
 } {1};
 
 #alias {/disc$} {
     #if {$PONGED == 2} {
         #map get roomvnum voom;
-        #chat message brain {ROOMEXITS $voom $current_room_exits};
-        #chat message brain {ROOMSHORT $voom $current_room_short_desc};
+        #line substitute {variables} {#brain {#port send $brainId {ROOMEXITS $voom $current_room_exits}}};
+        #line substitute {variables} {#brain {#port send $brainId {ROOMSHORT $voom $current_room_short_desc}}};
     } {show_ponged_error2};
 } {1};
 
 #alias {/map link %w %d} {
     #if {$PONGED == 2} {
     #map get roomvnum voom;
-    #chat message brain {LINK $voom %1 %2};
+    #line substitute {variables} {#brain {#port send $brainId {LINK $voom %1 %2}}};
     } {show_ponged_error2};
 } {1};
 
 #alias {/map linkb %w %d} {
     #if {$PONGED == 2} {
     #map get roomvnum voom;
-    #chat message brain {LINKB $voom %1 %2};
+    #line substitute {variables} {#brain {#port send $brainId {LINKB $voom %1 %2}}};
     } {show_ponged_error2};
 } {1};
 
 #alias {/map unlinkb %w} {
     #if {$PONGED == 2} {
     #map get roomvnum voom;
-    #chat message brain {UNLINKB $voom %1};
+    #line substitute {variables} {#brain {#port send $brainId {UNLINKB $voom %1}}};
     } {show_ponged_error2};
 } {1};
 
 #alias {/map unlink %w} {
     #if {$PONGED == 2} {
     #map get roomvnum voom;
-    #chat message brain {UNLINK $voom %1};
+    #line substitute {variables} {#brain {#port send $brainId {UNLINK $voom %1}}};
     } {show_ponged_error2};
 } {1};
 
 #alias {/map hide %w} {
     #if {$PONGED == 2} {
     #map get roomvnum voom;
-    #chat message brain {HIDE $voom %1};
+    #line substitute {variables} {#brain {#port send $brainId {HIDE $voom %1}}};
     } {show_ponged_error2};
 } {1};
 
 #alias {/map unhide %w} {
     #if {$PONGED == 2} {
     #map get roomvnum voom;
-    #chat message brain {UNHIDE $voom %1};
+    #line substitute {variables} {#brain {#port send $brainId {UNHIDE $voom %1}}};
     } {show_ponged_error2};
 } {1};
 
@@ -410,21 +374,21 @@
     #map get roomvnum voom;
 } {1};
 
-#action {brain chats to you, 'CHECKSUM %d'} {
+#action {brain chats to you, 'CHECKSUM %d} {
     #map at 1 {#map get roomdata rudu};
     #chat message brain {CHECKSUM $rudu};
 } {1};
-#action {brain chats to you, 'CHECKSUM OK'} {
+#action {brain chats to you, 'CHECKSUM OK} {
     #var PONGED 2;
 } {1};
 
 #action {<CHAT> File transfer from brain, file: mapkatt.map} {
-    #chat message mapka {DOWNLOAD MAP};
+    #mapka {DOWNLOAD MAP};
     #delay {2} {#chat accept brain 10};
 } {1};
 
 #action {<CHAT> receive_block} {
-    #chat message mapka {DOWNLOAD MAP};
+    #mapka {DOWNLOAD MAP};
     #line gag;
 }
 #action {<CHAT> Transfer of mapkatt.map completed} {
