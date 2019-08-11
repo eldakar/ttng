@@ -127,7 +127,7 @@
             #math diffX {$centreX - $currentX};
         };
 
-        #echo {<128>CTR:(Y:$centreY X:$centreX) <118>NOW:(Y:$currentX X:$currentX)<088>};
+        #echo {%s} {<128>CTR:(Y:$centreY X:$centreX) <118>NOW:(Y:$currentX X:$currentX)<088>};
 
         #if {$currentY > $centreY} {
             #var dirH {n};
@@ -154,7 +154,7 @@
         #if {$currentroomexits[$dir] > 0} {
             #map move $dir;
         };
-        #echo {<178>$dir};
+        #echo {%s} {<178>$dir};
     };
 };
 }

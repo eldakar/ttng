@@ -170,7 +170,7 @@
         };
         #if {$listsize > 2} {
             #if {$listsize < 4} {
-                #echo {Znalazlem pokoj <118><ffa>$current_room_short_desc<088> z wyjsciami na: <118><aff>$current_room_exits<088> $listsize razy.<088>};
+                #echo {%s} {Znalazlem pokoj <118><ffa>$current_room_short_desc<088> z wyjsciami na: <118><aff>$current_room_exits<088> $listsize razy.<088>};
                 
                 #var nearestexitdistance 100000;
                 #var nearestroomid $rmvnum;

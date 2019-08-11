@@ -26,7 +26,6 @@
         #if {$duch[$avatarid][attack_num] > 0} {
             #list team_offenders add {$duch[$avatarid][attack_num]};
         } {
-        #nop sh {$duch[$avatarid][bar][orc]};         
             #if {$r_curLineCnt <= $global_bundle_slots_values[prompt][top]} {
                 #sh {$duch[$avatarid][bar][orc]} {$r_curLineCnt} {1} {};
                 #math r_curLineCnt {$r_curLineCnt + 1};
@@ -39,7 +38,6 @@
                     #if {$duch[$team[$ti]][attack_num] > 0} {
                         #list team_offenders add $duch[$team[$ti]][attack_num];
                     }   {
-                    #nop sh {$duch[$team[$ti]][bar][orc]};
                         #if {$r_curLineCnt <= $global_bundle_slots_values[prompt][top]} {
                             #sh {$duch[$team[$ti]][bar][orc]} {$r_curLineCnt} {1} {};
                             #math r_curLineCnt {$r_curLineCnt + 1};
@@ -47,30 +45,22 @@
                         };
                     };
                 };
-                    #nop var duch[$team[$ti]][shown] {1};
             };
     };
-
-
 #nop PRZECIWNICY DRUZYNY LUB AVATARA;
     #foreach {$team_offenders[]} {to} {
         #var tmpnavigator {1};
         #foreach {$duch[]} {ti} {
             #if {$duch[$ti][shown] < 1} {
-
                 #if {"$duch[$ti][attack_num]" == "$team_offenders[$to]"} {
                     #if {$tmpnavigator == 1} {
                         #var tmpnavigator 0;
-                    #nop sh {$duch[$ti][bar][orc] ${c_stan_niski}---><088> $duch[$duch[$ti][attack_num]][bar][orc]};
                         #if {$r_curLineCnt <= $global_bundle_slots_values[prompt][top]} {
-
                             #sh {$duch[$ti][bar][orc] ${c_stan_niski}---><088> $duch[$duch[$ti][attack_num]][bar][orc]} {$r_curLineCnt} {1} {};
-
                             #math r_curLineCnt {$r_curLineCnt + 1};
                             #var duch[$team_offenders[$to]][shown] {1};
                         };
                     }   {
-                    #nop sh {$duch[$ti][bar][orc] ${c_stan_niski}_/};
                         #if {$r_curLineCnt <= $global_bundle_slots_values[prompt][top]} {
                             #math RaidBarCountUsedLines {$RaidBarCountUsedLines + 1};            
                             #sh {$duch[$ti][bar][orc] ${c_stan_niski}_/} {$r_curLineCnt} {1} {};
@@ -82,11 +72,9 @@
             };
         };  
     };
-
 #nop RESZTA WALCZACYCH WROGOW;
     #foreach {$wrogi[]} {to} {
         #if {$duch[$wrogi[$to]][shown] < 1} {
-        #nop sh {                                            $duch[$wrogi[$to]][bar][orc]};
             #if {$r_curLineCnt <= $global_bundle_slots_values[prompt][top]} {
                 #sh {$duch[$wrogi[$to]][bar][orc]} {$r_curLineCnt} {1} {};
                 #math r_curLineCnt {$r_curLineCnt + 1};
@@ -94,12 +82,11 @@
             };
         };
     };
-
 #nop WROGOWIE niewalczacy;
     #foreach {$wrogi[]} {wr} {
         #if {$duch[$wrogi[$wr]][shown] < 1} {
             #if {$duch[$wrogi[$wr]][attack_num] > 0} {
-                #echo { };
+                #nop;
             } {
             #nop sh {$duch[$wrogi[$wr]][bar][hug]} {$r_curLineCnt};
                 #if {$r_curLineCnt <= $global_bundle_slots_values[prompt][top]} {
@@ -113,7 +100,6 @@
 #nop RESZTA wszystkiego gdzie shown == 0;
     #foreach {$duch[]} {wr} {
         #if {$duch[$wr][shown] < 1} {
-        #nop sh {                                            $duch[$wr][bar][orc]};
             #if {$r_curLineCnt <= $global_bundle_slots_values[prompt][top]} {
                 #sh {$duch[$wr][bar][orc]} {$r_curLineCnt} {1} {};
                 #math r_curLineCnt {$r_curLineCnt + 1};

@@ -11,7 +11,7 @@
     #if {"$connstr[1]" != ""} {
         #if {"$connstr[2]" != ""} {
             #delay {1} {
-                #echo {<158>TTMapEditor: Probing $connstr[1] @ $connstr[2]};
+                #echo {%s} {<158>TTMapEditor: Probing $connstr[1] @ $connstr[2]};
                 #brain #port call {$connstr[1]} {$connstr[2]}
             };
             #delay {1.5} {
@@ -196,7 +196,9 @@
 };
 
 #brain #action {<PORT> Connection made to %S.} {
-    #echo {<158>TTMapEditor: <118>Connected.};
+    #rpg {
+        #echo {%s} {<158>TTMapEditor: <118>Connected.};
+    };
     #line substitute {variables} {
         #rpg #var brainId %1;
     };
@@ -207,21 +209,21 @@
         #rpg {
             #map at {1} {#map get roomdata tmprd};
             #if {"$tmprd" == "%1"} {
-                #echo {<158>TTMapEditor: <128>Maps are in sync, writing is enabled!};
+                #echo {%s} {<158>TTMapEditor: <128>Maps are in sync, writing is enabled!};
                 #var PONGED 2;
             } {
-                #echo {<158>TTMapEditor: <138>Maps are not in sync, writing is disabled!};
+                #echo {%s} {<158>TTMapEditor: <138>Maps are not in sync, writing is disabled!};
                 #var PONGED 1;
             };
         };
     };
 }
 #alias {show_ponged_error} {
-    #echo {<158>TTMapEditor: <118>You are not connected!<088>};
+    #echo {%s} {<158>TTMapEditor: <118>You are not connected!<088>};
 };
 
 #alias {show_ponged_error2} {
-    #echo {<158>TTMapEditor: <138>Read-only mode: Please pull the latest map.<088>};
+    #echo {%s} {<158>TTMapEditor: <138>Read-only mode: Please pull the latest map.<088>};
 };
 
 #alias {/r$} {
@@ -322,7 +324,7 @@
 	#case {"knowledge"} {};
 	#case {"storage"} {};
         #default {
-            #echo {Niedozwolona wartosc: %1};
+            #echo {%s} {Niedozwolona wartosc: %1};
             #return;
         };
     }
@@ -353,7 +355,7 @@
 	#case {"knowledge"} {};
 	#case {"storage"} {};
         #default {
-            #echo {Niedozwolona wartosc: %1};
+            #echo {%s} {Niedozwolona wartosc: %1};
             #return;
         };
     }
