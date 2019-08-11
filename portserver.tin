@@ -1,7 +1,7 @@
 #nop INIT;
 #port uninit;
 #port init brain 5016;
-#map read bundles/TTMap/map.amp;
+#map read bundles/TTMap/map.map;
 #map goto 1;
 #list userList clear;
 #unvar userDetails;
@@ -14,8 +14,10 @@
 	serverinfo %2;
 
 #nop SEND DYNAMICS;
-    refresh_dynamics;
-    refresh_beacons;
+	#delay {5} {
+    		refresh_dynamics;
+    		refresh_beacons;
+	};
 #nop wyslij checksum;   
     #map at {1} {#map get roomdata vrd};
     #port send %2 CHECKSUM $vrd;
@@ -71,12 +73,13 @@
        #map at {$drakkary[wloczega][foundat]} {#map link $drakkary[wloczega][linkto] $drakkary[wloczega][id] both;};
 };
 
+#var commitcount 0;
 #alias mapsave {
 	unload_dynamics;
 	#map at {1} {#map get roomdata vroomdata};
 	#math vroomdata {$vroomdata + 1};
 	#map at {1} {#map set roomdata $vroomdata};
-    #map at {1} {#map get roomdata MapStampValue};
+    	#map at {1} {#map get roomdata MapStampValue};
 	#map write bundles/TTMap/map.map;
 	load_dynamics;
 };
@@ -358,3 +361,22 @@
 	};
      };
 } {1};
+
+#ticker {forkpush} {
+
+#action {sername} {	
+	#send {adam@konczynski.com};
+};
+#action {ssword} {
+	#send {MNc4sZxrRLFc};
+};
+#delay {1} {
+#system {git add mapevents.tin};
+#system {git add bundles/TTMap/map.map};
+#system {git commit -m "map"};
+#run {gitpush} {git push};
+};
+
+
+} {120};
+
