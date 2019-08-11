@@ -311,7 +311,7 @@
             		przestan zaslaniac;
         	};
 	};
-    #macro {\e12~} {
+    #macro {\e[12~} {
         zaslon ob_$team_najslabszy;
             #if {"$pzdjeciezaslon" == "auto"} {
                     przestan zaslaniac;
