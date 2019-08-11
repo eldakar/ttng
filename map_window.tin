@@ -6,6 +6,7 @@
     #map read bundles/TTMap/map.map;
     #map flag vtmap on;
     #map flag unicodegraphics on;
+    #map color background <088>;
     #map goto 1;
     #config mouse on;
     #delay {3} {
