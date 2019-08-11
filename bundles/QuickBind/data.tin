@@ -164,10 +164,6 @@
   #var rr @set_quickbind_blue{plytki};
 }
 
-#action {%* umarl} {
-	_zbierz_;
-};
-
 #action {~^Plytki zostaly wykonane z marmuru w %1 kolorze. Wyraznie odcinaja sie od reszty kamieni, jakimi wybrukowano most. Ich rozmiar odpowiada dokladnie rozmiarowi stopy ogra.$}
 {
   #sh {<118><afa>PLYTKI %1 OK<088>};

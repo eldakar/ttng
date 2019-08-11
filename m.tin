@@ -40,6 +40,7 @@
     #read bundles/PlayerDB/manifest.tin;
     #read bundles/EquipmentStatus/manifest.tin;
     #read bundles/Vehicles/manifest.tin;
+    #read bundles/LootManager/manifest.tin;
     
     #var r @bundleops_loadglobals{};
 

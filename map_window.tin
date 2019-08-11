@@ -11,6 +11,7 @@
     #delay {3} {
         #format sw {%R};
         #split $sw 0;
+        #screen erase all;
         #format {screen_rows} {%R};
         #format {screen_cols} {%C};
         #math deltaY {$screen_cols / 10};
@@ -20,6 +21,7 @@
 #event {SCREEN RESIZE} {
     #format sw {%R};
     #split $sw 0;
+    #screen erase all;
 }
 
 #var c_arkatt {<168>};
@@ -314,7 +316,6 @@
 };
 #event {MAP ENTER ROOM} {
     #var MapLegendFolded 1;
-    #map get roomvnum CurrentRoom;
 };
 
 #var zadania[1] {quest};

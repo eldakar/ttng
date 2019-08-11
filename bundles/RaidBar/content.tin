@@ -136,3 +136,31 @@
 
 } {3};
 
+#con mouse on;
+#var topdrag 0
+
+#event {PRESSED MOUSE BUTTON ONE}
+{
+    #screen get TOP_SPLIT top;
+
+    #if {%0 == $top}
+    {
+        #var topdrag 1
+    }
+}
+
+#event {RELEASED MOUSE BUTTON ONE}
+{
+    #var topdrag 0
+}
+
+#event {MOVED MOUSE BUTTON ONE}
+{
+    #if {$topdrag}
+    {
+        #screen get BOT_SPLIT bot;
+        #split {%0} {$bot};
+        /conf RaidBarDynamicTop %0;
+    }
+}
+
