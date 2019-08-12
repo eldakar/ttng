@@ -380,3 +380,20 @@
 
 } {120};
 
+#var c_rooms[vendor] {<158>};
+#var c_rooms[checkpoint] {<168>};
+#var c_rooms[water] {<148>};
+#var c_rooms[bank] {<138>};
+#var c_rooms[post] {<128>};
+#var c_rooms[safe] {<afa>};
+#var c_rooms[food] {<128>}
+#var c_rooms[quest] {<138>};
+#var c_rooms[info] {<178>};
+#var c_rooms[danger] {<118>};
+#var c_rooms[port] {<118><ccf>};
+#var c_rooms[herb] {<118><fac>};
+#var c_rooms[trap] {<FAA><178>};
+#var c_rooms[smith] {<118><caf>};
+#var c_rooms[knowledge] {<078>};
+#var c_rooms[training] {<038>};
+#var c_rooms[storage] {<118><fca>};
