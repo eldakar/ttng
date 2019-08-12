@@ -301,3 +301,6 @@
 #event {MAP ENTER ROOM 12334} {napij sie do styka};
 #event {MAP ENTER ROOM 12334} {napij sie do syta};
 #event {MAP ENTER ROOM 13440} {pkup olej};
+#event {MAP ENTER ROOM 17334} {barak};
+#event {MAP ENTER ROOM 17334} {wejdz do dziury};
+#event {MAP ENTER ROOM 17334} {wskocz do dziury};
