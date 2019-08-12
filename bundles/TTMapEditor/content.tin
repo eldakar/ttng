@@ -390,14 +390,14 @@
 } {1};
 
 #alias {/event %*} {
-    #if {$PONGED == 1} {
+    #if {$PONGED == 2} {
         #map get roomvnum tmproomvnum;
         #line substitute {variables} {#brain {#port send $brainId {EVENT $tmproomvnum %1}}};
     } {show_ponged_error};
 } {1};
 
 #alias {/command %*} {
-    #if {$PONGED == 1} {
+    #if {$PONGED == 2} {
         #map get roomvnum tmproomvnum;
         #line substitute {variables} {#brain {#port send $brainId {COMMAND $tmproomvnum %1}}};
     } {show_ponged_error};
