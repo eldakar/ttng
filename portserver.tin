@@ -21,8 +21,6 @@
 #nop wyslij checksum;   
     #map at {1} {#map get roomdata vrd};
     #port send %2 CHECKSUM $vrd;
-#nop TODO EVENTS;
-#nop TODO NOTES;
 };
 
 #action {<PORT> Closing connection to %* D%d.} {
