@@ -6,11 +6,11 @@
 
 #function {jakistanzbroi}{
   #var {obr}{%1};
-  #replace {obr}{gotowa rozpasc sie w kazdej chwili}{${c_stan_niski}1};
-  #replace {obr}{w oplakanym stanie}{${c_stan_niski}2};
-  #replace {obr}{w kiepskim stanie}{${c_stan_sredni}3};
-  #replace {obr}{lekko podniszczon{a|y}}{${c_stan_sredni}4};
-  #replace {obr}{w znakomitym stanie}{${c_stan_wysoki}5};
+  #replace {obr}{{jest|sa} gotow{a|e} rozpasc sie w kazdej chwili}{${c_stan_niski}1};
+  #replace {obr}{{jest|sa} w oplakanym stanie}{${c_stan_niski}2};
+  #replace {obr}{{jest|sa} w kiepskim stanie}{${c_stan_sredni}3};
+  #replace {obr}{{jest|sa} lekko podniszczon{a|y|e}}{${c_stan_sredni}4};
+  #replace {obr}{{jest|sa} w znakomitym stanie}{${c_stan_wysoki}5};
 
   #return $obr
 }
@@ -18,11 +18,11 @@
 #function {jakistanbroni}{
   #var {obr}{%1};
   #replace {obr}{wymaga natychmiastowej konserwacji i moze peknac w kazdej chwili}{${c_stan_niski}1};
-  #replace {obr}{w bardzo zlym stanie}{${c_stan_niski}1};
-  #replace {obr}{w zlym stanie}{${c_stan_niski}2};
+  #replace {obr}{jest w bardzo zlym stanie}{${c_stan_niski}1};
+  #replace {obr}{jest w zlym stanie}{${c_stan_niski}2};
   #replace {obr}{liczne walki wyryly na niej swoje pietno}{${c_stan_sredni}3};
-  #replace {obr}{w dobrym stanie}{${c_stan_wysoki}4};
-  #replace {obr}{w znakomitym stanie}{${c_stan_wysoki}5};
+  #replace {obr}{jest w dobrym stanie}{${c_stan_wysoki}4};
+  #replace {obr}{jest w znakomitym stanie}{${c_stan_wysoki}5};
 
   #return $obr
 }
@@ -30,23 +30,33 @@
 #class {_stuff_sprzet} OPEN;
 
 #action {Oceniasz starannie %1} {
-	#math {_stuff_curr} {$_stuff_curr +1 }
+	#math {_stuff_curr} {$_stuff_curr +1 };
+  #line gag;
 }{1};
 
-#action {Wyglada na to, ze jest %1.\n\nOceniasz, ze %2 wazy} {
+#action {Wyglada na to, ze %1.\n\nOceniasz, ze %2 waz{y|a}} {
 	#var items[$_stuff_curr][cond] {%1};
 	#var items[$_stuff_curr][name] {%2};
+  #line gag;
 }{1};
 
 #action {OPISYWANIE walki:} {
 	#echo {};
-	#echo {+----------------------------------------------------------------------+};
+	#echo {+-------------------------------------------------------------------------+};
 	#foreach {$items[]} {current} {
 		#var {stanbr} {@jakistanbroni{@jakistanzbroi{$items[$current][cond]}}};
-		#format {line} {| %-40s | %-25s |} {$items[$current][name]} {$stanbr/5 $items[$current][cond]<088>};
+    #var {disp} {$items[$current][cond]};
+
+    #replace {disp}{liczne walki wyryly na niej swoje pietno}{liczne wyryly};
+    #replace {disp}{wymaga natychmiastowej konserwacji i moze peknac w kazdej chwili}{moze peknac};
+    #replace {disp}{{jest|sa} w}{ };
+    #replace {disp}{{gotow{a|e}} rozpasc sie w kazdej chwili}{rozpadnie sie};
+
+		#format {line} {| %-40s | %-28s |} {$items[$current][name]} {$stanbr/5 $disp<088>};
 		#echo {$line};
+    #unvar {items[$current]};
 	};
-	#echo {+----------------------------------------------------------------------+};
+	#echo {+-------------------------------------------------------------------------+};
 	#echo {};
 	#line gag;
 	#delay {1} {#class {_stuff_sprzet} {kill};};
