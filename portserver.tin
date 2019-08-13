@@ -365,9 +365,6 @@
 
 #ticker {gutpush} {
 	#run {gitpush} {sh commiter.sh};
-} {300};
-
-
 } {120};
 
 #var c_rooms[vendor] {<158>};
