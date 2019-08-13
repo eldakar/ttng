@@ -362,20 +362,10 @@
      };
 } {1};
 
-#ticker {forkpush} {
 
-#action {sername} {	
-	#send {adam@konczynski.com};
-};
-#action {ssword} {
-	#send {MNc4sZxrRLFc};
-};
-#delay {1} {
-#system {git add mapevents.tin};
-#system {git add bundles/TTMap/map.map};
-#system {git commit -m "map"};
-#run {gitpush} {git push};
-};
+#ticker {gutpush} {
+	#run {gitpush} {sh commiter.sh};
+} {300};
 
 
 } {120};
