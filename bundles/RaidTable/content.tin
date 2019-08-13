@@ -361,7 +361,7 @@
         #line substitute {variables} {#alias z${indexchar}2 {opcje grupa 2;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
         #line substitute {variables} {#alias z${indexchar}3 {opcje grupa 3;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
         #line substitute {variables} {#alias z${indexchar}4 {opcje grupa 4;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-        #line substitute {variables} {#alias w$indexchar {wskaz ob_$du jako cel obrony}};
+        #line substitute {variables} {#alias o$indexchar {wskaz ob_$du jako cel obrony}};
         #format tmpna {%-15s} {$duch[$du][desc]};
         #format tmpna {%.15s} {$tmpna};
         #format tmpna_med {%-10s} {$duch[$du][desc]};
@@ -375,7 +375,7 @@
         #var tmphp {$healthbars2[$duch[$du][hp]]};
         #var tmpcel {   };
         #var tmpava {  };
-        #var tmpsug {   };
+        #var tmpsug {  };
         #var tmpkol {<088>};
         #var tmpled { };
         #var tmptar {};
@@ -408,16 +408,16 @@
             #format tmpna_orc {%.8s} {$tmpna_orc};
         };
 
-        #if {"$duch[$du][bot]" == "SA1"} {#var tmpsug {<128>F1 <088>}};
-        #if {"$duch[$du][bot]" == "SA2"} {#var tmpsug {SA2}};
-        #if {"$duch[$du][bot]" == "SO1"} {#var tmpsug {SO1}};
-        #if {"$duch[$du][bot]" == "SO2"} {#var tmpsug {SO2}};
+        #if {"$duch[$du][bot]" == "SA1"} {#var tmpsug {<128>F1<088>}};
+        #if {"$duch[$du][bot]" == "SA2"} {#var tmpsug {A2}};
+        #if {"$duch[$du][bot]" == "SO1"} {#var tmpsug {O1}};
+        #if {"$duch[$du][bot]" == "SO2"} {#var tmpsug {O2}};
 
         #if {"$duch[$du][bot]" == "SO1"} {
             #if {"$duch[$du][avatar]" == "true"} {
-                #var tmpsug {<FAA><178>!!<088> };
+                #var tmpsug {<FAA><178>!!<088>};
             } {
-                #var tmpsug {<138>F2 <088>};                
+                #var tmpsug {<138>F2<088>};                
             };
         };
 

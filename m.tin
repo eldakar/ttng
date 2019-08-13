@@ -44,6 +44,8 @@
     
     #var r @bundleops_loadglobals{};
 
+#nop TODO;
+    #read expowiska.tin;
     #nop read staty.tin;		#nop Zliczanie statystyk;
     #read gmcp_message.tin;	#nop GMCP;
     #read alias.tin;		#nop Aliasy do obslugi glownych funkcji;

@@ -1,0 +1,50 @@
+#alias {expowisko} {
+	#sh {${c_arkatt}> Ustawiam expowisko (klawisz F4) %1};
+	#macro {$KEY_F3} {%1};
+}
+#alias {expowiska_lista} {
+	#echo orki_orcal;
+	#echo orki_wsiowe;
+	#echo ryby_skellige;
+	#echo mekan;
+};
+#alias {orki_orcal} {
+	zabij goblina;
+	zabij drugiego orka;
+	zabij orka;
+	zabij czarnego orka;
+	_zabij_ przeciwnika;
+};
+#alias {orki_wsiowe} {
+	zabij goblina;
+	zabij drugiego orka;
+	zabij orka;
+	zabij drugiego czarnego orka;
+	zabij czarnego orka;
+	zabij trolla;
+	_zabij_ przeciwnika;
+};
+#alias {ryby_skellige} {
+	zabij ryboczleka;
+	zabij drugiego srebrnoluskiego ryboczleka;
+	zabij srebrnoluskiego ryboczleka;
+	zabij zlotoluskiego ryboczleka;
+	_zabij_ przeciwnika;
+};
+#alias {mekan} {
+	zabij drugiego tarczownika;
+	zabij tarczownika;
+	zabij drugiego pikiniera;
+	zabij pikiniera;
+	zabij drugiego elfa;
+	zabij elfa;
+	zabij drugiego oficera;
+	zabij oficera;
+	_zabij_ przeciwnika;
+};
+#alias {baccala} {
+	zabij gwardziste;
+	zabij drugiego oficera;
+	zabij oficera;
+	_zabij_ przeciwnika;
+}
