@@ -115,9 +115,9 @@
 #action {%*{Podazasz|podazasz} za %1 na srodokrecie.} {#map move srodokrecie};
 #action {%*{Podazasz|podazasz} za %1 do srodka otworu.} {#map move otwor};
 #action {%*{Podazasz|podazasz} za %1 do portalu.} {#map move portal};
-#action {%*{Podazasz|podazasz} za %1 po schodach na gore.} {#map move schody};
+#action {%*{Podazasz|podazasz} za %1 po schodach na gore.} {#map move u;#map move schody};
 #action {%*{Podazasz|podazasz} za %1 na schody.} {#map move schody};
-#action {%*{Podazasz|podazasz} za %1 po schodach na dol.} {#map move schody};
+#action {%*{Podazasz|podazasz} za %1 po schodach na dol.} {#map move d;#map move schody};
 #action {%*{Podazasz|podazasz} za %1 do wnetrza straznicy.} {#map move straznica};
 #action {%*{Podazasz|podazasz} za %1 na gore po drabinie.} {#map move u};
 #action {%*{Podazasz|podazasz} za %1 na dol po drabinie.} {#map move d};
