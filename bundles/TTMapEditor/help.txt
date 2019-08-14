@@ -1,0 +1,28 @@
+Rysowanie i edytacji nowych wyjsc:
+TUTOR /map dig <kierunek> - stworz pokoj na <kierunek>
+TUTOR /map del <kierunek> - usun pokoj znajdujacy sie na <kierunek>
+TUTOR /map wyj <kierunek> {<wyjscie>} - uzywaj <wyjscie> przy przejsciu na <kierunek>
+TUTOR /map hide <kierunek> - ukryj pokoj w danym kierunku
+TUTOR /map unhide <kierunek> - odkryj pokoj w danym kierunku
+TUTOR /map link <kierunek> <nrpokoju> - laczy <kierunek> z pokojem <nrpokoju> jednostronnie
+TUTOR /map linkb <kierunek> <nrpokoju> - laczy <kierunek> z pokojem <nrpokoju> dwustronnie
+TUTOR /map unlink <kierunek> - rozlacza z pokojem <kierunek> jednostronnie
+TUTOR /map unlinkb <kierunek> - rozlacza z pokojem <kierunek> dwustronnieTUTOR /f lub findme - znajduje mapke (lub nie)
+
+Dodawanie komend i notek:
+TUTOR /event <komenda> - dodaje event, czyli podmiane QuickBinda przy wejsciu do pokoju
+WARN [BUGGED] /note <string> - dodaje publiczna notke, kazdy widzi kto wejdzie na lokacje (mozna wylaczyc w opcjach: popcje shownotes off)
+TUTOR /command <string> - dodaje komende, ktora wykonuje sie po wejsciu do pokoju
+
+Typ lokacji:
+TUTOR /mark as <typ> - Oznacza dana lokacje - uzywane w wyszukiwaniu i kolorowaniu
+TUTOR /mark as <typ> <string> - Oznacza dana lokacje - uzywane w wyszukiwaniu i kolorowaniu
+	typ: vendor, checkpoint, water, bank, post, safe, food, quest, info, danger
+	     knowledge, training, smith, storage, port, herb
+	opis: ciag znakow, nie ma sensu, zeby byl szerszy niz srednia szerokosc ekranu
+TUTOR /zadania - Wyswietla wszystkie elementy opisane powyzszymi komendami, w obrebie 100 krokow
+
+Zapalanie pochodni:
+TUTOR /c - wyczysc wszystkie pochodnie globalnie
+TUTOR /r - ustaw czerwona pochodnie na swojej lokacji
+TUTOR /y - ustaw zolta pochodnie na swojej lokacji

@@ -5,10 +5,12 @@
 #unvar bundlemanager_slots;
 #unvar bundlemanager_bundles;
 #unvar bundlemanager_configs;
+#unvar bundlemanager_helps;
 
 #list bundlemanager_slots clear;
 #list bundlemanager_bundles clear;
 #list bundlemanager_configs clear;
+#list bundlemanager_helps clear;
 #list bundle_slots clear;
 #list bundle_configs clear;
 #list bundle_deps clear;
@@ -57,6 +59,10 @@
 		#list bundlemanager_bundles add {$bundle_name};
 		#var bundles_$bundle_name {1};
 		#echo {<128>Bundle Loaded: <168>$bundle_name<088>};
+		
+		#if {$bundle_help > 0} {
+			#list bundlemanager_helps add {$bundle_name};
+		};
 
 		#line substitute variables {
 			#CLASS {$bundle_name} OPEN;
@@ -65,7 +71,7 @@
 			#if {$bundle_data > 0} {
 				#read bundles/$bundle_name/data.tin;
 			};
-			#CLASS {$bundle_name} CLOSE;
+			#CLASS {$bundle_name} CLOSE;	
 		};
 	};
 	#list bundle_configs clear;

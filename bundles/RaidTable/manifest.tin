@@ -17,7 +17,7 @@
 
 
 #nop IS HELP PRESENT;
-#var bundle_help {0};
+#var bundle_help {1};
 
 #nop ############################;
 #nop EVENT SLOTS ##########;

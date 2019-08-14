@@ -1,0 +1,26 @@
+Baza nadal nie dziala jak powinna, ale...
+TUTOR relacje
+	Robi update w popcjach i wysyla komendy do okna walki
+	jesli nie zadziala, mozna z palca ustawic wg schematu:
+TUTOR 	popcje przyjaciele ,MC,OK,KS
+TUTOR 	popcje wrogowie ,LE,TW,ZT,SC,NA,KG,OS,GL,VR,WKS,ZS
+TUTOR 	popcje napotykasz on|off - wyswietlaj przedstawienie w bazie
+TUTOR zapamietani i przedstawieni
+	Komendy te podmienia wszystkich, ktorych znamy z imienia.
+	Teoreycznie, przyspieszy to (za pierwszym razem) czas, 
+	w ktorym wyswietli sie F1 na zabicie.
+TUTOR /baza - szybka pomoc odnosnie ponizszych komend
+TUTOR /baza_dodaj [gildia] [imie]
+	dodaje do klona Dwarfa
+TUTOR /baza_dodaj [gildia] [opis]
+	opis MUSI byc 3-czlonowy
+TUTOR /baza_dodaj [gildia] [opis] [imie]
+	powyzsze dwie, razem
+TUTOR /baza_update [imie] [gildia]
+	podmienia gildia danego imienia
+TUTOR /baza_update [opis] [gildia]
+	podmienia gildie danego opisu bez imienia
+TUTOR /baza_imie [opis] [imie]
+	dodaje imie do danego opisu bez imienia
+TUTOR /ktoto [opis|imie]
+	wyswietla co to za typ

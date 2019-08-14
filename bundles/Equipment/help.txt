@@ -1,0 +1,13 @@
+Po uprzednim ustawieniu sakiewek i plecakow (manual5) odblokowuja sie nastepne komendy:
+TUTOR wy
+	przejrzyj zawartosc zalozonego pojemnika
+TUTOR wy [przedmiot]
+	wez [przedmiot] z zalozonego pojemnika
+TUTOR wl [przedmiot]
+	wloz [przedmiot] do zalozonego pojemnika
+TUTOR wym
+	wez monety z zalozonego [pojemnika]
+TUTOR wlm
+	wloz monety do zalozonego [pojemnika]
+TUTOR kamienie
+	policz wszystkie kamienie ktore masz przy sobie
