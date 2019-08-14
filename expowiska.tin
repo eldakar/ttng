@@ -1,5 +1,5 @@
 #alias {expowisko} {
-	#sh {${c_arkatt}> Ustawiam expowisko (klawisz F4) %1};
+	#sh {${c_arkatt}> Ustawiam expowisko (klawisz F3) %1};
 	#macro {$KEY_F3} {%1};
 }
 #alias {expowiska_lista} {
