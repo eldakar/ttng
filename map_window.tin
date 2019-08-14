@@ -50,7 +50,7 @@
 };
 
 #event {MAP DOUBLE-CLICKED MOUSE BUTTON ONE} {
-    #chat message all {WALK %0};
+    #port send $connectorId {WALK %0};
 };
 
 
@@ -64,29 +64,28 @@
 
 #sh {$centreY $centreX $MapLegendFolded};
     #if {$centreY == 1} {
-    #if {$centreX < 7} {
-        #if {$MapLegendFolded == 1} {
-            #var MapLegendFolded 0;
-                /zadania;
-    #delay {0.3} {
-                #sh {<ABA><178> MAPA <088>} {1} {1};
-            #foreach {$cplist} {cpl} {
-                #if {$cpl <= $sw} {
-                    #if {$cpl > 1} {
-                    #sh {$cplist[$cpl]} {$cpl} {1};
+        #if {$centreX < 7} {
+            #if {$MapLegendFolded == 1} {
+                #var MapLegendFolded 0;
+                    /zadania;
+                    #delay {0.3} {
+                        #sh {<ABA><178> MAPA <088>} {1} {1};
+                        #foreach {$cplist} {cpl} {
+                            #if {$cpl <= $sw} {
+                                #if {$cpl > 1} {
+                                    #sh {$cplist[$cpl]} {$cpl} {1};
+                                };
+                            };
+                        };    
                     };
-                    };
-                };    
-            #nop UNFOLD;
-    };
-        } {
-            #var MapLegendFolded 1;
-            #map goto $currentRoom;
-            #nop FOLD;
+            }   {
+                #nop FOLD ALL == redraw VT;
+                #var MapLegendFolded 1;
+                #map goto $currentRoom;
+            };
         };
-    };
     } {
-    #if {$MapLegendFolded == 0} {
+        #if {$MapLegendFolded == 0} {
             #if {$centreX < 4} {
                 walk$centreY;
             };

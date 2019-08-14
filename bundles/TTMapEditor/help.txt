@@ -12,7 +12,8 @@ TUTOR 	/map unhide <kierunek> - odkryj pokoj w danym kierunku
 TUTOR 	/map link <kierunek> <nrpokoju> - laczy <kierunek> z pokojem <nrpokoju> jednostronnie
 TUTOR 	/map linkb <kierunek> <nrpokoju> - laczy <kierunek> z pokojem <nrpokoju> dwustronnie
 TUTOR 	/map unlink <kierunek> - rozlacza z pokojem <kierunek> jednostronnie
-TUTOR 	/map unlinkb <kierunek> - rozlacza z pokojem <kierunek> dwustronnieTUTOR /f lub findme - znajduje mapke (lub nie)
+TUTOR 	/map unlinkb <kierunek> - rozlacza z pokojem <kierunek> dwustronnie
+TUTOR 	/f lub findme - znajduje mapke (lub nie)
 
 Dodawanie komend i notek:
 TUTOR 	/event <komenda> - dodaje event, czyli podmiane QuickBinda przy wejsciu do pokoju
@@ -22,8 +23,10 @@ TUTOR 	/command <string> - dodaje komende, ktora wykonuje sie po wejsciu do poko
 Typ lokacji:
 TUTOR 	/mark as <typ> - Oznacza dana lokacje - uzywane w wyszukiwaniu i kolorowaniu
 TUTOR 	/mark as <typ> <string> - Oznacza dana lokacje - uzywane w wyszukiwaniu i kolorowaniu
-		typ: vendor, checkpoint, water, bank, post, safe, food, quest, info, danger, knowledge, training, smith, storage, port, herb
-		string: ciag znakow, nie ma sensu, zeby byl szerszy niz srednia szerokosc ekranu
+		typ:	vendor, checkpoint, water, bank, post, 
+			safe, food, quest, info, danger, knowledge, 
+			training, smith, storage, port, herb
+		string:	ciag znakow, nie ma sensu, zeby byl szerszy niz srednia szerokosc ekranu
 			jesli pusty, uzywany jest short lokacji
 Zapalanie pochodni:
 TUTOR 	/c - wyczysc wszystkie pochodnie globalnie

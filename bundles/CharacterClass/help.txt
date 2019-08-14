@@ -1,6 +1,6 @@
 WARN 1. Konfiguracje
 Ustawienia dobywania i chowania broni
 TUTOR 	/conf CharacterClassProfession
-	wks,mc,kg
+	wks,kg,ks
 TUTOR 	/conf CharacterClassGuild
-	wks,mc,kg
+	wks,kg,ks
