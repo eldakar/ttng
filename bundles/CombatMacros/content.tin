@@ -36,10 +36,16 @@
 };
 
 #alias {CombatMacrosConfigAttackFlags} {
+  #if {"$ConfigManager_Configs[CombatMacrosConfigAttackFlags]" == ""} {
+    #var ConfigManager_Configs[CombatMacrosConfigAttackFlags] {z};
+  };
 	#var pwskazywanie $ConfigManager_Configs[CombatMacrosConfigAttackFlags];
 };
 
 #alias {CombatMacrosConfigAttackCommand} {
+  #if {"$ConfigManager_Configs[CombatMacrosConfigAttackCommand]" == ""} {
+    #var ConfigManager_Configs[CombatMacrosConfigAttackCommand] {zabij};
+  };  
 	#alias zabijcmd {$ConfigManager_Configs[CombatMacrosConfigAttackCommand]};
 };
 

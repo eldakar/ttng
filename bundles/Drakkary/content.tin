@@ -39,5 +39,5 @@
 #high {{Korsarski drakkar Czarna Perla|Korsarski drakkar Demon|Skelliganski drakkar Zwiastun Smierci|Skelliganski drakkar Obronca Archipelagu|korsarski drakkar Czarna Perla|korsarski drakkar Demon|skelliganski drakkar Zwiastun Smierci|skelliganski drakkar Obronca Archipelagu|skelliganski drakkar Krakken|Skelliganski drakkar Krakken|Korsarski snekkar Wloczega Morz}} {${c_cel_ataku}};
 
 #high {%w zlotoluski ryboczlek} {<DDA><aaa>};
-#high {%w srebrnoluski ryboczlek} {<G20><aaa>};
+#high {%w srebrnoluski ryboczlek} {<G06><178>};
 #high {gargantuiczny ognistooki ryboczlek} {<CAF><178>};

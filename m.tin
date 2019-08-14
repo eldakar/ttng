@@ -42,6 +42,7 @@
     #read bundles/EquipmentStatus/manifest.tin;
     #read bundles/Vehicles/manifest.tin;
     #read bundles/LootManager/manifest.tin;
+    #read bundles/MacroRemains/manifest.tin;
     
     #var r @bundleops_loadglobals{};
 

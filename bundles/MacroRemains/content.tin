@@ -40,7 +40,7 @@
 };
 
 #alias {MacroRemainsMethod} {
-	#if {"$MacroRemainsMethod" == ""} {
+	#if {"$ConfigManager_Configs[MacroRemainsMethod]" == ""} {
 		#var ConfigManager_Configs[MacroRemainsMethod] {wyrwij};
 	};
 	#var RemainsAction $ConfigManager_Configs[MacroRemainsMethod];
