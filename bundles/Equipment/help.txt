@@ -1,4 +1,15 @@
-Po uprzednim ustawieniu sakiewek i plecakow (manual5) odblokowuja sie nastepne komendy:
+WARN 1. Konfiguracja
+TUTOR 	/conf EquipmentScabbardOne
+	ustawia pierwsza pochwe
+TUTOR 	/conf EquipmentScabbardTwo
+	ustawia druga pochwe
+TUTOR 	/conf EquipmentBackpack
+	plecak, torba, worek, wor
+TUTOR 	/conf EquipmentGoldContainer
+	plecak, sakiewka, szkatulka
+	jesli ustawione jako <plecak>, pobierane jest ustawienie z glownego plecaka
+
+WARN 2. Aliasy
 TUTOR wy
 	przejrzyj zawartosc zalozonego pojemnika
 TUTOR wy [przedmiot]
@@ -9,5 +20,9 @@ TUTOR wym
 	wez monety z zalozonego [pojemnika]
 TUTOR wlm
 	wloz monety do zalozonego [pojemnika]
-TUTOR kamienie
-	policz wszystkie kamienie ktore masz przy sobie
+TUTOR dbb
+	dobadz bron z ustawionych pochew
+	ustawienie klasy postaci i gildii ma wplyw na uzyte komendy (CharacterClass)
+TUTOR obb
+	opusc bronie i schowaj do ustawionych pochew
+	ustawienie klasy postaci i gildii ma wplyw na uzyte komendy (CharacterClass)

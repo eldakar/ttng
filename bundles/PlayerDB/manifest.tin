@@ -1,7 +1,7 @@
 #var bundle_name {PlayerDB};
 #var bundle_data {0};
 #var bundle_content {1};
-
+#var bundle_help {1};
 #list bundle_configs clear;
 	#list bundle_configs add {PlayerDBAddress};
 	
