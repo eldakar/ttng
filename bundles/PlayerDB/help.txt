@@ -1,17 +1,21 @@
-TUTOR /baza - szybka pomoc odnosnie ponizszych komend
-TUTOR /baza_dodaj [gildia] [imie]
-	dodaje do klona Dwarfa
-TUTOR /baza_dodaj [gildia] [opis]
-	opis MUSI byc 3-czlonowy
-TUTOR /baza_dodaj [gildia] [opis] [imie]
-	powyzsze dwie, razem
-TUTOR /baza_update [imie] [gildia]
-	podmienia gildia danego imienia
-TUTOR /baza_update [opis] [gildia]
-	podmienia gildie danego opisu bez imienia
-TUTOR /baza_imie [opis] [imie]
-	dodaje imie do danego opisu bez imienia
-TUTOR /ktoto [opis|imie]
-	wyswietla co to za typ
-WARN /baza_update
-	odswieza baze ze zdalnego serwera
+WARN 1. Konfiguracja
+TUTOR 	/conf PlayerDBAddress
+		Ustawia adres i port serwera bazy (dwarf). Port nalezy podac po przecinku
+WARN 2. Aliasy
+TUTOR 	/baza - szybka pomoc odnosnie ponizszych komend
+TUTOR 	/baza_dodaj [gildia] [imie]
+		dodaje do klona Dwarfa
+TUTOR 	/baza_dodaj [gildia] [opis]
+		opis MUSI byc 3-czlonowy
+TUTOR 	/baza_dodaj [gildia] [opis] [imie]
+		powyzsze dwie, razem
+TUTOR 	/baza_update [imie] [gildia]
+		podmienia gildia danego imienia
+TUTOR 	/baza_update [opis] [gildia]
+		podmienia gildie danego opisu bez imienia
+TUTOR 	/baza_imie [opis] [imie]
+		dodaje imie do danego opisu bez imienia
+TUTOR 	/ktoto [opis|imie]
+		wyswietla co to za typ
+WARN 	/baza_update
+		odswieza baze ze zdalnego serwera

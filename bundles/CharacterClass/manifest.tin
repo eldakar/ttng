@@ -7,7 +7,7 @@
 
 #nop IS DATA PRESENT #;
 #var bundle_data {0};
-
+#var bundle_help {1};
 #nop IS CONTENT PRESENT;
 #var bundle_content {1};
 
