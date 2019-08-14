@@ -1,0 +1,64 @@
+#alias {MacroLampRefillKey} {
+   #switch {"$ConfigManager_Configs[MacroLampRefillKey]"} {
+	 	#case {"F5"} {
+	 		#line substitute {variables} {
+	 			#macro {$KEY_F5_A} {lampa_napelnij};
+	 			#macro {$KEY_F5_B} {lampa_napelnij};
+	 		};
+	 	};
+	 	#case {"F6"} {
+	 		#line substitute {variables} {
+	 			#macro {$KEY_F6_A} {lampa_napelnij};
+	 			#macro {$KEY_F6_B} {lampa_napelnij};
+	 		};
+	 	};
+	 	#case {"F7"} {
+	 		#line substitute {variables} {
+	 			#macro {$KEY_F7_A} {lampa_napelnij};
+	 			#macro {$KEY_F7_B} {lampa_napelnij};
+	 		};
+	 	};
+	 	#case {"F8"} {
+	 		#line substitute {variables} {
+	 			#macro {$KEY_F8_A} {lampa_napelnij};
+	 			#macro {$KEY_F8_B} {lampa_napelnij};
+	 		};
+	 	};
+	 	#case {"F9"} {
+	 		#line substitute {variables} {
+	 			#macro {$KEY_F9_A} {lampa_napelnij};
+	 			#macro {$KEY_F9_B} {lampa_napelnij};
+	 		};
+	 	};
+	 	#case {"F10"} {
+	 		#line substitute {variables} {
+	 			#macro {$KEY_F10_A} {lampa_napelnij};
+	 			#macro {$KEY_F10_B} {lampa_napelnij};
+	 		};
+	 	};	 	
+   };
+};
+
+#action {Zapalasz} {
+	#ticker lampa {
+		#echo {<178>MacroLamp: <178>[ $ConfigManager_Configs[MacroLampRefillKey] ] Napelnij lampe olejem<088>};
+	} {100};
+};
+
+#action {wypala sie i} {
+	qb lampa_napelnij_i_zapal;
+};
+
+#alias {lampa_napelnij} {
+	odloz pusta butelke;
+	napelnij lampe olejem;
+	zapal lampe;
+};
+
+#action {Gasisz olejna lampe} {
+	#untick lampa;
+};
+
+#action {wypala sie i gasnie} {
+	#untick lampa;
+};
