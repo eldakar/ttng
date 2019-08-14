@@ -306,3 +306,4 @@
 #event {MAP ENTER ROOM 17334} {wskocz do dziury};
 #event {MAP ENTER ROOM 6469} {pij};
 #event {MAP ENTER ROOM 12096} {pchnij sciane};
+#event {MAP ENTER ROOM 13440} {pkup olej};
