@@ -265,7 +265,7 @@
     broadcast EVENT %1 %2;
     #map at {%1} {#map set roomsymbol {<168>@<088>}};
     #line substitute {variables} {
-        #system {echo "#event {MAP ENTER ROOM %1} {%2};" >> mapevents.tin};
+        #system {echo "#event {MAP ENTER ROOM %1} {QB %2};" >> mapevents.tin};
     };
 	broadcast EVENT %1 %2;
     mapsave;
