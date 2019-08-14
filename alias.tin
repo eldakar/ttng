@@ -4,6 +4,7 @@
   #echo {> Slucham?};
 } {1};
 
+
 #alias pkup {wym;kup %0;wlm}
 #alias {wbanku} {przejrzyj depozyt} 
 #alias {+kap} {naciagnij kaptur};
