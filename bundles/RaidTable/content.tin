@@ -5,7 +5,6 @@
     #foreach {$wrogowieDB[]} {wdb} {
         #var gildie[$wrogowieDB[$wdb]] {w}; 
     };
-
 };
 
 #alias {RaidTableGuildFriends} {
@@ -15,7 +14,6 @@
     #foreach {$przyjacieleDB[]} {pdb} {
         #var gildie[$przyjacieleDB[$pdb]] {p}; 
     };
-
 };
 
 #var gildie[CN] {n};
