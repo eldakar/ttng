@@ -5,11 +5,13 @@
 
 #list bundle_configs clear;
 	#list bundle_configs add {MacroRemainsKey};
+	#list bundle_configs add {MacroRemainsMethod};
 	
 #list bundle_slots clear;
 #list bundle_deps clear;
 	#list bundle_deps add {ConfigManager};
 	#list bundle_deps add {LootManager};
+	#list bundle_deps add {NumPad};
 
 #list bundle_alias clear;
 

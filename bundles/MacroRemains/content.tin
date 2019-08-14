@@ -6,8 +6,45 @@
 	 			#macro {$KEY_F5_B} {MacroRemainsExecute};
 	 		};
 	 	};
+	 	#case {"F6"} {
+	 		#line substitute {variables} {
+	 			#macro {$KEY_F6_A} {MacroRemainsExecute};
+	 			#macro {$KEY_F6_B} {MacroRemainsExecute};
+	 		};
+	 	};
+	 	#case {"F7"} {
+	 		#line substitute {variables} {
+	 			#macro {$KEY_F7_A} {MacroRemainsExecute};
+	 			#macro {$KEY_F7_B} {MacroRemainsExecute};
+	 		};
+	 	};
+	 	#case {"F8"} {
+	 		#line substitute {variables} {
+	 			#macro {$KEY_F8_A} {MacroRemainsExecute};
+	 			#macro {$KEY_F8_B} {MacroRemainsExecute};
+	 		};
+	 	};
+	 	#case {"F9"} {
+	 		#line substitute {variables} {
+	 			#macro {$KEY_F9_A} {MacroRemainsExecute};
+	 			#macro {$KEY_F9_B} {MacroRemainsExecute};
+	 		};
+	 	};
+	 	#case {"F10"} {
+	 		#line substitute {variables} {
+	 			#macro {$KEY_F10_A} {MacroRemainsExecute};
+	 			#macro {$KEY_F10_B} {MacroRemainsExecute};
+	 		};
+	 	};	 	
    };
 };
+
+#alias {MacroRemainsMethod} {
+	#if {"$MacroRemainsMethod" == ""} {
+		#var ConfigManager_Configs[MacroRemainsMethod] {wyrwij};
+	};
+	#var RemainsAction $ConfigManager_Configs[MacroRemainsMethod];
+}
 
 #alias {MacroRemainsExecute} {
 	#nop Dependency from bundles/LootManager;
@@ -19,7 +56,7 @@
 			#math MacroRemainsDelay {($loz - 1) * 7};
 			#delay {$MacroRemainsDelay} {
 				#echo {<138>MacroRemains: <168>Executing: <118>$loz<088>};
-				wytnij wszystko z $loz\. ciala;
+				$RemainsAction wszystko z $loz\. ciala;
 				#if {$liczba_zabitych == $loz} {
 					#math MacroRemainsEnd {$MacroRemainsDelay + 7};
 					#echo {<138>MacroRemains: <128>Done.<088>};
