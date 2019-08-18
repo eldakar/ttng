@@ -299,3 +299,4 @@
 #event {MAP ENTER ROOM 13440} {QB pkup olej};
 #event {MAP ENTER ROOM 13440} {QB pkup olej};
 #event {MAP ENTER ROOM 17293} {QB pij};
+#event {MAP ENTER ROOM 21672} {QB zdenominuj};
