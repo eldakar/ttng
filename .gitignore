@@ -2,3 +2,4 @@ bundles/ConfigManager/Profiles/*
 bundles/TTMap/map.map
 bundles/RaidTable/data.tin
 bundles/EquipmentStatus/sprzet.class
+stats-*

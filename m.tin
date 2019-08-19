@@ -45,9 +45,11 @@
     #read bundles/MacroRemains/manifest.tin;
     #read bundles/MacroLamp/manifest.tin;
     
+    #read bundles/KillStats/manifest.tin;
+
     #var r @bundleops_loadglobals{};
 
-#nop TODO;
+    #nop TODO;
     #read expowiska.tin;
     #nop read staty.tin;		#nop Zliczanie statystyk;
     #read gmcp_message.tin;	#nop GMCP;

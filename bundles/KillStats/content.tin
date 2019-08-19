@@ -1,0 +1,147 @@
+#nop VSOF;
+
+#nop The bundle event handler;
+#alias {_killstats_check_progress} {
+	#var {CHAR_STATE} {%0};
+	#foreach {$CHAR_STATE[]} {s} {
+		#list {state} {find} {$s} {v};
+		#if {$v > 0} {
+			#list {state}{set}{$s}{$CHAR_STATE[$s]};
+		} {
+			#var {state[$s]} {$CHAR_STATE[$s]};
+		};
+	};
+
+	#if {"$CHAR_STATE[improve]" != ""} {_killstats_add $CHAR_STATE[improve]};
+};
+
+#function {poziomy_postepow}{
+	#var postepy {minimalne};
+	#switch {%1} {
+		#case {1}  {#var postepy nieznaczne};
+		#case {2}  {#var postepy bardzo male};
+		#case {3}  {#var postepy male};
+		#case {4}  {#var postepy nieduze};
+		#case {5}  {#var postepy spore};
+		#case {6}  {#var postepy dosc duze};
+		#case {7}  {#var postepy znaczne};
+		#case {8}  {#var postepy duze};
+		#case {9}  {#var postepy bardzo duze};
+		#case {10} {#var postepy ogromne};
+		#case {11} {#var postepy imponujace};
+		#case {12} {#var postepy wspaniale};
+		#case {13} {#var postepy gigantyczne};
+		#case {14} {#var postepy niebotyczne};
+	}
+
+	#return $postepy;
+};
+
+#nop ###############;
+#nop # cache class #;
+#nop ###############;
+
+#alias {_killstats_save_cache}{
+	#class {_killstats} kill;
+	#class {_killstats} open;
+		#var _killstats_cache $expo;
+		#var _killstats_postep $current_postep;
+	#class {_killstats} close;
+	#class {_killstats} write stats-$AVATAR_NAME;
+};
+
+#alias {_killstats_load_cache}{
+	#class {_killstats} open;
+		#var _killstats_postep {666};
+	#class {_killstats} close;
+	
+	#class {_killstats} read stats-$AVATAR_NAME;
+	#if {$_killstats_postep == %1 } {
+		#nop recovering;
+		#var expo $_killstats_cache;
+		#var kill_count {$expo[%1][ownkills]};
+		#var they_kill_count {$expo[%1][theirkills]};
+	} {
+		_killstats_init_postep {%1};
+		_killstats_save_cache;
+	}
+};
+
+#nop Nie poczyniles zadnych postepow, od kiedy wszedles do gry;
+#nop Poczyniles {minimalne|nieznaczne|bardzo male|male} postepy, od momentu kiedy wszedles do gry;
+
+#nop expo[poziom][czas|ownkills|theirkills|totalkills];
+
+#var pierwszy_postep {0};
+
+#action {^Zabil{es|as} %2.$}
+{
+	#math {kill_count} {$kill_count+1};
+	#math {total_kill_count} {$kill_count + $they_kill_count};
+
+	#var expo[$current_postep][ownkills] {$kill_count};
+	#var expo[$current_postep][totalkills] {$total_kill_count};
+
+	_killstats_save_cache;
+
+	#echo {==> Zabici od @poziomy_postepow{$current_postep}: $kill_count/$total_kill_count};
+};
+
+#action {%1 zabi{la|l} %3.$}
+{
+	#math {they_kill_count} {$they_kill_count+1};
+	#math {total_kill_count} {$kill_count + $they_kill_count};
+
+	#var expo[$current_postep][theirkills] {$they_kill_count};
+	#var expo[$current_postep][totalkills] {$total_kill_count};
+
+	_killstats_save_cache;
+
+	#echo {==> Zabici od @poziomy_postepow{$current_postep}: $kill_count/$total_kill_count};
+};
+
+#alias {_killstats_init_postep}{
+	#echo {_killstats_add starting postep %1};
+
+	#format {_p_c_stamp_} {%t} {%H:%M};
+	#var expo[$current_postep][czas] {$_p_c_stamp_};
+	#var expo[$current_postep][ownkills] {0};
+	#var expo[$current_postep][theirkills] {0};
+	#var expo[$current_postep][totalkills] {0};
+	#var kill_count {0};
+	#var they_kill_count {0};
+};
+
+#alias {_killstats_add} {
+	#var current_postep %1;
+
+	#echo {_killstats_add called with %1};
+
+	#if {&{$expo[$current_postep][czas]} == 0} {
+
+		#if {$pierwszy_postep == 0}{
+			#var pierwszy_postep {1};
+			_killstats_load_cache %1;
+		} {
+			_killstats_init_postep %1;
+		};
+	} {
+		#nop should never happen?;
+		#echo {ERROR in KillStats bundle: $expo[$current_postep][czas] $current_postep};		
+	};
+
+}
+
+
+
+#alias /kills {	
+  #echo {+-----------------+------------+-----------+};
+  #foreach {$expo[]}{exp}{
+  	#var postep {@poziomy_postepow{$exp}};
+
+  	#format {line} {| %-15s | %-10s | %-9s |} {$postep} {$expo[$exp][czas]} {$expo[$exp][ownkills]/$expo[$exp][totalkills]};
+
+  	#echo {$line};
+  }
+  #echo {+-----------------+------------+-----------+};
+}{1};
