@@ -97,17 +97,17 @@
 		#if {"$pplecak" == "wor"} {zajrzyj do zalozonego wora};
 	};
 	#else {
-		#if {"$pplecak" == "sakwa"} {otworz zalozona sakwe;wez %1 z zalozonej sakwy;zamknij zalozona sakwe};
-		#if {"$pplecak" == "plecak"} {otworz zalozony plecak;wez %1 z zalozonego plecaka;zamknij zalozony plecak};
-		#if {"$pplecak" == "torba"} {otworz zalozona torbe;wez %1 z zalozonej torby;zamknij zalozona torbe};
-		#if {"$pplecak" == "wor"} {otworz zalozony wor;wez %1 z zalozonego wora;zamknij zalozony wor};
+		#if {"$pplecak" == "sakwa"} {otworz zalozona sakwe;wez %0 z zalozonej sakwy;zamknij zalozona sakwe};
+		#if {"$pplecak" == "plecak"} {otworz zalozony plecak;wez %0 z zalozonego plecaka;zamknij zalozony plecak};
+		#if {"$pplecak" == "torba"} {otworz zalozona torbe;wez %0 z zalozonej torby;zamknij zalozona torbe};
+		#if {"$pplecak" == "wor"} {otworz zalozony wor;wez %0 z zalozonego wora;zamknij zalozony wor};
 	};
 }
 #alias {wl} {
-	#if {"$pplecak" == "sakwa"} {otworz zalozona sakwe;wloz %1 do zalozonej sakwy;zamknij zalozona sakwe};
-	#if {"$pplecak" == "plecak"} {otworz zalozony plecak;wloz %1 do zalozonego plecaka;zamknij zalozony plecak};
-	#if {"$pplecak" == "torba"} {otworz zalozona torbe;wloz %1 do zalozonej torby;zamknij zalozona torbe};
-	#if {"$pplecak" == "wor"} {otworz zalozony wor;wloz %1 do zalozonego wora;zamknij zalozony wor};
+	#if {"$pplecak" == "sakwa"} {otworz zalozona sakwe;wloz %0 do zalozonej sakwy;zamknij zalozona sakwe};
+	#if {"$pplecak" == "plecak"} {otworz zalozony plecak;wloz %0 do zalozonego plecaka;zamknij zalozony plecak};
+	#if {"$pplecak" == "torba"} {otworz zalozona torbe;wloz %0 do zalozonej torby;zamknij zalozona torbe};
+	#if {"$pplecak" == "wor"} {otworz zalozony wor;wloz %0 do zalozonego wora;zamknij zalozony wor};
 }
 #alias {sak} {wy};
 #alias {dsak} {wl};
