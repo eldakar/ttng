@@ -44,7 +44,6 @@
     #read bundles/LootManager/manifest.tin;
     #read bundles/MacroRemains/manifest.tin;
     #read bundles/MacroLamp/manifest.tin;
-    
     #read bundles/KillStats/manifest.tin;
 
     #var r @bundleops_loadglobals{};
