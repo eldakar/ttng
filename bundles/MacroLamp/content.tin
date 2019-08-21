@@ -45,8 +45,8 @@
 	} {100};
 };
 
-#action {wypala sie i} {
-	qb lampa_napelnij_i_zapal;
+#action {lampa wypala sie i gasnie} {
+	qb lampa_napelnij;
 };
 
 #alias {lampa_napelnij} {
