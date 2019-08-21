@@ -40,10 +40,10 @@
 #nop STATKI;
 
 #action {%*{rypa|tratwa|rom|knara} przybija do brzegu.} {
-			qbs STATEK_IN;
+			qb STATEK_IN;
 };
 #action {%*{Wszyscy na poklad!.*|przybija wielki trojmasztowy galeon.}} {
-			qbs STATEK_IN;
+			qb STATEK_IN;
 };
 #action {%*{Doplynelismy.*(Mozna|w calej swej)|Marynarze sprawnie cumuja}} {
 			qb STATEK_OUT;
