@@ -306,3 +306,4 @@
 #event {MAP ENTER ROOM 6414} {QB napij sie do syta};
 #event {MAP ENTER ROOM 6447} {QB napij sie do syta};
 #event {MAP ENTER ROOM 23986} {QB wloz bron do stojaka};
+#event {MAP ENTER ROOM 15400} {QB napij sie do syta};
