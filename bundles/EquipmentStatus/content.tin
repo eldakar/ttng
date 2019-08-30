@@ -35,7 +35,7 @@
   #line gag;
 }{1};
 
-#action {Wyglada na to, ze %1.\n\nOceniasz, ze %2 waz{y|a}} {
+#action {Wyglada na to, ze %1.{\n|\n.*\n}\nOceniasz, ze %2 waz{y|a}} {
 	#var items[$_stuff_curr][cond] {%1};
 	#var items[$_stuff_curr][name] {%2};
   #line gag;
