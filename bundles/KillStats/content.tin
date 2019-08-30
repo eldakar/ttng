@@ -22,16 +22,17 @@
 		#case {2}  {#var postepy bardzo male};
 		#case {3}  {#var postepy male};
 		#case {4}  {#var postepy nieduze};
-		#case {5}  {#var postepy spore};
-		#case {6}  {#var postepy dosc duze};
-		#case {7}  {#var postepy znaczne};
-		#case {8}  {#var postepy duze};
-		#case {9}  {#var postepy bardzo duze};
-		#case {10} {#var postepy ogromne};
-		#case {11} {#var postepy imponujace};
-		#case {12} {#var postepy wspaniale};
-		#case {13} {#var postepy gigantyczne};
-		#case {14} {#var postepy niebotyczne};
+		#case {5}  {#var postepy zadowalajace};
+		#case {6}  {#var postepy spore};
+		#case {7}  {#var postepy dosc duze};
+		#case {8}  {#var postepy znaczne};
+		#case {9}  {#var postepy duze};
+		#case {10} {#var postepy bardzo duze};
+		#case {11} {#var postepy ogromne};
+		#case {12} {#var postepy imponujace};
+		#case {13} {#var postepy wspaniale};
+		#case {14} {#var postepy gigantyczne};
+		#case {15} {#var postepy niebotyczne};
 	}
 
 	#return $postepy;
