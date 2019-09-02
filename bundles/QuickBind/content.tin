@@ -66,3 +66,7 @@
 #alias {qbk} {
     #line substitute {variables} {#macro {$KEY_QB} {%0}};
 }
+
+#action {Bol w {prawej|lewej} dloni staje sie mniej odczuwalny.} {
+  qb dobadz broni;
+}{1};
