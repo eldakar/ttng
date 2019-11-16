@@ -256,9 +256,9 @@
 #list worekD_zawartosc {clear}
 
 #alias {_woreczeka_} {#var currentworek A;zajrzyj do pierwszego przytroczonego woreczka;}
-#alias {_woreczeka_} {zajrzyj do drugiego przytroczonego woreczka;}
-#alias {_woreczeka_} {zajrzyj do trzeciego przytroczonego woreczka;}
-#alias {_woreczeka_} {zajrzyj do czwartego przytroczonego woreczka;}
+#alias {_woreczekb_} {zajrzyj do drugiego przytroczonego woreczka;}
+#alias {_woreczekc_} {zajrzyj do trzeciego przytroczonego woreczka;}
+#alias {_woreczekd_} {zajrzyj do czwartego przytroczonego woreczka;}
 
 #alias {worki} {
   #var sortujemy {true};
@@ -493,7 +493,7 @@
   _woreczeka_;
   _woreczekb_;
   _woreczekc_;
-  _woreczekd_
+  _woreczekd_;
 }
 
 
