@@ -32,7 +32,7 @@
     #read bundles/NumPad/manifest.tin;
     #read bundles/ItemQualitySimple/manifest.tin;
     #read bundles/QuickBind/manifest.tin;
-    #nop read bundles/Herbs/manifest.tin;
+    #read bundles/Herbs/manifest.tin;
     #read bundles/Drakkary/manifest.tin;
     #read bundles/GMCPObjects/manifest.tin;
     #read bundles/RaidTable/manifest.tin;
