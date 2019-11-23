@@ -1,5 +1,8 @@
 #sub {czarn%w perl%w} {%0 (<168>woda +20<088>)};
-#sub {perl%w} {%0 (<168>woda +10<088>)};
+#sub {bial%w perl%w} {%0 (<168>woda +10<088>)};
+#sub {czarn%w perel} {%0 (<168>woda +20<088>)};
+#sub {bial%w perel} {%0 (<168>woda +10<088>)};
+
 #sub {iolit%w} {%0 (<168>woda +10<088>)};
 #sub {turmalin%w} {%0 (<168>elektrycznosc +10<088>)};
 
