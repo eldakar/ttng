@@ -1,0 +1,28 @@
+#sub {czarn%w perl%w} {%0 (<168>woda +20<088>)};
+#sub {perl%w} {%0 (<168>woda +10<088>)};
+#sub {iolit%w} {%0 (<168>woda +10<088>)};
+#sub {turmalin%w} {%0 (<168>elektrycznosc +10<088>)};
+
+#sub {piryt%w} {%0 (<178>magia umyslu +10<088>)};
+#sub {ortoklaz%w} {%0 (<178>magia umyslu +20<088>)};
+#sub {fluoryt%w} {%0 (<178>magia umyslu +10<088>)};
+#sub {oliwin%w} {%0 (<178>czysta magia +10<088>)};
+
+#sub {lazuryt%w} {%0 (<148>powietrze +10<088>)};
+#sub {azuryt%w} {%0 (<148>powietrze +10<088>)};
+#sub {nefryt%w} {%0 (<148>powietrze +10<088>)};
+
+#sub {awenturyn%w} {%0 (<128>kwas +10<088>)};
+#sub {malachit%w} {%0 (<128>kwas +10<088>)};
+
+#sub {celestyn%w} {%0 (nic)};
+#sub {obsydian%w} {%0 (nic)};
+
+#sub {agat%w} {%0 (<118>ogien +10<088>)};
+#sub {karneol%w} {%0 (<118>magia smierci +10<088>)};
+#sub {hematyt%w} {%0 (<118>magia smierci +10<088>)};
+
+#sub {bursztyn%w} {%0 (nic)}; 
+#sub {kwarc%w} {%0 (<128>ziemia +10<088>)};
+#sub {monacyt%w} {%0 (<128>ziemia +10<088>)};
+#sub {turkus%w} {%0 (<128>ziemia +10<088>)};
