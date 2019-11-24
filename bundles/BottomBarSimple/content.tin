@@ -1,0 +1,26 @@
+#alias {BottomBarSimple_char_state} {
+	#var charstate {%0};
+
+	#foreach {$charstate[]} {s} {
+		#list {state} {find} {$s} {v}; 
+		#if {$v > 0} {
+			#list {state}{set}{$s}{$charstate[$s]}
+		} {
+			#var {state[$s]} {$charstate[$s]};
+		}
+	};
+
+	#sh {hp: $state[hp] mn: $state[mana] fa: $state[fatigue]} {-3};
+	#var global_bundle_slots_values[prompt][bottom] {2};
+};
+
+#unalias {ARKATTBBSREFRESH} {
+	#foreach {$CHAR_STATE[]} {s} {
+		#list {state} {find} {$s} {v}; 
+		#if {$v > 0} {
+			#list {state}{set}{$s}{$CHAR_STATE[$s]}
+		} {
+			#var {state[$s]} {$CHAR_STATE[$s]};
+		}
+	};
+};
