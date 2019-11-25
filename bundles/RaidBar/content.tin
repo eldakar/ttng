@@ -18,7 +18,7 @@
     #list team_offenders cle;
     #list team_offenders cre;
 
-    #foreach {$duch[]} {du} {#var duch[$du][shown] {0}};
+    #foreach {*duch[]} {du} {#var duch[$du][shown] {0}};
     #list team siz ts;
 
     #if {$ts < 1} {
@@ -33,7 +33,7 @@
             };
         };
     }   {
-            #foreach {$team[]} {ti} {
+            #foreach {*team[]} {ti} {
                 #if {$duch[$team[$ti]][shown] < 1} {
                     #if {$duch[$team[$ti]][attack_num] > 0} {
                         #list team_offenders add $duch[$team[$ti]][attack_num];
@@ -48,9 +48,9 @@
             };
     };
 #nop PRZECIWNICY DRUZYNY LUB AVATARA;
-    #foreach {$team_offenders[]} {to} {
+    #foreach {*team_offenders[]} {to} {
         #var tmpnavigator {1};
-        #foreach {$duch[]} {ti} {
+        #foreach {*duch[]} {ti} {
             #if {$duch[$ti][shown] < 1} {
                 #if {"$duch[$ti][attack_num]" == "$team_offenders[$to]"} {
                     #if {$tmpnavigator == 1} {
@@ -73,7 +73,7 @@
         };  
     };
 #nop RESZTA WALCZACYCH WROGOW;
-    #foreach {$wrogi[]} {to} {
+    #foreach {*wrogi[]} {to} {
         #if {$duch[$wrogi[$to]][shown] < 1} {
             #if {$r_curLineCnt < $global_bundle_slots_values[prompt][top]} {
                 #sh {$duch[$wrogi[$to]][bar][orc]} {$r_curLineCnt} {1} {};
@@ -83,7 +83,7 @@
         };
     };
 #nop WROGOWIE niewalczacy;
-    #foreach {$wrogi[]} {wr} {
+    #foreach {*wrogi[]} {wr} {
         #if {$duch[$wrogi[$wr]][shown] < 1} {
             #if {$duch[$wrogi[$wr]][attack_num] > 0} {
                 #nop;
@@ -98,7 +98,7 @@
         };
     };
 #nop RESZTA wszystkiego gdzie shown == 0;
-    #foreach {$duch[]} {wr} {
+    #foreach {*duch[]} {wr} {
         #if {$duch[$wr][shown] < 1} {
             #if {$r_curLineCnt < $global_bundle_slots_values[prompt][top]} {
                 #sh {$duch[$wr][bar][orc]} {$r_curLineCnt} {1} {};
@@ -109,58 +109,43 @@
     };
 };
 
-#unticker {RaidTableRefresh} {
-    #list duch size {RaidTableAdjustValue};
-    #if {$global_bundle_slots_values[prompt][top] > $RaidTableAdjustValue} {
-        
-        #math global_bundle_slots_values[prompt][top] {$ConfigManager_Configs[RaidBarDynamicTop] + 0};
-
-        #if {$global_bundle_slots_values[prompt][top] < 1} {
-            #var ConfigManager_Configs[RaidBarDynamicTop] {10};
-            #var global_bundle_slots_values[prompt][top] {10};
-        };
-        #nop Dependency: SplitRefresh;
-        SplitRefreshRequestRefresh;
-    };
-    #elseif {$global_bundle_slots_values[prompt][top] < $RaidTableAdjustValue} {
-        
-        #math global_bundle_slots_values[prompt][top] {$ConfigManager_Configs[RaidBarDynamicTop] + 0};
-
-        #if {$global_bundle_slots_values[prompt][top] < 1} {
-            #var ConfigManager_Configs[RaidBarDynamicTop] {10};
-            #var global_bundle_slots_values[prompt][top] {10};
-        };
-        #nop Dependency: SplitRefresh;
-        SplitRefreshRequestRefresh;
-    };
-
-} {3};
-
 #con mouse on;
 #var topdrag 0
 
 #event {PRESSED MOUSE BUTTON ONE}
 {
-    #screen get TOP_SPLIT top;
+    #screen get SPLIT_TOP_BAR top;
+    #screen get SPLIT_RIGHT_BAR right;
+    #screen get cols cols;
+    #math curright {$cols - %1};
 
     #if {%0 == $top}
     {
         #var topdrag 1
-    }
+    };
+
+    #if {$right == $curright}
+    {
+	#var rightdrag 1
+    };
 }
 
 #event {RELEASED MOUSE BUTTON ONE}
 {
-    #var topdrag 0
+    #var topdrag 0;
+    #var rightdrag 0;
 }
 
 #event {MOVED MOUSE BUTTON ONE}
 {
     #if {$topdrag}
     {
-        #screen get BOT_SPLIT bot;
-        #split {%0} {$bot};
         /conf RaidBarDynamicTop %0;
+    }
+    #if {$rightdrag}
+    {
+	#math boooom {$cols - %1};
+        /conf SplitWingMapWidth $boooom;
     }
 }
 

@@ -17,7 +17,7 @@
 		};
 	};
 	#if {$profile_size > 0} {
-		#foreach {$bundlemanager_configs[]} {cmc} {
+		#foreach {*bundlemanager_configs[]} {cmc} {
 			#if {"$bundlemanager_configs[cmc]" != "dummy"} {$bundlemanager_configs[$cmc]};
 		};
 	};
@@ -31,7 +31,7 @@
 
 #alias {/conf %w %*} {
 	#var confid 0;
-	#foreach {$bundlemanager_configs[]} {bc} {
+	#foreach {*bundlemanager_configs[]} {bc} {
 		#if {"$bundlemanager_configs[$bc]" == "%1"} {
 			#class ConfigManagerProfile open;
 			#var ConfigManager_Configs[%1] {%2};
@@ -43,14 +43,14 @@
 	#if {$confid < 1} {
 		#echo {<138>ConfigManager: <118>Syntax error. Make sure to load the right bundle!<088>};
 	} {
-		#echo {<138>ConfigManager: <128>%1 <088>= <118>%2<088>};
+		#nop echo {<138>ConfigManager: <128>%1 <088>= <118>%2<088>};
 		%1;
 	};
 } {1};
 
 #alias {/conf$} {
 	#echo {<138>ConfigManager: <158>Available configurations:<088>};
-	#foreach {$bundlemanager_configs[]} {bc} {
+	#foreach {*bundlemanager_configs[]} {bc} {
 		#echo {<068>   $bundlemanager_configs[$bc] <118>$ConfigManager_Configs[$bundlemanager_configs[$bc]]<088>};
 	};
 } {1};

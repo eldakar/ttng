@@ -3,7 +3,7 @@
 #alias {BottomBarSimple_char_state} {
 	#var charstate {%0};
 	#var global_bundle_slots_values[prompt][bottom] {2};
-	#foreach {$charstate[]} {s} {
+	#foreach {*charstate[]} {s} {
 		#list {state} {find} {$s} {v}; 
 		#if {$v > 0} {
 			#list {state}{set}{$s}{$charstate[$s]}

@@ -1,0 +1,28 @@
+#alias SplitWingMap_Offset {
+    #map flag vtmap on;
+
+    #math offsety {$global_bundle_slots_values[prompt][top] + 1};
+
+    #screen get cols screencols;
+    #math offsetx {$screencols - $global_bundle_slots_values[prompt][right] + 1};
+    #math offseth {$screencols - 4};;
+    #math offsetw {$screenrows - 2};
+    #map offset $offsety $offsetx $offsetw $offseth;
+};
+
+#alias {SplitWingMapWidth} {
+    #var global_bundle_slots_values[prompt][right] $ConfigManager_Configs[SplitWingMapWidth];
+    #nop Dependency: SplitRefresh;
+    SplitWingMap_Offset;
+    SplitRefreshRequestRefresh;
+};
+
+#alias {SplitWingMap_refresh} {
+    #math global_bundle_slots_values[prompt][right] {$ConfigManager_Configs[SplitWingMapWidth] + 0};
+
+    #if {$global_bundle_slots_values[prompt][right] < 1} {
+        #var ConfigManager_Configs[SplitWingMapWidth] {10};
+        #var global_bundle_slots_values[prompt][right] {10};
+    };
+};
+

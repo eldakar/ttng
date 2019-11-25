@@ -2,7 +2,7 @@
     #local tmp {$ConfigManager_Configs[RaidTableGuildEnemies]};
     #replace tmp {,} {;};
     #list wrogowieDB create {$tmp};
-    #foreach {$wrogowieDB[]} {wdb} {
+    #foreach {*wrogowieDB[]} {wdb} {
         #var gildie[$wrogowieDB[$wdb]] {w}; 
     };
 };
@@ -11,7 +11,7 @@
     #local tmp {$ConfigManager_Configs[RaidTableGuildFriends]};
     #replace tmp {,} {;};
     #list przyjacieleDB create {$tmp};
-    #foreach {$przyjacieleDB[]} {pdb} {
+    #foreach {*przyjacieleDB[]} {pdb} {
         #var gildie[$przyjacieleDB[$pdb]] {p}; 
     };
 };
@@ -46,7 +46,7 @@
 
 #alias {RaidTable_GMCP_Objects_Nums} {
 	#var {obnu} {%0};
-	#foreach {$duch[]} {bubu} {
+	#foreach {*duch[]} {bubu} {
 		#list {obnu} find {$bubu} {vfob};
 		#if {"$vfob" == "0"} {
 			#unvar {duch[$bubu]};
@@ -83,14 +83,14 @@
         #var team_index 0;
     #list team {clear};
 
-    #format {screenrows} {%R};
+    #screen get rows screenrows;
     #var localcnt {1};
 
-    #foreach {$duch[]} {dudu} {
+    #foreach {*duch[]} {dudu} {
        #var duch[$dudu][enemies] {0};
     };
 
-    #foreach {$duch[]} {dudu} {
+    #foreach {*duch[]} {dudu} {
 
 #format {duchtrue} {%L} {$duch[$dudu][living]};
 #if {$duchtrue > 2} {
@@ -209,7 +209,7 @@
     #var wrog_sugerowany 0;
 
 #nop szukamy wroga gildii, najlsbaszego;
-    #foreach {$wrogi[]} {www} {
+    #foreach {*wrogi[]} {www} {
         #if {"$duch[$wrogi[$www]][typ]" == "wrog"} {
         #nop jesli obaj sa rownie ranni, bijemy tego ktory jest atakowany przez wiekszosc;
             #if {$duch[$wrogi[$www]][hp] == $wrog_najslabszy_hp} {
@@ -230,7 +230,7 @@
 #nop jesli nie znalezlismy najslabszego z wrogow gildii;
 #nop szukamy najslabszego z wrogow;
     #if {$wrog_najslabszy_hp > 9} {
-        #foreach {$wrogi[]} {www} {
+        #foreach {*wrogi[]} {www} {
             #nop jesli obaj sa rownie ranni, bijemy tego ktory jest atakowany przez wiekszosc;
             #if {$duch[$wrogi[$www]][hp] == $wrog_najslabszy_hp} {
                 #if {$duch[$wrogi[$www]][enemies] > $wrog_najslabszy_cnt} {
@@ -251,7 +251,7 @@
 #nop jesli nie jestesmy dowodca druzyny i jest ustawiony cel ataku;
 #nop nadpisujemy wybor wroga;
     #if {"$duch[$avatarid][team_leader]" == "false"} {
-        #foreach {$wrogi[]} {www} {
+        #foreach {*wrogi[]} {www} {
             #if {"$duch[$wrogi[$www]][attack_target]" == "true"} {
                 #var wrog_najslabszy $wrogi[$www];
                 #var wrog_najslabszy_hp $duch[$wrogi[$www]][hp];            
@@ -282,7 +282,7 @@
     #var team_sugerowany 0;
     #var team_celobrony 0;
 
-    #foreach {$team[]} {www} {
+    #foreach {*team[]} {www} {
         #if {$duch[$team[$www]][enemies] > 0} {
             #if {$duch[$team[$www]][hp] == $team_najslabszy_hp} {
                 #if {$duch[$team[$www]][enemies] > $team_najslabszy_cnt} {
@@ -321,7 +321,7 @@
     #nop jesli nie jestesmy dowodca druzyny i jest ustawiony cel obrony;
     #nop nadpisujemy wybor sugerowanego do obrony;
     #if {"$duch[$avatarid][team_leader]" == "false"} {
-        #foreach {$team[]} {www} {
+        #foreach {*team[]} {www} {
             #if {"$duch[$team[$www]][defence_target]" == "true"} {
 		#var duch[$team[$www][bot] {SO2};
 		#macro {$KEY_F4} {
@@ -339,9 +339,9 @@
     #list neut size {neus};
     #list team size {teas};
     #var negativecounter 1;
-    #format windowh {%R};
+    #screen get rows windowh;
     #var iterator {0};
-    #foreach {$duch[]} {du} {        
+    #foreach {*duch[]} {du} {        
         #math iterator {$iterator + 1};
         #math indexvalue {96 + $iterator};
         #if {$indexvalue > 122} {
@@ -444,7 +444,7 @@
 	#replace str_przedstawieni {{, | i }} {;};
 	#list przedstawieni create {$str_przedstawieni};
 
-	#foreach {$przedstawieni[]} {przedstawiony} {
+	#foreach {*przedstawieni[]} {przedstawiony} {
 
 			#var test {$przedstawieni[$przedstawiony]};
 			#var test {${test}_};
@@ -467,7 +467,7 @@
 	#replace str_przedstawieni {{, | i }} {;};
 	#list przedstawieni create {$str_przedstawieni};
 
-	#foreach {$przedstawieni[]} {przedstawiony} {
+	#foreach {*przedstawieni[]} {przedstawiony} {
 
 			#var test {$przedstawieni[$przedstawiony]};
 			#var test {${test}_};

@@ -3,7 +3,7 @@
 #nop The bundle event handler;
 #alias {_killstats_check_progress} {
 	#var {CHAR_STATE} {%0};
-	#foreach {$CHAR_STATE[]} {s} {
+	#foreach {*CHAR_STATE[]} {s} {
 		#list {state} {find} {$s} {v};
 		#if {$v > 0} {
 			#list {state}{set}{$s}{$CHAR_STATE[$s]};
@@ -137,7 +137,7 @@
 
 #alias /kills {	
   #echo {+-----------------+------------+-----------+};
-  #foreach {$expo[]}{exp}{
+  #foreach {*expo[]}{exp}{
   	#var postep {@poziomy_postepow{$exp}};
 
   	#format {line} {| %-15s | %-10s | %-9s |} {$postep} {$expo[$exp][czas]} {$expo[$exp][ownkills]/$expo[$exp][totalkills]};

@@ -47,6 +47,7 @@
     #read bundles/KillStats/manifest.tin;
     #read bundles/Stones/manifest.tin;
     #read bundles/BottomBarSimple/manifest.tin;
+    #read bundles/SplitWingMap/manifest.tin;
 
     #var r @bundleops_loadglobals{};
 
