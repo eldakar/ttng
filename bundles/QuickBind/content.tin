@@ -29,7 +29,7 @@
     #nop show_bind %0;
     #format {show_bind_} {%h} { %0 };
     #echo {${c_stan_wysoki}$show_bind_};
-    #draw <138><CAF> tubed huge left right box 15 15 22 80 %0;
+    #nop draw <138><CAF> tubed huge left right box 15 15 22 80 %0;
 }
 
 #nop silently;

@@ -9,12 +9,12 @@
          #nop  Determine symbol spread density, omit for the default.
 
 #map ter city <fca>⌂ SPARSE;
-#map ter densecity <g05>⌂ DENSE;
-#map ter novigrad1 <cba>⌂ DENSE WIDE;
-#map ter novigrad2 <dba>⌂ SPARSE VAST;
+#map ter densecity <g05>⌂ SCANT VAST;
+#map ter novigrad1 <cba>⌂ SPARSE WIDE;
+#map ter novigrad2 <dba>⌂ SCANT VAST;
 #map ter house <fca>⌂ SCANT NARROW;
-#map ter oxenfurt1 <caf>⌂ DENSE VAST;
-#map ter oxenfurt2 <fac>⌂ SPARSE WIDE;
+#map ter oxenfurt1 <caf>⌂ SCANT VAST;
+#map ter oxenfurt2 <fac>⌂ SCANT WIDE;
 #map ter forest <228>⟑ VAST SPARSE;
 
 #map ter road <g05>. DENSE VAST;
@@ -61,12 +61,11 @@
 
 
 #alias terrain_put {
-	#loop {8000} {12000} {aa} {
+	#loop {12000} {17000} {aa} {
 		#var tmproomdesc {};
 		#var tmpterrain {};
 #echo {<118>$aa<088>};
 		#map goto $aa;
-		#map map;
 
 		#map at $aa {#map get roomterrain tmproomterrain};
 		#map at $aa {#map get roomdesc tmproomdesc};

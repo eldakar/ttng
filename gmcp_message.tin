@@ -65,7 +65,6 @@
 			} {
 				#var outputtext {$tmptext};
 			};
-
 			#replace {outputtext} {\\n} {};
 
 			#if {"$voos_num" == "<178>i<088>"} {#var shortnote {[${c_nasobie}Notka<088>]}};

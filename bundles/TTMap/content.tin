@@ -79,7 +79,7 @@
             semifrozen_unset;
         };
     };
-    #if {$ROOM_INFO[map][x] > 0} {
+    #if {$ROOM_INFO[map][x] > 0} {        
         #var current_room_short_desc {$ROOM_INFO[map][name] $ROOM_INFO[map][x] $ROOM_INFO[map][y]};
     };
 
@@ -101,6 +101,10 @@
      #if {$cport > 0} {
             #mapka {GOTO $voom};
      };
+};
+
+#event {MAP UPDATED VTMAP} {
+    SplitWingMap_LabelMap <128>$current_room_short_desc;
 };
 
 #nop #################################################################################;
