@@ -1,20 +1,2 @@
 #!/bin/bash
-git pull
-
-export TERM=xterm-256color
-
-TSESSION="tintin"
-TSERVER="ttserver"
-
-myid=`id -u`
-
-# Check if the session exists, if so attach it, else make Barsawia
-if [ $(tmux -L ${TSERVER} ls 2>/dev/null | grep -c "^${TSESSION}:") != 0 ]; then
-        tmux -L ${TSERVER} att -t ${TSESSION}
-        exit 0;
-else
-        tmux -L ${TSERVER} new -d -s ${TSESSION} "tt++ m.tin $myid"
-        tmux -L ${TSERVER} split-window -t ${TSESSION} -h "tt++ map_window.tin $myid"
-        tmux -L ${TSERVER} select-pane -R -t 1
-        tmux -L ${TSERVER} att -t ${TSESSION}
-fi
+ttbin/ttbeta++ m.tin
