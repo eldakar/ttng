@@ -12,7 +12,9 @@
 #var bundle_content {1};
 
 #nop IS CONFIG PRSENT;
-#var bundle_config {0};
+#var bundle_config {1};
+#list bundle_configs clear;
+	#list bundle_configs add {TTMapTerrainTheme};
 
 #nop IS HELP PRESENT;
 #var bundle_help {0};

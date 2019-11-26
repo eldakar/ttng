@@ -38,6 +38,7 @@
 			#list contentliving create {$str_contentliving};
 			#list contentliving siz cls;
 			#sh $GMCPMSGS[text];
+			#nop SplitWingMap_Characters $GMCPMSGS[text];
 		};
 
 		#case {"room.exits"} {
@@ -50,7 +51,10 @@
 		        #echo { $rozk2[w]$rozk2[w] o $rozk2[e]$rozk2[e]  <088>};
 		        #echo { $rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d]   $roza_custom<088>};
 		};
-		#case {"room.long"} {#sh $GMCPMSGS[text]};
+		#case {"room.long"} {
+			#sh $GMCPMSGS[text];
+			SplitWingMap_Popup $GMCPMSGS[text];
+		};
 		#case {"room.short"} {
 			#var shortnote {};
 			#var shortbind {};

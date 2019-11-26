@@ -4,6 +4,7 @@
 #map flag unicodegraphics on;
 #map flag static on;
 #map flag vtmap off;
+#map legend 48 <FAA>#<088>;
 
 #alias {move_n} {#send n;#var trytomove 1;#var movedir {polnoc}};
 #alias {move_s} {#send s;#var trytomove 1;#var movedir {poludnie}};

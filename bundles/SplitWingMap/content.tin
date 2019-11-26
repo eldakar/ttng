@@ -1,13 +1,13 @@
 #alias SplitWingMap_Offset {
     #map flag vtmap on;
-
     #math offsety {$global_bundle_slots_values[prompt][top] + 1};
-
     #screen get cols screencols;
-    #math offsetx {$screencols - $global_bundle_slots_values[prompt][right] + 1};
-    #math offseth {$screencols - 4};;
+    #math offsetx {$screencols - $global_bundle_slots_values[prompt][right] + 3};
+    #math offseth {$screencols - 4};
     #math offsetw {$screenrows - 2};
-    #map offset $offsety $offsetx $offsetw $offseth;
+    #map offset $offsety+1 $offsetx $offsetw-3 $offseth+2;
+
+    #draw violet tubed box $offsety $offsetx-2 $offsetw-2 $offseth+4;
 };
 
 #alias {SplitWingMapWidth} {
@@ -23,6 +23,19 @@
     #if {$global_bundle_slots_values[prompt][right] < 1} {
         #var ConfigManager_Configs[SplitWingMapWidth] {10};
         #var global_bundle_slots_values[prompt][right] {10};
+    };
+    SplitWingMap_Offset;
+};
+
+#alias {SplitWingMap_Popup} {
+    #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
+        #draw violet circled box $offsety+24 $offsetx+3 $offsetw-5 $offseth-3 <088>%0;
+    };
+};
+
+#alias {SplitWingMap_LabelMap} {
+    #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
+        #draw violet circled box $offsety+2 $offsetx+3 $offsety+4 $offseth-3 <088>%0;
     };
 };
 

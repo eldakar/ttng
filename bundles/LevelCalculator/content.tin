@@ -262,6 +262,7 @@
 	#echo {Wygladasz jak ${twojpoziom}.};
 }
 
+#action {Obecnie do waznych cech zaliczasz} {podliczexp};
 
 #action {Czujesz jak powoli} {podliczexp};
 #action {Otwierasz oczy, twoj umysl powraca do normalnego dzialania. Po chwili konsternacji wstajesz z podlogi.} {podliczexp};

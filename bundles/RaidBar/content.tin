@@ -13,8 +13,8 @@
     #var a {%0};
     #nop format {RnderBarEraseHeader} {%h} {};
     #math teempe {$global_bundle_slots_values[prompt][top] - 1};
-  	#loop {1} {$teempe} {bubu} {#sh { } {$bubu} {}};
-  	#var r_curLineCnt {1};
+  	#loop {2} {$teempe} {bubu} {#sh { } {$bubu} {}};
+  	#var r_curLineCnt {2};
     #list team_offenders cle;
     #list team_offenders cre;
 
@@ -107,6 +107,10 @@
             };
         };
     };
+
+    #nop draw violet tubed box 1 1 10 $screencols;
+    
+    #draw violet tubed box 1 1 $ConfigManager_Configs[RaidBarDynamicTop] $screencols;
 };
 
 #con mouse on;

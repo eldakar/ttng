@@ -49,6 +49,8 @@
     #read bundles/BottomBarSimple/manifest.tin;
     #read bundles/SplitWingMap/manifest.tin;
 
+    #read bundles/Assets_TerrainTheme/content.tin;
+    
     #var r @bundleops_loadglobals{};
 
     #nop TODO;

@@ -1,0 +1,36 @@
+#map ter city <fca>⌂ SPARSE;
+#map ter densecity <g05>⌂ DENSE;
+#map ter house <fca>⌂ SCANT;
+#map ter forest <228>⟑;
+#map ter road <g03>. DENSE;
+#map ter water1 <abd>~;
+#map ter water2 <aaf>.;
+#map ter lava1 <118>O;
+#map ter lava2 <caa>o DENSE;
+#map ter lava3 <daa>. SPARSE;
+#map ter dfields <cfc>V DENSE;
+#map ter cave1 <cba>o;
+#map ter cave2 <dba>O;
+#map ter cave3 <cba>.;
+#map ter cave4 <cca>o DENSE;
+#map ter cave5 <cda>O SPARSE;
+#map ter cave6 <cba>. SCANT;
+#map ter tunnel1 <g02>@ DENSE;
+#map ter underground1 <g04>@ DENSE;
+#map ter deepwater <aab>~ DENSE;
+
+#untick terrain_effect_lava;
+#var terrain_effect_lava 1;
+#unticker terrain_effect_lava {
+	#switch {"$terrain_effect_lava"} {
+		#case {"1"} {#map ter water <148>.};
+		#case {"2"} {#map ter water <148>o};
+		#case {"3"} {#map ter water <148>`};
+		#case {"4"} {#map ter water <148>`};
+		#case {"5"} {#map ter water <148>.};		
+	};
+	#math terrain_effect_lava {$terrain_effect_lava + 1};
+	#if {$terrain_effect_lava > 5} {
+		#var terrain_effect_lava 1;
+	};
+} {0.1};
