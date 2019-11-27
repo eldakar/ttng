@@ -16,7 +16,7 @@
 #map ter oxenfurt1 <caf>⌂ SCANT VAST;
 #map ter oxenfurt2 <fac>⌂ SCANT WIDE;
 
-#map ter road <g05>. DENSE VAST;
+#map ter road <g06>. DENSE VAST;
 #map ter path1 <cba>. DENSE WIDE;
 #map ter path2 <cba>, DENSE WIDE;
 
@@ -61,8 +61,22 @@
 #map ter cave4 <cca>o DENSE;
 #map ter cave5 <cda>O SPARSE;
 #map ter cave6 <cba>. SCANT;
-#map ter tunnel1 <g02>@ DENSE NARROW;
-#map ter underground1 <g04>@ DENSE WIDE;
+#map ter tunnel1 <g04>@ DENSE NARROW;
+#map ter underground1 <g06>@ DENSE WIDE;
+
+#alias terrain_exits {
+	#loop {1} {25000} {aa} {
+		#map at $aa {#map get roomterrain tmproomterrain};
+		#format {tmproomtlen} {%L} {$tmproomterrain};	
+		#if {$tmproomtlen > 2} {
+			#regex {$tmproomterrain} {{forest|field}} {#map at $aa {#map set roomcolor <128>}};
+			#regex {$tmproomterrain} {plaza} {#map at $aa {#map set roomcolor <138>}};
+			#regex {$tmproomterrain} {water} {#map at $aa {#map set roomcolor <148>}};
+			#regex {$tmproomterrain} {cave} {#map at $aa {#map set roomcolor <158>}};
+			#regex {$tmproomterrain} {lava} {#map at $aa {#map set roomcolor <118>}};
+		};
+	};
+}
 
 #alias terrain_put {
 	#loop {1} {25000} {aa} {
@@ -81,7 +95,6 @@
 		} {
 			#var tmproomdesc {$savedroom};
 		};
-
 		#if {$tmproomtlen < 2} {
 #nop LASY;
 			#regex {$tmproomdesc} {{Las|las|zagajnik|Zagajnik|lesie|lasu|swierk|buk|sosna|sosnow}} {
