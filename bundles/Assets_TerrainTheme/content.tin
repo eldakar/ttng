@@ -22,7 +22,7 @@
 
 
 #map ter water1 <abd>৺ VAST DENSE;
-#map ter water2 <aac>⏖ VAST DENSE;
+#map ter water2 <aac>~ VAST DENSE;
 #map ter deepwater <aab>~ DENSE WIDE;
 
 #nop 🌊 - water;
@@ -44,8 +44,8 @@
 #map ter field5 <fca>. SPARSE VAST;
 
 
-#map ter forest1 <aca>⍋ SPARSE VAST;
-#map ter forest2 <adb>⍋ SPARSE VAST;
+#map ter forest1 <aca>^ SPARSE VAST;
+#map ter forest2 <adb>t SPARSE VAST;
 #map ter forest3 <bda>Y VAST SPARSE;
 
 
@@ -108,7 +108,7 @@
 				#map at $aa {#map set roomcolor <128>};
 			} {};
 #nop LAKI;
-			#regex {$tmproomdesc} {{laki|laka|Laka|Laki|polana|Polana|polanka|Polanka|lace}} {
+			#regex {$tmproomdesc} {{laki|laka|Laka|Laki|polana|Polana|polanka|Polanka|lace|Pole|pole|Pola|pola}} {
 				#math rollme {1d3};
 				#switch {"$rollme"} {
 					#case {"1"} {#map at $aa {#map set roomterrain field1}};
@@ -142,7 +142,7 @@
 				#map at $aa {#map set roomcolor <148>};
 			} {};
 #nop JEZIORA;
-			#regex {$tmproomdesc} {%ijezior} {
+			#regex {$tmproomdesc} {{jezior|Jezior|sadzawk|Sadzawk}} {
 				#math rollme {1d2};
 				#switch {"$rollme"} {
 					#case {"1"} {#map at $aa {#map set roomterrain water1}};
@@ -164,7 +164,7 @@
 				#map at $aa {#map set roomcolor <128>};
 			} {};
 #nop BAGNA;
-			#regex {$tmproomdesc} {{bagna|tunel|Bagno|bagno|Tunel}} {
+			#regex {$tmproomdesc} {{Bagna|bagna|tunel|Bagno|bagno|Tunel|jaskin|Jaskin}} {
 				#math rollme {1d6};
 				#switch {"$rollme"} {
 					#case {"1"} {#map at $aa {#map set roomterrain cave1}};
@@ -188,7 +188,7 @@
 				#map at $aa {#map set roomcolor <118>};
 			} {};
 #nop GORY;
-			#regex {$tmproomdesc} {{%igora|%igory|%iwzgorz}} {
+			#regex {$tmproomdesc} {{gora|gory|wzgorz|Gora|Gory|Wzgorz}} {
 				#math rollme {1d4};
 				#switch {"$rollme"} {
 					#case {"1"} {#map at $aa {#map set roomterrain field1}};
