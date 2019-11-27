@@ -8,18 +8,19 @@
          #nop map terrain <name> <symbol> [FADEIN|FADEOUT]
          #nop  Determine symbol spread density, omit for the default.
 
-#map ter city <fca>⌂ SPARSE;
+#map ter city <cba>⌂ SPARSE NARROW;
 #map ter densecity <g05>⌂ SCANT VAST;
 #map ter novigrad1 <cba>⌂ SPARSE WIDE;
-#map ter novigrad2 <dba>⌂ SCANT VAST;
-#map ter house <fca>⌂ SCANT NARROW;
-#map ter oxenfurt1 <caf>⌂ SCANT VAST;
-#map ter oxenfurt2 <fac>⌂ SCANT WIDE;
+#map ter novigrad2 <cba>⌂ SCANT VAST;
+#map ter house <caa>⌂ SCANT NARROW;
+#map ter oxenfurt1 <bac>⌂ SCANT VAST;
+#map ter oxenfurt2 <cab>⌂ SCANT WIDE;
 
 #map ter road <g06>. DENSE VAST;
 #map ter path1 <cba>. DENSE WIDE;
 #map ter path2 <cba>, DENSE WIDE;
 
+#map ter mount1 <cba>^ DENSE VAST;
 
 #map ter water1 <abd>৺ VAST DENSE;
 #map ter water2 <aac>~ VAST DENSE;
@@ -38,28 +39,28 @@
 
 #map ter dfields <aba>v DENSE VAST;
 #map ter field1 <aca>. DENSE VAST;
-#map ter field2 <bba>☘ SPARSE VAST;
+#map ter field2 <bba>* SPARSE VAST;
 #map ter field3 <aba>i DENSE VAST;
 #map ter field4 <aca>£ DENSE VAST;
-#map ter field5 <fca>. SPARSE VAST;
+#map ter field5 <dca>. SPARSE VAST;
 
 
 #map ter forest1 <aca>^ SPARSE VAST;
-#map ter forest2 <adb>t SPARSE VAST;
-#map ter forest3 <bda>Y VAST SPARSE;
+#map ter forest2 <acb>t SPARSE VAST;
+#map ter forest3 <bca>Y VAST SPARSE;
 
 
-#map ter grave1 <ccc>✟ SPARSE VAST;
-#map ter grave2 <ddd>☨ SPARSE VAST;
+#map ter grave1 <bbb>✟ SPARSE VAST;
+#map ter grave2 <ccc>☨ SPARSE VAST;
 
 #map ter plaza1 <cca>. DENSE WIDE FADEIN;
-#map ter plaza2 <ddb>, WIDE VAST DENSE;
+#map ter plaza2 <ccb>, WIDE VAST DENSE;
 
-#map ter cave1 <cba>o;
-#map ter cave2 <dba>O;
-#map ter cave3 <cba>.;
-#map ter cave4 <cca>o DENSE;
-#map ter cave5 <cda>O SPARSE;
+#map ter cave1 <aba>o;
+#map ter cave2 <cba>O;
+#map ter cave3 <baa>.;
+#map ter cave4 <bba>o DENSE;
+#map ter cave5 <bca>O SPARSE;
 #map ter cave6 <cba>. SCANT;
 #map ter tunnel1 <g04>@ DENSE NARROW;
 #map ter underground1 <g06>@ DENSE WIDE;
