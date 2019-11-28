@@ -27,7 +27,7 @@
             #list team_offenders add {$duch[$avatarid][attack_num]};
         } {
             #if {$r_curLineCnt < $global_bundle_slots_values[prompt][top]} {
-                #sh {$duch[$avatarid][bar][orc]} {$r_curLineCnt} {1} {};
+                #sh {  $duch[$avatarid][bar][orc]} {$r_curLineCnt} {1} {};
                 #math r_curLineCnt {$r_curLineCnt + 1};
                 #var duch[$avatarid][shown] {1};
             };
@@ -39,7 +39,7 @@
                         #list team_offenders add $duch[$team[$ti]][attack_num];
                     }   {
                         #if {$r_curLineCnt < $global_bundle_slots_values[prompt][top]} {
-                            #sh {$duch[$team[$ti]][bar][orc]} {$r_curLineCnt} {1} {};
+                            #sh {  $duch[$team[$ti]][bar][orc]} {$r_curLineCnt} {1} {};
                             #math r_curLineCnt {$r_curLineCnt + 1};
                             #var duch[$team[$ti]][shown] {1};
                         };
@@ -56,14 +56,14 @@
                     #if {$tmpnavigator == 1} {
                         #var tmpnavigator 0;
                         #if {$r_curLineCnt < $global_bundle_slots_values[prompt][top]} {
-                            #sh {$duch[$ti][bar][orc] ${c_stan_niski}---><088> $duch[$duch[$ti][attack_num]][bar][orc]} {$r_curLineCnt} {1} {};
+                            #sh {  $duch[$ti][bar][orc] ${c_stan_niski}---><088> $duch[$duch[$ti][attack_num]][bar][orc]} {$r_curLineCnt} {1} {};
                             #math r_curLineCnt {$r_curLineCnt + 1};
                             #var duch[$team_offenders[$to]][shown] {1};
                         };
                     }   {
                         #if {$r_curLineCnt < $global_bundle_slots_values[prompt][top]} {
                             #math RaidBarCountUsedLines {$RaidBarCountUsedLines + 1};            
-                            #sh {$duch[$ti][bar][orc] ${c_stan_niski}_/} {$r_curLineCnt} {1} {};
+                            #sh {  $duch[$ti][bar][orc] ${c_stan_niski}_/} {$r_curLineCnt} {1} {};
                             #math r_curLineCnt {$r_curLineCnt + 1};
                         };
                     };
@@ -76,7 +76,7 @@
     #foreach {*wrogi[]} {to} {
         #if {$duch[$wrogi[$to]][shown] < 1} {
             #if {$r_curLineCnt < $global_bundle_slots_values[prompt][top]} {
-                #sh {$duch[$wrogi[$to]][bar][orc]} {$r_curLineCnt} {1} {};
+                #sh {  $duch[$wrogi[$to]][bar][orc]} {$r_curLineCnt} {1} {};
                 #math r_curLineCnt {$r_curLineCnt + 1};
                 #var duch[$wrogi[$to]][shown] {1};
             };
@@ -90,7 +90,7 @@
             } {
             #nop sh {$duch[$wrogi[$wr]][bar][hug]} {$r_curLineCnt};
                 #if {$r_curLineCnt < $global_bundle_slots_values[prompt][top]} {
-                    #sh {$duch[$wrogi[$wr]][bar][hug]} {$r_curLineCnt} {$r_curLineCnt} {1} {};
+                    #sh {  $duch[$wrogi[$wr]][bar][hug]} {$r_curLineCnt} {$r_curLineCnt} {1} {};
                     #math r_curLineCnt {$r_curLineCnt + 1};
                     #var duch[$wrogi[$wr]][shown] {1};
                 };
@@ -101,7 +101,7 @@
     #foreach {*duch[]} {wr} {
         #if {$duch[$wr][shown] < 1} {
             #if {$r_curLineCnt < $global_bundle_slots_values[prompt][top]} {
-                #sh {$duch[$wr][bar][orc]} {$r_curLineCnt} {1} {};
+                #sh {  $duch[$wr][bar][orc]} {$r_curLineCnt} {1} {};
                 #math r_curLineCnt {$r_curLineCnt + 1};
                 #var duch[$wr][shown] {1};
             };
