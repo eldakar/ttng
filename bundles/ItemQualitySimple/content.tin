@@ -1,62 +1,107 @@
 #nop ocenazbroi.tin
-#nop Na podstawie statow zbroi dodaje dodatkowy wiersz z informacja
 
-#nop niezle przed obrazeniami klutymi i obuchowymi oraz dosc dobrze przed cietymi.;
 
 #action {jak na %1 chron{i|ia} {on|ona|one} %2 przed obrazeniami %3 i %4 oraz %5 przed %6.}{
-#var {jakosc1}{@jakazbroja{%2}};
-#var {jakosc2}{@jakazbroja{%5}};
-#echo {<dee>%1:<088> %3: $jakosc1<088>, %4: $jakosc1<088>, %6: $jakosc2<088>.}
+	#var {jakosc1}{@jakazbroja{%2}};
+	#var {jakosc2}{@jakazbroja{%5}};
+	#echo {<dee>%1:<088> %3: $jakosc1<088>, %4: $jakosc1<088>, %6: $jakosc2<088>.};
+        SplitWingMap_Popup Oceniasz: <fca>$OcenianyPrzedmiotNazwa<088>\nTyp: %1\n%3: $jakosc1<088>\n%4: $jakosc1\n<088>%6: $jakosc2<088>;
 }
 
-#nop dobrze przed obrazeniami klutymi, cietymi i obuchowymi;
 #action {jak na %1 chron{i|ia} {on|ona|one} %2 przed obrazeniami %3, %4 przed %5 i %6 przed %7.}{
-#var {jakosc1}{@jakazbroja{%2}};
-#var {jakosc2}{@jakazbroja{%4}};
-#var {jakosc3}{@jakazbroja{%6}};
-#echo {<dee>%1:<088> %3: $jakosc1<088>, %5: $jakosc2<088>, %7: $jakosc3<088>.}
+	#var {jakosc1}{@jakazbroja{%2}};
+	#var {jakosc2}{@jakazbroja{%4}};
+	#var {jakosc3}{@jakazbroja{%6}};
+	#echo {<dee>%1:<088> %3: $jakosc1<088>, %5: $jakosc2<088>, %7: $jakosc3<088>.};
+        SplitWingMap_Popup Oceniasz: <fca>$OcenianyPrzedmiotNazwa<088>\nTyp: %1\n%3: $jakosc1<088>\n%5: $jakosc2\n<088>%7: $jakosc3<088>;
 }
 
-#nop jak na ciezka zbroje chroni on dosc dobrze przed obrazeniami klutymi, cietymi i obuchowymi.;
 #action {jak na %1 chron{i|ia} {on|ona|one} %2 przed obrazeniami klutymi, cietymi i obuchowymi.}{
-#var {jakosc}{@jakazbroja{%2}};
-#echo {<dee>%1:<088> cietymi: $jakosc<088>, klutymi: $jakosc<088>, obuchowymi: $jakosc<088>.}
+	#var {jakosc}{@jakazbroja{%2}};
+	#echo {<dee>%1:<088> cietymi: $jakosc<088>, klutymi: $jakosc<088>, obuchowymi: $jakosc<088>.};
+        SplitWingMap_Popup Oceniasz: <fca>$OcenianyPrzedmiotNazwa<088>\nTyp: %1\nklutymi: $jakosc<088>\ncietymi: $jakosc\n<088>obuchowymi: $jakosc<088>;
 }
+
+#nop tarcze;
+
+#action {chron{i|ia} {on|ona|one} %2 przed obrazeniami %3 i %4 oraz %5 przed %6. Ponadto jest %7 w parowaniu ciosow.}{
+	#var {jakosc1}{@jakazbroja{%2}};
+	#var {jakosc2}{@jakazbroja{%5}};
+  	#var {jakosc3}{@jakskuteczna{%7}};
+	#echo {%3: $jakosc1<088>, %4: $jakosc1<088>, %6: $jakosc2<088>.};
+        SplitWingMap_Popup Oceniasz: <fca>$OcenianyPrzedmiotNazwa<088>\n%3: $jakosc1<088>\n%4: $jakosc1\n<088>%6: $jakosc2<088>\nparowanie: $jakosc3<088>;
+}
+
+#action {chron{i|ia} {on|ona|one} %2 przed obrazeniami %3, %4 przed %5 i %6 przed %7. Ponadto jest &8 w parowaniu ciosow.}{
+	#var {jakosc1}{@jakazbroja{%2}};
+	#var {jakosc2}{@jakazbroja{%4}};
+	#var {jakosc3}{@jakazbroja{%6}};
+  	#var {jakosc4}{@jakskuteczna{%8}};
+	#echo {%3: $jakosc1<088>, %5: $jakosc2<088>, %7: $jakosc3<088>.};
+        SplitWingMap_Popup Oceniasz: <fca>$OcenianyPrzedmiotNazwa<088>\n%3: $jakosc1<088>\n%5: $jakosc2\n<088>%7: $jakosc3<088>\nparowanie: $jakosc4<088>;
+}
+
+#action {chron{i|ia} {on|ona|one} %2 przed obrazeniami klutymi, cietymi i obuchowymi. Ponadto jest %3 w parowaniu ciosow.}{
+	#var {jakosc}{@jakazbroja{%2}};
+  	#var {jakosc3}{@jakskuteczna{%3}};
+	#echo {cietymi: $jakosc<088>, klutymi: $jakosc<088>, obuchowymi: $jakosc<088>.};
+        SplitWingMap_Popup Oceniasz: <fca>$OcenianyPrzedmiotNazwa<088>\nklutymi: $jakosc<088>\ncietymi: $jakosc\n<088>obuchowymi: $jakosc<088>\nparowanie: $jakosc3<088>;
+}
+
 
 #function {jakazbroja}{
   #var {obr}{%1};
-  #replace {obr}{wyjatkowo zle}{${c_stan_niski}1};
-  #replace {obr}{bardzo zle}{${c_stan_niski}2};
-  #replace {obr}{niezle}{${c_stan_niski}3};
-  #replace {obr}{zle}{${c_stan_niski}4};
-  #replace {obr}{bardzo kiepsko}{${c_stan_niski}5};
-  #replace {obr}{kiepsko}{${c_stan_sredni}6};
-  #replace {obr}{przyzwoicie}{${c_stan_sredni}7};
-  #replace {obr}{dosc dobrze}{${c_stan_sredni}8};
-  #replace {obr}{bardzo dobrze}{${c_stan_sredni}9};
-  #replace {obr}{dobrze}{${c_stan_wysoki}10};
-  #replace {obr}{doskonale}{${c_stan_wysoki}11};
-  #replace {obr}{perfekcyjnie}{${c_stan_wysoki}12};
+  #replace {obr}{bardzo kiepsko}{${c_stan_niski}5 %0};
+  #replace {obr}{kiepsko}{${c_stan_sredni}6 %0};
+  #replace {obr}{przyzwoicie}{${c_stan_sredni}7 %0};
+  #nop replace {obr}{dosc dobrze}{${c_stan_sredni}8 %0};
+  #nop replace {obr}{dobrze}{${c_stan_wysoki}10 %0};
+  #replace {obr}{doskonale}{${c_stan_wysoki}11 %0};
+  #replace {obr}{perfekcyjnie}{${c_stan_wysoki}12 %0};
+
+#regex {$obr} {bardzo dobrze} {
+  #replace {obr}{bardzo dobrze}{${c_stan_sredni}9 %0};
+} {
+	#regex {$obr} {dosc dobrze} {
+  		#replace {obr}{dosc dobrze}{${c_stan_sredni}8 %0};
+	} {
+  		#replace {obr}{dobrze}{${c_stan_wysoki}10 %0};
+	};
+};
+
+#regex {$obr} {wyjatkowo zle} {
+  #replace {obr}{wyjatkowo zle}{${c_stan_niski}1 %0};
+} {
+	#regex {$obr} {niezle} {
+  		#replace {obr}{niezle}{${c_stan_niski}3 %0};
+	} {
+		#regex {$obr} {bardzo zle} {
+  			#replace {obr}{bardzo zle}{${c_stan_niski}2 %0};
+		} {
+  			#replace {obr}{zle}{${c_stan_niski}4 %0};
+		};
+	};
+};
 
   #return $obr
 }
 
 #function {jakwywazona}{
   #var {obr}{%1};
-  #replace {obr}{zle}{${c_stan_niski}3};
-  #replace {obr}{kiepsko}{${c_stan_niski}5};
-  #replace {obr}{dobrze}{${c_stan_sredni}10}; 
-  #replace {obr}{wyjatkowo zle}{${c_stan_niski}1};
-  #replace {obr}{bardzo zle}{${c_stan_niski}2};
-  #replace {obr}{bardzo kiepsko}{${c_stan_niski}4};
-  #replace {obr}{przyzwoicie}{${c_stan_niski}6};
-  #replace {obr}{srednio}{${c_stan_sredni}7};
-  #replace {obr}{niezle}{${c_stan_sredni}8};
-  #replace {obr}{bardzo dobrze}{${c_stan_wysoki}11};
-  #replace {obr}{dosc dobrze}{${c_stan_sredni}9};
-  #replace {obr}{doskonale}{${c_stan_wysoki}12};
-  #replace {obr}{perfekcyjnie}{${c_stan_wysoki}13};  
-  #replace {obr}{genialnie}{${c_stan_wysoki}14};  
+  #replace {obr}{zle %w}{${c_stan_niski}3 %0};
+  #replace {obr}{kiepsko %w}{${c_stan_niski}5 %0};
+  #replace {obr}{dobrze %w}{${c_stan_sredni}10 %0}; 
+  #replace {obr}{wyjatkowo zle %w}{${c_stan_niski}1 %0};
+  #replace {obr}{bardzo zle %w}{${c_stan_niski}2 %0};
+  #replace {obr}{bardzo kiepsko %w}{${c_stan_niski}4 %0};
+  #replace {obr}{przyzwoicie %w}{${c_stan_niski}6 %0};
+  #replace {obr}{srednio %w}{${c_stan_sredni}7 %0};
+  #replace {obr}{niezle %w}{${c_stan_sredni}8 %0};
+  #replace {obr}{bardzo dobrze %w}{${c_stan_wysoki}11 %0};
+  #replace {obr}{dosc dobrze %w}{${c_stan_sredni}9 %0};
+  #replace {obr}{doskonale %w}{${c_stan_wysoki}12 %0};
+  #replace {obr}{perfekcyjnie %w}{${c_stan_wysoki}13 %0};  
+  #replace {obr}{genialnie %w}{${c_stan_wysoki}14 %0};  
 
   #return $obr
 }
@@ -65,20 +110,20 @@
 
 #function {jakskuteczna} {
   #var {obr}{%1};
-  #replace {obr}{kompletnie nieskuteczn}{${c_stan_niski}1};
-  #replace {obr}{strasznie nieskuteczn}{${c_stan_niski}2};
-  #replace {obr}{bardzo nieskuteczn}{${c_stan_niski}3};
-  #replace {obr}{raczej nieskuteczn}{${c_stan_niski}4};
-  #replace {obr}{malo skuteczn}{${c_stan_niski}5};
-  #replace {obr}{niezbyt skuteczn}{${c_stan_niski}6};
-  #replace {obr}{raczej skuteczn}{${c_stan_sredni}7};
-  #replace {obr}{dosyc skuteczn}{${c_stan_sredni}8};
-  #replace {obr}{calkiem skuteczn}{${c_stan_sredni}9};
-  #replace {obr}{bardzo skuteczn}{${c_stan_sredni}10};
-  #replace {obr}{niezwykle skuteczn}{${c_stan_wysoki}11};
-  #replace {obr}{wyjatkowo skuteczn}{${c_stan_wysoki}12};
-  #replace {obr}{zabojczo skuteczn}{${c_stan_wysoki}13};
-  #replace {obr}{fantastycznie skuteczn}{${c_stan_wysoki}14};  
+  #replace {obr}{kompletnie nieskuteczn}{${c_stan_niski}1 %0};
+  #replace {obr}{strasznie nieskuteczn}{${c_stan_niski}2 %0};
+  #replace {obr}{bardzo nieskuteczn}{${c_stan_niski}3 %0};
+  #replace {obr}{raczej nieskuteczn}{${c_stan_niski}4 %0};
+  #replace {obr}{malo skuteczn}{${c_stan_niski}5 %0};
+  #replace {obr}{niezbyt skuteczn}{${c_stan_niski}6 %0};
+  #replace {obr}{raczej skuteczn}{${c_stan_sredni}7 %0};
+  #replace {obr}{dosyc skuteczn}{${c_stan_sredni}8 %0};
+  #replace {obr}{calkiem skuteczn}{${c_stan_sredni}9 %0};
+  #replace {obr}{bardzo skuteczn}{${c_stan_sredni}10 %0};
+  #replace {obr}{niezwykle skuteczn}{${c_stan_wysoki}11 %0};
+  #replace {obr}{wyjatkowo skuteczn{a|y|e}}{${c_stan_wysoki}12 %0};
+  #replace {obr}{zabojczo skuteczn}{${c_stan_wysoki}13 %0};
+  #replace {obr}{fantastycznie skuteczn}{${c_stan_wysoki}14 %0};  
 
   #return $obr;
 }
@@ -87,4 +132,9 @@
   #var jakosc1 {@jakwywazona{%3}};
   #var jakosc2 {@jakskuteczna{%4}};
   #echo {<dee>bron %1:<088> wywazenie: $jakosc1<088>, skutecznosc: $jakosc2<088>.};
+  SplitWingMap_Popup Oceniasz: <fca>$OcenianyPrzedmiotNazwa<088>\nTyp: %1\nWywazenie: $jakosc1<088>\nSkutecznosc: $jakosc2<088>;
 }
+
+#action {Oceniasz starannie %*.} {
+	#var OcenianyPrzedmiotNazwa {%1};
+};
