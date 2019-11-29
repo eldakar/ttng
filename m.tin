@@ -45,6 +45,8 @@
     #read bundles/MacroRemains/manifest.tin;
     #read bundles/MacroLamp/manifest.tin;
     #read bundles/KillStats/manifest.tin;
+    #read bundles/Stones/manifest.tin;
+    #read bundles/BottomBarSimple/manifest.tin;
 
     #var r @bundleops_loadglobals{};
 

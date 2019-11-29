@@ -1,0 +1,15 @@
+#var global_bundle_slots_values[prompt][bottom] {2};
+
+#alias {BottomBarSimple_char_state} {
+	#var charstate {%0};
+	#var global_bundle_slots_values[prompt][bottom] {2};
+	#foreach {$charstate[]} {s} {
+		#list {state} {find} {$s} {v}; 
+		#if {$v > 0} {
+			#list {state}{set}{$s}{$charstate[$s]}
+		} {
+			#var {state[$s]} {$charstate[$s]};
+		}
+	};
+	#sh {hp: $state[hp] ma: $state[mana] fa: $state[fatigue] en: $state[encumbrance]       fo: $state[form] im: $state[improve]       in: $state[intox] he: $state[headache] st: $state[stuffed] so: $state[soaked]       pa: $state[panic]} {-3};
+};

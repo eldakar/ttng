@@ -1,0 +1,17 @@
+#var bundle_name {BottomBarSimple};
+#var bundle_data {0};
+#var bundle_content {1};
+#var bundle_config {1};
+#list bundle_configs clear;
+#var bundle_help {0};
+#list bundle_slots clear;
+#list bundle_slots add {prompt.bottom};
+#list bundle_deps clear;
+	#list bundle_deps add {ConfigManager};	
+	#list bundle_deps add {GMCPChar};
+		#list bundle_handler_char_state add {BottomBarSimple_char_state};
+	#list bundle_deps add {SplitRefresh};
+		#list bundle_handler_split_request add {BottomBarSimple_char_state};
+#list bundle_alias clear;
+
+#var bundle_ready @bundleops_validate{};
