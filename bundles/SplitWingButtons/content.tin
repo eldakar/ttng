@@ -1,0 +1,5 @@
+#alias SplitWingButtons_refresh {
+    #var global_bundle_slots_values[prompt][left] 8;
+    #draw black tubed box $global_bundle_slots_values[prompt][top]+1 1 $screenrows-$global_bundle_slots_values[prompt][bottom]-1 $global_bundle_slots_values[prompt][left];
+    #draw violet tubed box $global_bundle_slots_values[prompt][top]+1 1 $screenrows-$global_bundle_slots_values[prompt][bottom]-1 $global_bundle_slots_values[prompt][left]-1;
+}

@@ -39,3 +39,16 @@
     };
 };
 
+#alias {SplitWingMap_LabelBind} {
+    #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
+        #draw green circled box $offsety+5 $offsetx+3 $offsety+7 $offseth-3 <128>BIND LOKACJA: %0;
+    };
+};
+
+
+#alias {SplitWingMap_Warning} {
+    #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
+        #draw red tubed box $offsety+9 $offsetx+3 $offsety+11 $offseth-3 <088>%0;
+    };
+};
+

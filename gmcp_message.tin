@@ -72,6 +72,7 @@
 				#line substitute {variables} {#macro {$KEY_QB} {$bind_run}};
 				#nop echo {${c_stan_sredni}BIND: $bind_run<088>};
 				#var shortbind {[${c_stan_sredni}$bind_run<088>]};
+				SplitWingMap_LabelBind $bind_run;
 			};
 
 			#sh {${outputtext} [$roomId] $shortbind $shortnote};
@@ -87,6 +88,8 @@
 			#nop line strip {#if {$ROOM_INFO[map][x] > 0} {} {#line substitute variables {#var current_room_short_desc {$abc}}}};
 			#nop sh $abc;
 			#if {$MAPPER_SYNC == 0} {findme};
+			 SplitWingMap_LabelMap <128>$current_room_short_desc;
+
 		};
 		
 		#case {"combat.team"} {
