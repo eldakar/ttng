@@ -21,6 +21,7 @@
 	#if {"%1" == "mocny"} {#return 25};
 	#if {"%1" == "potezny"} {#return 30};
 	#if {"%1" == "mocarny"} {#return 35};	
+	#if {"%1" == "epicko silny"} {#return 40};
 	#if {"%1" == "slabiutka"} {#return 0};
 	#if {"%1" == "watla"} {#return 5};
 	#if {"%1" == "slaba"} {#return 10};
@@ -28,7 +29,8 @@
 	#if {"%1" == "silna"} {#return 20};
 	#if {"%1" == "mocna"} {#return 25};
 	#if {"%1" == "potezna"} {#return 30};
-	#if {"%1" == "mocarna"} {#return 35};	
+	#if {"%1" == "mocarna"} {#return 35};
+	#if {"%1" == "epicko silna"} {#return 40};	
 }
 #function {poziomzrecznosci}
 {
@@ -41,6 +43,7 @@
 	#if {"%1" == "gibki"} {#return 30};
 	#if {"%1" == "akrobatyczny"} {#return 35};	
 	#if {"%1" == "epicko zreczny"} {#return 40};
+	#if {"%1" == "epicko zreczna"} {#return 40};
 	#if {"%1" == "nieskoordynowana"} {#return 0};
 	#if {"%1" == "niezreczna"} {#return 5};
 	#if {"%1" == "niezgrabna"} {#return 10};
@@ -57,6 +60,8 @@
 	#if {"%1" == "mizerny"} {#return 10};
 	#if {"%1" == "dobrze zbudowany"} {#return 15};
 	#if {"%1" == "wytrzymaly"} {#return 20};
+	#if {"%1" == "epicko wytrzymaly"} {#return 40};
+	#if {"%1" == "epicko wytrzymala"} {#return 40};
 	#if {"%1" == "twardy"} {#return 25};
 	#if {"%1" == "muskularny"} {#return 30};
 	#if {"%1" == "atletyczny"} {#return 35};	
