@@ -40,6 +40,7 @@
 	#if {"%1" == "zreczny"} {#return 25};
 	#if {"%1" == "gibki"} {#return 30};
 	#if {"%1" == "akrobatyczny"} {#return 35};	
+	#if {"%1" == "epicko zreczny"} {#return 40};
 	#if {"%1" == "nieskoordynowana"} {#return 0};
 	#if {"%1" == "niezreczna"} {#return 5};
 	#if {"%1" == "niezgrabna"} {#return 10};
@@ -114,6 +115,39 @@
 	#if {"%1" == "troche"} {#return 2};
 	#if {"%1" == "niewiele"} {#return 3};
 	#if {"%1" == "bardzo niewiele"} {#return 4};
+}
+
+#nop NEWWW #;
+#nop #######;
+#action {Jestes %1 i %2 ci brakuje, zebys mogl wyzej ocenic swa sile.\nJestes %3 i %4 ci brakuje, zebys mogl wyzej ocenic swa zrecznosc.\nJestes %5 i %6 ci brakuje, zebys mogl wyzej ocenic swa wytrzymalosc.\nJestes %7 i %8 ci brakuje, zebys mogl wyzej ocenic swoj intelekt.\nJestes %9 i %10 ci brakuje, zebys mogl wyzej ocenic swa odwage.} 
+{
+	#var p_str_left 0;
+	#var p_dex_left 0;
+	#var p_sta_left 0;
+	#var p_int_left 0;
+	#var p_bra_left 0;
+	#var p_str 0;
+	#var p_dex 0;
+	#var p_sta 0;
+	#var p_int 0;
+	#var p_bra 0;
+
+	#var p_str @poziomsily{%1};
+	#var p_str_left @brakuje{%2};
+
+	#var p_dex @poziomzrecznosci{%3};
+	#var p_dex_left @brakuje{%4};
+
+	#var p_sta @poziomwytrzymalosci{%5};
+	#var p_sta_left @brakuje{%6};
+
+	#var p_int @poziominteligencji{%7};
+	#var p_int_left @brakuje{%8};
+
+	#var p_bra @poziomodwagi{%9};
+	#var p_bra_left @brakuje{%10};
+
+	podliczexp;
 }
 
 #action {Wydaje ci sie, ze %1 ci brakuje, zebys mogla wyzej ocenic sw{a|oj} %3.}
