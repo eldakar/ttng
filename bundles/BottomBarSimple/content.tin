@@ -1,5 +1,35 @@
 #var global_bundle_slots_values[prompt][bottom] {3};
 
+#var bbshpbar[0] {${c_stan_niski}#<088>------};
+#var bbshpbar[1] {${c_stan_niski}##<088>-----};
+#var bbshpbar[2] {${c_stan_niski}###<088>----};
+#var bbshpbar[3] {${c_stan_sredni}####<088>---};
+#var bbshpbar[4] {${c_stan_sredni}#####<088>--};
+#var bbshpbar[5] {${c_stan_wysoki}######<088>-};
+#var bbshpbar[6] {${c_stan_wysoki}#######<088>};
+
+#var bbsmanabar[0] {${c_noob}#<088>--------};
+#var bbsmanabar[1] {${c_noob}##<088>-------};
+#var bbsmanabar[2] {${c_noob}###<088>------};
+#var bbsmanabar[3] {${c_noob}####<088>-----};
+#var bbsmanabar[4] {${c_noob}#####<088>----};
+#var bbsmanabar[5] {${c_noob}######<088>---};
+#var bbsmanabar[6] {${c_noob}#######<088>--};
+#var bbsmanabar[7] {${c_noob}########<088>-};
+#var bbsmanabar[8] {${c_noob}#########<088>};
+
+#var bbsstabar[0] {${c_druzyna}#########<088>};
+#var bbsstabar[1] {${c_druzyna}########<088>-};
+#var bbsstabar[2] {${c_druzyna}#######<088>--};
+#var bbsstabar[3] {${c_druzyna}######<088>---};
+#var bbsstabar[4] {${c_druzyna}#####<088>----};
+#var bbsstabar[5] {${c_druzyna}####<088>-----};
+#var bbsstabar[6] {${c_druzyna}###<088>------};
+#var bbsstabar[7] {${c_druzyna}##<088>-------};
+#var bbsstabar[8] {${c_druzyna}#<088>--------};
+#var bbsstabar[9] {${c_druzyna}<088>---------};
+
+
 #alias {BottomBarSimple_char_state} {
 	#var charstate {%0};
 	#var global_bundle_slots_values[prompt][bottom] {3};
@@ -11,5 +41,5 @@
 			#var {state[$s]} {$charstate[$s]};
 		}
 	};
-	#draw violet tubed box $screenrows-3 1 $screenrows-1 $screencols {<088>hp: $state[hp] ma: $state[mana] fa: $state[fatigue] en: $state[encumbrance]       fo: $state[form] im: $state[improve]       in: $state[intox] he: $state[headache] st: $state[stuffed] so: $state[soaked]       pa: $state[panic]};
+	#draw violet tubed box $screenrows-3 1 $screenrows-1 $screencols {<088>hp: $bbshpbar[$state[hp]] ma: $bbsmanabar[$state[mana]] fa: $bbsstabar[$state[fatigue]] en: $state[encumbrance]       fo: $state[form] im: $state[improve]       in: $state[intox] he: $state[headache] st: $state[stuffed] so: $state[soaked]       pa: $state[panic]};
 };
