@@ -39,7 +39,7 @@
 
 #nop STATKI;
 
-#action {%*{rypa|tratwa|rom|knara} przybija do brzegu.} {
+#action {%*{rypa|tratwa|rom|knara|feluka|drakkar} przybija do brzegu.} {
 			qb STATEK_IN;
 };
 #action {%*{Wszyscy na poklad!.*|przybija wielki trojmasztowy galeon.}} {
