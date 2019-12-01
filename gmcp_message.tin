@@ -24,7 +24,7 @@
 		#nop case {"mail"}			{#sh $GMCPMSGS[text]};	
 		#nop case {"editor"}		{#sh $GMCPMSGS[text]};
 		#nop case {"editor.mail"} 	{#sh $GMCPMSGS[text]};
-		#nop case {"notification.mail"} {#sh $GMCPMSGS[text]};
+		#case {"notification.mail"} {Highlights_post $GMCPMSGS[text]};
 		#nop case {"notification.common"} {#sh $GMCPMSGS[text]};
 		#case {"notification.knowledge"} {Highlights_knowledge $GMCPMSGS[text]};
 		#nop case {"notification.relations"} {#sh $GMCPMSGS[text]};

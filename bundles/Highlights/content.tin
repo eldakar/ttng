@@ -8,72 +8,56 @@
 #nop HIGLIGHTERS ################################;
 #nop ############################################;
 #alias Highlights_knowledge {
-	#line ignore #sh {<158>$HBar};
+	#line ignore #sh {<118><caf>$HBar};
 	#line ignore #sh {${c_stan_wysoki}Wiedza:<088> %0};
-	#line ignore #sh {<158>$HBar};	
+	#line ignore #sh {<118><caf>$HBar};	
 };
 
 #alias Highlights_magic {
-	#line ignore #sh {<158>$HBar};
+	#line ignore #sh {<118><caf>$HBar};
 	#line ignore #sh {${c_noob}Magia:<088> %0};
-	#line ignore #sh {<158>$HBar};	
+	#line ignore #sh {<118><caf>$HBar};	
 };
 
 #alias Highlights_event {
-	#line ignore #sh {<158>$HBar};
+	#line ignore #sh {<118><caf>$HBar};
 	#line ignore #sh {${c_wrog}Uwaga:<088> %0};
-	#line ignore #sh {<158>$HBar};	
+	#line ignore #sh {<118><caf>$HBar};	
 };
+
+#alias Highlights_post {
+	#line ignore #sh {<118><caf>$HBar};
+	#line ignore #sh {${c_stan_sredni}Poczta:<088> %0};
+	#line ignore #sh {<118><caf>$HBar};	
+};
+
 
 
 #nop CONTENT ####################################;
 #nop ############################################;
-#action {Widzisz jak ogromny ognisty trojzab przysysa sie na moment do rany, a przez drzewce przebiegaja fale pulsujace w rytmie oszalalego serca napelniajace cie energia.}
-{
-	Highlights_magic %0;
-	#line gag;
-};
-#action {Z latwoscia dobywasz ogromnego ognistego trojzebu, a w twej glowie rozlega sie tajemniczy glos:}
-{
-	Highlights_magic %0;
-	#line gag;
-};
-#action {"Witaj, moj nowy Panie!"}
-{
-	Highlights_magic %0;
-	#line gag;
-};
-#action {Z zalem opuszczasz ogromny ognisty trojzab, a w twej glowie rozlega sie tajemniczy glos:}
-{
-	Highlights_magic %0;
-	#line gag;
-};
-#action {"Zegnaj, moj Panie!"}
-{
-	Highlights_magic %0;
-	#line gag;	
-};
+#action {Widzisz jak ogromny ognisty trojzab przysysa sie na moment do rany, a przez drzewce przebiegaja fale pulsujace w rytmie oszalalego serca napelniajace cie energia.} {Highlights_magic %0;#line gag;};
+#action {Z latwoscia dobywasz ogromnego ognistego trojzebu, a w twej glowie rozlega sie tajemniczy glos:} {Highlights_magic %0;#line gag;};
+#action {"Witaj, moj nowy Panie!"} {Highlights_magic %0;#line gag;};
+#action {Z zalem opuszczasz ogromny ognisty trojzab, a w twej glowie rozlega sie tajemniczy glos:} {Highlights_magic %0;#line gag;};
+#action {"Zegnaj, moj Panie!"} {Highlights_magic %0;#line gag;};
 #nop START #22;
-#action {Czujesz jak magiczne drzenie %* staje sie coraz bardziej intensywne.}
-{
-	Highlights_magic %0;
-	#line gag;
-};
-#action {%* zaczyna spazmatycznie drgac, a wokol %w pojawiaja sie biale iskry wyladowan niekontrolowanej magii.}
-{
-	Highlights_magic %0;
-	#line gag;
-};
-#action {Bialy, zimny plomien ogarnia %*, w kilka chwil spopielajac %w calkowicie.}
-{
-	Highlights_magic %0;
-	#line gag;
-};
+#action {Czujesz jak magiczne drzenie %* staje sie coraz bardziej intensywne.} {Highlights_magic %0;#line gag;};
+#action {%* zaczyna spazmatycznie drgac, a wokol %w pojawiaja sie biale iskry wyladowan niekontrolowanej magii.} {Highlights_magic %0;#line gag;};
+#action {Bialy, zimny plomien ogarnia %*, w kilka chwil spopielajac %w calkowicie.} {Highlights_magic %0;#line gag;};
 #nop END #22;
 #nop START #24;
-#action {Wprawion{e|y|a} w %* znika w blysku swiatla.}
-{
-	Highlights_magic %0;
-	#line gag;
-};
+#action {Wprawion{e|y|a} w %* znika w blysku swiatla.} {Highlights_magic %0;#line gag;};
 #nop END #24;
+#action {Od twojego amuletu emanuje przyjemne cieplo.} {Highlights_magic %0;#line gag;};
+#action {^Pomiedzy skalami dostrzegasz ciemny otwor prowadzacy w dol.$} {Highlights_event %0;#line gag;}
+#action {^W jednym z zaglebien terenu dostrzegasz szczeline prowadzaca pod ziemie.$} {Highlights_event %0;#line gag;}
+#action {^Posrod pajeczyn dostrzegasz niewielki wyrysowany kreda symbol - dokladnie taki, jaki pokazal ci starzec z wioski.$} {Highlights_event %0;#line gag;}
+#action {^Bagno odslonilo tu fragment kamiennej plyty %*.$} {Highlights_event %0;#line gag;}
+#action {^W powietrzu unosi sie gesta chmura pylu.$} {Highlights_event %0;#line gag;}
+#action {^Nad twoja glowa zbiera sie duza chmura %* pylu.$} {Highlights_event %0;#line gag;}
+#action {^{Kamienna plyta pod|Kamienna plyta, na ktorej}%*.$} {Highlights_event %0;#line gag;}
+#action {^Kamienna plyta z przerazliwym zgrzytem zamyka wejscie do grobowca!$} {Highlights_event %0;#line gag;}
+#action {^Czujesz fale zimna, ktora blyskawicznie rozchodzi sie %*.$} {Highlights_event %0;#line gag;}
+#action {^%* Czujesz rozchodzacy sie po twoim ciele, pulsujacy bol!$} {Highlights_event %0;#line gag;}
+#action {^%* {rozpada sie!|peka!|rozpruwa sie.}$} {Highlights_event %0;#line gag;}
+#action {^Ku twojemu zdumieniu, %1 pojawil sie nagle tuz obok ciebie!$} {Highlights_event %0;#line gag;}
