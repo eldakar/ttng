@@ -32,14 +32,12 @@
     #read bundles/NumPad/manifest.tin;
     #read bundles/ItemQualitySimple/manifest.tin;
     #read bundles/Herbs/manifest.tin;
-    #read bundles/Drakkary/manifest.tin;
     #read bundles/GMCPObjects/manifest.tin;
     #read bundles/RaidTable/manifest.tin;
     #read bundles/RaidBar/manifest.tin;
     #read bundles/TTMapEditor/manifest.tin;
     #read bundles/PlayerDB/manifest.tin;
     #read bundles/EquipmentStatus/manifest.tin;
-    #read bundles/Vehicles/manifest.tin;
     #read bundles/LootManager/manifest.tin;
     #read bundles/MacroRemains/manifest.tin;
     #read bundles/MacroLamp/manifest.tin;
@@ -49,8 +47,10 @@
     #read bundles/SplitWingMap/manifest.tin;
     #read bundles/SWQuickBind/manifest.tin;
     #read bundles/Highlights/manifest.tin;
+    #read bundles/Drakkary/manifest.tin;
     #read bundles/Assets_TerrainTheme/content.tin;
-
+    #read bundles/Vehicles/manifest.tin;
+    
     #var r @bundleops_loadglobals{};
 
     #nop TODO;
