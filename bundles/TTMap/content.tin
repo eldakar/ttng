@@ -105,6 +105,10 @@
 
 #event {MAP UPDATED VTMAP} {
     SplitWingMap_LabelMap <128>$current_room_short_desc;
+
+    #if {$bind_found > 0} {
+        SplitWingMap_LabelBind $bind_run;
+    };
 };
 
 #nop #################################################################################;

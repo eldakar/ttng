@@ -26,7 +26,7 @@
 		#nop case {"editor.mail"} 	{#sh $GMCPMSGS[text]};
 		#nop case {"notification.mail"} {#sh $GMCPMSGS[text]};
 		#nop case {"notification.common"} {#sh $GMCPMSGS[text]};
-		#nop case {"notification.knowledge"} {#sh $GMCPMSGS[text]};
+		#case {"notification.knowledge"} {Highlights_knowledge $GMCPMSGS[text]};
 		#nop case {"notification.relations"} {#sh $GMCPMSGS[text]};
 		#nop case {"notification.boards"} {#sh $GMCPMSGS[text]};
 		#nop case {"notification"} {#sh $GMCPMSGS[text]};
@@ -88,7 +88,8 @@
 			#nop line strip {#if {$ROOM_INFO[map][x] > 0} {} {#line substitute variables {#var current_room_short_desc {$abc}}}};
 			#nop sh $abc;
 			#if {$MAPPER_SYNC == 0} {findme};
-			 SplitWingMap_LabelMap <128>$current_room_short_desc;
+			
+			SplitWingMap_LabelMap <128>$current_room_short_desc;
 
 		};
 		

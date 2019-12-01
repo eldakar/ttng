@@ -1,0 +1,79 @@
+#alias {Highlights_refresh} {
+	#var HBar {};
+	#loop {1} {$screencols - $global_bundle_slots_values[prompt][left] - $global_bundle_slots_values[prompt][right]} {hbc} {
+		#var HBar {$HBar=};
+	};
+};
+
+#nop HIGLIGHTERS ################################;
+#nop ############################################;
+#alias Highlights_knowledge {
+	#line ignore #sh {<158>$HBar};
+	#line ignore #sh {${c_stan_wysoki}Wiedza:<088> %0};
+	#line ignore #sh {<158>$HBar};	
+};
+
+#alias Highlights_magic {
+	#line ignore #sh {<158>$HBar};
+	#line ignore #sh {${c_noob}Magia:<088> %0};
+	#line ignore #sh {<158>$HBar};	
+};
+
+#alias Highlights_event {
+	#line ignore #sh {<158>$HBar};
+	#line ignore #sh {${c_wrog}Uwaga:<088> %0};
+	#line ignore #sh {<158>$HBar};	
+};
+
+
+#nop CONTENT ####################################;
+#nop ############################################;
+#action {Widzisz jak ogromny ognisty trojzab przysysa sie na moment do rany, a przez drzewce przebiegaja fale pulsujace w rytmie oszalalego serca napelniajace cie energia.}
+{
+	Highlights_magic %0;
+	#line gag;
+};
+#action {Z latwoscia dobywasz ogromnego ognistego trojzebu, a w twej glowie rozlega sie tajemniczy glos:}
+{
+	Highlights_magic %0;
+	#line gag;
+};
+#action {"Witaj, moj nowy Panie!"}
+{
+	Highlights_magic %0;
+	#line gag;
+};
+#action {Z zalem opuszczasz ogromny ognisty trojzab, a w twej glowie rozlega sie tajemniczy glos:}
+{
+	Highlights_magic %0;
+	#line gag;
+};
+#action {"Zegnaj, moj Panie!"}
+{
+	Highlights_magic %0;
+	#line gag;	
+};
+#nop START #22;
+#action {Czujesz jak magiczne drzenie %* staje sie coraz bardziej intensywne.}
+{
+	Highlights_magic %0;
+	#line gag;
+};
+#action {%* zaczyna spazmatycznie drgac, a wokol %w pojawiaja sie biale iskry wyladowan niekontrolowanej magii.}
+{
+	Highlights_magic %0;
+	#line gag;
+};
+#action {Bialy, zimny plomien ogarnia %*, w kilka chwil spopielajac %w calkowicie.}
+{
+	Highlights_magic %0;
+	#line gag;
+};
+#nop END #22;
+#nop START #24;
+#action {Wprawion{e|y|a} w %* znika w blysku swiatla.}
+{
+	Highlights_magic %0;
+	#line gag;
+};
+#nop END #24;

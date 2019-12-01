@@ -1,10 +1,4 @@
-#highlight {Widzisz jak ogromny ognisty trojzab przysysa sie na moment do rany, a przez drzewce przebiegaja fale pulsujace w rytmie oszalalego serca napelniajace cie energia.} {<BAE><178>};
-#highlight {Z latwoscia dobywasz ogromnego ognistego trojzebu, a w twej glowie rozlega sie tajemniczy glos:} {<BAE><178>};
-#highlight {"Witaj, moj nowy Panie!"} {<BAE><178>};
-#highlight {Z zalem opuszczasz ogromny ognisty trojzab, a w twej glowie rozlega sie tajemniczy glos:} {<BAE><178>};
-#highlight {"Zegnaj, moj Panie!"} {<BAE><178>};
-
-#action {Dowiadujesz sie czegos wiecej o %1.$}
+#nop action {Dowiadujesz sie czegos wiecej o %1.$}
 {
     #echo { };
     #echo {<088>      ------------------------------- };
@@ -14,7 +8,7 @@
     #echo { };    
     #line gag;
 }
-#action {Dowiadujesz sie czegos nowego o %1.$}
+#nop action {Dowiadujesz sie czegos nowego o %1.$}
 {
     #echo { };
     #echo {<088>      ------------------------------- };
@@ -24,7 +18,7 @@
     #echo { };    
     #line gag;
 }
-#action {Wydaje ci sie, ze twoja wiedza o %1 wzrosla nieznacznie.$}
+#nop action {Wydaje ci sie, ze twoja wiedza o %1 wzrosla nieznacznie.$}
 {
     #echo { };
     #echo {<088>      ------------------------------- };
