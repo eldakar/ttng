@@ -301,3 +301,35 @@
 #var c_char_h_mode[n] {<$c_ansi_map[$colors[other_char]]>};
 #var c_char_h_mode[p] {<$c_ansi_map[$colors[team_member]]>};
 #var c_char_h_mode[b] {<CAF><178>};
+
+
+#var bbshpbar[0] {${c_stan_niski}#<088>------};
+#var bbshpbar[1] {${c_stan_niski}##<088>-----};
+#var bbshpbar[2] {${c_stan_niski}###<088>----};
+#var bbshpbar[3] {${c_stan_sredni}####<088>---};
+#var bbshpbar[4] {${c_stan_sredni}#####<088>--};
+#var bbshpbar[5] {${c_stan_wysoki}######<088>-};
+#var bbshpbar[6] {${c_stan_wysoki}#######<088>};
+
+#var bbsmanabar[0] {${c_noob}#<088>--------};
+#var bbsmanabar[1] {${c_noob}##<088>-------};
+#var bbsmanabar[2] {${c_noob}###<088>------};
+#var bbsmanabar[3] {${c_noob}####<088>-----};
+#var bbsmanabar[4] {${c_noob}#####<088>----};
+#var bbsmanabar[5] {${c_noob}######<088>---};
+#var bbsmanabar[6] {${c_noob}#######<088>--};
+#var bbsmanabar[7] {${c_noob}########<088>-};
+#var bbsmanabar[8] {${c_noob}#########<088>};
+
+#var bbsstabar[0] {${c_druzyna}#########<088>};
+#var bbsstabar[1] {${c_druzyna}########<088>-};
+#var bbsstabar[2] {${c_druzyna}#######<088>--};
+#var bbsstabar[3] {${c_druzyna}######<088>---};
+#var bbsstabar[4] {${c_druzyna}#####<088>----};
+#var bbsstabar[5] {${c_druzyna}####<088>-----};
+#var bbsstabar[6] {${c_druzyna}###<088>------};
+#var bbsstabar[7] {${c_druzyna}##<088>-------};
+#var bbsstabar[8] {${c_druzyna}#<088>--------};
+#var bbsstabar[9] {${c_druzyna}<088>---------};
+
+

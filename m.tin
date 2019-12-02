@@ -21,7 +21,6 @@
     #read bundles/CharacterClass/manifest.tin;
     #read bundles/CombatMacros/manifest.tin;
     #read bundles/Equipment/manifest.tin;
-    #nop read bundles/CommandHistory/manifest.tin;
     #read bundles/TTMap/manifest.tin;
     #read bundles/TTMapFollow/manifest.tin;
     #read bundles/TTMapFreezer/manifest.tin;
@@ -65,7 +64,6 @@
     #config {COMMAND ECHO} {off};	#nop wyswietlanie komend;
     #config {mouse} {on};		#nop obsluga myszy;
     
-    #line substitute {variables} {#delay {2.0} {#mapka #port call 127.0.0.1 {${cport}5}};};
 };
 
 #event {SESSION CONNECTED} {
