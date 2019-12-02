@@ -1,0 +1,264 @@
+#nop HELLO;         
+	 #nop map terrain <name> <symbol> [DENSE|SPARSE|SCANT];
+         #nop  Determine symbol density, omit for the default.;
+
+         #nop map terrain <name> <symbol> [NARROW|WIDE|VAST]
+         #nop  Determine symbol spread range, omit for the default.
+
+         #nop map terrain <name> <symbol> [FADEIN|FADEOUT]
+         #nop  Determine symbol spread density, omit for the default.
+
+#map ter city <cba>⌂ SPARSE NARROW;
+#map ter densecity <g05>⌂ SCANT VAST;
+#map ter novigrad1 <cba>⌂ SPARSE WIDE;
+#map ter novigrad2 <cba>⌂ SCANT VAST;
+#map ter house <caa>⌂ SCANT NARROW;
+#map ter oxenfurt1 <bac>⌂ SCANT VAST;
+#map ter oxenfurt2 <cab>⌂ SCANT WIDE;
+
+#map ter road <g06>. DENSE VAST;
+#map ter path1 <cba>. DENSE WIDE;
+#map ter path2 <cba>, DENSE WIDE;
+
+#map ter mount1 <cba>^ DENSE VAST;
+#map ter mount2 <caa>4 SCANT VAST;
+#map ter water1 <abd>৺ VAST DENSE;
+#map ter water2 <aac>~ VAST DENSE;
+#map ter deepwater <aab>~ DENSE WIDE;
+
+#nop 🌊 - water;
+#nop ⏅ - drzew;
+#nop ☘ - koniczyna;
+#nop ✿ - kwiatek;
+#nop ❀ - kwiatek2;
+#nop ⭐ - gwiazdka;
+
+#map ter lava1 <118>O VAST;
+#map ter lava2 <caa>o DENSE VAST;
+#map ter lava3 <daa>. SPARSE VAST;
+
+#map ter dfields <aba>v DENSE VAST;
+#map ter field1 <aca>. DENSE VAST;
+#map ter field2 <bba>* SPARSE VAST;
+#map ter field3 <aba>i DENSE VAST;
+#map ter field4 <aca>£ DENSE VAST;
+#map ter field5 <dca>. SPARSE VAST;
+
+
+#map ter forest1 <aca>^ SPARSE VAST;
+#map ter forest2 <acb>t SPARSE VAST;
+#map ter forest3 <bca>Y VAST SPARSE;
+
+
+#map ter grave1 <bbb>✟ SPARSE VAST;
+#map ter grave2 <ccc>☨ SPARSE VAST;
+
+#map ter plaza1 <cca>. DENSE WIDE FADEIN;
+#map ter plaza2 <ccb>, WIDE VAST DENSE;
+
+#map ter cave1 <aba>o;
+#map ter cave2 <cba>O;
+#map ter cave3 <baa>.;
+#map ter cave4 <bba>o DENSE;
+#map ter cave5 <bca>O SPARSE;
+#map ter cave6 <cba>. SCANT;
+#map ter tunnel1 <g04>@ DENSE NARROW;
+#map ter underground1 <g06>@ DENSE WIDE;
+
+#alias terrain_exits {
+	#loop {1} {25000} {aa} {
+		#map at $aa {#map get roomterrain tmproomterrain};
+		#format {tmproomtlen} {%L} {$tmproomterrain};	
+		#if {$tmproomtlen > 2} {
+			#regex {$tmproomterrain} {{forest|field}} {#map at $aa {#map set roomcolor <128>}};
+			#regex {$tmproomterrain} {plaza} {#map at $aa {#map set roomcolor <138>}};
+			#regex {$tmproomterrain} {water} {#map at $aa {#map set roomcolor <148>}};
+			#regex {$tmproomterrain} {cave} {#map at $aa {#map set roomcolor <158>}};
+			#regex {$tmproomterrain} {lava} {#map at $aa {#map set roomcolor <118>}};
+		};
+	};
+}
+
+#alias terrain_put {
+	#loop {1} {25000} {aa} {
+		#var tmproomdesc {};
+		#var tmpterrain {};
+#echo {<118>$aa<088>};
+		#map goto $aa;
+
+		#map at $aa {#map get roomterrain tmproomterrain};
+		#map at $aa {#map get roomdesc tmproomdesc};
+		#format {tmproomtlen} {%L} {$tmproomterrain};
+		#format {tmproomdlen} {%L} {$tmproomdesc};
+		
+		#if {$tmproomdlen > 2} {
+			#var savedroom {$tmproomdesc};
+		} {
+			#var tmproomdesc {$savedroom};
+		};
+		#if {$tmproomtlen < 2} {
+#nop LASY;
+			#regex {$tmproomdesc} {{Las|las|zagajnik|Zagajnik|lesie|lasu|swierk|buk|sosna|sosnow}} {
+				#math rollme {1d3};
+				#switch {"$rollme"} {
+					#case {"1"} {#map at $aa {#map set roomterrain forest1}};
+					#case {"2"} {#map at $aa {#map set roomterrain forest2}};
+					#case {"3"} {#map at $aa {#map set roomterrain forest3}};
+					#case {"4"} {#map at $aa {#map set roomterrain field4}};
+				};
+				#map at $aa {#map set roomcolor <128>};
+			} {};
+#nop LAKI;
+			#regex {$tmproomdesc} {{laki|laka|Laka|Laki|polana|Polana|polanka|Polanka|lace|Pole|pole|Pola|pola}} {
+				#math rollme {1d3};
+				#switch {"$rollme"} {
+					#case {"1"} {#map at $aa {#map set roomterrain field1}};
+					#case {"2"} {#map at $aa {#map set roomterrain field2}};
+					#case {"3"} {#map at $aa {#map set roomterrain field3}};
+					#case {"4"} {#map at $aa {#map set roomterrain field1}};
+				};
+				#map at $aa {#map set roomcolor <128>};
+			} {};
+
+#nop NABRZEZA;
+			#regex {$tmproomdesc} {{nabrzez|plaza|Plaza|Nabrzez|plazy|Skarpa|skarpie|skarpa|Wydma|wydma|wydm}} {
+				#math rollme {1d2};
+				#switch {"$rollme"} {
+					#case {"1"} {#map at $aa {#map set roomterrain plaza1}};
+					#case {"2"} {#map at $aa {#map set roomterrain plaza2}};
+					#case {"3"} {#map at $aa {#map set roomterrain field1}};
+					#case {"4"} {#map at $aa {#map set roomterrain field1}};
+				};
+				#map at $aa {#map set roomcolor <138>};
+			} {};
+#nop STRUMIENIE;
+			#regex {$tmproomdesc} {{strumyk|strumien|rzeka|zatoka|zatoki|Zatoka|Strum}} {
+				#math rollme {1d2};
+				#switch {"$rollme"} {
+					#case {"1"} {#map at $aa {#map set roomterrain water1}};
+					#case {"2"} {#map at $aa {#map set roomterrain water2}};
+					#case {"3"} {#map at $aa {#map set roomterrain field1}};
+					#case {"4"} {#map at $aa {#map set roomterrain field1}};
+				};
+				#map at $aa {#map set roomcolor <148>};
+			} {};
+#nop JEZIORA;
+			#regex {$tmproomdesc} {{jezior|Jezior|sadzawk|Sadzawk}} {
+				#math rollme {1d2};
+				#switch {"$rollme"} {
+					#case {"1"} {#map at $aa {#map set roomterrain water1}};
+					#case {"2"} {#map at $aa {#map set roomterrain water2}};
+					#case {"3"} {#map at $aa {#map set roomterrain field1}};
+					#case {"4"} {#map at $aa {#map set roomterrain field1}};
+				};
+				#map at $aa {#map set roomcolor <148>};
+			} {};
+#nop GASZCZE;
+  			#regex {$tmproomdesc} {{%igaszcz|%ichaszcz}} {
+				#math rollme {1d2};
+				#switch {"$rollme"} {
+					#case {"1"} {#map at $aa {#map set roomterrain field3}};
+					#case {"2"} {#map at $aa {#map set roomterrain field4}};
+					#case {"3"} {#map at $aa {#map set roomterrain field1}};
+					#case {"4"} {#map at $aa {#map set roomterrain field1}};
+				};
+				#map at $aa {#map set roomcolor <128>};
+			} {};
+#nop BAGNA;
+			#regex {$tmproomdesc} {{Bagna|bagna|tunel|Bagno|bagno|Tunel|jaskin|Jaskin}} {
+				#math rollme {1d6};
+				#switch {"$rollme"} {
+					#case {"1"} {#map at $aa {#map set roomterrain cave1}};
+					#case {"2"} {#map at $aa {#map set roomterrain cave2}};
+					#case {"3"} {#map at $aa {#map set roomterrain cave3}};
+					#case {"4"} {#map at $aa {#map set roomterrain cave4}};
+					#case {"5"} {#map at $aa {#map set roomterrain cave5}};
+					#case {"6"} {#map at $aa {#map set roomterrain cave6}};
+				};
+				#map at $aa {#map set roomcolor <158>};
+			} {};
+#nop LAWA!;
+			#regex {$tmproomdesc} {%ilawa} {
+				#math rollme {1d3};
+				#switch {"$rollme"} {
+					#case {"1"} {#map at $aa {#map set roomterrain lava1}};
+					#case {"2"} {#map at $aa {#map set roomterrain lava2}};
+					#case {"3"} {#map at $aa {#map set roomterrain lava3}};
+					#case {"4"} {#map at $aa {#map set roomterrain lava4}};
+				};
+				#map at $aa {#map set roomcolor <118>};
+			} {};
+#nop GORY;
+			#regex {$tmproomdesc} {{gora|gory|wzgorz|Gora|Gory|Wzgorz}} {
+				#math rollme {1d4};
+				#switch {"$rollme"} {
+					#case {"1"} {#map at $aa {#map set roomterrain field1}};
+					#case {"2"} {#map at $aa {#map set roomterrain field1}};
+					#case {"3"} {#map at $aa {#map set roomterrain field1}};
+					#case {"4"} {#map at $aa {#map set roomterrain field1}};
+				};
+				#map at $aa {#map set roomcolor <178>};
+			} {};
+#nop PUSTYNIE;
+			#regex {$tmproomdesc} {%ipustk} {
+				#math rollme {1d4};
+				#switch {"$rollme"} {
+					#case {"1"} {#map at $aa {#map set roomterrain field1}};
+					#case {"2"} {#map at $aa {#map set roomterrain field1}};
+					#case {"3"} {#map at $aa {#map set roomterrain field1}};
+					#case {"4"} {#map at $aa {#map set roomterrain field1}};
+				};
+				#map at $aa {#map set roomcolor <138>};
+			} {};
+#nop TRAKT;
+  			#regex {$tmproomdesc} {{trakt|Trakt|trakcie}} {
+				#math rollme {1d1};
+				#switch {"$rollme"} {
+					#case {"1"} {#map at $aa {#map set roomterrain road}};
+					#case {"2"} {#map at $aa {#map set roomterrain field1}};
+					#case {"3"} {#map at $aa {#map set roomterrain field1}};
+					#case {"4"} {#map at $aa {#map set roomterrain field1}};
+				};
+			} {};
+
+  			#regex {$tmproomdesc} {{sciezka|Sciezka}} {
+				#math rollme {1d2};
+				#switch {"$rollme"} {
+					#case {"1"} {#map at $aa {#map set roomterrain path1}};
+					#case {"2"} {#map at $aa {#map set roomterrain path2}};
+				};
+			} {};
+
+
+  			#regex {$tmproomdesc} {{cmentarz|Cmentarz}} {
+				#math rollme {1d2};
+				#switch {"$rollme"} {
+					#case {"1"} {#map at $aa {#map set roomterrain grave1}};
+					#case {"2"} {#map at $aa {#map set roomterrain grave2}};
+					#case {"3"} {#map at $aa {#map set roomterrain field1}};
+					#case {"4"} {#map at $aa {#map set roomterrain field1}};
+				};
+			} {};
+  			#regex {$tmproomdesc} {Novigrad} {
+				#math rollme {1d2};
+				#switch {"$rollme"} {
+					#case {"1"} {#map at $aa {#map set roomterrain novigrad1}};
+					#case {"2"} {#map at $aa {#map set roomterrain novigrad2}};
+					#case {"3"} {#map at $aa {#map set roomterrain field1}};
+					#case {"4"} {#map at $aa {#map set roomterrain field1}};
+				};
+			} {};
+
+  			#regex {$tmproomdesc} {Oxenfurt} {
+				#math rollme {1d2};
+				#switch {"$rollme"} {
+					#case {"1"} {#map at $aa {#map set roomterrain oxenfurt1}};
+					#case {"2"} {#map at $aa {#map set roomterrain oxenfurt2}};
+					#case {"3"} {#map at $aa {#map set roomterrain field1}};
+					#case {"4"} {#map at $aa {#map set roomterrain field1}};
+				};
+			} {};
+		};
+	};
+};
+

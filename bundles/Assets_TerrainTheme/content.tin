@@ -21,7 +21,7 @@
 #map ter path2 <cba>, DENSE WIDE;
 
 #map ter mount1 <cba>^ DENSE VAST;
-
+#map ter mount2 <caa>4 SCANT VAST;
 #map ter water1 <abd>৺ VAST DENSE;
 #map ter water2 <aac>~ VAST DENSE;
 #map ter deepwater <aab>~ DENSE WIDE;
