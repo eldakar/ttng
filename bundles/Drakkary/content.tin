@@ -1,6 +1,3 @@
-#action {Skelliganski drakkar Zlocisty Feniks - Zlocisty Feniks} {
-	#nop;
-} {1};
 #action {{k|K}orsarski drakkar Czarna Perla{.| }} {wejdz_na_korsarski Korsarski drakkar Czarna Perla} {1};
 #action {{k|K}orsarski snekkar Wloczega Morz{.| }} {wejdz_na_korsarski Korsarski snekkar Wloczega Morz} {1};
 #action {{s|S}kelliganski drakkar Zwiastun Smierci{.| }} {wejdz_na_korsarski Skelliganski drakkar Zwiastun Smierci} {1};
@@ -36,8 +33,28 @@
 	#map goto 13974;
 } {1};
 
-#high {{Korsarski drakkar Czarna Perla|Korsarski drakkar Demon|Skelliganski drakkar Zwiastun Smierci|Skelliganski drakkar Obronca Archipelagu|korsarski drakkar Czarna Perla|korsarski drakkar Demon|skelliganski drakkar Zwiastun Smierci|skelliganski drakkar Obronca Archipelagu|skelliganski drakkar Krakken|Skelliganski drakkar Krakken|Korsarski snekkar Wloczega Morz}} {${c_cel_ataku}};
-
 #high {%w zlotoluski ryboczlek} {<DDA><aaa>};
 #high {%w srebrnoluski ryboczlek} {<G06><178>};
 #high {gargantuiczny ognistooki ryboczlek} {<CAF><178>};
+
+#action {Wyznaczasz kurs i wydajesz odpowiednie rozkazy {do wyplyniencia|zalodze}.} {
+	#var plyniemy_sekundy 0;
+	#echo {${c_noob}Drakkar: <088>%0};
+	#ticker {plyniemy} {
+		#math plyniemy_sekundy {$plyniemy_sekundy + 1};
+	} {1};
+	#line gag;
+};
+#action {%w wydaje odpowiednie rozkazy do rejsu pelnomorskiego.} {
+	#var plyniemy_sekundy 0;
+	#echo {${c_noob}Drakkar: <088>%0};
+	#ticker {plyniemy} {
+		#math plyniemy_sekundy {$plyniemy_sekundy + 1};
+	} {1};
+	#line gag;	
+}
+#action {Drakkar doplywa do celu swojej podrozy.} {
+	#unticker plyniemy;
+	#echo {${c_noob}Drakkar: [ $plyniemy_sekundy ]<088> %0};
+	#line gag;
+};
