@@ -331,5 +331,3 @@
 #var bbsstabar[7] {${c_druzyna}##<088>-------};
 #var bbsstabar[8] {${c_druzyna}#<088>--------};
 #var bbsstabar[9] {${c_druzyna}<088>---------};
-
-
