@@ -1,5 +1,7 @@
 #var KEY_F1 {\eOP};
+#var KEY_F1_B {\e[11~};
 #var KEY_F2 {\eOQ};
+#var KEY_F2_B {\e[12~};
 #var KEY_F3 {\eOR};
 #var KEY_F4 {\eOS};
 
