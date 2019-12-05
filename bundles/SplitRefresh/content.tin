@@ -6,3 +6,9 @@
     	$bundle_handler_split_request[$bhon] %0;
 	};
 }
+
+#event {SCREEN RESIZE} {
+	#screen get cols screencols;
+	#screen get rows screenrows;
+	SplitRefreshRequestRefresh;
+}

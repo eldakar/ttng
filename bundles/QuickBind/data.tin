@@ -96,7 +96,7 @@
 #action {%1 z posepna mina spoglada na metna wode. Po chwili wachania nurkuje} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zanurkuj pod wode}};
 #action {%1 zaczyna wspinac sie ku gorze} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wespnij sie na gore}};
 #action {%1 znika w porastajacych krawedz traktu} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz w krzaki}};
-#action {%1 wchodzi na %2 {tratwe|prom}} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wsiadz na statek}};
+#nop action {%1 wchodzi na %2 {tratwe|prom}} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wsiadz na statek}};
 #action {%1 ostroznie schodzi na dol lapiac sie kolejnych szczebli drabiny.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zejdz po drabinie}};
 #action {%1 ostroznie wchodzi do gory lapiac} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz po drabinie}};
 #action {%1 przechodzi przez iluzje sciany.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przejdz przez wneke}};
@@ -144,6 +144,9 @@
 #action {%* zeskakuje na skalna polke.} {#var klpr @set_quickbind_blue_move{zeskocz na polke};#var kk @_print_bind{%0};#line gag};
 #action {%* bierze krotki rozbieg i przeskakuje nad rozpadlina.} {#var klpr @set_quickbind_blue_move{przeskocz rozpadline};#var kk @_print_bind{%0};#line gag};
 
+#action {%* zapiera sie nogami o grunt i probuje uniesc przerdzewiala krate} {#var klpr @set_quickbind_blue_move{unies krate};#var kk @_print_bind{%0};#line gag};
+
+#action {%* bierze rozbieg i przeskakuje osuwisko} {#var klpr @set_quickbind_blue_move{przeskocz osuwisko};#var kk @_print_bind{%0};#line gag};
 
 #action {~Nie jestes zbyt pewny swojej umiejetnosci latania...} {#var klpr @set_quickbind_blue_move{pociagnij linke};#var kk @_print_bind{%0};#line gag};
 #action {~Niewielka furtka otwiera sie.} {#var klpr @set_quickbind_blue_move{furtka};#var kk @_print_bind{%0};#line gag};
