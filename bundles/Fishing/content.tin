@@ -6,12 +6,21 @@
 	zawies rybke na wedce;
 	zarzuc wedke;
 };
+#macro {$KEY_F1_B} {
+	wyciagnij wedke;
+	zawies kotwiczke na wedce;
+	zawies rybke na wedce;
+	zarzuc wedke;
+};
 
 #macro {$KEY_F2} {
 	wyciagnij siec;
 	zarzuc siec;
 };
-
+#macro {$KEY_F2_B} {
+	wyciagnij siec;
+	zarzuc siec;
+};
 #action {Nagle dostrzegasz, ze zanurzony w wodzie sznurek %* wedki napina sie!} {
 	#echo {${c_stan_wysoki}Od teraz F1 oznacza 'zatnij rybe na wedce'};
 	#if {"$psounds" == "1"} {
@@ -33,6 +42,7 @@
 		zawies rybke na wedce;
 		zarzuc wedke;
 	};	
+	#bell;
 };
 
 #class rybki close
