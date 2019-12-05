@@ -47,7 +47,6 @@
     #read bundles/KillStats/manifest.tin;
     #read bundles/Stones/manifest.tin;
     #read bundles/BottomBarSimple/manifest.tin;
-
     #var r @bundleops_loadglobals{};
 
     #nop TODO;
@@ -56,7 +55,6 @@
     #read gmcp_message.tin;	#nop GMCP;
     #read alias.tin;		#nop Aliasy do obslugi glownych funkcji;
     #read mapevents.tin;	#nop Eventy na pokojach;    
-
 
     #config {debug telnet} {off};	#nop debug;
     #config {COMMAND ECHO} {off};	#nop wyswietlanie komend;
