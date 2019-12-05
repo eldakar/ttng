@@ -1,3 +1,4 @@
 #!/bin/bash
 git pull
-ttbin/ttbeta++ m.tin
+myid=`id -u`
+tt++ m.tin $myid
