@@ -32,7 +32,8 @@
 		zawies kotwiczke na wedce;
 		zawies rybke na wedce;
 		zarzuc wedke;
-	};	
+	};
+	#bell;
 };
 
 #class rybki close
