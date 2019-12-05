@@ -26,7 +26,6 @@
 #brain #action {<PORT> MCREATE %1 %2} {
     #line substitute {variables} {
         #rpg #map at {%1} {#map dig %2};
-        #mapka #port send $mapkaId MCREATE %1 %2;
     };
 } {1};
 
@@ -35,7 +34,6 @@
         #rpg #map at {%1} {#map set roomarea %2};
         #rpg #map at {%1} {#map set roomcolor $c_rooms[%2]};
         #rpg #map at {%1} {#map set roomarea %2};
-        #mapka #port send $mapkaId MARK %1 %2;
     };
 } {1};
 
@@ -44,21 +42,18 @@
         #map at {%1} {#map set roomarea %2};
         #map at {%1} {#map set roomcolor $c_rooms[%2]};
         #map at {%1} {#map set roomnote %3};
-        #mapka #port send $mapkaId MARK %1 %2;    
 	};
 } {1};
 
 #brain #action {<PORT> DEL %1 %2} {
     #line substitute {variables} {
         #rpg #map at {%1} {#map del %2};
-        #mapka #port send $mapkaId DEL %1 %2;
     };
 } {1};
 
 #brain #action {<PORT> NOTE %1 %*} {
     #line substitute {variables} {
         #rpg #map at {%1} {#map set roomsymbol {<178>i<088>}};
-        #mapka #port send $mapkaId NOTE %1;
     };
 } {1};
 
@@ -66,14 +61,15 @@
     #line substitute {variables} {
         #rpg #map at {%1} {#map set roomsymbol {<168>@<088>}};
         #rpg #event {MAP ENTER ROOM $tmproomvnum} {QB %2};
-        #mapka #port send $mapkaId EVENT %1;
+/* 
+TODO
+*/
     };
 } {1};
 
 #brain #action {<PORT> COMMAND %d %*} {
     #line substitute {variables} {
         #rpg #map at {%1} {#map set roomsymbol {<138>E<088>}};
-        #mapka #port send $mapkaId COMMAND %1;
         #rpg #event {MAP ENTER ROOM $tmproomvnum} {%2};
     };
 } {1};
@@ -88,7 +84,6 @@
                 #map set roomsymbol {};
             };
         };
-        #mapka #port send $mapkaId ROOMSHORT %1;
     };
 };
 
@@ -101,7 +96,6 @@
                 #map set roomcolor {};
             };
         };
-        #mapka #port send $mapkaId ROOMEXITS %1;
     };
 };
 
@@ -110,7 +104,7 @@
         #rpg #map at {%1} {
             #map set roomnote {%2};
         };
-	};
+    };
 }
 
 #brain #action {<PORT> HIDE %d %w} {
@@ -118,7 +112,6 @@
         #rpg #map at {%1} {
             #line substitute variables {#map exitflag %2 hide on};
         };
-        #mapka #port send $mapkaId HIDE %1 %2;
     };
 }
 
@@ -127,7 +120,6 @@
         #rpg #map at {%1} {
             #line substitute variables {#map exitflag %2 hide off};
         };
-        #mapka #port send $mapkaId UNHIDE %1 %2;
     };
 };
 
@@ -138,7 +130,6 @@
                 #map link %2 %3 both;
             };
         };
-        #mapka #port send $mapkaId LINKB %1 %2 %3;
     };
 };
 
@@ -149,8 +140,7 @@
                 #map unlink %2 both;            
             };
         };
-        #mapka #port send $mapkaId UNLINKB %1 %2;
-	};
+    };
 };
 
 #brain #action {<PORT> LINK %d %w %d} {
@@ -160,7 +150,6 @@
                 #map link %2 %3;
             };
         };
-        #mapka #port send $mapkaId LINK %1 %2 %3;
     };
 };
 
@@ -171,7 +160,6 @@
                 #map unlink %2;         
             };
         };
-        #mapka #port send $mapkaId UNLINK %1 %2;
     };
 };
 
@@ -190,8 +178,6 @@
     #replace {tmpsymbol} {+} {>};
     #line substitute {variables} {
         #rpg #map at {%1} {#map set roomcolor {$tmpsymbol}};
-        #mapka #port send $mapkaId COLOR %1 %2;
-        #nop mapka {COLOR %1 %2};
     };
 };
 
