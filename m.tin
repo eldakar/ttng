@@ -3,7 +3,7 @@
     #var cport %0;
 
     #if {$cport > 0} {
-        #port init brain $cport;
+        #port init brain ${cport}1;
     };
     #ses rpg arkadia.rpg.pl {23};
 
