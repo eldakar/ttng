@@ -5,7 +5,20 @@
     #echo {$c_stan_wysoki  o   <088>%1 ZAPRASZA       };
     #sh {$c_stan_wysoki /V\\       ${ci_stan_sredni}BIND: dolacz};
     #echo {<088>      ------------------------------- };
-    #echo { }; 
+    #echo { };
+    #format {nicklower} {%l} {%1};
+
+    #foreach {*duch[]} {didi} {
+	#if {"%1" == "$duch[$didi][desc]"} {
+#line sub variables {
+		#alias {dolacz_do_niego} {
+			porzuc druzyne;
+			dolacz do ob_$didi;
+		};
+};
+		qb dolacz_do_niego;
+	};
+    };
     #line gag;
 }
 
