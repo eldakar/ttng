@@ -10,10 +10,12 @@
 };
 
 #alias {render_h2} {
+    #nop $ConfigManager_Configs[RaidBarDynamicTop]-1 ;
+    #nop draw violet tubed tile 2 2 $r_curLineCnt-1 $screencols-1;
     #var a {%0};
     #nop format {RnderBarEraseHeader} {%h} {};
     #math teempe {$global_bundle_slots_values[prompt][top] - 1};
-  	#loop {2} {$teempe} {bubu} {#sh { } {$bubu} {}};
+  	#loop {2} {$global_bundle_slots_values[prompt][top] - 1} {bubu} {#sh { } {$bubu} {}};
   	#var r_curLineCnt {2};
     #list team_offenders cle;
     #list team_offenders cre;
@@ -27,7 +29,7 @@
             #list team_offenders add {$duch[$avatarid][attack_num]};
         } {
             #if {$r_curLineCnt < $global_bundle_slots_values[prompt][top]} {
-                #sh {  $duch[$avatarid][bar][orc]} {$r_curLineCnt} {1} {};
+                #sh {  $duch[$avatarid][bar][orc]<088>} {$r_curLineCnt} {1} {};
                 #math r_curLineCnt {$r_curLineCnt + 1};
                 #var duch[$avatarid][shown] {1};
             };
@@ -39,7 +41,7 @@
                         #list team_offenders add $duch[$team[$ti]][attack_num];
                     }   {
                         #if {$r_curLineCnt < $global_bundle_slots_values[prompt][top]} {
-                            #sh {  $duch[$team[$ti]][bar][orc]} {$r_curLineCnt} {1} {};
+                            #sh {  $duch[$team[$ti]][bar][orc]<088>} {$r_curLineCnt} {1} {};
                             #math r_curLineCnt {$r_curLineCnt + 1};
                             #var duch[$team[$ti]][shown] {1};
                         };
@@ -56,14 +58,14 @@
                     #if {$tmpnavigator == 1} {
                         #var tmpnavigator 0;
                         #if {$r_curLineCnt < $global_bundle_slots_values[prompt][top]} {
-                            #sh {  $duch[$ti][bar][orc] ${c_stan_niski}---><088> $duch[$duch[$ti][attack_num]][bar][orc]} {$r_curLineCnt} {1} {};
+                            #sh {  $duch[$ti][bar][orc] ${c_stan_niski}---><088> $duch[$duch[$ti][attack_num]][bar][orc]<088>} {$r_curLineCnt} {1} {};
                             #math r_curLineCnt {$r_curLineCnt + 1};
                             #var duch[$team_offenders[$to]][shown] {1};
                         };
                     }   {
                         #if {$r_curLineCnt < $global_bundle_slots_values[prompt][top]} {
                             #math RaidBarCountUsedLines {$RaidBarCountUsedLines + 1};            
-                            #sh {  $duch[$ti][bar][orc] ${c_stan_niski}_/} {$r_curLineCnt} {1} {};
+                            #sh {  $duch[$ti][bar][orc] ${c_stan_niski}_/<088>} {$r_curLineCnt} {1} {};
                             #math r_curLineCnt {$r_curLineCnt + 1};
                         };
                     };
@@ -76,7 +78,7 @@
     #foreach {*wrogi[]} {to} {
         #if {$duch[$wrogi[$to]][shown] < 1} {
             #if {$r_curLineCnt < $global_bundle_slots_values[prompt][top]} {
-                #sh {  $duch[$wrogi[$to]][bar][orc]} {$r_curLineCnt} {1} {};
+                #sh {  $duch[$wrogi[$to]][bar][orc]<088>} {$r_curLineCnt} {1} {};
                 #math r_curLineCnt {$r_curLineCnt + 1};
                 #var duch[$wrogi[$to]][shown] {1};
             };
@@ -90,7 +92,7 @@
             } {
             #nop sh {$duch[$wrogi[$wr]][bar][hug]} {$r_curLineCnt};
                 #if {$r_curLineCnt < $global_bundle_slots_values[prompt][top]} {
-                    #sh {  $duch[$wrogi[$wr]][bar][hug]} {$r_curLineCnt} {$r_curLineCnt} {1} {};
+                    #sh {  $duch[$wrogi[$wr]][bar][hug]<088>} {$r_curLineCnt} {$r_curLineCnt} {1} {};
                     #math r_curLineCnt {$r_curLineCnt + 1};
                     #var duch[$wrogi[$wr]][shown] {1};
                 };

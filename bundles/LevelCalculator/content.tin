@@ -1,14 +1,4 @@
 #nop przeliczanie poziomu doswiadczenia;
-#alias {exp_test} {
-#sh Nie poczyniles zadnych postepow, od kiedy wszedles do gry.;
-#sh Jestes mocny, gibki, twardy, inteligentny i odwazny.;
-#sh Wydaje ci sie, ze troche ci brakuje, zebys mogl wyzej ocenic swa sile.;
-#sh Wydaje ci sie, ze niewiele ci brakuje, zebys mogl wyzej ocenic swa zrecznosc.;
-#sh Wydaje ci sie, ze troche ci brakuje, zebys mogl wyzej ocenic swa wytrzymalosc.;
-#sh Wydaje ci sie, ze troche ci brakuje, zebys mogl wyzej ocenic swoj intelekt.;
-#sh Wydaje ci sie, ze bardzo duzo ci brakuje, zebys mogl wyzej ocenic swa odwage.;
-}
-
 
 #var bylwgp 0
 #function {poziomsily}
@@ -124,7 +114,7 @@
 
 #nop NEWWW #;
 #nop #######;
-#action {Jestes %1 i %2 ci brakuje, zebys mogl wyzej ocenic swa sile.\nJestes %3 i %4 ci brakuje, zebys mogl wyzej ocenic swa zrecznosc.\nJestes %5 i %6 ci brakuje, zebys mogl wyzej ocenic swa wytrzymalosc.\nJestes %7 i %8 ci brakuje, zebys mogl wyzej ocenic swoj intelekt.\nJestes %9 i %10 ci brakuje, zebys mogl wyzej ocenic swa odwage.} 
+#action {Jestes %1 i %2 ci brakuje, zebys mogl wyzej ocenic swa sile.\nJestes %3 i %4 ci brakuje, zebys mogl wyzej ocenic swa zrecznosc.\nJestes %5 i %6 ci brakuje, zebys mogl wyzej ocenic swa wytrzymalosc.\nJestes %7 i %8 ci brakuje, zebys mogl wyzej ocenic swoj intelekt.\nJestes %9 i %10 ci brakuje, zebys mogl wyzej ocenic swa odwage.\n\n} 
 {
 	#var p_str_left 0;
 	#var p_dex_left 0;
@@ -137,22 +127,39 @@
 	#var p_int 0;
 	#var p_bra 0;
 
+	#local leftBar[0] {    };
+	#local leftBar[1] {#   };
+	#local leftBar[2] {##  };
+	#local leftBar[3] {### };
+	#local leftBar[4] {####};
+
 	#var p_str @poziomsily{%1};
 	#var p_str_left @brakuje{%2};
+	#showme {==> [$p_str_left/4] [$leftBar[$p_str_left]] [$p_str+$p_str_left] %1};
 
 	#var p_dex @poziomzrecznosci{%3};
 	#var p_dex_left @brakuje{%4};
+	#showme {==> [$p_dex_left/4] [$leftBar[$p_dex_left]] [$p_dex+$p_dex_left] %3};
 
 	#var p_sta @poziomwytrzymalosci{%5};
 	#var p_sta_left @brakuje{%6};
+	#showme {==> [$p_sta_left/4] [$leftBar[$p_sta_left]] [$p_sta+$p_sta_left] %5};
 
 	#var p_int @poziominteligencji{%7};
 	#var p_int_left @brakuje{%8};
+	#showme {==> [$p_int_left/4] [$leftBar[$p_int_left]] [$p_int+$p_int_left] %7};
 
 	#var p_bra @poziomodwagi{%9};
 	#var p_bra_left @brakuje{%10};
+	#showme {==> [$p_bra_left/4] [$leftBar[$p_bra_left]] [$p_bra+$p_bra_left] %9};
 
-	podliczexp;
+	#var r @policz2{};
+	#var twojpoziom {};
+	#nop podliczexp;
+	#nop sh {               --------};
+	#sh {         razem:  $pointstotal ==> ${c_stan_niski}$level.$cechyleft<088>}; 
+	
+	#line gag;
 }
 
 #action {Wydaje ci sie, ze %1 ci brakuje, zebys mogla wyzej ocenic sw{a|oj} %3.}
@@ -166,7 +173,7 @@
 }
 
 
-#action {Wydaje ci sie, ze %1 ci brakuje, zebys mogl wyzej ocenic sw{a|oj} %3.}
+#unaction {Wydaje ci sie, ze %1 ci brakuje, zebys mogl wyzej ocenic sw{a|oj} %3.}
 {
 	#var ret @brakuje{%1};
 	#if {"%3" == "sile"} {#var p_str_left $ret};
@@ -176,16 +183,16 @@
 	#if {"%3" == "odwage"} {#var p_bra_left $ret};
 }
 
-#action {Masz epicka %1.}
+#unaction {Masz epicka %1.}
 {
 	#if {"%1" == "zrecznosc"} {#var p_dex 40};	
 }
-#action {Twa %1 osiagnela nadludzki poziom.}
+#unaction {Twa %1 osiagnela nadludzki poziom.}
 {
 	#if {"%1" == "zrecznosc"} {#var p_dex 45};	
 }
 
-#action {Jestes %1, %2, %3, %4 i %5.}
+#unaction {Jestes %1, %2, %3, %4 i %5.}
 {
 	#var p_str @poziomsily{%1};
 	#var p_dex @poziomzrecznosci{%2};
@@ -245,7 +252,7 @@
 	otworz drzwi;
 }
 
-#alias podliczexp_old {
+#unalias podliczexp_old {
 	#var r @policz2{};
 	#showme { | stat | base | left | math };
 	#showme { |  str |    $p_str |    $p_str_left |  $strpoint };
@@ -301,11 +308,11 @@
 	#echo {Wygladasz jak ${twojpoziom}.};
 }
 
-#action {Obecnie do waznych cech zaliczasz} {podliczexp};
+#unaction {Obecnie do waznych cech zaliczasz} {podliczexp};
 
-#action {Czujesz jak powoli} {podliczexp};
-#action {Otwierasz oczy, twoj umysl powraca do normalnego dzialania. Po chwili konsternacji wstajesz z podlogi.} {podliczexp};
-#action {Wynurzajac sie z otchlani wlasnego umyslu, odzyskujesz powoli zmysly. Czujesz sie bardzo wypoczety i zrelaksowany, gdy w koncu powstajesz.} {podliczexp};
-#action {Czujesz sie jakbys wydobywal sie z glebokiej otchlani} {podliczexp};
-#action {Wstajesz z posadzki, otrzepujac pyl ze swojego ubrania. Moze to i dobrze ze kamienie tu} {podliczexp};
-#action {Odblokowujesz swoje zmysly. Po krotkiej chwili, kiedy bodzce z zewnatrz zalewaja twa glowe niczym fala} {podliczexp};
+#unaction {Czujesz jak powoli} {podliczexp};
+#unaction {Otwierasz oczy, twoj umysl powraca do normalnego dzialania. Po chwili konsternacji wstajesz z podlogi.} {podliczexp};
+#unaction {Wynurzajac sie z otchlani wlasnego umyslu, odzyskujesz powoli zmysly. Czujesz sie bardzo wypoczety i zrelaksowany, gdy w koncu powstajesz.} {podliczexp};
+#unaction {Czujesz sie jakbys wydobywal sie z glebokiej otchlani} {podliczexp};
+#unaction {Wstajesz z posadzki, otrzepujac pyl ze swojego ubrania. Moze to i dobrze ze kamienie tu} {podliczexp};
+#unaction {Odblokowujesz swoje zmysly. Po krotkiej chwili, kiedy bodzce z zewnatrz zalewaja twa glowe niczym fala} {podliczexp};
