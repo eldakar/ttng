@@ -23,10 +23,12 @@
 		#else {podobadz broni z pierwszej uprzezy};
 	};
 	#elseif {"$ppochwa" == "pochwa"} {
+		#if {"$pzawod" == "sc"} {powyciagnij bron z pierwszej pochwy;gzdobadz jej};
 		#if {"$pzawod" == "kg"} {gzdobadz szybko};
 		#else {podobadz broni z pierwszej pochwy};
 	};
 	#elseif {"$ppochwa" == "temblak"} {
+		#if {"$pzawod" == "sc"} {powyciagnij bron z pierwszego temblaka;gzdobadz jej};
 		podobadz broni z pierwszego temblaka;
 	};
 	#elseif {"$ppochwa" == "plecak"} {
@@ -44,9 +46,11 @@
 		#else {zaloz pawez};
 	};
 	#elseif {"$ppochwa2" == "temblak"} {
+		#if {"$pzawod" == "sc"} {powyciagnij bron z drugiego temblaka;gzdobadz jej};
 		podobadz broni z drugiego temblaka;
 	};		
 	#elseif {"$ppochwa2" == "pochwa"} {
+		#if {"$pzawod" == "sc"} {powyciagnij bron z drugiej pochwy;gzdobadz jej};
 		podobadz broni z drugiej pochwy;
 	}
 }
@@ -58,10 +62,12 @@
 		#else {powsun dobyta bron do pierwszej uprzezy};
 	};
 	#elseif {"$ppochwa" == "pochwa"} {
+		#if {"$pzawod" == "sc"} {gzopusc bron;powsun ja do pierwszej pochwy};
 		#if {"$pzawod" == "kg"} {gzprzewies dobyty miecz};
 		#else {powsun dobyta bron do pierwszej pochwy};
 	};
 	#elseif {"$ppochwa" == "temblak"} {
+		#if {"$pzawod" == "sc"} {gzopusc bron;powsun ja do pierwszego temblaka};
 		powsun bron do pierwszego temblaka;
 	};
 	#elseif {"$ppochwa" == "plecak"} {
@@ -79,10 +85,12 @@
 		#else {zdejmij zalozona pawez};
 	};	
 	#elseif {"$ppochwa2" == "temblak"} {
+		#if {"$pzawod" == "sc"} {gzopusc dobyta bron;powsun ja do drugiego temblaka};
 		powsun dobyta bron do drugiego temblaka;
 	};
 	#elseif {"$ppochwa2" == "pochwa"} {
-		powsun dobyta bron do drugiej pochwy;
+		#if {"$pzawod" == "sc"} {gzopusc dobta bron;powsun ja do drugiej pochwy};
+		#else {powsun dobyta bron do drugiej pochwy};
 	};	
 }
 
