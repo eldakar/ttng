@@ -124,7 +124,7 @@
     #map at {%1} {#map set roomcolor $c_rooms[%2]};
     terrain_put %1 %2;
     #map get roomterrain rter;
-    braodcast TERRAIN %1 $rter;
+    broadcast TERRAIN %1 $rter;
     mapsave;
 };
 
