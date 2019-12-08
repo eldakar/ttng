@@ -6,6 +6,30 @@
 #map flag vtmap off;
 #map legend 48 <FAA>#<088>;
 
+#alias {TTMapMode} {
+    #switch {"$ConfigManager_Configs[TTMapMode]"} {
+        #case {"unicode"} {
+            #map flag unicodegraphics on;
+        };
+        #case {"ascii"} {
+            #map flag asciigraphics on;
+        };
+        #default {
+            #map flag asciigraphics on;
+        }
+    }
+};
+#alias {TTMapTerrain} {
+    #switch {"$ConfigManager_Configs[TTMapTerrain]"} {
+        #case {"on"} {
+            #map flag terrain on;
+        };
+        #default {
+            #map flag terrain off;
+        }
+    }
+};
+
 #alias {move_n} {#send n;#var trytomove 1;#var movedir {polnoc}};
 #alias {move_s} {#send s;#var trytomove 1;#var movedir {poludnie}};
 #alias {move_e} {#send e;#var trytomove 1;#var movedir {wschod}};
