@@ -25,7 +25,10 @@ TUTOR 	/mark as <typ> - Oznacza dana lokacje - uzywane w wyszukiwaniu i kolorowa
 TUTOR 	/mark as <typ> <string> - Oznacza dana lokacje - uzywane w wyszukiwaniu i kolorowaniu
 		typ:	vendor, checkpoint, water, bank, post, 
 			safe, food, quest, info, danger, knowledge, 
-			training, smith, storage, port, herb
+			training, smith, storage, port, herb,
+			forest, field, beach, river, lake, bush,
+			swamp, lava, mountain, desert, road,
+			graveyard
 		string:	ciag znakow, nie ma sensu, zeby byl szerszy niz srednia szerokosc ekranu
 			jesli pusty, uzywany jest short lokacji
 Zapalanie pochodni:

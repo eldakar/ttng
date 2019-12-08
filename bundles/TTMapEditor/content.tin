@@ -143,6 +143,16 @@ TODO
     };
 };
 
+#brain #action {<PORT> TERRAIN %d %w} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {
+            #line substitute variables {
+                #map set roomterrain %2;
+            };
+        };
+    };
+};
+
 #brain #action {<PORT> LINK %d %w %d} {
     #line substitute {variables} {
         #rpg #map at {%1} {
@@ -400,6 +410,23 @@ TODO
 #var c_rooms[info] {<178>};
 #var c_rooms[danger] {<118>};
 #var c_rooms[port] {<118><ccf>};
-#var c_rooms[herb] {<118><fac>};
+#var c_rooms[herb] {<058>};
 #var c_rooms[trap] {<FAA><178>};
-#var c_rooms[smith] {<118><caf>};
+#var c_rooms[smith] {<168>};
+#var c_rooms[knowledge] {<078>};
+#var c_rooms[training] {<038>};
+#var c_rooms[storage] {<138>};
+
+#var c_rooms[forest] {<128>};
+#var c_rooms[field] {<128>};
+#var c_rooms[beach] {<138>};
+#var c_rooms[river] {<148>};
+#var c_rooms[lake] {<148>};
+#var c_rooms[bush] {<128>};
+#var c_rooms[swamp] {<158>};
+#var c_rooms[lava] {<118>};
+#var c_rooms[mountain] {<178>};
+#var c_rooms[desert] {<138>};
+#var c_rooms[road] {<088>};
+#var c_rooms[graveyard] {<088>};
+
