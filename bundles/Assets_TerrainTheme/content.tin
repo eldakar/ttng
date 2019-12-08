@@ -10,11 +10,11 @@
 
 #map ter city <cba>⌂ SPARSE NARROW;
 #map ter densecity <g05>⌂ SCANT VAST;
-#map ter novigrad1 <cba>⌂ SPARSE WIDE;
-#map ter novigrad2 <cba>⌂ SCANT VAST;
+#map ter novigrad1 {<088> };
+#map ter novigrad2 {<088> };
 #map ter house <caa>⌂ SCANT NARROW;
-#map ter oxenfurt1 <bac>⌂ SCANT VAST;
-#map ter oxenfurt2 <cab>⌂ SCANT WIDE;
+#map ter oxenfurt1 {<088> };
+#map ter oxenfurt2 {<088> };
 
 #map ter road <g06>. DENSE VAST;
 #map ter path1 <cba>. DENSE WIDE;

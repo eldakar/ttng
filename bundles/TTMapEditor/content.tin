@@ -143,7 +143,7 @@ TODO
     };
 };
 
-#brain #action {<PORT> TERRAIN %d %w} {
+#brain #action {<PORT> TERRAIN %d %S} {
     #line substitute {variables} {
         #rpg #map at {%1} {
             #line substitute variables {
