@@ -312,13 +312,26 @@ TODO
         #case {"quest"} {};
         #case {"info"} {};
         #case {"danger"} {};
- 	#case {"port"} {};
-	#case {"herb"} {};
-	#case {"trap"} {};
-	#case {"smith"} {};
- 	#case {"training"} {};
-	#case {"knowledge"} {};
-	#case {"storage"} {};
+     	#case {"port"} {};
+    	#case {"herb"} {};
+    	#case {"trap"} {};
+    	#case {"smith"} {};
+     	#case {"training"} {};
+    	#case {"knowledge"} {};
+    	#case {"storage"} {};
+        #case {"forest"} {};
+        #case {"field"} {};
+        #case {"beach"} {};
+        #case {"river"} {};
+        #case {"lake"} {};
+        #case {"bush"} {};
+        #case {"swamp"} {};
+        #case {"lava"} {};
+        #case {"mountain"} {};
+        #case {"desert"} {};
+        #case {"road"} {};
+        #case {"graveyard"} {};
+
         #default {
             #echo {%s} {Niedozwolona wartosc: %1};
             #return;

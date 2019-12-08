@@ -29,7 +29,7 @@
 };
 
 #alias {broadcast} {
-	#foreach {$userList[]} {user} {#port send $userList[$user] {%0};};
+	#foreach {*userList[]} {user} {#port send $userList[$user] {%0};};
 };
 
 
@@ -110,6 +110,9 @@
     #map set roomarea {%2};
     broadcast MARK %1 %2;
     #map at {%1} {#map set roomcolor $c_rooms[%2]};
+    terrain_put %1 %2;
+    #map get roomterrain rter;
+    braodcast TERRAIN %1 $rter;
     mapsave;
 };
 
@@ -119,6 +122,9 @@
     #map set roomnote {%3};
     broadcast MARK %1 %2 %3;
     #map at {%1} {#map set roomcolor $c_rooms[%2]};
+    terrain_put %1 %2;
+    #map get roomterrain rter;
+    braodcast TERRAIN %1 $rter;
     mapsave;
 };
 
@@ -373,9 +379,141 @@
 #var c_rooms[info] {<178>};
 #var c_rooms[danger] {<118>};
 #var c_rooms[port] {<118><ccf>};
-#var c_rooms[herb] {<118><fac>};
+#var c_rooms[herb] {<058>};
 #var c_rooms[trap] {<FAA><178>};
-#var c_rooms[smith] {<118><caf>};
+#var c_rooms[smith] {<168>};
 #var c_rooms[knowledge] {<078>};
 #var c_rooms[training] {<038>};
-#var c_rooms[storage] {<118><fca>};
+#var c_rooms[storage] {<138>};
+
+#var c_rooms[forest] {<128>};
+#var c_rooms[field] {<128>};
+#var c_rooms[beach] {<138>};
+#var c_rooms[river] {<148>};
+#var c_rooms[lake] {<148>};
+#var c_rooms[bush] {<128>};
+#var c_rooms[swamp] {<158>};
+#var c_rooms[lava] {<118>};
+#var c_rooms[mountain] {<178>};
+#var c_rooms[desert] {<138>};
+#var c_rooms[road] {<088>};
+#var c_rooms[graveyard] {<088>};
+
+
+#alias terrain_put {
+    #switch {"%2"} {
+        #case {"forest"} {
+            #math rollme {1d3};
+            #switch {"$rollme"} {
+                #case {"1"} {#map at %1 {#map set roomterrain forest1}};
+                #case {"2"} {#map at %1 {#map set roomterrain forest2}};
+                #case {"3"} {#map at %1 {#map set roomterrain forest3}};
+                #case {"4"} {#map at %1 {#map set roomterrain field4}};
+            };
+        };
+        #case {"field"} {
+            #math rollme {1d3};
+            #switch {"$rollme"} {
+                #case {"1"} {#map at %1 {#map set roomterrain field1}};
+                #case {"2"} {#map at %1 {#map set roomterrain field2}};
+                #case {"3"} {#map at %1 {#map set roomterrain field3}};
+                #case {"4"} {#map at %1 {#map set roomterrain field1}};
+            };
+        };
+        #case {"beach"} {
+            #math rollme {1d2};
+            #switch {"$rollme"} {
+                #case {"1"} {#map at %1 {#map set roomterrain plaza1}};
+                #case {"2"} {#map at %1 {#map set roomterrain plaza2}};
+                #case {"3"} {#map at %1 {#map set roomterrain field1}};
+                #case {"4"} {#map at %1 {#map set roomterrain field1}};
+            };
+        };
+        #case {"river"} {
+            #math rollme {1d2};
+            #switch {"$rollme"} {
+                #case {"1"} {#map at %1 {#map set roomterrain water1}};
+                #case {"2"} {#map at %1 {#map set roomterrain water2}};
+                #case {"3"} {#map at %1 {#map set roomterrain field1}};
+                #case {"4"} {#map at %1 {#map set roomterrain field1}};
+            };
+        };
+        #case {"lake"}  {
+            #math rollme {1d2};
+            #switch {"$rollme"} {
+                #case {"1"} {#map at %1 {#map set roomterrain water1}};
+                #case {"2"} {#map at %1 {#map set roomterrain water2}};
+                #case {"3"} {#map at %1 {#map set roomterrain field1}};
+                #case {"4"} {#map at %1 {#map set roomterrain field1}};
+            };
+        };
+
+        #case {"bush"} {
+            #math rollme {1d2};
+            #switch {"$rollme"} {
+                #case {"1"} {#map at %1 {#map set roomterrain field3}};
+                #case {"2"} {#map at %1 {#map set roomterrain field4}};
+                #case {"3"} {#map at %1 {#map set roomterrain field1}};
+                #case {"4"} {#map at %1 {#map set roomterrain field1}};
+            };
+        };
+    #nop BAGNA;
+        #case {"swamp"} {
+            #math rollme {1d6};
+            #switch {"$rollme"} {
+                #case {"1"} {#map at %1 {#map set roomterrain cave1}};
+                #case {"2"} {#map at %1 {#map set roomterrain cave2}};
+                #case {"3"} {#map at %1 {#map set roomterrain cave3}};
+                #case {"4"} {#map at %1 {#map set roomterrain cave4}};
+                #case {"5"} {#map at %1 {#map set roomterrain cave5}};
+                #case {"6"} {#map at %1 {#map set roomterrain cave6}};
+            };
+        };
+    #nop LAWA!;
+        #case {"lava"} {
+            #math rollme {1d3};
+            #switch {"$rollme"} {
+                #case {"1"} {#map at %1 {#map set roomterrain lava1}};
+                #case {"2"} {#map at %1 {#map set roomterrain lava2}};
+                #case {"3"} {#map at %1 {#map set roomterrain lava3}};
+                #case {"4"} {#map at %1 {#map set roomterrain lava4}};
+            };
+        };
+    #nop GORY;
+        #case {"mountain"} {
+            #math rollme {1d2};
+            #switch {"$rollme"} {
+                #case {"1"} {#map at %1 {#map set roomterrain mount1}};
+                #case {"2"} {#map at %1 {#map set roomterrain mount2}};
+            };
+        };
+    #nop PUSTYNIE;
+        #case {"desert"} {
+            #math rollme {1d4};
+            #switch {"$rollme"} {
+                #case {"1"} {#map at %1 {#map set roomterrain field1}};
+                #case {"2"} {#map at %1 {#map set roomterrain field1}};
+                #case {"3"} {#map at %1 {#map set roomterrain field1}};
+                #case {"4"} {#map at %1 {#map set roomterrain field1}};
+            };
+        };
+    #nop TRAKT;
+        #case {"road"} {
+            #math rollme {1d3};
+            #switch {"$rollme"} {
+                #case {"1"} {#map at %1 {#map set roomterrain road}};
+                #case {"1"} {#map at %1 {#map set roomterrain path1}};
+                #case {"2"} {#map at %1 {#map set roomterrain path2}};
+            };
+        };
+        #case {"graveyard"} {
+            #math rollme {1d2};
+            #switch {"$rollme"} {
+                #case {"1"} {#map at %1 {#map set roomterrain grave1}};
+                #case {"2"} {#map at %1 {#map set roomterrain grave2}};
+            };
+        };
+    };
+};
+
+
