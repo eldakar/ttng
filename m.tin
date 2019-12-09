@@ -46,6 +46,7 @@
     #read bundles/Drakkary/manifest.tin;
     #read bundles/Assets_TerrainTheme/content.tin;
     #read bundles/Vehicles/manifest.tin;
+    #read bundles/LogManager/manifest.tin;
     
     #var r @bundleops_loadglobals{};
 

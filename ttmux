@@ -1,4 +1,6 @@
 #!/bin/bash
 git pull
 myid=`id -u`
+mkdir bundles/ConfigManager/Profiles
+mkdir bundles/ConfigManager/Profiles/Logs
 tt++ m.tin $myid
