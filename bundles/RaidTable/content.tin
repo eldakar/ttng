@@ -399,6 +399,7 @@
         #if {"$duch[$du][team_leader]" == "true"} {
 		  #var tmpled {<138>*<088>};
 		  #format team_lead_lower {%l} {$duch[$du][desc]};
+          #var team_lead_id {$du};
 	    };
         
         #if {"$duch[$du][team]" == "true"} {

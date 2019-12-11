@@ -17,6 +17,11 @@
     #alias {move_nw} {#echo {Nie mozesz teraz sie ruszyc.}};
     #alias {move_sw} {#echo {Nie mozesz teraz sie ruszyc.}};
     #alias {move_se} {#echo {Nie mozesz teraz sie ruszyc.}};
+    #map color background <G02>;
+    #map color exits <G02>;
+    #map color rooms <G02>;
+    #map color paths <G02>;
+    #map color user <G02>;
 };
 
 #alias {frozen_unset} {
@@ -31,5 +36,10 @@
     #alias {move_nw} {#send nw;#var trytomove 1;#var movedir {polnocny-zachod}};
     #alias {move_sw} {#send sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
     #alias {move_se} {#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};
+    #map color background;
+    #map color exits <eee>;
+    #map color rooms <g12>;
+    #map color paths <ddd>;
+    #map color user <118>;
 };
 

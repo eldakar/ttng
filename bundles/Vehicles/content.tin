@@ -53,6 +53,10 @@
 {
 	qb STATEK_IN;
 };
+#action {^Plaskodenny skeid.$}
+{
+	qb STATEK_IN;
+};
 #action {^Rzeczna tratwa.$}
 {
 	qb STATEK_IN;
