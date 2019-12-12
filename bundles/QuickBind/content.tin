@@ -2,17 +2,6 @@
 	#echo {<118>Zaden bind nie zostal uruchomiony!<088>};
 };
 
-#alias {QuickBindMacroKey} {
-   #switch {"$ConfigManager_Configs[QuickBindMacroKey]"} {
-    #case {"shifttylda"} {#var KEY_QB {~}};
-    #case {"tylda"} {#var KEY_QB {`}};
-    #case {"nkl"} {#var KEY_QB {[}};
-    #case {"nkr"} {#var KEY_QB {]}};
-    #case {"slash"} {#var KEY_QB {/}};
-    #case {"backslash"} {#var KEY_QB {\}};
-   };
-};
-
 #alias {qr} {
   #line substitute {variables} {#alias _quickbind_ {%0}};
   #format {show_bind_} {%h} { %0 };
