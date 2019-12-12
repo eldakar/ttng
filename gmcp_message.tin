@@ -57,7 +57,6 @@
 		};
 		#case {"room.short"} {
 			#var shortnote {};
-			#var shortbind {};
 			#var tmptext {$GMCPMSGS[text]};
 			#regex {$tmptext} {{.*}\\n$} {
 				#var GMCPMSGS[text] {&1};
@@ -69,13 +68,11 @@
 
 			#if {"$voos_num" == "<178>i<088>"} {#var shortnote {[${c_nasobie}Notka<088>]}};
 			#if {$bind_found > 0} {
-				#line substitute {variables} {#macro {$KEY_QB} {$bind_run}};
-				#nop echo {${c_stan_sredni}BIND: $bind_run<088>};
-				#var shortbind {[${c_stan_sredni}$bind_run<088>]};
+				#line sub variables {#alias _quickbind_ {$bind_run}};
 				SplitWingMap_LabelBind $bind_run;
 			};
 
-			#sh {${outputtext} [$roomId] $shortbind $shortnote};
+			#sh {${outputtext} [$roomId] $shortnote};
 			#line strip {#var temp_short {$outputtext}};
 
 			#line substitute {variables} {

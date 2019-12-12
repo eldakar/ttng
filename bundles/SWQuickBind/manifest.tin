@@ -18,7 +18,6 @@
 #var bundle_help {1};
 
 #list bundle_configs clear;
-#list bundle_configs add {QuickBindMacroKey};
 #nop ############################;
 #nop EVENT SLOTS ##########;
 #nop Every listed event slot has to be empty;
