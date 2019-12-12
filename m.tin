@@ -47,6 +47,7 @@
     #read bundles/Assets_TerrainTheme/content.tin;
     #read bundles/Vehicles/manifest.tin;
     #read bundles/LogManager/manifest.tin;
+    #read bundles/Macros/manifest.tin;
     
     #var r @bundleops_loadglobals{};
 

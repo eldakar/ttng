@@ -7,9 +7,6 @@
 	#list bundle_configs add {CombatMacrosConfigAttackCommand};
 	#list bundle_configs add {CombatMacrosConfigAttackFlags};
 	#list bundle_configs add {CombatMacrosConfigShieldDown};
-	#list bundle_configs add {CombatMacrosAttackTarget};
-	#list bundle_configs add {CombatMacrosDefendTarget};
-	#list bundle_configs add {CombatMacrosBreakingDefense};
 	
 #list bundle_slots clear;
 	#list bundle_slots add {macros.combat};

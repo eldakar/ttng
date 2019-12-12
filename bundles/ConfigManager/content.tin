@@ -29,7 +29,7 @@
 	};
 };
 
-#alias {/conf %w %*} {
+#alias {/conf %S %*} {
 	#var confid 0;
 	#foreach {*bundlemanager_configs[]} {bc} {
 		#if {"$bundlemanager_configs[$bc]" == "%1"} {

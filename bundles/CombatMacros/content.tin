@@ -1,36 +1,3 @@
-#alias {CombatMacrosAttackTarget} {
-   #switch {"$ConfigManager_Configs[CombatMacrosAttackTarget]"} {
-	 	#case {"shifttylda"} {#macro {~} {_zaznaczcel_}};
-	 	#case {"tylda"} {#macro {`} {_zaznaczcel_}};
-	 	#case {"nkl"} {#macro {[} {_zaznaczcel_}};
-	 	#case {"nkr"} {#macro {]} {_zaznaczcel_}};
-	 	#case {"slash"} {#macro {/} {_zaznaczcel_}};
-	 	#case {"backslash"} {#macro {\} {_zaznaczcel_}};
-   };
-};
-
-#alias {CombatMacrosDefendTarget} {
-   #switch {"$ConfigManager_Configs[CombatMacrosDefendTarget]"} {
-	 	#case {"shifttylda"} {#macro {~} {zaslon cel obrony}};
-	 	#case {"tylda"} {#macro {`} {zaslon cel obrony}};
-	 	#case {"nkl"} {#macro {[} {zaslon cel obrony}};
-	 	#case {"nkr"} {#macro {]} {zaslon cel obrony}};
-	 	#case {"slash"} {#macro {/} {zaslon cel obrony}};
-	 	#case {"backslash"} {#macro {\} {zaslon cel obrony}};
-   };
-};
-
-#alias {CombatMacrosBreakingDefense} {
-   #switch {"$ConfigManager_Configs[CombatMacrosBreakingDefense]"} {
-	 	#case {"shifttylda"} {#macro {~} {przelam obrone celu ataku}};
-	 	#case {"tylda"} {#macro {`} {przelam obrone celu ataku}};
-	 	#case {"nkl"} {#macro {[} {przelam obrone celu ataku}};
-	 	#case {"nkr"} {#macro {]} {przelam obrone celu ataku}};
-	 	#case {"slash"} {#macro {/} {przelam obrone celu ataku}};
-	 	#case {"backslash"} {#macro {\} {przelam obrone celu ataku}};
-   };
-};
-
 #alias {CombatMacrosConfigShieldDown} {
 	#var pzdjeciezaslon $ConfigManager_Configs[CombatMacrosConfigShieldDown];
 };
@@ -81,3 +48,12 @@
       };
     };
 }
+
+#alias {_przelam_} {
+	przestan kryc sie za zaslona;
+	przelam obrone celu ataku;
+};
+
+#alias {_zasloncel_} {
+	zaslon cel obrony;
+};	

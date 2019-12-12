@@ -10,9 +10,7 @@
 };
 
 #alias {qr} {
-  #line substitute {variables} {#macro {$KEY_QB} {%0}};
-  #line substitute {variables} {#macro {$KEY_PAD_MIDDLE} {%0}};
-
+  #line substitute {variables} {#alias _quickbind_ {%0}};
   #format {show_bind_} {%h} { %0 };
   #echo {${c_stan_sredni}$show_bind_};
 }
@@ -20,12 +18,11 @@
 #alias {qk} {
   #var r @_print_war_bind{%0};
   #var qkcommand %0;
-  #line substitute {variables} {#macro {$KEY_QK} {$qkcommand}};
+  #line substitute {variables} {#alias _quickbind_ {%0}};
 };
 
 #alias {qb} {
-    #line substitute {variables} {#macro {$KEY_QB} {%0}};
-    #line substitute {variables} {#macro {$KEY_PAD_MIDDLE} {%0}};
+    #line substitute {variables} {#alias _quickbind_ {%0}};
     #nop show_bind %0;
     #format {show_bind_} {%h} { %0 };
     #echo {${c_stan_wysoki}$show_bind_};
@@ -34,8 +31,7 @@
 
 #nop silently;
 #alias {qbs} {
-    #line substitute {variables} {#macro {$KEY_QB} {%0}};
-    #line substitute {variables} {#macro {$KEY_PAD_MIDDLE} {%0}};
+    #line substitute {variables} {#alias _quickbind_ {%0}};
 }
 
 #alias {QB} {
@@ -44,8 +40,7 @@
 }
 
 #alias {qm} {
-    #line substitute {variables} {#macro {$KEY_QB} {%0}};
-    #line substitute {variables} {#macro {$KEY_PAD_MIDDLE} {%0}};
+    #line substitute {variables} {#alias _quickbind_ {%0}};
     #format {show_bind_} {%h} { %0 };
     #echo {${c_stan_niski}$show_bind_}
   
@@ -65,7 +60,7 @@
 }
 
 #alias {qbk} {
-    #line substitute {variables} {#macro {$KEY_QB} {%0}};
+    #line substitute {variables} {#alias _quickbind_ {%0}};
 }
 
 #action {Bol w {prawej|lewej} dloni staje sie mniej odczuwalny.} {

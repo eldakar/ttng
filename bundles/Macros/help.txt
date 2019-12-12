@@ -1,0 +1,8 @@
+WARN 1. Komendy systemowe, ktore mozna dodac pod makra:
+_quickbind_
+_sugerowanywrog_
+_sugerowanaobrona_
+_expo_
+_przelamanie_
+_zaznaczcel_
+

@@ -265,8 +265,9 @@
         #var wrog_sugerowany $wrog_najslabszy;
         #var duch[$wrog_najslabszy][bot] {SA1};
 
-	#macro {$KEY_F1} {_zabij_ ob_$wrog_najslabszy};
-    #macro {\e[11~} {_zabij_ ob_$wrog_najslabszy};
+	#line sub variables {#alias _sugerowanywrog_ {_zabij_ ob_$wrog_najslabszy}};
+	#nop macro {$KEY_F1} {_zabij_ ob_$wrog_najslabszy};
+	#nop macro {\e[11~} {_zabij_ ob_$wrog_najslabszy};
 
     };
 }
@@ -303,18 +304,28 @@
     #if {$team_najslabszy_hp < 10} {
         #var duch[$team_najslabszy][bot] {SO1};
         #var team_sugerowany $team_najslabszy;
-	#macro {$KEY_F2} {
+	#nop macro {$KEY_F2} {
 		zaslon ob_$team_najslabszy;
         	#if {"$pzdjeciezaslon" == "auto"} {
             		przestan zaslaniac;
         	};
 	};
-    #macro {\e[12~} {
-        zaslon ob_$team_najslabszy;
-            #if {"$pzdjeciezaslon" == "auto"} {
+	
+	#line sub variables {
+		#alias _sugerowanaobrona_ {
+			zaslon ob_$team_najslabszy;
+		   	#if {"$pzdjeciezaslon" == "auto"} {
+            			przestan zaslaniac;
+        		};
+		};
+	};
+
+    	#nop macro {\e[12~} {
+       		zaslon ob_$team_najslabszy;
+       	     	#if {"$pzdjeciezaslon" == "auto"} {
                     przestan zaslaniac;
-            };
-    };
+            	};
+    	};
 
     };
 
@@ -324,9 +335,14 @@
         #foreach {*team[]} {www} {
             #if {"$duch[$team[$www]][defence_target]" == "true"} {
 		#var duch[$team[$www][bot] {SO2};
-		#macro {$KEY_F4} {
-			zaslon ob_$team[$www];
-        		#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac};
+
+		#nop line sub variables {
+			#alias _sugerowanaobrona_ {
+				zaslon ob_$team[$www];
+		   		#if {"$pzdjeciezaslon" == "auto"} {
+            				przestan zaslaniac;
+        			};
+			};
 		};
             };
         };

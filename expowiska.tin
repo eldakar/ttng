@@ -1,6 +1,7 @@
 #alias {expowisko} {
 	#sh {${c_arkatt}> Ustawiam expowisko (klawisz F3) %1};
-	#macro {$KEY_F3} {%1};
+	#line sub variables {#alias {_expo_} {%1}};
+	#nop macro {$KEY_F3} {%1};
 }
 #alias {expowiska_lista} {
 	#echo orki_orcal;

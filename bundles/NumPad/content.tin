@@ -3,7 +3,9 @@
 #var KEY_F2 {\eOQ};
 #var KEY_F2_B {\e[12~};
 #var KEY_F3 {\eOR};
+#var KEY_F3_B {\e[13~};
 #var KEY_F4 {\eOS};
+#var KEY_F4_B {\e[14~};
 
 #var KEY_F5_A {\e[15~};
 #var KEY_F6_A {\e[17~};

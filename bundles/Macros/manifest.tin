@@ -1,0 +1,32 @@
+#var bundle_name {Macros};
+#var bundle_data {0};
+#var bundle_content {1};
+#var bundle_help {0};
+
+#list bundle_deps clear;
+	#list bundle_deps add {ConfigManager};
+
+
+#list bundle_configs clear;
+	#list bundle_configs add {MacF1};
+	#list bundle_configs add {MacF2};
+	#list bundle_configs add {MacF3};
+	#list bundle_configs add {MacF4};
+	#list bundle_configs add {MacF5};
+	#list bundle_configs add {MacF6};
+	#list bundle_configs add {MacF7};
+	#list bundle_configs add {MacF8};
+	#list bundle_configs add {MacF9};
+	#list bundle_configs add {MacF10};
+	#list bundle_configs add {MacF11};
+	#list bundle_configs add {MacF12};
+	#list bundle_configs add {MacNawiasLewy};
+	#list bundle_configs add {MacNawiasPrawy};
+	#list bundle_configs add {MacTylda};
+	#list bundle_configs add {MacShiftTylda};
+	
+#list bundle_slots clear;
+	#list bundle_slots add {macros};
+#list bundle_alias clear;
+
+#var bundle_ready @bundleops_validate{};
