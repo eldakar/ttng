@@ -1,3 +1,7 @@
+#alias _quickbind_ {
+	#echo {<118>Zaden bind nie zostal uruchomiony!<088>};
+};
+
 #alias {QuickBindMacroKey} {
    #switch {"$ConfigManager_Configs[QuickBindMacroKey]"} {
     #case {"shifttylda"} {#var KEY_QB {~}};

@@ -1,3 +1,6 @@
+#alias _sugerowanywrog_ {#echo <118>Nie ma jeszcze wroga!<088>};
+#alias _sugerowanaobrona_ {#echo <118>Nie ma nikogo do obrony!<088>};
+
 #alias {RaidTableGuildEnemies} {
     #local tmp {$ConfigManager_Configs[RaidTableGuildEnemies]};
     #replace tmp {,} {;};

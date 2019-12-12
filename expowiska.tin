@@ -1,3 +1,7 @@
+#alias _expo_ {
+	#echo {<118>Nie wybrano zadnego expowiska<088>};
+};
+
 #alias {expowisko} {
 	#sh {${c_arkatt}> Ustawiam expowisko (klawisz F3) %1};
 	#line sub variables {#alias {_expo_} {%1}};
