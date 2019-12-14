@@ -44,6 +44,11 @@
     };
 }
 
+#alias {_przelamanie_} {
+	przestan kryc sie za zaslona;
+	przelam obrone celu ataku;
+};
+
 #alias {denominuj} {
 	zamien miedz na srebro;
 	zamien srebro na zloto;
