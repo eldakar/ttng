@@ -6,6 +6,8 @@
 #action {{s|S}kelliganski drakkar Zlocisty Feniks{.| }} {wejdz_na_korsarski Skelliganski drakkar Zlocisty Feniks} {2};
 #action {{k|K}orsarski drakkar Straznik Czasu{.| }} {wejdz_na_korsarski Korsarski drakkar Straznik Czasu} {1};
 #action {{s|S}kelliganski drakkar Obronca Archipelagu{.| }} {wejdz_na_korsarski Skelliganski drakkar Obronca Archipelagu} {2};
+#action {{k|K}orsarski drakkar Zmora Nilfgaardu{.| }} {wejdz_na_korsarski Korsarski drakkar Czarna Perla} {1};
+
 
 #alias {wejdz_na_korsarski %*} {
 	#format lowerc {%l} {%1};

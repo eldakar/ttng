@@ -36,6 +36,7 @@
 #alias {qm} {
   #line sub variables {#alias _quickbind_ {%0}};
   #format {show_bind_} {%h} { %0 };
+  #echo {${c_stan_niski}$show_bind_};
   SplitWingMap_Warning %0;
 };
 
