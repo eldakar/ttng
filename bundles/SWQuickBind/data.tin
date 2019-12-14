@@ -138,6 +138,7 @@
 #action {%1 sciaga kaptur plaszcza z glowy.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm sciagnij kaptur}};
 #action {%1 otula sie szczelnie %2 plaszczem.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm otul sie plaszczem}};
 #action {%1 naciaga na glowe kaptur i otula sie szczelnie %2 plaszczem.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm otul sie plaszczem}};
+#action {%1 naciaga kaptur plaszcza na glowe.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm otul sie plaszczem}};
 
 #action {%1 schodzi z drakkara na brzeg.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zejdz ze statku}};
 #action {%1 wskazuje na dol.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm trop}};
