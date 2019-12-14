@@ -31,14 +31,13 @@
 #alias {QB} {
     #var bind_found 1;
     #var bind_run {%0};
-}
+};
 
 #alias {qm} {
   #line sub variables {#alias _quickbind_ {%0}};
-    #format {show_bind_} {%h} { %0 };
-    #nop echo {${c_stan_niski}$show_bind_};
-    SplitWingMap_Warning %0;
-}
+  #format {show_bind_} {%h} { %0 };
+  SplitWingMap_Warning %0;
+};
 
 #alias {qbk} {
   #line sub variables {#alias _quickbind_ {%0}};

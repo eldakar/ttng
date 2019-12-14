@@ -14,7 +14,7 @@
 
 #list bundle_deps clear;
 	#list bundle_deps add {ConfigManager};
-	#list bundle_deps add {QuickBind};
+	#list bundle_deps add {SWQuickBind};
 
 #list bundle_alias clear;
 

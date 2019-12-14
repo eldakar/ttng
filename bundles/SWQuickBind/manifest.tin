@@ -3,7 +3,7 @@
 #nop ############################;
 
 #nop NAME ###########;
-#var bundle_name {QuickBind};
+#var bundle_name {SWQuickBind};
 
 #nop IS DATA PRESENT #;
 #var bundle_data {1};

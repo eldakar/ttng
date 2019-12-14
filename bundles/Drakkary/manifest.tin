@@ -30,7 +30,7 @@
 #nop ############################;
 #list bundle_deps clear;
 #list bundle_deps add {TTMap};
-#list bundle_deps add {QuickBind};
+#list bundle_deps add {SWQuickBind};
 #list bundle_deps add {gmcpDefaultColorManager};
 
 #nop ############################;

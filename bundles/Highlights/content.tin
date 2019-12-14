@@ -65,3 +65,8 @@
 #action {^%* Czujesz rozchodzacy sie po twoim ciele, pulsujacy bol!$} {Highlights_event %0;#line gag;}
 #action {^%* {rozpada sie!|peka!|rozpruwa sie.}$} {Highlights_event %0;#line gag;}
 #action {^Ku twojemu zdumieniu, %1 pojawil sie nagle tuz obok ciebie!$} {Highlights_event %0;#line gag;}
+
+#action {{Zostales zatruty!|Zostalas zatruta!|Czujesz, ze do twego ciala dostala sie kolejna dawka tej piekielnej trucizny!|Czujesz, ze do twego ciala dostala sie jakas trucizna!Nagle %w amfisbena wysuwa swoj dlugi, rozwidlony jezor w kierunku %w, mocno kujac nim * cialo!|Czujesz, ze do twego ciala dostala sie jakas trucizna!|Czujesz chlod bijacy od rany i zdajesz sobie sprawe, ze...}} {
+	Highlights_event %0;
+	#line gag;
+}

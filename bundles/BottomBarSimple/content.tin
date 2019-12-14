@@ -23,7 +23,7 @@
 		}
 	};
 	#if {$charstate[fatigue] > 4} {
-		#if {$duch[$avatarid][team] = "true"} {
+		#if {"$duch[$avatarid][team]" == "true"} {
 			#line sub variables {
 				#alias melduj_zmeczenie {
 					szepnij do ob_$team_lead_id $zmeczenie[$charstate[fatigue]];
