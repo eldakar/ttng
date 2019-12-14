@@ -50,8 +50,8 @@
 
 
 #function {jakazbroja}{
+
   #var {obr}{%1};
-  #replace {obr}{bardzo kiepsko}{${c_stan_niski}5 %0};
   #replace {obr}{kiepsko}{${c_stan_sredni}6 %0};
   #replace {obr}{przyzwoicie}{${c_stan_sredni}7 %0};
   #nop replace {obr}{dosc dobrze}{${c_stan_sredni}8 %0};
@@ -59,15 +59,19 @@
   #replace {obr}{doskonale}{${c_stan_wysoki}11 %0};
   #replace {obr}{perfekcyjnie}{${c_stan_wysoki}12 %0};
 
-#regex {$obr} {bardzo dobrze} {
-  #replace {obr}{bardzo dobrze}{${c_stan_sredni}9 %0};
-} {
-	#regex {$obr} {dosc dobrze} {
+  #regex {$obr} {bardzo dobrze} {
+    #replace {obr}{bardzo dobrze}{${c_stan_sredni}9 %0};
+  } {
+  	#regex {$obr} {dosc dobrze} {
   		#replace {obr}{dosc dobrze}{${c_stan_sredni}8 %0};
-	} {
-  		#replace {obr}{dobrze}{${c_stan_wysoki}10 %0};
+	  } {
+        #regex {$obr} {bardzo kiepsko} {
+          #replace {obr}{bardzo kiepsko}{${c_stan_niski}5 %0};
+        } {
+      		#replace {obr}{dobrze}{${c_stan_wysoki}10 %0};
+        }
+    };
 	};
-};
 
 #regex {$obr} {wyjatkowo zle} {
   #replace {obr}{wyjatkowo zle}{${c_stan_niski}1 %0};
