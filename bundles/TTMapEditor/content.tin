@@ -181,6 +181,31 @@ TODO
     };
 };
 
+#brain #action {<PORT> LONG %d %w} {
+    #line sub {variables} {
+        #rpg #map at {%1} {
+            #line substitute variables {#map insert %2 void};
+        };
+    };
+};
+
+#brain #action {<PORT> SHORT %d %w} {
+    #line sub {variables} {
+        #rpg #map at {%1} {
+            #line substitute variables {#map uninsert %2 void};
+        };
+    };
+};
+
+#brain #action {<PORT> VOID %d} {
+    #line sub {variables} {
+        #rpg #map at {%1} {
+            #line substitute variables {#map roomflag void on};
+        };
+    };
+};
+
+
 #brain #action {<PORT> MEXIT %d %w %d %*} {
     #line substitute {variables} {
         #rpg #map at {%1} {
@@ -396,11 +421,33 @@ TODO
     } {show_ponged_error2};
 } {1};
 
-#action {/map spe %w} {
+#alias {/map spe %w} {
     #if {$PONGED == 2} {
     #map get roomvnum v;
-    #line sub {variables} {#brain {#port send $brainId {SPECIAL %v %1}};};
-    };
+    #line sub {variables} {#brain {#port send $brainId {SPECIAL $v %1}};};
+    } {show_ponged_error2};
+} {1};
+
+
+#alias {/map void} {
+    #if {$PONGED == 2} {
+        #map get roomvnum v;
+        #line sub {variables} {#brain {#port send $brainId {VOID $v}}};
+    } {show_ponged_error2};
+} {1};
+
+#alias {/map long %w} {
+    #if {$PONGED == 2} {
+        #map get roomvnum v;
+        #line sub {variables} {#brain {#port send $brainId {LONG $v %1}}};
+    } {show_ponged_error2};
+} {1};
+
+#alias {/map short %w} {
+    #if {$PONGED == 2} {
+        #map get roomvnum v;
+        #line sub {variables} {#brain {#port send $brainId {SHORT $v %1}}};
+    } {show_ponged_error2};
 } {1};
 
 
