@@ -147,6 +147,27 @@
     mapsave;
 };
 
+#action {<PORT> LONG %d %w} {
+    #map goto %1;
+    #line substitute variables {#map insert %2 void};
+    broadcast LONG %1 %2;
+    mapsave;
+};
+
+#action {<PORT> SHORT %d %w} {
+    #map goto %1;
+    #line substitute variables {#map uninsert %2 void};
+    broadcast SHORT %1 %2;
+    mapsave;
+};
+
+#action {<PORT> VOID %d} {
+    #map goto %1;
+    #line substitute variables {#map roomflag void on};
+    broadcast VOID %1;
+    mapsave;
+};
+
 #action {<PORT> UNHIDE %d %w} {
     #map goto %1;
     #line substitute variables {#map exitflag %2 hide off};
