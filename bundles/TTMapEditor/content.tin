@@ -173,10 +173,19 @@ TODO
     };
 };
 
+#brain #action {<PORT> SPECIAL %d %w} {
+    #line sub {variables} {
+        #rpg #map at {%1} {
+            #map exit %2 color <118>;
+        };
+    };
+};
+
 #brain #action {<PORT> MEXIT %d %w %d %*} {
     #line substitute {variables} {
         #rpg #map at {%1} {
             #map exit %2 command {%4};
+            #map exit %2 color <118>;
             #map link {%4} %3;
         };
     };
@@ -386,6 +395,14 @@ TODO
     #line substitute {variables} {#brain {#port send $brainId {MEXIT $v %1 %2}}};
     } {show_ponged_error2};
 } {1};
+
+#action {/map spe %w} {
+    #if {$PONGED == 2} {
+    #map get roomvnum v;
+    #line sub {variables} {#brain {#port send $brainId {SPECIAL %v %1}};};
+    };
+} {1};
+
 
 #alias {/note %*} {
     #if {$PONGED == 2} {

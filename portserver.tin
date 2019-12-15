@@ -97,6 +97,7 @@
 #action {<PORT> MEXIT %d %w %*} {
     #map goto %1;
     #map exit %2 command {%3};
+#nop NEW;  #map exit %2 color <118>;
     #map move %2;
     #map get roomvnum tmproomvnum;
     #map undo;
@@ -104,6 +105,17 @@
     broadcast MEXIT %1 %2 $tmproomvnum %3;
     mapsave;
 };
+
+#action {<PORT> SPECIAL %d %w} {
+    #line sub {variables} {
+        #map at {%1} {
+            #map exit %2 color <118>;
+        };
+    };
+    broadcast SPECIAL %1 %2;
+    mapsave;
+};
+
 
 #action {<PORT> MARK %d %w'} {
     #map goto %1;
