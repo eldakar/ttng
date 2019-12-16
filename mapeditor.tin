@@ -1,0 +1,483 @@
+#event {PROGRAM START} {
+    #script mylogin {whoami};
+    #var cport %0;
+
+    #if {$cport > 0} {
+        #port init brain ${cport}2;
+        #delay {2} {
+            #port call {188.68.236.140} {5016};
+        };
+    };
+    #read bundles/bundle_ops.tin;
+
+    #read bundles/TTMap/manifest.tin;
+    #read bundles/NumPad/manifest.tin;
+    #read bundles/Assets_TerrainTheme/content.tin;
+    #var r @bundleops_loadglobals{};
+
+    #config {debug telnet} {off};	#nop debug;
+    #config {COMMAND ECHO} {off};	#nop wyswietlanie komend;
+    #config {mouse} {on};		#nop obsluga myszy;    
+    #split 20 1 0 0;
+    #map flag vtmap on;
+};
+
+#alias {SplitWingMap_LabelMap} {#nop #echo dupa;};
+
+
+#nop #################################################################################;
+#nop Edycja map;
+#nop #################################################################################;
+#var PONGED 0;
+
+#alias {TTMapEditorAddress} {
+    #var tmp {$ConfigManager_Configs[TTMapEditorAddress]};
+    #replace tmp {,} {;};
+    #list connstr create {$tmp};
+    #unvar tmp;
+    #if {"$connstr[1]" != ""} {
+        #if {"$connstr[2]" != ""} {
+            #delay {1} {
+                #echo {%s} {<158>TTMapEditor: Probing $connstr[1] @ $connstr[2]};
+                #port call {$connstr[1]} {$connstr[2]}
+            };
+            #delay {1.5} {
+                #line substitute variables {
+                    #var mapkaId $mapkaId;
+                };
+            }
+        };
+    };
+};
+
+#action {<PORT> MCREATE %1 %2} {
+    #line substitute {variables} {
+        #map at {%1} {#map dig %2};
+    };
+} {1};
+
+#action {<PORT> MARK %d %w} {
+    #line substitute {variables} {
+        #map at {%1} {#map set roomarea %2};
+        #map at {%1} {#map set roomcolor $c_rooms[%2]};
+        #map at {%1} {#map set roomarea %2};
+    };
+} {1};
+
+#action {<PORT> MARK %d %w %*} {
+    #line substitute {variables} {
+        #map at {%1} {#map set roomarea %2};
+        #map at {%1} {#map set roomcolor $c_rooms[%2]};
+        #map at {%1} {#map set roomnote %3};
+    };
+} {1};
+
+#action {<PORT> DEL %1 %2} {
+    #line substitute {variables} {
+        #map at {%1} {#map del %2};
+    };
+} {1};
+
+#action {<PORT> NOTE %1 %*} {
+    #line substitute {variables} {
+        #map at {%1} {#map set roomsymbol {<178>i<088>}};
+    };
+} {1};
+
+#action {<PORT> EVENT %d %*} {
+    #line substitute {variables} {
+        #map at {%1} {#map set roomsymbol {<168>@<088>}};
+        #event {MAP ENTER ROOM $tmproomvnum} {QB %2};
+/* 
+TODO
+*/
+    };
+} {1};
+
+#action {<PORT> COMMAND %d %*} {
+    #line substitute {variables} {
+        #map at {%1} {#map set roomsymbol {<138>E<088>}};
+        #event {MAP ENTER ROOM $tmproomvnum} {%2};
+    };
+} {1};
+
+
+#action {<PORT> ROOMSHORT %d %*} {
+    #line substitute {variables} {
+        #map at {%1} {
+            #map get roomsymbol vroomsymbol;
+            #map set roomdesc {%2};
+            #if {"$vroomsymbol" == "<faa>?<088>"} {
+                #map set roomsymbol {};
+            };
+        };
+    };
+};
+
+#action {<PORT> ROOMEXITS %d %*} {
+    #line substitute {variables} {
+        #map at {%1} {
+            #map set roomname {%2};
+            #map get roomcolor vroomcolor;
+            #if {"$vroomcolor" == "<faa>"} {
+                #map set roomcolor {};
+            };
+        };
+    };
+};
+
+#action {<PORT> NAME %d %*} {
+    #line substitute {variables} {
+        #map at {%1} {
+            #map set roomnote {%2};
+        };
+    };
+}
+
+#action {<PORT> HIDE %d %w} {
+    #line substitute {variables} {
+        #map at {%1} {
+            #line substitute variables {#map exitflag %2 hide on};
+        };
+    };
+}
+
+#action {<PORT> UNHIDE %d %w} {
+    #line substitute {variables} {
+        #map at {%1} {
+            #line substitute variables {#map exitflag %2 hide off};
+        };
+    };
+};
+
+#action {<PORT> LINKB %d %w %d} {
+    #line substitute {variables} {
+        #map at {%1} {
+            #line substitute variables {
+                #map link %2 %3 both;
+            };
+        };
+    };
+};
+
+#action {<PORT> UNLINKB %d %w} {
+    #line substitute {variables} {
+        #map at {%1} {
+            #line substitute variables {
+                #map unlink %2 both;            
+            };
+        };
+    };
+};
+
+#action {<PORT> TERRAIN %d %S} {
+    #line substitute {variables} {
+        #map at {%1} {
+            #line substitute variables {
+                #map set roomterrain %2;
+            };
+        };
+    };
+};
+
+#action {<PORT> LINK %d %w %d} {
+    #line substitute {variables} {
+        #map at {%1} {
+            #line substitute variables {
+                #map link %2 %3;
+            };
+        };
+    };
+};
+
+#action {<PORT> UNLINK %d %w} {
+    #line substitute {variables} {
+        #map at {%1} {
+            #line substitute variables {
+                #map unlink %2;         
+            };
+        };
+    };
+};
+
+#action {<PORT> MEXIT %d %w %d %*} {
+    #line substitute {variables} {
+        #map at {%1} {
+            #map exit %2 command {%4};
+            #map exit %2 color <118>;
+            #map link {%4} %3;
+        };
+    };
+};
+
+#action {<PORT> SPECIAL %d %w} {
+    #line sub {variables} {
+        #map at {%1} {
+            #map exit %2 color <118>;
+        };
+    };
+};
+
+#action {<PORT> LONG %d %w} {
+    #line sub {variables} {
+        #map at {%1} {
+            #line substitute variables {#map insert %2 void};
+        };
+    };
+};
+
+#action {<PORT> SHORT %d %w} {
+    #line sub {variables} {
+        #map at {%1} {
+            #line substitute variables {#map uninsert %2 void};
+        };
+    };
+};
+
+#action {<PORT> VOID %d} {
+    #line sub {variables} {
+        #map at {%1} {
+            #line substitute variables {#map roomflag void on};
+        };
+    };
+};
+
+
+#action {<PORT> COLOR %d %S} {
+    #var tmpsymbol {%2};
+    #replace {tmpsymbol} {-} {<};
+    #replace {tmpsymbol} {+} {>};
+    #line substitute {variables} {
+        #map at {%1} {#map set roomcolor {$tmpsymbol}};
+    };
+};
+
+#action {<PORT> Connection made to %S.} {
+    #echo {%s} {<158>TTMapEditor: <118>Connected.};
+    #line substitute {variables} {
+        #var brainId %1;
+    };
+};
+
+#action {<PORT> CHECKSUM %d} {
+    #line substitute {variables} {
+            #map at {1} {#map get roomdata tmprd};
+            #if {"$tmprd" == "%1"} {
+                #echo {%s} {<158>TTMapEditor: <128>Maps are in sync, writing is enabled!};
+                #var PONGED 2;
+            } {
+                #echo {%s} {<158>TTMapEditor: <138>Maps are not in sync, writing is disabled!};
+                #var PONGED 1;
+            };
+    };
+};
+
+#alias {show_ponged_error} {
+    #echo {%s} {<158>TTMapEditor: <118>You are not connected!<088>};
+};
+
+#alias {show_ponged_error2} {
+    #echo {%s} {<158>TTMapEditor: <138>Read-only mode: Please pull the latest map.<088>};
+};
+
+#alias {/map spe %w} {
+    #if {$PONGED == 2} {
+        #map get roomvnum v;
+        #line sub {variables} {#port send $brainId {SPECIAL $v %1}};
+    };
+} {1};
+
+#alias {/map void} {
+    #if {$PONGED == 2} {
+        #map get roomvnum v;
+        #line sub {variables} {#port send $brainId {VOID $v}};
+    };
+} {1};
+
+#alias {/map long %w} {
+    #if {$PONGED == 2} {
+        #map get roomvnum v;
+        #line sub {variables} {#port send $brainId {LONG $v %1}};
+    };
+} {1};
+
+#alias {/map short %w} {
+    #if {$PONGED == 2} {
+        #map get roomvnum v;
+        #line sub {variables} {#port send $brainId {SHORT $v %1}};
+    };
+} {1};
+
+
+#alias {/map link %w %d} {
+    #if {$PONGED == 2} {
+    #map get roomvnum voom;
+    #line substitute {variables} {#port send $brainId {LINK $voom %1 %2}};
+    } {show_ponged_error2};
+} {1};
+
+#alias {/map linkb %w %d} {
+    #if {$PONGED == 2} {
+    #map get roomvnum voom;
+    #line substitute {variables} {#port send $brainId {LINKB $voom %1 %2}};
+    } {show_ponged_error2};
+} {1};
+
+#alias {/map unlinkb %w} {
+    #if {$PONGED == 2} {
+    #map get roomvnum voom;
+    #line substitute {variables} {#port send $brainId {UNLINKB $voom %1}};
+    } {show_ponged_error2};
+} {1};
+
+#alias {/map unlink %w} {
+    #if {$PONGED == 2} {
+    #map get roomvnum voom;
+    #line substitute {variables} {#port send $brainId {UNLINK $voom %1}};
+    } {show_ponged_error2};
+} {1};
+
+#alias {/map hide %w} {
+    #if {$PONGED == 2} {
+    #map get roomvnum voom;
+    #line substitute {variables} {#port send $brainId {HIDE $voom %1}};
+    } {show_ponged_error2};
+} {1};
+
+#alias {/map unhide %w} {
+    #if {$PONGED == 2} {
+    #map get roomvnum voom;
+    #line substitute {variables} {#port send $brainId {UNHIDE $voom %1}};
+    } {show_ponged_error2};
+} {1};
+
+#alias {/map dig %w} {
+    #if {$PONGED == 2} {
+    #map get roomvnum v;
+    #line substitute {variables} {#port send $brainId {MCREATE $v %1}};
+    } {show_ponged_error2};
+} {1};
+
+#alias {/mark as %w$} {
+    #if {$PONGED == 2} {
+
+    #switch {"%1"} {
+        #case {"vendor"} {};
+        #case {"checkpoint"} {};
+        #case {"water"} {};
+        #case {"bank"} {};
+        #case {"post"} {};
+        #case {"safe"} {};
+        #case {"food"} {};
+        #case {"quest"} {};
+        #case {"info"} {};
+        #case {"danger"} {};
+        #case {"port"} {};
+        #case {"herb"} {};
+        #case {"trap"} {};
+        #case {"smith"} {};
+        #case {"training"} {};
+        #case {"knowledge"} {};
+        #case {"storage"} {};
+        #case {"forest"} {};
+        #case {"field"} {};
+        #case {"beach"} {};
+        #case {"river"} {};
+        #case {"lake"} {};
+        #case {"bush"} {};
+        #case {"swamp"} {};
+        #case {"lava"} {};
+        #case {"mountain"} {};
+        #case {"desert"} {};
+        #case {"road"} {};
+        #case {"graveyard"} {};
+
+        #default {
+            #echo {%s} {Niedozwolona wartosc: %1};
+            #return;
+        };
+    }
+    #map get roomvnum v;
+    #line substitute {variables} {#port send $brainId {MARK $v %1 $temp_short}};
+    } {show_ponged_error2};
+} {1};
+
+#alias {/mark as %w %*} {
+    #if {$PONGED == 2} {
+
+    #switch {"%1"} {
+        #case {"vendor"} {};
+        #case {"checkpoint"} {};
+        #case {"water"} {};
+        #case {"bank"} {};
+        #case {"post"} {};
+        #case {"safe"} {};
+        #case {"food"} {};
+        #case {"quest"} {};
+        #case {"info"} {};
+        #case {"danger"} {};
+    #case {"port"} {};
+    #case {"herb"} {};
+    #case {"trap"} {};
+    #case {"smith"} {};
+    #case {"training"} {};
+    #case {"knowledge"} {};
+    #case {"storage"} {};
+        #default {
+            #echo {%s} {Niedozwolona wartosc: %1};
+            #return;
+        };
+    }
+    #map get roomvnum v;
+    #line substitute {variables} {#port send $brainId {MARK $v %1 %2}};
+    } {show_ponged_error2};
+} {1};
+
+#alias {/map del %w} {
+    #if {$PONGED == 2} {
+    #map get roomvnum v;
+    #line substitute {variables} {#port send $brainId {DEL $v %1}};
+    } {show_ponged_error2};
+} {1};
+
+#alias {/map wyj %w %*} {
+    #if {$PONGED == 2} {
+    #map get roomvnum v;
+    #line substitute {variables} {#port send $brainId {MEXIT $v %1 %2}};
+    } {show_ponged_error2};
+} {1};
+
+
+#var c_rooms[vendor] {<158>};
+#var c_rooms[checkpoint] {<168>};
+#var c_rooms[water] {<148>};
+#var c_rooms[bank] {<138>};
+#var c_rooms[post] {<128>};
+#var c_rooms[safe] {<afa>};
+#var c_rooms[food] {<128>}
+#var c_rooms[quest] {<138>};
+#var c_rooms[info] {<178>};
+#var c_rooms[danger] {<118>};
+#var c_rooms[port] {<118><ccf>};
+#var c_rooms[herb] {<058>};
+#var c_rooms[trap] {<FAA><178>};
+#var c_rooms[smith] {<168>};
+#var c_rooms[knowledge] {<078>};
+#var c_rooms[training] {<038>};
+#var c_rooms[storage] {<138>};
+
+#var c_rooms[forest] {<128>};
+#var c_rooms[field] {<128>};
+#var c_rooms[beach] {<138>};
+#var c_rooms[river] {<148>};
+#var c_rooms[lake] {<148>};
+#var c_rooms[bush] {<128>};
+#var c_rooms[swamp] {<158>};
+#var c_rooms[lava] {<118>};
+#var c_rooms[mountain] {<178>};
+#var c_rooms[desert] {<138>};
+#var c_rooms[road] {<088>};
+#var c_rooms[graveyard] {<088>};
+
+
+
