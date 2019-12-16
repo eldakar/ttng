@@ -5,7 +5,7 @@
     #if {$cport > 0} {
         #port init brain ${cport}2;
         #delay {2} {
-            #port call {188.68.236.140} {5016};
+            #port call {%1} {5016};
         };
     };
     #read bundles/bundle_ops.tin;
@@ -24,6 +24,17 @@
 
 #alias {SplitWingMap_LabelMap} {#nop #echo dupa;};
 
+#alias {W} {/map dig w};
+#alias {E} {/map dig e};
+#alias {N} {/map dig n};
+#alias {S} {/map dig s};
+#alias {NE} {/map dig ne};
+#alias {NW} {/map dig nw};
+#alias {SW} {/map dig sw};
+#alias {SE} {/map dig se};
+#alias {D} {/map dig d};
+#alias {U} {/map dig u};
+#alias {VO} {/map void};
 
 #nop #################################################################################;
 #nop Edycja map;
