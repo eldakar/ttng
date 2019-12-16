@@ -1,8 +1,7 @@
 #!/bin/bash
 
-localbin="/usr/local/lib//arkatt"
-TSESSION="arkattbrain"
-TSERVER="arkatt_u_leo"
+TSESSION="arkattbrain_new"
+TSERVER="arkatt_u_gruchy"
 
 # Check if the session exists, if so attach it, else make Barsawia
 if [ $(tmux -L ${TSERVER} ls 2>/dev/null | grep -c "^${TSESSION}:") != 0 ]; then
