@@ -5,7 +5,7 @@
     #if {$cport > 0} {
         #port init brain ${cport}2;
         #delay {2} {
-            #port call {%1} {5016};
+            #port call {188.68.236.140} {5016};
         };
     };
     #read bundles/bundle_ops.tin;
@@ -35,6 +35,18 @@
 #alias {D} {/map dig d};
 #alias {U} {/map dig u};
 #alias {VO} {/map void};
+
+#alias {vo} {#map roomflag void on};
+#alias {ov} {#map roomflag void off};
+
+#alias {wyj %w %*} {
+    #map exit %1 command {%2};
+#nop NEW;  #map exit %1 color <118>;
+    #map move %1;
+    #map get roomvnum tmproomvnum;
+    #map undo;
+    #map link {%2} $tmproomvnum;
+};
 
 #nop #################################################################################;
 #nop Edycja map;
