@@ -5,7 +5,7 @@
     #if {$cport > 0} {
         #port init brain ${cport}2;
         #delay {2} {
-            #port call {188.68.236.140} {5016};
+            #port call {%1} {%2};
         };
     };
     #read bundles/bundle_ops.tin;
