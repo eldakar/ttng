@@ -9,7 +9,7 @@
 	#line substitute {variables} {
 		#class ConfigManagerProfile read bundles/ConfigManager/Profiles/$AVATAR_NAME;
 		#class ConfigManagerProfile size profile_size;
-		#if {$profile_size < 1} {
+		#nop if {$profile_size < 1} {
 			#echo {<138>ConfigManager: <168>No configuration found for <138>$AVATAR_NAME<088>};
 		} {
 			#echo {<138>ConfigManager: <128>Configuration found for <138>$AVATAR_NAME!<088>};
@@ -25,7 +25,9 @@
 	#list bundlemanager_configs size bmc_size;
 	
 	#if {$bmc_size > 0} {
-		#echo {<138>ConfigManager: <128>$bmc_size <138> bundle settings present.<088>};
+		#echo {<138>ConfigManager: <128>Loading profile: <FAA><178>$AVATAR_NAME<088> <128>($bmc_size variables loaded.)<088>};
+	} {
+		#echo {<138>ConfigManager: <128>Creating profile: <FAA><178>$AVATAR_NAME<088>};
 	};
 };
 

@@ -389,7 +389,7 @@
         #var tmpna_orc {$duch[$du][desc]};
         
         #var tmpna_sma {};
-        #var tmphp {$healthbars2[$duch[$du][hp]]};
+        #var tmphp $healthbars2[$duch[$du][hp]];
         #var tmpcel {   };
         #var tmpava {  };
         #var tmpsug {  };

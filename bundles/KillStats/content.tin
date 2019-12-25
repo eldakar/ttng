@@ -115,9 +115,7 @@
 
 #alias {_killstats_add} {
 	#var current_postep %1;
-
-	#echo {_killstats_add called with %1};
-
+	#nop #echo {_killstats_add called with %1};
 	#if {&{$expo[$current_postep][czas]} == 0} {
 
 		#if {$pierwszy_postep == 0}{
@@ -130,10 +128,7 @@
 		#nop should never happen?;
 		#echo {ERROR in KillStats bundle: $expo[$current_postep][czas] $current_postep};		
 	};
-
 }
-
-
 
 #alias /kills {	
   #echo {+-----------------+------------+-----------+};
