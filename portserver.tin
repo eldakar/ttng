@@ -2,6 +2,7 @@
 #port uninit;
 #port init brain 5016;
 #map read bundles/TTMap/map.map;
+#read bundles/TTMapEditor/data.tin;
 #map goto 1;
 #list userList clear;
 #unvar userDetails;
@@ -116,27 +117,23 @@
     mapsave;
 };
 
-
 #action {<PORT> MARK %d %w'} {
-    #map goto %1;
-    #map set roomarea {%2};
-    broadcast MARK %1 %2;
-    #map at {%1} {#map set roomcolor $c_rooms[%2]};
-    terrain_put %1 %2;
-    #map get roomterrain rter;
-    braodcast TERRAIN %1 $rter;
-    mapsave;
-};
+    #map at {%1} {#map set roomweight $roominfo[%2][index]};
+    #map at {%1} {#map set roomcolor $roominfo[%2][color]};
+    #map at {%1} {#map get roomterrain rter};
 
-#action {<PORT> MARK %d %w %*} {
-    #map goto %1;
-    #map set roomarea {%2};
-    #map set roomnote {%3};
-    broadcast MARK %1 %2 %3;
-    #map at {%1} {#map set roomcolor $c_rooms[%2]};
+    #if {"$roominfo[%2][symbol]" != ""} {
+        #map at {%1} {#map set roomsymbol $roominfo[%2][symbol]};
+    } {
+        #map at {%1} {#map set roomsymbol;};
+    };
+    #if {"$roominfo[%2][command]" != ""} {
+        #map at {%1} {#map set roomarea $roominfo[%2][command]};            
+    };
+    
     terrain_put %1 %2;
-    #map get roomterrain rter;
-    broadcast TERRAIN %1 $rter;
+    broadcast MARK %1 %2;
+    braodcast TERRAIN %1 $rter;
     mapsave;
 };
 
@@ -296,16 +293,14 @@
     };
 }
 
-
 #nop ###################################;
 #nop new event, subscribers' mapevents.tin should be reloaded;
 #nop ###################################;
 #action {<PORT> EVENT %d %*} {
     broadcast EVENT %1 %2;
     #map at {%1} {#map set roomsymbol {<168>@<088>}};
-    #line substitute {variables} {
-        #system {echo "#event {MAP ENTER ROOM %1} {QB %2};" >> mapevents.tin};
-    };
+    #map at {%1} {#map set roomarea {QB %2}};
+
 	broadcast EVENT %1 %2;
     mapsave;
 };
@@ -313,9 +308,8 @@
 #action {<PORT> COMMAND %d %*} {
     broadcast COMMAND %1 %2;
     #map at {%1} {#map set roomsymbol {<138>E<088>}};
-    #line substitute {variables} {
-        #system {echo "#event {MAP ENTER ROOM %1} {%2};" >> mapevents.tin};
-    };
+    #map at {%1} {#map set roomarea {%2}};
+
 	broadcast COMMAND %1 %2;
     mapsave;
 };
