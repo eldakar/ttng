@@ -1,0 +1,12 @@
+#alias {alchemy_init} {
+	#list alchemy_recipes clear;
+	#unvar alchemy_recipes;
+	#class AlchemyRecipes close;
+	#class AlchemyRecipes read bundles/ConfigManager/Profiles/$AVATAR_NAME;
+	#class ConfigManagerProfile size profile_size;
+};
+
+#alias {alchemy_add_recipe} {
+	#foreach {*alchemy_recipes[]} {arr} {
+	};
+};

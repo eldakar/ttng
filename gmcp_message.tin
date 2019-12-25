@@ -66,9 +66,8 @@
 			};
 			#replace {outputtext} {\\n} {};
 
-			#if {"$voos_num" == "<178>i<088>"} {#var shortnote {[${c_nasobie}Notka<088>]}};
 			#if {$bind_found > 0} {
-				#line sub variables {#alias _quickbind_ {$bind_run}};
+				#nop line sub variables {#alias _quickbind_ {$bind_run}};
 				SplitWingMap_LabelBind $bind_run;
 			};
 

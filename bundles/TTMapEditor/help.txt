@@ -3,6 +3,11 @@ TUTOR 	/conf TTMapEditorAddress
 	Ustawia adres zdalnej mapy
 
 WARN 2. Aliasy
+Ogolne:
+TUTOR 	/reconnect - odnawia polaczenie
+TUTOR 	/mapka - ta pomoc
+TUTOR 	/f lub findme - znajduje mapke (lub nie)
+
 Rysowanie i edytacji nowych wyjsc:
 TUTOR 	/map dig <kierunek> - stworz pokoj na <kierunek>
 TUTOR 	/map del <kierunek> - usun pokoj znajdujacy sie na <kierunek>
@@ -13,7 +18,10 @@ TUTOR 	/map link <kierunek> <nrpokoju> - laczy <kierunek> z pokojem <nrpokoju> j
 TUTOR 	/map linkb <kierunek> <nrpokoju> - laczy <kierunek> z pokojem <nrpokoju> dwustronnie
 TUTOR 	/map unlink <kierunek> - rozlacza z pokojem <kierunek> jednostronnie
 TUTOR 	/map unlinkb <kierunek> - rozlacza z pokojem <kierunek> dwustronnie
-TUTOR 	/f lub findme - znajduje mapke (lub nie)
+TUTOR 	/map long <kierunek> - przedluzenie dystansu na <kierunek>
+TUTOR 	/map short <kierunek> - skrocenie dystansu na <kierunek>
+TUTOR 	/map void - aktualny pokoj zostaje pominiety przy chodzeniu
+TUTOR 	/map spe <kierunek> - koloruje polaczenie miedzy pokojami na czerwono
 
 Dodawanie komend i notek:
 TUTOR 	/event <komenda> - dodaje event, czyli podmiane QuickBinda przy wejsciu do pokoju

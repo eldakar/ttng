@@ -115,13 +115,13 @@
 
 #event {MAP ENTER ROOM} {
     #var r_curLineCnt 2;
-    #map get roomvnum voom;
-    #map get roomsymbol {voos_num};
     #var note_found 0;
     #var bind_found 0;
-    #if {"$voos_num" == "<178>i<088>"} {
-        #var note_found 1;
-    };
+    #map get roomvnum voom;
+    #map get roomweight roov;
+    #map get roomarea rooa;
+    #if {$roov == 8} {#var note_found 1};
+    #if {"$rooa" != ""} {$rooa};
 };
 
 #event {MAP UPDATED VTMAP} {

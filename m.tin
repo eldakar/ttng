@@ -15,6 +15,7 @@
     #read bundles/ConfigManager/manifest.tin;
     #read bundles/HelpManager/manifest.tin;
     #read bundles/SplitRefresh/manifest.tin;
+    #read bundles/BottomBarSimple/manifest.tin;    
     #read bundles/CharacterClass/manifest.tin;
     #read bundles/CombatMacros/manifest.tin;
     #read bundles/Equipment/manifest.tin;
@@ -35,11 +36,10 @@
     #read bundles/PlayerDB/manifest.tin;
     #read bundles/EquipmentStatus/manifest.tin;
     #read bundles/LootManager/manifest.tin;
-    #read bundles/MacroRemains/manifest.tin;
-    #read bundles/MacroLamp/manifest.tin;
+    #nop read bundles/MacroRemains/manifest.tin;
+    #nop read bundles/MacroLamp/manifest.tin;
     #read bundles/KillStats/manifest.tin;
     #read bundles/Stones/manifest.tin;
-    #read bundles/BottomBarSimple/manifest.tin;
     #read bundles/SplitWingMap/manifest.tin;
     #read bundles/SWQuickBind/manifest.tin;
     #read bundles/Highlights/manifest.tin;
@@ -56,7 +56,7 @@
     #nop read staty.tin;		#nop Zliczanie statystyk;
     #read gmcp_message.tin;	#nop GMCP;
     #read alias.tin;		#nop Aliasy do obslugi glownych funkcji;
-    #read mapevents.tin;	#nop Eventy na pokojach;    
+    #nop read mapevents.tin;	#nop Eventy na pokojach;    
 
 
     #config {debug telnet} {off};	#nop debug;

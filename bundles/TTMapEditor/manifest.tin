@@ -1,5 +1,5 @@
 #var bundle_name {TTMapEditor};
-#var bundle_data {0};
+#var bundle_data {1};
 #var bundle_content {1};
 #var bundle_help {1};
 

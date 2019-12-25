@@ -1,0 +1,146 @@
+#var roominfo[30][name] {vendor};
+	#var roominfo[vendor][color] {<158>};
+	#var roominfo[vendor][index] {30};
+	#var roominfo[vendor][terrain] {house};
+
+#var roominfo[2][name] {checkpoint};
+	#var roominfo[checkpoint][color] {<168>};
+	#var roominfo[checkpoint][index] {2};
+	#var roominfo[checkpoint][terrain] {portal};
+
+#var roominfo[3][name] {water};
+	#var roominfo[water][color] {<148>};
+	#var roominfo[water][index] {3};
+	#var roominfo[water][terrain] {well};
+	#var roominfo[water][command] {QB napij sie do syta};
+
+#var roominfo[4][name] {bank};
+	#var roominfo[bank][color] {<138>};
+	#var roominfo[bank][index] {4};
+	#var roominfo[bank][terrain] {house};
+	#var roominfo[bank][symbol] {<138>$$$<088>};
+	#var roominfo[bank][command] {QB przejrzyj depozyt};
+
+#var roominfo[5][name] {post};
+	#var roominfo[post][color] {<128>};
+	#var roominfo[post][index] {5};
+	#var roominfo[post][terrain] {house};
+	#var roominfo[post][symbol] {<128>PCZ<088>};
+
+#var roominfo[6][name] {food};
+	#var roominfo[food][color] {<128>};
+	#var roominfo[food][index] {6};
+	#var roominfo[food][terrain] {house};
+	#var roominfo[food][symbol] {<118><fca>KAR<088>};
+	#var roominfo[food][command] {QB usiadz};
+
+#var roominfo[7][name] {quest};
+	#var roominfo[quest][color] {<128>};
+	#var roominfo[quest][index] {7};
+	#var roominfo[quest][terrain] {house};
+	#var roominfo[quest][symbol] {<178>(<138>?<178>)<088>};
+
+#var roominfo[8][name] {info};
+	#var roominfo[info][color] {<178>};
+	#var roominfo[info][index] {8};
+	#var roominfo[info][terrain] {house};
+	#var roominfo[info][symbol] {<118><acf>!<088>};
+
+#var roominfo[9][name] {danger};
+	#var roominfo[danger][color] {<178>};
+	#var roominfo[danger][index] {9};
+	#var roominfo[danger][terrain] {danger};
+	#var roominfo[danger][symbol] {<118>XXX<088>};
+
+#var roominfo[10][name] {port};
+	#var roominfo[port][color] {<118><ccf>};
+	#var roominfo[port][index] {10};
+	#var roominfo[port][terrain] {river};
+
+#var roominfo[11][name] {herb};
+	#var roominfo[herb][color] {<058>};
+	#var roominfo[herb][index] {11};
+	#var roominfo[herb][terrain] {house};
+	#var roominfo[herb][symbol] {<058>ZIE<088>};
+
+#var roominfo[12][name] {trap};
+	#var roominfo[trap][color] {<178>};
+	#var roominfo[trap][index] {12};
+	#var roominfo[trap][terrain] {danger};
+	#var roominfo[trap][symbol] {<118>XXX<088>};
+
+#var roominfo[13][name] {smith};
+	#var roominfo[smith][color] {<128>};
+	#var roominfo[smith][index] {13};
+	#var roominfo[smith][terrain] {house};
+	#var roominfo[smith][symbol] {<128>KOW<088>};
+	#var roominfo[smith][command] {QB w_kuzni};
+
+#var roominfo[14][name] {knowledge};
+	#var roominfo[knowledge][color] {<178>};
+	#var roominfo[knowledge][index] {14};
+	#var roominfo[knowledge][terrain] {house};
+	#var roominfo[knowledge][symbol] {<178>KNO<088>};
+
+#var roominfo[15][name] {training};
+	#var roominfo[training][color] {<038>};
+	#var roominfo[training][index] {15};
+	#var roominfo[training][terrain] {house};
+	#var roominfo[training][symbol] {<038>TRA<088>};
+
+#var roominfo[16][name] {storage};
+	#var roominfo[storage][color] {<138>};
+	#var roominfo[storage][index] {16};
+	#var roominfo[storage][terrain] {house};
+
+#var roominfo[17][name] {forest};
+	#var roominfo[forest][color] {<128>};
+	#var roominfo[forest][index] {17};
+
+#var roominfo[18][name] {field};
+	#var roominfo[field][color] {<128>};
+	#var roominfo[field][index] {18};
+
+#var roominfo[19][name] {beach};
+	#var roominfo[beach][color] {<138>};
+	#var roominfo[beach][index] {19};
+
+#var roominfo[20][name] {river};
+	#var roominfo[river][color] {<148>};
+	#var roominfo[river][index] {20};
+
+#var roominfo[21][name] {lake};
+	#var roominfo[lake][color] {<148>};
+	#var roominfo[lake][index] {21};
+
+#var roominfo[22][name] {bush};
+	#var roominfo[bush][color] {<148>};
+	#var roominfo[bush][index] {22};
+
+#var roominfo[23][name] {swamp};
+	#var roominfo[swamp][color] {<158>};
+	#var roominfo[swamp][index] {23};
+
+#var roominfo[24][name] {lava};
+	#var roominfo[lava][color] {<118>};
+	#var roominfo[lava][index] {24};
+
+#var roominfo[25][name] {mountain};
+	#var roominfo[mountain][color] {<118><fca>};
+	#var roominfo[mountain][index] {25};
+
+#var roominfo[26][name] {desert};
+	#var roominfo[desert][color] {<138><fca>};
+	#var roominfo[desert][index] {26};
+
+#var roominfo[27][name] {road};
+	#var roominfo[road][color] {};
+	#var roominfo[road][index] {27};
+
+#var roominfo[28][name] {graveyard};
+	#var roominfo[graveyard][color] {};
+	#var roominfo[graveyard][index] {28};
+
+#var roominfo[29][name] {tunnel};
+	#var roominfo[tunnel][color] {};
+	#var roominfo[tunnel][index] {29};

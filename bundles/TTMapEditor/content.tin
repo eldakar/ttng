@@ -3,6 +3,9 @@
 #nop #################################################################################;
 #var PONGED 0;
 
+#alias {/reconnect} {TTMapEditorAddress;} {1};
+#alias {/mapka} {/help TTMapEditor} {2};
+
 #alias {TTMapEditorAddress} {
     #var tmp {$ConfigManager_Configs[TTMapEditorAddress]};
     #replace tmp {,} {;};
@@ -31,18 +34,17 @@
 
 #brain #action {<PORT> MARK %d %w} {
     #line substitute {variables} {
-        #rpg #map at {%1} {#map set roomarea %2};
-        #rpg #map at {%1} {#map set roomcolor $c_rooms[%2]};
-        #rpg #map at {%1} {#map set roomarea %2};
+        #rpg #map at {%1} {#map set roomweight $roominfo[%2][index]};
+        #rpg #map at {%1} {#map set roomcolor $roominfo[%2][color]};
+        #if {"$roominfo[%2][symbol]" != ""} {
+            #rpg #map at {%1} {#map set roomsymbol $roominfo[%2][symbol]};
+        } {
+            #rpg #map at {%1} {#map set roomsymbol;};
+        };
+        #if {"$roominfo[%2][command]" != ""} {
+            #rpg #map at {%1} {#map set roomarea $roominfo[%2][command]};            
+        };
     };
-} {1};
-
-#brain #action {<PORT> MARK %d %w %*} {
-    #line substitute {variables} {
-        #map at {%1} {#map set roomarea %2};
-        #map at {%1} {#map set roomcolor $c_rooms[%2]};
-        #map at {%1} {#map set roomnote %3};
-	};
 } {1};
 
 #brain #action {<PORT> DEL %1 %2} {
@@ -60,17 +62,14 @@
 #brain #action {<PORT> EVENT %d %*} {
     #line substitute {variables} {
         #rpg #map at {%1} {#map set roomsymbol {<168>@<088>}};
-        #rpg #event {MAP ENTER ROOM $tmproomvnum} {QB %2};
-/* 
-TODO
-*/
+        #rpg #map at {%1} {#map set roomarea {QB %2}};
     };
 } {1};
 
 #brain #action {<PORT> COMMAND %d %*} {
     #line substitute {variables} {
         #rpg #map at {%1} {#map set roomsymbol {<138>E<088>}};
-        #rpg #event {MAP ENTER ROOM $tmproomvnum} {%2};
+        #rpg #map at {%1} {#map set roomarea {QB %2}};
     };
 } {1};
 
