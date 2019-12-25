@@ -4,7 +4,7 @@
 #var PONGED 0;
 
 #alias {/reconnect} {TTMapEditorAddress;} {1};
-#alias {/mapka} {/help TTMapEditor} {2};
+#alias {/mapka} {/help TTMapEditor} {1};
 
 #alias {TTMapEditorAddress} {
     #var tmp {$ConfigManager_Configs[TTMapEditorAddress]};
@@ -371,38 +371,7 @@
         };
     }
     #map get roomvnum v;
-    #line substitute {variables} {#brain {#port send $brainId {MARK $v %1 $temp_short}}};
-    } {show_ponged_error2};
-} {1};
-
-#alias {/mark as %w %*} {
-    #if {$PONGED == 2} {
-
-    #switch {"%1"} {
-        #case {"vendor"} {};
-        #case {"checkpoint"} {};
-        #case {"water"} {};
-        #case {"bank"} {};
-        #case {"post"} {};
-        #case {"safe"} {};
-        #case {"food"} {};
-        #case {"quest"} {};
-        #case {"info"} {};
-        #case {"danger"} {};
- 	#case {"port"} {};
-	#case {"herb"} {};
-	#case {"trap"} {};
-	#case {"smith"} {};
- 	#case {"training"} {};
-	#case {"knowledge"} {};
-	#case {"storage"} {};
-        #default {
-            #echo {%s} {Niedozwolona wartosc: %1};
-            #return;
-        };
-    }
-    #map get roomvnum v;
-    #line substitute {variables} {#brain {#port send $brainId {MARK $v %1 %2}}};
+    #line substitute {variables} {#brain {#port send $brainId {MARK $v %1}}};
     } {show_ponged_error2};
 } {1};
 
