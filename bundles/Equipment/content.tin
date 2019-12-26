@@ -38,11 +38,11 @@
 	#nop ####################################
 	#nop DRUGA BRON;
 	#if {"$ppochwa2" == "tarcza"} {
-		#if {"$pzawod" == "ks"} {gzzdejmij};
+		#if {"$pzawod" == "ks"} {gzzdejmij tarcze};
 		#else {zaloz tarcze};
 	};
 	#elseif {"$ppochwa2" == "pawez"} {
-		#if {"$pzawod" == "ks"} {gzzdejmij};
+		#if {"$pzawod" == "ks"} {gzzdejmij tarcze};
 		#else {zaloz pawez};
 	};
 	#elseif {"$ppochwa2" == "temblak"} {
@@ -77,11 +77,11 @@
 	#nop ####################################
 	#nop DRUGA BRON;
 	#if {"$ppochwa2" == "tarcza"} {
-		#if {"$pzawod" == "ks"} {gzzarzuc};
+		#if {"$pzawod" == "ks"} {gzzarzuc tarcze};
 		#else {zdejmij zalozona tarcze};
 	};
 	#elseif {"$ppochwa2" == "pawez"} {
-		#if {"$profiles_zawod" == "ks"} {gzzarzuc};
+		#if {"$profiles_zawod" == "ks"} {gzzarzuc pawez};
 		#else {zdejmij zalozona pawez};
 	};	
 	#elseif {"$ppochwa2" == "temblak"} {
