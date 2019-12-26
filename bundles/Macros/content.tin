@@ -50,4 +50,4 @@
 #alias {MacNawiasLewy} {#line sub variables {#macro {[} {$ConfigManager_Configs[MacNawiasLewy]}};};
 #alias {MacNawiasPrawy} {#line sub variables {#macro {]} {$ConfigManager_Configs[MacNawiasPrawy]}};};
 #alias {MacTylda} {#line sub variables {#macro {`} {$ConfigManager_Configs[MacTylda]}};};
-#alias {MacShiftTylda} {#line sub variables {#macro {~} {$ConfigManager_Configs[MacShiftTylda]}};};
+#alias {MacShiftTylda} {#line sub variables {#unmacro {~} {$ConfigManager_Configs[MacShiftTylda]}};};
