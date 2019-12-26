@@ -16,15 +16,15 @@
 #map ter oxenfurt1 {<088> };
 #map ter oxenfurt2 {<088> };
 
-#map ter road <g06>. DENSE VAST;
-#map ter path1 <cba>. DENSE WIDE;
-#map ter path2 <cba>, DENSE WIDE;
+#map ter road <g06>. SPARSE VAST;
+#map ter path1 <cba>. SPARSE WIDE;
+#map ter path2 <cba>, SPARSE WIDE;
 
-#map ter mount1 <cba>^ DENSE VAST;
-#map ter mount2 <caa>4 SCANT VAST;
-#map ter water1 <abc>. VAST DENSE;
-#map ter water2 <aac>~ VAST DENSE;
-#map ter deepwater <aab>~ DENSE WIDE;
+#map ter mount1 <cba>^ SCANT VAST;
+#map ter mount2 <caa>4 SPARSE VAST;
+#map ter water1 <abc>. VAST SPARSE;
+#map ter water2 <aac>~ VAST SPARSE;
+#map ter deepwater <aab>~ SCANT WIDE;
 
 #nop 🌊 - water;
 #nop ⏅ - drzew;
@@ -34,14 +34,14 @@
 #nop ⭐ - gwiazdka;
 
 #map ter lava1 <118>O VAST;
-#map ter lava2 <caa>o DENSE VAST;
+#map ter lava2 <caa>o SPARSE VAST;
 #map ter lava3 <daa>. SPARSE VAST;
 
-#map ter dfields <aba>v DENSE VAST;
-#map ter field1 <aca>. DENSE VAST;
+#map ter dfields <aba>v SPARSE VAST;
+#map ter field1 <aca>. SPARSE VAST;
 #map ter field2 <bba>* SPARSE VAST;
-#map ter field3 <aba>i DENSE VAST;
-#map ter field4 <aca>£ DENSE VAST;
+#map ter field3 <aba>i SPARSE VAST;
+#map ter field4 <aca>£ SPARSE VAST;
 #map ter field5 <dca>. SPARSE VAST;
 
 
@@ -53,8 +53,8 @@
 #map ter grave1 <bbb>✟ SPARSE VAST;
 #map ter grave2 <ccc>☨ SPARSE VAST;
 
-#map ter plaza1 <cca>. DENSE WIDE FADEIN;
-#map ter plaza2 <ccb>, WIDE VAST DENSE;
+#map ter plaza1 <cca>. SPARSE WIDE FADEIN;
+#map ter plaza2 <ccb>, WIDE VAST;
 
 #map ter cave1 <aba>o;
 #map ter cave2 <cba>O;
@@ -62,8 +62,8 @@
 #map ter cave4 <bba>o DENSE;
 #map ter cave5 <bca>O SPARSE;
 #map ter cave6 <cba>. SCANT;
-#map ter tunnel1 <g04>@ DENSE NARROW;
-#map ter underground1 <g06>@ DENSE WIDE;
+#map ter tunnel1 <g04>@ SPARSE NARROW;
+#map ter underground1 <g06>@ SPARSE WIDE;
 
 #alias terrain_exits {
 	#loop {1} {25000} {aa} {
