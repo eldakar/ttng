@@ -305,6 +305,14 @@
     mapsave;
 };
 
+#action {<PORT> UNEVENT %d} {
+    #rpg #map at {%1} {#map set roomsymbol};
+    #rpg #map at {%1} {#map set roomarea};
+    
+    unbroadcast UNEVENT %1;
+    mapsave;
+} {1};
+
 #action {<PORT> COMMAND %d %*} {
     broadcast COMMAND %1 %2;
     #map at {%1} {#map set roomsymbol {<138>E<088>}};

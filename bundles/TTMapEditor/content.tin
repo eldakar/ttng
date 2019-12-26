@@ -66,6 +66,13 @@
     };
 } {1};
 
+#brain #action {<PORT> UNEVENT %d} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {#map set roomsymbol};
+        #rpg #map at {%1} {#map set roomarea};
+    };
+} {1};
+
 #brain #action {<PORT> COMMAND %d %*} {
     #line substitute {variables} {
         #rpg #map at {%1} {#map set roomsymbol {<138>E<088>}};
@@ -437,41 +444,17 @@
     } {show_ponged_error};
 } {1};
 
+#alias {/unevent} {
+    #if {$PONGED == 2} {
+        #map get roomvnum tmproomvnum;
+        #line substitute {variables} {#brain {#port send $brainId {UNEVENT $tmproomvnum}}};
+    } {show_ponged_error};
+} {1};
+
 #alias {/command %*} {
     #if {$PONGED == 2} {
         #map get roomvnum tmproomvnum;
         #line substitute {variables} {#brain {#port send $brainId {COMMAND $tmproomvnum %1}}};
     } {show_ponged_error};
 } {1};
-
-#var c_rooms[vendor] {<158>};
-#var c_rooms[checkpoint] {<168>};
-#var c_rooms[water] {<148>};
-#var c_rooms[bank] {<138>};
-#var c_rooms[post] {<128>};
-#var c_rooms[safe] {<afa>};
-#var c_rooms[food] {<128>}
-#var c_rooms[quest] {<138>};
-#var c_rooms[info] {<178>};
-#var c_rooms[danger] {<118>};
-#var c_rooms[port] {<118><ccf>};
-#var c_rooms[herb] {<058>};
-#var c_rooms[trap] {<FAA><178>};
-#var c_rooms[smith] {<168>};
-#var c_rooms[knowledge] {<078>};
-#var c_rooms[training] {<038>};
-#var c_rooms[storage] {<138>};
-
-#var c_rooms[forest] {<128>};
-#var c_rooms[field] {<128>};
-#var c_rooms[beach] {<138>};
-#var c_rooms[river] {<148>};
-#var c_rooms[lake] {<148>};
-#var c_rooms[bush] {<128>};
-#var c_rooms[swamp] {<158>};
-#var c_rooms[lava] {<118>};
-#var c_rooms[mountain] {<178>};
-#var c_rooms[desert] {<138>};
-#var c_rooms[road] {<088>};
-#var c_rooms[graveyard] {<088>};
 
