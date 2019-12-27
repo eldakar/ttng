@@ -127,6 +127,7 @@
 #action {zajmuje pozycje umozliwiajaca odciecie ci drogi ucieczki} {
 	#var blockselflevel {${c_stan_wysoki}$TinyFugueBars[blockself][0]};
 	#var warninglevel {${c_stan_niski}   ZABLOKOWANY    };
+	BottomBarTinyFugue;
 };
 
 
