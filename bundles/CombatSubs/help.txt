@@ -1,0 +1,4 @@
+WARN 1. Ustawienia
+TUTOR 	/conf CombatSub
+		0 - nie gaguje
+		1 - uniki + parowania + chybione

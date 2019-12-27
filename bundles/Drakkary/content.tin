@@ -6,7 +6,7 @@
 #action {{s|S}kelliganski drakkar Zlocisty Feniks{.| }} {wejdz_na_korsarski Skelliganski drakkar Zlocisty Feniks} {2};
 #action {{k|K}orsarski drakkar Straznik Czasu{.| }} {wejdz_na_korsarski Korsarski drakkar Straznik Czasu} {1};
 #action {{s|S}kelliganski drakkar Obronca Archipelagu{.| }} {wejdz_na_korsarski Skelliganski drakkar Obronca Archipelagu} {2};
-#action {{k|K}orsarski drakkar Zmora Nilfgaardu{.| }} {wejdz_na_korsarski Korsarski drakkar Czarna Perla} {1};
+#action {{k|K}orsarski drakkar Zmora Nilfgaardu{.| }} {wejdz_na_korsarski Korsarski drakkar Zmora Nilfgaardu} {1};
 
 
 #alias {wejdz_na_korsarski %*} {
@@ -15,6 +15,7 @@
 		#case {"Korsarski snekkar Wloczega Morz"} {#var tmpdrakkarname wloczega;};
 		#case {"Skelliganski drakkar Zwiastun Smierci"} {#var tmpdrakkarname zwiastun;};
 		#case {"Korsarski drakkar Czarna Perla"} {#var tmpdrakkarname perla;};
+		#case {"Korsarski drakkar Zmora Nilfgaardu"} {#var tmpdrakkarname perla;};
 		#case {"Korsarski drakkar Demon"} {#var tmpdrakkarname demon;};	
 		#case {"Skelliganski drakkar Krakken"} {#var tmpdrakkarname krakken;};
 		#case {"Skelliganski drakkar Zlocisty Feniks"} {#var tmpdrakkarname krakken;};

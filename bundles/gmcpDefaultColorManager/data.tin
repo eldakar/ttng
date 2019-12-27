@@ -331,3 +331,46 @@
 #var bbsstabar[7] {${c_druzyna}##<088>-------};
 #var bbsstabar[8] {${c_druzyna}#<088>--------};
 #var bbsstabar[9] {${c_druzyna}<088>---------};
+
+
+#var TinyFugueBars[hp][0] {<FAA><fff>###                  };
+#var TinyFugueBars[hp][1] {${c_stan_niski}######               };
+#var TinyFugueBars[hp][2] {${c_stan_niski}#########            };
+#var TinyFugueBars[hp][3] {${c_stan_sredni}############         };
+#var TinyFugueBars[hp][4] {${c_stan_sredni}###############      };
+#var TinyFugueBars[hp][5] {${c_stan_wysoki}##################   };
+#var TinyFugueBars[hp][6] {${c_stan_wysoki}#####################};
+
+#var TinyFugueBars[fatigue][0] {${c_stan_wysoki}##################};
+#var TinyFugueBars[fatigue][1] {${c_stan_wysoki}################  };
+#var TinyFugueBars[fatigue][2] {${c_stan_wysoki}##############    };
+#var TinyFugueBars[fatigue][3] {${c_stan_sredni}############      };
+#var TinyFugueBars[fatigue][4] {${c_stan_sredni}##########        };
+#var TinyFugueBars[fatigue][5] {${c_stan_sredni}########          };
+#var TinyFugueBars[fatigue][6] {${c_stan_niski}######            };
+#var TinyFugueBars[fatigue][7] {${c_stan_niski}####              };
+#var TinyFugueBars[fatigue][8] {${c_stan_niski}##                };
+#var TinyFugueBars[fatigue][9] {${c_stan_niski}                  };
+
+#var TinyFugueBars[mana][0] {${c_stan_niski}                };
+#var TinyFugueBars[mana][1] {${c_stan_niski}##              };
+#var TinyFugueBars[mana][2] {${c_stan_niski}####            };
+#var TinyFugueBars[mana][3] {${c_stan_niski}######          };
+#var TinyFugueBars[mana][4] {${c_stan_sredni}########        };
+#var TinyFugueBars[mana][5] {${c_stan_sredni}##########      };
+#var TinyFugueBars[mana][6] {${c_stan_sredni}############    };
+#var TinyFugueBars[mana][7] {${c_stan_wysoki}##############   };
+#var TinyFugueBars[mana][8] {${c_stan_wysoki}################};
+
+#var TinyFugueBars[blockself][0] {                     };
+#var TinyFugueBars[blockself][1] {######               };
+#var TinyFugueBars[blockself][2] {###########          };
+#var TinyFugueBars[blockself][3] {################     };
+#var TinyFugueBars[blockself][4] {#####################};
+
+#var manewrlevel {${c_stan_wysoki}rdy<088>};
+#var hiddenlevel {${c_stan_niski}off};
+#var weaponlevel {${c_stan_niski}off};
+#var blockselflevel {${c_stan_niski}$TinyFugueBars[blockself][0]};
+#var warninglevel {                  };
+

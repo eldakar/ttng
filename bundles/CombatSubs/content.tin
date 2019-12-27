@@ -1,0 +1,342 @@
+#alias {CombatGag} {
+   #var gaglevel $ConfigManager_Configs[CombatGag];
+};
+
+#NOP TWOJE CIOSY OGOLNE;
+#unaction {~Ledwo muskasz %*, trafiajac %* w %*.%D$} {#echo {<aca> [1/6]<088> %0<aaa>,};#line gag;};
+#unaction {~Lekko ranisz %*, trafiajac %* w %*.%D$} {#echo {<aca> [2/6]<088> %0<aaa>,};#line gag;};
+#unaction {~Ranisz %*, trafiajac %* w %*.%D$} {#echo {<aca> [3/6]<088> %0<aaa>,};#line gag;};
+#unaction {~Powaznie ranisz %*, trafiajac %* w %*.%D$} {#echo {<aca> [4/6]<088> %0<aaa>,};#line gag;};
+#unaction {~Bardzo ciezko ranisz %*, trafiajac %* w %*.%D$} {#echo {<aca> [5/6]<088> %0<aaa>,};#line gag;};
+#unaction {~Masakrujesz %*, trafiajac %* w %*.%D$} {#echo {<aca> [6/6]<088> %0<aaa>,};#line gag;};
+#NOP TWOJE CIOSY ZAWOD;
+#nop MIECZNIK;
+#unaction {~Ruszasz do przodu%*} {#echo {<aca> [mie]<088> %0<aaa>,};#line gag;};
+#unaction {~Niespodziewanie skrecasz%*} {#echo {<aca> [mie]<088> %0<aaa>,};#line gag;};
+
+#NOP * STRAZNIK *;
+#unaction {~^%*{pozostawiajac ledwie sinca|ledwie zahaczajac}.$} {#echo {<aca> <fff>[WKS] <aca>[1/6]<088> %0<aaa>,};#line gag;};
+#unaction {~^%*{pozostawiajac krwawiace zadrapanie|lekko raniac}.$} {#echo {<aca> <fff>[WKS] <aca>[2/6]<088> %0<aaa>,};#line gag;};
+#unaction {~^%*{pozostawiajac dluga, poszarpana rane|mocno raniac}.$} {#echo {<aca> <fff>[WKS] <aca>[3/6]<088> %0<aaa>,};#line gag;};
+#unaction {~^%*{pozostawiajac gleboka rane z wystajacymi na wierzchu tkankami|bardzo mocno raniac}.$} {#echo {<aca> <fff>[WKS <aca>[4/6]<088> %0<aaa>,};#line gag;};
+#unaction {~^%*, zadajac smiertelne obrazenia.$} {#echo {<aca> <fff>[WKS] <aca>[5/6]<088> %0<aaa>,};#line gag;};
+#unaction {~^%*. Widzisz, jak {jego|jej} szeroko otwarte w bezgranicznym zdumieniu oczy zachodza mgla.$} {#echo {<aca> <fff>[WKS] <aca>[6/6]<088> %0<aaa>,};#line gag;};
+#NOP * SREBRZYSTA KOSA BOJOWA *;
+#NOP CIOSY WROGA W CIEBIE OGOLNE;
+#unaction {~^%* ledwo muska cie %*, trafiajac cie w %*.$} {#echo {<caa> [1/6]<088> %0<aaa>,};#line gag;} {2};
+#unaction {~^%* lekko rani cie %*, trafiajac cie w %*.$} {#echo {<caa> [2/6]<088> %0<aaa>,};#line gag;} {2};
+#unaction {~^%* rani cie %*, trafiajac cie w %*.$} {#echo {<caa> [3/6]<088> %0<aaa>,};#line gag;} {2};
+#unaction {~^%* powaznie rani cie %*, trafiajac cie w %*.$} {#echo {<caa> [4/6]<088> %0<aaa>,};#line gag;} {2};
+#unaction {~^%* bardzo ciezko rani cie %*, trafiajac cie w %*.$} {#echo {<caa> [5/6]<088> %0<aaa>,};#line gag;} {2};
+#unaction {~^%* masakruje cie %*, trafiajac cie w %*.$} {#echo {<caa> [6/6]<088> %0<aaa>,};#line gag;} {2};
+#NOP TWOJE UNIKI;
+#unaction {~^%* nie udaje sie trafic ciebie %*.$} {#line gag;};
+#unaction {~^%* probuje cie trafic %*, lecz tobie udaje sie {|uniknac tego ciosu|go uniknac}.$} {#line gag;};
+#unaction {~^Nagle %* wykonuje zamaszysty cios %*, lecz tobie udaje sie go uniknac.$} {#line gag;};
+#unaction {~^%* bierze potezny zamach i wyprowadza %* cios, ktory ma cie zmasakrowac. %* nawet przez chwile ci nie zagrazajac. Uswiadamiasz sobie jednak, ze nastepnym razem mozesz nie miec tyle szczescia!} {#line gag;};
+#unaction {~^Odbiwszy sie od ziemi %* doskakuje do ciebie, nieumiejetnie probujac trafic cie %*.$} {#line gag;};
+#unaction {~^W slepiach %* pojawia sie nienawistny blysk, gdy zdecydowanym uderzeniem %* przecina powietrze tuz przed twoja glowa.$} {#line gag;};
+#NOP KOASA;
+#unaction {~^Kaleczysz lekko %* swoja srebrzysta kosa bojowa.$} {#echo { <118><acf><fff>[kos 1/8]<088> %0<aaa>,};#line gag;};
+#unaction {~^Lekko ranisz %* w %* cieciem swojej srebrzystej kosy bojowej.$} {#echo { <118><acf><fff>[kos 2/8]<088> %0<aaa>,};#line gag;};
+#unaction {~^Kaleczysz %* swojej srebrzystej kosy bojowej.$} {#echo { <118><acf><fff>[kos 3/8]<088> %0<aaa>,};#line gag;};
+#unaction {~^Wyrywasz krwawe kawalki ciala %* swojej srebrzystej kosy bojowej.$} {#echo { <118><acf><fff>[kos 4/8]<088> %0<aaa>,};#line gag;};
+#unaction {~^Wykonujesz potezny cios srebrzysta kosa bojowa, raniac %*.$} {#echo { <118><acf><fff>[kos 5/8]<088> %0<aaa>,};#line gag;};
+#unaction {~^Potezne uderzenie twojej srebrzystej kosy bojowej dosiega %*.$} {#echo { <118><acf><fff>[kos 6/8]<088> %0<aaa>,};#line gag;};
+#unaction {~^Masakrujesz %* srebrzysta kosa bojowa, trafiajac %*. Na ostrzu pozostaja krwawe kawalki ciala.$} {#echo { <118><acf><fff>[kos 7/8]<088> %0<aaa>,};#line gag;};
+#unaction {~^Slyszysz ohydny dzwiek rozdzieranej tkanki i kruszonych kosci, gdy %*. Ostrze gleboko wnika w cialo, tak ze krew tryska szerokim strumieniem z rany.$} {#echo { <118><acf><fff>[kos 8/8]<088> %0<aaa>,};#line gag;};
+#unaction {~^Momentalnie dostrzegajac stan wroga, decydujesz sie na ostateczny cios. %* bojowej. %* mgla.$}
+	 {#echo { <118><acf><fff>[kos 8/8]<088> %0<aaa>,};#line gag;};
+#NOP TWOJE PAROWANIE:
+#unaction {~^%* cios %*, lecz uderzenie zatrzymuje sie na %*.$} {#line gag;};
+#unaction {~^%* w ciebie, lecz tobie udaje sie {|je zbic z linii ataku|zbic je z linii ataku|go sparowac} %*.$} {#line gag;};
+#unaction {~^%* trafia cie %*, lecz caly impet uderzenia zostaje wyparowany przez %*.$} {#line gag;};
+#unaction {~^%* cios %*, lecz sprawnie parujesz %*.$} {#line gag;};
+#unaction {~^%* zbijasz na bok niespodziewany cios %*.$} {#line gag;};
+#unaction {~^Ustawiasz sie bokiem wobec %* i gdy %* odbija sie od ziemi %* odrzucasz %* dobre kilka stop na bok.$} {#line gag;};
+#unaction {~^%* z impetem skacze na ciebie, nie ma jednak dosc sily, by wyprowadzic cios zdolny przebic %*.$} {#line gag;};
+#unaction {~^Z gardla %* wydobywa sie %* ryk, gdy %* uderzenie zeslizguje sie po %*.$} {#line gag;};
+#NOP ZAMASZYSTY CIOS;
+#unaction {~^Nagle %* wykonuje zamaszysty cios %*, ktory ledwo muska cie w %*.%D$} {#echo {<caa> [1/6]<088> %0<aaa>,};#line gag;} {2};
+#unaction {~^Nagle %* wykonuje zamaszysty cios %*, ktory lekko rani cie w %*.%D$} {#echo {<caa> [2/6]<088> %0<aaa>,};#line gag;} {2};
+#unaction {~^Nagle %* wykonuje zamaszysty cios %*, ktory rani cie w %*.%D$} {#echo {<caa> [3/6]<088> %0<aaa>,};#line gag;} {2};
+#unaction {~^Nagle %* wykonuje zamaszysty cios %*, ktory powaznie rani cie w %*.%D$} {#echo {<caa> [4/6]<088> %0<aaa>,};#line gag;} {2};
+#unaction {~^Nagle %* wykonuje zamaszysty cios %*, ktory bardzo ciezko rani cie w %*.%D$} {#echo {<caa> [5/6]<088> %0<aaa>,};#line gag;} {2};
+#unaction {~^Nagle %* wykonuje zamaszysty cios %*, ktory masakruje cie w %*.%D$} {#echo {<caa> [6/6]<088> %0<aaa>,};#line gag;} {2};
+#NOP SNOTLINGI;
+#unaction {~Odbiwszy sie od ziemi %* doskakuje do ciebie i piszczac przerazliwie bije cie lekko w %*.$} {#echo {<aca> <fff>[sno ?/?]<088> %0<aaa>,};#line gag;};
+#unaction {~Odbiwszy sie od ziemi %* doskakuje do ciebie i piszczac przerazliwie bije cie odczuwalnie w %*.$} {#echo {<aca> <fff>[sno ?/?]<088> %0<aaa>,};#line gag;};
+#NOP GOBLINOIDY;
+#unaction {~W slepiach %* pojawia sie nienawistny blysk, gdy zdecydowanym uderzeniem %* kaleczy ci %*.$} {#echo {<caa> [gob 1/?]<088> %0<aaa>,};#line gag;};
+#unaction {~W slepiach %* pojawia sie nienawistny blysk, gdy zdecydowanym uderzeniem %* rozkrwawia ci %*.$} {#echo {<caa> [gob 2/?]<088> %0<aaa>,};#line gag;};
+#unaction {~%* doskakuje do %*.$} {#echo { <118><ffa><fff>[gob ?/?]<088> %0<aaa>,};#line gag;} {6};
+#NOP TROLLE
+#unaction {~^Jedna z ran zwalistego szarawego trolla zamyka sie z ohydnym mlasnieciem.$}
+ {#echo {<caa> [trl ?/?]<088> %0<aaa>,};#line gag;} {6};
+#NOP * FANATYK *;
+#unaction {~^%* rzuca sie do ataku. %* trafia cie w %* ledwo muskajac %*.$} {#echo {<caa> [fan 1/7]<088> %0<aaa>,};#line gag;};
+#unaction {~^%* rzuca sie do ataku. %* trafia cie w %* lekko raniac %*.$} {#echo {<caa> [fan 2/7]<088> %0<aaa>,};#line gag;};
+#unaction {~^%* rzuca sie do ataku. %* trafia cie w %* {^lekko |powaznie |bardzo ciezko }raniac %*.$} {#echo {<caa> [fan 3/7]<088> %0<aaa>,};#line gag;};
+#unaction {~^%* rzuca sie do ataku. %* trafia cie w %* powaznie raniac %*.$} {#echo {<caa> [fan 4/7]<088> %0<aaa>,};#line gag;};
+#unaction {~^%* rzuca sie do ataku. %* trafia cie w %* bardzo ciezko raniac %*.$} {#echo {<caa> [fan 5/7]<088> %0<aaa>,};#line gag;};
+#unaction {~^%* rzuca sie do ataku. %* trafia cie w %* masakrujac %*.$} {#echo {<caa> [fan 6/7]<088> %0<aaa>,};#line gag;};
+#unaction {~^%* staje pewnie %* uderzenie %*. %* trafia cie, zaglebiajac bron w twoim ciele. Stoisz przez chwile nieruchomo a potem, tracac wladze w nogach, osuwasz sie na ziemie. Z trudem przebijajac wzrokiem klebiaca ci sie przed oczami mgle zauwazasz, jak na twarzy %* pojawia sie szyderczy, posepny usmiech...$} {#echo {<caa> [fan 7/7]<088> %0<aaa>,};#line gag;};
+#NOP WALKA INNYCH
+#unaction {~^%* ledwo muska %*.$} {#echo { <118><ffa><fff>[1/6]<088> %0<aaa>,};#line gag;};
+#unaction {~^%* lekko rani %*.$} {#echo { <118><ffa><fff>[2/6]<088> %0<aaa>,};#line gag;};
+#unaction {~^%* rani %*.$} {#echo { <118><ffa><fff>[3/6]<088> %0<aaa>,};#line gag;} {7};
+#unaction {~^%* powaznie rani %*.$} {#echo { <118><ffa><fff>[4/6]<088> %0<aaa>,};#line gag;};
+#unaction {~^%* bardzo ciezko rani %*.$} {#echo { <118><ffa><fff>[5/6]<088> %0<aaa>,};#line gag;};
+#unaction {~^%* masakruje %*.$} {#line gag;};
+#unaction {~^%* probuje trafic %*.$} {#line gag;};
+#unaction {~^%* nie udaje sie trafic %*.$} {#line gag;};
+#unaction {~^%* trafia %* lecz caly impet %*.$} {#line gag;};
+#unaction {~^%* lecz temu udaje sie %*.$} {#line gag;};
+#unaction {~^%* lecz ten paruje %*.$} {#line gag;};
+#unaction {~^%* lecz ten zbija %*.$} {#line gag;};
+#unaction {~^%* lecz ten oslania %*.$} {#line gag;};
+#unaction {~^%* ustawia sie bokiem %*.$} {#line gag;};
+#unaction {~^%* zbija na bok %*.$} {#line gag;};
+#unaction {lecz nie trafia.} {#line gag};
+#unaction {gdy jego uderzenie zeslizguje} {#line gag};
+#unaction {omentalnie przechodzac do przeciwnatarcia} {#line gag};
+#unaction {jednak zeslizguje sie} {#line gag};
+#NOP UNIKI WROGA;
+#unaction {~^Nie udaje ci sie trafic %*.$} {#line gag;};
+#unaction {~^Probujesz trafic %*, lecz %* {|unika|uskakuje przed} {|twojego|twoim} {|ciosu|ciosem}.$} {#line gag;};
+#unaction {~^Wykorzystujac dogodna sytuacje rzucasz sie na %*, pragnac pchnac %*, jednak twoj nieskoordynowany ruch nie jest w stanie nikogo zaskoczyc.$} {#line gag;};
+#unaction {~^Zamierzasz sie na %* swym %*, jednak %* z latwoscia unika twojego ciosu.$} {#line gag;};
+#unaction {~^Sprezasz sie do skoku probujac ugodzic %*, lecz tracisz koncentracje i twoj niecelny cios mija cel o wlos.$} {#line gag;};
+#unaction {~^Pewnym, lekkim krokiem ruszasz w kierunku %*. Zaciskasz mocniej palce na rekojesci %* gotow{y|a} do zadania morderczego pchniecia. Jestes juz tuz, tuz przy ofierze gdy nagle jeden niewlasciwy krok przesadza o wszystkim! Zahaczasz o cos stopa i przy wtorze zdradzajacego twa obecnosc loskotu z trudem lapiesz rownowage!$} {#line gag;};
+#unaction {~^%* twoja bron ze swistem przecina powietrze po %* udanym uniku.$} {#line gag;};
+#unaction {~^Wykorzystujac brak broni u przeciwnika, w mgnieniu oka wyprowadzasz cios %* mierzac w %*. Nieznacznie tracisz rownowage, gdy twoja bron ze swistem przecina powietrze po %* udanym uniku.$} {#line gag;};
+#unaction {~^Nie udaje ci sie trafic %*.$} {#line gag;};
+#unaction {~^Probujesz trafic %*, lecz %* {|unika|uskakuje przed} {|twojego|twoim} {|ciosu|ciosem}.$} {#line gag;};
+#unaction {~^Wykorzystujac dogodna sytuacje rzucasz sie na %*, pragnac pchnac %*, jednak twoj nieskoordynowany ruch nie jest w stanie nikogo zaskoczyc.$} {#line gag;};
+#unaction {~^Zamierzasz sie na %* swym %*, jednak %* z latwoscia unika twojego ciosu.$} {#line gag;};
+#unaction {~^Sprezasz sie do skoku probujac ugodzic %*, lecz tracisz koncentracje i twoj niecelny cios mija cel o wlos.$} {#line gag;};
+#unaction {~^Pewnym, lekkim krokiem ruszasz w kierunku %*. Zaciskasz mocniej palce na rekojesci %* gotow{|a|y} do zadania morderczego pchniecia. Jestes juz tuz, tuz przy ofierze gdy nagle jeden niewlasciwy krok przesadza o wszystkim! Zahaczasz o cos stopa i przy wtorze zdradzajacego twa obecnosc loskotu z trudem lapiesz rownowage!$} {#line gag;};
+#unaction {~^Blyskawicznym pchnieciem %* trafiasz %* w %*. W ostatniej chwili przeciwnik cofa sie gwaltownie o krok, przez co ostrze nie wchodzi w %* cialo dosc gleboko.$} {#line gag;};
+#unaction {~^Wyprowadzasz gwaltowne pchniecie w %*, jednakze ostrze %* przecina tylko powietrze.$} {#line gag;};
+
+#NOP TU SKONCZYLEM SPRAWDZAC
+
+
+#nop ESPA;
+#unaction {~^%* muska %* swoim polyskliwym smuklym espadonem.$} {#echo { <118><acf><fff>[esp 1/7]<088> %0<aaa>,};#line gag;}
+#unaction {~^%* bez wysilku niezbyt mocno rani %* swojego polyskliwego smuklego espadona.$} {#echo { <118><acf><fff>[esp 2/7]<088> %0<aaa>,};#line gag;}
+#unaction {~^%* skutecznym uderzeniem swojego polyskliwego smuklego espadona %*.$} {#echo { <118><acf><fff>[esp 3/7]<088> %0<aaa>,};#line gag;}
+#unaction {~^%* bierze mocny zamach i poteznym ciosem polyskliwego smuklego espadona %*.$} {#echo { <118><acf><fff>[esp 4/7]<088> %0<aaa>,};#line gag;}
+#unaction {~^%* wyprowadza%*uderzenie znad glowy swoim polyskliwym smukylm espadonem %*.$} {#echo { <118><acf><fff>[esp 5/7]<088> %0<aaa>,};#line gag;}
+#unaction {Korzystajac z nieuwagi %* robiac unik doskakuje do %* swym polyskliwym smuklym espadonem %*.$} {#echo { <118><acf><fff>[esp 6/7]<088> %0<aaa>,};#line gag;}
+#unaction {~^%* unosi nagle swoj espadon poziomo do ramion i uderza %*.$} {#echo { <118><acf><fff>[esp 7/7]<088> %0<aaa>,};#line gag;}
+#unaction {~^%* z okrzykiem na ustach dopada %* tnac straszliwie z szerokiego zamachu %*.$} {#echo { <118><acf><fff>[esp 7/7]<088> %0<aaa>,};#line gag;}
+
+
+#nop MIECZNIK;
+#unaction {~^%* poprawia chwyt na %* muskajac%*.$} {#echo { <118><ffa><fff>[mie 1/7]<088> %0<aaa>,};#line gag;} {5};
+#unaction {~^%* poprawia chwyt na %* ledwo zacina%*.$} {#echo { <118><ffa><fff>[mie 1/7]<088> %0<aaa>,};#line gag;} {5};
+#unaction {~^%* poprawia chwyt na %* niemalze rozcina%*.$} {#echo { <118><ffa><fff>[mie 6/7]<088> %0<aaa>,};#line gag;} {5};
+
+
+#unaction {~^%*Nie zwazajac na nic%*{rozpoczyna%*|rusza%* do przodu, w pol kroku|poprawia chwyt na|niespodziewanie skreca%*|wyrzuca do przodu}%* ledwo zacina%*.$}
+   {#echo { <118><ffa><fff>[mie 1/7]<088> %0<aaa>,};#line gag;} {5};
+#unaction {~^%*Nie zwazajac na nic%*{rozpoczyna%*|rusza%* do przodu, w pol kroku|poprawia chwyt na|niespodziewanie skreca%*|wyrzuca do przodu}%* muskajac%*.$}
+   {#echo { <118><ffa><fff>[mie 1/7]<088> %0<aaa>,};#line gag;} {5};
+#unaction {~^%*Nie zwazajac na nic%*{rozpoczyna%*|rusza%* do przodu, w pol kroku|poprawia%*chwyt na|niespodziewanie skreca%*|wyrzuca%do przodu}%* bolesnie zacina%*.$}
+   {#echo { <118><ffa><fff>[mie 2/7]<088> %0<aaa>,};#line gag;} {5};
+#unaction {~^%*Nie zwazajac na nic%*{rozpoczyna%*|rusza%* do przodu, w pol kroku|poprawia%*chwyt na|niespodziewanie skreca%*|wyrzuca%* do przodu}%* plytko tnie%*.$}
+   {#echo { <118><ffa><fff>[mie 3/7]<088> %0<aaa>,};#line gag;} {5};
+#unaction {~^%*Nie zwazajac na nic%*{rozpoczyna%*|rusza%* do przodu, w pol kroku|poprawia%*chwyt na|niespodziewanie skreca%*|wyrzuca%* do przodu}%* tnie%*.$}
+   {#echo { <118><ffa><fff>[mie 4/7]<088> %0<aaa>,};#line gag;} {8};
+#unaction {~^%*Nie zwazajac na nic{%*rozpoczyna%*|rusza%* do przodu, w pol kroku|poprawia%*chwyt na|niespodziewanie skreca%*|wyrzuca%* do przodu}%* gleboko%*.$}
+   {#echo { <118><ffa><fff>[mie 5/7]<088> %0<aaa>,};#line gag;} {5};
+#unaction {~^%*Nie zwazajac na nic{%*rozpoczyna%*|rusza%* do przodu, w pol kroku|poprawia%*chwyt na|niespodziewanie skreca%*|wyrzuca%* do przodu}%* niemalze rozcina%*.$}
+   {#echo { <118><ffa><fff>[mie 6/7]<088> %0<aaa>,};#line gag;} {5};
+#unaction {~^%*Nie zwazajac na nic{%*rozpoczyna%*|rusza%* do przodu, w pol kroku|poprawia%*chwyt na|niespodziewanie skreca%*|wyrzuca%* do przodu}%* {z potworna moca tnie|z nieprzyjemny chrzestem}%*.$}
+   {#echo { <118><ffa><fff>[mie 7/7]<088> %0<aaa>,};#line gag;} {5};
+
+#unaction {~^%*{nie zwazajac na nic %*rozpoczyna%*|rusza%* do przodu, w pol kroku|poprawia%*chwyt na|niespodziewanie skreca%*|wyrzuca%* do przodu}%* ledwo zacina%*.$}
+   {#echo { <118><ffa><fff>[mie 1/7]<088> %0<aaa>,};#line gag;} {5};
+#unaction {~^%*{nie zwazajac na nic %*rozpoczyna%*|rusza%* do przodu, w pol kroku|poprawia%*chwyt na|niespodziewanie skreca%*|wyrzuca%* do przodu}%* bolesnie zacina%*.$}
+   {#echo { <118><ffa><fff>[mie 2/7]<088> %0<aaa>,};#line gag;} {5};
+#unaction {~^%*{nie zwazajac na nic %*rozpoczyna%*|rusza%* do przodu, w pol kroku|poprawia%*chwyt na|niespodziewanie skreca%*|wyrzuca%* do przodu}%* plytko tnie%*.$}
+   {#echo { <118><ffa><fff>[mie 3/7]<088> %0<aaa>,};#line gag;} {5};
+#unaction {~^%*{nie zwazajac na nic %*rozpoczyna%*|rusza%* do przodu, w pol kroku|poprawia%*chwyt na|niespodziewanie skreca%*|wyrzuca%* do przodu}%* {plytko |gleboko |potworna moca} tnie%*.$}
+   {#echo { <118><ffa><fff>[mie 4/7]<088> %0<aaa>,};#line gag;} {5};
+#unaction {~^%*{nie zwazajac na nic %*rozpoczyna%*|rusza%* do przodu, w pol kroku|poprawia%*chwyt na|niespodziewanie skreca%*|wyrzuca%* do przodu}%* gleboko%*.$}
+   {#echo { <118><ffa><fff>[mie 5/7]<088> %0<aaa>,};#line gag;} {5};
+#unaction {~^%*{nie zwazajac na nic %*rozpoczyna%*|rusza%* do przodu, w pol kroku|poprawia%*chwyt na|niespodziewanie skreca%*|wyrzuca%* do przodu}%* niemalze rozcina%*.$}
+   {#echo { <118><ffa><fff>[mie 6/7]<088> %0<aaa>,};#line gag;} {5};
+#unaction {~^%*{nie zwazajac na nic %*rozpoczyna%*|rusza%* do przodu, w pol kroku|poprawia%*chwyt na|niespodziewanie skreca%*|wyrzuca%* do przodu}%* {z potworna moca tnie|z nieprzyjemny chrzestem}%*.$}
+   {#echo { <118><ffa><fff>[mie 7/7]<088> %0<aaa>,};#line gag;} {5};
+
+
+#NOP * LEGIONISTA *;
+#unaction {~^%* unosi swoja %* i szybko przesuwa sie %*, bezskutecznie probujac skryc sie za %* przed atakami %*.$} {#echo { <118><ffa><fff>[leg wyc]<088> %0<aaa>,};#line gag;};
+#unaction {~^%* unosi swoja %* i szybko przesuwa sie za %*, kryjac sie przed atakami %*.$} {#echo { <118><ffa><fff>[leg wyc]<088> %0<aaa>,};#line gag;};
+
+
+#NOP PAROWANIE WROGA;
+#unaction {~^Slamazarnym wymachem %* probujesz wytracic %* szable z %*. Przeciwnik nie daje sie jednak zaskoczyc, zbijajac w pore twoje uderzenie na bok.$} {#line gag;};
+#unaction {~^%* uderzenie zostaje jednak sparowane przez %*.$} {#line gag;};
+#unaction {~^Trafiasz %*, lecz caly impet uderzenia zostaje wyparowany przez %*.$} {#line gag;};
+#unaction {~^%* mierzac w %*, lecz %* {zbija je z linii ataku|oslania sie|je zbija z linii ataku} %*.$} {#line gag;};
+#unaction {~^%* paruje cios %*, unikajac wszelkich ran.$} {#line gag;};
+#unaction {~^Wyprowadzasz szybkie pchniecie %* w %*, lecz %* {zbija je z linii ataku|oslania sie|je zbija z linii ataku} %*.$} {#line gag;};
+#unaction {~^%* zbija twoj atak oszczednym uderzeniem %*.$} {#line gag;};
+#unaction {~^Trafiasz %*, lecz caly impet uderzenia zostaje wyparowany przez %*.$} {#line gag;};
+#unaction {~^%* paruje cios %*, unikajac wszelkich ran.$} {#line gag;};
+#unaction {~^%* zbija twoj atak oszczednym uderzeniem %*.$} {#line gag;};
+#unaction {~^Wyprowadzasz szybkie pchniecie %* w %*, lecz %* {zbija je z linii ataku|oslania sie|je zbija z linii ataku} %*.$} {#line gag;};
+
+#nop LEGIONISTA
+#unaction {~^%* wyprowadzic %* {przecinajac tylko powietrze|nie czyniac najmniejszej krzywdy}%*.$} {#echo { <118><ffa><fff>[leg 0/7]<088> %0<aaa>,};#line gag;};
+#unaction {~^%* wyprowadzic %* powodujac tylko ledwo zauwazalne obrazenie%*.$} {#echo { <118><ffa><fff>[leg 1/7]<088> %0<aaa>,};#line gag;};
+#unaction {~^%* wyprowadzic %* powodujac tylko nieznaczne obrazenia%*.$} {#echo { <118><ffa><fff>[leg 2/7]<088> %0<aaa>,};#line gag;};
+#unaction {~^%* wyprowadzic %* powodujac niemale obrazenia%*.$} {#echo { <118><ffa><fff>[leg 3/7]<088> %0<aaa>,};#line gag;};
+#unaction {~^%* wyprowadzic %* powodujac liczne i glebokie obrazenia%*.$} {#echo { <118><ffa><fff>[leg 4/7]<088> %0<aaa>,};#line gag;};
+#unaction {~^%* wyprowadzic %* powodujac rozlegle obrazenia%*.$} {#echo { <118><ffa><fff>[leg 5/7]<088> %0<aaa>,};#line gag;};
+#unaction {~^%* wyprowadzic %* powodujac prawieze smiertelne obrazenia%*.$} {#echo { <118><ffa><fff>[leg 6/7]<088> %0<aaa>,};#line gag;};
+#unaction {~^%* wyprowadzic %* w jednym momencie konczac walke%*%*.$} {#echo { <118><ffa><fff>[leg 7/7]<088> %0<aaa>,};#line gag;};
+
+#nop polprzezroczysty migotliwy topor
+#unaction {~^Impet ciosu %* rozszczepia materie polprzezroczyst%*, ktory niczym magiczny pocisk przenika %*, nieznacznie %*.$} {#echo { <118><acf><fff>[dra 1/5]<088> %0<aaa>,};#line gag;}
+#unaction {~^Impet ciosu %* rozszczepia materie polprzezroczyst%*, ktory niczym magiczny pocisk przenika %*, lekko %*.$} {#echo { <118><acf><fff>[dra 2/5]<088> %0<aaa>,};#line gag;}
+#unaction {~^Impet ciosu %* rozszczepia materie polprzezroczyst%*, ktory niczym magiczny pocisk przenika %*, powaznie %*.$} {#echo { <118><acf><fff>[dra 3/5]<088> %0<aaa>,};#line gag;}
+#unaction {~^Impet ciosu %* rozszczepia materie polprzezroczyst%*, ktory niczym magiczny pocisk przenika %*, potwornie %*.$} {#echo { <118><acf><fff>[dra 4/5]<088> %0<aaa>,};#line gag;}
+#unaction {~^Impet ciosu %* rozszczepia materie polprzezroczyst%*, ktory niczym magiczny pocisk przenika %*, gleboko %*.$} {#echo { <118><acf><fff>[dra 5/5]<088> %0<aaa>,};#line gag;}
+
+#nop lsniaca plomienista tarcza
+
+#nop GLAD
+#unaction {~^Mocnym uderzeniem %* oszalamia %* i ciosem %* zadaje %*.$} {#echo { <118><ffa><fff>[gla ?/?]<088> %0<aaa>,};#line gag;}; 
+#nop Ciosem polprzezroczystego migotliwego topora w tulow Belgat(NA) zadaje gargantuicznemu szarawemu trollowi nieduza rane i uderzeniem lsniacej plomienistej tarczy odpycha go w tyl.
+#nop Ta dziwna poswiata formuje sie w wirujaca kule przeplatajacych sie ze soba zoltych i pomaranczowych jezorow plynnego ognia, ktore wystrzeliwuja w kierunku zwalistego zielonkawego trolla. Parzace plomienie
+#nop omiataja jego cialo pozostawiajac jedynie nieznaczne obrazenia.
+#nop Belgat(NA) odpycha zwalistego zielonkawego trolla lsniaca plomienista tarcza i lekko kaleczy go ciosem polprzezroczystego migotliwego topora w leb.;
+
+#alias {collector_show} {
+	#var coll_gridvalue {};
+
+	#var coll_name {%1};
+
+	#echo {* $coll_name ->};
+		#foreach {$collector[$coll_name][sent][]} {coll_sent} {
+			#var coll_gridvalue {};
+			#if {$collector[$coll_name][sent][$coll_sent] > $screencols} {
+				#var coll_gridvalue {};
+				#loop {1} {$screencols} {z} {
+					#var coll_gridvalue {${coll_gridvalue}@}
+				};
+			} {
+				#var coll_gridvalue {};
+				#loop {1} {$collector[$coll_name][sent][$coll_sent]} {z} {
+					#var coll_gridvalue {${coll_gridvalue}@}
+				};
+			};
+			#format padname {%+20s %.20s} {$coll_sent};
+			#echo {$padname ${c_stan_wysoki}$coll_gridvalue};
+		};
+	#echo {* <- $coll_name};
+		#foreach {$collector[$coll_name][received][]} {coll_rcvd} {
+			#var coll_gridvalue {};
+			#if {$collector[$coll_name][received][$coll_rcvd] > $screencols} {
+				#var coll_gridvalue {};
+				#loop {1} {$screencols} {z} {
+					#var coll_gridvalue {${coll_gridvalue}@}
+				};
+			} {
+				#var coll_gridvalue {};
+				#loop {1} {$collector[$coll_name][received][$coll_rcvd]} {z} {
+					#var coll_gridvalue {${coll_gridvalue}@}
+				};
+			};
+			#format padname {%+20s %.20s} {$coll_rcvd};
+			#echo {$padname ${c_stan_niski}$coll_gridvalue};
+		};		
+};
+
+#alias {collect} {
+	#nop 1_GIVER 2_RECIEVER 3_TYPE 4_VALUE;
+	#if {"$collector[%1][sent][%3]" == ""} {#var collector[%1][sent][%3] {0};};
+	#if {"$collector[%2][received][%3]" == ""} {#var collector[%1][received][%3] {0};};
+	#if {"$collector[%1][sent][damage]" == ""} {#var collector[%1][sent][damage] {0};};
+	#if {"$collector[%2][received][damage]" == ""} {#var collector[%1][received][damage] {0};};
+	#math tmp_sent {$collector[%1][sent][%3] + 1};
+	#math tmp_rcvd {$collector[%2][received][%3] + 1};
+	#math tmp_dsent {$collector[%1][sent][damage] + %4};
+	#math tmp_drcvd {$collector[%2][received][damage] + %4};
+	#var collector[%1][sent][%3] {$tmp_sent};
+	#var collector[%2][received][%3] {$tmp_rcvd};
+	#var collector[%1][sent][damage] {$tmp_dsent};
+	#var collector[%2][received][damage] {$tmp_drcvd};
+	#line ignore {#showme {<178>[%3 %4/6]<088> $tmpvalue2}};
+} {1};
+
+#function {dodajcios} {
+	#line substitute variables {#line strip {#var tmpvalue {%0};};};
+	#var tmpvalue2 {%0};
+	#regex {$tmpvalue} {%w trafia cie %+, lecz caly impet uderzenia zostaje wyparowany %+} {collect &1 $AVATAR_NAME parry 0;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w ledwo muska cie %+, trafiajac cie %+} {collect &1 $AVATAR_NAME hit 1;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w rani cie %+, trafiajac cie %+} {collect &1 $AVATAR_NAME hit 3;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w powaznie rani cie %+, trafiajac cie %+} {collect &1 $AVATAR_NAME hit 4;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w masakruje cie %+, trafiajac cie %+} {collect &1 $AVATAR_NAME hit 5;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w lekko rani cie %+, trafiajac cie %+} {collect &1 $AVATAR_NAME hit 2;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w trafia cie %+, lecz caly impet uderzenia zostaje wyparowany %+} {collect &3 $AVATAR_NAME parry 0;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w ledwo muska cie %+, trafiajac cie %+} {collect &3 $AVATAR_NAME hit 1;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w rani cie %+, trafiajac cie %+} {collect &3 $AVATAR_NAME hit 3;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w lekko rani cie %+, trafiajac cie %+} {collect &3 $AVATAR_NAME hit 2;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w masakruje cie %+, trafiajac cie %+} {collect &3 $AVATAR_NAME hit 5;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w powaznie rani cie %+, trafiajac cie %+} {collect &3 $AVATAR_NAME hit 4;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w ledwo muska %w %w %w %w %w %w, trafiajac %+} {collect &1 &4 hit 1;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w ledwo muska %w %w %w %w %w %w, trafiajac %+} {collect &3 &6 hit 1;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w ledwo muska %w %w %w %w, trafiajac %+} {collect &1 &2 hit 1;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w ledwo muska %w %w %w %w, trafiajac %+} {collect &3 &6 hit 1;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w lekko rani %w %w %w %w %w %w, trafiajac %+} {collect &1 &4 hit 2;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w lekko rani %w %w %w %w %w %w, trafiajac %+} {collect &3 &6 hit 2;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w lekko rani %w %w %w %w, trafiajac %+} {collect &1 &4 hit 2;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w lekko rani %w %w %w %w, trafiajac %+} {collect &3 &6 hit 2;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w rani %w %w %w %w %w %w, trafiajac %+} {collect &1 &4 hit 3;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w rnai %w %w %w %w %w %w, trafiajac %+} {collect &3 &6 hit 3;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w rani %w %w %w %w, trafiajac %+} {collect &1 &4 hit 3;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w rani %w %w %w %w, trafiajac %+} {collect &3 &6 hit 3;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w powaznie rani %w %w %w %w %w %w, trafiajac %+} {collect &1 &4 hit 4;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w powaznie rani %w %w %w %w %w %w, trafiajac %+} {collect &3 &6 hit 4;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w powaznie rani %w %w %w %w, trafiajac %+} {collect &1 &4 hit 4;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w powaznie rani %w %w %w %w, trafiajac %+} {collect &3 &6 hit 4;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w masakruje %w %w %w %w %w %w, trafiajac %+} {collect &1 &4 hit 5;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w masakruje %w %w %w %w %w %w, trafiajac %+} {collect &3 &6 hit 5;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w masakruje %w %w %w %w, trafiajac %+} {collect &1 &4 hit 5;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w masakruje %w %w %w %w, trafiajac %+} {collect &3 &6 hit 5;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {anisz %+, trafiajac cie %+} {collect &1 $AVATAR_NAME hit 1;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {Ledwo muskasz %w %w %w %w %w %w,} {collect $AVATAR_NAME &3 hit 1;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {Ledwo muskasz %w %w %w %w,} {collect $AVATAR_NAME &1 hit 1;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {Lekko ranisz %w %w %w %w %w %w,} {collect $AVATAR_NAME &3 hit 3;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {Lekko ranisz %w %w %w %w,} {collect $AVATAR_NAME &1 hit 3;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {Ranisz %w %w %w %w %w %w,} {collect $AVATAR_NAME &3 hit 4;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {Ranisz %w %w %w %w,} {collect $AVATAR_NAME &1 hit 4;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {Powaznie ranisz %w %w %w %w %w %w,} {collect $AVATAR_NAME &3 hit 5;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {Powaznie ranisz %w %w %w %w,} {collect $AVATAR_NAME &1 hit 5;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {Masakrujesz %w %w %w %w %w %w,} {collect $AVATAR_NAME &3 hit 6;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {Masakrujesz %w %w %w %w,} {collect $AVATAR_NAME &1 hit 6;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w wykonuje %+ mierzac w ciebie, lecz tobie udaje sie je zbic %+} {collect &1 $AVATAR_NAME parry 0;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w probuje cie trafic %+ uniknac tego ciosu.} {collect &1 $AVATAR_NAME dodge 0;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w nie udaje sie trafic ciebie %+} {collect &1 $AVATAR_NAME miss 0;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w wykonuje %+ mierzac w ciebie, lecz tobie udaje sie je zbic %+} {collect &3 $AVATAR_NAME parry 0;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w probuje cie trafic %+ uniknac tego ciosu.} {collect &3 $AVATAR_NAME dodge 0;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w probuje cie trafic %+ uniknac tego ciosu} {collect &3 $AVATAR_NAME dodge 0;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%w %w %w nie udaje sie trafic ciebie %+} {collect &3 $AVATAR_NAME miss 0;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {Wyprowadzasz %+, lecz ten zbija je %+} {collect $AVATAR_NAME unknown parry 0;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {Szybkim niczym mysl ruchem %+ wytracasz %+} {collect $AVATAR_NAME unknown WKS 0;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %+ wyprowadzasz cios %+ pozostawiajac krwawiace zadrapanie.} {collect $AVATAR_NAME unknown WKS 1;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %+ wyprowadzasz cios %+ pozostawiajac dluga, poszarpana rane.} {collect $AVATAR_NAME unknown WKS 4;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %+ wyprowadzasz cios %+ pozostawiajac gleboka rane z wystajacymi na wierzchu tkankami.} {collect $AVATAR_NAME unknown WKS 5;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %+ wyprowadzasz cios %+ zadajac smiertelne obrazenia.} {collect $AVATAR_NAME unknown WKS 6;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%+ wskakuje znienacka na twoje plecy i z upiornym chichotem gryzie cie niegroznie w szyje!} {collect gremlin $AVATAR_NAME GOB 1;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%+ jaszczur doskakuje do ciebie i niegroznie wgryza sie ostrymi zebami w twoje cialo.} {collect jaszczur $AVATAR_NAME JAS 1;#unvar tmpvalue;#return 1};
+	#regex {$tmpvalue} {%+ nadyma swe miesiste %+ uskakujesz, a z sykiem skrzel laczy sie swist mijajacej cie broni.} {collect ryboczlek $AVATAR_NAME miss 0;#unvar tmpvalue;#return 1};
+	
+	#return 0;
+};
+

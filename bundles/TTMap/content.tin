@@ -110,7 +110,7 @@
     #if {$trytomove > 0} {
         #var trytomove 0;
         #map get roomvnum roomId;
-   };
+    };
 };
 
 #event {MAP ENTER ROOM} {

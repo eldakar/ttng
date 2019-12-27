@@ -151,11 +151,12 @@
 
 #nop NA SOBIE;
 
-#high {Trzyma{|sz} %*.} {$c_trzyma};
-#high {Nosi{|sz} %*.} {$c_ponad};
+#high {Trzyma{|sz} %*.} {$c_stan_wysoki};
+#unhigh {Nosi{|sz} %*.} {$c_ponad};
 #high {Ma{|sz} na sobie %*.} {$c_stan_wysoki};
 #high {Ponad {jego|jej} %*.} {$c_ponad};
-#high {Do pasa ma{|sz} %*.} {$c_dopasa};
+#unhigh {Do pasa ma{|sz} %*.} {$c_dopasa};
+#high {{Powaznie ranisz|Ranisz|Lekko ranisz|Ledwo muskasz}} {<fca>};
 
 #nop DO WALKI;
 #high {^%* atakuje cie!$} {<FAA><178>};

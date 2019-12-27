@@ -3,7 +3,16 @@
 };
 
 #alias {qr} {
-  #line sub variables {#alias _quickbind_ {%0}};
+  #line sub variables {
+    #alias _quickbind_ {
+      %0;
+      #var qbvar {                                                                 };
+      BottomBarTinyFugue;
+    }
+  };
+  #format qbvar {%-64s %.64s} {%0};
+  #var qbvar {${c_stan_sredni}$qbvar};
+  BottomBarTinyFugue;
 
   #format {show_bind_} {%h} { %0 };
   #echo {${c_stan_sredni}$show_bind_};
@@ -12,20 +21,43 @@
 #alias {qk} {
   #var r @_print_war_bind{%0};
   #var qkcommand %0;
-  #line sub variables {#alias _quickbind_ {%0}};
+  #line sub variables {
+    #alias _quickbind_ {
+      %0;
+      #var qbvar {                                                                 };
+      BottomBarTinyFugue;
+    }
+  };
 };
 
 #alias {qb} {
-  #line sub variables {#alias _quickbind_ {%0}};
-    #nop show_bind %0;
-    #format {show_bind_} {%h} { %0 };
-    #echo {${c_stan_wysoki}$show_bind_};
-    #nop draw <138><CAF> tubed huge left right box 15 15 22 80 %0;
+  #line sub variables {
+    #alias _quickbind_ {
+      %0;
+      #var qbvar {                                                                 };
+      BottomBarTinyFugue;
+    }
+  };
+  #format qbvar {%-64s %.64s} {%0};
+  #var qbvar {${c_stan_wysoki}$qbvar};
+  BottomBarTinyFugue;
+
+  #format {show_bind_} {%h} { %0 };
+  #echo {${c_stan_wysoki}$show_bind_};
 }
 
 #nop silently;
 #alias {qbs} {
-  #line sub variables {#alias _quickbind_ {%0}};
+  #line sub variables {
+    #alias _quickbind_ {
+      %0;
+      #var qbvar {                                                                 };
+      BottomBarTinyFugue;
+    }
+  };
+  #format qbvar {%-64s %.64s} {%0};
+  #var qbvar {${c_stan_sredni}$qbvar};
+  BottomBarTinyFugue;
 }
 
 #alias {QB} {
@@ -35,14 +67,33 @@
 };
 
 #alias {qm} {
-  #line sub variables {#alias _quickbind_ {%0}};
+  #line sub variables {
+    #alias _quickbind_ {
+      %0;
+      #var qbvar {                                                                 };
+      BottomBarTinyFugue;
+    }
+  };
   #format {show_bind_} {%h} { %0 };
+  #format qbvar {%-64s %.64s} {%0};
+  #var qbvar {${c_stan_niski}$qbvar};
+  BottomBarTinyFugue;
+
   #echo {${c_stan_niski}$show_bind_};
   SplitWingMap_Warning %0;
 };
 
 #alias {qbk} {
-  #line sub variables {#alias _quickbind_ {%0}};
+  #line sub variables {
+    #alias _quickbind_ {
+      %0;
+      #var qbvar {                                                                 };
+      BottomBarTinyFugue;
+    }
+  };
+  #format qbvar {%-64s %.64s} {%0};
+  #var qbvar {${c_stan_niski}$qbvar};
+  BottomBarTinyFugue;
 }
 
 #action {Bol w {prawej|lewej} dloni staje sie mniej odczuwalny.} {
