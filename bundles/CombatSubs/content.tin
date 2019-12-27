@@ -216,6 +216,56 @@
 #nop omiataja jego cialo pozostawiajac jedynie nieznaczne obrazenia.
 #nop Belgat(NA) odpycha zwalistego zielonkawego trolla lsniaca plomienista tarcza i lekko kaleczy go ciosem polprzezroczystego migotliwego topora w leb.;
 
+#alias {/walka} {
+   #local totalhits 0;
+   #local totaldmg 0;
+   #local totalmiss 0;
+
+   #foreach {*collector[$AVATAR_NAME][sent][]} {avasent} {
+      #switch {"$avasent"} {
+         #case {"damage"} {#math totaldmg {$totaldmg} + $collector[$AVATAR_NAME][sent][$avasent]};
+         
+         #case {"hit"} {#math totalhits {$totalhits + $collector[$AVATAR_NAME][sent][$avasent]};};
+         #case {"WKS"} {#math totalhits {$totalhits + $collector[$AVATAR_NAME][sent][$avasent]};};
+         #case {"magic"} {#math totalhits {$totalhits + $collector[$AVATAR_NAME][sent][$avasent]};};
+
+         #case {"miss"} {#math totalmiss {$totalmiss + $collector[$AVATAR_NAME][sent][$avasent]};};
+         #case {"parry"} {#math totalmiss {$totalmiss + $collector[$AVATAR_NAME][sent][$avasent]};};
+         #case {"dodge"} {#math totalmiss {$totalmiss + $collector[$AVATAR_NAME][sent][$avasent]};};
+      };
+   };
+   #math hitsperc {($totalhits / ($totalhits + $totalmiss)) * 100};
+   
+   #unvar hitsperc;
+   
+   #local totalmiss 0;
+   #local totalparr 0;
+   #local totaldodg 0;
+   #local totalothe 0;
+
+   #foreach {*collector[$AVATAR_NAME][received][]} {avasent} {
+      #switch {"$avasent"} {
+         #case {"miss"} {#math totalmiss {$totalmiss + $collector[$AVATAR_NAME][received][$avasent]};};
+         #case {"parry"} {#math totalparr {$totalparr + $collector[$AVATAR_NAME][received][$avasent]};};
+         #case {"dodge"} {#math totaldodg {$totaldodg + $collector[$AVATAR_NAME][received][$avasent]};};
+         #default {#math totalothe {$totalothe + $collector[$AVATAR_NAME][received][$avasent]};};
+      };
+   };
+   #math grandtotal {$totalmiss + $totalparr + $totaldodg + $totalothe};
+   #math percmiss {($totalmiss * 100) / $grandtotal};
+   #math percparr {($totalparr * 100) / $grandtotal};
+   #math percdodg {($totaldodg * 100) / $grandtotal};
+   #math percothe {($totalothe * 100) / $grandtotal};
+   
+   #sh {Miss  $totalmiss (${percmiss}%)};
+   #sh {Parry $totalparr (${percparr}%)};
+   #sh {Dodge $totaldodg (${percdodg}%)};
+   #sh {Hit   $totalothe (${percothe}%)};
+   #sh {----------------};
+   #sh {Total $grandtotal};
+
+} {1};
+
 #alias {collector_show} {
 	#var coll_gridvalue {};
 

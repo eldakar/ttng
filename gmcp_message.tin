@@ -48,7 +48,7 @@
 			#if {$MAPPER_SYNC == 0} {findme};
 		    BottomBarTinyFugue;
 		};
-		#case {"room.long"} {
+		#nop case {"room.long"} {
 			#sh $GMCPMSGS[text];
 			SplitWingMap_Popup $GMCPMSGS[text];
 		};
