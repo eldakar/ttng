@@ -129,6 +129,9 @@
 	#var warninglevel {${c_stan_niski}   ZABLOKOWANY    };
 	BottomBarTinyFugue;
 };
+#action {przestaje odcinac twoja droge ucieczki} {
+	#var warninglevel {${c_stan_sredni}                  };BottomBarTinyFugue;
+};
 
 
 #nop #############################################################;
@@ -148,7 +151,7 @@
 #nop #############################################################;
 #nop ############# WEAPONS                 #######################;
 #nop #############################################################;
-#action {{{D|d}obywasz|Wiedziony naglym instynktem siegasz|Pelnym pewnosci siebie ruchem dobywasz| twego pewnego chwytu, | zaciskasz dlon |Trzymasz}} {
+#action {{{D|d}obywasz|Wiedziony naglym instynktem siegasz|Pelnym pewnosci siebie ruchem dobywasz| twego pewnego chwytu, | zaciskasz dlon |Trzymasz|dobywajac}} {
 	#var weaponlevel {${c_stan_wysoki}on };
 	BottomBarTinyFugue;
 };
