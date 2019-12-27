@@ -95,11 +95,11 @@
 
     #foreach {*duch[]} {dudu} {
 
-#format {duchtrue} {%L} {$duch[$dudu][living]};
-#if {$duchtrue > 2} {
+        #format {duchtrue} {%L} {$duch[$dudu][living]};
+        #if {$duchtrue > 2} {
 
- 	#var duch[$dudu][bot] {};
-        #var duch[$dudu][shown] {0};
+         	#var duch[$dudu][bot] {};
+            #var duch[$dudu][shown] {0};
  
             #if {$duch[$dudu][attack_num] > 0} {
    	         #math duch[$duch[$dudu][attack_num]][enemies] {$duch[$duch[$dudu][attack_num]][enemies] + 1};
@@ -137,7 +137,9 @@
             } {
                 #var confirmed {$postac[$test][cached]};
                 #var tmpim $test;
+            #if {"$test" != ""} {
                 #var tmpimie {$gildie[$postac[$test][gildia]] $postac[$test][gildia] $test};
+            };
 		#var tmpimietype 2;
             };
             #if {"$confirmed" == "true"} {
@@ -360,103 +362,104 @@
     #var negativecounter 1;
     #screen get rows windowh;
     #var iterator {0};
-    #foreach {*duch[]} {du} {        
-        #math iterator {$iterator + 1};
-        #math indexvalue {96 + $iterator};
-        #if {$indexvalue > 122} {
-            #var indexvalue {88};  
-        };
-        #format indexchar {%a} {$indexvalue};
-        #var duch[$du][alias_value] {$indexchar};
-     
-        #line substitute {variables} {#alias k$indexchar {_zabij_ ob_$du}};
-        #line substitute {variables} {#alias zp$indexchar {zaslon przed ob_$du}};
-        #line substitute {variables} {#alias b$indexchar {zablokuj ob_$du}};
-        #line substitute {variables} {#alias p$indexchar {przelam obrone ob_$du}};
-        #line substitute {variables} {#alias z$indexchar {zaslon ob_$du;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-        #line substitute {variables} {#alias wz${indexchar} {gzwycofaj sie za ob_$du;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-        #line substitute {variables} {#alias z${indexchar}2 {opcje grupa 2;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-        #line substitute {variables} {#alias z${indexchar}3 {opcje grupa 3;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-        #line substitute {variables} {#alias z${indexchar}4 {opcje grupa 4;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-        #line substitute {variables} {#alias O$indexchar {wskaz ob_$du jako cel obrony}};
-        #format tmpna {%-15s} {$duch[$du][desc]};
-        #format tmpna {%.15s} {$tmpna};
-        #format tmpna_med {%-10s} {$duch[$du][desc]};
-        #format tmpna_med {%.10s} {$tmpna_med};
-        #format tmpna_orc {%-15s} {$duch[$du][desc]};
-        #format tmpna_orc {%.15s} {$tmpna_orc};
+    #foreach {*duch[]} {du} {      
+        #if {"$duch[$du][hp]" != ""} {
 
-        #var tmpna_orc {$duch[$du][desc]};
-        
-        #var tmpna_sma {};
-        #var tmphp $healthbars2[$duch[$du][hp]];
-        #var tmpcel {   };
-        #var tmpava {  };
-        #var tmpsug {  };
-        #var tmpkol {<088>};
-        #var tmpled { };
-        #var tmptar {};
+            #math iterator {$iterator + 1};
+            #math indexvalue {96 + $iterator};
+            #if {$indexvalue > 122} {
+                #var indexvalue {88};  
+            };
+            #format indexchar {%a} {$indexvalue};
+            #var duch[$du][alias_value] {$indexchar};
+         
+            #line substitute {variables} {#alias k$indexchar {_zabij_ ob_$du}};
+            #line substitute {variables} {#alias zp$indexchar {zaslon przed ob_$du}};
+            #line substitute {variables} {#alias b$indexchar {zablokuj ob_$du}};
+            #line substitute {variables} {#alias p$indexchar {przelam obrone ob_$du}};
+            #line substitute {variables} {#alias z$indexchar {zaslon ob_$du;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+            #line substitute {variables} {#alias wz${indexchar} {gzwycofaj sie za ob_$du;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+            #line substitute {variables} {#alias z${indexchar}2 {opcje grupa 2;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+            #line substitute {variables} {#alias z${indexchar}3 {opcje grupa 3;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+            #line substitute {variables} {#alias z${indexchar}4 {opcje grupa 4;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+            #line substitute {variables} {#alias O$indexchar {wskaz ob_$du jako cel obrony}};
+            #format tmpna {%-15s} {$duch[$du][desc]};
+            #format tmpna {%.15s} {$tmpna};
+            #format tmpna_med {%-10s} {$duch[$du][desc]};
+            #format tmpna_med {%.10s} {$tmpna_med};
+            #format tmpna_orc {%-15s} {$duch[$du][desc]};
+            #format tmpna_orc {%.15s} {$tmpna_orc};
 
-        #var tmpen {  };
-        #if {$duch[$du][enemies] < 1} {
-            #var tmpen {[  ]};
-        };
-        #else {
-            #format tmpen {%+2s} {<118>$duch[$du][enemies]<088>};
-            #var tmpen {[$tmpen]};
-        };
+            #var tmpna_orc {$duch[$du][desc]};
+            #var tmpna_sma {};
+            #var tmphp $healthbars2[$duch[$du][hp]];
+            #var tmpcel {   };
+            #var tmpava {  };
+            #var tmpsug {  };
+            #var tmpkol {<088>};
+            #var tmpled { };
+            #var tmptar {};
 
-        #if {"$duch[$du][enemy]" == "true"} {#var tmpkol {<118>}};
-        #if {"$duch[$du][team]" == "true"} {#var tmpkol {<148>}};
-        #if {"$duch[$du][typ]" == "wrog"} {#var tmpkol {<FAA><178>}};
-        #if {"$duch[$du][typ]" == "boss"} {#var tmpkol {<fca>}};
+            #var tmpen {  };
+            #if {$duch[$du][enemies] < 1} {
+                #var tmpen {[  ]};
+            };
+            #else {
+                #format tmpen {%+2s} {<118>$duch[$du][enemies]<088>};
+                #var tmpen {[$tmpen]};
+            };
 
-        #if {"$duch[$du][attack_target]" == "true"} {#var tmpcel {CEL};#var tmpkol {<FAC><178>}};
-        #if {"$duch[$du][defense_target]" == "true"} {#var tmpcel {COB};#var tmpkol {<AAB><178>}};
-        #if {"$duch[$du][avatar_target]" == "true"} {#var tmpava {<FAA>  <088>}};
+            #if {"$duch[$du][enemy]" == "true"} {#var tmpkol {<118>}};
+            #if {"$duch[$du][team]" == "true"} {#var tmpkol {<148>}};
+            #if {"$duch[$du][typ]" == "wrog"} {#var tmpkol {<FAA><178>}};
+            #if {"$duch[$du][typ]" == "boss"} {#var tmpkol {<fca>}};
 
-        #if {"$duch[$du][team_leader]" == "true"} {
-		  #var tmpled {<138>*<088>};
-		  #format team_lead_lower {%l} {$duch[$du][desc]};
-          #var team_lead_id {$du};
-	    };
-        
-        #if {"$duch[$du][team]" == "true"} {
-            #format tmpna_orc {%-8s} {$duch[$du][desc]};
-            #format tmpna_orc {%.8s} {$tmpna_orc};
-        };
+            #if {"$duch[$du][attack_target]" == "true"} {#var tmpcel {CEL};#var tmpkol {<FAC><178>}};
+            #if {"$duch[$du][defense_target]" == "true"} {#var tmpcel {COB};#var tmpkol {<AAB><178>}};
+            #if {"$duch[$du][avatar_target]" == "true"} {#var tmpava {<FAA>  <088>}};
 
-        #if {"$duch[$du][bot]" == "SA1"} {#var tmpsug {<128>F1<088>}};
-        #if {"$duch[$du][bot]" == "SA2"} {#var tmpsug {A2}};
-        #if {"$duch[$du][bot]" == "SO1"} {#var tmpsug {O1}};
-        #if {"$duch[$du][bot]" == "SO2"} {#var tmpsug {O2}};
+            #if {"$duch[$du][team_leader]" == "true"} {
+    		  #var tmpled {<138>*<088>};
+    		  #format team_lead_lower {%l} {$duch[$du][desc]};
+              #var team_lead_id {$du};
+    	    };
+            
+            #if {"$duch[$du][team]" == "true"} {
+                #format tmpna_orc {%-8s} {$duch[$du][desc]};
+                #format tmpna_orc {%.8s} {$tmpna_orc};
+            };
 
-        #if {"$duch[$du][bot]" == "SO1"} {
-            #if {"$duch[$du][avatar]" == "true"} {
-                #var tmpsug {<FAA><178>!!<088>};
+            #if {"$duch[$du][bot]" == "SA1"} {#var tmpsug {<128>F1<088>}};
+            #if {"$duch[$du][bot]" == "SA2"} {#var tmpsug {A2}};
+            #if {"$duch[$du][bot]" == "SO1"} {#var tmpsug {O1}};
+            #if {"$duch[$du][bot]" == "SO2"} {#var tmpsug {O2}};
+
+            #if {"$duch[$du][bot]" == "SO1"} {
+                #if {"$duch[$du][avatar]" == "true"} {
+                    #var tmpsug {<FAA><178>!!<088>};
+                } {
+                    #var tmpsug {<138>F2<088>};                
+                };
+            };
+
+            #if {"$duch[$duch[$du][attack_num]][attack_target]" == "true"} {
+                #var tmptarcolor {<128>};
             } {
-                #var tmpsug {<138>F2<088>};                
+                #var tmptarcolor {<118>};
+            };
+
+            #if {$duch[$du][attack_num] > 0} {
+                #format tmptar {%-10s} {$duch[$duch[$du][attack_num]][desc]};
+                #format tmptar {%.10s} {$tmptar};
+                #var tmptar {|$attacktargethp| $tmptarcolor$tmptar<088>};
+            };
+            #if {"$tmphp" != ""} {
+                #var duch[$du][bar][orc] {$duch[$du][alias_value] $tmpsug<088>$tmpava$tmpen [$tmphp]$tmpled$tmpkol$tmpna_orc<088> };
+                #math {negativecounter} {$negativecounter + 1};
             };
         };
-
-        #if {"$duch[$duch[$du][attack_num]][attack_target]" == "true"} {
-            #var tmptarcolor {<128>};
-        } {
-            #var tmptarcolor {<118>};
-        };
-
-        #if {$duch[$du][attack_num] > 0} {
-            #format tmptar {%-10s} {$duch[$duch[$du][attack_num]][desc]};
-            #format tmptar {%.10s} {$tmptar};
-            #var tmptar {|$attacktargethp| $tmptarcolor$tmptar<088>};
-        };
-
-        #var duch[$du][bar][orc] {$duch[$du][alias_value] $tmpsug<088>$tmpava$tmpen [$tmphp]$tmpled$tmpkol$tmpna_orc<088> };
-        #math {negativecounter} {$negativecounter + 1};
     };
-}
-
-
+};
 
 #action {Zapamietane przez ciebie imiona to %* i %2.} {
 	#list przedstawieni clear;
@@ -472,10 +475,10 @@
 			#format {excheck} {%L} {$postac[$test][gildia]};
 
 			#if {$excheck > 1} {
-    				#line substitute variables {
-        				#sub {$przedstawieni[$przedstawiony]} {$przedstawieni[$przedstawiony]($postac[$test][gildia])};
-				        #high {$przedstawieni[$przedstawiony]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
-				};
+    			#line substitute variables {
+    				#sub {$przedstawieni[$przedstawiony]} {$przedstawieni[$przedstawiony]($postac[$test][gildia])};
+			        #high {$przedstawieni[$przedstawiony]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
+			    };
 			};
 	};
 };
