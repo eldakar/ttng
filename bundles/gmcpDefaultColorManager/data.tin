@@ -359,7 +359,7 @@
 #var TinyFugueBars[mana][4] {${c_stan_sredni}########        };
 #var TinyFugueBars[mana][5] {${c_stan_sredni}##########      };
 #var TinyFugueBars[mana][6] {${c_stan_sredni}############    };
-#var TinyFugueBars[mana][7] {${c_stan_wysoki}##############   };
+#var TinyFugueBars[mana][7] {${c_stan_wysoki}##############  };
 #var TinyFugueBars[mana][8] {${c_stan_wysoki}################};
 
 #var TinyFugueBars[blockself][0] {                     };

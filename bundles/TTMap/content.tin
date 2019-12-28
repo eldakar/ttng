@@ -41,6 +41,18 @@
 #alias {move_sw} {#send sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
 #alias {move_se} {#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};
 
+#alias {sneak_n} {#send przemknij n;#map move n;#var trytomove 1;#var movedir {polnoc}};
+#alias {sneak_s} {#send przemknij s;#map move s;#var trytomove 1;#var movedir {poludnie}};
+#alias {sneak_e} {#send przemknij e;#map move e;#var trytomove 1;#var movedir {wschod}};
+#alias {sneak_w} {#send przemknij w;#map move w;#var trytomove 1;#var movedir {zachod}};
+#alias {sneak_d} {#send przemknij d;#map move d;#var trytomove 1;#var movedir {dol}};
+#alias {sneak_u} {#send przemknij u;#map move u;#var trytomove 1;#var movedir {gora}};
+#alias {sneak_ne} {#send przemknij ne;#map move ne;#var trytomove 1;#var movedir {polnocny-wschod}};
+#alias {sneak_nw} {#send przemknij nw;#map move nw;#var trytomove 1;#var movedir {polnocny-zachod}};
+#alias {sneak_sw} {#send przemknij sw;#map move sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
+#alias {sneak_se} {#send przemknij se;#map move se;#var trytomove 1;#var movedir {poludniowy-wschod}};
+
+
 #alias {n} {move_n};
 #alias {s} {move_s};
 #alias {ne} {move_ne};
@@ -52,6 +64,16 @@
 #alias {w} {move_w};
 #alias {e} {move_e};
 
+#alias {N} {sneak_n};
+#alias {S} {sneak_s};
+#alias {NE} {sneak_ne};
+#alias {NW} {sneak_nw};
+#alias {SW} {sneak_sw};
+#alias {SE} {sneak_se};
+#alias {D} {sneak_d};
+#alias {U} {sneak_u};
+#alias {W} {sneak_w};
+#alias {E} {sneak_e};
 
 #nop #################################################################################;
 #nop EVENTY GMCP;

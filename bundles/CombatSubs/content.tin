@@ -1,5 +1,8 @@
 #alias {CombatGag} {
    #var gaglevel $ConfigManager_Configs[CombatGag];
+   #if {"$gaglevel" == ""} {
+      #var gaglevel 0;
+   };
 };
 
 #NOP TWOJE CIOSY OGOLNE;
@@ -257,55 +260,20 @@
    #math percdodg {($totaldodg * 100) / $grandtotal};
    #math percothe {($totalothe * 100) / $grandtotal};
    
+   #sh {----- Otrzymane ciosy -----};
    #sh {Miss  $totalmiss (${percmiss}%)};
    #sh {Parry $totalparr (${percparr}%)};
    #sh {Dodge $totaldodg (${percdodg}%)};
    #sh {Hit   $totalothe (${percothe}%)};
-   #sh {----------------};
+   #sh {---------------------------};
    #sh {Total $grandtotal};
+   #unvar grandtotal;
+   #unvar percmiss;
+   #unvar percparr;
+   #unvar percdodg;
+   #unvar percothe;
 
 } {1};
-
-#alias {collector_show} {
-	#var coll_gridvalue {};
-
-	#var coll_name {%1};
-
-	#echo {* $coll_name ->};
-		#foreach {$collector[$coll_name][sent][]} {coll_sent} {
-			#var coll_gridvalue {};
-			#if {$collector[$coll_name][sent][$coll_sent] > $screencols} {
-				#var coll_gridvalue {};
-				#loop {1} {$screencols} {z} {
-					#var coll_gridvalue {${coll_gridvalue}@}
-				};
-			} {
-				#var coll_gridvalue {};
-				#loop {1} {$collector[$coll_name][sent][$coll_sent]} {z} {
-					#var coll_gridvalue {${coll_gridvalue}@}
-				};
-			};
-			#format padname {%+20s %.20s} {$coll_sent};
-			#echo {$padname ${c_stan_wysoki}$coll_gridvalue};
-		};
-	#echo {* <- $coll_name};
-		#foreach {$collector[$coll_name][received][]} {coll_rcvd} {
-			#var coll_gridvalue {};
-			#if {$collector[$coll_name][received][$coll_rcvd] > $screencols} {
-				#var coll_gridvalue {};
-				#loop {1} {$screencols} {z} {
-					#var coll_gridvalue {${coll_gridvalue}@}
-				};
-			} {
-				#var coll_gridvalue {};
-				#loop {1} {$collector[$coll_name][received][$coll_rcvd]} {z} {
-					#var coll_gridvalue {${coll_gridvalue}@}
-				};
-			};
-			#format padname {%+20s %.20s} {$coll_rcvd};
-			#echo {$padname ${c_stan_niski}$coll_gridvalue};
-		};		
-};
 
 #alias {collect} {
 	#nop 1_GIVER 2_RECIEVER 3_TYPE 4_VALUE;
@@ -321,7 +289,16 @@
 	#var collector[%2][received][%3] {$tmp_rcvd};
 	#var collector[%1][sent][damage] {$tmp_dsent};
 	#var collector[%2][received][damage] {$tmp_drcvd};
-	#line ignore {#showme {<178>[%3 %4/6]<088> $tmpvalue2}};
+
+   #switch {"%3"} {
+      #case {"dodge"} {#if {$gaglevel < 1} {#line ignore {#showme {<078>[%3] $tmpvalue2}}}};
+      #case {"miss"} {#if {$gaglevel < 1} {#line ignore {#showme {<078>[%3] $tmpvalue2}}}};
+      #case {"parry"} {#if {$gaglevel < 1} {#line ignore {#showme {<078>[%3] $tmpvalue2}}}};
+      #case {"hit"} {#if {$gaglevel < 2} {#line ignore {#showme {<178>[%4/6]<088> $tmpvalue2}}}};
+      #case {"magic"} {#if {$gaglevel < 2} {#line ignore {#showme {<118><fac>[%3 %4/6]<088> $tmpvalue2}}}};
+      #default {#line ignore {#showme {<118><fca>[%3 %4/6]<088> $tmpvalue2}}};
+   };
+	#nop line ignore {#showme {<178>[%3 %4/6]<088> $tmpvalue2}};
 } {1};
 
 #function {dodajcios} {
@@ -420,11 +397,12 @@
 #nop KOR;   #regex {$tmpvalue} {%w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect &1 unknown KS 4;#var tmpvalue {};#return 1};
 #nop KOR;   #regex {$tmpvalue} {%w %w %w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect &4 unknown KS 4;#var tmpvalue {};#return 1};
 
-	#regex {$tmpvalue} {%* wskakuje znienacka na twoje plecy i z upiornym chichotem gryzie cie niegroznie w szyje!} {collect gremlin $AVATAR_NAME GOB 1;#var tmpvalue {};#return 1};
-	#regex {$tmpvalue} {%* jaszczur doskakuje do ciebie i niegroznie wgryza sie ostrymi zebami w twoje cialo.} {collect jaszczur $AVATAR_NAME JAS 1;#var tmpvalue {};#return 1};
-	#regex {$tmpvalue} {%* jaszczur doskakuje do ciebie i bardzo lekko wgryza sie ostrymi zebami w twoje cialo.} {collect jaszczur $AVATAR_NAME JAS 2;#var tmpvalue {};#return 1};
-   #regex {$tmpvalue} {%* nadyma swe miesiste %* uskakujesz, a z sykiem skrzel laczy sie swist mijajacej cie broni.} {collect ryboczlek $AVATAR_NAME miss 0;#var tmpvalue {};#return 1};
-   #regex {$tmpvalue} {%* nadyma swe miesiste %*.%w w ostatniej chwili szczesliwie} {collect ryboczlek &3 dodge 0;#var tmpvalue {};#return 1};
+#nop GOB;	#regex {$tmpvalue} {%* wskakuje znienacka na twoje plecy i z upiornym chichotem gryzie cie niegroznie w szyje!} {collect gremlin $AVATAR_NAME GOB 1;#var tmpvalue {};#return 1};
+#nop JAS;	#regex {$tmpvalue} {%* jaszczur doskakuje do ciebie i niegroznie wgryza sie ostrymi zebami w twoje cialo.} {collect jaszczur $AVATAR_NAME JAS 1;#var tmpvalue {};#return 1};
+#nop JAS;   #regex {$tmpvalue} {%* jaszczur doskakuje do ciebie i bardzo lekko wgryza sie ostrymi zebami w twoje cialo.} {collect jaszczur $AVATAR_NAME JAS 2;#var tmpvalue {};#return 1};
+#nop RYB;   #regex {$tmpvalue} {%* nadyma swe miesiste %* uskakujesz, a z sykiem skrzel laczy sie swist mijajacej cie broni.} {collect ryboczlek $AVATAR_NAME miss 0;#var tmpvalue {};#return 1};
+#nop RYB;   #regex {$tmpvalue} {%* nadyma swe miesiste %*.%w w ostatniej chwili szczesliwie} {collect ryboczlek &3 dodge 0;#var tmpvalue {};#return 1};
+
    #regex {$tmpvalue} {%w %w %w wyprowadza %* ciebie, lecz} {collect &3 $AVATAR_NAME parry 0;#var tmpvalue {};#return 1};
    #regex {$tmpvalue} {%w wyprowadza %* ciebie, lecz} {collect &1 $AVATAR_NAME parry 0;#var tmpvalue {};#return 1};
    #regex {$tmpvalue} {%w %w %w probuje trafic %* przed tym ciosem.} {collect &3 unknown dodge 0;#var tmpvalue {};#return 1};
@@ -435,7 +413,17 @@
    #nop TALWAR;
 #nop MAG;   #regex {$tmpvalue} {Widzac, ze na ostrzu %* talwara %*, %w %w %w wykonuje %*, pozostawiajac tam spore oparzenie} {collect &5 unknown magic 3;#var tmpvalue {};#return 1};   
 #nop MAG;   #regex {$tmpvalue} {Widzac, ze na ostrzu %* talwara %*, %w wykonuje %*, pozostawiajac tam spore oparzenie} {collect &3 unknown magic 3;#var tmpvalue {};#return 1};
+   #nop TROJZAB Z PIERWSZEJ OSOBY;
+#nop MAG;   #regex {$tmpvalue} {Energicznie wyrzuconym ramieniem prowadzisz ogromny} {collect $AVATAR_NAME unknown miss 0;#var tmpvalue {};#return 1};
+#nop MAG;   #regex {$tmpvalue} {Wykonujac zamach uderzasz %* ogromnym ognistym %* smugi} {collect $AVATAR_NAME unknown magic 1;#var tmpvalue {};#return 1};
+#nop MAG;   #regex {$tmpvalue} {Uderzasz ogromnym ognistym trojzebem} {collect $AVATAR_NAME unknown magic 2;#var tmpvalue {};#return 1};
+#nop MAG;   #regex {$tmpvalue} {Plonaca stala ogromnego ognistego trojzebu przebijasz %* z zaskakujaca latwoscia wyrywajac tkanki} {collect $AVATAR_NAME unknown magic 3;#var tmpvalue {};#return 1};
+#nop MAG;   #regex {$tmpvalue} {Z moca uderzasz %* ogromnym ognistym trojzebem %* Swad} {collect $AVATAR_NAME unknown magic 4;#var tmpvalue {};#return 1};
+#nop MAG;   #regex {$tmpvalue} {Z impetem pozostawiajacym jeno plomienny} {collect $AVATAR_NAME unknown magic 5;#var tmpvalue {};#return 1};
+#nop MAG;   #regex {$tmpvalue} {Straszliwym ciosem, przekraczajacym niemal mozliwosci smiertelnika} {collect $AVATAR_NAME unknown magic 6;#var tmpvalue {};#return 1};
+#nop MAG;   #regex {$tmpvalue} {Momentalnie dostrzegasz stan wroga, decydujesz sie na ostateczny cios.} {collect $AVATAR_NAME unknown magic 7;#var tmpvalue {};#return 1};
 
+   #nop FAILOVER;
    #if {"$tmpvalue" != ""} {
       #line ignore {#sh {<118>[misc] <088>$tmpvalue2}};
    };

@@ -1,4 +1,6 @@
-WARN 1. Ustawienia
-TUTOR 	/conf CombatSub
-		0 - nie gaguje
-		1 - uniki + parowania + chybione
+WARN 1. Nalezy ustawic wg wlasnego uznania opcje OPISYWANIE...
+
+TUTOR 	/conf CombatGag
+		0 - wyswietlaj wszystko
+		1 - wyciczaj dodge, miss & parry
+		2 - wyciszaj dodge, miss, parry, hits, magic (pozostaw tylko spece)
