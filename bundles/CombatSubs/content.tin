@@ -422,7 +422,13 @@
 #nop MAG;   #regex {$tmpvalue} {Z impetem pozostawiajacym jeno plomienny} {collect $AVATAR_NAME unknown magic 5;#var tmpvalue {};#return 1};
 #nop MAG;   #regex {$tmpvalue} {Straszliwym ciosem, przekraczajacym niemal mozliwosci smiertelnika} {collect $AVATAR_NAME unknown magic 6;#var tmpvalue {};#return 1};
 #nop MAG;   #regex {$tmpvalue} {Momentalnie dostrzegasz stan wroga, decydujesz sie na ostateczny cios.} {collect $AVATAR_NAME unknown magic 7;#var tmpvalue {};#return 1};
-
+   #nop JATAGAN;
+#nop MAG;   #regex {$tmpvalue} {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana ledwo muskasz %*} {collect $AVATAR_NAME unknown magic 1;#var tmpvalue {};#return 1};
+#nop MAG;   #regex {$tmpvalue} {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana lekko ranisz %*} {collect $AVATAR_NAME unknown magic 2;#var tmpvalue {};#return 1};
+#nop MAG;   #regex {$tmpvalue} {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana ranisz %*} {collect $AVATAR_NAME unknown magic 3;#var tmpvalue {};#return 1};
+#nop MAG;   #regex {$tmpvalue} {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana powaznie ranisz %*} {collect $AVATAR_NAME unknown magic 4;#var tmpvalue {};#return 1};
+#nop MAG;   #regex {$tmpvalue} {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana bardzo ciezko ranisz %*} {collect $AVATAR_NAME unknown magic 5;#var tmpvalue {};#return 1};
+#nop MAG;   #regex {$tmpvalue} {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana masakrujesz %*} {collect $AVATAR_NAME unknown magic 6;#var tmpvalue {};#return 1};
    #nop FAILOVER;
    #if {"$tmpvalue" != ""} {
       #line ignore {#sh {<118>[misc] <088>$tmpvalue2}};
