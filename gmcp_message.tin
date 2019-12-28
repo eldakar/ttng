@@ -85,17 +85,11 @@
 			SplitWingMap_LabelMap <128>$current_room_short_desc;
 
 		};
-		
 		#case {"combat.team"} {
 			#var outputtext {$GMCPMSGS[text]};
 			#replace {outputtext} {\\n} {};
 			#nop line ignore {#sh ${outputtext}};
 			#var ciosy @dodajcios{$outputtext};
-
-			#ticker {POWALCE} {
-				qb otul sie plaszczem;
-				#unticker {POWALCE};
-			} {35};
 		};
 		#case {"combat.others"} {
 			#var outputtext {$GMCPMSGS[text]};
@@ -105,14 +99,7 @@
 		#case {"combat.avatar"} {
 			#var outputtext {$GMCPMSGS[text]};
 			#replace {outputtext} {\\n} {};
-			#nop line ignore {#sh ${outputtext}};
 			#var ciosy @dodajcios{$outputtext};
-
-			#unticker {POWALCE};
-			#ticker {POWALCE} {
-				qb otul sie plaszczem;
-				#unticker {POWALCE};
-			} {35};
 		};	
 		#case {"object.long"} 	{#sh $GMCPMSGS[text]};
 		#default {#sh $GMCPMSGS[text]};

@@ -158,6 +158,7 @@
 
 #alias {galka} {przekrec galke;odsun kredens};
 #alias {kratka} {zsun sie do studni;przeplyn pod kratka};
+#alias {blok_i_dzwignia} {wcisnij blok;pociagnij dzwignie};
 
 #action {~Znajdujesz sie na moscie laczacym skraje przepasci. Ta}
 {
@@ -198,3 +199,17 @@
 {
 	qb dobadz broni
 }
+
+#action {Gdzie chcesz usiasc? %*} {
+	#format tmpkrzeselka {%l} {%1};
+    #replace tmpkrzeselka {,} {;};
+    #replace tmpkrzeselka {?} {};
+    #replace tmpkrzeselka { czy} {;};
+    #list krzeslaDB create {$tmpkrzeselka};
+    #list krzeslaDB size kdb;
+    #math randomkrzesloindex {1d$kdb};
+    qb usiadz $krzeslaDB[$randomkrzesloindex];
+    #unvar krzeslaDB;
+    #unvar tmpkrzeselka;
+    #unvar randomkrzesloindex;
+};

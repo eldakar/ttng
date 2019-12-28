@@ -3,7 +3,7 @@
 	#sh {Sila:         $cmp_str};
 	#sh {Zrecznosc:    $cmp_dex};
 	#sh {Wytrzymalosc: $cmp_vit};
-	#class {ComparerOps} {close};
+	#class {ComparerOps} {kill};
 };
 
 #action {Masz wrazenie, ze jest rownie dobrze zbudowany} {#var cmp_vit 0;ComparerShow#line gag};
