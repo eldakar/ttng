@@ -193,3 +193,8 @@
 {
 	qb przekrec stylisko
 }
+
+#action {Alez %* {uprzaz|pochwa|temblak} jest zupelenie pust{y|a}...}
+{
+	qb dobadz broni
+}
