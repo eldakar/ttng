@@ -77,6 +77,7 @@
 #action {%1 znika w glebinach komina, pomagajac sobie przy tym wolna reka} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz do komina}};
 #action {%1 mocno odbija sie stopami od podloza i zaczyna wspinaczke wglab tunelu} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz do komina}};
 #action {%1 zaczyna wspinac sie po drabinie} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wespnij sie na gore}};
+#action {%1 zaczyna schodzic po drabinie} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zejdz na dol}};
 #action {%1 chwyta koncowe szczeble drabiny i zaczyna} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zejdz na dol po drabinie}};
 #action {%1 przeciska sie przez otwor} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie przez otwor}};
 #action {%1 bierze rozbieg i przeskakuje wyrwe} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przeskocz wyrwe}};
@@ -117,7 +118,8 @@
 #action {%1 pokonujac zarastajace droge zarosla wchodzi do wnetrza spalonej chaty} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz do chaty}};
 #action {%1 podaza znikajac w alkierzu.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz do alkierza}};
 #action {%1 podaza przez szczeline.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie przez szczeline}};
-#action {%1 zapiera sie nogami o grunt i probuje uniesc} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm unies krate}};
+#action {%1 zapiera sie nogami o grunt i probuje uniesc %* krate} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm unies krate}};
+#action {%1 zapiera sie nogami o grunt i probuje uniesc %* klape} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm unies klape}};
 #action {%1 wchodzi do %2 namiotu} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz do namiotu}};
 #action {%1 schodzi po starym pniu} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zejdz po pniu}};
 #action {%1 pokonuje kilkanascie kamiennych stopni} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz po stopniach}};
