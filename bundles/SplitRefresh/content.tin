@@ -1,6 +1,7 @@
 #var hline {};
 #alias {SplitRefreshRequestRefresh}
 {
+	#screen clear split;
 	#split $global_bundle_slots_values[prompt][top] $global_bundle_slots_values[prompt][bottom] $global_bundle_slots_values[prompt][left] $global_bundle_slots_values[prompt][right];
 	#foreach {*bundle_handler_split_request[]} {bhon} {
     	$bundle_handler_split_request[$bhon] %0;

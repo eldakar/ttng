@@ -11,6 +11,18 @@
     #nop sh {|} {$offsety} {$offsetx - 3};
 };
 
+#alias STARTRAIN {
+    #math offsety {$global_bundle_slots_values[prompt][top] + 1};
+    #screen get cols screencols;
+    #math offsetx {$screencols - $global_bundle_slots_values[prompt][right] + 3};
+    #math offseth {$screencols - 4};
+    #math offsetw {$screenrows - 2};
+    #map offset $offsety+1 $offsetx $offsetw-3 $offseth;
+
+    #ticker RAINING {
+        #draw blue rain $offsety+1 $offsetx $offsetw-3 $offseth rain 50 80 {.*};
+    } {0.5};
+}
 #alias {SplitWingMapWidth} {
     #var global_bundle_slots_values[prompt][right] $ConfigManager_Configs[SplitWingMapWidth];
     #nop Dependency: SplitRefresh;
