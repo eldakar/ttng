@@ -49,6 +49,7 @@
     #read bundles/LogManager/manifest.tin;
     #read bundles/Macros/manifest.tin;
     #read bundles/CombatSubs/manifest.tin;
+    #read bundles/Comparer/manifest.tin;
     
     #var r @bundleops_loadglobals{};
 

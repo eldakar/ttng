@@ -1,0 +1,13 @@
+#alias {/por$} {
+	#CLASS {ComparerOps} READ bundles/Comparer/subclass.tin;
+	porownaj sile z celem ataku;
+	porownaj zrecznosc z celem ataku;
+	porownaj wytrzymalosc z celem ataku;
+} {1};
+
+#alias {/por %*} {
+	#CLASS {ComparerOps} READ bundles/Comparer/subclass.tin;
+	porownaj sile z %1;
+	porownaj zrecznosc z %1;
+	porownaj wytrzymalosc z %1;
+} {1};

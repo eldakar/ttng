@@ -224,3 +224,4 @@
 	#echo {${c_stan_wysoki} >> ${c_druzyna}Od teraz F1 oznacza: 'wyciagnij wedke;zawiesc kotwiczke na wedce;zawies rybke na wedce;zarzuc wedke'};
 	#echo {${c_stan_wysoki} >> ${c_druzyna}Od teraz F2 oznacza: 'wyciagnij siec;zarzuc siec'};
 }
+
