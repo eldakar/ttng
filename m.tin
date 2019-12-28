@@ -50,16 +50,13 @@
     #read bundles/Macros/manifest.tin;
     #read bundles/CombatSubs/manifest.tin;
     #read bundles/Comparer/manifest.tin;
-    
+
     #var r @bundleops_loadglobals{};
 
     #nop TODO;
     #read expowiska.tin;
-    #nop read staty.tin;		#nop Zliczanie statystyk;
     #read gmcp_message.tin;	#nop GMCP;
     #read alias.tin;		#nop Aliasy do obslugi glownych funkcji;
-    #nop read mapevents.tin;	#nop Eventy na pokojach;    
-
 
     #config {debug telnet} {off};	#nop debug;
     #config {COMMAND ECHO} {off};	#nop wyswietlanie komend;
