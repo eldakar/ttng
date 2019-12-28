@@ -51,6 +51,9 @@
 #var KEY_PAD_U_B {\eOu};
 #var KEY_PAD_D_B {\eOp};
 
+#var KEY_PAD_DEL {\eOn};
+#var KEY_PAD_PLUS {\eOl};
+
 #macro {$KEY_PAD_S} {move_s}
 #macro {$KEY_PAD_N} {move_n}
 #macro {$KEY_PAD_W} {move_w}
