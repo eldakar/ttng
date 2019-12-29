@@ -8,7 +8,6 @@
 #action {{s|S}kelliganski drakkar Obronca Archipelagu{.| }} {wejdz_na_korsarski Skelliganski drakkar Obronca Archipelagu} {2};
 #action {{k|K}orsarski drakkar Zmora Nilfgaardu{.| }} {wejdz_na_korsarski Korsarski drakkar Zmora Nilfgaardu} {1};
 
-
 #alias {wejdz_na_korsarski %*} {
 	#format lowerc {%l} {%1};
 	#switch {"%1"} {
@@ -59,5 +58,78 @@
 #action {Drakkar doplywa do celu swojej podrozy.} {
 	#unticker plyniemy;
 	#echo {${c_noob}Drakkar: [ $plyniemy_sekundy sekund ]<088> %0};
+	qr porty_i_przystanie;
 	#line gag;
 };
+
+#alias {porty_i_przystanie} {
+	sprawdz liste portow;
+	wybierz;
+};
+#action {%* Odleglosc (mile)%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*} 
+{
+	#local buff {%0};
+	#local index {1};
+
+	#replace {buff} {\n} {;};
+	#list portyDB create {$buff};	
+	#echo {+-----+----------------------+------------+};	
+	#foreach {*portyDB[]} {pdb} {
+		#regex {$portyDB[$pdb]} {%* .. %d%s*} {	
+			#format {line} {| %-3s | %-20s | %+10s |} {<018>po$index<088>} {&1} {&2};
+			#echo {$line};
+			#switch {"&1"} {
+				#case {"Ard Skellige"} {#local tmpname {plyn na ard skellige}};
+				#case {"Averland"} {#local tmpname {plyn do averlandu}};
+				#case {"Baccala"} {#local tmpname {plyn do baccali}};
+				#case {"twierdza Bodrog"} {#local tmpname {plyn do twierdzy rozrog}};
+				#case {"Bogenhafen"} {#local tmpname {plyn do bogenhafen}};
+				#case {"wyspa Faroe"} {#local tmpname {plyn na wyspe faroe}};
+				#case {"Kaedwen"} {#local tmpname {plyn do kaedwen}};
+				#case {"Kraina Zgromadzenia"} {#local tmpname {plyn do krainy zgromadzenia}};
+				#case {"Lukomorze"} {#local tmpname {plyn na lukomorze}};
+				#case {"Marguilles"} {#local tmpname {plyn do marguilles}};
+				#case {"wyspa Mekan"} {#local tmpname {plyn na wyspie mekan}};
+				#case {"Nuln"} {#local tmpname {plyn do Nuln}};
+				#case {"Oxenfurt"} {#local tmpname {plyn do oxenfurtu}};
+				#case {"dolina srodkowego Pontaru"} {#local tmpname {plyn do doliny srodkowego pontaru}};
+				#case {"Quenelles"} {#local tmpname {plyn do quenelles}};
+				#case {"Rivia"} {#local tmpname {plyn do rivii}};
+				#case {"twierdza Rozrog"} {#local tmpname {plyn do twierdzy rozrog}};
+				#case {"Urbimo"} {#local tmpname {plyn do urbino}};
+				#case {"Viadaza"} {#local tmpname {plyn do viadazy}};
+				#case {"Siedliszcze Korsarzy"} {#local tmpname {plyn do siedliszcza korsarzy}};
+			};
+			#line substitute {variables} {#alias po$index {$tmpname}};
+			#math {index} {$index + 1};
+		};
+	};
+	#echo {+-----+----------------------+------------+};
+	#unvar portyDB;
+	#unvar line;
+	#line gag;
+}
+
+#action {Ktora przystan chcesz wybrac? %*}
+{
+	#local index {1};
+	#format tmpnabrzeza {%l} {%1};
+	#replace tmpnabrzeza {,} {;};
+    #replace tmpnabrzeza {?} {};
+    #replace tmpnabrzeza { czy} {;};
+    #list nabrzezaDB create {$tmpnabrzeza};
+    #list nabrzezaDB size kdb;
+	#echo {+-----+-----------------------------------+};	
+	#foreach {*nabrzezaDB[]} {pdb} {
+		#format {line} {| %-3s | %+33s |} {<028>cu$index<088>} {$nabrzezaDB[$pdb]};
+		#line substitute {variables} {#alias cu$index {wybierz $nabrzezaDB[$pdb]}};
+		#echo {$line};
+		#math {index} {$index + 1};
+	};
+	#echo {+-----+-----------------------------------+};
+
+    #unvar tmpnabrzeza;
+    #unvar nabrzezaDB;
+    #line gag;
+}
+
