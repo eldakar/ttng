@@ -36,8 +36,6 @@
     #read bundles/PlayerDB/manifest.tin;
     #read bundles/EquipmentStatus/manifest.tin;
     #read bundles/LootManager/manifest.tin;
-    #nop read bundles/MacroRemains/manifest.tin;
-    #nop read bundles/MacroLamp/manifest.tin;
     #read bundles/KillStats/manifest.tin;
     #read bundles/Stones/manifest.tin;
     #read bundles/SplitWingMap/manifest.tin;
@@ -58,7 +56,7 @@
     #read gmcp_message.tin;	#nop GMCP;
     #read alias.tin;		#nop Aliasy do obslugi glownych funkcji;
     #read tropienie.tin;
-    
+
     #config {debug telnet} {off};	#nop debug;
     #config {COMMAND ECHO} {off};	#nop wyswietlanie komend;
     #config {mouse} {on};		#nop obsluga myszy;

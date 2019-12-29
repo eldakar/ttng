@@ -200,6 +200,9 @@
 	qb dobadz broni
 }
 
+#nop #####################################################################;
+#nop SIADANIE W KNAJPACH #################################################;
+#nop #####################################################################;
 #action {Gdzie chcesz usiasc? %*} {
 	#format tmpkrzeselka {%l} {%1};
     #replace tmpkrzeselka {,} {;};
@@ -212,4 +215,26 @@
     #unvar krzeslaDB;
     #unvar tmpkrzeselka;
     #unvar randomkrzesloindex;
+};
+
+#nop #####################################################################;
+#nop LOWIENIE RYB ########################################################;
+#nop #####################################################################;
+#alias zarzuc_wedke {
+		wyciagnij wedke;
+		wl ryby;
+		zawies kotwiczke na wedce;
+		zawies rybke na wedce;
+		zarzuc wedke;
+};
+#action {Nagle dostrzegasz, ze zanurzony w wodzie sznurek %* wedki napina sie!} {
+	qr zetnij rybe na wedce;
+	#bell;
+};
+#action {Slyszysz suchy trzask i dostrzegasz, ze zdobycz zerwala sie z %* wedki, lamiac ja przy tym|Nagle %* wedka zostaje wciagnieta pod wode} {
+	#bell;
+};
+#action {{Wyciagasz zlapana rybe na powierzchnie|Sznurek %* wedki opada swobodnie na wode, zapewne zlapanej nan rybie udalo sie zerwac}} {
+	qr zarzuc_wedke;
+	#bell;
 };
