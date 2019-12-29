@@ -403,7 +403,7 @@
 #nop JAS;   #regex {$tmpvalue} {%* jaszczur doskakuje do ciebie i bardzo lekko wgryza sie ostrymi zebami w twoje cialo.} {collect jaszczur $AVATAR_NAME JAS 2;#var tmpvalue {}};
 #nop RYB;   #regex {$tmpvalue} {%* nadyma swe miesiste %* uskakujesz, a z sykiem skrzel laczy sie swist mijajacej cie broni.} {collect ryboczlek $AVATAR_NAME miss 0;#var tmpvalue {}};
 #nop RYB;   #regex {$tmpvalue} {%* nadyma swe miesiste %*.%w w ostatniej chwili szczesliwie} {collect ryboczlek &3 dodge 0;#var tmpvalue {}};
-#nop RYB;   #regex {$tmpvalue} {%* nadyma swe miesiste %* twoich %* z wlasnie powstalej niewielkiej rany} {collect ryboczlek $AVATAR_NAME RYB 3;#var tmpvalue {}};
+#nop RYB;   #regex {$tmpvalue} {%* nadyma swe miesiste %* twoich %* z wlasnie powstalej niewielkiej rany} {collect ryboczlek $AVATAR_NAME RYB 1;#var tmpvalue {}};
 
    #regex {$tmpvalue} {%w %w %w wyprowadza %* ciebie, lecz} {collect &3 $AVATAR_NAME parry 0;#var tmpvalue {}};
    #regex {$tmpvalue} {%w wyprowadza %* ciebie, lecz} {collect &1 $AVATAR_NAME parry 0;#var tmpvalue {}};

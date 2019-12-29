@@ -1567,7 +1567,7 @@ zamknij czwarty przytroczony woreczek;
 #var zioladb[Macznica][sposob][kn] {rozgryz};
 #var zioladb[Pieciornik][sposob][kn] {rozgryz};
 #var zioladb[Dziurawiec][sposob][kn] {rozgryz};
-#var zioladb[Naparstnica][sposob] {};
+#var zioladb[Naparstnica][sposob][zm] {zjedz};
 #var zioladb[Nostrzyk][sposob][zm] {rozgryz};
 #var zioladb[Nostrzyk][sposob][gl] {zjedz};
 #var zioladb[Bylica][sposob][zm] {przyloz};
