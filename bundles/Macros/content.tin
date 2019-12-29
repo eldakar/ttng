@@ -53,3 +53,6 @@
 
 #alias {MacNumPLUS} {#line sub variables {#macro {$KEY_PAD_PLUS} {$ConfigManager_Configs[MacNumPLUS]}};} 
 #alias {MacNumDEL} {#line sub variables {#macro {$KEY_PAD_DEL} {$ConfigManager_Configs[MacNumDEL]}};} 
+
+#alias {MacNumSLASH} {#line sub variables {#macro {$KEY_PAD_SLASH} {$ConfigManager_Configs[MacNumSLASH]}};} 
+#alias {MacNumASTERIX} {#line sub variables {#macro {$KEY_PAD_ASTERIX} {$ConfigManager_Configs[MacNumASTERIX]}};}

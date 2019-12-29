@@ -25,6 +25,8 @@
 	#list bundle_configs add {MacTylda};
 	#list bundle_configs add {MacNumDEL};
 	#list bundle_configs add {MacNumPLUS};
+	#list bundle_configs add {MacNumASTERIX};
+	#list bundle_configs add {MacNumSLASH};
 	
 #list bundle_slots clear;
 	#list bundle_slots add {macros};
