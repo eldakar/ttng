@@ -542,7 +542,7 @@
   #replace ret {siedem} {7} {7};
   #replace ret {osiem} {8} {7};
   #replace ret {dziewiec} {9} {7};
-  #replace ret {wiele} {$wiele};
+  #replace ret {wiele} {40};
   #return $ret;
 }
 
@@ -1233,7 +1233,7 @@ zamknij czwarty przytroczony woreczek;
   dobadz broni;
 }
 
-#alias {kup wszystkie ziola} {
+#unalias {kup wszystkie ziola} {
   #delay {0.3} {kup 10 zoltych jasnych kwiatow};
   #delay {0.3} {kup 10 okraglawych aromatycznych lisci};
   #delay {0.3} {kup 10 rozetkowatych lancetowatych lisci};
