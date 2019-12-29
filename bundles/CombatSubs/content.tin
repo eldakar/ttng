@@ -77,13 +77,6 @@
 #unaction {~^Jedna z ran zwalistego szarawego trolla zamyka sie z ohydnym mlasnieciem.$}
  {#echo {<caa> [trl ?/?]<088> %0<aaa>,};#line gag;} {6};
 #NOP * FANATYK *;
-#unaction {~^%* rzuca sie do ataku. %* trafia cie w %* ledwo muskajac %*.$} {#echo {<caa> [fan 1/7]<088> %0<aaa>,};#line gag;};
-#unaction {~^%* rzuca sie do ataku. %* trafia cie w %* lekko raniac %*.$} {#echo {<caa> [fan 2/7]<088> %0<aaa>,};#line gag;};
-#unaction {~^%* rzuca sie do ataku. %* trafia cie w %* {^lekko |powaznie |bardzo ciezko }raniac %*.$} {#echo {<caa> [fan 3/7]<088> %0<aaa>,};#line gag;};
-#unaction {~^%* rzuca sie do ataku. %* trafia cie w %* powaznie raniac %*.$} {#echo {<caa> [fan 4/7]<088> %0<aaa>,};#line gag;};
-#unaction {~^%* rzuca sie do ataku. %* trafia cie w %* bardzo ciezko raniac %*.$} {#echo {<caa> [fan 5/7]<088> %0<aaa>,};#line gag;};
-#unaction {~^%* rzuca sie do ataku. %* trafia cie w %* masakrujac %*.$} {#echo {<caa> [fan 6/7]<088> %0<aaa>,};#line gag;};
-#unaction {~^%* staje pewnie %* uderzenie %*. %* trafia cie, zaglebiajac bron w twoim ciele. Stoisz przez chwile nieruchomo a potem, tracac wladze w nogach, osuwasz sie na ziemie. Z trudem przebijajac wzrokiem klebiaca ci sie przed oczami mgle zauwazasz, jak na twarzy %* pojawia sie szyderczy, posepny usmiech...$} {#echo {<caa> [fan 7/7]<088> %0<aaa>,};#line gag;};
 #NOP WALKA INNYCH
 #unaction {~^%* ledwo muska %*.$} {#echo { <118><ffa><fff>[1/6]<088> %0<aaa>,};#line gag;};
 #unaction {~^%* lekko rani %*.$} {#echo { <118><ffa><fff>[2/6]<088> %0<aaa>,};#line gag;};
@@ -397,6 +390,16 @@
 
 #nop KOR;   #regex {$tmpvalue} {%w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect &1 unknown KS 4;#var tmpvalue {}};
 #nop KOR;   #regex {$tmpvalue} {%w %w %w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect &4 unknown KS 4;#var tmpvalue {}};
+
+#nop FAN;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* ledwo muskajac %*} {collect &1 unknown MC 1;#var tmpvalue {}};
+#nop FAN;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* lekko raniac %*} {collect &1 unknown MC 2;#var tmpvalue {}};
+#nop FAN;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* powaznie raniac %*} {collect &1 unknown MC 4;#var tmpvalue {}};
+#nop FAN;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* bardzo ciezko raniac %*} {collect &1 unknown MC 5;#var tmpvalue {}};
+#nop FAN;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* masakrujac %*} {collect &1 unknown MC 6;#var tmpvalue {}};
+#nop FAN;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* masakrujac %*} {collect &1 unknown MC 6;#var tmpvalue {}};
+#nop FAN;   #regex {$tmpvalue} {%* staje pewnie %* uderzenie %*} {collect &1 unknown MC 7;#var tmpvalue {}};
+
+
 
 #nop GOB;	#regex {$tmpvalue} {%* wskakuje znienacka na twoje plecy i z upiornym chichotem gryzie cie niegroznie w szyje!} {collect gremlin $AVATAR_NAME GOB 1;#var tmpvalue {}};
 #nop JAS;	#regex {$tmpvalue} {%* jaszczur doskakuje do ciebie i niegroznie wgryza sie ostrymi zebami w twoje cialo.} {collect jaszczur $AVATAR_NAME JAS 1;#var tmpvalue {}};
