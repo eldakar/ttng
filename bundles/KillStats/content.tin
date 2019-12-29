@@ -75,7 +75,7 @@
 
 #var pierwszy_postep {0};
 
-#action {~^Zabil{es|as} %2.$}
+#action {^Zabil{es|as} %2.$}
 {
 	#math {kill_count} {$kill_count+1};
 	#math {total_kill_count} {$kill_count + $they_kill_count};
@@ -90,7 +90,7 @@
 	#line gag;
 };
 
-#action {~%1 zabi{la|l} %3.$}
+#action {%1 zabi{la|l} %3.$}
 {
 	#math {they_kill_count} {$they_kill_count+1};
 	#math {total_kill_count} {$kill_count + $they_kill_count};
