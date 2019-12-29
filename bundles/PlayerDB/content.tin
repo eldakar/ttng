@@ -105,7 +105,7 @@
 #alias {/ktoto %w %w %w$} {
 	#format {opislower} {%l} {%1 %2 %3};
 	#line substitute {variables} {
-		#system {$mysqlcommand"select ImieM, OpisM, Gildia from bazapostaci where OpisM = '$opislower';" 2>/dev/null}
+		#script {ktotolist} {$mysqlcommand"select ImieM, OpisM, Gildia from bazapostaci where OpisM = '$opislower';" 2>/dev/null}
 	};	
 } {1};
 
@@ -113,7 +113,9 @@
 	#format {imiewielblad} {%l} {%1};
 	#format {imiewielblad} {%n} {$imiewielblad};
 	#line substitute {variables} {
-		#system {$mysqlcommand"select ImieM, OpisM, Gildia from bazapostaci where ImieM = '$imiewielblad';" 2>/dev/null}
+		#script {ktotolist} {$mysqlcommand"select ImieM, OpisM, Gildia from bazapostaci where ImieM = '$imiewielblad';" 2>/dev/null}
 	};	
+	SplitWingMap_Popup $ktotolist[1]\n$ktotolist[2];
+
 } {1};
 

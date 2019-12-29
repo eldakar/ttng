@@ -5,6 +5,9 @@
 #map flag static on;
 #map flag vtmap off;
 #map legend 48 <FAA>#<088>;
+#map leg 197 \\;
+#map leg 200 ./;
+#map leg 218 >;
 
 #alias {TTMapMode} {
     #switch {"$ConfigManager_Configs[TTMapMode]"} {
