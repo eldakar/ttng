@@ -288,7 +288,7 @@
       #case {"miss"} {#if {$gaglevel < 1} {#line ignore {#showme {<078>[%3] $tmpvalue2}}}};
       #case {"parry"} {#if {$gaglevel < 1} {#line ignore {#showme {<078>[%3] $tmpvalue2}}}};
       #case {"hit"} {#if {$gaglevel < 2} {#line ignore {#showme {<178>[%4/6]<088> $tmpvalue2}}}};
-      #case {"magic"} {#if {$gaglevel < 2} {#line ignore {#showme {${c_stan_sredni}[%3 %4/6]<088> $tmpvalue2}}}};
+      #case {"magic"} {#if {$gaglevel < 2} {#line ignore {#showme {<138>[%3 %4/6]<088> $tmpvalue2}}}};
       #default {#line ignore {#showme {<118><fca>[%3 %4/6]<088> $tmpvalue2}}};
    };
 	#nop line ignore {#showme {<178>[%3 %4/6]<088> $tmpvalue2}};
