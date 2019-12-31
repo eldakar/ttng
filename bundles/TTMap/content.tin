@@ -137,17 +137,19 @@
     #var note_found 0;
     #var bind_found 0;
     #map get roomvnum voom;
-    #map get roomweight roov;
     #map get roomarea rooa;
-    #if {$roov == 8} {#var note_found 1};
+    #map get roomdata roon;
+    #list roon size roonsize;
     #if {"$rooa" != ""} {$rooa};
 };
 
 #event {MAP UPDATED VTMAP} {
     SplitWingMap_LabelMap <128>$current_room_short_desc;
-
     #if {$bind_found > 0} {
         SplitWingMap_LabelBind $bind_run;
+    };
+    #if {$roonsize > 0} {
+        SplitWingMap_Journal $roon;
     };
 };
 

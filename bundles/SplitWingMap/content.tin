@@ -46,6 +46,12 @@
     };
 };
 
+#alias {SplitWingMap_Journal} {
+    #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
+        #draw jeweled box $offsety+34 $offsetx+3 $offsetw-5 $offseth-3 <088>%0;
+    };
+};
+
 #alias {SplitWingMap_LabelMap} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
         #draw circled box $offsety+2 $offsetx+3 $offsety+4 $offseth-3 <088>%0<088>;

@@ -62,6 +62,10 @@
 	#line gag;
 };
 
+#action {Drakkar odplywa od brzegu.} {
+	qr porty_i_przystanie;
+}
+
 #alias {porty_i_przystanie} {
 	sprawdz liste portow;
 	wybierz;

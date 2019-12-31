@@ -1,0 +1,184 @@
+#alias {/test %*} {
+	#unvar vroomdata;
+	#unvar vroomindexes;
+	#unvar roomdatavalue;
+	#class roomdata read roomdata.tt;
+	#class roomdata size roomdataDBsize;
+	#class roomdata open;
+	#if {$roomdataDBsize < 1} {};
+
+	#list vroomdata size vroomdatasize;
+	#map get roomvnum vum;
+
+	#format timeStamp {%t} {%c};
+	#var roomdatavalue[author] $AVATAR_NAME;
+	#var roomdatavalue[stamp] $timeStamp;
+	#var roomdatavalue[message] {%1};
+	#var roomdatavalue[id] $vum;
+
+	#if {$vroomdatasize > 0} {
+		#list vroomdata add {{$roomdatavalue}};
+		#list vroomdata size vroomdatasize;
+		#var vroomindexes[$vum] {$vroomdatasize};
+	} {
+		#list vroomdata create;
+		#list vroomdata add {{$roomdatavalue}};
+		#list vroomdata size vroomdatasize;
+		#var vroomindexes[$vum] {$vroomdatasize};
+	};
+	#class roomdata close;
+	#class roomdata write roomdata.tt;
+	#class roomdata kill roomdata.tt;
+} {1}
+
+
+#alias {/znajdz %*} {
+	#class roomdata read roomdata.tt;
+	#foreach {$vroomdata[]} {vrud} {
+		#regex {$vroomdata[$vrud][message]} {%1} {
+			#replace {vroomdata[$vrud][message]} {%1} {<138>%1<088>};
+			#echo {$vrud. $vroomdata[$vrud][stamp] $vroomdata[$vrud][id] <178>$vroomdata[$vrud][author]};
+			#echo {   $vroomdata[$vrud][message] };
+		};
+	};	
+} {1};
+
+
+#alias {/znajdznr %d} {
+	#class roomdata read roomdata.tt;
+	#foreach {$vroomdata[]} {vrud} {
+		#if {"$vroomdata[$vrud][id]" == "%1"} {
+			#echo {$vrud. $vroomdata[$vrud][stamp] $vroomdata[$vrud][id] <178>$vroomdata[$vrud][author]};
+			#echo {   $vroomdata[$vrud][message] };
+		};
+	};	
+} {1};
+
+
+
+#event {MAP UPDATED VTMAP} {
+    SplitWingMap_LabelMap <128>$current_room_short_desc;
+    #if {$bind_found > 0} {
+        SplitWingMap_LabelBind $bind_run;
+    };
+    #if {$roonsize > 0} {
+        SplitWingMap_Journal $roon;
+    };
+};
+
+#alias {/s %*} {
+	#unvar checkpoints;
+	#var cpcmd 1;
+    #map list {roomnote} {data} {variable} {checkpoints};
+    #foreach {$checkpoints[]} {vcpv} {
+
+    	#map at {$vcpv} {
+    		#map get roomdata RDtable;
+    	};
+
+    	#foreach {*RDtable[]} {rdv} {
+    		#regex {$RDtable[$rdv][message]} {%1} {
+    			#replace {RDtable[$rdv][message]} {%1} {<138>%1<028>};
+    			#echo {================Dodal=====================================Czas};
+    			#echo { %-6s %+7s %-15s %+30s} {idz$cpcmd} {$vcpv} {<178>$RDtable[$rdv][author]<088>} {$RDtable[$rdv][stamp]};
+    			#line ignore #sh {<028>$RDtable[$rdv][message]};
+    			#line ignore #sh { };
+    		};
+    	};
+
+        #math vcpvcheck {0};
+        #math vcpvcheck {($vcpvcheck + $checkpoints[$vcpv][distance]) / 2 + 1};
+        #if {$vcpvcheck > 1} {
+            #if {$vcpvcheck < 1000} {
+                #map at {$vcpv} {
+                    #map get roomnote cp_roomnote;
+                    #map get roomdesc cp_roomdesc;
+                    #map get roomarea cp_roomarea;
+                };
+                #line substitute variables {
+                    #alias {walk$cpcmd} {
+                        #map run {$vcpv} {0.8};
+                    };
+                };
+                
+                #format {cpd_runcmd} {%-2s %.2s} {$cpcmd};
+                #format {cpd_area} {%-7s %.7s} {$cp_roomarea};
+                #format {cpd_distance} {%+6s %.6s} {$vcpvcheck};
+                #format {cpd_note} {%-20s %.20s} {$cp_roomnote};
+                #format {cpd_short} {%-20s %.20s} {$cp_roomdesc};
+                #format {cpd_roomid} {%+6s %.6s} {$vcpv};
+                #format {cp_command} {%+6s} {run${cpcmd}};
+                #nop var cplist[$cpcmd] {$cpd_distance $cpd_area:<088> $cp_roomnote};
+                #nop sh {$cpd_roomid Dyst: $cpd_distance $cpd_area:<088> $cp_roomnote};
+                #math {cpcmd} {$cpcmd + 1};
+            };
+        };
+    };
+} {1};
+
+#alias {/n %*} {
+	#map get roomdata vroomdata;
+	#list vroomdata size vroomdatasize;
+
+	#format timeStamp {%t} {%c};
+	#var roomdatavalue[author] $AVATAR_NAME;
+	#var roomdatavalue[stamp] $timeStamp;
+	#var roomdatavalue[message] {%1};
+	#var roomdatavalue[type] {test};
+
+	#if {$vroomdatasize > 0} {
+		#math vr {$vroomdatasize + 1};
+		#list vroomdata add {{$roomdatavalue}};
+	} {
+		#list vroomdata create;
+		#list vroomdata add {{$roomdatavalue}};
+	};
+	#map set roomdata $vroomdata;
+	#map set roomnote {data};
+} {1}
+
+
+
+
+#alias {/zadania %*} {
+    #unvar cplist;
+    #unvar zadania;
+    #var cplist[1] {};
+    #var cpcmd {2};
+
+	#var zadania[1] {%1};
+    #foreach {$zadania[]} {zadd} {
+        #unvar checkpoints;
+        #line debug #map list {} {} {} {%1} {variable} {checkpoints};
+
+        #foreach {$checkpoints[]} {vcpv} {
+            #math vcpvcheck {0};
+            #math vcpvcheck {$vcpvcheck + $checkpoints[$vcpv][distance]};
+            #if {$vcpvcheck > 1} {
+                #if {$vcpvcheck < 100} {
+                    #map at {$vcpv} {
+                        #map get roomnote cp_roomnote;
+                        #map get roomdesc cp_roomdesc;
+                        #map get roomarea cp_roomarea;
+                    };
+                    #line substitute variables {
+                        #alias {walk$cpcmd} {
+                            #map run {$vcpv} {0.8};
+                        };
+                    };
+                    
+                    #format {cpd_runcmd} {%-2s %.2s} {$cpcmd};
+                    #format {cpd_area} {%-7s %.7s} {$cp_roomarea};
+                    #format {cpd_distance} {%+6s %.6s} {$checkpoints[$vcpv][distance]};
+                    #format {cpd_note} {%-20s %.20s} {$cp_roomnote};
+                    #format {cpd_short} {%-20s %.20s} {$cp_roomdesc};
+                    #format {cpd_roomid} {%+6s %.6s} {$vcpv};
+                    #format {cp_command} {%+6s} {run${cpcmd}};
+                    #nop var cplist[$cpcmd] {$cpd_distance $c_rooms[$zadania[$zadd]]$cpd_area:<088> $cp_roomnote};
+                    #sh {$cpd_runcmd Dyst: $cpd_distance $c_rooms[$zadania[$zadd]]$cpd_area:<088> $cp_roomnote};
+                    #math {cpcmd} {$cpcmd + 1};
+                };
+            };
+        };
+    };
+} {1};
