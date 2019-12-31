@@ -172,15 +172,28 @@
     mapsave;
 };
 
-#action {<PORT> NOTE %d %*} {
+#action {<PORT> NOTE %d %w %*} {
     #map goto %1;
-    #map get roomvnum voom;
-    #map set roomsymbol {<178>i<088>};
-    #format {_p_c_stamp_} {%t} {%Y-%m-%d %H:%M:%S};
-    #line substitute variables {
-        #system {echo "$_p_c_stamp_ %2" 2>/dev/null >> bundles/TTMap/%1};
+    #map get roomdata vroomdata;
+    #list vroomdata size vroomdatasize;
+
+    #format timeStamp {%t} {%d%m%y %r};
+    #var roomdatavalue[author] %2;
+    #var roomdatavalue[stamp] $timeStamp;
+    #var roomdatavalue[message] {%3};
+    #var roomdatavalue[type] {test};
+
+    #if {$vroomdatasize > 0} {
+        #math vr {$vroomdatasize + 1};
+        #list vroomdata add {{$roomdatavalue}};
+    } {
+        #list vroomdata create;
+        #list vroomdata add {{$roomdatavalue}};
     };
-    broadcast NOTE %1;
+    #map set roomdata $vroomdata;
+    #map set roomnote {data};
+
+    broadcast NOTE %1 %2 %3;
     mapsave;
 } {1};
 

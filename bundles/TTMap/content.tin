@@ -149,7 +149,16 @@
         SplitWingMap_LabelBind $bind_run;
     };
     #if {$roonsize > 0} {
-        SplitWingMap_Journal $roon;
+        #local outputstr {};
+        #foreach {*roon[]} {roonvec} {
+            #format {line} {%s %s %s} {<178>$roon[$roonvec][author]<088>} {$roon[$roonvec][stamp]} {<028>$roon[$roonvec][message]<088>};
+            #local outputstr {$outputstr\n$line};
+        };
+        #switch {"$voom"} {
+            #case {"14133"} {SplitWingMap_Board $outputstr;};
+            #case {"14130"} {SplitWingMap_Board $outputstr;};
+            #default {SplitWingMap_Journal $outputstr;};
+        };
     };
 };
 
