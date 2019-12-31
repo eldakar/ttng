@@ -54,7 +54,7 @@
 
 #alias {SplitWingMap_Board} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw jeweled box $offsety+5 $offsetx+3 $offsetw-5 $offseth-3 <088>%0;
+        #draw jeweled box $offsety+10 $offsetx+3 $offsetw-5 $offseth-3 <088>%0;
     };
 };
 

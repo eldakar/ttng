@@ -178,7 +178,8 @@
     #list vroomdata size vroomdatasize;
 
     #format timeStamp {%t} {%d%m%y %r};
-    #var roomdatavalue[author] %2;
+    #unvar roomdatavalue;
+    #var roomdatavalue[author] {%2};
     #var roomdatavalue[stamp] $timeStamp;
     #var roomdatavalue[message] {%3};
     #var roomdatavalue[type] {test};

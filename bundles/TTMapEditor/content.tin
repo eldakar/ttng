@@ -446,10 +446,10 @@
 
 
 #alias {/n %*} {
-    #if {$PONGED == 1} {
+    #if {$PONGED == 2} {
         #map get roomvnum v;
         #line substitute {variables} {#brain {#port send $brainId {NOTE $voom $AVATAR_NAME %1}}};
-    } {show_ponged_error};
+    } {show_ponged_error2};
 } {1};
 
 #alias {/s %*} {
