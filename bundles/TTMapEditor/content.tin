@@ -53,9 +53,10 @@
     };
 } {1};
 
-#brain #action {<PORT> NOTE %1 %*} {
+#brain #action {<PORT> NOTE %1 %2 %*} {
     #line substitute {variables} {
         #rpg #map at {%1} {
+            #nop echo {PORT NOTE %1 %2 %3};
             #map get roomdata vroomdata;
             #list vroomdata size vroomdatasize;
 
@@ -449,6 +450,7 @@
     #if {$PONGED == 2} {
         #map get roomvnum v;
         #line substitute {variables} {#brain {#port send $brainId {NOTE $voom $AVATAR_NAME %1}}};
+        #nop echo {#brain {#port send $brainId {NOTE $voom $AVATAR_NAME %1}}};
     } {show_ponged_error2};
 } {1};
 
