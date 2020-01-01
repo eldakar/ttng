@@ -323,7 +323,7 @@
     #rpg #map at {%1} {#map set roomsymbol};
     #rpg #map at {%1} {#map set roomarea};
     
-    unbroadcast UNEVENT %1;
+    broadcast UNEVENT %1;
     mapsave;
 } {1};
 

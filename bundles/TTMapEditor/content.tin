@@ -1,8 +1,6 @@
 #nop #################################################################################;
 #nop Edycja map;
 #nop #################################################################################;
-#var PONGED 0;
-
 #alias {/reconnect} {TTMapEditorAddress;} {1};
 #alias {/mapka} {/help TTMapEditor} {1};
 
@@ -479,26 +477,11 @@
 
         #if {$vcpvcheck > 1} {
             #if {$vcpvcheck < 1000} {
-                #map at {$vcpv} {
-                    #map get roomnote cp_roomnote;
-                    #map get roomdesc cp_roomdesc;
-                    #map get roomarea cp_roomarea;
-                };
                 #line substitute variables {
                     #alias {walk$cpcmd} {
                         #map run {$vcpv} {0.8};
                     };
                 };
-                
-                #format {cpd_runcmd} {%-2s %.2s} {$cpcmd};
-                #format {cpd_area} {%-7s %.7s} {$cp_roomarea};
-                #format {cpd_distance} {%+6s %.6s} {$vcpvcheck};
-                #format {cpd_note} {%-20s %.20s} {$cp_roomnote};
-                #format {cpd_short} {%-20s %.20s} {$cp_roomdesc};
-                #format {cpd_roomid} {%+6s %.6s} {$vcpv};
-                #format {cp_command} {%+6s} {run${cpcmd}};
-                #nop var cplist[$cpcmd] {$cpd_distance $cpd_area:<088> $cp_roomnote};
-                #nop sh {$cpd_roomid Dyst: $cpd_distance $cpd_area:<088> $cp_roomnote};
                 #math {cpcmd} {$cpcmd + 1};
             };
         };
