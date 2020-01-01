@@ -1,6 +1,7 @@
 #action {Przytrzymujac sie wanty zaczynasz wspinac sie na bocianie gniazdo.} {frozen_set};
 #action {Przytrzymujac sie wanty zaczynasz schodzic na dol.} {frozen_set};
 #action {Zaczynasz wspinac sie na gore.} {frozen_set};
+#action {Zaczynasz wspinac sie na drzewo.} {frozen_set};
 #action {Zaczynasz schodzic na dol.} {frozen_set};
 #action {Zaczynasz przeszukiwac %*.} {frozen_set; qr przestan;};
 #action {Zaczynasz plynac %*.} {frozen_set};
