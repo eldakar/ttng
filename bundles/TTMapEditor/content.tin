@@ -1,7 +1,10 @@
 #nop #################################################################################;
 #nop Edycja map;
 #nop #################################################################################;
-#alias {/reconnect} {TTMapEditorAddress;} {1};
+#alias {/reconnect} {
+    #line substitute {variables} {#brain {#port zap $brainId}};
+    TTMapEditorAddress;
+} {1};
 #alias {/mapka} {/help TTMapEditor} {1};
 
 #alias {TTMapEditorAddress} {
@@ -452,6 +455,33 @@
     } {show_ponged_error2};
 } {1};
 
+#alias {/s$} {
+    #unvar checkpoints;
+    #var cpcmd 1;
+    #map list {roomnote} {data} {variable} {checkpoints};
+    #echo {alias dystans pokoj ktododal};
+    #echo {-------------------------------};
+    #foreach {$checkpoints[]} {vcpv} {
+        #math vcpvcheck {0};
+        #math vcpvcheck {($vcpvcheck + $checkpoints[$vcpv][distance]) / 2 - 3};
+
+        #map at {$vcpv} {
+            #map get roomdata RDtable;
+        };
+
+        #if {$vcpvcheck < 100} {
+            #replace {RDtable[$rdv][message]} {%1} {<138>%1<028>};
+            #echo {%-6s %-6s %+5s %s %s %s} {idz$cpcmd} {$vcpvcheck} {$vcpv} {<178>$RDtable[$rdv][author]<088>} {$RDtable[$rdv][stamp]} {<028>$RDtable[$rdv][message]};
+        };
+
+    #if {$vcpvcheck < 10} {#line substitute variables {#alias {idz$cpcmd} {#map run {$vcpv} {0.5};};};#math {cpcmd} {$cpcmd + 1};};
+    #elseif {$vcpvcheck < 50} {#line substitute variables {#alias {idz$cpcmd} {#map run {$vcpv} {1};};};#math {cpcmd} {$cpcmd + 1};};
+    #elseif {$vcpvcheck < 100} {#line substitute variables {#alias {idz$cpcmd} {#map run {$vcpv} {2};};};#math {cpcmd} {$cpcmd + 1};};
+
+    };
+
+} {1};
+
 #alias {/s %*} {
     #unvar checkpoints;
     #var cpcmd 1;
@@ -460,7 +490,7 @@
     #echo {-------------------------------};
     #foreach {$checkpoints[]} {vcpv} {
         #math vcpvcheck {0};
-        #math vcpvcheck {($vcpvcheck + $checkpoints[$vcpv][distance]) / 2 + 1};
+        #math vcpvcheck {($vcpvcheck + $checkpoints[$vcpv][distance]) / 2 - 3};
 
         #map at {$vcpv} {
             #map get roomdata RDtable;
@@ -468,23 +498,17 @@
 
         #foreach {*RDtable[]} {rdv} {
             #regex {$RDtable[$rdv][message]} {%1} {
-                #replace {RDtable[$rdv][message]} {%1} {<138>%1<028>};
-                #echo {%-6s %-6s %+5s %s %s %s} {idz$cpcmd} {$vcpvcheck} {$vcpv} {<178>$RDtable[$rdv][author]<088>} {$RDtable[$rdv][stamp]} {<028>$RDtable[$rdv][message]};
-                #nop line ignore #sh {<028>$RDtable[$rdv][message]};
-                #nop line ignore #sh { };
+                #if {$vcpvcheck < 100} {
+                    #replace {RDtable[$rdv][message]} {%1} {<138>%1<028>};
+                    #echo {%-6s %-6s %+5s %s %s %s} {idz$cpcmd} {$vcpvcheck} {$vcpv} {<178>$RDtable[$rdv][author]<088>} {$RDtable[$rdv][stamp]} {<028>$RDtable[$rdv][message]};
+                };
             };
         };
 
-        #if {$vcpvcheck > 1} {
-            #if {$vcpvcheck < 1000} {
-                #line substitute variables {
-                    #alias {walk$cpcmd} {
-                        #map run {$vcpv} {0.8};
-                    };
-                };
-                #math {cpcmd} {$cpcmd + 1};
-            };
-        };
+#if {$vcpvcheck < 10} {#line substitute variables {#alias {idz$cpcmd} {#map run {$vcpv} {0.5};};};#math {cpcmd} {$cpcmd + 1};};
+#elseif {$vcpvcheck < 50} {#line substitute variables {#alias {idz$cpcmd} {#map run {$vcpv} {1};};};#math {cpcmd} {$cpcmd + 1};};
+#elseif {$vcpvcheck < 100} {#line substitute variables {#alias {idz$cpcmd} {#map run {$vcpv} {2};};};#math {cpcmd} {$cpcmd + 1};};
+
     };
 } {1};
 

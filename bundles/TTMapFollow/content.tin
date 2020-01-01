@@ -98,6 +98,7 @@
 #action {%*{Podazasz|podazasz} za %1 na zewnatrz.} {#map move wyjscie;};
 #action {%*{Podazasz|podazasz} za %1 do srodka otworu.} {#map move otwor;};
 #action {%*{Podazasz|podazasz} za %1 za brame.} {#map move brama;};
+#action {%*{Podazasz|podazasz} za %1 do wiezy.} {#map move wieza;};
 #action {%*{Podazasz|podazasz} za %1 na zewnatrz baszty.} {#map move wyjscie;};
 #action {%*{Podazasz|podazasz} za %1 wznoszacym sie korytarzem ku powierzchni.} {#map move u;};
 #action {%*{Podazasz|podazasz} za %1 w dol sciezka przy scianie wodospadu.} {#map move d;};
@@ -133,3 +134,12 @@
         #map move krzaki;
     };
 }
+
+#action {%*{Podazasz|podazasz} za %1 na polnoc, {brodzac w wodzie morskiej.|wychodzac nabrzeg.}} {#map move n;}
+#action {%*{Podazasz|podazasz} za %1 na poludnie, {brodzac w wodzie morskiej.|wychodzac nabrzeg.}} {#map move s;}
+#action {%*{Podazasz|podazasz} za %1 na wschod, {brodzac w wodzie morskiej.|wychodzac nabrzeg.}} {#map move e;}
+#action {%*{Podazasz|podazasz} za %1 na zachod, {brodzac w wodzie morskiej.|wychodzac nabrzeg.}} {#map move w;}
+#action {%*{Podazasz|podazasz} za %1 na polnocny-zachod, {brodzac w wodzie morskiej.|wychodzac nabrzeg.}} {#map move nw;}
+#action {%*{Podazasz|podazasz} za %1 na poludniowy-zachod, {brodzac w wodzie morskiej.|wychodzac nabrzeg.}} {#map move sw;}
+#action {%*{Podazasz|podazasz} za %1 na polnocny-wschod, {brodzac w wodzie morskiej.|wychodzac nabrzeg.}} {#map move ne;}
+#action {%*{Podazasz|podazasz} za %1 na poludniowy-wschod, {brodzac w wodzie morskiej.|wychodzac nabrzeg.}} {#map move se;}

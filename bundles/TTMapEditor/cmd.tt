@@ -1,0 +1,75 @@
+#alias {/nc {F1|F2|F3} %*} {
+	#map get roomdata vroomdata;
+	#list vroomdata size vroomdatasize;
+
+	#format timeStamp {%t} {%d%m%y %r};
+	#var roomdatavalue[author] $AVATAR_NAME;
+	#var roomdatavalue[stamp] $timeStamp;
+	#var roomdatavalue[message] {%2};
+	#var roomdatavalue[type] {command};
+	#var roomdatavalue[macrokey] {%1};
+
+	#if {$vroomdatasize < 1} {
+		#list vroomdata create;
+		#list vroomdata add {{$roomdatavalue}};				
+	} {
+		#foreach {*vroomdata[]} {vr} {
+			#if {"$vroomdata[$vr][type]" == "command"} {
+				#if {"$vroomdata[$vr][macrokey]" == "%1"} {
+					#var vroomdata[$vr][message] {%2};
+					#var roomdatavalue[author] $AVATAR_NAME;
+					#var roomdatavalue[stamp] $timeStamp;
+				} {
+					#math vr {$vroomdatasize + 1};
+					#list vroomdata add {{$roomdatavalue}};
+				}
+			} {
+				#math vr {$vroomdatasize + 1};
+				#list vroomdata add {{$roomdatavalue}};
+			}
+		};
+	};
+	#map set roomdata $vroomdata;
+	#map set roomnote {data};
+} {1}
+
+#alias backupConfig {
+	#var ConfigManager_ConfigsBackup $ConfigManager_Configs;
+};
+
+#alias restoreConfig {
+	#var ConfigManager_Configs $ConfigManager_ConfigsBackup;
+};
+
+#event {MAP UPDATED VTMAP} {
+    SplitWingMap_LabelMap <128>$current_room_short_desc;
+    #if {$bind_found > 0} {
+        SplitWingMap_LabelBind $bind_run;
+    };
+    #if {$roonsize > 0} {
+        #local outputstr {};
+        #foreach {*roon[]} {roonvec} {
+        	#switch {"$roon[$roonvec][type]"} {
+        		#case {"test"} {
+		        	#format {line} {%s %s %s} {<178>$roon[$roonvec][author]<088>} {$roon[$roonvec][stamp]} {<028>$roon[$roonvec][message]<088>};
+		            #local outputstr {$outputstr\n$line};
+		        };
+		        #case {"command"} {
+		        	#switch {"$roon[$roonvec][macrokey]"} {
+		        		#case {"F1"} {
+		        			#local outputstr {$outputstr\n<118> *** <128> $roon[$roonvec][macrokey] <118> *** <138> $roon[$roonvec][message] <088>};
+		        		};
+		        		#default {
+		        			#local outputstr {$outputstr\n<118> *** ?? *** <138> $roon[$roonvec][message] <088>};
+		        		};
+					};
+		        };
+            };
+        };
+        #switch {"$voom"} {
+            #case {"14133"} {SplitWingMap_Board $outputstr;};
+            #case {"14130"} {SplitWingMap_Board $outputstr;};
+            #default {SplitWingMap_Journal $outputstr;};
+        };
+    };
+};

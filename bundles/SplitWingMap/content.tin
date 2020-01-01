@@ -48,7 +48,11 @@
 
 #alias {SplitWingMap_Journal} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw jeweled box $offsety+34 $offsetx+3 $offsetw-5 $offseth-3 <088>%0;
+        #if {$ConfigManager_Configs[SplitWingMapWidth] > 50} {
+            #draw jeweled box $offsety+34 $offsetx+3 $offsetw-5 $offseth-3 <088>%0;
+        } {
+            SplitWingMap_Popup %0;
+        };
     };
 };
 
