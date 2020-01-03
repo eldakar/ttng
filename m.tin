@@ -70,7 +70,7 @@
     };
 };
 
-#nop event {SESSION DISCONNECTED} {
+#event {SESSION DISCONNECTED} {
     #if {"%0" == "rpg"} {
         #end;
     };
