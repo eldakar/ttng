@@ -59,8 +59,14 @@
 		        		#case {"F1"} {
 		        			#local outputstr {$outputstr\n<118> *** <128> $roon[$roonvec][macrokey] <118> *** <138> $roon[$roonvec][message] <088>};
 		        		};
+		        		#case {"F2"} {
+		        			#local outputstr {$outputstr\n<118> *** <128> $roon[$roonvec][macrokey] <118> *** <138> $roon[$roonvec][message] <088>};
+		        		};
+		        		#case {"F3"} {
+		        			#local outputstr {$outputstr\n<118> *** <128> $roon[$roonvec][macrokey] <118> *** <138> $roon[$roonvec][message] <088>};
+		        		};
 		        		#default {
-		        			#local outputstr {$outputstr\n<118> *** ?? *** <138> $roon[$roonvec][message] <088>};
+		        			#local outputstr {$outputstr\n<118> ***  ??  *** <138> $roon[$roonvec][message] <088>};
 		        		};
 					};
 		        };
