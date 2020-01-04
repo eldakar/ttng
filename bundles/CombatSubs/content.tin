@@ -380,26 +380,26 @@
 	#regex {$tmpvalue} {Wyprowadzasz %+, lecz ten zbija je %+} {collect $AVATAR_NAME unknown parry 0;#var tmpvalue {}};
    #regex {$tmpvalue} {Probujesz trafic %*, lecz} {collect $AVATAR_NAME unknown miss 0;#var tmpvalue {}};
 
-#nop WKS;	#regex {$tmpvalue} {Szybkim niczym mysl ruchem %* wytracasz %*} {collect $AVATAR_NAME unknown WKS 0;#var tmpvalue {}};
-#nop WKS;	#regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* pozostawiajac ledwie sinca.} {collect $AVATAR_NAME unknown WKS 1;#var tmpvalue {}};
-#nop WKS;   #regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* pozostawiajac krwawiace zadrapanie.} {collect $AVATAR_NAME unknown WKS 2;#var tmpvalue {}};
-#nop WKS;   #regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* pozostawiajac dluga, poszarpana rane.} {collect $AVATAR_NAME unknown WKS 4;#var tmpvalue {}};
-#nop WKS;   #regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* pozostawiajac gleboka rane z wystajacymi na wierzchu tkankami.} {collect $AVATAR_NAME unknown WKS 5;#var tmpvalue {}};
-#nop WKS;   #regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* zadajac smiertelne obrazenia.} {collect $AVATAR_NAME unknown WKS 6;#var tmpvalue {}};
-#nop WKS;   #regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* tracisz rownowage} {collect $AVATAR_NAME unknown miss 0;#var tmpvalue {}};
+#nop WKS1;   #regex {$tmpvalue} {Szybkim niczym mysl ruchem %* wytracasz %*} {collect $AVATAR_NAME unknown WKS_WYTRACASZ 0;#var tmpvalue {}};
+#nop WKS1;   #regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* pozostawiajac ledwie sinca.} {collect $AVATAR_NAME unknown WKS 1;#var tmpvalue {}};
+#nop WKS1;   #regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* pozostawiajac krwawiace zadrapanie.} {collect $AVATAR_NAME unknown WKS 2;#var tmpvalue {}};
+#nop WKS1;   #regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* pozostawiajac dluga, poszarpana rane.} {collect $AVATAR_NAME unknown WKS 4;#var tmpvalue {}};
+#nop WKS1;   #regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* pozostawiajac gleboka rane z wystajacymi na wierzchu tkankami.} {collect $AVATAR_NAME unknown WKS 5;#var tmpvalue {}};
+#nop WKS1;   #regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* zadajac smiertelne obrazenia.} {collect $AVATAR_NAME unknown WKS 6;#var tmpvalue {}};
+#nop WKS1;   #regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* tracisz rownowage} {collect $AVATAR_NAME unknown miss 0;#var tmpvalue {}};
 
-#nop KOR;   #regex {$tmpvalue} {%w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect &1 unknown KS 4;#var tmpvalue {}};
-#nop KOR;   #regex {$tmpvalue} {%w %w %w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect &4 unknown KS 4;#var tmpvalue {}};
+#nop WKS3;   #regex {$tmpvalue} {%* szybkim niczym mysl ruchem %* wytraca ci} {collect %1 $AVATAR_NAME WKS_WYTRACA 0;#var tmpvalue {}};
 
-#nop FAN;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* ledwo muskajac %*} {collect &1 unknown MC 1;#var tmpvalue {}};
-#nop FAN;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* lekko raniac %*} {collect &1 unknown MC 2;#var tmpvalue {}};
-#nop FAN;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* powaznie raniac %*} {collect &1 unknown MC 4;#var tmpvalue {}};
-#nop FAN;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* bardzo ciezko raniac %*} {collect &1 unknown MC 5;#var tmpvalue {}};
-#nop FAN;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* masakrujac %*} {collect &1 unknown MC 6;#var tmpvalue {}};
-#nop FAN;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* masakrujac %*} {collect &1 unknown MC 6;#var tmpvalue {}};
-#nop FAN;   #regex {$tmpvalue} {%* staje pewnie %* uderzenie %*} {collect &1 unknown MC 7;#var tmpvalue {}};
+#nop KOR3;   #regex {$tmpvalue} {%w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect &1 unknown KS 4;#var tmpvalue {}};
+#nop KOR3;   #regex {$tmpvalue} {%w %w %w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect &4 unknown KS 4;#var tmpvalue {}};
 
-
+#nop FAN3;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* ledwo muskajac %*} {collect &1 unknown MC 1;#var tmpvalue {}};
+#nop FAN3;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* lekko raniac %*} {collect &1 unknown MC 2;#var tmpvalue {}};
+#nop FAN3;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* powaznie raniac %*} {collect &1 unknown MC 4;#var tmpvalue {}};
+#nop FAN3;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* bardzo ciezko raniac %*} {collect &1 unknown MC 5;#var tmpvalue {}};
+#nop FAN3;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* masakrujac %*} {collect &1 unknown MC 6;#var tmpvalue {}};
+#nop FAN3;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* masakrujac %*} {collect &1 unknown MC 6;#var tmpvalue {}};
+#nop FAN3;   #regex {$tmpvalue} {%* staje pewnie %* uderzenie %*} {collect &1 unknown MC 7;#var tmpvalue {}};
 
 #nop GOB;	#regex {$tmpvalue} {%* wskakuje znienacka na twoje plecy i z upiornym chichotem gryzie cie niegroznie w szyje!} {collect gremlin $AVATAR_NAME GOB 1;#var tmpvalue {}};
 #nop JAS;	#regex {$tmpvalue} {%* jaszczur doskakuje do ciebie i niegroznie wgryza sie ostrymi zebami w twoje cialo.} {collect jaszczur $AVATAR_NAME JAS 1;#var tmpvalue {}};
