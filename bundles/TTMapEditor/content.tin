@@ -109,7 +109,7 @@
                     };
                 };
                 #if {$searchforbind < 1} {
-                    #list vroomdata create;
+                    #math vr {$vroomdatasize + 1};
                     #list vroomdata add {{$roomdatavalue}};             
                 };
             };
