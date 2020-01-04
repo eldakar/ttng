@@ -5,6 +5,11 @@
     #line substitute {variables} {#brain {#port zap $brainId}};
     TTMapEditorAddress;
 } {1};
+
+#alias {/reload} {
+    #line substitute {variables} {#brain {#port send $brainId {RELOAD}}};
+};
+
 #alias {/mapka} {/help TTMapEditor} {1};
 
 #alias {TTMapEditorAddress} {

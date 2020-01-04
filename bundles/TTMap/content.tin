@@ -315,6 +315,18 @@
 #nop #################################################################################;
 #nop Lazik;
 #nop #################################################################################;
+#var arkadirections[polnocny-wschod] {ne};
+#var arkadirections[poludniowy-wschod] {se};
+#var arkadirections[wschod] {e};
+#var arkadirections[zachod] {w};
+#var arkadirections[polnocny-zachod] {nw};
+#var arkadirections[poludniowy-zachod] {sw};
+#var arkadirections[polnoc] {n};
+#var arkadirections[poludnie] {s};
+#var arkadirections[gora] {u};
+#var arkadirections[dol] {d};
+#var arkadirections[gore] {u};
+
 #alias {pidz} {
     #if {$b == 2} {
         #switch {"$movedir"} {
