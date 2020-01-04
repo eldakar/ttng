@@ -338,8 +338,8 @@
 };
 
 #action {<PORT> UNEVENT %d} {
-    #rpg #map at {%1} {#map set roomsymbol};
-    #rpg #map at {%1} {#map set roomarea};
+    #map at {%1} {#map set roomsymbol};
+    #map at {%1} {#map set roomarea};
     
     broadcast UNEVENT %1;
     mapsave;
