@@ -210,22 +210,23 @@
             #list vroomdata create;
             #list vroomdata add {{$roomdatavalue}};             
         } {
+            #var searchforbind 0;
             #foreach {*vroomdata[]} {vr} {
                 #if {"$vroomdata[$vr][type]" == "command"} {
                     #if {"$vroomdata[$vr][macrokey]" == "%3"} {
                         #var vroomdata[$vr][message] {%4};
                         #var roomdatavalue[author] %2;
                         #var roomdatavalue[stamp] $timeStamp;
-                    } {
-                        #math vr {$vroomdatasize + 1};
-                        #list vroomdata add {{$roomdatavalue}};
-                    }
-                } {
-                    #math vr {$vroomdatasize + 1};
-                    #list vroomdata add {{$roomdatavalue}};
-                }
+                        #var searchforbind 1;
+                    };
+                };
+            };
+            #if {$searchforbind < 1} {
+                #list vroomdata create;
+                #list vroomdata add {{$roomdatavalue}};             
             };
         };
+
         #map set roomdata $vroomdata;
         #map set roomnote {data};
         broadcast BIND %1 %2 %3 %4;
