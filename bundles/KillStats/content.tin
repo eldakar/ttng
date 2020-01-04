@@ -33,7 +33,7 @@
 		#case {13} {#var postepy wspaniale};
 		#case {14} {#var postepy gigantyczne};
 		#case {15} {#var postepy niebotyczne};
-	}
+	};
 
 	#return $postepy;
 };
@@ -85,7 +85,7 @@
 
 	_killstats_save_cache;
 
-	#line ignore {#sh %0 (Od @poziomy_postepow{$current_postep}: $kill_count/$total_kill_count)}
+	#line ignore {#sh {<018>%0 (Od @poziomy_postepow{$current_postep}: $kill_count/$total_kill_count)};
 	#nop echo {==> Zabici od @poziomy_postepow{$current_postep}: $kill_count/$total_kill_count};
 	#line gag;
 };
@@ -99,7 +99,7 @@
 	#var expo[$current_postep][totalkills] {$total_kill_count};
 
 	_killstats_save_cache;
-	#line ignore {#sh %0 (Od @poziomy_postepow{$current_postep}: $kill_count/$total_kill_count)}
+	#line ignore {#sh {<018>%0 (Od @poziomy_postepow{$current_postep}: $kill_count/$total_kill_count)};
 	#nop echo {==> Zabici od @poziomy_postepow{$current_postep}: $kill_count/$total_kill_count};
 	#line gag;
 };
@@ -126,6 +126,7 @@
 			_killstats_load_cache %1;
 		} {
 			_killstats_init_postep %1;
+			/kills;
 		};
 	} {
 		#nop should never happen?;

@@ -143,7 +143,7 @@
     #if {"$rooa" != ""} {$rooa};
 };
 
-#event {MAP UPDATED VTMAP} {
+#nop event {MAP UPDATED VTMAP} {
     SplitWingMap_LabelMap <128>$current_room_short_desc;
     #if {$bind_found > 0} {
         SplitWingMap_LabelBind $bind_run;
@@ -161,6 +161,50 @@
         };
     };
 };
+
+
+#event {MAP UPDATED VTMAP} {
+    SplitWingMap_LabelMap <128>$current_room_short_desc;
+    #if {$bind_found > 0} {
+        SplitWingMap_LabelBind $bind_run;
+    };
+    #if {$roonsize > 0} {
+        #local outputstr {};
+        #foreach {*roon[]} {roonvec} {
+            #switch {"$roon[$roonvec][type]"} {
+                #case {"test"} {
+                    #format {line} {%s %s %s} {<178>$roon[$roonvec][author]<088>} {$roon[$roonvec][stamp]} {<028>$roon[$roonvec][message]<088>};
+                    #local outputstr {$outputstr\n$line};
+                };
+                #case {"command"} {
+                    #switch {"$roon[$roonvec][macrokey]"} {
+                        #case {"F1"} {
+                            #local outputstr {$outputstr\n<118> *** <128> $roon[$roonvec][macrokey] <118> *** <138> $roon[$roonvec][message] <088>};
+                        };
+                        #case {"F2"} {
+                            #local outputstr {$outputstr\n<118> *** <128> $roon[$roonvec][macrokey] <118> *** <138> $roon[$roonvec][message] <088>};
+                        };
+                        #case {"F3"} {
+                            #local outputstr {$outputstr\n<118> *** <128> $roon[$roonvec][macrokey] <118> *** <138> $roon[$roonvec][message] <088>};
+                        };
+                        #default {
+                            #local outputstr {$outputstr\n<118> ***  ??  *** <138> $roon[$roonvec][message] <088>};
+                        };
+                    };
+                };
+            };
+        };
+        #switch {"$voom"} {
+            #case {"14133"} {SplitWingMap_Board $outputstr;};
+            #case {"14130"} {SplitWingMap_Board $outputstr;};
+            #default {SplitWingMap_Journal $outputstr;};
+        };
+    };
+};
+
+
+
+
 
 #nop #################################################################################;
 #nop ODNAJDYWANIE SIE NA MAPIE
@@ -253,6 +297,9 @@
     };
 };
 
+#nop #################################################################################;
+#nop Komenda UNDO - uzywana do cofania kulki;
+#nop #################################################################################;
 #alias undo {
     #if {$trytomove == 1} {
         #map undo;
@@ -265,6 +312,36 @@
     };
 }
 
+#nop #################################################################################;
+#nop Lazik;
+#nop #################################################################################;
+#alias {pidz} {
+    #if {$b == 2} {
+        #switch {"$movedir"} {
+            #case {"zachod"} {#var lastmove {wschod}};
+            #case {"wschod"} {#var lastmove {zachod}};
+            #case {"gora"} {#var lastmove {dol}};
+            #case {"dol"} {#var lastmove {gora}};
+            #case {"polnoc"} {#var lastmove {poludnie}};
+            #case {"poludnie"} {#var lastmove {polnoc}};
+            #case {"poludniowy-zachod"} {#var lastmove {polnocny-wschod}};
+            #case {"poludniowy-wschod"} {#var lastmove {polnocny-zachod}};
+            #case {"polnocny-zachod"} {#var lastmove {poludniowy-wschod}};
+            #case {"polnocny-wschod"} {#var lastmove {poludniowy-zachod}};
+        };
+        #if {"$ROOM_INFO[exits][1]" == "$lastmove"} {
+            #var trytomove 1;
+            #send {$arkadirections[$ROOM_INFO[exits][2]]};
+            #map move {$arkadirections[$ROOM_INFO[exits][2]]};
+            #var movedir {$ROOM_INFO[exits][2]};
+        } {
+            #var trytomove 1;
+            #send {$arkadirections[$ROOM_INFO[exits][1]]};
+            #map move {$arkadirections[$ROOM_INFO[exits][1]]};
+            #var movedir {$ROOM_INFO[exits][1]};
+        };
+    };
+}
 
 #nop ################################################################;
 #nop ################################################################;

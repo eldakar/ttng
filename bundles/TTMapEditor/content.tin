@@ -80,6 +80,45 @@
     };
 } {1};
 
+#brain #action {<PORT> BIND %1 %2 %3 %*} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {
+            #map get roomdata vroomdata;
+            #list vroomdata size vroomdatasize;
+
+            #format timeStamp {%t} {%d%m%y %r};
+            #var roomdatavalue[author] %2;
+            #var roomdatavalue[stamp] $timeStamp;
+            #var roomdatavalue[message] {%4};
+            #var roomdatavalue[type] {command};
+            #var roomdatavalue[macrokey] {%3};
+
+            #if {$vroomdatasize < 1} {
+                #list vroomdata create;
+                #list vroomdata add {{$roomdatavalue}};             
+            } {
+                #foreach {*vroomdata[]} {vr} {
+                    #if {"$vroomdata[$vr][type]" == "command"} {
+                        #if {"$vroomdata[$vr][macrokey]" == "%3"} {
+                            #var vroomdata[$vr][message] {%4};
+                            #var roomdatavalue[author] %2;
+                            #var roomdatavalue[stamp] $timeStamp;
+                        } {
+                            #math vr {$vroomdatasize + 1};
+                            #list vroomdata add {{$roomdatavalue}};
+                        }
+                    } {
+                        #math vr {$vroomdatasize + 1};
+                        #list vroomdata add {{$roomdatavalue}};
+                    }
+                };
+            };
+            #map set roomdata $vroomdata;
+            #map set roomnote {data};
+        };
+    };
+} {1};
+
 #brain #action {<PORT> EVENT %d %*} {
     #line substitute {variables} {
         #rpg #map at {%1} {#map set roomsymbol {<168>@<088>}};
@@ -137,7 +176,10 @@
 #brain #action {<PORT> HIDE %d %w} {
     #line substitute {variables} {
         #rpg #map at {%1} {
-            #line substitute variables {#map exitflag %2 hide on};
+            #line substitute variables {
+                #map exitflag %2 hide on;
+                #map exit %2 color <138>;
+            };
         };
     };
 }
@@ -145,7 +187,10 @@
 #brain #action {<PORT> UNHIDE %d %w} {
     #line substitute {variables} {
         #rpg #map at {%1} {
-            #line substitute variables {#map exitflag %2 hide off};
+            #line substitute variables {
+                #map exitflag %2 hide off;
+                #map exit %2 color;
+            };
         };
     };
 };
@@ -455,6 +500,14 @@
     } {show_ponged_error2};
 } {1};
 
+#alias {/nc {F1|F2|F3} %*} {
+    #if {$PONGED == 2} {
+        #map get roomvnum v;
+        #line substitute {variables} {#brain {#port send $brainId {BIND $voom $AVATAR_NAME %1 %2}}};
+        #nop echo {#brain {#port send $brainId {NOTE $voom $AVATAR_NAME %1}}};
+    } {show_ponged_error2};
+} {1};
+
 #alias {/s$} {
     #unvar checkpoints;
     #var cpcmd 1;
@@ -505,9 +558,9 @@
             };
         };
 
-#if {$vcpvcheck < 10} {#line substitute variables {#alias {idz$cpcmd} {#map run {$vcpv} {0.5};};};#math {cpcmd} {$cpcmd + 1};};
-#elseif {$vcpvcheck < 50} {#line substitute variables {#alias {idz$cpcmd} {#map run {$vcpv} {1};};};#math {cpcmd} {$cpcmd + 1};};
-#elseif {$vcpvcheck < 100} {#line substitute variables {#alias {idz$cpcmd} {#map run {$vcpv} {2};};};#math {cpcmd} {$cpcmd + 1};};
+        #if {$vcpvcheck < 10} {#line substitute variables {#alias {idz$cpcmd} {#map run {$vcpv} {0.5};};};#math {cpcmd} {$cpcmd + 1};};
+        #elseif {$vcpvcheck < 50} {#line substitute variables {#alias {idz$cpcmd} {#map run {$vcpv} {1};};};#math {cpcmd} {$cpcmd + 1};};
+        #elseif {$vcpvcheck < 100} {#line substitute variables {#alias {idz$cpcmd} {#map run {$vcpv} {2};};};#math {cpcmd} {$cpcmd + 1};};
 
     };
 } {1};
