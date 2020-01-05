@@ -168,9 +168,6 @@
 
 #event {MAP UPDATED VTMAP} {
     SplitWingMap_LabelMap <128>$current_room_short_desc;
-    #var f1backup $ConfigManager_Configs[MacF1];
-    #var f2backup $ConfigManager_Configs[MacF2];
-    #var f3backup $ConfigManager_Configs[MacF3];
     #if {$bind_found > 0} {
         SplitWingMap_LabelBind $bind_run;
     };

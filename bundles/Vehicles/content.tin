@@ -46,6 +46,10 @@
 {
 		qb DYLIZANS_IN;
 }
+#action {{.*} powoz powoli zatrzymuje sie.}
+{
+		qb POWOZ_IN;
+}
 #action {Otwarty stojacy powoz.}
 {
 		qb POWOZ_IN;
