@@ -51,7 +51,8 @@
             #nop                   Y          X        Y + H        X + W            ;      
             #nop draw jeweled box $offsety+34 $offsetx+3 $offsetw-5 $offseth-3 <088>%0;
             #math maxheight { ($offsetw - 5 - $offsety) / 3 };
-            #draw jeweled box $offsety+$maxheight+$maxheight $offsetx+3 $offsetw-$maxheight $offseth-3 <088>%0;
+            #math bot_row {$offsetw - ($offsetw / 5)};
+            #draw bottom tile $bot_row $offsetx $offsetw $offseth-3 <088>%0;
     };
 };
 

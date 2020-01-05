@@ -108,10 +108,6 @@
       };
     };
 
-    
-    #if {$profiles_roza == 3} {
-        #map map 30x15;
-    };
     #if {$frozen_status == 1} {
         frozen_unset;
     };

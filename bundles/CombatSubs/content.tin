@@ -439,7 +439,7 @@
 
    #nop FAILOVER;
    #if {"$tmpvalue" != ""} {
-      #line ignore {#sh {<118>[misc] <088>$tmpvalue2}};
+      #line ignore {#sh {<088>[misc] <088>$tmpvalue2}};
    };
 	#return 0;
 };
