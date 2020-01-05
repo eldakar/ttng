@@ -434,6 +434,9 @@
 #nop MAG;   #regex {$tmpvalue} {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana powaznie ranisz %*} {collect $AVATAR_NAME unknown magic 4;#var tmpvalue {}};
 #nop MAG;   #regex {$tmpvalue} {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana bardzo ciezko ranisz %*} {collect $AVATAR_NAME unknown magic 5;#var tmpvalue {}};
 #nop MAG;   #regex {$tmpvalue} {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana masakrujesz %*} {collect $AVATAR_NAME unknown magic 6;#var tmpvalue {}};
+   #nop AMULET;
+#nop MAG1;  #regex {$tmpvalue} {Od twojego amuletu emanuje przyjemne cieplo.} {collect $AVATAR_NAME unknown magic 0;#var tmpvalue {}};
+
    #nop FAILOVER;
    #if {"$tmpvalue" != ""} {
       #line ignore {#sh {<118>[misc] <088>$tmpvalue2}};

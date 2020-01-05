@@ -141,6 +141,9 @@
     #map get roomdata roon;
     #list roon size roonsize;
     #if {"$rooa" != ""} {$rooa};
+    #if {"$f1backup" != ""} {#var f1backup $ConfigManager_Configs[MacF1];};
+    #if {"$f2backup" != ""} {#var f2backup $ConfigManager_Configs[MacF2];};
+    #if {"$f2backup" != ""} {#var f3backup $ConfigManager_Configs[MacF3];};
 };
 
 #nop event {MAP UPDATED VTMAP} {
@@ -165,6 +168,9 @@
 
 #event {MAP UPDATED VTMAP} {
     SplitWingMap_LabelMap <128>$current_room_short_desc;
+    #var f1backup $ConfigManager_Configs[MacF1];
+    #var f2backup $ConfigManager_Configs[MacF2];
+    #var f3backup $ConfigManager_Configs[MacF3];
     #if {$bind_found > 0} {
         SplitWingMap_LabelBind $bind_run;
     };
@@ -180,12 +186,30 @@
                     #switch {"$roon[$roonvec][macrokey]"} {
                         #case {"F1"} {
                             #local outputstr {$outputstr\n<118> *** <128> $roon[$roonvec][macrokey] <118> *** <138> $roon[$roonvec][message] <088>};
+                            #var tmpF1value {$roon[$roonvec][message]};
+                            #replace tmpF1value {,} {;};
+                            #alias tmpF1bind {
+                                $tmpF1value;
+                                #var ConfigManager_Configs[MacF1] $f1backup;
+                            };
                         };
                         #case {"F2"} {
                             #local outputstr {$outputstr\n<118> *** <128> $roon[$roonvec][macrokey] <118> *** <138> $roon[$roonvec][message] <088>};
+                            #var tmpF2value {$roon[$roonvec][message]};
+                            #replace tmpF2value {,} {;};
+                            #alias tmpF2bind {
+                                $tmpF2value;
+                                #var ConfigManager_Configs[MacF2] $f2backup;
+                            };
                         };
                         #case {"F3"} {
                             #local outputstr {$outputstr\n<118> *** <128> $roon[$roonvec][macrokey] <118> *** <138> $roon[$roonvec][message] <088>};
+                            #var tmpF3value {$roon[$roonvec][message]};
+                            #replace tmpF3value {,} {;};
+                            #alias tmpF3bind {
+                                $tmpF3value;
+                                #var ConfigManager_Configs[MacF3] $f2backup;
+                            };                            
                         };
                         #default {
                             #local outputstr {$outputstr\n<118> ***  ??  *** <138> $roon[$roonvec][message] <088>};

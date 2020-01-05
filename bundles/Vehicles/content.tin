@@ -2,6 +2,16 @@
 
 #nop DYLIZANSE;
 
+#alias {POWOZ_IN} {
+	#if {$frozen_status == 1} {przestan;};
+	wym;wsiadz do powozu;wlm;
+};
+
+#alias {POWOZ_OUT} {
+	#if {$frozen_status == 1} {przestan;};
+	wyjscie;
+};
+
 #alias {DYLIZANS_IN} {
 	#if {$frozen_status == 1} {przestan;};
 	wym;wsiadz do dylizansu;wlm;
@@ -35,6 +45,10 @@
 #action {{.*} dylizans powoli zatrzymuje sie.}
 {
 		qb DYLIZANS_IN;
+}
+#action {Otwarty stojacy powoz.}
+{
+		qb POWOZ_IN;
 }
 
 #nop STATKI;

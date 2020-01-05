@@ -136,14 +136,11 @@
 #action {%1 kladzie sie na posadzce i znika w dziurze w scianie.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie przez szczeline}};
 #action {%1 przeciska sie przez pekniecie.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie przez szczeline}};
 #action {%1 przeciska sie do baszty.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie do baszty}};
-
 #action {%1 schodzki po kamiennych schodkach.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zejdz po schodkach}};
-
 #action {%1 sciaga kaptur plaszcza z glowy.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm sciagnij kaptur}};
 #action {%1 otula sie szczelnie %2 plaszczem.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm otul sie plaszczem}};
 #action {%1 naciaga na glowe kaptur i otula sie szczelnie %2 plaszczem.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm otul sie plaszczem}};
 #action {%1 naciaga kaptur plaszcza na glowe.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm otul sie plaszczem}};
-
 #action {%1 schodzi z drakkara na brzeg.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zejdz ze statku}};
 #action {%1 wskazuje na dol.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm trop}};
 
@@ -151,11 +148,9 @@
 #action {%* zsuwa sie ostroznie do studziennego otworu.} {#var klpr @set_quickbind_blue_move{kratka};#var kk @_print_bind{%0};#line gag};
 #action {%* zeskakuje na skalna polke.} {#var klpr @set_quickbind_blue_move{zeskocz na polke};#var kk @_print_bind{%0};#line gag};
 #action {%* bierze krotki rozbieg i przeskakuje nad rozpadlina.} {#var klpr @set_quickbind_blue_move{przeskocz rozpadline};#var kk @_print_bind{%0};#line gag};
-
 #action {~Nie jestes zbyt pewny swojej umiejetnosci latania...} {#var klpr @set_quickbind_blue_move{pociagnij linke};#var kk @_print_bind{%0};#line gag};
 #action {~Niewielka furtka otwiera sie.} {#var klpr @set_quickbind_blue_move{furtka};#var kk @_print_bind{%0};#line gag};
 #action {~{z|Z}nika za nim i ku twemu} {#var klpr @set_quickbind_blue_move{obroc rzezbe};#var kk @_print_bind{%0};#line gag};
-
 #action {^%1 nabiera powietrza} {#var klpr @set_quickbind_green{na};#var kk @_print_bind{%0};#line gag};
 
 #alias {galka} {przekrec galke;odsun kredens};

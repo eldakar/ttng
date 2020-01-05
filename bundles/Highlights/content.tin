@@ -40,19 +40,12 @@
 #action {"Witaj, moj nowy Panie!"} {Highlights_magic %0;#line gag;};
 #action {Z zalem opuszczasz ogromny ognisty trojzab, a w twej glowie rozlega sie tajemniczy glos:} {Highlights_magic %0;#line gag;};
 #action {"Zegnaj, moj Panie!"} {Highlights_magic %0;#line gag;};
-#nop START #30;
 #action {Z calych swych sil skupiasz sie na wizerunku tarczy na amulecie. Po chwili czujesz jak otacza cie magiczna sfera. Jestes teraz chroniony przed ciosami wrogow.} {Highlights_magic %0;#line gag;};
 #action {Otaczajaca cie sfera znika z cichym szumem.} {Highlights_magic %0;#line gag;};
-#nop STOP #30;
-#nop START #22;
 #action {Czujesz jak magiczne drzenie %* staje sie coraz bardziej intensywne.} {Highlights_magic %0;#line gag;};
 #action {%* zaczyna spazmatycznie drgac, a wokol %w pojawiaja sie biale iskry wyladowan niekontrolowanej magii.} {Highlights_magic %0;#line gag;};
 #action {Bialy, zimny plomien ogarnia %*, w kilka chwil spopielajac %w calkowicie.} {Highlights_magic %0;#line gag;};
-#nop END #22;
-#nop START #24;
 #action {Wprawion{e|y|a} w %* znika w blysku swiatla.} {Highlights_magic %0;#line gag;};
-#nop END #24;
-#action {Od twojego amuletu emanuje przyjemne cieplo.} {Highlights_magic %0;#line gag;};
 #action {^Pomiedzy skalami dostrzegasz ciemny otwor prowadzacy w dol.$} {Highlights_event %0;#line gag;}
 #action {^W jednym z zaglebien terenu dostrzegasz szczeline prowadzaca pod ziemie.$} {Highlights_event %0;#line gag;}
 #action {^Posrod pajeczyn dostrzegasz niewielki wyrysowany kreda symbol - dokladnie taki, jaki pokazal ci starzec z wioski.$} {Highlights_event %0;#line gag;}
