@@ -93,7 +93,7 @@
 				#case {"Kraina Zgromadzenia"} {#local tmpname {plyn do krainy zgromadzenia}};
 				#case {"Lukomorze"} {#local tmpname {plyn na lukomorze}};
 				#case {"Marguilles"} {#local tmpname {plyn do marguilles}};
-				#case {"wyspa Mekan"} {#local tmpname {plyn na wyspie mekan}};
+				#case {"wyspa Mekan"} {#local tmpname {plyn na wyspe mekan}};
 				#case {"Nuln"} {#local tmpname {plyn do nuln}};
 				#case {"Oxenfurt"} {#local tmpname {plyn do oxenfurtu}};
 				#case {"dolina srodkowego Pontaru"} {#local tmpname {plyn do doliny srodkowego pontaru}};
