@@ -185,31 +185,22 @@
                 #case {"command"} {
                     #switch {"$roon[$roonvec][macrokey]"} {
                         #case {"F1"} {
-                            #local outputstr {$outputstr\n<118> *** <128> $roon[$roonvec][macrokey] <118> *** <138> $roon[$roonvec][message] <088>};
+                            #local outputstr {$outputstr\n<118> *** <128> LOK1 <118> *** <138> $roon[$roonvec][message] <088>};
                             #var tmpF1value {$roon[$roonvec][message]};
                             #replace tmpF1value {,} {;};
-                            #alias tmpF1bind {
-                                $tmpF1value;
-                                #var ConfigManager_Configs[MacF1] $f1backup;
-                            };
+                            #alias LOK1 {$tmpF1value;};                            
                         };
                         #case {"F2"} {
-                            #local outputstr {$outputstr\n<118> *** <128> $roon[$roonvec][macrokey] <118> *** <138> $roon[$roonvec][message] <088>};
+                            #local outputstr {$outputstr\n<118> *** <128> LOK2 <118> *** <138> $roon[$roonvec][message] <088>};
                             #var tmpF2value {$roon[$roonvec][message]};
                             #replace tmpF2value {,} {;};
-                            #alias tmpF2bind {
-                                $tmpF2value;
-                                #var ConfigManager_Configs[MacF2] $f2backup;
-                            };
+                            #alias LOK2 {$tmpF2value;};                            
                         };
                         #case {"F3"} {
-                            #local outputstr {$outputstr\n<118> *** <128> $roon[$roonvec][macrokey] <118> *** <138> $roon[$roonvec][message] <088>};
+                            #local outputstr {$outputstr\n<118> *** <128> LOK3 <118> *** <138> $roon[$roonvec][message] <088>};
                             #var tmpF3value {$roon[$roonvec][message]};
                             #replace tmpF3value {,} {;};
-                            #alias tmpF3bind {
-                                $tmpF3value;
-                                #var ConfigManager_Configs[MacF3] $f2backup;
-                            };                            
+                            #alias LOK3 {$tmpF3value;};                            
                         };
                         #default {
                             #local outputstr {$outputstr\n<118> ***  ??  *** <138> $roon[$roonvec][message] <088>};
