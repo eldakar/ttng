@@ -1,4 +1,4 @@
-#var global_bundle_slots_values[prompt][bottom] {3};
+#nop var global_bundle_slots_values[prompt][bottom] {3};
 #var zmeczenie[0] {w pelni wypoczety};
 #var zmeczenie[1] {wypoczety};
 #var zmeczenie[2] {troche zmeczony};
@@ -41,7 +41,7 @@
 };
 
 #alias {BottomBarClassic} {
-	#var global_bundle_slots_values[prompt][bottom] {3};	
+	#nop var global_bundle_slots_values[prompt][bottom] {$Config};
 	#draw violet tubed box $screenrows-3 1 $screenrows-1 $screencols {<088>hp: $bbshpbar[$state[hp]] ma: $bbsmanabar[$state[mana]] fa: $bbsstabar[$state[fatigue]] en: $state[encumbrance]       fo: $state[form] im: $state[improve]       in: $state[intox] he: $state[headache] st: $state[stuffed] so: $state[soaked]       pa: $state[panic]};
 };
 
@@ -163,7 +163,6 @@
 #var qbvar {                                                                 };
 
 #alias {BottomBarTinyFugue} {
-	#var global_bundle_slots_values[prompt][bottom] {4};
 	#var hspac {};
 	#math {spacelen} {$screencols - 108 - 23};
 	#loop {1} {$spacelen} {mee} {#var hspac {$hspac }};
