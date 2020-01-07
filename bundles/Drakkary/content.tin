@@ -103,6 +103,8 @@
 				#case {"Urbimo"} {#local tmpname {plyn do urbimo}};
 				#case {"Viadaza"} {#local tmpname {plyn do viadazy}};
 				#case {"Siedliszcze Korsarzy"} {#local tmpname {plyn do siedliszcza korsarzy}};
+				#case {"Novigrad"} {#local tmpname {plyn do novigradu}};
+				#default {#local tmpname {sp}};
 			};
 			#line substitute {variables} {#alias po$index {$tmpname}};
 			#math {index} {$index + 1};
