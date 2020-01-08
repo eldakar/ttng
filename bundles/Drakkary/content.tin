@@ -150,7 +150,7 @@
 	#echo {+------+----------------------+------------+};
 	#unvar portyDB;
 	#unvar line;
-	#nop line gag;
+	#line gag;
 }
 
 #action {Ktora przystan chcesz wybrac? %*}
