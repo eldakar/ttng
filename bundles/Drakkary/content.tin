@@ -79,8 +79,12 @@
 	#list portyDB create {$buff};	
 	#echo {+------+----------------------+------------+};	
 	#foreach {*portyDB[]} {pdb} {
-		#regex {$portyDB[$pdb]} {%* .. %d%s*} {	
-			#format {line} {| %-4s | %-20s | %+10s |} {<018>po$index<088>} {&1} {&2};
+
+#regex {$portyDB[$pdb]} {%* .. %d                   %s*} {
+#nop;
+} {
+		#regex {$portyDB[$pdb]} {%* .. %d%s*%s*} {	
+			#format {line} {| %-4s | %-20s | %+10s |} {<118>po$index<088>} {&1} {&2};
 			#echo {$line};
 			#switch {"&1"} {
 				#case {"Ard Skellige"} {#local tmpname {plyn na ard skellige}};
@@ -108,12 +112,45 @@
 			};
 			#line substitute {variables} {#alias po$index {$tmpname}};
 			#math {index} {$index + 1};
+		} {
+			#regex {$portyDB[$pdb]} {%* .. %d%s*} {	
+				#format {line} {| %-4s | %-20s | %+10s |} {<018>po$index<088>} {&1} {&2};
+				#echo {$line};
+				#switch {"&1"} {
+					#case {"Ard Skellige"} {#local tmpname {plyn na ard skellige}};
+					#case {"Averland"} {#local tmpname {plyn do averlandu}};
+					#case {"Baccala"} {#local tmpname {plyn do baccali}};
+					#case {"twierdza Bodrog"} {#local tmpname {plyn do twierdzy rozrog}};
+					#case {"Bogenhafen"} {#local tmpname {plyn do bogenhafen}};
+					#case {"wyspa Faroe"} {#local tmpname {plyn na wyspe faroe}};
+					#case {"Kaedwen"} {#local tmpname {plyn do kaedwen}};
+					#case {"Kraina Zgromadzenia"} {#local tmpname {plyn do krainy zgromadzenia}};
+					#case {"Lukomorze"} {#local tmpname {plyn na lukomorze}};
+					#case {"Marguilles"} {#local tmpname {plyn do marguilles}};
+					#case {"wyspa Mekan"} {#local tmpname {plyn na wyspe mekan}};
+					#case {"Nuln"} {#local tmpname {plyn do nuln}};
+					#case {"Oxenfurt"} {#local tmpname {plyn do oxenfurtu}};
+					#case {"dolina srodkowego Pontaru"} {#local tmpname {plyn do doliny srodkowego pontaru}};
+					#case {"Quenelles"} {#local tmpname {plyn do quenelles}};
+					#case {"Rivia"} {#local tmpname {plyn do rivii}};
+					#case {"twierdza Rozrog"} {#local tmpname {plyn do twierdzy rozrog}};
+					#case {"Urbimo"} {#local tmpname {plyn do urbimo}};
+					#case {"Viadaza"} {#local tmpname {plyn do viadazy}};
+					#case {"Siedliszcze Korsarzy"} {#local tmpname {plyn do siedliszcza korsarzy}};
+					#case {"Novigrad"} {#local tmpname {plyn do novigradu}};
+					#default {#local tmpname {sp}};
+				};
+				#line substitute {variables} {#alias po$index {$tmpname}};
+				#math {index} {$index + 1};
+			};
 		};
 	};
+};
+
 	#echo {+------+----------------------+------------+};
 	#unvar portyDB;
 	#unvar line;
-	#line gag;
+	#nop line gag;
 }
 
 #action {Ktora przystan chcesz wybrac? %*}

@@ -5,6 +5,9 @@
 #alias {ConfigManager_gmcp_char_info} {
 	#var CHAR_INFO {%0};
 	#var AVATAR_NAME {$CHAR_INFO[name]};
+	#if {"$guild_lay[$CHAR_INFO[guild_lay]]" != ""} {
+		#var AVATAR_GUILD {$guild_lay[$CHAR_INFO[guild_lay]]};
+	};
 	#var avatarid $CHAR_INFO[id];
 	#line substitute {variables} {
 		#class ConfigManagerProfile read bundles/ConfigManager/Profiles/$AVATAR_NAME;
@@ -56,3 +59,6 @@
 		#echo {<068>   $bundlemanager_configs[$bc] <118>$ConfigManager_Configs[$bundlemanager_configs[$bc]]<088>};
 	};
 } {1};
+
+#var guild_lay[Korsarze ze Skellige] {KS};
+

@@ -383,16 +383,9 @@
             #line substitute {variables} {#alias z${indexchar}3 {opcje grupa 3;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
             #line substitute {variables} {#alias z${indexchar}4 {opcje grupa 4;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
             #line substitute {variables} {#alias O$indexchar {wskaz ob_$du jako cel obrony}};
-            #format tmpna {%-15s} {$duch[$du][desc]};
-            #format tmpna {%.15s} {$tmpna};
-            #format tmpna_med {%-10s} {$duch[$du][desc]};
-            #format tmpna_med {%.10s} {$tmpna_med};
-            #format tmpna_orc {%-15s} {$duch[$du][desc]};
-            #format tmpna_orc {%.15s} {$tmpna_orc};
 
-            #var tmpna_orc {$duch[$du][desc]};
-            #var tmpna_sma {};
             #var tmphp $healthbars2[$duch[$du][hp]];
+            #math tmphp2 {$duch[$du][hp] + 1};
             #var tmpcel {   };
             #var tmpava {  };
             #var tmpsug {  };
@@ -419,7 +412,7 @@
             #if {"$duch[$du][avatar_target]" == "true"} {#var tmpava {<FAA>  <088>}};
 
             #if {"$duch[$du][team_leader]" == "true"} {
-    		  #var tmpled {<138>*<088>};
+    		  #var tmpled {<138>^<088>};
     		  #format team_lead_lower {%l} {$duch[$du][desc]};
               #var team_lead_id {$du};
     	    };
@@ -427,6 +420,11 @@
             #if {"$duch[$du][team]" == "true"} {
                 #format tmpna_orc {%-8s} {$duch[$du][desc]};
                 #format tmpna_orc {%.8s} {$tmpna_orc};
+            } {
+                #var tmpna_orc {$duch[$du][desc]};
+            };
+            #if {"$duch[$du][avatar]" == "true"} {
+                #var tmpna_orc {<158>$tmpna_orc($AVATAR_GUILD)<088>};
             };
 
             #if {"$duch[$du][bot]" == "SA1"} {#var tmpsug {<128>F1<088>}};
@@ -454,7 +452,8 @@
                 #var tmptar {|$attacktargethp| $tmptarcolor$tmptar<088>};
             };
             #if {"$tmphp" != ""} {
-                #var duch[$du][bar][orc] {$duch[$du][alias_value] $tmpsug<088>$tmpava$tmpen [$tmphp]$tmpled$tmpkol$tmpna_orc<088> };
+                #nop var duch[$du][bar][orc] {$duch[$du][alias_value] $tmpsug<088>$tmpava$tmpen [$tmphp]$tmpled$tmpkol$tmpna_orc<088> };
+                #var duch[$du][bar][orc] {[$tmphp2/7][$healthbars2[$duch[$du][hp]]] [$duch[$du][alias_value]][$tmpsug]<088> $tmpen$tmpled$tmpkol$tmpna_orc<088>};
                 #math {negativecounter} {$negativecounter + 1};
             };
         };
