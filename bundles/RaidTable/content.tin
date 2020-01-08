@@ -416,19 +416,16 @@
     		  #format team_lead_lower {%l} {$duch[$du][desc]};
               #var team_lead_id {$du};
     	    };
-    
+            
+            #if {"$duch[$du][team]" == "true"} {
+                #format tmpna_orc {%-8s} {$duch[$du][desc]};
+                #format tmpna_orc {%.8s} {$tmpna_orc};
+            } {
+                #var tmpna_orc {$duch[$du][desc]};
+            };
             #if {"$duch[$du][avatar]" == "true"} {
                 #var tmpna_orc {<158>$tmpna_orc($AVATAR_GUILD)<088>};
-		#format tmpna_orc {%-8s} {$tmpna_orc};
-		#format tmpna_orc {%.8s} {$tmpna_orc};
-            } {
-		    #if {"$duch[$du][team]" == "true"} {
-			#format tmpna_orc {%-8s} {$duch[$du][desc]};
-			#format tmpna_orc {%.8s} {$tmpna_orc};
-		    } {
-			#var tmpna_orc {$duch[$du][desc]<088>};
-		    };
-	    };
+            };
 
             #if {"$duch[$du][bot]" == "SA1"} {#var tmpsug {<128>F1<088>}};
             #if {"$duch[$du][bot]" == "SA2"} {#var tmpsug {A2}};
@@ -456,7 +453,7 @@
             };
             #if {"$tmphp" != ""} {
                 #nop var duch[$du][bar][orc] {$duch[$du][alias_value] $tmpsug<088>$tmpava$tmpen [$tmphp]$tmpled$tmpkol$tmpna_orc<088> };
-                #var duch[$du][bar][orc] {[$tmphp2/7][$healthbars2[$duch[$du][hp]]] [$duch[$du][alias_value]][$tmpsug]<088> $tmpen$tmpled$tmpkol$tmpna_orc};
+                #var duch[$du][bar][orc] {[$tmphp2/7][$healthbars2[$duch[$du][hp]]] [$duch[$du][alias_value]][$tmpsug]<088> $tmpen$tmpled$tmpkol$tmpna_orc<088>};
                 #math {negativecounter} {$negativecounter + 1};
             };
         };
