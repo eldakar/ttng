@@ -388,7 +388,7 @@
 #nop WKS1;   #regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* zadajac smiertelne obrazenia.} {collect $AVATAR_NAME unknown WKS 6;#var tmpvalue {}};
 #nop WKS1;   #regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* tracisz rownowage} {collect $AVATAR_NAME unknown miss 0;#var tmpvalue {}};
 
-#nop WKS3;   #regex {$tmpvalue} {%* szybkim niczym mysl ruchem %* wytraca ci} {collect %1 $AVATAR_NAME WKS_WYTRACA 0;#var tmpvalue {}};
+#nop WKS3;   #regex {$tmpvalue} {%* szybkim niczym mysl ruchem %* wytraca ci} {collect &1 $AVATAR_NAME WKS_WYTRACA 0;#var tmpvalue {}};
 
 #nop KOR3;   #regex {$tmpvalue} {%w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect &1 unknown KS 4;#var tmpvalue {}};
 #nop KOR3;   #regex {$tmpvalue} {%w %w %w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect &4 unknown KS 4;#var tmpvalue {}};
