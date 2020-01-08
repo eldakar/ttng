@@ -80,7 +80,7 @@
 	#echo {+------+----------------------+------------+};	
 	#foreach {*portyDB[]} {pdb} {
 
-#regex {$portyDB[$pdb]} {%* .. %d                   %s*} {
+#regex {$portyDB[$pdb]} {%* .. %d                      %s*} {
 #nop;
 } {
 		#regex {$portyDB[$pdb]} {%* .. %d%s*%s*} {	
