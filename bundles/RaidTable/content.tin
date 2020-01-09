@@ -107,7 +107,7 @@
  
             #if {"$duch[$dudu][avatar]" == "true"} {
                 #var avatarid {$dudu};
-                #var duch[$dudu][desc] {$AVATAR_NAME($AVATAR_GUILD)};
+                #var duch[$dudu][desc] {$AVATAR_NAME};
             } {
 
             #var test {$duch[$dudu][desc]};
@@ -418,8 +418,8 @@
     	    };
             
             #if {"$duch[$du][team]" == "true"} {
-                #format tmpna_orc {%-8s} {$duch[$du][desc]};
-                #format tmpna_orc {%.8s} {$tmpna_orc};
+                #format tmpna_orc {%-14s} {$duch[$du][desc]};
+                #format tmpna_orc {%.14s} {$tmpna_orc};
             } {
                 #var tmpna_orc {$duch[$du][desc]};
             };

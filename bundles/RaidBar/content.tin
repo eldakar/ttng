@@ -61,7 +61,7 @@
                     }   {
                         #if {$r_curLineCnt >=$tmplinecnt} {
                             #math RaidBarCountUsedLines {$RaidBarCountUsedLines + 1};            
-                            #sh { $duch[$ti][bar][orc]        ${c_stan_niski}\<088>} {$r_curLineCnt} {1} {};
+                            #sh { $duch[$ti][bar][orc]        ${c_stan_niski}\\<088>} {$r_curLineCnt} {1} {};
                             #math r_curLineCnt {$r_curLineCnt - 1};
                         };
                     };
@@ -74,7 +74,7 @@
     #foreach {*wrogi[]} {to} {
         #if {$duch[$wrogi[$to]][shown] < 1} {
             #if {$r_curLineCnt >=$tmplinecnt} {
-                #sh {                                                              $duch[$wrogi[$to]][bar][orc]<088>} {$r_curLineCnt} {1} {};
+                #sh {                                                                     $duch[$wrogi[$to]][bar][orc]<088>} {$r_curLineCnt} {1} {};
                 #math r_curLineCnt {$r_curLineCnt - 1};
                 #var duch[$wrogi[$to]][shown] {1};
             };
