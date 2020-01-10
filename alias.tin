@@ -152,7 +152,7 @@
 
 
 
-#alias {wy} {
+#alias {wy %*} {
 	#format inamelen {%L} {%1};
 	#if {$inamelen < 2} {
 		#if {"$pplecak" == "sakwa"} {zajrzyj do zalozonej sakwy};
@@ -167,7 +167,7 @@
 		#if {"$pplecak" == "wor"} {otworz zalozony wor;wez %1 z zalozonego wora;zamknij zalozony wor};
 	};
 }
-#alias {wl} {
+#alias {wl %*} {
 	#if {"$pplecak" == "sakwa"} {otworz zalozona sakwe;wloz %1 do zalozonej sakwy;zamknij zalozona sakwe};
 	#if {"$pplecak" == "plecak"} {otworz zalozony plecak;wloz %1 do zalozonego plecaka;zamknij zalozony plecak};
 	#if {"$pplecak" == "torba"} {otworz zalozona torbe;wloz %1 do zalozonej torby;zamknij zalozona torbe};
