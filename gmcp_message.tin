@@ -53,7 +53,6 @@
 			SplitWingMap_Popup $GMCPMSGS[text];
 		};
 		#case {"room.short"} {
-			#var shortnote {};
 			#var tmptext {$GMCPMSGS[text]};
 			#regex {$tmptext} {{.*}\\n$} {
 				#var GMCPMSGS[text] {&1};
@@ -68,7 +67,7 @@
 				SplitWingMap_LabelBind $bind_run;
 			};
 
-			#sh {${outputtext} [$roomId] $shortnote};
+			#sh {$outputtext};
 			#line strip {#var temp_short {$outputtext}};
 
 			#line substitute {variables} {

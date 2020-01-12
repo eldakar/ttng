@@ -129,7 +129,6 @@
 };
 
 #event {MAP ENTER ROOM} {
-    #var r_curLineCnt 2;
     #var note_found 0;
     #var bind_found 0;
     #map get roomvnum voom;
@@ -137,28 +136,6 @@
     #map get roomdata roon;
     #list roon size roonsize;
     #if {"$rooa" != ""} {$rooa};
-    #if {"$f1backup" != ""} {#var f1backup $ConfigManager_Configs[MacF1];};
-    #if {"$f2backup" != ""} {#var f2backup $ConfigManager_Configs[MacF2];};
-    #if {"$f2backup" != ""} {#var f3backup $ConfigManager_Configs[MacF3];};
-};
-
-#nop event {MAP UPDATED VTMAP} {
-    SplitWingMap_LabelMap <128>$current_room_short_desc;
-    #if {$bind_found > 0} {
-        SplitWingMap_LabelBind $bind_run;
-    };
-    #if {$roonsize > 0} {
-        #local outputstr {};
-        #foreach {*roon[]} {roonvec} {
-            #format {line} {%s %s %s} {<178>$roon[$roonvec][author]<088>} {$roon[$roonvec][stamp]} {<028>$roon[$roonvec][message]<088>};
-            #local outputstr {$outputstr\n$line};
-        };
-        #switch {"$voom"} {
-            #case {"14133"} {SplitWingMap_Board $outputstr;};
-            #case {"14130"} {SplitWingMap_Board $outputstr;};
-            #default {SplitWingMap_Journal $outputstr;};
-        };
-    };
 };
 
 

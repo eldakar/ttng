@@ -4,6 +4,7 @@
 #var bundle_config {1};
 #list bundle_configs clear;
 	#list bundle_configs add {RaidBarDynamicTop};
+	#list bundle_configs add {RaidBarMode};
 #var bundle_help {1};
 #list bundle_slots clear;
 	#list bundle_slots add {prompt.top};

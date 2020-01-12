@@ -9,11 +9,26 @@
     SplitRefreshRequestRefresh;
 };
 
+#alias {RaidBarMode} {
+    #if {"$ConfigManager_Configs[RaidBarMode]" == "auto"} {
+        #ticker {raidbarsize} {
+            #screen get SPLIT_BOT_BAR spb;
+            #math rbs {$expectedlines + 5};
+            #if {$spb != $rbs} {
+                /conf RaidBarDynamicTop $rbs;
+            };
+        } {2};
+    } {
+        #unticker {raidbarsize};
+    };
+};
+
 #alias {render_h2} {
     #var a {%0};
     #math tmplinecnt {0 - $global_bundle_slots_values[prompt][bottom]};
   	#loop {-6} {$tmplinecnt} {bubu} {#sh {                                                                                                       } {$bubu}};
   	#var r_curLineCnt {-6};
+    #var expectedlines 0;
     #list team_offenders cle;
     #list team_offenders cre;
 
@@ -29,6 +44,7 @@
                 #math r_curLineCnt {$r_curLineCnt - 1};
                 #var duch[$avatarid][shown] {1};
             };
+            #math {expectedlines} {$expectedlines + 1};
         };
     }   {
             #foreach {*team[]} {ti} {
@@ -36,11 +52,12 @@
                     #if {$duch[$team[$ti]][attack_num] > 0} {
                         #list team_offenders add $duch[$team[$ti]][attack_num];
                     }   {
-                        #if {$r_curLineCnt >=$tmplinecnt} {
+                        #if {$r_curLineCnt >= $tmplinecnt} {
                             #sh { $duch[$team[$ti]][bar][orc]<088>} {$r_curLineCnt} {1} {};
                             #math r_curLineCnt {$r_curLineCnt - 1};
                             #var duch[$team[$ti]][shown] {1};
                         };
+                        #math {expectedlines} {$expectedlines + 1};
                     };
                 };
             };
@@ -58,12 +75,14 @@
                             #math r_curLineCnt {$r_curLineCnt - 1};
                             #var duch[$team_offenders[$to]][shown] {1};
                         };
+                        #math {expectedlines} {$expectedlines + 1};
                     }   {
                         #if {$r_curLineCnt >=$tmplinecnt} {
                             #math RaidBarCountUsedLines {$RaidBarCountUsedLines + 1};            
                             #sh { $duch[$ti][bar][orc]        ${c_stan_niski}\\<088>} {$r_curLineCnt} {1} {};
                             #math r_curLineCnt {$r_curLineCnt - 1};
                         };
+                        #math {expectedlines} {$expectedlines + 1};
                     };
                     #var duch[$ti][shown] {1};
                 };
@@ -74,10 +93,11 @@
     #foreach {*wrogi[]} {to} {
         #if {$duch[$wrogi[$to]][shown] < 1} {
             #if {$r_curLineCnt >=$tmplinecnt} {
-                #sh {                                                                     $duch[$wrogi[$to]][bar][orc]<088>} {$r_curLineCnt} {1} {};
+                #sh {                                                              $duch[$wrogi[$to]][bar][orc]<088>} {$r_curLineCnt} {1} {};
                 #math r_curLineCnt {$r_curLineCnt - 1};
                 #var duch[$wrogi[$to]][shown] {1};
             };
+            #math {expectedlines} {$expectedlines + 1};
         };
     };
 #nop WROGOWIE niewalczacy;
@@ -92,6 +112,7 @@
                     #math r_curLineCnt {$r_curLineCnt - 1};
                     #var duch[$wrogi[$wr]][shown] {1};
                 };
+                #math {expectedlines} {$expectedlines + 1};
             };
         };
     };
@@ -103,6 +124,7 @@
                 #math r_curLineCnt {$r_curLineCnt - 1};
                 #var duch[$wr][shown] {1};
             };
+            #math {expectedlines} {$expectedlines + 1};
         };
     };
 
@@ -110,6 +132,8 @@
     
     #nop draw violet tubed box 1 1 $ConfigManager_Configs[RaidBarDynamicTop] $screencols;
     #sh {$hline} {$tmplinecnt - 1};
+
+    #list duch size lds;
 };
 
 #con mouse on;
