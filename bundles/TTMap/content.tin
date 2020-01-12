@@ -231,7 +231,7 @@
     #nop ##################################;
 #var current_room_short_desc {unknown2};
 #var current_room_exits {unknown2};
-#alias {/f$} {findme} {1}?; 
+#alias {/f$} {findme} {1}; 
 #nop alias findme {#echo a};
 #alias findme {
         #map get roomvnum rmvnum;
