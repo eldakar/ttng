@@ -20,8 +20,8 @@
 #action {Przestajesz szukac sladow.} {frozen_unset};
 #action {Przestajesz szukac ziol.} {frozen_unset};
 #action {Nie znajdujesz zadnych sladow.} {frozen_unset};
-#action {Znajdujesz %*.} {frozen_unset};
 #action {Przestajesz przeszukiwac %*.} {frozen_unset};
 #action {Jestes w stanie wyroznic kilka sladow na ziemi.} {frozen_unset} {8};
 #action {Szukasz wszedzie, ale nie znajdujesz zadnych ziol.} {frozen_unset};
-#action {Znajdujesz %*.} {frozen_unset;}
+#action {Znajdujesz %*.} {frozen_unset};
+#action {Znalazles %*.} {frozen_unset;}
