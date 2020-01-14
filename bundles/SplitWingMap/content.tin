@@ -12,12 +12,7 @@
 };
 
 #alias STARTRAIN {
-    #math offsety {$global_bundle_slots_values[prompt][top] + 1};
-    #screen get cols screencols;
-    #math offsetx {$screencols - $global_bundle_slots_values[prompt][right] + 3};
-    #math offseth {$screencols - 4};
-    #math offsetw {$screenrows - 2};
-    #map offset $offsety+1 $offsetx $offsetw-3 $offseth;
+    #map offset $offsety $offsetx $offsetw $offseth;
 
     #ticker RAINING {
         #draw blue rain $offsety+1 $offsetx $offsetw-3 $offseth rain 50 80 {.*};
