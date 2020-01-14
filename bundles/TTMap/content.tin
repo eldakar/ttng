@@ -79,8 +79,10 @@
     #var roza_custom {};
     #var ROOM_INFO {%0};
     #var room_desc ${ROOM_INFO[map][x]}x${ROOM_INFO[map][y]};
-    #var room_info_hybrid $ROOM_INFO;
     #var b {0};
+
+    #var gmcp_coords {$gmcp_order $ROOM_INFO[map][name] $ROOM_INFO[map][x] $ROOM_INFO[map][y]};
+    #math gmcp_order {$gmcp_order + 1};
 
     #var rozk2 {{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
 
@@ -112,28 +114,26 @@
         frozen_unset;
     };
 
-    #if {$semifrozen_status == 1} {
-        #math {semifrozen_steps} {$semifrozen_steps - 1};
-        #if {$semifrozen_steps < 1} {
-            semifrozen_unset;
-        };
-    };
     #if {$ROOM_INFO[map][x] > 0} {        
         #var current_room_short_desc {$ROOM_INFO[map][name] $ROOM_INFO[map][x] $ROOM_INFO[map][y]};
     };
-
-    #if {$trytomove > 0} {
-        #var trytomove 0;
-        #map get roomvnum roomId;
-    };
 };
 
+#var pendingstep 0;
+
 #event {MAP ENTER ROOM} {
+    #math pendingstep {$pendingstep + 1};
+    #var gmcp_order 2;
     #var note_found 0;
     #var bind_found 0;
     #map get roomvnum voom;
     #map get roomarea rooa;
     #map get roomdata roon;
+    #map get roomdesc {map_short};
+    #map get roomname {map_exits};
+    #var map_short {0 $map_short};
+    #var map_exits {1 $map_exits};
+
     #list roon size roonsize;
     #if {"$rooa" != ""} {$rooa};
 };
@@ -293,6 +293,7 @@
         #map undo;
         #map goto $roomId;
         #var trytomove 0;
+        #math pendingstep {$pendingstep - 1};
     };
     #if {$semifrozen_status == 1} {
         semifrozen_unset;   #nop wracam do zwyklego trybu;
