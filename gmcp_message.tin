@@ -7,11 +7,10 @@
 		#case {"notification.mail"} {Highlights_post $GMCPMSGS[text]};
 		#case {"notification.knowledge"} {Highlights_knowledge $GMCPMSGS[text]};
 		#case {"room.exits"} {
+			#replace {GMCPMSGS[text]} {\\n} {};			
 			#sh {$GMCPMSGS[text]};
 			#line substitute {variables} {#line strip {#var current_room_exits {$GMCPMSGS[text]}}};
-#nop DEBUG;	#line substitute {variables} {#line strip {#var gmcp_exits {$gmcp_order $GMCPMSGS[text]}}};
-#nop DEBUG;	#math gmcp_order {$gmcp_order + 1};
-
+#nop DEBUG;	#line substitute {variables} {#line strip {#var gmcp_exits {$GMCPMSGS[text]}}};
 			#if {$MAPPER_SYNC == 0} {findme};
 		    BottomBarTinyFugue;
 		};
@@ -24,8 +23,10 @@
 				#var outputtext {$tmptext};
 			};
 			#replace {outputtext} {\\n} {};
-#nop DEBUG;	#line substitute {variables} {#line strip {#var gmcp_short {$gmcp_order $outputtext}}};
-#nop DEBUG;	#math gmcp_order {$gmcp_order + 1};
+#nop DEBUG;	#line substitute {variables} {#line strip {
+				#var gmcp_short {$outputtext};
+				#var gmcp_shoot {$outputtext};
+			}};
 			#if {$bind_found > 0} {
 				#nop line sub variables {#alias _quickbind_ {$bind_run}};
 				SplitWingMap_LabelBind $bind_run;
@@ -36,13 +37,12 @@
 				#if {$ROOM_INFO[map][x] > 0} {} {#line strip {#var current_room_short_desc {$outputtext}}};
 			};
 			#if {$MAPPER_SYNC == 0} {findme};
-			SplitWingMap_LabelMap <128>$current_room_short_desc;
 			#if {$trytomove > 0} {
         		#var trytomove 0;
 			    #map get roomvnum roomId;
-			    #math pendingstep {$pendingstep - 1};
+			   	#math pendingstep {$pendingstep - 1};
     		};
-
+			SplitWingMap_LabelMap <128>$current_room_short_desc;
 		};
 		#case {"combat.team"} {
 			#var outputtext {$GMCPMSGS[text]};

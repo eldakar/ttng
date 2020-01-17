@@ -10,7 +10,6 @@
 #action {{s|S}kelliganski drakkar Duch Hemdalla{.| }} {wejdz_na_korsarski Skelliganski drakkar Duch Hemdalla} {2};
 
 #alias {wejdz_na_korsarski %*} {
-	#format lowerc {%l} {%1};
 	#switch {"%1"} {
 		#case {"Korsarski snekkar Wloczega Morz"} {#var tmpdrakkarname wloczega;};
 		#case {"Skelliganski drakkar Zwiastun Smierci"} {#var tmpdrakkarname zwiastun;};
@@ -24,13 +23,14 @@
 		#case {"Korsarski drakkar Straznik Czasu"} {#var tmpdrakkarname demon;};
 	};
 	#nop narysuj drakkar %1;
+	#format {lowerc} {%l} {%1};
 	qbs wejdz na $lowerc;
 	#bell;
 	#map get roomvnum krakkenat;
 	#if {$PONGED > 0} {
 		#line substitute {variables} {#brain {#port send $brainId {DRAKKAR $krakkenat $tmpdrakkarname}}};
 	};
-}
+};
 
 #action {Wchodzisz na {skelliganski|korsarski} {drakkar|snekkar} %*.} {
 	#var MAPPER_SYNC 0;

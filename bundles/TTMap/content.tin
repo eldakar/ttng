@@ -121,8 +121,95 @@
 
 #var pendingstep 0;
 
+#alias {pendingStep} {
+    #var pepe $pendingstep;
+    #math pendingstep {$pepe + 1};
+};
+
+#alias roomCheck {
+    #nop var map_short {0 $map_short};
+    #nop var map_exits {1 $map_exits};
+    #nop var current_room_short_desc;
+    #local allow 0;
+
+    #if {$ROOM_INFO[map][x] > 0} {        
+        #echo {<138>MAP <028>$current_room_short_desc|$map_short|};
+        #if {"$current_room_short_desc" != "$map_short"} {
+            #echo {<138>MAP <118>MISMATCH<088>};
+            #local allow 1
+        };
+    } {
+        #echo {<138>MAP <028>$gmcp_short|$map_short|};
+        #if {"$gmcp_short" != "$map_short"} {
+            #echo {<138>MAP <118>MISMATCH<088>};
+            #local allow 1
+        };            
+    };
+    #if {$allow == 1} {
+        #var MAPPER_SYNC 0;
+
+        #map get roomvnum rmvnum;
+        #var widocznewyjscia {$ROOM_INFO[exits]};
+        #var exitList {};
+        #var vexits {};
+
+        #var roomfound 0;
+
+    #nop ##################################;
+    #nop szukaj pokoju wedlug jego opisu
+    #nop w lokacjach gmcp, opis jest koordynata
+    #nop w reszcie lokacji, ostatnio widziany short w danej lokacji
+    #nop
+    #nop jesil jest jeden rezultat, przenies mape
+    #nop ##################################;
+
+        #nop var k @_print_warn{Szukam pokoju <118><aff>$current_room_short_desc<088>};
+        #map list {} {} {$current_room_short_desc} {variable} {vexits};
+        #list vexitslist create {$vexits};
+        #list vexitslist {size} {listsize};
+        #if {$listsize == 2} {
+            #var roomfound {1};
+            #if {$vexitslist[1] != $rmvnum} {
+                #ec {Odnalazlem mapke na: $vexitslist[1]<088>};
+                #map goto $vexitslist[1];
+            #nop map map ${screen_w}x15;
+                #var roomId $vexitslist[1];
+                #var MAPPER_SYNC $vexitslist[1];
+                #map get roomdata tmproomdata;
+                #var pendingstep 0;
+                #map flag static on;
+            };
+        };
+
+    #nop ##################################;
+    #nop szukamy pokoju wedlug opisu i dostepnych wyjsc
+    #nop ##################################;
+        #if {$roomfound == 0} {
+            #var vexits {};
+            #list vexitslist clear;
+            #map list {$current_room_exits} {} {$current_room_short_desc} {variable} {vexits};
+            #list vexitslist create {$vexits};
+            #list vexitslist {size} {listsize};
+            #list vexitslist_filter clear;
+            #var velf 0;
+
+            #if {$listsize == 2} {
+                #var roomfound {1};
+                #if {$vexitslist[1] != $rmvnum} {#ec {Odnalazlem mapke na: $vexitslist[1]<088>};#map goto $vexitslist[1];#var roomId $vexitslist[1];#var MAPPER_SYNC $vexitslist[1]};
+                #var MAPPER_SYNC $vexitslist[1];    
+                #var pendingstep 0;
+                #map flag static on;    
+            };
+            #if {$listsize == 0} {
+                #map dig test new;
+                #map goto test;
+                #map flag static off;
+            };
+        };
+    };
+};
+
 #event {MAP ENTER ROOM} {
-    #math pendingstep {$pendingstep + 1};
     #var gmcp_order 2;
     #var note_found 0;
     #var bind_found 0;
@@ -131,13 +218,13 @@
     #map get roomdata roon;
     #map get roomdesc {map_short};
     #map get roomname {map_exits};
-    #var map_short {0 $map_short};
-    #var map_exits {1 $map_exits};
+    #var map_short {$map_short};
+    #var map_exits {$map_exits};
 
     #list roon size roonsize;
     #if {"$rooa" != ""} {$rooa};
+    pendingStep;
 };
-
 
 #event {MAP UPDATED VTMAP} {
     SplitWingMap_LabelMap <128>$current_room_short_desc;
@@ -193,6 +280,22 @@
 
 
 
+#nop #################################################################################;
+#nop LICZENIE KROKOW;
+#nop #################################################################################;
+#action {Ciemne miejsce.} {
+    #if {$trytomove == 1} {
+        #math pendingstep {$pendingstep - 1};
+    };
+};
+
+#unaction {Nie widzisz zadnego wyjscia %*.} {
+    #if {$trytomove == 1} {
+        #var trytomove 0;
+        #math pendingstep {$pendingstep - 1};
+    };
+};
+
 
 #nop #################################################################################;
 #nop ODNAJDYWANIE SIE NA MAPIE
@@ -239,6 +342,8 @@
                 #var roomId $vexitslist[1];
                 #var MAPPER_SYNC $vexitslist[1];
                 #map get roomdata tmproomdata;
+                #var pendingstep 0;
+                #map flag static on;
             };
         };
 
@@ -258,7 +363,9 @@
         #if {$listsize == 2} {
             #var roomfound {1};
             #if {$vexitslist[1] != $rmvnum} {#ec {Odnalazlem mapke na: $vexitslist[1]<088>};#map goto $vexitslist[1];#var roomId $vexitslist[1];#var MAPPER_SYNC $vexitslist[1]};
-            #var MAPPER_SYNC $vexitslist[1];        
+            #var MAPPER_SYNC $vexitslist[1];    
+            #var pendingstep 0;
+            #map flag static on;    
         };
         #if {$listsize > 2} {
             #if {$listsize < 4} {
@@ -279,6 +386,8 @@
                     #var roomId $nearestroomid;
                     #var MAPPER_SYNC $nearestroomid;
                     #map get roomdata tmproomdata;
+                    #var pendingstep 0;
+                    #map flag static on;
                 };
             };
         };
