@@ -4,6 +4,8 @@
 
     #if {$cport > 0} {
         #port init brain ${cport}1;
+    } {
+        #port init brain 4050
     };
     #ses rpg arkadia.rpg.pl {23};
 
