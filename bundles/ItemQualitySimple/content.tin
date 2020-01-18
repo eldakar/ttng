@@ -167,6 +167,5 @@
     };
     #ec {Wydaje ci sie, ze jest war%1 okolo %2 miedziakow, czyli <fca>${value_mith} mithryli<088>, <ffa>${value_gold} zlota<088>, <ccf>${value_silv} srebra <088>i ${value_copp} miedzi.};
     #line gag;
-
 }
 
