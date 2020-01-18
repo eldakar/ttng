@@ -24,6 +24,8 @@
 };
 
 #alias {render_h2} {
+    #screen get SPLIT_BOT_BAR sbb;
+#if {$sbb > 5} {
     #var a {%0};
     #math tmplinecnt {0 - $global_bundle_slots_values[prompt][bottom]};
   	#loop {-6} {$tmplinecnt} {bubu} {#sh {                                                                                                       } {$bubu}};
@@ -134,6 +136,7 @@
     #sh {$hline} {$tmplinecnt - 1};
 
     #list duch size lds;
+};
 };
 
 #con mouse on;

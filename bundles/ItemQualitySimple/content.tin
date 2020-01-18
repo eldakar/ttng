@@ -142,3 +142,31 @@
 #action {Oceniasz starannie %*.} {
 	#var OcenianyPrzedmiotNazwa {%1};
 };
+
+
+#action {{Wydaje ci sie, ze jest|Sa|Jest} tu %2 {sztuki|sztuk} {warte|wartych} %5 miedziakow.}
+{
+    #var value_mith {0};
+    #var value_gold {0};
+    #var value_silv {0};
+    #var value_copp {%5};
+    #math stonevalue {$stonevalue + $value_copp};
+
+    #if {$value_copp >= 24000} {
+      #math value_mith {$value_copp / 24000};
+      #math value_copp {$value_copp % 24000};
+    };
+
+    #if {$value_copp >= 240} {
+      #math value_gold {$value_copp / 240};
+      #math value_copp {$value_copp % 240};
+    };
+    #if {$value_copp >= 12} {
+      #math value_silv {$value_copp / 12};
+      #math value_copp {$value_copp % 12};
+    };
+    #ec {Wydaje ci sie, ze jest war%1 okolo %2 miedziakow, czyli <fca>${value_mith} mithryli<088>, <ffa>${value_gold} zlota<088>, <ccf>${value_silv} srebra <088>i ${value_copp} miedzi.};
+    #line gag;
+
+}
+

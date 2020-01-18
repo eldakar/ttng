@@ -1,0 +1,5 @@
+#alias {fen %*} {
+	#parse {%1} {char} {
+		namysl sie nad czyms kreslac na ziemi $char;
+	};
+};

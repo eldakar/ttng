@@ -1,7 +1,6 @@
 #action {Wraz z %1 jedziesz %2 na %3.} {#sh Wraz z %1 podazasz za %2 na %3.};
-#nop reszta;
 #action {%*{Podazasz|podazasz} za %1} {
-	#line log {TTMapFollow_LOG} {#sh {<118>WYJATEK NIE OBSLUZONY [$roomId] <088>%1}};
+	#echo {<fca>MAP::Follow - Nieobsluzony wyjatek, gubie mape.};
 	#var MAPPER_SYNC 0;
 } {8};
 #action {%*{Podazasz|podazasz} za %1 na polnocny-zachod wdrapujac sie na zwalony pien i zeskakujac na druga strone.} {#map move nw;} {4};
@@ -120,10 +119,17 @@
 #action {%*{Podazasz|podazasz} za %1 po schodach na gore.} {#map move u;#map move schody};
 #action {%*{Podazasz|podazasz} za %1 na schody.} {#map move schody};
 #action {%*{Podazasz|podazasz} za %1 po schodach na dol.} {#map move d;#map move schody};
+#action {%*{Podazasz|podazasz} za %1 schodami na dol.} {#map move schody};
+#action {%*{Podazasz|podazasz} za %1 schodami do gory.} {#map move schody};
 #action {%*{Podazasz|podazasz} za %1 do wnetrza straznicy.} {#map move straznica};
 #action {%*{Podazasz|podazasz} za %1 na gore po drabinie.} {#map move u};
 #action {%*{Podazasz|podazasz} za %1 na dol po drabinie.} {#map move d};
 #action {%*{Podazasz|podazasz} za %1 na zewnatrz baraku.} {#map move wyjscie;#map move drzwi};
+
+#action {%*{Podazasz|podazasz} za %1 do wnetrza straznicy.} {#map move schody};
+#action {%*{Podazasz|podazasz} za %1 na zewnatrz straznicy.} {#map move schody};
+
+
 #action {%*{Podazasz|podazasz} za %1 do baraku.} {#map move barak};
 #action {%*{Podazasz|podazasz} za %1 przez otwor do jaskini.} {#map move otwor};
 #action {%*{Podazasz|podazasz} za %1 przez otwor na zewnatrz.} {#map move otwor};
