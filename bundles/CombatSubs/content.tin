@@ -388,6 +388,22 @@
 #nop WKS1;   #regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* zadajac smiertelne obrazenia.} {collect $AVATAR_NAME unknown WKS 6;#var tmpvalue {}};
 #nop WKS1;   #regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* tracisz rownowage} {collect $AVATAR_NAME unknown WKS_PUDLO 0;#var tmpvalue {}};
 
+#nop MC1;    #regex {$tmpvalue} {Krzywisz wargi w pelnym satysfakcji %* powaznie raniac} {collect $AVATAR_NAME unknown MC 4;#var tmpvalue {}};
+#nop MC1;    #regex {$tmpvalue} {Krzywisz wargi w pelnym satysfakcji %* lekko raniac} {collect $AVATAR_NAME unknown MC 2;#var tmpvalue {}};
+#nop MC1;    #regex {$tmpvalue} {Krzywisz wargi w pelnym satysfakcji %* bardzo ciezko raniac} {collect $AVATAR_NAME unknown MC 5;#var tmpvalue {}};
+#nop MC1;    #regex {$tmpvalue} {Krzywisz wargi w pelnym satysfakcji %* masakrujac} {collect $AVATAR_NAME unknown MC 6;#var tmpvalue {}};
+#nop MC1;    #regex {$tmpvalue} {Krzywisz wargi w pelnym satysfakcji %* raniac} {collect $AVATAR_NAME unknown MC 3;#var tmpvalue {}};
+#nop MC1;    #regex {$tmpvalue} {Krzywisz wargi w pelnym satysfakcji %* ledwo muskajac} {collect $AVATAR_NAME unknown MC 1;#var tmpvalue {}};
+
+#nop MC1;    #regex {$tmpvalue} {Dostrzegajac luke w obronie przeciwnika rzucasz %* powaznie raniac} {collect $AVATAR_NAME unknown MC 4;#var tmpvalue {}};
+#nop MC1;    #regex {$tmpvalue} {Dostrzegajac luke w obronie przeciwnika rzucasz %* lekko raniac} {collect $AVATAR_NAME unknown MC 2;#var tmpvalue {}};
+#nop MC1;    #regex {$tmpvalue} {Dostrzegajac luke w obronie przeciwnika rzucasz %* bardzo ciezko raniac} {collect $AVATAR_NAME unknown MC 5;#var tmpvalue {}};
+#nop MC1;    #regex {$tmpvalue} {Dostrzegajac luke w obronie przeciwnika rzucasz %* masakrujac} {collect $AVATAR_NAME unknown MC 6;#var tmpvalue {}};
+#nop MC1;    #regex {$tmpvalue} {Dostrzegajac luke w obronie przeciwnika rzucasz %* raniac} {collect $AVATAR_NAME unknown MC 3;#var tmpvalue {}};
+#nop MC1;    #regex {$tmpvalue} {Dostrzegajac luke w obronie przeciwnika rzucasz %* ledwo muskajac} {collect $AVATAR_NAME unknown MC 1;#var tmpvalue {}};
+#nop MC1;    #regex {$tmpvalue} {Stajesz pewnie %*} {collect $AVATAR_NAME unknown MC 7;#var tmpvalue {}};
+
+
 #nop WKS3;   #regex {$tmpvalue} {%* szybkim niczym mysl ruchem %* wytraca ci} {collect &1 $AVATAR_NAME WKS_WYTRACA_CI 0;#var tmpvalue {}};
 #nop WKS3;   #regex {$tmpvalue} {%* szybkim niczym mysl ruchem %* wytraca} {collect &1 unknown WKS_WYTRACA 0;#var tmpvalue {}};
 #nop WKS3;   #regex {$tmpvalue} {%* wyprowadza %+, lecz ten {zbija|oslania} je %+} {collect &1 unknown parry 0;#var tmpvalue {}};

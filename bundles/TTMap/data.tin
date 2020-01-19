@@ -3,3 +3,25 @@
 #action {Oplacasz podroz u woznicy i wsiadasz do %1.} {#var MAPPER_SYNC {0}};
 #action {Wykonuje komende 'idz %1'} {#var MAPPER_SYNC {0};}
 #action {Bierzesz rozbieg i zeskakujesz z drakkara na brzeg.} {#var MAPPER_SYNC {0};}
+
+
+#nop ##################;
+#nop Help;
+#nop ##################;
+#alias {/go} {
+    #line ignore #sh {+-Miasta----------------------------------+};
+    #line ignore #sh {|<ccc>Ishtar<088>                                   |};
+    #line ignore #sh {|   /novigrad    /oxenfurt    /blaviken   |};
+    #line ignore #sh {|<ccc>Imperium<088>                                 |};
+    #line ignore #sh {|   /nuln                                 |};
+    #line ignore #sh {+-Klucze----------------------------------+};
+    #line ignore #sh {|   /fustaw      /fustas                  |};
+    #line ignore #sh {+-----------------------------------------+};
+} {1};
+
+#alias {/zywioly} {/l 12037 Zywioly} {1};
+#alias {/siedle} {/l 13798 Siedliszcze} {1};
+#alias {/fustas} {/l 13880 Fusta Poludnie} {1};
+#alias {/fustaw} {/l 17092 Fusta Zachod} {1};
+#alias {/igor} {/l 15374 Igor} {1};
+#alias {/fort} {/l 17855 Lyria Fort} {1};

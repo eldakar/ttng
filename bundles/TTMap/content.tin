@@ -471,17 +471,3 @@
 #alias {/idz} {
     #path walk;
 } {1};
-
-#nop ##################;
-#nop Help;
-#nop ##################;
-#alias {/go} {
-    #line ignore #sh {+-Miasta----------------------------------+};
-    #line ignore #sh {|Ishtar                                   |};
-    #line ignore #sh {|   /novigrad    /oxenfurt    /blaviken   |};
-    #line ignore #sh {|Imperium                                 |};
-    #line ignore #sh {|   /nuln                                 |};
-} {1};
-
-#alias {/zywioly} {/l 12037 Zywioly} {1};
-#alias {/siedle} {/l 13798 Siedliszcze} {1};
