@@ -223,6 +223,7 @@
 
     #list roon size roonsize;
     #if {"$rooa" != ""} {$rooa};
+    #if {$lockroom > 0} {#map find $lockroom};
     pendingStep;
 };
 
@@ -456,4 +457,25 @@
 #nop ################################################################;
 #nop lockowanie pokojow.;
 #nop ################################################################;
+#alias {/l %d %*} {
+    #line ignore #sh {<128>Mapa [  %1  ]: %2<088>.};
+    #var lockroom {%1};
+} {1};
 
+#alias {/l} {
+    #var lockroom 0;
+} {1};
+
+#nop ##################;
+#nop Help;
+#nop ##################;
+#alias {/go} {
+    #line ignore #sh {+-Miasta----------------------------------+};
+    #line ignore #sh {|Ishtar                                   |};
+    #line ignore #sh {|   /novigrad    /oxenfurt    /blaviken   |};
+    #line ignore #sh {|Imperium                                 |};
+    #line ignore #sh {|   /nuln                                 |};
+} {1};
+
+#alias {/zywioly} {/l 12037 Zywioly} {1};
+#alias {/siedle} {/l 13798 Siedliszcze} {1};
