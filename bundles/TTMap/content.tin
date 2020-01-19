@@ -466,6 +466,10 @@
     #var lockroom 0;
 } {1};
 
+#alias {/idz} {
+    #path walk;
+} {1};
+
 #nop ##################;
 #nop Help;
 #nop ##################;
