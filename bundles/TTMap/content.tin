@@ -462,7 +462,7 @@
     #var lockroom {%1};
 } {1};
 
-#alias {/l} {
+#alias {/lc} {
     #var lockroom 0;
 } {1};
 
