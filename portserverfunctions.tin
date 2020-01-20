@@ -55,6 +55,12 @@
        #map at {$drakkary[krakken][foundat]} {#map unlink $drakkary[krakken][linkto] both};
        #map at {$drakkary[zwiastun][foundat]} {#map unlink $drakkary[zwiastun][linkto] both};
        #map at {$drakkary[wloczega][foundat]} {#map unlink $drakkary[wloczega][linkto] both};
+       
+       #map at {$drakkary[demon][foundat]} {#map unlink {wejdz na drakkar} both};
+       #map at {$drakkary[perla][foundat]} {#map unlink {wejdz na drakkar} both};
+       #map at {$drakkary[krakken][foundat]} {#map unlink {wejdz na drakkar} both};
+       #map at {$drakkary[zwiastun][foundat]} {#map unlink {wejdz na drakkar} both};
+       #map at {$drakkary[wloczega][foundat]} {#map unlink {wejdz na snekkar} both};
 };
 #alias load_dynamics {
        #map at {$drakkary[demon][foundat]} {#map link $drakkary[demon][linkto] $drakkary[demon][id] both;};
