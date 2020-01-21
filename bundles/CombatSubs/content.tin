@@ -367,6 +367,8 @@
    #regex {$tmpvalue} {Masakrujesz %*,} {collect $AVATAR_NAME unknown hit 6;#var tmpvalue {}};
 
 	#regex {$tmpvalue} {%w wykonuje %+ mierzac w ciebie, lecz tobie udaje sie je zbic %+} {collect &1 $AVATAR_NAME parry 0;#var tmpvalue {}};
+   #regex {$tmpvalue} {lecz udaje ci sie oslonic} {collect unknown $AVATAR_NAME parry 0;#var tmpvalue {}};
+
 	#regex {$tmpvalue} {%w probuje cie trafic %+ uniknac tego ciosu.} {collect &1 $AVATAR_NAME dodge 0;#var tmpvalue {}};
 	#regex {$tmpvalue} {%w %w %w nie udaje sie trafic ciebie %+} {collect &3 $AVATAR_NAME miss 0;#var tmpvalue {}};
    #regex {$tmpvalue} {%w nie udaje sie trafic ciebie %+} {collect &1 $AVATAR_NAME miss 0;#var tmpvalue {}};
@@ -426,6 +428,8 @@
 #nop FAN3;   #regex {$tmpvalue} {%* staje pewnie %* uderzenie %*} {collect &1 unknown MC 7;#var tmpvalue {}};
 
 #nop GOB;	#regex {$tmpvalue} {%* wskakuje znienacka na twoje plecy i z upiornym chichotem gryzie cie niegroznie w szyje!} {collect gremlin $AVATAR_NAME GOB 1;#var tmpvalue {}};
+#nop GOB;   #regex {$tmpvalue} {%* wskakuje znienacka na twoje plecy i z upiornym chichotem gryzie cie bardzo lekko w szyje!} {collect gremlin $AVATAR_NAME GOB 2;#var tmpvalue {}};
+
 #nop JAS;	#regex {$tmpvalue} {%* jaszczur doskakuje do ciebie i niegroznie wgryza sie ostrymi zebami w twoje cialo.} {collect jaszczur $AVATAR_NAME JAS 1;#var tmpvalue {}};
 #nop JAS;   #regex {$tmpvalue} {%* jaszczur doskakuje do ciebie i bardzo lekko wgryza sie ostrymi zebami w twoje cialo.} {collect jaszczur $AVATAR_NAME JAS 2;#var tmpvalue {}};
 #nop RYB;   #regex {$tmpvalue} {%* nadyma swe miesiste %* uskakujesz, a z sykiem skrzel laczy sie swist mijajacej cie broni.} {collect ryboczlek $AVATAR_NAME miss 0;#var tmpvalue {}};
@@ -460,6 +464,9 @@
 #nop MAG;   #regex {$tmpvalue} {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana masakrujesz %*} {collect $AVATAR_NAME unknown magic 6;#var tmpvalue {}};
    #nop AMULET;
 #nop MAG1;  #regex {$tmpvalue} {Od twojego amuletu emanuje przyjemne cieplo.} {collect $AVATAR_NAME unknown magic 0;#var tmpvalue {}};
+
+#nop PANIC; #regex {$tmpvalue} {w panice umyka} {#sh $tmpvalue2;#var tmpvalue {}};
+#nop PANIC; #regex {$tmpvalue} {uciekl ci.} {#sh $tmpvalue2;#var tmpvalue {}};
 
    #nop FAILOVER;
    #if {"$tmpvalue" != ""} {

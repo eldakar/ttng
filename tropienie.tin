@@ -1,5 +1,5 @@
 #var uciekajacy_ {Rozowy malutki slon}
-#action {^{> |}%2 uciekl{a|o|} ci.} {#var uciekajacy_ %2};
+#action {%1 uciekl{a|o|} ci.} {#var uciekajacy_ %1};
 
 #action {^{> |}%2 w panice {umyka|wybiega} na wschod.} {
 #regex {%2} {$uciekajacy_} {
@@ -45,7 +45,7 @@
 #echo {[     <148>X<088>       ]};
 }
 }
-#action {^{> |}%2 w panice {umyka|wybiega} na polnocny wschod.} {
+#action {^{> |}%2 w panice {umyka|wybiega} na polnocny-wschod.} {
 #regex {%2} {$uciekajacy_} {
 #echo {[  <148>X<088><148>X<088><148>X<088><148>X<088><148>X<088><148>X<088><148>X<088><148>X<088><148>X<088><148>X<088> ]};
 #echo {[          <148>X<088><148>X<088> ]};
@@ -56,7 +56,7 @@
 #echo {[             ]};
 }
 }
-#action {^{> |}%2 w panice {umyka|wybiega} na polnocny zachod.} {
+#action {^{> |}%2 w panice {umyka|wybiega} na polnocny-zachod.} {
 #regex {%2} {$uciekajacy_} {
 #echo {[ <148>X<088><148>X<088><148>X<088><148>X<088><148>X<088><148>X<088><148>X<088><148>X<088><148>X<088><148>X<088>  ]};
 #echo {[ <148>X<088><148>X<088>          ]};
@@ -67,7 +67,7 @@
 #echo {[             ]};
 }
 }
-#action {^{> |}%2 w panice {umyka|wybiega} na poludniowy wschod.} {
+#action {^{> |}%2 w panice {umyka|wybiega} na poludniowy-wschod.} {
 #regex {%2} {$uciekajacy_} {
 #echo {[             ]};
 #echo {[   <148>X<088>       <148>X<088> ]};
@@ -77,7 +77,7 @@
 #echo {[          <148>X<088><148>X<088> ]};
 #echo {[  <148>X<088><148>X<088><148>X<088><148>X<088><148>X<088><148>X<088><148>X<088><148>X<088><148>X<088><148>X<088> ]};
 }}
-#action {^{> |}%2 w panice {umyka|wybiega} na poludniowy zachod.} {
+#action {^{> |}%2 w panice {umyka|wybiega} na poludniowy-zachod.} {
 #regex {%2} {$uciekajacy_} {
 #echo {[             ]};
 #echo {[ <148>X<088>       <148>X<088>   ]};
@@ -367,7 +367,7 @@
 #echo {[             ]};
 #echo {[             ]};
 }}
-#action {^{> |}%2 przybywa z polnocnego wschodu.} {
+#action {^{> |}%2 przybywa z polnocnego-wschodu.} {
 #regex {%2} {$uciekajacy_} {
 #echo {[             ]};
 #echo {[             ]};
@@ -377,7 +377,7 @@
 #echo {[             ]};
 #echo {[             ]};
 }}
-#action {^{> |}%2 przybywa z poludniowego wschodu.} {
+#action {^{> |}%2 przybywa z poludniowego-wschodu.} {
 #regex {%2} {$uciekajacy_} {
 #echo {[             ]};
 #echo {[             ]};

@@ -4,6 +4,10 @@
 		#var GMCPMSGS[text] {&1};
 	};
 	#switch {"$GMCPMSGS[type]"} {
+		#case {"comm"} {
+			#replace {GMCPMSGS[text]} {\\n} {};			
+			#line ignore #sh {$GMCPMSGS[text]};			
+		};
 		#case {"notification.mail"} {Highlights_post $GMCPMSGS[text]};
 		#case {"notification.knowledge"} {Highlights_knowledge $GMCPMSGS[text]};
 		#case {"room.exits"} {
