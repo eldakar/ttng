@@ -23,10 +23,14 @@
 	#list bundle_configs add {MacNawiasLewy};
 	#list bundle_configs add {MacNawiasPrawy};
 	#list bundle_configs add {MacTylda};
-	#list bundle_configs add {MacNumDEL};
-	#list bundle_configs add {MacNumPLUS};
-	#list bundle_configs add {MacNumASTERIX};
-	#list bundle_configs add {MacNumSLASH};
+
+	#list bundle_configs add {Mac_eOo};
+	#list bundle_configs add {Mac_eOj};
+	#list bundle_configs add {Mac_eOn};
+	#list bundle_configs add {Mac_eOm};
+	#list bundle_configs add {Mac_eOk};
+	#list bundle_configs add {Mac_eOu};
+	#list bundle_configs add {Mac_eOp};
 	
 #list bundle_slots clear;
 	#list bundle_slots add {macros};

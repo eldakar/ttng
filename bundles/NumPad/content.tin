@@ -46,16 +46,6 @@
 #var KEY_PAD_NE {\eOy};
 #var KEY_PAD_SW {\eOq};
 #var KEY_PAD_SE {\eOs};
-#var KEY_PAD_U_A {\eOm};
-#var KEY_PAD_D_A {\eOk};
-#var KEY_PAD_U_B {\eOu};
-#var KEY_PAD_D_B {\eOp};
-
-#var KEY_PAD_DEL {\eOn};
-#var KEY_PAD_PLUS {\eOl};
-
-#var KEY_PAD_SLASH {\eOo};
-#var KEY_PAD_ASTERIX {\eOj};
 
 #macro {$KEY_PAD_S} {move_s}
 #macro {$KEY_PAD_N} {move_n}
@@ -65,10 +55,6 @@
 #macro {$KEY_PAD_NE} {move_ne}
 #macro {$KEY_PAD_SW} {move_sw}
 #macro {$KEY_PAD_SE} {move_se}
-#macro {$KEY_PAD_U_A} {move_u}
-#macro {$KEY_PAD_D_A} {move_d}
-#macro {$KEY_PAD_U_B} {move_u}
-#macro {$KEY_PAD_D_B} {move_d}
 
 #macro {\e[1;2A} {#buffer up};		#nop shift-kursor-gora;
 #macro {\e[1;2B} {#buffer down};	#nop shift-kursor-dol;

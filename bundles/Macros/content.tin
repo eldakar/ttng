@@ -51,8 +51,11 @@
 #alias {MacNawiasPrawy} {#line sub variables {#macro {]} {$ConfigManager_Configs[MacNawiasPrawy]}};};
 #alias {MacTylda} {#line sub variables {#macro {`} {$ConfigManager_Configs[MacTylda]}};};
 
-#alias {MacNumPLUS} {#line sub variables {#macro {$KEY_PAD_PLUS} {$ConfigManager_Configs[MacNumPLUS]}};} 
-#alias {MacNumDEL} {#line sub variables {#macro {$KEY_PAD_DEL} {$ConfigManager_Configs[MacNumDEL]}};} 
+#alias {Mac_eOo} {#line sub variables {#macro {\eOo} {$ConfigManager_Configs[Mac_eOo]}}};
+#alias {Mac_eOj} {#line sub variables {#macro {\eOj} {$ConfigManager_Configs[Mac_eOj]}}};
+#alias {Mac_eOn} {#line sub variables {#macro {\eOn} {$ConfigManager_Configs[Mac_eOn]}}};
+#alias {Mac_eOm} {#line sub variables {#macro {\eOm} {$ConfigManager_Configs[Mac_eOm]}}};
+#alias {Mac_eOk} {#line sub variables {#macro {\eOk} {$ConfigManager_Configs[Mac_eOk]}}};
+#alias {Mac_eOu} {#line sub variables {#macro {\eOu} {$ConfigManager_Configs[Mac_eOu]}}};
+#alias {Mac_eOp} {#line sub variables {#macro {\eOp} {$ConfigManager_Configs[Mac_eOp]}}};
 
-#alias {MacNumSLASH} {#line sub variables {#macro {$KEY_PAD_SLASH} {$ConfigManager_Configs[MacNumSLASH]}};} 
-#alias {MacNumASTERIX} {#line sub variables {#macro {$KEY_PAD_ASTERIX} {$ConfigManager_Configs[MacNumASTERIX]}};}
