@@ -7,7 +7,9 @@
 	#var AVATAR_NAME {$CHAR_INFO[name]};
 	#if {"$guild_lay[$CHAR_INFO[guild_lay]]" != ""} {
 		#var AVATAR_GUILD {$guild_lay[$CHAR_INFO[guild_lay]]};
-		#line sub variables {#sub {$AVATAR_NAME} {$AVATAR_NAME($AVATAR_GUILD)}};
+		#if {"$ConfigManager_Configs[gildie]" == "widoczne"} {
+			#line sub variables {#sub {$AVATAR_NAME} {$AVATAR_NAME($AVATAR_GUILD)}};
+		};
 	};
 	#var avatarid $CHAR_INFO[id];
 	#line substitute {variables} {

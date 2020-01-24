@@ -1,6 +1,10 @@
 #alias _sugerowanywrog_ {#echo {<118>Nie ma jeszcze wroga!<088>}};
 #alias _sugerowanaobrona_ {#echo {<118>Nie ma nikogo do obrony!<088>}};
 
+#alias {gildie} {
+    #nop;
+};
+
 #alias {RaidTableGuildEnemies} {
     #local tmp {$ConfigManager_Configs[RaidTableGuildEnemies]};
     #replace tmp {,} {;};
@@ -155,18 +159,27 @@
 				#nop;
 				#format dudu2 {%n} {$duch[$dudu][desc]};
 				#line substitute variables {
- #nop OPISY;        #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] - $postac[$test][imie]($postac[$test][gildia])};
-    				#sub {$dudu2} {$dudu2 - $postac[$test][imie]($postac[$test][gildia])};
- #nop WSTAW GILDIE; #nop sub {$postac[$test][imie]} {$postac[$test][imie]($postac[$test][gildia])};
- #nop POKOLORUJ;    #high {$duch[$dudu][desc]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};                     
+                    #if {"$ConfigManager_Configs[gildie]" == "widoczne"} {
+#nop OPISY;             #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] - $postac[$test][imie]($postac[$test][gildia])};
+                        #sub {$dudu2} {$dudu2 - $postac[$test][imie]($postac[$test][gildia])};
+#nop POKOLORUJ;         #high {$duch[$dudu][desc]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
+                    } {
+ #nop OPISY;            #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] - $postac[$test][imie]};
+                        #sub {$dudu2} {$dudu2 - $postac[$test][imie]};
+#nop POKOLORUJ;         #high {$duch[$dudu][desc]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
+                    };
  #nop POKOLORUJ;    #high {$dudu2} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};                     
 				};
 			};
 			#if {"$tmpimietype" == "2"} {
  #nop IMIE;                
 				#line substitute variables {
- #nop WSTAW GILDIE;	#sub {$duch[$dudu][desc]} {$duch[$dudu][desc]($postac[$test][gildia])};
- #nop POKOLORUJ;	#high {$duch[$dudu][desc]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]}; 
+                    #if {"$ConfigManager_Configs[gildie]" == "widoczne"} {
+ #nop WSTAW GILDIE;     #sub {$duch[$dudu][desc]} {$duch[$dudu][desc]($postac[$test][gildia])};
+ #nop POKOLORUJ;        #high {$duch[$dudu][desc]($postac[$test][gildia])} $ConfigManager_Configs[gildie]{$c_char_h_mode[$gildie[$postac[$test][gildia]]]}; 
+                    } {
+ #nop POKOLORUJ;        #high {$duch[$dudu][desc]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};                         
+                    };
 				};
 			};
                     };
@@ -472,10 +485,16 @@
 			#format {excheck} {%L} {$postac[$test][gildia]};
 
 			#if {$excheck > 1} {
-    			#line substitute variables {
-    				#sub {$przedstawieni[$przedstawiony]} {$przedstawieni[$przedstawiony]($postac[$test][gildia])};
-			        #high {$przedstawieni[$przedstawiony]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
-			    };
+                #if {"$ConfigManager_Configs[gildie]" == "widoczne"} {
+                    #line substitute variables {
+        				#sub {$przedstawieni[$przedstawiony]} {$przedstawieni[$przedstawiony]($postac[$test][gildia])};
+    			        #high {$przedstawieni[$przedstawiony]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
+                    };
+                } {
+                    #line substitute variables {
+                        #high {$przedstawieni[$przedstawiony]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
+                    };
+                };
 			};
 	};
 };
@@ -495,25 +514,16 @@
 			#format {excheck} {%L} {$postac[$test][gildia]};
 
 			#if {$excheck > 1} {
+                #if {"$ConfigManager_Configs[gildie]" == "widoczne"} {
     				#line substitute variables {
         				#sub {$przedstawieni[$przedstawiony]} {$przedstawieni[$przedstawiony]($postac[$test][gildia])};
 				        #high {$przedstawieni[$przedstawiony]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
-				};
+				    };
+                } {
+                    #line substitute variables {
+                        #high {$przedstawieni[$przedstawiony]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
+                    };
+                };
 			};
 	};
 };
-
-#alias {PrzedstawTest} {
-            #var test {%1};
-            #var test {${test}_};
-
-            #format {excheck} {%L} {$postac[$test][gildia]};
-
-            #if {$excheck > 1} {
-                    #line substitute variables {
-                        #sub {%1} {%1($postac[$test][gildia])};
-                        #high {%1($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
-                };
-            };    
-}
-

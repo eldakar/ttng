@@ -158,6 +158,14 @@
 #alias {kratka} {zsun sie do studni;przeplyn pod kratka};
 #alias {blok_i_dzwignia} {wcisnij blok;pociagnij dzwignie};
 
+#action {Bol w {prawej|lewej} dloni staje sie mniej odczuwalny.} {
+	qm dobadz broni;
+} {1};
+
+#action {Nie mozesz sie tam udac, gdyz siedzisz} {
+	qm wstan;
+};
+
 #action {~Znajdujesz sie na moscie laczacym skraje przepasci. Ta}
 {
   #alias {plytki} {

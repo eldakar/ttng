@@ -14,7 +14,7 @@
 #list bundle_configs clear;
 	#list bundle_configs add {RaidTableGuildEnemies};
 	#list bundle_configs add {RaidTableGuildFriends};
-
+	#list bundle_configs add {gildie};
 
 #nop IS HELP PRESENT;
 #var bundle_help {1};

@@ -14,7 +14,6 @@
 #nop IS CONFIG PRSENT;
 #var bundle_config {1};
 #list bundle_configs clear;
-	#list bundle_configs add {TTMapTerrainTheme};
 	#list bundle_configs add {TTMapMode};
 	#list bundle_configs add {TTMapTerrain};
 

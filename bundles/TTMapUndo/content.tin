@@ -59,6 +59,7 @@
 #action {%* nie jest zacumowany.} {undo};
 #action {Nikt z zakryta twarza nie wejdzie na teren obozu.} {undo};
 #action {Nie mozesz sie tam udac, gdyz wielki przerosniety troll zagradza ci droge na zachod.} {undo};
+#action {Przeciez sarkofag jest zamkniety.} {undo};
 #nop DZIWNE;
 #action {Odpadasz od sciany i lecisz w dol, jednak dzieki niewielkiej wysokosci udaje ci sie zgrabnie wyladowac na ziemi.} {
 	#if {"$movedir" == "gora"} {undo;};

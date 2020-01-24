@@ -35,6 +35,8 @@
 
 #nop CONTENT ####################################;
 #nop ############################################;
+#action {Nagle kamienie na rekojesci miecza zaczynaja iskrzyc purpurowym swiatlem, zas jego ostrze pokrywa pajeczyna mieniacych sie na czerwono, pulsujacych zylek. Zdaja sie one plynac lekko po czarnej stali, z kazdym ruchem blask od nich bijacy staje sie coraz bardziej intensywny by w koncu wystrzelic miriada jaskrawoczerwonych, swietlistych okruchow. Czujesz przyjemne mrowienie gdy jakas magiczna sila przenika przez twoje cialo.}
+	 {Highlights_magic %0;#line gag;};
 #action {Widzisz jak ogromny ognisty trojzab przysysa sie na moment do rany, a przez drzewce przebiegaja fale pulsujace w rytmie oszalalego serca napelniajace cie energia.} {Highlights_magic %0;#line gag;};
 #action {Z latwoscia dobywasz ogromnego ognistego trojzebu, a w twej glowie rozlega sie tajemniczy glos:} {Highlights_magic %0;#line gag;};
 #action {"Witaj, moj nowy Panie!"} {Highlights_magic %0;#line gag;};
