@@ -1,0 +1,27 @@
+#nop opisy pojemnikow;
+#sub {$ \(} {<138>$ <088>\(};
+#nop poziomy zuzycia;
+#high {(w znakomitym stanie)} {<118><afa>};
+#high {(lekko podniszczone)} {<038>};
+#high {(w kiepskim stanie)} {<018>};
+#high {(w oplakanym stanie)} {<118>};
+#high {(w dobrym stanie)} {<028>};
+#high {(liczne walki wyryly na niej swoje pietno)} {<038>};
+#high {(liczne walki wyryly na nim swoje pietno)} {<038>};
+#high {(w bardzo zlym stanie)} {<018>};
+#high {(w zlym stanie)} {<018>};
+#high {(wymaga natychmiastowej konserwacji)} {<118>};
+
+#nop poziomy magicznego zuzycia;
+#sub {posluzy bardzo dlugo, w znakomitym stanie} {<028>posluzy bardzo dlugo 5/5 50h+<088>};
+#sub {posluzy bardzo dlugo} {<028>posluzy bardzo dlugo 5/5 50h+<088>};
+#sub {posluzy dlugo, w znakomitym stanie} {<028>posluzy dlugo 4/5 25h-40h<088>};
+#sub {posluzy dlugo} {<028>posluzy dlugo 4/5 25h-40h<088>};
+#sub {posluzy troche, w znakomitym stanie} {<038>posluzy troche 3/5 6h-25h<088>};
+#sub {posluzy troche} {<038>posluzy troche 3/5 6h-25h<088>};
+#sub {posluzy krotko, w znakomitym stanie} {<018>posluzy krotko 2/5 1h-6h<088>};
+#sub {posluzy krotko} {<018>posluzy troche 3/5 1h-6h<088>};
+#sub {posluzy bardzo krotko, w znakomitym stanie} {<018>posluzy bardzo krotko 1/5 0h-1h<088>};
+#sub {posluzy bardzo krotko} {<018>posluzy bardzo troche 1/5 0h-1h<088>};
+
+#high {(nie posluzy dluzej, w znakomitym stanie)} {<018>};

@@ -471,7 +471,8 @@
 #nop MAG;   #regex {$tmpvalue} {Precyzyjnym i mocnym sztychem %* gleboko} {collect $AVATAR_NAME unknown magic 4;#var tmpvalue {}};
 #nop MAG;   #regex {$tmpvalue} {Atakujesz waskim kunsztownym %* ogromne} {collect $AVATAR_NAME unknown magic 5;#var tmpvalue {}};
 #nop MAG;   #regex {$tmpvalue} {Zgrabnym ruchem zwodzisz %* i gwaltownie skracajac dystans} {collect $AVATAR_NAME unknown magic 7;#var tmpvalue {}};
-
+   #nop TASAK;
+#nop MAG;   #regex {$tmpvalue} {{Widok slabnacego wroga tylko dodaje ci sil|Z kazdym kolejnym ciosem nabierasz nowej sily do walki|Powolne, pozbawione sily ruchy wroga zagrzewaja cie do walki, dodajac zapalu.}} {collect $AVATAR_NAME unknown magic 0;#var tmpvalue {}};
 
 #nop PANIC; #regex {$tmpvalue} {w panice umyka} {#sh $tmpvalue2;#var tmpvalue {}};
 #nop PANIC; #regex {$tmpvalue} {uciekl ci.} {#sh $tmpvalue2;#var tmpvalue {}};

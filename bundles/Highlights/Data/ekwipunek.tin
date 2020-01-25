@@ -1,0 +1,14 @@
+#nop NA SOBIE;
+#unhigh {Trzyma{|sz} %*.} {$c_stan_wysoki};
+#unhigh {Ma{|sz} na sobie %*.} {$c_stan_wysoki};
+#high {Ponad {jego|jej} %*.} {$c_ponad};
+#high {{Powaznie ranisz|Ranisz|Lekko ranisz|Ledwo muskasz}} {<fca>};
+
+#nop SPRZET Z KLUCZODAJEK;
+#sub {polow%w stalowa%w zbroj%w plyt%w} {<028>%0 <088>( <038>Blizniacy<088> )};
+#sub {dlug%w dwustronn%w naginat%w} {<028>%0 <088>( <038>Demon z Wezendorf<088> )}; 
+#sub {zlowr%w stalow%w drann%w} {<028>%0 <088>( <038>Obstawa Wiedzm<088> )}; 
+#sub {posep%w miecz%w katowsk%w} {<028>%0 <088>( <038>Wyspa Druchii<088> )}; 
+#sub {gigantycz%w wzmacnia%w czaszk%w} {<028>%0 <088>( <038>Szaman Wsiowy<088> )}; 
+
+#nop unhigh {polow%w stalowa%w zbroj%w plyt%w} {<028>};

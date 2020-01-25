@@ -10,12 +10,12 @@
 
     #foreach {*duch[]} {didi} {
 	#if {"%1" == "$duch[$didi][desc]"} {
-#line sub variables {
-		#alias {dolacz_do_niego} {
-			porzuc druzyne;
-			dolacz do ob_$didi;
-		};
-};
+        #line sub variables {
+    		#alias {dolacz_do_niego} {
+    			porzuc druzyne;
+    			dolacz do ob_$didi;
+    		};
+        };
 		qb dolacz_do_niego;
 	};
     };
@@ -128,53 +128,12 @@
     #line gag;
 }
 
-
-#nop opisy pojemnikow;
-#sub {$ \(} {<138>$ <088>\(};
-#nop poziomy zuzycia;
-#high {(w znakomitym stanie)} {<118><afa>};
-#high {(lekko podniszczony)} {<038>};
-#high {(lekko podniszczona)} {<038>};
-#high {(lekko podniszczone)} {<038>};
-#high {(w kiepskim stanie)} {<018>};
-#high {(w oplakanym stanie)} {<118>};
-#high {(wymaga natychmiastowej konserwacji)} {<118>};
-#high {(w dobrym stanie)} {<028>};
-#high {(liczne walki wyryly na niej swoje pietno)} {<038>};
-#high {(liczne walki wyryly na nim swoje pietno)} {<038>};
-#high {(w bardzo zlym stanie)} {<018>};
-#high {(w zlym stanie)} {<018>};
-
-#nop poziomy magicznego zuzycia;
-#high {(posluzy bardzo dlugo, w znakomitym stanie)} {<028>};
-#high {(nie posluzy dluzej, w znakomitym stanie)} {<018>};
-
-#nop NA SOBIE;
-
-#high {Trzyma{|sz} %*.} {$c_stan_wysoki};
-#unhigh {Nosi{|sz} %*.} {$c_ponad};
-#high {Ma{|sz} na sobie %*.} {$c_stan_wysoki};
-#high {Ponad {jego|jej} %*.} {$c_ponad};
-#unhigh {Do pasa ma{|sz} %*.} {$c_dopasa};
-#high {{Powaznie ranisz|Ranisz|Lekko ranisz|Ledwo muskasz}} {<fca>};
-
 #nop DO WALKI;
 #high {^%* atakuje cie!$} {<FAA><178>};
 
 #nop KOLORY PRZEDMIOTOW;
-#var kolor_pojemnik {<178>};
-#var kolor_skarbow {<038>};
-#var kolor_kamieni {<138>};
-#var kolor_gooditems {<128>};
-#var kolor_rareitems {<048>};
 
 #high {broni uzyto srebra} {<178>};
-
-#sub {Jego scianki poznaczone sa czerwienia, lecz fiolka jest zupelnie pusta.} {%0 ${c_stan_niski}0/4<088>};
-#sub {W niewielkiej czesci wypelnia je czerwona, kleista substancja.} {%0 ${c_stan_niski}1/4<088>};
-#sub {Okolo polowe jej objetosci zajmuje krwistoczerwony, gesty plyn.} {%0 ${c_stan_sredni}2/4<088>};
-#sub {Wieksza czesc fiolki wypelnia czerwony, gesty plyn.} {%0 ${c_stan_wysoki}3/4<088>};
-#sub {Fiolka jest pelna krwistoczerwonej, kleistej substancji.} {%0 ${c_stan_wysoki}4/4<088>};
 
 #nop gildie;
 #unaction {%*Noszony%*pierscien%*Kupcow%*.$} {#sh %0 (<118><fff> CN <088>);#line gag};

@@ -1,0 +1,6 @@
+#nop DRUCHII;
+#sub {Jego scianki poznaczone sa czerwienia, lecz fiolka jest zupelnie pusta.} {%0 ${c_stan_niski}0/4<088>};
+#sub {W niewielkiej czesci wypelnia je czerwona, kleista substancja.} {%0 ${c_stan_niski}1/4<088>};
+#sub {Okolo polowe jej objetosci zajmuje krwistoczerwony, gesty plyn.} {%0 ${c_stan_sredni}2/4<088>};
+#sub {Wieksza czesc fiolki wypelnia czerwony, gesty plyn.} {%0 ${c_stan_wysoki}3/4<088>};
+#sub {Fiolka jest pelna krwistoczerwonej, kleistej substancji.} {%0 ${c_stan_wysoki}4/4<088>};

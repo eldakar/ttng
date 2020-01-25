@@ -30,6 +30,8 @@
 
 #class {_stuff_sprzet} OPEN;
 
+#action {{Trzymasz|Na plecach|Masz na sobie}} {#echo HELLO};
+
 #action {Oceniasz starannie %1} {
 	#math {_stuff_curr} {$_stuff_curr +1 };
   #line gag;
@@ -72,7 +74,6 @@
 	#var {_stuff_curr} {0};
 
 	#class {_stuff_sprzet} {read} {bundles/EquipmentStatus/sprzet.class};
-
 	ocen wszystkie dobyte bronie;
 	ocen wszystkie zalozone zbroje;
 	opcje opisywanie;
