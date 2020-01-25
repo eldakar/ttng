@@ -26,6 +26,9 @@
         }
     }
 };
+#alias {startowa} {
+    #map goto $ConfigManager_Configs[startowa];
+};
 
 #alias {move_n} {#send n;#var trytomove 1;#var movedir {polnoc}};
 #alias {move_s} {#send s;#var trytomove 1;#var movedir {poludnie}};
