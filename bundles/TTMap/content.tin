@@ -264,7 +264,8 @@
                             #var tmpF3value {$roon[$roonvec][message]};
                             #replace tmpF3value {,} {;};
                             #alias LOK3 {$tmpF3value;};                            
-                            #alias 3 {$tmpF3value;};
+                            #alias 3 {$tmpF3value};
+                            #alias {3 %w} {$tmpF3value %1};
                         };
                         #default {
                             #local outputstr {$outputstr\n<118> ***  ??  *** <138> $roon[$roonvec][message] <088>};

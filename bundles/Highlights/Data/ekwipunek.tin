@@ -1,14 +1,135 @@
 #nop NA SOBIE;
-#unhigh {Trzyma{|sz} %*.} {$c_stan_wysoki};
-#unhigh {Ma{|sz} na sobie %*.} {$c_stan_wysoki};
-#high {Ponad {jego|jej} %*.} {$c_ponad};
-#high {{Powaznie ranisz|Ranisz|Lekko ranisz|Ledwo muskasz}} {<fca>};
+	#sub {Trzymasz} {<118>TRZYMASZ<088>};
+	#sub {Trzyma } {<118>TRZYMA <088>};
+	#sub {Masz na sobie} {<118><fca>MASZ NA SOBIE<088>};
+	#sub {Ma na sobie} {<118><fca>MA NA SOBIE<088>};
+	#sub {Na plecach} {<cfc>NA PLECACH<088>};
+	#high {Ponad {jego|jej} %*.} {$c_ponad};
 
-#nop SPRZET Z KLUCZODAJEK;
-#sub {polow%w stalowa%w zbroj%w plyt%w} {<028>%0 <088>( <038>Blizniacy<088> )};
-#sub {dlug%w dwustronn%w naginat%w} {<028>%0 <088>( <038>Demon z Wezendorf<088> )}; 
-#sub {zlowr%w stalow%w drann%w} {<028>%0 <088>( <038>Obstawa Wiedzm<088> )}; 
-#sub {posep%w miecz%w katowsk%w} {<028>%0 <088>( <038>Wyspa Druchii<088> )}; 
-#sub {gigantycz%w wzmacnia%w czaszk%w} {<028>%0 <088>( <038>Szaman Wsiowy<088> )}; 
+#nop SPRZET DOBREJ JAKOSCI;
+		#sub {polow%w stalowa%w zbroj%w plyt%w} {<028>%0 <088>( <038>Blizniaki<088> )};
+		#sub {dlug%w dwustronn%w naginat%w} {<028>%0 <088>( <038>Demon z Wezendorf<088> )}; 
+		#sub {zlowr%w stalow%w drann%w} {<028>%0 <088>( <038>Obstawa Wiedzm<088> )}; 
+		#sub {posep%w miecz%w katowsk%w} {<028>%0 <088>( <038>Wyspa Druchii<088> )}; 
+		#sub {gigantycz%w wzmacnia%w czaszk%w} {<028>%0 <088>( <038>Szaman Wsiowy<088> )}; 
 
-#nop unhigh {polow%w stalowa%w zbroj%w plyt%w} {<028>};
+#nop TARCZE;
+	#sub {wysoka masywna pawez} {<028>%0 <088>( <038>Orcall<088> )}; 
+	#high {owalna masywna tarcza} {<028>};
+	#high {trojbarwna trojkatna tarcza} {<028>};
+	#sub {ciezka zdobiona pawez} {<028>%0 <088>( <038>Bretonia Warownia<088> )}; 
+	#sub {szeroka stalowa tarcza} {<028>%0 <088>( <038>Karawana<088> )};
+	#sub {smukla elficka tarcza} {<028>%0 <088>( <038>Ranni Scoiatel<088> )}; 
+	#sub {wielka drewniana pawez} {<028>%0 <088>( <038>Arond<088> )};
+	#sub {kolczasta stalowa tarcza} {<028>%0 <088>( <038>Tilea Zjawy<088> )}; 
+	#sub {sercowa smukla tarcza} {<028>%0 <088>( <038>Abgetten Ogr<088> )}; 
+	#sub {kolista zdobiona tarcza} {<028>%0 <088>( <038>Lyria Fort<088> )}; 
+
+#nop CIEZKIE ZBROJE;
+	#sub {kolczasty brudny pancerz plytowy} {<028>%0 <088>( <038>Orcall Szef Orkow<088> )}; 
+	#high {solidna oficerska zbroje plytowa} {<028>};
+	#sub {czarny lsniacy napiersnik} {<028>%0 <088>( <038>Wezendorf Demon<088> )}; 
+	#sub {wytrzymaly srebrzysty helm} {<028>%0 <088>( <038>Rinde<088> )}; 
+	#sub {wytrzymale zdobione bigwanty} {<028>%0 <088>( <038>Lyria Kurhan<088> )}; 
+	#sub {spizowy solidny basinet} {<028>%0 <088>( <038>Bretonia Cmentarz<088> )}; 
+	#sub {ciezki helm z rogami} {<028>%0 <088>( <038>Tilea Kurhany<088> )}; 
+	#sub {kunsztowny matowy napiersnik} {<028>%0 <088>( <038>Smoczy Ogr<088> )}; 
+	#high {stalowa para nareczakow} {<028>};
+	#sub {dwuwypukly gladki napiersnik} {<028>%0 <088>( <038>Lyria Zboje<088> )}; 
+
+#nop SREDNIE ZBROJE;
+	#high {posepna zbroja kolcza} {<028>};
+	#sub {dwuwarstwowa stalowa kolczuga} {<028>%0 <088>( <038>Las Bretonski Szef Zbojow<088> )}; 
+	#sub {czarna zbroje kolcza} {<028>%0 <088>( <038>Lorenzo Zboj<088> )};
+	#sub {ciezka luskowa karacena} {<028>%0 <088>( <038>LLas bobolakow ARONF<088> )}; 
+	ciezka dluga kolczuga - 14/15/11 - ?
+	dluga misterna tunika kolcza - 11/14/3 - ozywieniec  bagna espad
+	wygodna dwuwarstwowa kolczuga - 8/0/5 - Lyria cmentarz
+
+
+LEKKIE ZBROJE
+brak zbadanych
+
+MLOTY JEDNORECZNE
+
+krotki lekki nadziak - 19/6/4 - talwar
+krotki masywny mlot - ?/?/? Szef Orkow, Orcall
+metalowy krotki nadziak - 6/12/1 - Szef Zbojow w Ciemnym Borze
+
+MLOTY DWURECZNE
+wielki kamienny kafar - 15/17/6 - tilea gory
+
+
+MIECZE JEDNORECZNE
+matowy starozytny miecz - 19/6/4 - Mutant zamczysko Oxen
+ksztaltny jednoreczny miecz - 17/14/9 - ?
+potezny matowy tasak  - 19/6/4 - szef orkow orcall
+czarny obsydianowy miecz - 6/1/8 - tilea zjawy
+smukly lsniacy scimitar - 7/3/10 - ?
+posrebrzany dlugi miecz - 8/5/4 - ?
+
+
+MIECZE DWURECZNE
+
+wiedzminski miecz dwureczny - 44/8/5 - kikimory
+płomienisty lsniacy flamberg - 39/-/3 - ROAN ARMAGOTH
+plomienisty dwusieczny miecz - 25/-/2 -  RINDE MAG
+stalowy surowy miecz poltorareczny - 19/6/4 - Bretonia warownia
+smukly stalowy miecz - 19/6/8 - ?
+srebrzony plomienisty flamberg - 18/12/8 - ?
+wielki vrani miecz - 19/6/8 - szef Vranow 
+poltorareczny zdobiony miecz - 19/6/8 - Lyria Blizniacy
+wielki zlocony miecz dwureczny - 6/16/9 - ozywieniec bagna espadon
+ceremonialny dwureczny multon - 7/6/0 - Smoczy wezendorf
+masywny szeroki poltorak - 6/16/3 - Drachen
+srebrny kunsztowny miecz - 6/7/2 - Zmory bretka
+czarny potezny miecz poltorareczny - 6/7/2 - Drachen
+ 
+
+
+
+TOPORY JEDNORECZNE
+
+ciezki jednoreczny topor - 6/1/8 - czarne orki wsiowe
+czarny obsydianowy topor - 6/1/8 - tilea zjawy
+krotki zdobiony topor - 6/12/6 - zwierzoczlek bretonia las
+
+TOPORY DWURECZNE
+
+inkrustowany elfi berdysz - 20/13/11 - bretonia warownia
+czarny dlugi berdysz - 15/11/6 -  Lyria blizniacy
+masywny matowy berdysz - 6/7/5 - Profesor okulary
+
+MACZUGI JEDNORECZNE
+
+rozszczepiony dlugi lancuch bojowy - 39/17/1 - ???
+kolczasty antracytowy korbacz - 19/1/4 - RAON
+szponiasta dwusegmentowa maczuge - 19/1/4 - czerwony woz banitow
+rogata debowa maczuga - 19/6/8 - merd
+ciezka kolczasta wekiera - 19/6/4 - szef orkow orcall
+lekki dlugi morgenstern - 14/1/11 - ?
+ostropiory malachitowy buzdygan - 6/18/9 - ?
+pazurzasta pasiasta maczuge - 6/12/6 - ?
+czarny obsydianowy buzdygan - 6/12/1 - zjawy tilea
+masywny zdobiony buzdygan - 15/12/1 - wicht Kreutz
+zebata potezna wekiera - 6/1/8 - czerwonowlosy hobgoblin k. Nuln
+solidna jednoreczna maczuge - 6/7/5 - KZ orki
+kosciana jednoreczna maczuge - 6/1/8  - ?
+
+MACZUGI DWURECZNE
+
+monstrualna wzmacniana maczuga - 19/6/8 - siwy troll orcall
+metalowy solidny kropacz - 15/10/6 - wicht kreutzhofen
+
+SZTYLETY
+
+stalowy zakrzywiony sztylet - 17/4/9 -> xavier
+czarny plomienisty sztylet - 8/10/0 -> ruiny rinde, szkielety
+krotki ceremonialny noz 8/10/0 - ???
+ciezki matowy sztylet - 6/3/10 - szaman orkow Jaskinie czarnych
+
+BRONIE DRZEWCOWE
+
+dluga dwustronna naginata - 18/1/9 Wezendorf demon
+bojowa dluga korseka - 2/7/10 - Lyria kurhany
+
