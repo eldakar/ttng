@@ -51,22 +51,20 @@
 	#sub {gigantycz%w wzmacnia%w czaszk%w} {<028>%0 <088>( <038>Szaman Wsiowy<088> )}; 
 
 #nop MLOTY JEDNORECZNE;
-
 	#sub {krotki lekki nadziak} {<028>%0 <088>( <038>Talwar<088> )};
 	#sub {krotki masywny mlot} {<028>%0 <088>( <038>Orcall Szef Orkow<088> )};
 	#sub {metalowy krotki nadziak} {<028>%0 <088>( <038>Ciemny Bor Szef<088> )};
 
-MLOTY DWURECZN;
+#nop MLOTY DWURECZN;
 	#sub {wielki kamienny kafar} {<028>%0 <088>( <038>Tilea Gory<088> )};
 
-
-MIECZE JEDNORECZNE
-matowy starozytny miecz - 19/6/4 - Mutant zamczysko Oxen
-ksztaltny jednoreczny miecz - 17/14/9 - ?
-potezny matowy tasak  - 19/6/4 - szef orkow orcall
-czarny obsydianowy miecz - 6/1/8 - tilea zjawy
-smukly lsniacy scimitar - 7/3/10 - ?
-posrebrzany dlugi miecz - 8/5/4 - ?
+#nop MIECZE JEDNORECZNE
+	#sub {matowy starozytny miecz} {<028>%0 <088>( <038>Oxenfurt Mutant<088> )};
+	#sub {ksztaltny jednoreczny miecz} {<028>%0 <088>( <038>?088> )};
+	#sub {potezny matowy tasak} {<028>%0 <088>( <038>Orcall Szef Orkow<088> )};
+	#sub {czarny obsydianowy miecz} {<028>%0 <088>( <038>Tilea Zjawy<088> )};
+	#sub {smukly lsniacy scimitar} {<028>%0 <088>( <038>?<088> )};
+	#sub {posrebrzany dlugi miecz} {<028>%0 <088>( <038>?<088> )};
 
 
 MIECZE DWURECZNE
