@@ -7,7 +7,7 @@
 	#high {Ponad {jego|jej} %*.} {$c_ponad};
 
 #nop SPRZET DOBREJ JAKOSCI;
-		#sub {dlug%w dwustronn%w naginat%w} {<028>%0 <088>( <038>Demon z Wezendorf<088> )}; 
+
 		#sub {zlowr%w stalow%w drann%w} {<028>%0 <088>( <038>Obstawa Wiedzm<088> )}; 
 		#sub {posep%w miecz%w katowsk%w} {<028>%0 <088>( <038>Wyspa Druchii<088> )}; 
 
@@ -82,19 +82,17 @@
 	#sub {srebrny kunsztowny miecz} {<028>%0 <088>( <038>Bretonia Zmory<088> )};
 	#sub {czarny potezny miecz poltorareczny} {<028>%0 <088>( <038>Drachenfels<088> )};
 
-TOPORY JEDNORECZNE
+#nop TOPORY JEDNORECZNE;
+	#sub {ciezki jednoreczny topor - 6/1/8 - czarne orki wsiowe
+	#sub {czarny obsydianowy topor - 6/1/8 - tilea zjawy
+	#sub {krotki zdobiony topor - 6/12/6 - zwierzoczlek bretonia las
 
-ciezki jednoreczny topor - 6/1/8 - czarne orki wsiowe
-czarny obsydianowy topor - 6/1/8 - tilea zjawy
-krotki zdobiony topor - 6/12/6 - zwierzoczlek bretonia las
-
-TOPORY DWURECZNE
-
+#nop TOPORY DWURECZNE;
 inkrustowany elfi berdysz - 20/13/11 - bretonia warownia
 czarny dlugi berdysz - 15/11/6 -  Lyria blizniacy
 masywny matowy berdysz - 6/7/5 - Profesor okulary
 
-MACZUGI JEDNORECZNE
+#nop MACZUGI JEDNORECZNE;
 
 rozszczepiony dlugi lancuch bojowy - 39/17/1 - ???
 kolczasty antracytowy korbacz - 19/1/4 - RAON
@@ -110,20 +108,17 @@ zebata potezna wekiera - 6/1/8 - czerwonowlosy hobgoblin k. Nuln
 solidna jednoreczna maczuge - 6/7/5 - KZ orki
 kosciana jednoreczna maczuge - 6/1/8  - ?
 
-MACZUGI DWURECZNE
+#nop MACZUGI DWURECZNE;
+	monstrualna wzmacniana maczuga - 19/6/8 - siwy troll orcall
+	metalowy solidny kropacz - 15/10/6 - wicht kreutzhofen
 
-monstrualna wzmacniana maczuga - 19/6/8 - siwy troll orcall
-metalowy solidny kropacz - 15/10/6 - wicht kreutzhofen
-
-SZTYLETY
-
+#nop SZTYLETY;
 stalowy zakrzywiony sztylet - 17/4/9 -> xavier
 czarny plomienisty sztylet - 8/10/0 -> ruiny rinde, szkielety
 krotki ceremonialny noz 8/10/0 - ???
 ciezki matowy sztylet - 6/3/10 - szaman orkow Jaskinie czarnych
 
-BRONIE DRZEWCOWE
-
-dluga dwustronna naginata - 18/1/9 Wezendorf demon
-bojowa dluga korseka - 2/7/10 - Lyria kurhany
+#nop BRONIE DRZEWCOWE;
+	#sub {dlug%w dwustronn%w naginat%w} {<028>%0 <088>( <038>Demon z Wezendorf<088> )}; 
+	#sub {bojowa dluga korseka - 2/7/10 - Lyria kurhany
 
