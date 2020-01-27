@@ -25,7 +25,7 @@
 	#sub {kolista zdobiona tarcza} {<028>%0 <088>( <038>Lyria Fort<088> )}; 
 
 #nop CIEZKIE ZBROJE;
-	#sub {polow%w stalowa%w zbroj%w plyt%w} {<028>%0 <088>( <038>Blizniaki<088> )};
+	#sub {polow%w stalowa%w zbroj%w plyt%w} {<028>%0 <088>( <038>Blizniacy<088> )};
 	#sub {kolczasty brudny pancerz plytowy} {<028>%0 <088>( <038>Orcall Szef Orkow<088> )}; 
 	#high {solidna oficerska zbroje plytowa} {<028>};
 	#sub {czarny lsniacy napiersnik} {<028>%0 <088>( <038>Wezendorf Demon<088> )}; 
@@ -67,22 +67,20 @@
 	#sub {posrebrzany dlugi miecz} {<028>%0 <088>( <038>?<088> )};
 
 
-MIECZE DWURECZNE
-
-wiedzminski miecz dwureczny - 44/8/5 - kikimory
-płomienisty lsniacy flamberg - 39/-/3 - ROAN ARMAGOTH
-plomienisty dwusieczny miecz - 25/-/2 -  RINDE MAG
-stalowy surowy miecz poltorareczny - 19/6/4 - Bretonia warownia
-smukly stalowy miecz - 19/6/8 - ?
-srebrzony plomienisty flamberg - 18/12/8 - ?
-wielki vrani miecz - 19/6/8 - szef Vranow 
-poltorareczny zdobiony miecz - 19/6/8 - Lyria Blizniacy
-wielki zlocony miecz dwureczny - 6/16/9 - ozywieniec bagna espadon
-ceremonialny dwureczny multon - 7/6/0 - Smoczy wezendorf
-masywny szeroki poltorak - 6/16/3 - Drachen
-srebrny kunsztowny miecz - 6/7/2 - Zmory bretka
-czarny potezny miecz poltorareczny - 6/7/2 - Drachen
- 
+#nop MIECZE DWURECZNE;
+	#sub {wiedzminski miecz dwureczny} {<028>%0 <088>( <038>Kikimory<088> )};
+	#sub {płomienisty lsniacy flamberg} {<028>%0 <088>( <038>Roan Armagoth<088> )};
+	#sub {plomienisty dwusieczny miecz} {<028>%0 <088>( <038>Rinde Mag<088> )};
+	#sub {stalowy surowy miecz poltorareczny} {<028>%0 <088>( <038>Bretonia Warownia<088> )};
+	#sub {smukly stalowy miecz} {<028>%0 <088>( <038>?<088> )};
+	#sub {srebrzony plomienisty flamberg} {<028>%0 <088>( <038>?<088> )};
+	#sub {wielki vrani miecz} {<028>%0 <088>( <038>Szef Vranow<088> )};
+	#sub {poltorareczny zdobiony miecz} {<028>%0 <088>( <038>Blizniacy<088> )};
+	#sub {wielki zlocony miecz dwureczny} {<028>%0 <088>( <038>Bagna Espa Ozywieniec<088> )};
+	#sub {ceremonialny dwureczny multon} {<028>%0 <088>( <038>Smoczy Ogr<088> )};
+	#sub {masywny szeroki poltorak} {<028>%0 <088>( <038>Drachenfels<088> )};
+	#sub {srebrny kunsztowny miecz} {<028>%0 <088>( <038>Bretonia Zmory<088> )};
+	#sub {czarny potezny miecz poltorareczny} {<028>%0 <088>( <038>Drachenfels<088> )};
 
 TOPORY JEDNORECZNE
 
