@@ -7,11 +7,10 @@
 	#high {Ponad {jego|jej} %*.} {$c_ponad};
 
 #nop SPRZET DOBREJ JAKOSCI;
-		#sub {polow%w stalowa%w zbroj%w plyt%w} {<028>%0 <088>( <038>Blizniaki<088> )};
 		#sub {dlug%w dwustronn%w naginat%w} {<028>%0 <088>( <038>Demon z Wezendorf<088> )}; 
 		#sub {zlowr%w stalow%w drann%w} {<028>%0 <088>( <038>Obstawa Wiedzm<088> )}; 
 		#sub {posep%w miecz%w katowsk%w} {<028>%0 <088>( <038>Wyspa Druchii<088> )}; 
-		#sub {gigantycz%w wzmacnia%w czaszk%w} {<028>%0 <088>( <038>Szaman Wsiowy<088> )}; 
+
 
 #nop TARCZE;
 	#sub {wysoka masywna pawez} {<028>%0 <088>( <038>Orcall<088> )}; 
@@ -26,6 +25,7 @@
 	#sub {kolista zdobiona tarcza} {<028>%0 <088>( <038>Lyria Fort<088> )}; 
 
 #nop CIEZKIE ZBROJE;
+	#sub {polow%w stalowa%w zbroj%w plyt%w} {<028>%0 <088>( <038>Blizniaki<088> )};
 	#sub {kolczasty brudny pancerz plytowy} {<028>%0 <088>( <038>Orcall Szef Orkow<088> )}; 
 	#high {solidna oficerska zbroje plytowa} {<028>};
 	#sub {czarny lsniacy napiersnik} {<028>%0 <088>( <038>Wezendorf Demon<088> )}; 
@@ -41,23 +41,23 @@
 	#high {posepna zbroja kolcza} {<028>};
 	#sub {dwuwarstwowa stalowa kolczuga} {<028>%0 <088>( <038>Las Bretonski Szef Zbojow<088> )}; 
 	#sub {czarna zbroje kolcza} {<028>%0 <088>( <038>Lorenzo Zboj<088> )};
-	#sub {ciezka luskowa karacena} {<028>%0 <088>( <038>LLas bobolakow ARONF<088> )}; 
-	ciezka dluga kolczuga - 14/15/11 - ?
-	dluga misterna tunika kolcza - 11/14/3 - ozywieniec  bagna espad
-	wygodna dwuwarstwowa kolczuga - 8/0/5 - Lyria cmentarz
+	#sub {ciezka luskowa karacena} {<028>%0 <088>( <038>Las bobolakow ARONF<088> )}; 
+	#high {ciezka dluga kolczuga} {<028>};
+	#sub {dluga misterna tunika kolcza} {<028>%0 <088>( <038>Bagna Espa Ozyw<088> )}; 
+	#sub {wygodna dwuwarstwowa kolczuga} {<028>%0 <088>( <038>Lyria Cmentarz<088> )};
 
 
-LEKKIE ZBROJE
-brak zbadanych
+#nop LEKKIE ZBROJE;
+	#sub {gigantycz%w wzmacnia%w czaszk%w} {<028>%0 <088>( <038>Szaman Wsiowy<088> )}; 
 
-MLOTY JEDNORECZNE
+#nop MLOTY JEDNORECZNE;
 
-krotki lekki nadziak - 19/6/4 - talwar
-krotki masywny mlot - ?/?/? Szef Orkow, Orcall
-metalowy krotki nadziak - 6/12/1 - Szef Zbojow w Ciemnym Borze
+	#sub {krotki lekki nadziak} {<028>%0 <088>( <038>Talwar<088> )};
+	#sub {krotki masywny mlot} {<028>%0 <088>( <038>Orcall Szef Orkow<088> )};
+	#sub {metalowy krotki nadziak} {<028>%0 <088>( <038>Ciemny Bor Szef<088> )};
 
-MLOTY DWURECZNE
-wielki kamienny kafar - 15/17/6 - tilea gory
+MLOTY DWURECZN;
+	#sub {wielki kamienny kafar} {<028>%0 <088>( <038>Tilea Gory<088> )};
 
 
 MIECZE JEDNORECZNE
@@ -85,8 +85,6 @@ masywny szeroki poltorak - 6/16/3 - Drachen
 srebrny kunsztowny miecz - 6/7/2 - Zmory bretka
 czarny potezny miecz poltorareczny - 6/7/2 - Drachen
  
-
-
 
 TOPORY JEDNORECZNE
 
