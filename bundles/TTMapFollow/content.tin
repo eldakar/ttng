@@ -1,4 +1,5 @@
 #action {Wraz z %1 jedziesz %2 na %3.} {#sh Wraz z %1 podazasz za %2 na %3.};
+#action {Wraz z %1 pomagacie %2 przeniesc duza zelazna klatke na %3} {#sh Wraz z %1 podazasz za %2 na %3};
 #action {%*{Podazasz|podazasz} za %1} {
 	#echo {<fca>MAP::Follow - Nieobsluzony wyjatek, gubie mape.};
 	#var MAPPER_SYNC 0;
