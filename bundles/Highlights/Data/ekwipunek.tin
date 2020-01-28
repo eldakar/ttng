@@ -94,19 +94,19 @@
 
 #nop MACZUGI JEDNORECZNE;
 
-rozszczepiony dlugi lancuch bojowy - 39/17/1 - ???
-kolczasty antracytowy korbacz - 19/1/4 - RAON
-szponiasta dwusegmentowa maczuge - 19/1/4 - czerwony woz banitow
-rogata debowa maczuga - 19/6/8 - merd
-ciezka kolczasta wekiera - 19/6/4 - szef orkow orcall
-lekki dlugi morgenstern - 14/1/11 - ?
-ostropiory malachitowy buzdygan - 6/18/9 - ?
-pazurzasta pasiasta maczuge - 6/12/6 - ?
-czarny obsydianowy buzdygan - 6/12/1 - zjawy tilea
-masywny zdobiony buzdygan - 15/12/1 - wicht Kreutz
-zebata potezna wekiera - 6/1/8 - czerwonowlosy hobgoblin k. Nuln
-solidna jednoreczna maczuge - 6/7/5 - KZ orki
-kosciana jednoreczna maczuge - 6/1/8  - ?
+	#sub {rozszczepiony dlugi lancuch bojowy} {<028>%0 <088>( <038>?<088> )};
+	#sub {kolczasty antracytowy korbacz} {<028>%0 <088>( <038>Roan Armagoth<088> )};
+	#sub {szponiasta dwusegmentowa maczuge} {<028>%0 <088>( <038>Abgetten Ogr<088> )};
+	#sub {rogata debowa maczuga} {<028>%0 <088>( <038>Merd<088> )};
+	#sub {ciezka kolczasta wekiera} {<028>%0 <088>( <038>Orcall Szef Orkow<088> )};
+	#sub {lekki dlugi morgenstern} {<028>%0 <088>( <038>?<088> )};
+	#sub {ostropiory malachitowy buzdygan} {<028>%0 <088>( <038>?<088> )};
+	#sub {pazurzasta pasiasta maczuge} {<028>%0 <088>( <038>?<088> )};
+	#sub {czarny obsydianowy buzdygan} {<028>%0 <088>( <038>Tilea Zjawy<088> )};
+	#sub {masywny zdobiony buzdygan} {<028>%0 <088>( <038>Kreutz Wicht<088> )};
+	#sub {zebata potezna wekiera} {<028>%0 <088>( <038>Lasek Bukowy Hobgob<088> )};
+	#sub {solidna jednoreczna maczuge} {<028>%0 <088>( <038>Kraina Orki<088> )};
+	#sub {kosciana jednoreczna maczuge} {<028>%0 <088>( <038>?<088> )};
 
 #nop MACZUGI DWURECZNE;
 	monstrualna wzmacniana maczuga - 19/6/8 - siwy troll orcall
