@@ -83,14 +83,14 @@
 	#sub {czarny potezny miecz poltorareczny} {<028>%0 <088>( <038>Drachenfels<088> )};
 
 #nop TOPORY JEDNORECZNE;
-	#sub {ciezki jednoreczny topor - 6/1/8 - czarne orki wsiowe
-	#sub {czarny obsydianowy topor - 6/1/8 - tilea zjawy
-	#sub {krotki zdobiony topor - 6/12/6 - zwierzoczlek bretonia las
+	#sub {ciezki jednoreczny topor} {<028>%0 <088>( <038>Wsiowe Orki<088> )};
+	#sub {czarny obsydianowy topor} {<028>%0 <088>( <038>Tilea Zjawy<088> )};
+	#sub {krotki zdobiony topor} {<028>%0 <088>( <038>Bretonia Zwierzoczlek Las<088> )};
 
 #nop TOPORY DWURECZNE;
-inkrustowany elfi berdysz - 20/13/11 - bretonia warownia
-czarny dlugi berdysz - 15/11/6 -  Lyria blizniacy
-masywny matowy berdysz - 6/7/5 - Profesor okulary
+	#sub {inkrustowany elfi berdysz} {<028>%0 <088>( <038>Bretonia Warownia<088> )};
+	#sub {czarny dlugi berdysz - 15/11/6} {<028>%0 <088>( <038>Lyria Blizniacy<088> )};
+	#sub {masywny matowy berdysz} {<028>%0 <088>( <038>Oxenfurt Profesor<088> )};
 
 #nop MACZUGI JEDNORECZNE;
 
