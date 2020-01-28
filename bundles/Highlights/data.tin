@@ -1,6 +1,6 @@
 #read bundles/Highlights/Data/klucze.tin
 #read bundles/Highlights/Data/magiki.tin
-#nop read bundles/Highlights/Data/ekwipunek.tin;
+#read bundles/Highlights/Data/ekwipunek.tin;
 #read bundles/Highlights/Data/ziola.tin
 #read bundles/Highlights/Data/ocena.tin
 #read bundles/Highlights/Data/rozne.tin
