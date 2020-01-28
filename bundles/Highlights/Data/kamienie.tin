@@ -3,29 +3,29 @@
 #sub {czarn%w perel} {czarn%1 perel (<168>woda +20<088>)};
 #sub {bial%w perel} {bial%1 perel (<168>woda +10<088>)};
 
-#sub {iolit{,| |.}} {iolit (<168>woda +10<088>)%1};
-#sub {turmalin{,| |.}} {turmalin (<168>elektrycznosc +10<088>)%1};
+#sub {iolit{ |,|.}} {iolit (<168>woda +10<088>)%1};
+#sub {turmalin{ |,|.}} {turmalin (<168>elektrycznosc +10<088>)%1};
 
-#sub {piryt{,| |.}} {piryt (<178>magia umyslu +10<088>)%1};
-#sub {ortoklaz{,| |.}} {ortoklaz (<178>magia umyslu +20<088>)%1};
-#sub {fluoryt{,| |.}} {fluoryt (<178>magia umyslu +10<088>)%1};
-#sub {oliwin{,| |.}} {oliwin (<178>czysta magia +10<088>)%1};
+#sub {piryt{ |,|.}} {piryt (<178>magia umyslu +10<088>)%1};
+#sub {ortoklaz{ |,|.}} {ortoklaz (<178>magia umyslu +20<088>)%1};
+#sub {fluoryt{ |,|.}} {fluoryt (<178>magia umyslu +10<088>)%1};
+#sub {oliwin{ |,|.}} {oliwin (<178>czysta magia +10<088>)%1};
 
-#sub {lazuryt{,| |.}} {lazuryt (<148>powietrze +10<088>)%1};
-#sub { azuryt{,| |.}} { azuryt (<148>powietrze +10<088>)%1};
-#sub {nefryt{,| |.}} {nefryt (<148>powietrze +10<088>)%1};
+#sub {lazuryt{ |,|.}} {lazuryt (<148>powietrze +10<088>)%1};
+#sub { azuryt{ |,|.}} { azuryt (<148>powietrze +10<088>)%1};
+#sub {nefryt{ |,|.}} {nefryt (<148>powietrze +10<088>)%1};
 
-#sub {awenturyn{,| |.}} {awenturyn (<128>kwas +10<088>)%1};
-#sub {malachit{,| |.}} {malachit (<128>kwas +10<088>)%1};
+#sub {awenturyn{ |,|.}} {awenturyn (<128>kwas +10<088>)%1};
+#sub {malachit{ |,|.}} {malachit (<128>kwas +10<088>)%1};
 
-#sub {celestyn{,| |.}} {celestyn (nic)%1};
-#sub {obsydian{,| |.}} {obsydian (nic)%1};
+#sub {celestyn{ |,|.}} {celestyn (nic)%1};
+#sub {obsydian{ |,|.}} {obsydian (nic)%1};
 
-#sub {agat{,| |.}} {agat (<118>ogien +10<088>)%1};
-#sub {karneol{,| |.}} {karneol (<118>magia smierci +10<088>)%1};
-#sub {hematyt{,| |.}} {hematyt (<118>magia smierci +10<088>)%1};
+#sub {agat{ |,|.}} {agat (<118>ogien +10<088>)%1};
+#sub {karneol{ |,|.}} {karneol (<118>magia smierci +10<088>)%1};
+#sub {hematyt{ |,|.}} {hematyt (<118>magia smierci +10<088>)%1};
 
-#sub {bursztyn{,| |.}} {bursztyn (nic)%1}; 
-#sub {kwarc{,| |.}} {kwarc (<128>ziemia +10<088>)%1};
-#sub {monacyt{,| |.}} {monacyt (<128>ziemia +10<088>)%1};
-#sub {turkus{,| |.}} {turkus (<128>ziemia +10<088>)%1};
+#sub {bursztyn{ |,|.}} {bursztyn (nic)%1}; 
+#sub {kwarc{ |,|.}} {kwarc (<128>ziemia +10<088>)%1};
+#sub {monacyt{ |,|.}} {monacyt (<128>ziemia +10<088>)%1};
+#sub {turkus{ |,|.}} {turkus (<128>ziemia +10<088>)%1};
