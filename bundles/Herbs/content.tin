@@ -1165,6 +1165,29 @@ zamknij czwarty przytroczony woreczek;
   dobadz broni;
 }
 
+#alias {szal3}
+{
+  obb;
+  otworz pierwszy przytroczony woreczek;
+  otworz drugi przytroczony woreczek;
+  otworz trzeci przytroczony woreczek;
+  otworz czwarty przytroczony woreczek;
+  wez zaostrzony podluzny lisc z pierwszego przytroczonego woreczka;
+  wez zaostrzony podluzny lisc z drugiego przytroczonego woreczka;
+  wez zaostrzony podluzny lisc z trzeciego przytroczonego woreczka;
+  wez zaostrzony podluzny lisc z czwartego przytroczonego woreczka;
+  przyloz trzy zaostrzonone podluzne liscie;
+  wloz kremowe kwiaty do pierwszego woreczka;
+  wloz kremowe kwiaty do drugiego woreczka;
+  wloz kremowe kwiaty do trzeciego woreczka;
+  wloz kremowe kwiaty do czwartego woreczka;
+  zamknij pierwszy przytroczony woreczek;
+  zamknij drugi przytroczony woreczek;
+  zamknij trzeci przytroczony woreczek;
+  zamknij czwarty przytroczony woreczek;
+  dbb;
+}
+
 #alias {przelot}
 {
   opusc bron;
