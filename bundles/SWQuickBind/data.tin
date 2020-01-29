@@ -1,6 +1,6 @@
-#read bundles/SWQuickBind/ekwipunek.tin;
-#read bundles/SWQuickBind/lokacje.tin;
-#read bundles/SWQuickBind/magiki.tin;
-#read bundles/SWQuickBind/prowadzacy.tin;
-#read bundles/SWQuickBind/pulapki.tin;
-#read bundles/SWQuickBind/rozne.tin;
+#read bundles/SWQuickBind/Data/ekwipunek.tin;
+#read bundles/SWQuickBind/Data/lokacje.tin;
+#read bundles/SWQuickBind/Data/magiki.tin;
+#read bundles/SWQuickBind/Data/prowadzacy.tin;
+#read bundles/SWQuickBind/Data/pulapki.tin;
+#read bundles/SWQuickBind/Data/rozne.tin;

@@ -1,7 +1,7 @@
-#sub {czarn%w perl{a|y}} {czarn%1 perl%2 (<168>woda +20<088>)};
-#sub {bial%w perl{a|y}} {bial%1 perl%2 (<168>woda +10<088>)};
-#sub {czarn%w perel} {czarn%1 perel (<168>woda +20<088>)};
-#sub {bial%w perel} {bial%1 perel (<168>woda +10<088>)};
+#sub {czarna perl%w} {czarna perl%1 (<168>woda +20<088>)};
+#sub {biala perl%w} {biala perl%1 (<168>woda +10<088>)};
+#sub {czarnych perel} {czarnych perel (<168>woda +20<088>)};
+#sub {bialych perel} {bialych perel (<168>woda +10<088>)};
 
 #sub {iolit{ |,}} {iolit (<168>woda +10<088>)%1};
 #sub {turmalin{ |,}} {turmalin (<168>elektrycznosc +10<088>)%1};
