@@ -196,11 +196,6 @@
 	#var r @set_quickbind_yellow{po_kolorze_na_n};
 }
 
-#action {Chwytasz stylisko misternego obosiecznego topora w garsc i wykonujesz nim kilka probnych wymachow, oswajajac sie z nietypowym wywazeniem oreza} 
-{
-	qb przekrec stylisko
-}
-
 #action {Alez %* {uprzaz|pochwa|temblak} jest zupelenie pust{y|a}...}
 {
 	qb dobadz broni
