@@ -8,7 +8,6 @@
 #high {polyskliwy smukly espadon} {<118><caf>};
 #high {snieznobiala luskowa kolczug%.} {<118><caf>};
 #high {poszczerbiony obureczny miecz} {<118><caf>};
-#high {gruba czarna opaske z kolcami} {<118><caf>};
 #high {szara wygodna pare butow} {<118><caf>};
 #high {ogromny ognisty trojzab} {<118><caf>};
 #high {waski kunsztowny sihill} {<118><caf>};
@@ -16,7 +15,6 @@
 #high {lodowy lsniacy sztylet} {<118><caf>};
 #high {mithrylowy lsniacy amulet} {<118><caf>};
 #high {kunsztowny lekki pancerz} {<118><caf>};
-#high {czarny zdobiony amulet} {<118><caf>};
 #high {szmaragdowozielony misterny plaszcz} {<118><caf>};
 #high {adamantytow%w szpiczast%w partyzan%w} {<118><caf>};
 #high {antyczn%w zdobion%w sztylet%w} {<118><caf>};
@@ -29,16 +27,12 @@
 #high {dlug%w czarn%w szat%w} {<118><caf>};
 #high {dlug%w krasnoludzk%w bajdan%w} {<118><caf>};
 #high {dlugi%w runiczn%w korba%w} {<118><caf>};
-#high {dlugi%w czarn%w szat%w} {<118><caf>};
-#high {dlugi%w krasnoludzki%w bajdan%w} {<118><caf>};
 
 #high {gigantyczn%w granitow%w mlot%w} {<118><caf>};
 #high {gwiezdn%w topor%w} {<118><caf>};
 #high {iskrzac%w zdobion%w bulaw%w} {<118><caf>};
-#high {jasniejac%w zdobion%w jatagan%w} {<118><caf>};
 #high {koscian%w kilof%w} {<118><caf>};
 #high {kruczoczarn%w dlugi%w plasz%w} {<118><caf>};
-#high {kruczoczarn%w mistern%w mie%w} {<118><caf>};
 #high {krysztalow%w dwureczn%w korba%w} {<118><caf>};
 #high {kunsztown%w lekki%w pancerz} {<118><caf>};
 #high {kunsztown%w mithrylow%w topor%w bojow%w} {<118><caf>};
@@ -59,6 +53,10 @@
 #sub {blekitno-srebrn%w herbow%w tarcz%w} {<118><caf>%0 <088>(<018>ogluch<088>)};
 #sub {ciemnogranatow%w smukl%w helm%w} {<118><caf> %0 <088>(<018>ogluch <028>+<fca>odp.<088>)};
 #sub {czarn%w prost%w diadem%w} {<118><caf>%0 <088>(<fca>wpraw kamien <028><fca>odp.<088>)};
+#sub {czerwon%w skrzydla%w par%w nareczak%w} {<118><caf>%0 <088>(<028>+<fca>sila<088>)};
+#sub {grub%w czarn%w opask%w z kolcami} {<118><caf>%0 <088>(<028>+<fca>wyt<088>)};
+#sub {jasniejac%w zdobion%w jatagan%w}{<118><caf>%0 <088>(<138>swiatlo<088>)};
+#sub {kruczoczarn%w mistern%w mie%w} {<118><caf>%0 <088>(<028>+hp<088>)};
 
 #high {lodow%w lsniac%w sztylet%w} {<118><caf>};
 #high {lodow%w dlug%w maczug%w} {<118><caf>};
