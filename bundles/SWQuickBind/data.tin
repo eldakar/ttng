@@ -1,58 +1,8 @@
-#action {%* chwyta za galke i przekreca ja lekko.} {#var klpr @set_quickbind_blue_move{galka};#var kk @_print_bind{%0};#line gag};
-#action {%* zsuwa sie ostroznie do studziennego otworu.} {#var klpr @set_quickbind_blue_move{kratka};#var kk @_print_bind{%0};#line gag};
-#action {%* zeskakuje na skalna polke.} {#var klpr @set_quickbind_blue_move{zeskocz na polke};#var kk @_print_bind{%0};#line gag};
-#action {%* bierze krotki rozbieg i przeskakuje nad rozpadlina.} {#var klpr @set_quickbind_blue_move{przeskocz rozpadline};#var kk @_print_bind{%0};#line gag};
-#action {~Nie jestes zbyt pewny swojej umiejetnosci latania...} {#var klpr @set_quickbind_blue_move{pociagnij linke};#var kk @_print_bind{%0};#line gag};
-#action {~Niewielka furtka otwiera sie.} {#var klpr @set_quickbind_blue_move{furtka};#var kk @_print_bind{%0};#line gag};
-#action {~{z|Z}nika za nim i ku twemu} {#var klpr @set_quickbind_blue_move{obroc rzezbe};#var kk @_print_bind{%0};#line gag};
-#action {^%1 nabiera powietrza} {#var klpr @set_quickbind_green{na};#var kk @_print_bind{%0};#line gag};
-
-#alias {galka} {przekrec galke;odsun kredens};
-#alias {kratka} {zsun sie do studni;przeplyn pod kratka};
-#alias {blok_i_dzwignia} {wcisnij blok;pociagnij dzwignie};
-
-#action {Bol w {prawej|lewej} dloni staje sie mniej odczuwalny.} {
-	qm dobadz broni;
-} {1};
-
 #action {Nie mozesz sie tam udac, gdyz siedzisz} {
 	qm wstan;
 };
 
-#action {~Znajdujesz sie na moscie laczacym skraje przepasci. Ta}
-{
-  #alias {plytki} {
-    obe czerwone plytki;
-    obe czarne plytki;
-    obe biale plytki;
-  };
-  #var rr @set_quickbind_blue{plytki};
-}
 
-#action {~^Plytki zostaly wykonane z marmuru w %1 kolorze. Wyraznie odcinaja sie od reszty kamieni, jakimi wybrukowano most. Ich rozmiar odpowiada dokladnie rozmiarowi stopy ogra.$}
-{
-  #sh {<118><afa>PLYTKI %1 OK<088>};
-}
-
-
-#action {~^Plytki zostaly wykonane z marmuru w %1 kolorze. Wyraznie odcinaja sie od reszty kamieni, jakimi wybrukowano most. Ich rozmiar odpowiada dokladnie rozmiarowi stopy ogra. Dostrzegasz, iz sa lekko zaglebione w powierzchni mostu.$}
-{
-	#alias {po_kolorze_na_n} {
-	  przejdz po %1 plytkach na polnoc;
-	  #chat message mapper navigate:exit:n;
-	};
-	#alias {po_kolorze_na_s} {
-	  przejdz po %1 plytkach na poludnie;
-	  #chat message mapper navigate:exit:s;
-	};
-	#var r @set_quickbind_green{po_kolorze_na_s};
-	#var r @set_quickbind_yellow{po_kolorze_na_n};
-}
-
-#action {Alez %* {uprzaz|pochwa|temblak} jest zupelenie pust{y|a}...}
-{
-	qb dobadz broni
-}
 
 #nop #####################################################################;
 #nop SIADANIE W KNAJPACH #################################################;
