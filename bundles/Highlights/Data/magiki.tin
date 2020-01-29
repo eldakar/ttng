@@ -6,8 +6,6 @@
 #high {srebrzysta kos%. bojowa} {<118><caf>};
 #high {misterny obosieczny topor} {<118><caf>};
 #high {polyskliwy smukly espadon} {<118><caf>};
-#high {adamantytowa szpiczasta partyzan%.} {<118><caf>};
-#high {azurowy koscistobialy amulet} {<118><caf>};
 #high {snieznobiala luskowa kolczug%.} {<118><caf>};
 #high {poszczerbiony obureczny miecz} {<118><caf>};
 #high {gruba czarna opaske z kolcami} {<118><caf>};
@@ -22,11 +20,8 @@
 #high {szmaragdowozielony misterny plaszcz} {<118><caf>};
 #high {adamantytow%w szpiczast%w partyzan%w} {<118><caf>};
 #high {antyczn%w zdobion%w sztylet%w} {<118><caf>};
-#high {azurow%w koscistobial%w amulet%w} {<118><caf>};
-#high {blekitno-srebrn%w herbow%w tarcz%w} {<118><caf>};
 #high {ciemn%w owaln%w mask%w} {<118><caf>};
 #high {ciemn%w owaln%w mask%w} {<118><caf>};
-#high {ciemnogranatow%w smukl%w helm%w} {<118><caf>};
 #high {ciezki%w krwist%w amulet%w} {<118><caf>};
 #high {czarnoblekitn%w pulsujac%w morgenstern%w} {<118><caf>};
 #high {czarn%w prost%w diadem%w} {<118><caf>};
@@ -37,7 +32,7 @@
 #high {dlugi%w runiczn%w korba%w} {<118><caf>};
 #high {dlugi%w czarn%w szat%w} {<118><caf>};
 #high {dlugi%w krasnoludzki%w bajdan%w} {<118><caf>};
-#high {dwureczn%w adamantytow%w mlot%w bojow%w} {<118><caf>};
+
 #high {gigantyczn%w granitow%w mlot%w} {<118><caf>};
 #high {gwiezdn%w topor%w} {<118><caf>};
 #high {iskrzac%w zdobion%w bulaw%w} {<118><caf>};
@@ -52,11 +47,18 @@
 
 #sub {masywn%w wyszczerbion%w tasak%w} {<118><caf>%0 <088>(<fca>meczy wroga <018>-<048>man<088>)};
 #sub {lekk%w lsniac%w bransolet%w} {<118><caf>%0 <088>(<028>+<fca>2 zreka<088>)};
-#sub {niepozorn%w barwn%w pierscien%w} {<118><caf>%0 <088>(<fca>+1 spost<088>)};
+#sub {niepozorn%w barwn%w pierscien%w} {<118><caf>%0 <088>(<fca>+10 spost<088>)};
 #sub {zdobion%w zlot%w pierscien%w} {<118><caf>%0 <088>(<fca>+40% wyczucie<088>)};
 #sub {bialoblekit%w smocz%w zbroj%w} {<118><caf>%0 <088>(<fca>+40% odp. fiz.<088>)};
 #sub {snieznobial%w luskow%w pancerz%w} {<118><caf>%0 <088>(<028>+<fca>odp.<088>)};
 #sub {egzotyczn%w jadeito%w palasz%w} {<118><caf>%0 <088>(<013>wpraw kamien<088>)};
+#sub {adamantytow%w mlot%w bojow%w} {<118><caf>%0 <088>(<013>poltorak<088>)};
+#sub {archaiczn%w zdobion%w topor%w} {<118><caf>%0 <088>(<013>na nieumarlych<088>)};
+#sub {asymetryczn%w wulkaniczn%w mlot%w} {<118><caf>%0 <088>(<013>wpraw kamien<088>)};
+#sub {azurow%w koscistobial%w amulet%w} {<118><caf>%0 <088>(<028>+hp <048>full mana<088>)};
+#sub {azurow%w polyskujac%w amulet%w z wielobarwnego koralu} {{<118><caf>%0 <088>(<fca>wpraw kamien <028><fca>odp.<088>)};
+#sub {blekitno-srebrn%w herbow%w tarcz%w} {<118><caf>%0 <088>(<018>ogluch<088>)};
+#high {ciemnogranatow%w smukl%w helm%w} {<118><caf> %0 <088>(<018>ogluch <028>+<fca>odp.<088>)};
 
 #high {lodow%w lsniac%w sztylet%w} {<118><caf>};
 #high {lodow%w dlug%w maczug%w} {<118><caf>};
