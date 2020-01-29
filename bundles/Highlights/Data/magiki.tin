@@ -24,7 +24,6 @@
 #high {ciemn%w owaln%w mask%w} {<118><caf>};
 #high {ciezki%w krwist%w amulet%w} {<118><caf>};
 #high {czarnoblekitn%w pulsujac%w morgenstern%w} {<118><caf>};
-#high {czarn%w prost%w diadem%w} {<118><caf>};
 #high {czarn%w zdobion%w amulet%w} {<118><caf>};
 #high {czerwon%w zakrwawion%w pierscien%w} {<118><caf>};
 #high {dlug%w czarn%w szat%w} {<118><caf>};
@@ -56,9 +55,10 @@
 #sub {archaiczn%w zdobion%w topor%w} {<118><caf>%0 <088>(<013>na nieumarlych<088>)};
 #sub {asymetryczn%w wulkaniczn%w mlot%w} {<118><caf>%0 <088>(<013>wpraw kamien<088>)};
 #sub {azurow%w koscistobial%w amulet%w} {<118><caf>%0 <088>(<028>+hp <048>full mana<088>)};
-#sub {azurow%w polyskujac%w amulet%w z wielobarwnego koralu} {{<118><caf>%0 <088>(<fca>wpraw kamien <028><fca>odp.<088>)};
+#sub {azurow%w polyskujac%w amulet%w z wielobarwnego koralu} {<118><caf>%0 <088>(<fca>wpraw kamien <028><fca>odp.<088>)};
 #sub {blekitno-srebrn%w herbow%w tarcz%w} {<118><caf>%0 <088>(<018>ogluch<088>)};
-#high {ciemnogranatow%w smukl%w helm%w} {<118><caf> %0 <088>(<018>ogluch <028>+<fca>odp.<088>)};
+#sub {ciemnogranatow%w smukl%w helm%w} {<118><caf> %0 <088>(<018>ogluch <028>+<fca>odp.<088>)};
+#sub {czarn%w prost%w diadem%w} {<118><caf>%0 <088>(<fca>wpraw kamien <028><fca>odp.<088>)};
 
 #high {lodow%w lsniac%w sztylet%w} {<118><caf>};
 #high {lodow%w dlug%w maczug%w} {<118><caf>};
