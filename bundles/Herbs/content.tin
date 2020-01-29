@@ -1478,6 +1478,7 @@ zamknij czwarty przytroczony woreczek;
 #var zioladb[Bylica][sposob][gl] {zjedz};
 #var zioladb[Kasztanowiec][sposob][zm] {zjedz};
 #var zioladb[Przelot][sposob][zm] {sproszkuj};
+#var zioladb[Przelot_][sposob][o] {przezuj};
 #var zioladb[Bielun][sposob] {};
 #var zioladb[Deren][sposob] {};
 #var zioladb[Komosa][sposob][s] {zjedz};
