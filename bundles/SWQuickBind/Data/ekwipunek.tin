@@ -1,0 +1,9 @@
+#action {Bol w {prawej|lewej} dloni staje sie mniej odczuwalny.} {
+	qm dobadz broni;
+} {1};
+
+
+#action {Alez %* {uprzaz|pochwa|temblak} jest zupelenie pust{y|a}...}
+{
+	qb dobadz broni
+}
