@@ -1,1 +1,5 @@
 #action {Zakladasz masywny oksydowany pas.} {qb quickbind zacisnij klamre};
+#action {Chwytasz stylisko misternego obosiecznego topora w garsc i wykonujesz nim kilka probnych wymachow, oswajajac sie z nietypowym wywazeniem oreza} 
+{
+	qb przekrec stylisko
+}
