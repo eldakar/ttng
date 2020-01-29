@@ -1,0 +1,15 @@
+#action {%* chwyta za galke i przekreca ja lekko.} {#var klpr @set_quickbind_blue_move{galka};#var kk @_print_bind{%0};#line gag};
+#action {%* zsuwa sie ostroznie do studziennego otworu.} {#var klpr @set_quickbind_blue_move{kratka};#var kk @_print_bind{%0};#line gag};
+#action {%* zeskakuje na skalna polke.} {#var klpr @set_quickbind_blue_move{zeskocz na polke};#var kk @_print_bind{%0};#line gag};
+#action {%* bierze krotki rozbieg i przeskakuje nad rozpadlina.} {#var klpr @set_quickbind_blue_move{przeskocz rozpadline};#var kk @_print_bind{%0};#line gag};
+#action {~Nie jestes zbyt pewny swojej umiejetnosci latania...} {#var klpr @set_quickbind_blue_move{pociagnij linke};#var kk @_print_bind{%0};#line gag};
+#action {~Niewielka furtka otwiera sie.} {#var klpr @set_quickbind_blue_move{furtka};#var kk @_print_bind{%0};#line gag};
+#action {~{z|Z}nika za nim i ku twemu} {#var klpr @set_quickbind_blue_move{obroc rzezbe};#var kk @_print_bind{%0};#line gag};
+#action {^%1 nabiera powietrza} {#var klpr @set_quickbind_green{na};#var kk @_print_bind{%0};#line gag};
+
+#alias {galka} {przekrec galke;odsun kredens};
+#alias {kratka} {zsun sie do studni;przeplyn pod kratka};
+#alias {blok_i_dzwignia} {wcisnij blok;pociagnij dzwignie};
+
+
+#nop DO NAPRAWY;
