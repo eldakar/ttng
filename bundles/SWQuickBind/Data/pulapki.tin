@@ -1,0 +1,29 @@
+#action {~Znajdujesz sie na moscie laczacym skraje przepasci. Ta}
+{
+  #alias {plytki} {
+    obe czerwone plytki;
+    obe czarne plytki;
+    obe biale plytki;
+  };
+  #var rr @set_quickbind_blue{plytki};
+}
+
+#action {~^Plytki zostaly wykonane z marmuru w %1 kolorze. Wyraznie odcinaja sie od reszty kamieni, jakimi wybrukowano most. Ich rozmiar odpowiada dokladnie rozmiarowi stopy ogra.$}
+{
+  #sh {<118><afa>PLYTKI %1 OK<088>};
+}
+
+
+#action {~^Plytki zostaly wykonane z marmuru w %1 kolorze. Wyraznie odcinaja sie od reszty kamieni, jakimi wybrukowano most. Ich rozmiar odpowiada dokladnie rozmiarowi stopy ogra. Dostrzegasz, iz sa lekko zaglebione w powierzchni mostu.$}
+{
+	#alias {po_kolorze_na_n} {
+	  przejdz po %1 plytkach na polnoc;
+	  #chat message mapper navigate:exit:n;
+	};
+	#alias {po_kolorze_na_s} {
+	  przejdz po %1 plytkach na poludnie;
+	  #chat message mapper navigate:exit:s;
+	};
+	#var r @set_quickbind_green{po_kolorze_na_s};
+	#var r @set_quickbind_yellow{po_kolorze_na_n};
+}
