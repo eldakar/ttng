@@ -1403,7 +1403,7 @@ zamknij czwarty przytroczony woreczek;
 #var zioladb[Nagietek][sposob][kn] {przyloz};
 #var zioladb[Szczaw][sposob][kn] {przezuj};
 #var zioladb[Lawenda][sposob][kn] {przyloz};
-#var zioladb[SzalwiaLekarska][sposob][kn] {zjedz};
+#var zioladb[SzalwiaLekarska][sposob][kn] {przyloz};
 #var zioladb[SerceKapitana][sposob][kn] {przezuj};
 #var zioladb[Melisa][sposob][zm] {przezuj};
 #var zioladb[Melisa][sposob][od] {przezuj};
