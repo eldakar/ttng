@@ -44,7 +44,7 @@
 #action {%1 wchodzi do szczeliny miedzy glazami i znika w jej mroku} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie przez szczeline}};
 #action {%1 stuka w skale} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zapukaj w skale}};
 #action {%1 znika w kepie krzakow.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz w krzaki}};
-#action {%1 znika w gaszczu krzakow.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie przez krzaki}};
+#action {%1 znika w gaszczu krzakow.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz w krzaki}};
 #action {%1 wspina sie po scianie jaru} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wespnij sie po scianie}};
 #action {%1 wspina sie po scianie} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wespnij sie po scianie}};
 #action {%1 lapie za korzen i szybko wspina sie po skale. Po chwili wciaga sie na} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wdrap sie po korzeniu}};
