@@ -45,7 +45,8 @@
 	#high {ciezka dluga kolczuga} {<028>};
 	#sub {dluga misterna tunika kolcza} {<028>%0 <088>( <038>Bagna Espa Ozyw<088> )}; 
 	#sub {wygodna dwuwarstwowa kolczuga} {<028>%0 <088>( <038>Lyria Cmentarz<088> )};
-
+	#sub {szmaragdowozlot%w smocz%w karacen%w} {<028>%0 <088>( <038>Raon Amorgoth<088> )};
+	#high {lsniac%w smukl%w miecz%w} {<028>} {1}	;
 
 #nop LEKKIE ZBROJE;
 	#sub {gigantycz%w wzmacnia%w czaszk%w} {<028>%0 <088>( <038>Szaman Wsiowy<088> )}; 
@@ -65,11 +66,11 @@
 	#sub {czarny obsydianowy miecz} {<028>%0 <088>( <038>Tilea Zjawy<088> )};
 	#sub {smukly lsniacy scimitar} {<028>%0 <088>( <038>?<088> )};
 	#sub {posrebrzany dlugi miecz} {<028>%0 <088>( <038>?<088> )};
-
+	#sub {smolistoczarn%w dlug%w miecz%w} {<028>%0 <088>( <038>Druchii Kowal<088> )};
 
 #nop MIECZE DWURECZNE;
 	#sub {wiedzminski miecz dwureczny} {<028>%0 <088>( <038>Kikimory<088> )};
-	#sub {płomienisty lsniacy flamberg} {<028>%0 <088>( <038>Roan Armagoth<088> )};
+	#sub {płomienisty lsniacy flamberg} {<028>%0 <088>( <038>Raon Amorgoth<088> )};
 	#sub {plomienisty dwusieczny miecz} {<028>%0 <088>( <038>Rinde Mag<088> )};
 	#sub {stalowy surowy miecz poltorareczny} {<028>%0 <088>( <038>Bretonia Warownia<088> )};
 	#sub {smukly stalowy miecz} {<028>%0 <088>( <038>?<088> )};
@@ -95,7 +96,7 @@
 #nop MACZUGI JEDNORECZNE;
 
 	#sub {rozszczepiony dlugi lancuch bojowy} {<028>%0 <088>( <038>?<088> )};
-	#sub {kolczasty antracytowy korbacz} {<028>%0 <088>( <038>Roan Armagoth<088> )};
+	#sub {kolczasty antracytowy korbacz} {<028>%0 <088>( <038>Raon Amorgoth<088> )};
 	#sub {szponiasta dwusegmentowa maczuge} {<028>%0 <088>( <038>Abgetten Ogr<088> )};
 	#sub {rogata debowa maczuga} {<028>%0 <088>( <038>Merd<088> )};
 	#sub {ciezka kolczasta wekiera} {<028>%0 <088>( <038>Orcall Szef Orkow<088> )};
@@ -122,3 +123,5 @@
 	#sub {dlug%w dwustronn%w naginat%w} {<028>%0 <088>( <038>Demon z Wezendorf<088> )}; 
 	#sub {bojowa dluga korseka} {<028>%0 <088>( <038>Lyria Kurhany<088> )};
 
+#nop RESZTA;
+	#high {%w %w tarcz%w} {<178>} {7};
