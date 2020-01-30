@@ -1,3 +1,0 @@
-WARN 1. Konfiguracje
-TUTOR 	/conf MacroLampRefillKey <klawisz>
-		Klawisz do obslugi: F5,F6,F7,F8,F9,F10
