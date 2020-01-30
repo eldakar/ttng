@@ -1,3 +1,11 @@
+#alias {lampa_napelnij} {
+	wy oleje
+	odloz pusta butelke;
+	napelnij lampe olejem;
+	zapal lampe;
+	wl oleje;
+};
+
 #action {Zapalasz} {
 	#ticker lampa {
 		qm lampa_napelnij;
@@ -8,14 +16,6 @@
 	qr lampa_napelnij;
 };
 
-#alias {lampa_napelnij} {
-	wy oleje
-	odloz pusta butelke;
-	napelnij lampe olejem;
-	zapal lampe;
-	wl oleje;
-};
-
 #action {Gasisz olejna lampe} {
 	#untick lampa;
 };
@@ -24,3 +24,7 @@
 	#untick lampa;
 	qr lampa_napelnij;
 };
+
+#action {Dopelniasz %*, oprozniajac zupelnie butelke oleju.} {
+
+ };
