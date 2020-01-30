@@ -8,11 +8,12 @@
 
 #action {Zapalasz} {
 	#ticker lampa {
-		qm lampa_napelnij;
+		qr lampa_napelnij;
 	} {60};
 };
 
 #action {lampa wypala sie i gasnie} {
+	#untick lampa;
 	qr lampa_napelnij;
 };
 
@@ -20,7 +21,7 @@
 	#untick lampa;
 };
 
-#action {wypala sie i gasnie} {
+#action {Probujesz zapalic %* jest wyczerpana} {
 	#untick lampa;
 	qr lampa_napelnij;
 };
