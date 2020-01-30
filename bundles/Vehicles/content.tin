@@ -63,7 +63,13 @@
 #action {%*{Wszyscy na poklad!%*|przybija wielki trojmasztowy galeon.}} {
 			qb STATEK_IN;
 };
-#action {%*{Doplynelismy%*{Mozna|w calej swej}|Marynarze sprawnie cumuja}} {
+#action {Doplynelismy%*Mozna} {
+			qb STATEK_OUT;
+};
+#action {Doplynelismy%*w calej swej} {
+			qb STATEK_OUT;
+};
+#action {Marynasze sprawnie cumuja} {
 			qb STATEK_OUT;
 };
 
