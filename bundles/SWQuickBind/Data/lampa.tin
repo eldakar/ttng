@@ -1,5 +1,5 @@
 #alias {lampa_napelnij} {
-	wy oleje
+	wy oleje;
 	odloz pusta butelke;
 	napelnij lampe olejem;
 	zapal lampe;
