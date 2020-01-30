@@ -64,16 +64,16 @@
 #alias {w} {move_w};
 #alias {e} {move_e};
 
-#alias {N} {sneak_n};
-#alias {S} {sneak_s};
-#alias {NE} {sneak_ne};
-#alias {NW} {sneak_nw};
-#alias {SW} {sneak_sw};
-#alias {SE} {sneak_se};
-#alias {D} {sneak_d};
-#alias {U} {sneak_u};
-#alias {W} {sneak_w};
-#alias {E} {sneak_e};
+#unalias {N} {sneak_n};
+#unalias {S} {sneak_s};
+#unalias {NE} {sneak_ne};
+#unalias {NW} {sneak_nw};
+#unalias {SW} {sneak_sw};
+#unalias {SE} {sneak_se};
+#unalias {D} {sneak_d};
+#unalias {U} {sneak_u};
+#unalias {W} {sneak_w};
+#unalias {E} {sneak_e};
 
 #nop #################################################################################;
 #nop EVENTY GMCP;
