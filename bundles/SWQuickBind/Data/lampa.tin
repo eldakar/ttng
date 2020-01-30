@@ -5,7 +5,7 @@
 };
 
 #action {lampa wypala sie i gasnie} {
-	qb lampa_napelnij;
+	qr lampa_napelnij;
 };
 
 #alias {lampa_napelnij} {
@@ -22,4 +22,5 @@
 
 #action {wypala sie i gasnie} {
 	#untick lampa;
+	qr lampa_napelnij;
 };
