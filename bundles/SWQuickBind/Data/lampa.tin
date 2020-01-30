@@ -1,7 +1,7 @@
 #action {Zapalasz} {
 	#ticker lampa {
-		#echo {<178>MacroLamp: <178>[ $ConfigManager_Configs[MacroLampRefillKey] ] Napelnij lampe olejem<088>};
-	} {100};
+		qm lampa_napelnij;
+	} {60};
 };
 
 #action {lampa wypala sie i gasnie} {
@@ -9,9 +9,11 @@
 };
 
 #alias {lampa_napelnij} {
+	wy oleje
 	odloz pusta butelke;
 	napelnij lampe olejem;
 	zapal lampe;
+	wl oleje;
 };
 
 #action {Gasisz olejna lampe} {
