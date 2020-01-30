@@ -26,6 +26,6 @@
 };
 
 #action {Dopelniasz %*, oprozniajac zupelnie butelke oleju.} {
-	SplitWingMap_Warning %0;
+	Highlights_event %0;
 	#line gag;
 };
