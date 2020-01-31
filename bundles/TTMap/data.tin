@@ -9,16 +9,19 @@
 #nop Help;
 #nop ##################;
 #alias {/go} {
-    #line ignore #sh {+-Miasta----------------------------------+};
-    #line ignore #sh {|<ccc>Ishtar<088>                                   |};
-    #line ignore #sh {|   /novigrad    /oxenfurt    /blaviken   |};
-    #line ignore #sh {|<ccc>Imperium<088>                                 |};
-    #line ignore #sh {|   /nuln                                 |};
-    #line ignore #sh {+-Klucze----------------------------------+};
-    #line ignore #sh {|   /fustaw      /fustas      /fort       |};
-    #line ignore #sh {|-Magiki----------------------------------+};
-    #line ignore #sh {|   /zywioly     /igor                    |};
-    #line ignore #sh {+-Korsarze--------------------------------+};
+    #line ignore #sh {+-Miasta--------------------------------------------------------------+};
+    #line ignore #sh {|<ccc>Ishtar<088>                                                               |};
+    #line ignore #sh {|   /novigrad(!) /oxenfurt     /blaviken     /daevon       /gelibol   |};
+    #line ignore #sh {|   /kepa        /piana        /wyzima       /mahakam      /valkare   |};
+    #line ignore #sh {|   /kiel                                                             |};
+    #line ignore #sh {|<ccc>Imperium<088>                                                             |};
+    #line ignore #sh {|   /nuln(!)     /ebino        /toscania     /scorcio      /viadaza   |};
+    #line ignore #sh {|   /varieno                                                          |};
+    #line ignore #sh {+-Klucze--------------------------------------------------------------+};
+    #line ignore #sh {|   /fustaw      /fustas       /fort         /redcap                  |};
+    #line ignore #sh {|-Magiki--------------------------------------------------------------+};
+    #line ignore #sh {|   /zywioly     /igor                                                |};
+    #line ignore #sh {+-Korsarze------------------------------------------------------------+};
     #line ignore #sh {    /siedle                               |};
     #line ignore #sh {+-----------------------------------------+};
 } {1};
@@ -31,7 +34,6 @@
 #alias {/fort} {/l 17855 Lyria Fort} {1};
 #alias {/nuln} {/l 22155 Nuln} {1};
 #alias {/abgetten} {/l 1276 Abgetten} {1};
-
 #alias {/daevon} {/l 18602 Daevon} {1};
 #alias {/gelibol} {/l 20886 Gelibol} {1};
 #alias {/kepa} {/l 6142 Sucha Kepa} {1};
@@ -39,8 +41,9 @@
 #alias {/piana} {/l 11872 Piana} {1};
 #alias {/wyzima} {/l 12409 Wyzima} {1};
 #alias {/mahakam} {/l 24841 Mahakam ROBOCZY} {1};
-#alias {/redcap} {/l 25425 Redcapy} {1};
 #alias {/valkare} {/l 8205 Val'Kare} {1};
+#alias {/redcap} {/l 25425 Redcapy} {1};
+
 #alias {/ebino} {/l 6504 Ebino} {1};
 #alias {/toscania} {/l 6403 Toscania} {1};
 #alias {/scorcio} {/l 6883 Scorcio} {1};
