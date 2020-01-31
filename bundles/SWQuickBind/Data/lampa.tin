@@ -1,29 +1,28 @@
-#alias {lampa_napelnij} {
+#alias {nap} {
 	wy oleje;
 	odloz pusta butelke;
 	napelnij lampe olejem;
 	zapal lampe;
-	wl oleje;
 };
 
 #action {Zapalasz} {
 	#ticker lampa {
 		qr lampa_napelnij;
-	} {60};
+	} {180};
 };
 
 #action {lampa wypala sie i gasnie} {
 	#untick lampa;
-	qr lampa_napelnij;
+	Highlights_event Lamp - Alias: <028>nap<08>> - Napelnij lampe!;
 };
 
-#action {Gasisz olejna lampe} {
+#action {Gasisz %* lampe} {
 	#untick lampa;
 };
 
 #action {Probujesz zapalic %* jest wyczerpana} {
 	#untick lampa;
-	qr lampa_napelnij;
+	Highlights_event Lamp - Alias: <028>nap<08>> - Napelnij lampe!;
 };
 
 #action {Dopelniasz %*, oprozniajac zupelnie butelke oleju.} {
