@@ -123,6 +123,8 @@
 #action {%1 podaza przez szczeline.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie przez szczeline}};
 #action {%1 zapiera sie nogami o grunt i probuje uniesc %* krate} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm unies krate}};
 #action {%1 zapiera sie nogami o grunt i probuje uniesc %* klape} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm unies klape}};
+#action {%1 zapiera sie nogami o grunt i probuje uniesc poludniowo-zachodnia pordzewiala krate} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm unies poludniowo-zachodnia krate}} {1};
+#action {%1 zapiera sie nogami o grunt i probuje uniesc poludniowo-wschodnia pordzewiala krate} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm unies poludniowo-wschodnia krate}} {1};
 #action {%1 wchodzi do %2 namiotu} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz do namiotu}};
 #action {%1 schodzi po starym pniu} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zejdz po pniu}};
 #action {%1 pokonuje kilkanascie kamiennych stopni} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz po stopniach}};
