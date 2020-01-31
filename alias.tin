@@ -225,3 +225,37 @@
 	#echo {${c_stan_wysoki} >> ${c_druzyna}Od teraz F2 oznacza: 'wyciagnij siec;zarzuc siec'};
 }
 
+#alias {/um} {
+	#line ignore #sh {                   SC MC OH GL KS WK KG RA OK OS CK SG GP};
+	#line ignore #sh {broń               70 74 71 75 73 74 72 72 71 65 xx 60 30};
+	#line ignore #sh {uniki              60 45 30 42 40 50 51 70 46 55 xx 34 25};
+	#line ignore #sh {walka dwiema       50 65 xx xx xx xx xx 55 xx xx xx xx 19};
+	#line ignore #sh {tarczownictwo      xx xx 75 60 71 xx xx xx xx xx xx xx 25};
+	#line ignore #sh {parowanie          40 45 50 41 xx 71 71 xx 52 xx xx 45 25};
+	#line ignore #sh {zasłanianie        45 46 44 40 60 60 41 40 41 xx xx xx 20};
+	#line ignore #sh {blokowanie wyjścia 38 44 xx xx 41 55 xx 51 45 xx xx xx 20};
+	#line ignore #sh {rozkazy            30 xx 57 30 41 41 57 xx 22 xx xx xx 15};
+	#line ignore #sh {walka w szyku      xx 35 77 35 45 57 51 xx 33 xx xx xx 15};
+	#line ignore #sh {walka bez broni    xx xx 60 55 55 xx xx xx 61 xx xx xx 17};
+	#line ignore #sh {walka w ciemności  xx xx 60 55 55 xx xx 40 xx xx xx xx 20};
+	#line ignore #sh {ukrywanie          80 xx xx xx xx xx xx 70 xx 80 xx xx 30};
+	#line ignore #sh {skradanie          80 xx xx xx xx xx xx 70 xx 80 xx xx 30};
+	#line ignore #sh {tropienie          60 50 xx xx xx xx xx xx xx 75 xx xx 30};
+	#line ignore #sh {zielarstwo         xx xx xx xx xx xx xx xx xx 59 55 41 18};
+	#line ignore #sh {spostrzegawczosc   70 xx xx xx xx 65 xx 70 xx 75 60 71 50};
+	#line ignore #sh {wyczucie kierunku  60 xx xx xx 45 xx xx xx xx 60 xx 84 30};
+	#line ignore #sh {pływanie           55 xx xx xx 85 xx xx xx xx 55 xx 71 50};
+	#line ignore #sh {wspinaczka         60 xx xx xx 60 xx xx xx xx 60 xx 71 50};
+	#line ignore #sh {ocena przeciwnika  xx 50 65 85 60 61 61 85 55 54 50 50 30};
+	#line ignore #sh {ocena obiektu      xx xx 50 50 50 55 50 50 35 40 85 41 30};
+	#line ignore #sh {łowiectwo          40 xx xx xx xx xx xx xx xx 77 xx 41 30};
+	#line ignore #sh {opieka             xx xx xx xx xx xx xx xx xx 74 xx 44 30};
+	#line ignore #sh {wykrywanie pulapek xx xx xx xx xx xx xx xx xx 55 xx 55 30};
+	#line ignore #sh {otwieranie zamkow  xx xx xx xx xx xx xx 50 xx xx xx xx 20};
+	#line ignore #sh {znajomosc jezykow  xx xx xx xx xx xx xx xx xx xx 70 85 40};
+	#line ignore #sh {targowanie sie     xx xx xx xx xx xx xx xx xx xx 55 42 30};
+	#line ignore #sh {szacowanie         xx xx xx xx xx xx xx xx xx xx 80 50 30};
+	#line ignore #sh {alchemia           xx xx xx xx xx xx xx xx xx xx xx xx 20};
+	#line ignore #sh {akrobatyka         xx xx xx xx xx xx xx xx xx xx xx xx 20};
+	#line ignore #sh {kieszonkostwo      xx xx xx xx xx xx xx xx xx xx xx xx 20};
+} {1};
