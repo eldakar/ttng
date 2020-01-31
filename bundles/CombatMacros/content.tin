@@ -25,8 +25,8 @@
         #case {"z"} zabijcmd %0;                  #nop komenda zabij;
         #case {"w"} wskaz %0 jako cel ataku;      #nop wskazywanie;
         #case {"r"} rozkaz druzynie zabic %0;     #nop rozkaz;
-	#case {"k"} ksznienawidz %0;	          #nop korki;
-        #nop case {"p"} przelam obrone celu ataku;#nop przelamanie TODO;
+	      #case {"k"} ksznienawidz %0;	          #nop korki;
+        #case {"p"} {przestan zaslaniac;przelam obrone celu ataku;};#nop przelamanie TODO;
       };
     };
 }
@@ -44,7 +44,7 @@
         #case {"z"} zabijcmd cel ataku;                  #nop komenda zabij;
         #case {"w"} wskaz cel ataku jako cel ataku;      #nop wskazywanie;
         #case {"r"} rozkaz druzynie zabic cel ataku;     #nop rozkaz;
-        #nop case {"p"} przelam obrone celu ataku;#nop przelamanie TODO;
+        #case {"p"} {przestan zaslaniac;przelam obrone celu ataku;};#nop przelamanie TODO;
       };
     };
 }

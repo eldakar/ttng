@@ -58,6 +58,9 @@
 #sub {jasniejac%w zdobion%w jatagan%w}{<118><caf>%0 <088>(<138>swiatlo<088>)};
 #sub {kruczoczarn%w mistern%w mie%w} {<118><caf>%0 <088>(<028>+hp<088>)};
 
+#sub {gorejac%w dlug%w talwar%w} {<118><caf>%0 <088>(<018>ogien<088>)};
+
+
 #high {lodow%w lsniac%w sztylet%w} {<118><caf>};
 #high {lodow%w dlug%w maczug%w} {<118><caf>};
 #high {lsniac%w plomienist%w tarcz%w} {<118><caf>};
