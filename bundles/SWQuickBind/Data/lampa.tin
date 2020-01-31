@@ -7,13 +7,13 @@
 
 #action {Zapalasz} {
 	#ticker lampa {
-		qr lampa_napelnij;
+		Highlights_event <138>Lampa - Alias: <028>nap<08>><138> - Napelnij lampe!<088>;
 	} {180};
 };
 
 #action {lampa wypala sie i gasnie} {
 	#untick lampa;
-	Highlights_event <138>Lampa - Alias: <028>nap<08>><138> - Napelnij lampe!<088>;
+	Highlights_event <138>Lampa - Alias: <028>nap<08>><138> -  Napelnij i zapal lampe!<088>;
 };
 
 #action {Gasisz %* lampe} {
@@ -22,7 +22,7 @@
 
 #action {Probujesz zapalic %* jest wyczerpana} {
 	#untick lampa;
-	Highlights_event <138>Lampa - Alias: <028>nap<08>><138> - Napelnij lampe!<088>;
+	Highlights_event <138>Lampa - Alias: <028>nap<08>><138> - Napelnij i zapal lampe!<088>;
 };
 
 #action {Dopelniasz %*, oprozniajac zupelnie butelke oleju.} {
