@@ -405,16 +405,32 @@
 #nop MC1;    #regex {$tmpvalue} {Dostrzegajac luke w obronie przeciwnika rzucasz %* ledwo muskajac} {collect $AVATAR_NAME unknown MC 1;#var tmpvalue {}};
 #nop MC1;    #regex {$tmpvalue} {Stajesz pewnie %*} {collect $AVATAR_NAME unknown MC 7;#var tmpvalue {}};
 
-#nop bez ogluszenia;
+
+#nop OK3;    #regex {$tmpvalue} {bierze ogromny zamach %* Porzadnie} {collect uknown unknown OK_OGLUCH 0;#var tmpvalue {}};
+#nop OK3;    #regex {$tmpvalue} {wali %* na odlew %*, odbijajac %* metny wzrok} {collect uknown unknown OK_OGLUCH 1;#var tmpvalue {}};
+#nop OK3;    #regex {$tmpvalue} {wali %* na odlew %*, tlukac %* metny wzrok} {collect uknown unknown OK_OGLUCH 2;#var tmpvalue {}};
+#nop OK3;    #regex {$tmpvalue} {wali %* na odlew %*, gruchoczac %* metny wzrok} {collect uknown unknown OK_OGLUCH 4;#var tmpvalue {}};
+#nop OK3;    #regex {$tmpvalue} {wali %* na odlew %*, druzgoczac %* metny wzrok} {collect uknown unknown OK_OGLUCH 5;#var tmpvalue {}};
+#nop OK3;    #regex {$tmpvalue} {wali %* na odlew %*, miazdzac %* metny wzrok} {collect uknown unknown OK_OGLUCH 6;#var tmpvalue {}};
 #nop OK3;    #regex {$tmpvalue} {Nie tracac czasu na zbedne manewry %* probuje %* na odlew %*, jednak} {collect uknown unknown OK 0;#var tmpvalue {}};
-#nop OK3;    #regex {$tmpvalue} {wali %* na odlew %*, odbijajac %*} {collect uknown unknown OK 1;#var tmpvalue {}};
-#nop OK3;    #regex {$tmpvalue} {wali %* na odlew %*, tlukac {collect uknown unknown OK 2;#var tmpvalue {}};
-#nop OK3;
+#nop OK3;    #regex {$tmpvalue} {wali %* na odlew %*, odbijajac} {collect uknown unknown OK 1;#var tmpvalue {}};
+#nop OK3;    #regex {$tmpvalue} {wali %* na odlew %*, tlukac} {collect uknown unknown OK 2;#var tmpvalue {}};
 #nop OK3;    #regex {$tmpvalue} {wali %* na odlew %*, gruchoczac} {collect uknown unknown OK 4;#var tmpvalue {}};
 #nop OK3;    #regex {$tmpvalue} {wali %* na odlew %*, druzgoczac} {collect uknown unknown OK 5;#var tmpvalue {}};
 #nop OK3;    #regex {$tmpvalue} {wali %* na odlew %*, miazdzac} {collect uknown unknown OK 6;#var tmpvalue {}};
- 
-#nop OK1;    #regex {$tmpvalue} {walisz %* na odlew %* gruchoczac %* metny wzrok} {collect $AVATAR_NAME unknown OK_OGLUCH 0;#var tmpvalue {}};
+
+#nop OK1;    #regex {$tmpvalue} {Bierzesz ogromny zamach %* Porzadnie} {collect $AVATAR_NAME unknown OK_OGLUCH 0;#var tmpvalue {}};
+#nop OK1;    #regex {$tmpvalue} {walisz %* na odlew %*, odbijajac %* metny wzrok} {collect $AVATAR_NAME unknown OK_OGLUCH 1;#var tmpvalue {}};
+#nop OK1;    #regex {$tmpvalue} {walisz %* na odlew %*, tlukac %* metny wzrok} {collect $AVATAR_NAME unknown OK_OGLUCH 2;#var tmpvalue {}};
+#nop OK1;    #regex {$tmpvalue} {walisz %* na odlew %*, gruchoczac %* metny wzrok} {collect $AVATAR_NAME unknown OK_OGLUCH 4;#var tmpvalue {}};
+#nop OK1;    #regex {$tmpvalue} {walisz %* na odlew %*, druzgoczac %* metny wzrok} {collect $AVATAR_NAME unknown OK_OGLUCH 5;#var tmpvalue {}};
+#nop OK1;    #regex {$tmpvalue} {walisz %* na odlew %*, miazdzac %* metny wzrok} {collect $AVATAR_NAME unknown OK_OGLUCH 6;#var tmpvalue {}};
+#nop OK1;    #regex {$tmpvalue} {walisz %* na odlew %*, odbijajac} {collect $AVATAR_NAME unknown OK 1;#var tmpvalue {}};
+#nop OK1;    #regex {$tmpvalue} {walisz %* na odlew %*, tlukac} {collect $AVATAR_NAME unknown OK 2;#var tmpvalue {}};
+#nop OK1;    #regex {$tmpvalue} {walisz %* na odlew %*, gruchoczac} {collect $AVATAR_NAME unknown OK 4;#var tmpvalue {}};
+#nop OK1;    #regex {$tmpvalue} {walisz %* na odlew %*, druzgoczac} {collect $AVATAR_NAME unknown OK 5;#var tmpvalue {}};
+#nop OK1;    #regex {$tmpvalue} {walisz %* na odlew %*, miazdzac} {collect $AVATAR_NAME unknown OK 6;#var tmpvalue {}};
+#nop OK1;    #regex {$tmpvalue} {wkladajac w cios cala swa sile, %* na odlew %* miazdzy %* Spogladasz {collect $AVATAR_NAME unknown OK 7;#var tmpvalue {}};
 
 #nop WKS3;   #regex {$tmpvalue} {%* szybkim niczym mysl ruchem %* wytraca ci} {collect &1 $AVATAR_NAME WKS_WYTRACA_CI 0;#var tmpvalue {}};
 #nop WKS3;   #regex {$tmpvalue} {%* szybkim niczym mysl ruchem %* wytraca} {collect &1 unknown WKS_WYTRACA 0;#var tmpvalue {}};
