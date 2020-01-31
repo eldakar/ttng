@@ -21,9 +21,9 @@
     #line ignore #sh {|   /fustaw      /fustas       /fort         /redcap                  |};
     #line ignore #sh {|-Magiki--------------------------------------------------------------+};
     #line ignore #sh {|   /zywioly     /igor                                                |};
-    #line ignore #sh {+-Korsarze------------------------------------------------------------+};
-    #line ignore #sh {    /siedle                               |};
-    #line ignore #sh {+-----------------------------------------+};
+    #line ignore #sh {+-<028>Korsarze<088>------------------------------------------------------------+};
+    #line ignore #sh {    /siedle      /duch                                                |};
+    #line ignore #sh {+---------------------------------------------------------------------+};
 } {1};
 
 #alias {/zywioly} {/l 12037 Zywioly} {1};
@@ -50,4 +50,4 @@
 #alias {/viadaza} {/l 6839 Viadaza} {1};
 #alias {/varieno} {/l 27569 Varieno} {1};
 #alias {/kiel} {/l 13047 Bialy Kiel} {1};
-
+#alias {/duch} {/l 23583 Duch Hemdalla} {1};
