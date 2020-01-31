@@ -39,6 +39,7 @@
 	#sub {kunsztowny matowy napiersnik} {<028>%0 <088>( <038>Smoczy Ogr<088> )}; 
 	#high {stalowa para nareczakow} {<028>};
 	#sub {dwuwypukly gladki napiersnik} {<028>%0 <088>( <038>Lyria Zboje<088> )}; 
+	#sub {czarn%w lsni%w zbroj%w plyt%w} {<028>%0 <088>( <038>Mekan Donegar<088> )}; 
 
 #nop SREDNIE ZBROJE;
 	#high {posepna zbroja kolcza} {<028>};
@@ -136,3 +137,4 @@
 	#high {%w %w worecz%w} {<068>} {8};
 	#high {%w %w lamp%w} {<138>} {8};
 	#high {nieduz%w fiolk%w} {<faa>};
+	#high {%w %w plaszcz%w} {<w05>} {8}
