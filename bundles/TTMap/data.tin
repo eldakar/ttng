@@ -15,7 +15,11 @@
     #line ignore #sh {|<ccc>Imperium<088>                                 |};
     #line ignore #sh {|   /nuln                                 |};
     #line ignore #sh {+-Klucze----------------------------------+};
-    #line ignore #sh {|   /fustaw      /fustas                  |};
+    #line ignore #sh {|   /fustaw      /fustas      /fort       |};
+    #line ignore #sh {|-Magiki----------------------------------+};
+    #line ignore #sh {|   /zywioly     /igor                    |};
+    #line ignore #sh {+-Korsarze--------------------------------+};
+    #line ignore #sh {    /siedle                               |};
     #line ignore #sh {+-----------------------------------------+};
 } {1};
 
