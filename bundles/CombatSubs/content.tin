@@ -405,11 +405,16 @@
 #nop MC1;    #regex {$tmpvalue} {Dostrzegajac luke w obronie przeciwnika rzucasz %* ledwo muskajac} {collect $AVATAR_NAME unknown MC 1;#var tmpvalue {}};
 #nop MC1;    #regex {$tmpvalue} {Stajesz pewnie %*} {collect $AVATAR_NAME unknown MC 7;#var tmpvalue {}};
 
+#nop bez ogluszenia;
 #nop OK3;    #regex {$tmpvalue} {Nie tracac czasu na zbedne manewry %* probuje %* na odlew %*, jednak} {collect uknown unknown OK 0;#var tmpvalue {}};
-#nop OK3;    #regex {$tmpvalue} {Nie silac sie na wirtuozerie %* z calej sily wali %* na odlew %*, miazdzac} {collect uknown unknown OK 6;#var tmpvalue {}};
-#nop OK3;    #regex {$tmpvalue} {Nie silac sie na wirtuozerie %* z calej sily wali %* na odlew %*, tlukac {collect uknown unknown OK 1;#var tmpvalue {}};
-
-#nop OK1;    #regex {$tmpvalue} {Nie zastanawiajac sie dlugo z calej sily walisz %* na odlew %* metny wzrok} {collect $AVATAR_NAME unknown OK_OGLUCH 0;#var tmpvalue {}};
+#nop OK3;    #regex {$tmpvalue} {wali %* na odlew %*, odbijajac %*} {collect uknown unknown OK 1;#var tmpvalue {}};
+#nop OK3;    #regex {$tmpvalue} {wali %* na odlew %*, tlukac {collect uknown unknown OK 2;#var tmpvalue {}};
+#nop OK3;
+#nop OK3;    #regex {$tmpvalue} {wali %* na odlew %*, gruchoczac} {collect uknown unknown OK 4;#var tmpvalue {}};
+#nop OK3;    #regex {$tmpvalue} {wali %* na odlew %*, druzgoczac} {collect uknown unknown OK 5;#var tmpvalue {}};
+#nop OK3;    #regex {$tmpvalue} {wali %* na odlew %*, miazdzac} {collect uknown unknown OK 6;#var tmpvalue {}};
+ 
+#nop OK1;    #regex {$tmpvalue} {walisz %* na odlew %* gruchoczac %* metny wzrok} {collect $AVATAR_NAME unknown OK_OGLUCH 0;#var tmpvalue {}};
 
 #nop WKS3;   #regex {$tmpvalue} {%* szybkim niczym mysl ruchem %* wytraca ci} {collect &1 $AVATAR_NAME WKS_WYTRACA_CI 0;#var tmpvalue {}};
 #nop WKS3;   #regex {$tmpvalue} {%* szybkim niczym mysl ruchem %* wytraca} {collect &1 unknown WKS_WYTRACA 0;#var tmpvalue {}};
