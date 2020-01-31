@@ -22,7 +22,7 @@
     #line ignore #sh {|-Magiki--------------------------------------------------------------+};
     #line ignore #sh {|   /zywioly     /igor                                                |};
     #line ignore #sh {+-<028>Korsarze<088>------------------------------------------------------------+};
-    #line ignore #sh {    /siedle      /duch                                                |};
+    #line ignore #sh {    /siedle      /duch         /zmora                                 |};
     #line ignore #sh {+---------------------------------------------------------------------+};
 } {1};
 
@@ -51,3 +51,4 @@
 #alias {/varieno} {/l 27569 Varieno} {1};
 #alias {/kiel} {/l 13047 Bialy Kiel} {1};
 #alias {/duch} {/l 23583 Duch Hemdalla} {1};
+#alias {/zmora} {/l 23588 Zmora Nilfgaardu} {1};
