@@ -405,6 +405,8 @@
 #nop MC1;    #regex {$tmpvalue} {Dostrzegajac luke w obronie przeciwnika rzucasz %* ledwo muskajac} {collect $AVATAR_NAME unknown MC 1;#var tmpvalue {}};
 #nop MC1;    #regex {$tmpvalue} {Stajesz pewnie %*} {collect $AVATAR_NAME unknown MC 7;#var tmpvalue {}};
 
+#nop OK3;    #regex {$tmpvalue} {Nie tracac czasu na zbedne manewry %* probuje %* na odlew %*, jednak} {collect uknown unknown OK 0;#var tmpvalue {}};
+
 
 #nop WKS3;   #regex {$tmpvalue} {%* szybkim niczym mysl ruchem %* wytraca ci} {collect &1 $AVATAR_NAME WKS_WYTRACA_CI 0;#var tmpvalue {}};
 #nop WKS3;   #regex {$tmpvalue} {%* szybkim niczym mysl ruchem %* wytraca} {collect &1 unknown WKS_WYTRACA 0;#var tmpvalue {}};
