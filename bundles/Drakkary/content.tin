@@ -122,7 +122,7 @@
 					#case {"Ard Skellige"} {#local tmpname {plyn na ard skellige}};
 					#case {"Averland"} {#local tmpname {plyn do averlandu}};
 					#case {"Baccala"} {#local tmpname {plyn do baccali}};
-					#case {"twierdza Bodrog"} {#local tmpname {plyn do twierdzy rozrog}};
+					#case {"twierdza Bodrog"} {#local tmpname {plyn do twierdzy bodrog}};
 					#case {"Bogenhafen"} {#local tmpname {plyn do bogenhafen}};
 					#case {"wyspa Faroe"} {#local tmpname {plyn na wyspe faroe}};
 					#case {"Kaedwen"} {#local tmpname {plyn do kaedwen}};
