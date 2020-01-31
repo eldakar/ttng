@@ -13,7 +13,7 @@
 
 #action {lampa wypala sie i gasnie} {
 	#untick lampa;
-	Highlights_event Lamp - Alias: <028>nap<08>> - Napelnij lampe!;
+	Highlights_event <138>Lampa - Alias: <028>nap<08>><138> - Napelnij lampe!<088>;
 };
 
 #action {Gasisz %* lampe} {
@@ -22,10 +22,10 @@
 
 #action {Probujesz zapalic %* jest wyczerpana} {
 	#untick lampa;
-	Highlights_event Lamp - Alias: <028>nap<08>> - Napelnij lampe!;
+	Highlights_event <138>Lampa - Alias: <028>nap<08>><138> - Napelnij lampe!<088>;
 };
 
 #action {Dopelniasz %*, oprozniajac zupelnie butelke oleju.} {
-	Highlights_event %0;
+	Highlights_event <118>Lampa - Dopelniasz %1, oprozniajac zupelnie butelke oleju.<088>;
 	#line gag;
 };
