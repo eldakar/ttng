@@ -430,7 +430,7 @@
 #nop OK1;    #regex {$tmpvalue} {walisz %* na odlew %*, gruchoczac} {collect $AVATAR_NAME unknown OK 4;#var tmpvalue {}};
 #nop OK1;    #regex {$tmpvalue} {walisz %* na odlew %*, druzgoczac} {collect $AVATAR_NAME unknown OK 5;#var tmpvalue {}};
 #nop OK1;    #regex {$tmpvalue} {walisz %* na odlew %*, miazdzac} {collect $AVATAR_NAME unknown OK 6;#var tmpvalue {}};
-#nop OK1;    #regex {$tmpvalue} {wkladajac w cios cala swa sile, %* na odlew %* miazdzy %* Spogladasz {collect $AVATAR_NAME unknown OK 7;#var tmpvalue {}};
+#nop OK1;    #regex {$tmpvalue} {wkladajac w cios cala swa sile, %* na odlew %* miazdzy %* Spogladasz} {collect $AVATAR_NAME unknown OK 7;#var tmpvalue {}};
 
 #nop WKS3;   #regex {$tmpvalue} {%* szybkim niczym mysl ruchem %* wytraca ci} {collect &1 $AVATAR_NAME WKS_WYTRACA_CI 0;#var tmpvalue {}};
 #nop WKS3;   #regex {$tmpvalue} {%* szybkim niczym mysl ruchem %* wytraca} {collect &1 unknown WKS_WYTRACA 0;#var tmpvalue {}};
