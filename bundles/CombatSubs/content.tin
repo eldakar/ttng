@@ -475,8 +475,6 @@
 #nop PANIC; #regex {$tmpvalue} {w panice umyka} {#sh $tmpvalue2;#var tmpvalue {}};
 #nop PANIC; #regex {$tmpvalue} {uciekl ci.} {#sh $tmpvalue2;#var tmpvalue {}};
 
-
-
    #nop FAILOVER;
    #if {"$tmpvalue" != ""} {
       #line ignore {#sh {<088>[misc] <088>$tmpvalue2}};
