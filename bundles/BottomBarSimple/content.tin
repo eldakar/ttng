@@ -74,17 +74,81 @@
 	#delay {manewrlevel2} {#var manewrlevel {${c_stan_niski} 3 <088>};BottomBarTinyFugue;} {2};
 	#delay {manewrlevel1} {#var manewrlevel {${c_stan_niski} 4 <088>};BottomBarTinyFugue;} {1};
 };
-#nop ROZKAZY;	#action {Wydajesz rozkaz %1} {manewr_start};
-#action {Twoja wysoka forma pozwala %*} {manewr_start}; 
-#action {Na rozkaz %* zaslaniasz {go|ja} przed ciosami wrogow.} {manewr_start};
-#action {Glosno wypowiadasz rozkaz, chyba jednak nikt cie nie zrozumial!} {manewr_start};
-#action {Probujesz zaslonic %* przed ciosami %*, jednak nie jestes w stanie tego uczynic.} {manewr_start};
-#action {Zrecznie zaslaniasz %* przed ciosami %*.} {manewr_start}
-#action {Stajesz u boku %1, gotow w kazdej chwili %*} {manewr_start}
-#action {Z wprawa stajesz pomiedzy %* a %*, przyjmujac na siebie nadchodzace ciosy.} {manewr_start} {2}
-#action {%1 unosi %2 i szybko przesuwa sie za ciebie, kryjac sie przed atakami %3.} {manewr_start};
-#action {Rzucasz sie na %* przebijajac sie przez %*} {manewr_start};
-
+#nop ROZKAZY;	
+#action {~Wydajesz rozkaz %1} {
+	#line ignore #sh {<168>[rozkaz]<088> %0};
+	manewr_start;
+	#line gag;
+};
+#action {Twoja wysoka forma pozwala %*} {manewr_start};
+#action {~Na rozkaz %* zaslaniasz {go|ja} przed ciosami wrogow.} {
+	#line ignore #sh {<168>[rozkaz]<028>[zaslona] %0};
+	manewr_start;
+	#line gag;
+};
+#action {~Glosno wypowiadasz rozkaz, chyba jednak nikt cie nie zrozumial!} {
+	#line ignore #sh {<018>[rozkaz] %0};
+	manewr_start;
+	#line gag;
+};
+#action {Probujesz zaslonic %* przed ciosami %*, jednak nie jestes w stanie tego uczynic.} {
+	#line ignore #sh {<018>[zaslona] %0};
+	manewr_start;
+	#line gag;
+};
+#action {~Zrecznie zaslaniasz %* przed ciosami %*.} {
+	#line ignore #sh {<028>[zaslona]<088> %0};
+	manewr_start;
+	#line gag;
+}
+#action {~Stajesz u boku %1, gotow w kazdej chwili %*} {
+	#line ignore #sh {<028>[zaslona]<088> %0};
+	manewr_start;
+	#line gag;
+}
+#action {~Z wprawa stajesz pomiedzy %* a %*, przyjmujac na siebie nadchodzace ciosy.} {
+	#line ignore #sh {<028>[zaslona]<088> %0};
+	manewr_start;
+	#line gag;
+} {2}
+#action {~Przestajesz zaslaniac %*} {
+	#line ignore #sh {<038>[zaslona]<088> %0};
+	#line gag;
+}
+#action {~%* przestaje zaslaniac %*} {
+	#line ignore #sh {<038>[zaslona]<088> %0};
+	#line gag;	
+}
+#action {%1 unosi %2 i szybko przesuwa sie za ciebie, kryjac sie przed atakami %3.} {
+	#line ignore #sh {<028>[zaslona]<088> %0};
+	manewr_start;
+	#line gag;
+};
+#action {~Rzucasz sie na %* przebijajac sie przez %*} {
+	#line ignore #sh {<168>[przelamanie]<088> %0};
+	manewr_start;
+	#line gag;
+};
+#action {~%* zrecznie zaslania %*} {
+	#format ktozaslonil {%l} {%1};
+	#var pokazalem 0;
+	#foreach {*duch[]} {ktoto} {
+		#if {"$ktozaslonil" == "$duch[$ktoto][desc]"} {
+			#if {"$duch[$ktoto][team]" == "true"} {
+				#line ignore #sh {<028>[zaslona]<088> %0};
+				#var pokazalem 1;
+			} {
+				#line ignore #sh {<FAA><178>[zaslona]<088> %0};
+				Highlights_event <138>Wrog zaslonil - Przelam! - Alias: <028>prz<088>;
+				#var pokazalem 1;
+			};
+		};
+	};
+	#if {$pokazalem != 1} {
+				#line ignore #sh {<028>[zaslona]<088> %0};		
+	};
+	#line gag;
+}
 #nop #############################################################;
 #nop ############# BLOKOWANIE TWOJE        #######################;
 #nop #############################################################;

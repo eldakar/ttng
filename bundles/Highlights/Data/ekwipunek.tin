@@ -135,6 +135,6 @@
 	#high {%w %w helm%w} {<178>} {7};
 	#high {%w %w plecak%w} {<118><dba>} {8};
 	#high {%w %w worecz%w} {<068>} {8};
-	#high {%w %w lamp%w} {<138>} {8};
+	#high {%w %w lamp%w} {<038>} {8};
 	#high {nieduz%w fiolk%w} {<faa>};
 	#high {%w %w plaszcz%w} {<g05>} {8}
