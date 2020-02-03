@@ -53,3 +53,12 @@
   policz ciala;
   #var zbieranie_ready {true};
 }
+
+#alias {/ql} {
+	wez %0 z pierwszego ciala;
+	wez %0 z drugiego ciala;
+	wez %0 z trzeciego ciala;
+	wez %0 z czwartego ciala;
+	wez %0 z piatego ciala;
+	wez %0 z szostego ciala;
+} {1};
