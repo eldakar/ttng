@@ -27,3 +27,14 @@
 	#var r @set_quickbind_green{po_kolorze_na_s};
 	#var r @set_quickbind_yellow{po_kolorze_na_n};
 }
+
+#nop Blekitnokrwisci;
+#action {Zauwazasz, ze plytki %1 oraz %2 sa lekko wcisniete w porownaniu z plytkami pozostalych barw.} {
+	#unalias {/plytkin};
+	#unalias {/plytkis};
+	#if {"%1" == "niebieskie && "%2" == "czerwone"} {
+		#alias {/plytkin} {przejdz po fioletowych plytkach na polnoc;s} {1};
+		#alias {/plytkis} {przejdz po fioletowych plytkach na poludnie} {1};
+		Highlights_event <118>PULAPKA BLEKITNOKRWISCI - <028> FIOLETOWE <118> /plytkin /plytkis<088>;
+	};
+}
