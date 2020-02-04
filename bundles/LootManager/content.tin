@@ -1,5 +1,5 @@
 #alias {zbieranie} {
-	#var tmploot {$ConfigManager_Configs[LootManagerLoot]};
+	#var tmploot {$ConfigManager_Configs[zbieranie]};
     #replace tmploot {,} {;};
     #list lootlist create {$tmploot};
 };
