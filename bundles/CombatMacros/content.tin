@@ -1,15 +1,15 @@
-#alias {CombatMacrosConfigShieldDown} {
+#alias {zdejmowanie} {
 	#var pzdjeciezaslon $ConfigManager_Configs[CombatMacrosConfigShieldDown];
 };
 
-#alias {CombatMacrosConfigAttackFlags} {
+#alias {atakflagi} {
   #if {"$ConfigManager_Configs[CombatMacrosConfigAttackFlags]" == ""} {
     #var ConfigManager_Configs[CombatMacrosConfigAttackFlags] {z};
   };
 	#var pwskazywanie $ConfigManager_Configs[CombatMacrosConfigAttackFlags];
 };
 
-#alias {CombatMacrosConfigAttackCommand} {
+#alias {atakkomenda} {
   #if {"$ConfigManager_Configs[CombatMacrosConfigAttackCommand]" == ""} {
     #var ConfigManager_Configs[CombatMacrosConfigAttackCommand] {zabij};
   };  
