@@ -14,8 +14,8 @@
 #nop IS CONFIG PRSENT;
 #var bundle_config {1};
 #list bundle_configs clear;
-	#list bundle_configs add {TTMapMode};
-	#list bundle_configs add {TTMapTerrain};
+	#list bundle_configs add {trybmapy};
+	#list bundle_configs add {kolorowaniemapy};
 	#list bundle_configs add {startowa};
 
 #nop IS HELP PRESENT;
