@@ -1,7 +1,7 @@
-#alias {CharacterClassProfession} {
+#alias {zawod} {
 	#var pzawod $ConfigManager_Configs[CharacterClassProfession];
 };
 
-#alias {CharacterClassGuild} {
+#alias {gildia} {
 	#var pgildia $ConfigManager_Configs[CharacterClassGuild];
 };
