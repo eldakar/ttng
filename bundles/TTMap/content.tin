@@ -10,14 +10,14 @@
 #map leg 218 >
 
 #alias {trybmapy} {
-    #switch {"$ConfigManager_Configs[TTMapMode]"} {
+    #switch {"$ConfigManager_Configs[trybmapy]"} {
         #case {"unicode"} {#map flag unicodegraphics on;};
         #case {"ascii"} {#map flag asciigraphics on;};
         #default {#map flag asciigraphics on;}
     };
 };
 #alias {kolorowaniemapy} {
-    #switch {"$ConfigManager_Configs[TTMapTerrain]"} {
+    #switch {"$ConfigManager_Configs[kolorowaniemapy]"} {
         #case {"wlaczone"} {
             #map flag terrain on;
         };
