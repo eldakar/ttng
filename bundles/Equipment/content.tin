@@ -1,16 +1,16 @@
-#alias {EquipmentScabbardOne} {
+#alias {pochwa} {
 	#var ppochwa $ConfigManager_Configs[EquipmentScabbardOne];
 };
 
-#alias {EquipmentScabbardTwo} {
+#alias {pochwa2} {
 	#var ppochwa2 $ConfigManager_Configs[EquipmentScabbardTwo];
 };
 
-#alias {EquipmentBackpack} {
+#alias {plecak} {
 	#var pplecak $ConfigManager_Configs[EquipmentBackpack];
 };
 
-#alias {EquipmentGoldContainer} {
+#alias {sakiewka} {
 	#var psakiewka $ConfigManager_Configs[EquipmentGoldContainer];
 };
 
