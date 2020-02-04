@@ -1,4 +1,4 @@
-#alias {LootManagerLoot} {
+#alias {zbieranie} {
 	#var tmploot {$ConfigManager_Configs[LootManagerLoot]};
     #replace tmploot {,} {;};
     #list lootlist create {$tmploot};
