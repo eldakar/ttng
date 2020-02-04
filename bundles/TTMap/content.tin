@@ -458,20 +458,3 @@
     };
 }
 
-#nop ################################################################;
-#nop lockowanie pokojow.;
-#nop ################################################################;
-#alias {/l %d %*} {
-    #line ignore #sh {<128>Mapa [  %1  ]: %2<088>.};
-    #var lockroom {%1};
-    #map find {%1};
-} {1};
-
-#alias {/lc} {
-    #var lockroom 0;
-    #map find 0;
-} {1};
-
-#alias {/idz} {
-    #path walk;
-} {1};
