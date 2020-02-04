@@ -9,16 +9,16 @@
 #map leg 200 /
 #map leg 218 >
 
-#alias {TTMapMode} {
+#alias {trybmapy} {
     #switch {"$ConfigManager_Configs[TTMapMode]"} {
         #case {"unicode"} {#map flag unicodegraphics on;};
         #case {"ascii"} {#map flag asciigraphics on;};
         #default {#map flag asciigraphics on;}
     };
 };
-#alias {TTMapTerrain} {
+#alias {kolorowaniemapy} {
     #switch {"$ConfigManager_Configs[TTMapTerrain]"} {
-        #case {"on"} {
+        #case {"wlaczone"} {
             #map flag terrain on;
         };
         #default {
