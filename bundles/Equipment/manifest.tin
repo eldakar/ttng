@@ -3,10 +3,10 @@
 #var bundle_content {1};
 #var bundle_help {1};
 #list bundle_configs clear;
-	#list bundle_configs add {EquipmentScabbardOne};
-	#list bundle_configs add {EquipmentScabbardTwo};
-	#list bundle_configs add {EquipmentBackpack};
-	#list bundle_configs add {EquipmentGoldContainer};
+	#list bundle_configs add {pochwa};
+	#list bundle_configs add {pochwa2};
+	#list bundle_configs add {plecak};
+	#list bundle_configs add {sakiewka};
 	
 #list bundle_slots clear;
 	#list bundle_slots add {equipment};

@@ -14,8 +14,8 @@
 #nop IS CONFIG PRSENT;
 #var bundle_config {0};
 #list bundle_configs clear;
-#list bundle_configs add {CharacterClassProfession};
-#list bundle_configs add {CharacterClassGuild};
+#list bundle_configs add {zawod};
+#list bundle_configs add {gildia};
 
 #nop ############################;
 #nop BUNDLE DEPENDENCIES ###;

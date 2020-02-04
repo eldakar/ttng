@@ -14,8 +14,8 @@
 #nop IS CONFIG PRSENT;
 #var bundle_config {0};
 #list bundle_configs clear;
-#list bundle_configs add {LogManagerLogging};
-#list bundle_configs add {TTConfigCommandEcho};
+#list bundle_configs add {logowanie};
+#list bundle_configs add {echokomend};
 
 #nop ############################;
 #nop BUNDLE DEPENDENCIES ###;

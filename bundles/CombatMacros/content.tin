@@ -1,19 +1,19 @@
-#alias {CombatMacrosConfigShieldDown} {
-	#var pzdjeciezaslon $ConfigManager_Configs[CombatMacrosConfigShieldDown];
+#alias {zdejmowanie} {
+	#var pzdjeciezaslon $ConfigManager_Configs[zdejmowanie];
 };
 
-#alias {CombatMacrosConfigAttackFlags} {
-  #if {"$ConfigManager_Configs[CombatMacrosConfigAttackFlags]" == ""} {
-    #var ConfigManager_Configs[CombatMacrosConfigAttackFlags] {z};
+#alias {atakflagi} {
+  #if {"$ConfigManager_Configs[atakflagi]" == ""} {
+    #var ConfigManager_Configs[atakflagi] {z};
   };
-	#var pwskazywanie $ConfigManager_Configs[CombatMacrosConfigAttackFlags];
+	#var pwskazywanie $ConfigManager_Configs[atakflagi];
 };
 
-#alias {CombatMacrosConfigAttackCommand} {
-  #if {"$ConfigManager_Configs[CombatMacrosConfigAttackCommand]" == ""} {
-    #var ConfigManager_Configs[CombatMacrosConfigAttackCommand] {zabij};
+#alias {atakkomenda} {
+  #if {"$ConfigManager_Configs[atakkomenda]" == ""} {
+    #var ConfigManager_Configs[atakkomenda] {zabij};
   };  
-	#alias zabijcmd {$ConfigManager_Configs[CombatMacrosConfigAttackCommand]};
+	#alias zabijcmd {$ConfigManager_Configs[atakkomenda]};
 };
 
 #alias {_zabij_} 
