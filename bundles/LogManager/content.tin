@@ -1,13 +1,13 @@
-#alias {LogManagerLogging} {
-	#if {"$ConfigManager_Configs[LogManagerLogging]" == "yes"} {
+#alias {logowanie} {
+	#if {"$ConfigManager_Configs[LogManagerLogging]" == "wlaczone"} {
 		#config LOG plain;
 		#format {logstamp} {%t} {%Y-%m-%d};
 		#line sub variables {#log append {bundles/ConfigManager/Profiles/Logs/$AVATAR_NAME-$logstamp}};
 	};	
 };
 
-#alias {TTConfigCommandEcho} {
-	#if {"$ConfigManager_Configs[TTConfigCommandEcho]" == "on"} {
+#alias {echokomend} {
+	#if {"$ConfigManager_Configs[TTConfigCommandEcho]" == "wlaczone"} {
 		#config {COMMAND ECHO} {on};
 	} {
 		#config {COMMAND ECHO} {off};
