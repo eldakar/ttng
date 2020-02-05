@@ -29,7 +29,6 @@
 			#replace {outputtext} {\\n} {};
 #nop DEBUG;	#line substitute {variables} {#line strip {
 				#var gmcp_short {$outputtext};
-				#var gmcp_shoot {$outputtext};
 			}};
 			#if {$bind_found > 0} {
 				#nop line sub variables {#alias _quickbind_ {$bind_run}};

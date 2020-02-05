@@ -14,6 +14,10 @@
 	#var psakiewka $ConfigManager_Configs[sakiewka];
 };
 
+#alias {przewijanie} {
+	#var jakieprzewijanie $ConfigManager_Configs[przewijanie];
+
+}
 
 #alias {dbb} {
 	#nop ####################################
@@ -161,3 +165,24 @@
 		};
 	};	
 }
+
+#alias {/dos} {
+	otworz skrzynie;
+	wloz %0 do skrzyni;
+	zakmnij skrzynie;
+} {1};
+
+
+#action {ENTER} {
+	#if {"$jakieprzewijanie" == "automatyczne"} {
+		#send {};
+	};
+}
+
+#nop action {{*|!|$} (%d) %* .%*(%)} {
+	#line gag;
+}
+
+#alias {/wybierz} {
+
+} {1};

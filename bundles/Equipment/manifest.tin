@@ -7,6 +7,7 @@
 	#list bundle_configs add {pochwa2};
 	#list bundle_configs add {plecak};
 	#list bundle_configs add {sakiewka};
+	#list bundle_configs add {przewijanie};
 	
 #list bundle_slots clear;
 	#list bundle_slots add {equipment};

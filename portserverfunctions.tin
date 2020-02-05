@@ -119,7 +119,6 @@
 
 #action {<PORT> MARK %d %w} {
     #map at {%1} {#map set roomweight $roominfo[%2][index]};
-    #map at {%1} {#map set roomcolor $roominfo[%2][color]};
     #map at {%1} {#map get roomterrain rter};
 
     #if {"$roominfo[%2][symbol]" != ""} {

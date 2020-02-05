@@ -118,29 +118,22 @@
 	#var roominfo[bush][index] {22};
 
 #var roominfo[23][name] {swamp};
-	#var roominfo[swamp][color] {<158>};
-	#var roominfo[swamp][index] {23};
+#var roominfo[swamp][index] {23};
 
 #var roominfo[24][name] {lava};
-	#var roominfo[lava][color] {<118>};
-	#var roominfo[lava][index] {24};
+#var roominfo[lava][index] {24};
 
 #var roominfo[25][name] {mountain};
-	#var roominfo[mountain][color] {<118><fca>};
-	#var roominfo[mountain][index] {25};
+#var roominfo[mountain][index] {25};
 
 #var roominfo[26][name] {desert};
-	#var roominfo[desert][color] {<138><fca>};
-	#var roominfo[desert][index] {26};
+#var roominfo[desert][index] {26};
 
 #var roominfo[27][name] {road};
-	#var roominfo[road][color] {};
-	#var roominfo[road][index] {27};
+#var roominfo[road][index] {27};
 
 #var roominfo[28][name] {graveyard};
-	#var roominfo[graveyard][color] {};
-	#var roominfo[graveyard][index] {28};
+#var roominfo[graveyard][index] {28};
 
 #var roominfo[29][name] {tunnel};
-	#var roominfo[tunnel][color] {};
-	#var roominfo[tunnel][index] {29};
+#var roominfo[tunnel][index] {29};

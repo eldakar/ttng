@@ -25,3 +25,30 @@
 #sub {(posluzy bardzo krotko)} {<018>posluzy bardzo troche 1/5 0h-1h<088>};
 
 #high {(nie posluzy dluzej, w znakomitym stanie)} {<018>};
+
+#sub {   nawigacja:} {<129>KS <AAB><178>nawigacja:};
+#sub {     potezny cios:} { <118>FAN<088> <BAA><178>potezny cios:<088>};
+#sub {     walka dwiema bronmi:} { <118>FAN<088> <BAA><178>walka dwiema:<088>     };
+
+
+#sub {ledwo          } {<018>ledwo        10<088>};
+#sub {troche         } {<018>troche       20<088>};
+#sub {pobieznie      } {<018>pobieznie    30<088>};
+#sub {zadowalajaco   } {<038>zadowalajaco 40<088>}; 
+#sub {niezle         } {<038>niezle       50<088>};
+#sub {dobrze         } {<038>dobrze       60<088>};
+#sub {znakomicie     } {<028>znakomicie   70<088>};
+#sub {doskonale      } {<028>doskonale    80<088>};
+#sub {perfekcyjnie   } {<068>perfekcyjnie 90<088>};
+#sub {mistrzowsko    } {<068>mistrzowsko  XX<088>};
+
+#sub { ledwo\n} {<018>ledwo        10<088>\n};
+#sub { troche\n} {<018>troche       20<088>\n};
+#sub { pobieznie\n} {<018>pobieznie    30<088>\n};
+#sub { zadowalajaco\n} {<038>zadowalajaco 40<088>\n}; 
+#sub { niezle\n} {<038>niezle       50<088>\n};
+#sub { dobrze\n} {<038>dobrze       60<088>\n};
+#sub { znakomicie\n} {<028>znakomicie   70<088>\n};
+#sub { doskonale\n} {<028>doskonale    80<088>\n};
+#sub { perfekcyjnie\n} {<068>perfekcyjnie 90<088>\n};
+#sub { mistrzowsko\n} {<068>mistrzowsko  XX<088>\n};

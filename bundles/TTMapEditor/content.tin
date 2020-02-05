@@ -41,7 +41,6 @@
 #brain #action {<PORT> MARK %d %w} {
     #line substitute {variables} {
         #rpg #map at {%1} {#map set roomweight $roominfo[%2][index]};
-        #rpg #map at {%1} {#map set roomcolor $roominfo[%2][color]};
         #if {"$roominfo[%2][symbol]" != ""} {
             #rpg #map at {%1} {#map set roomsymbol $roominfo[%2][symbol]};
         } {
@@ -434,7 +433,7 @@
         #case {"field"} {};
         #case {"beach"} {};
         #case {"river"} {};
-        #case {"lake"} {};
+        #case {"1"} {};
         #case {"bush"} {};
         #case {"swamp"} {};
         #case {"lava"} {};
@@ -589,5 +588,209 @@
         #map get roomvnum tmproomvnum;
         #line substitute {variables} {#brain {#port send $brainId {COMMAND $tmproomvnum %1}}};
     } {show_ponged_error};
+} {1};
+
+#alias {/symbol} {
+    #var tmpterrain {};
+    #var rmsym {};
+    #map get roomterrain tmpterrain;
+
+    #switch {"$tmpterrain"} {
+                    #case {"air"}           {#var rmcol <268>;#var rmsym <268>. .<088>};
+                    #case {"alley"}         {#var rmcol <248>;#var rmsym <248>. .<088>};
+                    #case {"ashen_field"}       {#var rmcol <278>;#var rmsym <278>, `<088>};
+                    #case {"areaexit"}      {#var rmcol <168>;#var rmsym <168>[<278>?<168>]<088>};
+                    #case {"aylorcity"}     {#var rmcol <278>;#var rmsym <278>[ ]<088>};
+        #case {"plaza"}         {#var rmcol <138>;#var rmsym <138>, `<088>};
+                    #case {"bloodyhall"}        {#var rmcol <218>;#var rmsym <218>. .<088>};
+                    #case {"bloodyroom"}        {#var rmcol <118>;#var rmsym <118>[ ]<088>};
+                    #case {"bookshelves"}       {#var rmcol <238>;#var rmsym <238>"""<088>};
+                    #case {"bookshelves_ns"}    {#var rmcol <238>;#var rmsym <238>=<148>.<238>=<088>};
+        #case {"most"}        {#var rmcol <238>;#var rmsym <238>===<088>};
+                    #case {"cabin"}         {#var rmcol <238>;#var rmsym <238># #<088>};
+        #case {"jaskinia"}          {#var rmcol <248>;#var rmsym <248>% %<088>};
+                    #case {"castle"}        {#var rmcol <178>;#var rmsym <278>###<088>};
+        #case {"symbol"}     {#var rmcol <258>;#var rmsym <258>~^~<088>};
+                    #case {"chessblack"}        {#var rmcol <248>;#var rmsym <248>[ ]<088>};
+                    #case {"chesswhite"}        {#var rmcol <178>;#var rmsym <178>[ ]<088>};
+                    #case {"city"}          {#var rmcol <278>;#var rmsym <278>. .<088>};
+                    #case {"city_underground"}  {#var rmcol <238>;#var rmsym <238>. .<088>};
+                    #case {"cloud1"}        {#var rmcol <178>;#var rmsym <178>~ ~<088>};
+                    #case {"cloud2"}        {#var rmcol <108>;#var rmsym <108>~ ~<088>};
+                    #case {"cloud3"}        {#var rmcol <278>;#var rmsym <128>.<138>*<088>~<088>};
+                    #case {"crossroad_ews"}     {#var rmcol <278>;#var rmsym <278>-+-<088>};
+                    #case {"crossroad_nw"}      {#var rmcol <278>;#var rmsym <278>-+ <088>};
+                    #case {"crossroad_se"}      {#var rmcol <278>;#var rmsym <278> +-<088>};
+        #case {"krypta"}         {#var rmcol <248>;#var rmsym <248>. <178>+<088>};
+                    #case {"dark"}          {#var rmcol <208>;#var rmsym <208>[ ]<088>};
+                    #case {"dead_field"}        {#var rmcol <238>;#var rmsym <238>, `<088>};
+                    #case {"dead_forest"}       {#var rmcol <238>;#var rmsym <238>( *<088>};
+                    #case {"dead_jungle"}       {#var rmcol <238>;#var rmsym <238>* *<088>};
+        #case {"pustynia"}        {#var rmcol <238>;#var rmsym <138>~ ~<088>};
+                    #case {"dungeon"}       {#var rmcol <248>;#var rmsym <248># #<088>};
+                    #case {"dustdevil"}     {#var rmcol <238>;#var rmsym <238>.VV<088>};
+        #case {"pole"}         {#var rmcol <228>;#var rmsym <228>, `<088>};
+        #case {"laka"}        {#var rmcol <228>;#var rmsym <228>. ^<088>};
+        #nop case {"gaszcz"}        {#var rmcol <228>;#var rmsym <228>, .<088>};
+        #case {"zagajnik"}        {#var rmcol <228>;#var rmsym <228>` ^<088>};
+                    #case {"flowers1"}      {#var rmcol <178>;#var rmsym <168>*<158>*<138>*<088>};
+                    #case {"flowers2"}      {#var rmcol <178>;#var rmsym <158>*<168>*<138>*<088>};
+        #case {"las"}        {#var rmcol <228>;#var rmsym <228>( *<088>};
+        #case {"las_iglasty"}        {#var rmcol <228>;#var rmsym <228>( *<088>};
+        #case {"las_bukowy"}        {#var rmcol <228>;#var rmsym <228>( *<088>};    
+        #case {"las_sosnowy"}        {#var rmcol <228>;#var rmsym <228>( *<088>};                
+                    #case {"fountain"}      {#var rmcol <278>;#var rmsym <278>( )<088>};
+        #case {"cmentarz"}     {#var rmcol <238>;#var rmsym <238>. <178>+<088>};
+        #case {"korytarz"}       {#var rmcol <268>;#var rmsym <268>[ ]<088>};
+                    #case {"hell1"}         {#var rmcol <218>;#var rmsym <218>` <118>,<088>};
+                    #case {"hell2"}         {#var rmcol <218>;#var rmsym <218>~ .<088>};
+                    #case {"hell3"}         {#var rmcol <218>;#var rmsym <218>~ <118>^<088>};
+                    #case {"hell4"}         {#var rmcol <218>;#var rmsym <118>^ <218>^<088>};
+        #case {"oltarz"}      {#var rmcol <218>;#var rmsym <118>(<178>~<118>)<088>};
+                    #case {"hellhall"}      {#var rmcol <218>;#var rmsym <088>. <218>.<088>};
+                    #case {"hellinside"}        {#var rmcol <218>;#var rmsym <218>[ ]<088>};
+                    #case {"wzgorze"}         {#var rmcol <228>;#var rmsym <228>. ^<088>};
+                    #case {"hut"}           {#var rmcol <238>;#var rmsym <238>[ ]<088>};
+                    #case {"ice"}           {#var rmcol <178>;#var rmsym <178>~ ~<088>};
+                    #case {"icehills"}      {#var rmcol <178>;#var rmsym <178>^ ~<088>};
+                    #case {"icemount"}      {#var rmcol <178>;#var rmsym <178>A A<088>};
+        #case {"wnetrze"}        {#var rmcol <278>;#var rmsym <278>[ ]<088>};
+                    #case {"insideice"}     {#var rmcol <178>;#var rmsym <178>[ ]<088>};
+        #case {"gaszcz"}        {#var rmcol <228>;#var rmsym <228>* *<088>};
+                    #case {"lightning"}     {#var rmcol <138>;#var rmsym <138>  /<088>};
+                    #case {"mist"}          {#var rmcol <178>;#var rmsym <178>~ ~<088>};
+                    #case {"moon"}          {#var rmcol <248>;#var rmsym <248> * <088>};
+        #case {"gory"}      {#var rmcol <238>;#var rmsym <238>A A<088>};
+                    #case {"mountain_cyan"}     {#var rmcol <268>;#var rmsym <268>A A<088>};
+                    #case {"ocean"}         {#var rmcol <148>;#var rmsym <148>~ ~<088>};
+                    #case {"ocean2"}        {#var rmcol <148>;#var rmsym <148>~ ^<088>};
+                    #case {"ocean3"}        {#var rmcol <148>;#var rmsym <148>^ ~<088>};
+                    #case {"ocean4"}        {#var rmcol <148>;#var rmsym <148>, ~<088>};
+                    #case {"office"}        {#var rmcol <238>;#var rmsym <238>[ ]<088>};
+                    #case {"palace_room"}       {#var rmcol <138>;#var rmsym <138>[ ]<088>};
+                    #case {"pillar"}        {#var rmcol <278>;#var rmsym <278> * <088>};
+                    #case {"plain"}         {#var rmcol <238>;#var rmsym <238>, `<088>};
+                    #case {"quicksand"}     {#var rmcol <138>;#var rmsym <138>%%%<088>};
+                    #case {"rain"}          {#var rmcol <148>;#var rmsym <148>'.'<088>};
+                    #case {"rainbow"}       {#var rmcol <148>;#var rmsym <118>)<138>)<148>)<088>};
+                    #case {"redcarpet"}     {#var rmcol <118>;#var rmsym <118>. .<088>};
+        #case {"rzeka"}         {#var rmcol <148>;#var rmsym <148>~ ~<088>};
+        #case {"trakt"}          {#var rmcol <278>;#var rmsym <278>[ ]<088>};
+                    #case {"road_crossroads"}   {#var rmcol <278>;#var rmsym <278>-+-<088>};
+                    #case {"road_eastwest"}     {#var rmcol <278>;#var rmsym <278>- -<088>};
+        #case {"skaly"}         {#var rmcol <238>;#var rmsym <238>^ ,<088>};
+                    #case {"ruins"}         {#var rmcol <178>;#var rmsym <178>{<148>*<178>}<088>};
+                    #case {"ship"}          {#var rmcol <238>;#var rmsym <238>V_V<088>};
+        #case {"brzeg"}         {#var rmcol <268>;#var rmsym <268>~ ~<088>};
+                    #case {"shop"}          {#var rmcol <138>;#var rmsym <138>*<128>$<138>*<088>};
+                    #case {"smallroad"}     {#var rmcol <278>;#var rmsym <228>,<278>|<228>`<088>};
+                    #case {"smallroad_ew"}      {#var rmcol <278>;#var rmsym <278>---<088>};
+                    #case {"snow"}          {#var rmcol <178>;#var rmsym <178>. ,<088>};
+                    #case {"space1"}        {#var rmcol <108>;#var rmsym <208>[ ]<088>};
+                    #case {"space2"}        {#var rmcol <278>;#var rmsym <278>*  <088>};
+                    #case {"space3"}        {#var rmcol <278>;#var rmsym <278>  .<088>};
+                    #case {"space4"}        {#var rmcol <108>;#var rmsym <208>[ ]<088>};
+                    #case {"stairs"}        {#var rmcol <278>;#var rmsym <278>.@.<088>};
+                    #case {"sun"}           {#var rmcol <138>;#var rmsym <138> * <088>};
+        #case {"bagno"}         {#var rmcol <228>;#var rmsym <228>; ;<088>}};
+                    #case {"swiatynia"}        {#var rmcol <268>;#var rmsym <268>{<178>+<268>}<088>};
+                    #case {"tornado"}       {#var rmcol <108>;#var rmsym <108>.VV<088>};
+                    #case {"trail_ew"}      {#var rmcol <238>;#var rmsym <238>. .<088>};
+        #case {"tunel"}        {#var rmcol <238>;#var rmsym <238>] [<088>};
+                    #case {"underground"}       {#var rmcol <148>;#var rmsym <148>. .<088>};
+                    #case {"underwater"}        {#var rmcol <248>;#var rmsym <248>~ ~<088>};
+                    #case {"vertical_shaft"}    {#var rmcol <278>;#var rmsym <278>< ><088>};
+                    #case {"volcano"}       {#var rmcol <218>;#var rmsym {<218>A A<088>};
+                    #case {"waterswim"}     {#var rmcol <148>;#var rmsym <148>~ ~<088>};
+                    #case {"waternoswim"}       {#var rmcol <148>;#var rmsym <148>~ ~<088>};
+                    #case {"well"}          {#var rmcol <238>;#var rmsym <238>(<148>~<238>)<088>};
+                    #case {"wind1"}         {#var rmcol <168>;#var rmsym <168>~ ~<088>};
+                    #case {"wind2"}         {#var rmcol <108>;#var rmsym <108>~-~<088>};
+        #case {"szczelina"}        {#var rmcol <238>;#var rmsym <238>] [<088>};
+        #case {"przepasc"}        {#var rmcol <238>;#var rmsym <238>] [<088>};
+        #case {"studnia_b"}        {#var rmcol <238>;#var rmsym <238>] [<088>};
+    };
+
+    #format {rmsym_len} {%L} {$rmsym};
+
+    #if {"$rmcol" != ""} {
+        #map set roomcolor $rmcol
+    };
+    #if {$rmsym_len > 0} {
+        #map set roomsymbol $rmsym
+    };
+} {1};
+
+#alias {/terrain} {
+    #var tmpterrain {};
+    #map get roomdesc gmcp_short;
+    #nop LASY;
+    #regex {$gmcp_short} {%i{las|lesi}} {#var tmpterrain las};
+    #regex {$gmcp_short} {%iswierk} {#var tmpterrain las_iglasty};
+    #regex {$gmcp_short} {%ibuk} {#var tmpterrain las_bukowy};
+    #regex {$gmcp_short} {%isosn} {#var tmpterrain las_sosnowy};
+    #nop INNE ZIELENIE;
+    #regex {$gmcp_short} {%izagajnik} {#var tmpterrain ogrod};
+    #regex {$gmcp_short} {%i{laka|laki|lace}} {#var tmpterrain laka};
+    #regex {$gmcp_short} {%i{pole|pola}} {#var tmpterrain pole};
+    #regex {$gmcp_short} {%i{gaszcz|chaszcz|wrzos}} {#var tmpterrain gaszcz};
+    #nop LAD PRZY WODZIE;
+    #regex {$gmcp_short} {%i{brzeze|brzeg}} {#var tmpterrain brzeg};
+    #regex {$gmcp_short} {%iplaz} {#var tmpterrain plaza};
+    #regex {$gmcp_short} {%iskarp} {#var tmpterrain plaza};
+    #nop PUSTYNIE;
+    #regex {$gmcp_short} {%iwydm} {#var tmpterrain pustynia}; 
+    #regex {$gmcp_short} {%i{pustkow|pustyn}} {#var tmpterrain pustynia}; 
+    #nop WODA;
+    #regex {$gmcp_short} {%istrum} {#var tmpterrain rzeka}; 
+    #regex {$gmcp_short} {%i{rzeka|rzeki}} {#var tmpterrain rzeka}; 
+    #regex {$gmcp_short} {%i{rzeka|rzeki}} {#var tmpterrain rzeka}; 
+    #regex {$gmcp_short} {%izatok} {#var tmpterrain rzeka}; 
+        #regex {$gmcp_short} {%ijezior} {#var tmpterrain jezioro}; 
+        #regex {$gmcp_short} {%isadzaw} {#var tmpterrain sadzawka};        
+    #nop MOKRE ZIEMIE;
+    #regex {$gmcp_short} {%ibagn} {#var tmpterrain bagno};  
+    #regex {$gmcp_short} {%imoczar} {#var tmpterrain bagno};  
+    #nop PODZIEMIA;
+    #regex {$gmcp_short} {%ijaskin} {#var tmpterrain jaskinia};
+    #regex {$gmcp_short} {%igrot} {#var tmpterrain jaskinia};
+    #regex {$gmcp_short} {%izasypan} {#var tmpterrain tunel};
+    #regex {$gmcp_short} {%itunel} {#var tmpterrain tunel};
+    #regex {$gmcp_short} {%ikrypt} {#var tmpterrain krypta};
+    #regex {$gmcp_short} {%imauzole} {#var tmpterrain krypta};
+    #regex {$gmcp_short} {%igrob} {#var tmpterrain krypta};
+        #nop WNETRZA;
+    #regex {$gmcp_short} {%ikorytarz} {#var tmpterrain korytarz};
+    #regex {$gmcp_short} {%i{sala|salk|sali}} {#var tmpterrain wnetrze};
+    #regex {$gmcp_short} {%ipokoj} {#var tmpterrain wnetrze};
+    #nop ZWIAZANE Z PRZEJSCIEM;
+        #regex {$gmcp_short} {%iszczelin} {#var tmpterrain szczelina};
+        #regex {$gmcp_short} {%i{wnek|wnece}} {#var tmpterrain szczelina};
+        #regex {$gmcp_short} {%iprzepasc} {#var tmpterrain przepasc};
+        #regex {$gmcp_short} {%istudni} {#var tmpterrain studnia_b}; 
+    #regex {$gmcp_short} {%i{most|moscie}} {#var tmpterrain most}; 
+    #nop KULTY;
+    #regex {$gmcp_short} {%isanktuarium} {#var tmpterrain swiatynia};
+    #regex {$gmcp_short} {%isymbol} {#var tmpterrain symbol};
+    #regex {$gmcp_short} {%ioltarz} {#var tmpterrain oltarz};
+    #regex {$gmcp_short} {%icmentarz} {#var tmpterrain cmentarz};
+        #nop DROGI;
+        #regex {$gmcp_short} {%i{zaulek|zaulk}} {#var tmpterrain zaulek};        
+        #regex {$gmcp_short} {%i{slepy|slepa}} {#var tmpterrain zaulek};
+        #regex {$gmcp_short} {%i{zakret|rozwidleni|skrzyzowan}} {#var tmpterrain droga};
+        #regex {$gmcp_short} {%isciezka} {#var tmpterrain sciezka};
+    #regex {$gmcp_short} {%itrak} {#var tmpterrain trakt};
+        #nop GORY;
+    #regex {$gmcp_short} {%i{gory|gora|gors|pagor}} {#var tmpterrain gory};
+    #regex {$gmcp_short} {%iwzgorz} {#var tmpterrain wzgorze};
+    #regex {$gmcp_short} {%iskal} {#var tmpterrain skaly};
+    #regex {$gmcp_short} {%irumowisk} {#var tmpterrain skaly};
+        #nop NATURA INNE;
+        #regex {$gmcp_short} {%i{lawa|lawy}} {#var tmpterrain lawa};
+        #regex {$gmcp_short} {%imagm} {#var tmpterrain magma};
+
+        #if {"$tmpterrain" != ""} {
+            #map set roomterrain $tmpterrain;
+        };
 } {1};
 
