@@ -713,7 +713,6 @@
                     #case {"wind1"}         {#var rmcol <168>;#var rmsym <168>~ ~<088>};
                     #case {"wind2"}         {#var rmcol <108>;#var rmsym <108>~-~<088>};
         #nop case {"szczelina"}        {#var rmcol <238>;#var rmsym <238>] [<088>};
-        #nop case {"przepasc"}        {#var rmcol <238>;#var rmsym <238>] [<088>};
         #nop case {"studnia_b"}        {#var rmcol <238>;#var rmsym <238>] [<088>};
         #case {"zaulek"}           {#var rmcol;#var rmsym <178>| |<088>};
         #case {"droga"}            {#var rmcol;#var rmsym;};
