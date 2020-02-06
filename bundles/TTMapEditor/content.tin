@@ -651,6 +651,8 @@
                     #case {"hell3"}         {#var rmcol <218>;#var rmsym <218>~ <118>^<088>};
                     #case {"hell4"}         {#var rmcol <218>;#var rmsym <118>^ <218>^<088>};
         #case {"oltarz"}      {#var rmcol <218>;#var rmsym <118>(<178>~<118>)<088>};
+        #case {"lawa"}        {#var rmcol <218>;#var rmsym <118>~ ~<088>};
+        #case {"magma"}       {#var rmcol <018>;#var rmsym <018>o O<088>};
                     #case {"hellhall"}      {#var rmcol <218>;#var rmsym <088>. <218>.<088>};
                     #case {"hellinside"}        {#var rmcol <218>;#var rmsym <218>[ ]<088>};
                     #case {"wzgorze"}         {#var rmcol <228>;#var rmsym <228>. ^<088>};
@@ -727,7 +729,6 @@
 
 #alias {/terrain} {
     #var tmpterrain {};
-    #map get roomdesc gmcp_short;
     #nop LASY;
     #regex {$gmcp_short} {%i{las|lesi}} {#var tmpterrain las};
     #regex {$gmcp_short} {%iswierk} {#var tmpterrain las_iglasty};
@@ -790,12 +791,12 @@
     #regex {$gmcp_short} {%iskal} {#var tmpterrain skaly};
     #regex {$gmcp_short} {%irumowisk} {#var tmpterrain skaly};
     #regex {$gmcp_short} {%iprzepasc} {#var tmpterrain skaly};
-        #nop NATURA INNE;
-        #regex {$gmcp_short} {%i{lawa|lawy}} {#var tmpterrain lawa};
-        #regex {$gmcp_short} {%imagm} {#var tmpterrain magma};
+    #nop NATURA INNE;
+    #regex {$gmcp_short} {%i{lawa|lawy}} {#var tmpterrain lawa};
+    #regex {$gmcp_short} {%imagm} {#var tmpterrain magma};
 
-        #if {"$tmpterrain" != ""} {
-            #map set roomterrain $tmpterrain;
-        };
+    #if {"$tmpterrain" != ""} {
+        #map set roomterrain $tmpterrain;
+    };
 } {1};
 
