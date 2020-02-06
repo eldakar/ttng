@@ -712,9 +712,12 @@
                     #case {"well"}          {#var rmcol <238>;#var rmsym <238>(<148>~<238>)<088>};
                     #case {"wind1"}         {#var rmcol <168>;#var rmsym <168>~ ~<088>};
                     #case {"wind2"}         {#var rmcol <108>;#var rmsym <108>~-~<088>};
-        #case {"szczelina"}        {#var rmcol <238>;#var rmsym <238>] [<088>};
-        #case {"przepasc"}        {#var rmcol <238>;#var rmsym <238>] [<088>};
-        #case {"studnia_b"}        {#var rmcol <238>;#var rmsym <238>] [<088>};
+        #nop case {"szczelina"}        {#var rmcol <238>;#var rmsym <238>] [<088>};
+        #nop case {"przepasc"}        {#var rmcol <238>;#var rmsym <238>] [<088>};
+        #nop case {"studnia_b"}        {#var rmcol <238>;#var rmsym <238>] [<088>};
+        #case {"zaulek"}           {#var rmcol;#var rmsym <178>| |<088>};
+        #case {"droga"}            {#var rmcol;#var rmsym;};
+        #case {"sciezka"}          {#var rmcol <fca>;#var rmsym <fca>. ,<088>};
     };
 
     #format {rmsym_len} {%L} {$rmsym};
@@ -780,10 +783,10 @@
     #regex {$gmcp_short} {%ioltarz} {#var tmpterrain oltarz};
     #regex {$gmcp_short} {%icmentarz} {#var tmpterrain cmentarz};
     #nop DROGI;
-        #regex {$gmcp_short} {%i{zaulek|zaulk}} {#var tmpterrain zaulek};        
-        #regex {$gmcp_short} {%i{slepy|slepa}} {#var tmpterrain zaulek};
-        #regex {$gmcp_short} {%i{zakret|rozwidleni|skrzyzowan}} {#var tmpterrain droga};
-        #regex {$gmcp_short} {%isciezka} {#var tmpterrain sciezka};
+    #regex {$gmcp_short} {%i{zaulek|zaulk}} {#var tmpterrain zaulek};        
+    #regex {$gmcp_short} {%i{slepy|slepa}} {#var tmpterrain zaulek};
+    #regex {$gmcp_short} {%i{zakret|rozwidleni|skrzyzowan}} {#var tmpterrain droga};
+    #regex {$gmcp_short} {%isciezka} {#var tmpterrain sciezka};
     #regex {$gmcp_short} {%itrak} {#var tmpterrain trakt};
     #nop GORY;
     #regex {$gmcp_short} {%i{gory|gora|gors|pagor}} {#var tmpterrain gory};
