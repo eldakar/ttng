@@ -135,6 +135,7 @@
     mapsave;
 };
 
+#unaction {%*TER%*};
 #action {<PORT> TERRAIN %d %w} {
     #map goto %1;
     #map set roomterrain %2;
