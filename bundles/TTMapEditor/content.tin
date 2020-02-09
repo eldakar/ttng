@@ -219,7 +219,7 @@
     };
 };
 
-#brain #action {<PORT> TERRAIN %d %*} {
+#brain #action {<PORT> TERRAIN %d %w} {
     #line substitute {variables} {
         #rpg #map at {%1} {
             #echo GOTIT;
@@ -229,7 +229,7 @@
             /symbol;
         };
     };
-};
+} {1};
 
 #brain #action {<PORT> LINK %d %w %d} {
     #line substitute {variables} {

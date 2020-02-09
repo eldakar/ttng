@@ -139,6 +139,7 @@
     #map set roomterrain %2;
     /symbol;
     braodcast TERRAIN %1 %2;
+    mapsave;
 };
 
 #action {<PORT> HIDE %d %w} {
