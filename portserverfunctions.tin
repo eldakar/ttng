@@ -135,12 +135,12 @@
     mapsave;
 };
 
-#action {<PORT> TERRAIN %d %*} {
+#action {<PORT> TERRAIN %d %w} {
     #map goto %1;
     #map set roomterrain %2;
     braodcast TERRAIN %1 %2;
     mapsave;
-};
+} {1};
 
 #action {<PORT> HIDE %d %w} {
     #map goto %1;
