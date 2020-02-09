@@ -138,6 +138,7 @@
     #map goto %1;
     #map set roomterrain %2;
     braodcast TERRAIN %1 %2;
+    /symbol;
     mapsave;
 };
 
