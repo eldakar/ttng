@@ -46,6 +46,13 @@
 			   	#math pendingstep {$pendingstep - 1};
     		};
 			SplitWingMap_LabelMap <128>$current_room_short_desc;
+			#if {$discovery == 1} {
+				#map get roomweight rw;
+				#if {$rw < 2} {
+					/terrain;
+					/symbol;
+				};
+			};
 		};
 		#case {"combat.team"} {
 			#var outputtext {$GMCPMSGS[text]};

@@ -1,23 +1,23 @@
-#map ter las <028>ti<088> DOUBLE VAST SPARSE;
-#map ter las_iglasty <028>AA<088> DOUBLE VAST SPARSE;
-#map ter las_bukowy <028>Ti<088> DOUBLE VAST SPARSE;
-#map ter las_sosnowy <028>TT<088> DOUBLE VAST SPARSE;
+#map ter las <028>𐃉<088> SINGLE VAST;
+#map ter las_iglasty <028>AA<088> DOUBLE VAST;
+#map ter las_bukowy <028>Ti<088> DOUBLE VAST;
+#map ter las_sosnowy <028>TT<088> DOUBLE VAST;
 #map ter ogrod <028>,<038>.<088> DOUBLE SPARSE;
-#map ter laka <028>.<038>*<088> DOUBLE;
-#map ter pole <038>i<028>.<088> DOUBLE;
+#map ter laka <028>.<038>*<088> DOUBLE VAST;
+#map ter pole <038>i<028>.<088> DOUBLE VAST;
 #map ter gaszcz <128>£V<088> DOUBLE DENSE NARROW;
-#map ter brzeg <fca>,<cca>.<088> DOUBLE DENSE NARROW;
+#map ter brzeg <138>,<cca>.<088> DOUBLE;
 #map ter plaza <cca>~<dda>~<088> DOUBLE SPARSE;
-#map ter pustynia <ffa>~<088> SPARSE;
-#map ter rzeka <aaf>~<148>~<088> DOUBLE SPARSE:
+#map ter pustynia <ffa>~<088> SPARSE VAST;
+#map ter rzeka <aaf>~<148>~<088> DOUBLE VAST FADEOUT:
 #map ter bagno <cfa>o<fca>O<088> DOUBLE NARROW;
-#map ter jaskinia <G08><g08>.<088> DENSE NARROW;
-#map ter tunel <G08><aaa>.<088> DENSE NARROW;
-#map ter krypta <BAA><aaa>#<088> DENSE NARROW;
+#map ter jaskinia <g08>O<088> DENSE;
+#map ter tunel <g08>Oo<088> DOUBLE DENSE;
+#map ter krypta <caa>#<088> DENSE NARROW;
 #map ter korytarz <g08>.<088> DENSE NARROW;
-#map ter wnetrze <FCA><fca>.<088> DENSE NARROW;
+#map ter wnetrze <cba>D<088> DENSE NARROW;
 #map ter szczelina <G08><g08>.<088> DENSE NARROW;
-#map ter studnia_b <G08><g08>.<088> DENSE NARROW;
+#map ter studnia_b <AAB><g08>.<088> DENSE NARROW;
 #map ter most <AAB><148>~<088> DENSE NARROW;
 #map ter swiatynia <BBC><078>+<088> DENSE NARROW;
 #map ter symbol <BAA><118>X<088> DENSE NARROW;
@@ -25,10 +25,15 @@
 #map ter cmentarz <g08>+<088>;
 #map ter zaulek <g08>.<088> DENSE NARROW;
 #map ter droga <g08>.<088> DENSE NARROW;
+#map ter osada <dba>.<088> DENSE;
+#map ter wioska <cca>*<ada>,<088> DOUBLE VAST FADEIN;
 #map ter sciezka <018>.<088> NARROW;
 #map ter trakt <g08>.<088> DENSE NARROW;
 #map ter gory <fca>A<088>;
-#map ter wzgorze <118><fca>/\<088> NARROW;
+#map ter wzgorze <118><fca>/\<088> DOUBLE NARROW;
 #map ter skaly <ccc>Oo<088> DOUBLE DENSE NARROW;
 #map ter lawa <018>~<088>;
 #map ter magma <018>Oo<088> DOUBLE SPARSE;
+#map ter chata <cba>#<088> DENSE NARROW;
+#map ter plac <cba>.<088> DENSE NARROW;
+
