@@ -139,7 +139,8 @@
 #action {<PORT> TERRAIN %d %w} {
     #map goto %1;
     #map set roomterrain %2;
-    braodcast TERRAIN %1 %2;
+    broadcast TERRAIN %1 %2;
+    /symbol;
     mapsave;
 } {1};
 
