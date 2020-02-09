@@ -25,6 +25,7 @@
 };
 
 #alias {broadcast} {
+    #line ignore #sh {<128>broadcasting <138> %0<088>};
 	#foreach {*userList[]} {user} {#port send $userList[$user] {%0};};
 };
 
@@ -138,7 +139,6 @@
     #map goto %1;
     #map set roomterrain %2;
     braodcast TERRAIN %1 %2;
-    /symbol;
     mapsave;
 };
 
