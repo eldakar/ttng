@@ -8,7 +8,7 @@
 
 #alias {/reload} {
     #line substitute {variables} {#brain {#port send $brainId {RELOAD}}};
-};
+} {1};
 
 #alias {/mapka} {/help TTMapEditor} {1};
 
@@ -222,8 +222,9 @@
 #brain #action {<PORT> TERRAIN %d %*} {
     #line substitute {variables} {
         #rpg #map at {%1} {
+            #echo GOTIT;
             #line substitute variables {
-                #map set roomterrain %*;
+                #map set roomterrain %2;
             };
             /symbol;
         };
@@ -355,9 +356,11 @@
 #alias {/disc$} {
     #if {$PONGED == 2} {
         #map get roomvnum voom;
+        #map get roomterrain rter;
         /terrain;
         #line substitute {variables} {#brain {#port send $brainId {ROOMEXITS $voom $current_room_exits}}};
         #line substitute {variables} {#brain {#port send $brainId {ROOMSHORT $voom $current_room_short_desc}}};
+        #line substitute {variables} {#brain {#port send $brainId {TERRAIN $voom $tmpterrain}}};
     } {show_ponged_error2};
 } {1};
 
