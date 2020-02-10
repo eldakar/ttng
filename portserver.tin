@@ -63,5 +63,7 @@
 #var kierunki[8] {w};
 
 #action {<PORT> RELOAD} {
+	unload_dynamics;
     #read portserverfunctions.tin;
+    load_dynamics;
 };
