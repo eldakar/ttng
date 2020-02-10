@@ -9,7 +9,7 @@
 #map ter brzeg <138>,<cca>.<088> DOUBLE;
 #map ter plaza <cca>~<dda>~<088> DOUBLE SPARSE;
 #map ter pustynia <ffa>~<088> SPARSE VAST;
-#map ter rzeka <aaf>~<148>~<088> DOUBLE VAST FADEOUT:
+#map ter rzeka <aaf>~<148>~<088> DOUBLE VAST DENSE FADEOUT;
 #map ter bagno <cfa>o<fca>O<088> DOUBLE NARROW;
 #map ter jaskinia <g08>O<088> DENSE;
 #map ter tunel <g08>Oo<088> DOUBLE DENSE;
