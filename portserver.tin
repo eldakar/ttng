@@ -26,32 +26,32 @@
 #nop KORSARSKIE DRAKKARY;
 #var drakkary[krakken][id] {23583};
 #var drakkary[krakken][ka] {eldakar};
-#var drakkary[krakken][foundat] {0};
-#var drakkary[krakken][linkto] {0};
+#var drakkary[krakken][foundat] {};
+#var drakkary[krakken][linkto] {};
 #var drakkary[krakken][typ] {drakkar};
 
 #var drakkary[demon][id] {23587};
 #var drakkary[demon][ka] {grumsh};
-#var drakkary[demon][foundat] {0};
-#var drakkary[demon][linkto] {0};
+#var drakkary[demon][foundat] {};
+#var drakkary[demon][linkto] {};
 #var drakkary[demon][typ] {drakkar};
 
 #var drakkary[perla][id] {23588};
 #var drakkary[perla][ka] {kallian};
-#var drakkary[perla][foundat] {0};
-#var drakkary[perla][linkto] {0};
+#var drakkary[perla][foundat] {};
+#var drakkary[perla][linkto] {};
 #var drakkary[perla][typ] {drakkar};
 
 #var drakkary[zwiastun][id] {23589};
 #var drakkary[zwiastun][ka] {chor};
-#var drakkary[zwiastun][foundat] {0};
-#var drakkary[zwiastun][linkto] {0};
+#var drakkary[zwiastun][foundat] {};
+#var drakkary[zwiastun][linkto] {};
 #var drakkary[zwiastun][typ] {drakkar};
 
 #var drakkary[wloczega][id] {23590};
 #var drakkary[wloczega][ka] {marcinson};
-#var drakkary[wloczega][foundat] {0};
-#var drakkary[wloczega][linkto] {0};
+#var drakkary[wloczega][foundat] {};
+#var drakkary[wloczega][linkto] {};
 #var drakkary[wloczega][typ] {snekkar};
 #var kierunki[1] {n};
 #var kierunki[2] {se};

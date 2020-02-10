@@ -376,11 +376,11 @@
     #nop jesli dany drakar byl juz widziany;
     #nop ale gdzie indziej;
     #if {"$tmpfoundat" != "%1"} {
-        #if {"$tmpfoundat" != "0"} {
+        #if {"$tmpfoundat" != ""} {
     	    #nop odepnij go od mapy;
             #map at {$drakkary[%2][foundat]} {#map unlink $drakkary[%2][linkto] both};
             broadcast UNLINKB $drakkary[%2][foundat] $drakkary[%2][linkto];
-            #var drakkary[%2][linkto] {0};
+            #var drakkary[%2][linkto] {};
         };
     	#nop uaktualnij jego lokacje;
     	#var drakkary[%2][foundat] {%1};
