@@ -1,0 +1,40 @@
+#read bundles/TTMap/content.tin;
+#read bundles/TTMap/Data/terrain.tin;
+#read bundles/TTMapEditor/content.tin;
+
+#map goto 1;
+#map flag vtmap on;
+#split 20 1;
+#map offset;
+
+#loop {1} {30000} {a} {
+	#var gmcp_short {};
+	#var rw {};
+	#map goto $a;
+	#map get roomweight rw;
+	#map get roomdesc gmcp_short;
+	#if {$rw > 16} {
+		#if {$rw < 30} {
+			#map set roomweight 1;
+		};
+	};
+	/terrain;
+	#map set roomterrain $tmpterrain;
+	/symbol;
+
+	#switch {"$rw"} {
+		#case {"30.000"} {#map set roomterrain wnetrze;};
+		#case {"3.000"} {#map set roomterrain studnia;};
+		#case {"4.000"} {#map set roomterrain wnetrze;};
+		#case {"5.000"} {#map set roomterrain wnetrze;};
+		#case {"6.000"} {#map set roomterrain wnetrze;};
+		#case {"11.000"} {#map set roomterrain wnetrze;};
+		#case {"13.000"} {#map set roomterrain wnetrze;};
+	};
+
+	#math {b} {$a * 100 / 30000};
+	#sh {To go <ffa>$b %<088> | <118>$a / <afa>30000<088>};
+};
+
+
+#alias rusz_wode {#loop {1} {100} {loo} {#math {zzz} {$loo % 2};#if {$zzz == 1} {#delay {$loo} {bu};} {#delay {$loo} {bu2};};};}

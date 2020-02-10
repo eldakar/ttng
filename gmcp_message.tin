@@ -17,6 +17,9 @@
 #nop DEBUG;	#line substitute {variables} {#line strip {#var gmcp_exits {$GMCPMSGS[text]}}};
 			#if {$MAPPER_SYNC == 0} {findme};
 		    BottomBarTinyFugue;
+		    #if {$discovery == 1} {
+		    	/disc;
+		    };
 		};
 		#case {"room.short"} {
 			#var tmptext {$GMCPMSGS[text]};
@@ -46,13 +49,6 @@
 			   	#math pendingstep {$pendingstep - 1};
     		};
 			SplitWingMap_LabelMap <128>$current_room_short_desc;
-			#if {$discovery == 1} {
-				#map get roomweight rw;
-				#if {$rw < 2} {
-					/terrain;
-					/symbol;
-				};
-			};
 		};
 		#case {"combat.team"} {
 			#var outputtext {$GMCPMSGS[text]};

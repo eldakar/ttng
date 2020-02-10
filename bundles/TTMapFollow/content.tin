@@ -64,12 +64,13 @@
 #action {%*{Podazasz|podazasz} za %1 brodzac w wodzie na druga strone rzeki.} {#map move woda;};
 #action {%*{Podazasz|podazasz} za %1 do alkierza.} {#map move alkierz;};
 #action {%*{Podazasz|podazasz} za %1 do budynku.} {#map move budynek;};
+#action {%*{Podazasz|podazasz} za %1 na budynek.} {#map move budynek;};
 #action {%*{Podazasz|podazasz} za %1 do wnetrza chatki.} {#map move chatka;};
 #action {%*{Podazasz|podazasz} za %1 do chaty.} {#map move chata;};
 #action {%*{Podazasz|podazasz} za %1 do czwartej kajuty.} {#map move czwarta kajuta;};
 #action {%*{Podazasz|podazasz} za %1 do drugiej kajuty.} {#map move druga kajuta;};
 #action {%*{Podazasz|podazasz} za %1 do drzwi.} {#map move drzwi;};
-#action {%*{Podazasz|podazasz} za %1 drzwiami na zewnatrz baraku.} {#map move drzwi;};
+#action {%*{Podazasz|podazasz} za %1 drzwiami na zewnatrz baraku.} {#map move drzwi;#map move wyjscie};
 #action {%*{Podazasz|podazasz} za %1 do gory na most.} {#map move most;};
 #action {%*{Podazasz|podazasz} za %1 na most.} {#map move most;};
 #action {%*{Podazasz|podazasz} za %1 w strone wyjscia.} {#map move wyjscie;};

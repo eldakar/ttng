@@ -16,7 +16,7 @@
 #map ter krypta <caa>#<088> DENSE NARROW;
 #map ter korytarz <g08>.<088> DENSE NARROW;
 #map ter wnetrze <cba>D<088> DENSE NARROW;
-#map ter szczelina <G08><g08>.<088> DENSE NARROW;
+#map ter szczelina <g08>#<088> DENSE NARROW;
 #map ter studnia_b <AAB><g08>.<088> DENSE NARROW;
 #map ter most <AAB><148>~<088> DENSE NARROW;
 #map ter swiatynia <BBC><078>+<088> DENSE NARROW;

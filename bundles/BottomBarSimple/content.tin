@@ -138,8 +138,8 @@
 				#line ignore #sh {<028>[ZASLONA] %0<088>};
 				#var pokazalem 1;
 			} {
-				#line ignore #sh {<FAA><178>[ZASLONA] %0<088>};
-				Highlights_event <138>Wrog zaslonil - Przelam! - Alias: <028>prz<088>;
+				#nop line ignore #sh {<FAA><178>[ZASLONA] %0<088>};
+				Highlights_event <138>%0\n<088><138>Wrog zaslonil - Przelam!<088>;
 				#var pokazalem 1;
 			};
 		};

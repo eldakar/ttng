@@ -124,7 +124,6 @@
 #alias {sak} {wy};
 #alias {dsak} {wl};
 
-
 #alias {wym}
 {
 	#switch {"$psakiewka"}

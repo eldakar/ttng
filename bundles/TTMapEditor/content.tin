@@ -222,10 +222,10 @@
 #brain #action {<PORT> TERRAIN %d %*} {
     #line substitute {variables} {
         #rpg #map at {%1} {
-            #echo GOTIT;
             #line substitute variables {
                 #map set roomterrain %2;
             };
+            /symbol;
         };
     };
 } {1};

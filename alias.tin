@@ -12,38 +12,6 @@
 #alias {pij} {napij sie do syta};
 #alias {rygluj_wieze} {zamknij drzwi;zarygluj drzwi};
 
-#alias {_zabij_} 
-{
-	#parse {$pwskazywanie} {wskazanie_typ} {
-      #switch {"$wskazanie_typ"} {
-        #case {"d"} khpiesn;                      #nop druchii;
-        #case {"u"} drwskaz %0;                   #nop upiorny pancerz;
-        #case {"z"} zabijcmd %0;                  #nop komenda zabij;
-        #case {"w"} wskaz %0 jako cel ataku;      #nop wskazywanie;
-        #case {"r"} rozkaz druzynie zabic %0;     #nop rozkaz;
-        #nop case {"p"} przelam obrone celu ataku;#nop przelamanie TODO;
-      };
-    };
-}
-
-#alias {_zaznaczcel_} {
-  zabijcmd 1. wroga;
-  zabijcmd 2. wroga;
-  zabijcmd 3. wroga;
-  zabijcmd 4. wroga;
-  wesprzyj;
-  #parse {$pwskazywanie} {wskazanie_typ} {
-      #switch {"$wskazanie_typ"} {
-        #case {"d"} khpiesn;                             #nop druchii;
-        #case {"u"} drwskaz cel ataku;                   #nop upiorny pancerz;
-        #case {"z"} zabijcmd cel ataku;                  #nop komenda zabij;
-        #case {"w"} wskaz cel ataku jako cel ataku;      #nop wskazywanie;
-        #case {"r"} rozkaz druzynie zabic cel ataku;     #nop rozkaz;
-        #nop case {"p"} przelam obrone celu ataku;#nop przelamanie TODO;
-      };
-    };
-}
-
 #alias {_przelamanie_} {
 	przestan kryc sie za zaslona;
 	przelam obrone celu ataku;
@@ -152,71 +120,15 @@
 
 
 
-#alias {wy %*} {
-	#format inamelen {%L} {%1};
-	#if {$inamelen < 2} {
-		#if {"$pplecak" == "sakwa"} {zajrzyj do zalozonej sakwy};
-		#if {"$pplecak" == "plecak"} {zajrzyj do zalozonego plecaka};
-		#if {"$pplecak" == "torba"} {zajrzyj do zalozonej torby};
-		#if {"$pplecak" == "wor"} {zajrzyj do zalozonego wora};
-	};
-	#else {
-		#if {"$pplecak" == "sakwa"} {otworz zalozona sakwe;wez %1 z zalozonej sakwy;zamknij zalozona sakwe};
-		#if {"$pplecak" == "plecak"} {otworz zalozony plecak;wez %1 z zalozonego plecaka;zamknij zalozony plecak};
-		#if {"$pplecak" == "torba"} {otworz zalozona torbe;wez %1 z zalozonej torby;zamknij zalozona torbe};
-		#if {"$pplecak" == "wor"} {otworz zalozony wor;wez %1 z zalozonego wora;zamknij zalozony wor};
-	};
-}
-#alias {wl %*} {
-	#if {"$pplecak" == "sakwa"} {otworz zalozona sakwe;wloz %1 do zalozonej sakwy;zamknij zalozona sakwe};
-	#if {"$pplecak" == "plecak"} {otworz zalozony plecak;wloz %1 do zalozonego plecaka;zamknij zalozony plecak};
-	#if {"$pplecak" == "torba"} {otworz zalozona torbe;wloz %1 do zalozonej torby;zamknij zalozona torbe};
-	#if {"$pplecak" == "wor"} {otworz zalozony wor;wloz %1 do zalozonego wora;zamknij zalozony wor};
-}
-#alias {sak} {wy};
-#alias {dsak} {wl};
 
-
-#alias {wym}
-{
-	#switch {"$psakiewka"}
-	{		
-		#case {"sakiewka"} {otworz swoja sakiewke;wez monety ze swojej sakiewki;zamknij swoja sakiewke;};
-		#case {"szkatulka"} {otworz swoja szkatulke;wez monety ze swojej szkatulki;zamknij swoja szkatulke;};
-		#case {"sakwa"} {otworz swoja sakwe;wez monety ze swojej sakwy;zamknij swoja sakwe;};
-		#default {
-			#switch {"$pplecak"} 
-			{
-				#case {"plecak"} {otworz zalozony plecak;wez monety z zalozonego plecaka;zamknij zalozony plecak;};
-				#case {"sakwa"} {otworz zalozona sakwe;wez monety z zalozonej sakwy;zamknij zalozona sakwe;};
-				#case {"torba"} {otworz zalozona torbe;wez monety z zalozonej torby;zamknij zalozona torbe;};
-				#case {"wor"} {otworz zalozony wor;wez monety z zalozonego wora;zamknij zalozony wor;};
-				#default {otworz zalozony plecak;wez monety z zalozonego plecaka;zamknij zalozony plecak;};
-			};
-
-		};
-	};
-}
-#alias {wlm}
-{
-	#switch {"$psakiewka"}
-	{		
-		#case {"sakiewka"} {otworz swoja sakiewke;wloz monety do swojej sakiewki;zamknij swoja sakiewke;};
-		#case {"szkatulka"} {otworz swoja szkatulke;wloz monety do swojej szkatulki;zamknij swoja szkatulke;};
-		#case {"sakwa"} {otworz swoja sakwe;wloz monety do swojej sakwy;zamknij swoja sakwe;};
-		#default {
-			#switch {"$pplecak"} 
-			{
-				#case {"plecak"} {otworz zalozony plecak;wloz monety do zalozonego plecaka;zamknij zalozony plecak;};
-				#case {"sakwa"} {otworz zalozona sakwe;wloz monety do zalozonej sakwy;zamknij zalozona sakwe;};
-				#case {"torba"} {otworz zalozona torbe;wloz monety do zalozonej torby;zamknij zalozona torbe;};
-				#case {"wor"} {otworz zalozony wor;wloz monety do zalozonego wora;zamknij zalozony wor;};
-				#default {otworz zalozony plecak;wloz monety do zalozonego plecaka;zamknij zalozony plecak;};
-			};
-
-		};
-	};	
-}
+#alias {/khd} {
+	khdorznij pierwsze cialo;
+	khdorznij drugie cialo;
+	khdorznij trzecie cialo;
+	khdorznij czwarte cialo;
+	khdorznij piate cialo;
+	khobliz;
+} {1};
 
 #alias {rybki} {
 	#read bundles/Fishing/content.tin;
