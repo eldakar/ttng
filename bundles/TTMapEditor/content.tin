@@ -363,6 +363,15 @@
     } {show_ponged_error2};
 } {1};
 
+#alias {/ter} {
+    #map get roomvnum voom;
+    #if {$PONGED == 2} {
+            #line substitute {variables} {#brain {#port send $brainId {TERRAIN $voom %1}}};
+    } {show_ponged_error2};
+} {1};
+
+#line substitute {variables} {#brain {#port send $brainId {TERRAIN $voom $tmpterrain}}};
+
 #alias {/map link %w %d} {
     #if {$PONGED == 2} {
     #map get roomvnum voom;
