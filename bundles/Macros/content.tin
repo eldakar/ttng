@@ -15,8 +15,10 @@
 	#line sub variables {#macro {$KEY_F4_B} {$ConfigManager_Configs[MacF4]}};
 };
 #alias {MacF5} {
-	#line sub variables {#macro {$KEY_F5_A} {$ConfigManager_Configs[MacF5]}};
-	#line sub variables {#macro {$KEY_F5_B} {$ConfigManager_Configs[MacF5]}};
+    	#var MacF5list {$ConfigManager_Configs[MacF5]};
+    	#replace MacF5list {,} {;};
+	#line sub variables {#macro {$KEY_F5_A} {$MacF5list}};
+	#line sub variables {#macro {$KEY_F5_B} {$MacF5list}};
 };
 #alias {MacF6} {
 	#line sub variables {#macro {$KEY_F6_A} {$ConfigManager_Configs[MacF6]}};
