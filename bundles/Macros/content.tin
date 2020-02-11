@@ -1,18 +1,26 @@
 #alias {MacF1} {
-	#line sub variables {#macro {$KEY_F1} {$ConfigManager_Configs[MacF1]}};
-	#line sub variables {#macro {$KEY_F1_B} {$ConfigManager_Configs[MacF1]}};
+   	#var MacF1list {$ConfigManager_Configs[MacF1]};
+    	#replace MacF1list {,} {;};
+	#line sub variables {#macro {$KEY_F1} {$MacF1list}};
+	#line sub variables {#macro {$KEY_F1_B} {$MacF1list}};
 };
 #alias {MacF2} {
-	#line sub variables {#macro {$KEY_F2} {$ConfigManager_Configs[MacF2]}};
-	#line sub variables {#macro {$KEY_F2_B} {$ConfigManager_Configs[MacF2]}};
+   	#var MacF2list {$ConfigManager_Configs[MacF2]};
+    	#replace MacF2list {,} {;};
+	#line sub variables {#macro {$KEY_F2} {$MacF2list}};
+	#line sub variables {#macro {$KEY_F2_B} {$MacF2list}};
 };
 #alias {MacF3} {
-	#line sub variables {#macro {$KEY_F3} {$ConfigManager_Configs[MacF3]}};
-	#line sub variables {#macro {$KEY_F3_B} {$ConfigManager_Configs[MacF3]}};
+   	#var MacF3list {$ConfigManager_Configs[MacF3]};
+    	#replace MacF3list {,} {;};
+	#line sub variables {#macro {$KEY_F3} {$MacF3list}};
+	#line sub variables {#macro {$KEY_F3_B} {$MacF3list}};
 };
 #alias {MacF4} {
-	#line sub variables {#macro {$KEY_F4} {$ConfigManager_Configs[MacF4]}};
-	#line sub variables {#macro {$KEY_F4_B} {$ConfigManager_Configs[MacF4]}};
+   	#var MacF4list {$ConfigManager_Configs[MacF4]};
+    	#replace MacF4list {,} {;};
+	#line sub variables {#macro {$KEY_F4} {$MacF4list}};
+	#line sub variables {#macro {$KEY_F4_B} {$MacF4list}};
 };
 #alias {MacF5} {
     	#var MacF5list {$ConfigManager_Configs[MacF5]};
