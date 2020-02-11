@@ -29,37 +29,57 @@
 	#line sub variables {#macro {$KEY_F5_B} {$MacF5list}};
 };
 #alias {MacF6} {
-	#line sub variables {#macro {$KEY_F6_A} {$ConfigManager_Configs[MacF6]}};
-	#line sub variables {#macro {$KEY_F6_B} {$ConfigManager_Configs[MacF6]}};
+    	#var MacF6list {$ConfigManager_Configs[MacF6]};
+    	#replace MacF6list {,} {;};
+	#line sub variables {#macro {$KEY_F6_A} {$MacF6list}};
+	#line sub variables {#macro {$KEY_F6_B} {$MacF6list}};
 };
 #alias {MacF7} {
-	#line sub variables {#macro {$KEY_F7_A} {$ConfigManager_Configs[MacF7]}};
-	#line sub variables {#macro {$KEY_F7_B} {$ConfigManager_Configs[MacF7]}};
+    	#var MacF7list {$ConfigManager_Configs[MacF7]};
+    	#replace MacF7list {,} {;};
+	#line sub variables {#macro {$KEY_F7_A} {$MacF7list}};
+	#line sub variables {#macro {$KEY_F7_B} {$MacF7list}};
 };
 #alias {MacF8} {
-	#line sub variables {#macro {$KEY_F8_A} {$ConfigManager_Configs[MacF8]}};
-	#line sub variables {#macro {$KEY_F8_B} {$ConfigManager_Configs[MacF8]}};
+    	#var MacF8list {$ConfigManager_Configs[MacF8]};
+    	#replace MacF8list {,} {;};
+	#line sub variables {#macro {$KEY_F8_A} {$MacF8list}};
+	#line sub variables {#macro {$KEY_F8_B} {$MacF8list}};
 };
 #alias {MacF9} {
-	#line sub variables {#macro {$KEY_F9_A} {$ConfigManager_Configs[MacF9]}};
-	#line sub variables {#macro {$KEY_F9_B} {$ConfigManager_Configs[MacF9]}};
+    	#var MacF9list {$ConfigManager_Configs[MacF9]};
+    	#replace MacF9list {,} {;};
+	#line sub variables {#macro {$KEY_F9_A} {$MacF9list}};
+	#line sub variables {#macro {$KEY_F9_B} {$MacF9list}};
 };
 #alias {MacF10} {
-	#line sub variables {#macro {$KEY_F10_A} {$ConfigManager_Configs[MacF10]}};
-	#line sub variables {#macro {$KEY_F10_B} {$ConfigManager_Configs[MacF10]}};
+    	#var MacF10list {$ConfigManager_Configs[MacF10]};
+    	#replace MacF10list {,} {;};
+	#line sub variables {#macro {$KEY_F10_A} {$MacF10list}};
+	#line sub variables {#macro {$KEY_F10_B} {$MacF10list}};
 };
 #alias {MacF11} {
-	#line sub variables {#macro {$KEY_F11_A} {$ConfigManager_Configs[MacF11]}};
-	#line sub variables {#macro {$KEY_F11_B} {$ConfigManager_Configs[MacF11]}};
+    	#var MacF11list {$ConfigManager_Configs[MacF11]};
+    	#replace MacF11list {,} {;};
+	#line sub variables {#macro {$KEY_F11_A} {$MacF11list}};
+	#line sub variables {#macro {$KEY_F11_B} {$MacF11list}};
 };
 #alias {MacF12} {
-	#line sub variables {#macro {$KEY_F12_A} {$ConfigManager_Configs[MacF12]}};
-	#line sub variables {#macro {$KEY_F12_B} {$ConfigManager_Configs[MacF12]}};
+    	#var MacF12list {$ConfigManager_Configs[MacF12]};
+    	#replace MacF12list {,} {;};
+	#line sub variables {#macro {$KEY_F12_A} {$MacF12list}};
+	#line sub variables {#macro {$KEY_F12_B} {$MacF12list}};
 };
 
-#alias {MacNawiasLewy} {#line sub variables {#macro {[} {$ConfigManager_Configs[MacNawiasLewy]}};};
-#alias {MacNawiasPrawy} {#line sub variables {#macro {]} {$ConfigManager_Configs[MacNawiasPrawy]}};};
-#alias {MacTylda} {#line sub variables {#macro {`} {$ConfigManager_Configs[MacTylda]}};};
+#alias {MacNawiasLewy} {
+	#line sub variables {#macro {[} {$ConfigManager_Configs[MacNawiasLewy]}};
+};
+#alias {MacNawiasPrawy} {
+	#line sub variables {#macro {]} {$ConfigManager_Configs[MacNawiasPrawy]}};
+};
+#alias {MacTylda} {#line sub variables {
+	#macro {`} {$ConfigManager_Configs[MacTylda]}};
+};
 
 #alias {Mac_eOo} {#line sub variables {#macro {\eOo} {$ConfigManager_Configs[Mac_eOo]}}};
 #alias {Mac_eOj} {#line sub variables {#macro {\eOj} {$ConfigManager_Configs[Mac_eOj]}}};
