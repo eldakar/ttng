@@ -140,6 +140,7 @@
 #action {%1 wdrapuje sie po kamiennych schodkach.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz po schodkach}};
 #action {%1 kladzie sie na posadzce i znika w dziurze w scianie.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie przez szczeline}};
 #action {%1 przeciska sie przez pekniecie.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie przez szczeline}};
+#action {%1 przeciska sie przez dziure.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie przez dziure}};
 #action {%1 przeciska sie do baszty.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie do baszty}};
 #action {%1 schodzki po kamiennych schodkach.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zejdz po schodkach}};
 #action {%1 sciaga kaptur plaszcza z glowy.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm sciagnij kaptur}};
