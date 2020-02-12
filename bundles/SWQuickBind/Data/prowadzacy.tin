@@ -1,7 +1,7 @@
 #action {%1 przesuwa plyte i wydostaje sie przez otwor w suficie na gore. Kamien zatrzaskuje sie za nim z cichym zgrzytem.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przesun plyte}};
 #action {%1 otwiera niewielka furtke.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm furtka}};
 #action {%1 wychyla sie za blanki muru i zaczyna schodzic na dol.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zejdz na dol}};
-#action {%1 przeciska sie przez otwor do ogromnej dziupli.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz do dziupli}};
+#action {%1 przeciska sie przez otwor do ogromnej dziupli.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz do dziupli}} {1};
 #action {%1 {przeciska sie przez krzaki.|rozgarnia krzewy probujac sie przez nie przedrzec. Po chwili znika wewnatrz sciany roslinnosci.}} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie przez krzaki}};
 #action {%1 chwyta za line skryta posrod pnacz bluszczu i razno zaczyna wspinac sie po niej na szczyt urwiska.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz po linie}};
 #action {%1 podchodzi do cedru na skraju urwiska, chwyta za przywiazana do jego pnia line i zaczyna schodzic na dol.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zejdz po linie}};
