@@ -31,6 +31,7 @@
 	#list bundle_configs add {Mac_eOk};
 	#list bundle_configs add {Mac_eOu};
 	#list bundle_configs add {Mac_eOp};
+	#list bundle_configs add {Mac_eOl};
 	
 #list bundle_slots clear;
 	#list bundle_slots add {macros};
