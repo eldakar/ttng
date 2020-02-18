@@ -28,7 +28,7 @@
     #line ignore #sh {|   /kepa        /piana        /wyzima       /mahakam      /valkare   |};
     #line ignore #sh {|   /kiel                                                             |};
     #line ignore #sh {|<ccc>Imperium<088>                                                             |};
-    #line ignore #sh {|   /nuln        /ebino        /toscania     /scorcio      /viadaza   |};
+    #line ignore #sh {|   /nuln(!)     /ebino        /toscania     /scorcio      /viadaza   |};
     #line ignore #sh {|   /varieno                                                          |};
     #line ignore #sh {+-Klucze--------------------------------------------------------------+};
     #line ignore #sh {|   /fustaw      /fustas       /fort         /redcap                  |};
@@ -45,7 +45,7 @@
 #alias {/fustaw} {/l 17092 Fusta Zachod} {1};
 #alias {/igor} {/l 15374 Igor} {1};
 #alias {/fort} {/l 17855 Lyria Fort} {1};
-#alias {/nuln} {/l 1737 Nuln} {1};
+#alias {/nuln} {/l 22155 Nuln} {1};
 #alias {/abgetten} {/l 1276 Abgetten} {1};
 #alias {/daevon} {/l 18602 Daevon} {1};
 #alias {/gelibol} {/l 20886 Gelibol} {1};
