@@ -128,6 +128,7 @@
 	khdorznij czwarte cialo;
 	khdorznij piate cialo;
 	khobliz;
+	obejrzyj fiolke;
 } {1};
 
 #alias {rybki} {
