@@ -27,6 +27,7 @@
 #high {dlug%w czarn%w szat%w} {<118><caf>};
 #high {dlug%w krasnoludzk%w bajdan%w} {<118><caf>};
 #high {dlugi%w runiczn%w korba%w} {<118><caf>};
+#high {niezwykly kosciany topor} {<118><caf>%0 <088>(<013>wpraw kamien<088>)};
 
 #high {gigantyczn%w granitow%w mlot%w} {<118><caf>};
 #high {gwiezdn%w topor%w} {<118><caf>};
@@ -51,7 +52,7 @@
 #sub {azurow%w koscistobial%w amulet%w} {<118><caf>%0 <088>(<028>+hp <048>full mana<088>)};
 #sub {azurow%w polyskujac%w amulet%w z wielobarwnego koralu} {<118><caf>%0 <088>(<fca>wpraw kamien <028><fca>odp.<088>)};
 #sub {blekitno-srebrn%w herbow%w tarcz%w} {<118><caf>%0 <088>(<018>ogluch<088>)};
-#sub {ciemnogranatow%w smukl%w helm%w} {<118><caf> %0 <088>(<018>ogluch <028>+<fca>odp.<088>+<fca>spost.<088>)};
+#sub {ciemnogranatow%w smukl%w helm%w} {<118><caf> %0 <088>(<018>ogluch <028>+<fca>odp. <088>+<fca>spost.<088>)};
 #sub {czarn%w prost%w diadem%w} {<118><caf>%0 <088>(<fca>wpraw kamien <028><fca>odp.<088>)};
 #sub {czerwon%w skrzydla%w par%w nareczak%w} {<118><caf>%0 <088>(<028>+<fca>sila<088>)};
 #sub {grub%w czarn%w opask%w z kolcami} {<118><caf>%0 <088>(<028>+<fca>wyt<088>)};
