@@ -15,6 +15,10 @@
 	#if {"$CHAR_STATE[improve]" != ""} {_killstats_add $CHAR_STATE[improve]};
 };
 
+#alias {globalnypostep} {
+	#nop nothing to do;
+};
+
 #function {poziomy_postepow}{
 	#var postepy {minimalne};
 	#switch {%1} {
@@ -127,6 +131,8 @@
 		} {
 			_killstats_init_postep %1;
 			/kills;
+			#math _globalnypostep {$ConfigManager_Configs[globalnypostep] + 1};
+			/conf globalnypostep $_globalnypostep;
 		};
 	} {
 		#nop should never happen?;

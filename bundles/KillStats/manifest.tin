@@ -3,7 +3,7 @@
 #var bundle_content {1};
 
 #list bundle_configs clear;
-	
+	#list bundle_configs add {globalnypostep};
 #nop IS HELP PRESENT;
 #var bundle_help {0};
 

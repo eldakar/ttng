@@ -56,6 +56,7 @@
 #sub {czarn%w prost%w diadem%w} {<118><caf>%0 <088>(<fca>wpraw kamien <028><fca>odp.<088>)};
 #sub {czerwon%w skrzydla%w par%w nareczak%w} {<118><caf>%0 <088>(<028>+<fca>sila<088>)};
 #sub {grub%w czarn%w opask%w z kolcami} {<118><caf>%0 <088>(<028>+<fca>wyt<088>)};
+#sub {masywn%w oksydowan%w pas%w} {<118><caf>%0 <088>(<028>+<fca>sila<088>)};
 #sub {jasniejac%w zdobion%w jatagan%w}{<118><caf>%0 <088>(<138>swiatlo<088>)};
 #sub {kruczoczarn%w mistern%w mie%w} {<118><caf>%0 <088>(<028>+hp<088>)};
 
@@ -67,7 +68,6 @@
 #high {lsniac%w plomienist%w tarcz%w} {<118><caf>};
 #high {lsniac%w krysztalow%w wisior%w} {<118><caf>};
 #high {masywn%w amulet%w z czarnym opalem} {<118><caf>};
-#high {masywn%w oksydowan%w pas%w} {<118><caf>};
 
 #high {mistern%w obosieczn%w topor%w} {<118><caf>};
 #high {mithrylow%w mahakamsk%w kolczug%w} {<118><caf>};
