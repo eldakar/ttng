@@ -6,3 +6,7 @@
 #sub {Fiolka jest pelna krwistoczerwonej, kleistej substancji.} {%0 ${c_stan_wysoki}4/4<088>};
 
 #high {Skelliganski drakkar Zwiastun Smierci} {<BAC><178>};
+#high {Korsarski drakkar Zmora Nilfgaardu} {<BAC><178>};
+#high {Skelliganski drakkar Duch Hemdalla} {<BAC><178>};
+#high {Korsarski drakkar Demon} {<BAC><178>};
+#high {Korsarski snekkar Wloczega Morz} {<BAC><178>};
