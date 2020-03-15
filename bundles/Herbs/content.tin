@@ -1595,7 +1595,8 @@ zamknij czwarty przytroczony woreczek;
 #var zioladb[Pieciornik][dzialanie] {};
 #var zioladb[Dziurawiec][dzialanie] {};
 #var zioladb[Naparstnica][dzialanie] {};
-#var zioladb[Nostrzyk][dzialanie] {};
+#var zioladb[Nostrzyk][dzialanie][zm] {przezuj}
+#var zioladb[Nostrzyk][dzialanie][gl] {rozgryz};
 #var zioladb[Bylica][dzialanie] {};
 #var zioladb[Kasztanowiec][dzialanie] {};
 #var zioladb[Przelot][dzialanie] {};
