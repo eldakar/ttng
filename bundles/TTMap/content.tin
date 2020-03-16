@@ -89,7 +89,7 @@
 
     #var rozk2 {{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
 
-    #foreach {$ROOM_INFO[exits]} {i}
+    #foreach {*ROOM_INFO[exits]} {i}
     {
       #switch {"$ROOM_INFO[exits][$i]"}
       {
@@ -378,7 +378,7 @@
                 
                 #var nearestexitdistance 100000;
                 #var nearestroomid $rmvnum;
-                #foreach {$vexits[]} {exitvector} {
+                #foreach {*vexits[]} {exitvector} {
                     #sh $exitvector $vexits[$exitvector];
                     #if {$vexits[$exitvector] < $nearestexitdistance} {
                         #var nearestexitdistance $vexits[$exitvector];

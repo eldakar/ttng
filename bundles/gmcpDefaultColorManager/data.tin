@@ -237,7 +237,7 @@
 #var c_ansi_map[229] {ffd};
 #var c_ansi_map[230] {ffe};
 #var c_ansi_map[231] {fff};
-#foreach {$colors[]} {cco} {
+#foreach {*colors[]} {cco} {
 	#var ccotmp {$colors[$cco]};
 	#if {"$ccotmp" == "null"} {
 		#var ccotmp {088};

@@ -117,13 +117,18 @@
             #var test {$duch[$dudu][desc]};
             #replace test { } {_};
             #var test {${test}_};
-            #line {substitute} {variables} {
-        #nop ENEMIES;
-                #if {"$gildie[$postac[$test][gildia]]" == "w"} {
-                    #var duch[$dudu][typ] {wrog};
-                    #var duch[$dudu][enemy] {true};
+#nop 16-03-2020;
+            #if {"$postac[$test][gildia]" != ""} {
+                #line {substitute} {variables} {
+            #nop ENEMIES;
+                    #if {"$gildie[$postac[$test][gildia]]" == "w"} {
+                        #var duch[$dudu][typ] {wrog};
+                        #var duch[$dudu][enemy] {true};
+                    };
                 };
             };
+#nop 16-03-2020;
+
             #nop sprawdzamy czy to imie, jesli tak to znaczy ze to short;
             #nop w takim wypadku szukamy flagi cached na imieniu;
             #format {gncheck} {%L} {$postac[$test][imie]};
@@ -141,7 +146,8 @@
             } {
                 #var confirmed {$postac[$test][cached]};
                 #var tmpim $test;
-            #if {"$test" != ""} {
+            
+            #if {"$postac[$test][gildia]" != ""} {
                 #var tmpimie {$gildie[$postac[$test][gildia]] $postac[$test][gildia] $test};
             };
 		#var tmpimietype 2;

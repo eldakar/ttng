@@ -26,7 +26,7 @@
 
 #function {bundleops_validate} {
 	#var ret 0;
-	#foreach {$bundle_slots[]} {bs} {
+	#foreach {*bundle_slots[]} {bs} {
 		#list {bundlemanager_slots} find {$bundle_slots[$bs]} {vbms};
 		#if {$vbms > 0} {
 			#echo {<118>Bundle Error: <168>$bundle_name <118>Slot already used: $bundle_slots[$bs]<088>};
@@ -34,7 +34,7 @@
 		};
 	};
 
-	#foreach {$bundle_configs[]} {bc} {
+	#foreach {*bundle_configs[]} {bc} {
 		#list {bundlemanager_configs} find {$bundle_configs[$bc]} {vbmc};
 		#if {$vbmc > 0} {
 			#echo {<118>Bundle Error: <168>$bundle_name <118>Config value already in use: $bundle_configs[$bs]<088>};
@@ -42,7 +42,7 @@
 		};
 	};
 
-	#foreach {$bundle_deps[]} {bd} {
+	#foreach {*bundle_deps[]} {bd} {
 		#list {bundlemanager_bundles} find {$bundle_deps[$bd]} {vbmb};
 		#if {"$vbmb" == "0"} {
 			#echo {<118>Bundle Error: <168>$bundle_name <118>Dependency missing <138>$bundle_deps[$bd]<088>};
@@ -52,10 +52,10 @@
 
 	#if {$ret < 1} {
 		#nop Looks good;
-		#foreach {$bundle_slots[]} {bs} {
+		#foreach {*bundle_slots[]} {bs} {
 			#list bundlemanager_slots add {$bundle_slots[$bs]};
 		};
-		#foreach {$bundle_configs[]} {bc} {
+		#foreach {*bundle_configs[]} {bc} {
 			#list bundlemanager_configs add {$bundle_configs[$bc]};
 		};
 		#list bundlemanager_bundles add {$bundle_name};

@@ -9,7 +9,7 @@
 #event {IAC SB GMCP objects.nums IAC SE}
 {
 	#var {obnu} {%0};
-	#foreach {$duch[]} {bubu} {
+	#foreach {*duch[]} {bubu} {
 		#list {obnu} find {$bubu} {vfob};
 		#if {"$vfob" == "0"} {
 			#unvar {duch[$bubu]};

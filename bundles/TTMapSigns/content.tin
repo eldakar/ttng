@@ -6,11 +6,11 @@
 #alias {/zadania} {
     #var cpcmd {1};
 
-    #foreach {$zadania[]} {zadd} {
+    #foreach {*zadania[]} {zadd} {
         #unvar checkpoints;
         #map list {} {} {} {$zadania[$zadd]} {variable} {checkpoints};
 
-        #foreach {$checkpoints[]} {vcpv} {
+        #foreach {*checkpoints[]} {vcpv} {
             #math vcpvcheck {0};
             #math vcpvcheck {$vcpvcheck + $checkpoints[$vcpv][distance]};
             #if {$vcpvcheck > 1} {;

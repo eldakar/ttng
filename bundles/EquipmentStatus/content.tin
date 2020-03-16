@@ -46,7 +46,7 @@
 #action {OPISYWANIE walki:} {
 	#echo {};
 	#echo {+-------------------------------------------------------------------------+};
-	#foreach {$items[]} {current} {
+	#foreach {*items[]} {current} {
 		#var {stanbr} {@jakistanbroni{@jakistanzbroi{$items[$current][cond]}}};
     #var {disp} {$items[$current][cond]};
 

@@ -531,7 +531,7 @@
     #map list {roomnote} {data} {variable} {checkpoints};
     #echo {alias dystans pokoj ktododal};
     #echo {-------------------------------};
-    #foreach {$checkpoints[]} {vcpv} {
+    #foreach {*checkpoints[]} {vcpv} {
         #math vcpvcheck {0};
         #math vcpvcheck {($vcpvcheck + $checkpoints[$vcpv][distance]) / 2 - 3};
 
@@ -558,7 +558,7 @@
     #map list {roomnote} {data} {variable} {checkpoints};
     #echo {alias dystans pokoj ktododal};
     #echo {-------------------------------};
-    #foreach {$checkpoints[]} {vcpv} {
+    #foreach {*checkpoints[]} {vcpv} {
         #math vcpvcheck {0};
         #math vcpvcheck {($vcpvcheck + $checkpoints[$vcpv][distance]) / 2 - 3};
 

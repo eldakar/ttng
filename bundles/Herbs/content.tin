@@ -670,7 +670,7 @@
   #var worekA_pojemnosc {44};
   #var worekA_razem {0};
   
-  #foreach {$worekA_zawartosc[]} {i} {
+  #foreach {*worekA_zawartosc[]} {i} {
     #regex {$worekA_zawartosc[$i]} {%S %S}
       {
 	#var ret @cyfruj_ilosc{&1};
@@ -717,7 +717,7 @@
 
     #var ziolka_prompt_index {1};
 
-    #foreach {$zioladb[]} {ziolkonazwa} {
+    #foreach {*zioladb[]} {ziolkonazwa} {
         #format {_ziolko_opis} {%-15s} {$ziolkonazwa};#format {_ziolko_opis} {%.10s} {$_ziolko_opis};
         #format {_ziolko_ilos} {%+2s} {$zioladb[$ziolkonazwa][ilosc]};
 
@@ -756,7 +756,7 @@ wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
     };
 
 
-    #foreach {$zioladb[]} {ziolkonazwa} {
+    #foreach {*zioladb[]} {ziolkonazwa} {
         #format {_ziolko_opis} {%-15s} {$ziolkonazwa};#format {_ziolko_opis} {%.10s} {$_ziolko_opis};
         #format {_ziolko_ilos} {%+2s} {$zioladb[$ziolkonazwa][ilosc]};
 
@@ -795,7 +795,7 @@ wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
         };
     };
 
-    #foreach {$zioladb[]} {ziolkonazwa} {
+    #foreach {*zioladb[]} {ziolkonazwa} {
         #format {_ziolko_opis} {%-15s} {$ziolkonazwa};#format {_ziolko_opis} {%.10s} {$_ziolko_opis};
         #format {_ziolko_ilos} {%+2s} {$zioladb[$ziolkonazwa][ilosc]};
 
@@ -833,7 +833,7 @@ wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
             };
         };
     };
-    #foreach {$zioladb[]} {ziolkonazwa} {
+    #foreach {*zioladb[]} {ziolkonazwa} {
         #format {_ziolko_opis} {%-15s} {$ziolkonazwa};#format {_ziolko_opis} {%.10s} {$_ziolko_opis};
         #format {_ziolko_ilos} {%+2s} {$zioladb[$ziolkonazwa][ilosc]};
 
@@ -871,7 +871,7 @@ wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
             };
         };
     };
-#foreach {$zioladb[]} {ziolkonazwa} {
+#foreach {*zioladb[]} {ziolkonazwa} {
 #format {_ziolko_opis} {%-15s} {$ziolkonazwa};#format {_ziolko_opis} {%.10s} {$_ziolko_opis};
 #format {_ziolko_ilos} {%+2s} {$zioladb[$ziolkonazwa][ilosc]};
 
@@ -910,7 +910,7 @@ zamknij czwarty przytroczony woreczek;
 };
 };
 
-#foreach {$zioladb[]} {ziolkonazwa} {
+#foreach {*zioladb[]} {ziolkonazwa} {
 #format {_ziolko_opis} {%-15s} {$ziolkonazwa};#format {_ziolko_opis} {%.10s} {$_ziolko_opis};
 #format {_ziolko_ilos} {%+2s} {$zioladb[$ziolkonazwa][ilosc]};
 
@@ -949,7 +949,7 @@ zamknij czwarty przytroczony woreczek;
 };
 };
 
-#foreach {$zioladb[]} {ziolkonazwa} {
+#foreach {*zioladb[]} {ziolkonazwa} {
 #format {_ziolko_opis} {%-15s} {$ziolkonazwa};#format {_ziolko_opis} {%.10s} {$_ziolko_opis};
 #format {_ziolko_ilos} {%+2s} {$zioladb[$ziolkonazwa][ilosc]};
 
@@ -989,7 +989,7 @@ zamknij czwarty przytroczony woreczek;
 };
 
 
-#foreach {$zioladb[]} {ziolkonazwa} {
+#foreach {*zioladb[]} {ziolkonazwa} {
 #format {_ziolko_opis} {%-15s} {$ziolkonazwa};#format {_ziolko_opis} {%.10s} {$_ziolko_opis};
 #format {_ziolko_ilos} {%+2s} {$zioladb[$ziolkonazwa][ilosc]};
 

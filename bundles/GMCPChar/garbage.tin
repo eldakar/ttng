@@ -1,6 +1,6 @@
 #EVENT {IAC SB GMCP char.state IAC SE} {
 	#var CHAR_STATE {%0};
-	#foreach {$CHAR_STATE[]} {s} {
+	#foreach {*CHAR_STATE[]} {s} {
 		#list {state} {find} {$s} {v};
 		#if {$v > 0} {
 			#list {state}{set}{$s}{$CHAR_STATE[$s]};

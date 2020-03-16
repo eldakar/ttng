@@ -7,7 +7,7 @@
 #alias {_zbierzloop_}
 {
   	#loop {1} {$liczba_zabitych} {liz} {
-	  	#foreach {$lootlist[]} {lol} {
+	  	#foreach {*lootlist[]} {lol} {
 	  		wez $lootlist[$lol] z $liz\. ciala;
 	  	};
 	};
