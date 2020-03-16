@@ -42,6 +42,7 @@
 #action {"Witaj, moj nowy Panie!"} {Highlights_magic %0;#line gag;};
 #action {Z zalem opuszczasz ogromny ognisty trojzab, a w twej glowie rozlega sie tajemniczy glos:} {Highlights_magic %0;#line gag;};
 #action {"Zegnaj, moj Panie!"} {Highlights_magic %0;#line gag;};
+#action {Kiedy obracasz dwie czesci rekojesci w przeciwnych kierunkach, ze styliska z chrzestem dobrze naoliwionych sprezyn wysuwaja sie dwa dlugie szpikulce, czyniac ten orez jeszcze bardziej smiercionosnym.} {Highlights_magic %0;#line gag;};
 #action {Z calych swych sil skupiasz sie na wizerunku tarczy na amulecie. Po chwili czujesz jak otacza cie magiczna sfera. Jestes teraz chroniony przed ciosami wrogow.} {Highlights_magic %0;#line gag;};
 #action {Otaczajaca cie sfera znika z cichym szumem.} {Highlights_magic %0;#line gag;};
 #action {Czujesz jak magiczne drzenie %* staje sie coraz bardziej intensywne.} {Highlights_magic %0;#line gag;};
@@ -61,4 +62,3 @@
 #action {^%* {rozpada sie!|peka!|rozpruwa sie.}$} {Highlights_event %0;#line gag;}
 #action {^Ku twojemu zdumieniu, %1 pojawil sie nagle tuz obok ciebie!$} {Highlights_event %0;#line gag;}
 #action {{Zostales zatruty!|Zostalas zatruta!|Czujesz, ze do twego ciala dostala sie kolejna dawka tej piekielnej trucizny!|Czujesz, ze do twego ciala dostala sie jakas trucizna!Nagle %w amfisbena wysuwa swoj dlugi, rozwidlony jezor w kierunku %w, mocno kujac nim * cialo!|Czujesz, ze do twego ciala dostala sie jakas trucizna!|Czujesz chlod bijacy od rany i zdajesz sobie sprawe, ze...}} {Highlights_event %0;#line gag;};
-
