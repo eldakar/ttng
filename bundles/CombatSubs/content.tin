@@ -471,6 +471,8 @@
 #nop MAG;   #regex {$tmpvalue} {Zgrabnym ruchem zwodzisz %* i gwaltownie skracajac dystans} {collect $AVATAR_NAME unknown magic 7;#var tmpvalue {}};
    #nop TASAK;
 #nop MAG;   #regex {$tmpvalue} {{Widok slabnacego wroga tylko dodaje ci sil|Z kazdym kolejnym ciosem nabierasz nowej sily do walki|Powolne, pozbawione sily ruchy wroga zagrzewaja cie do walki, dodajac zapalu.}} {collect $AVATAR_NAME unknown magic 0;#var tmpvalue {}};
+   #nop HELM;
+#nop MAG;   #regex {$tmpvalue} {zaczyna wpatrywac sie pustym wzrokiem w slepia weza wijacego sie u podstawy twojego ciemnogranatowego smuklego helmu.} {collect $AVATAR_NAME unknown STUN 0;#var tmpvalue {}};
 
 #nop PANIC; #regex {$tmpvalue} {w panice umyka} {#sh $tmpvalue2;#var tmpvalue {}};
 #nop PANIC; #regex {$tmpvalue} {uciekl ci.} {#sh $tmpvalue2;#var tmpvalue {}};
