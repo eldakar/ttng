@@ -51,6 +51,8 @@
     #read bundles/CombatSubs/manifest.tin;
     #read bundles/Comparer/manifest.tin;
 
+#nop TEST;    #read bundles/Calendar/ishtar.tin;
+
     #var r @bundleops_loadglobals{};
 
     #nop TODO;

@@ -1,6 +1,13 @@
 #event {IAC SB GMCP room.time IAC SE}
 {
-    #foreach {*bundle_handler_room_time[]} {bhrt} {
-        $bundle_handler_room_time[$bhrt] %0;
-    };
+	#var
 }
+
+#nop Room.Time;
+#nop 	Komunikat dwustronny, Arkadia przesyla informacje o aktualnym czasie na lokacji,;
+#nop 	klient moze ja odpytac.;
+#nop 	Komunikat jest automatycznie wysylany wraz ze zmiana pory dnia.;
+#nop 	Ilosc wysylanych informacji zalezy od tego, czy na lokacji jest dla postaci ciemno.;
+#nop 	Dane maja postac obiektu JSON i zawieraja parametry:;
+#nop 		daylight - BOOLEAN, czy na lokacji jest dzien;
+#nop 		season - INTEGER, od 0 do 3, pora roku (wiosna, lato, jesien, zima);
