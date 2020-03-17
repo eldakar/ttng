@@ -265,7 +265,7 @@
 
 #alias {klepsydra_render_day} {
     #line ignore #showme {<BBB><138>        Rachuba czasu Starszego Ludu         <088>};
-    #line ignore #showme {$logo1 Pora Dnia    : $jasnosc_kolor$pora_dnia;  };
+    #line ignore #showme {$logo1 Pora Dnia    : $jasnosc_kolor$poradnia  };
     #line ignore #showme {$logo2 Miesiac      : $kalendarz_miesiac };
     #line ignore #showme {$logo3 Pora Roku    : $poraroku_kolor$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]};
     #line ignore #showme {$logo4 Dzien/W Roku : $dzien_miesiaca/$dzien_roku    };
