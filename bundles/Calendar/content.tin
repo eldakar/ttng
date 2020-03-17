@@ -1,0 +1,6 @@
+#event {IAC SB GMCP room.time IAC SE}
+{
+    #foreach {*bundle_handler_room_time[]} {bhrt} {
+        $bundle_handler_room_time[$bhrt] %0;
+    };
+}

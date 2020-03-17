@@ -89,28 +89,29 @@
 
     #var rozk2 {{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
 
-    #foreach {*ROOM_INFO[exits]} {i}
-    {
-      #switch {"$ROOM_INFO[exits][$i]"}
-      {
-        #case {"polnoc"} {#math {b} {$b + 1};#var {rozk[n]} { |};#var {rozk2[n]} {|};#var {rozk[n2]}{ N };};
-        #case {"polnocny-wschod"} {#math {b} {$b + 1};#var {rozk2[ne]} {/};#var {rozk[ne]} {/  };#var {rozk[ne2]}{ NE};};
-        #case {"polnocny-zachod"} {#math {b} {$b + 1};#var {rozk2[nw]} {\\};#var {rozk[nw]} {  \\};#var {rozk[nw2]}{NW };};
-        #case {"poludnie"} {#math {b} {$b + 1};#var {rozk2[s]} {|};#var {rozk[s]} { |};#var {rozk[s2]}{ S };};
-        #case {"poludniowy-wschod"} {#math {b} {$b + 1};#var {rozk2[se]} {\\ };#var {rozk[se]} {\\  };#var {rozk[se2]}{ SE};};
-        #case {"poludniowy-zachod"} {#math {b} {$b + 1};#var {rozk2[sw]} { /};#var {rozk[sw]} {  /};#var {rozk[sw2]}{SW };};
-        #case {"wschod"} {#math {b} {$b + 1};#var {rozk2[e]} {-};#var {rozk[e]} {---};#var {rozk[e2]}{E};};
-        #case {"zachod"} {#math {b} {$b + 1};#var {rozk2[w]} {-};#var {rozk[w]} {---};#var {rozk[w2]}{W};};
-        #case {"dol"} {#math {b} {$b + 1};#var {rozk2[d]} {V}};
-        #case {"gora"} {#math {b} {$b + 1};#var {rozk2[u]} {A}};
-        #default {
-            #format defexitlen {%L} {$ROOM_INFO[exits][$i]};
-            #if {$defexitlen > 2} {
-                #var roza_custom {$ROOM_INFO[exits][$i]};
-                #nop line substitute {variables} {#macro {\eOn} {$ROOM_INFO[exits][$i]};};
+    #if {"$ROOM_INFO[exits]" != ""} {
+        #foreach {$ROOM_INFO[exits]} {i}
+        {
+          #switch {"$ROOM_INFO[exits][$i]"}
+          {
+            #case {"polnoc"} {#math {b} {$b + 1};#var {rozk[n]} { |};#var {rozk2[n]} {|};#var {rozk[n2]}{ N };};
+            #case {"polnocny-wschod"} {#math {b} {$b + 1};#var {rozk2[ne]} {/};#var {rozk[ne]} {/  };#var {rozk[ne2]}{ NE};};
+            #case {"polnocny-zachod"} {#math {b} {$b + 1};#var {rozk2[nw]} {\\};#var {rozk[nw]} {  \\};#var {rozk[nw2]}{NW };};
+            #case {"poludnie"} {#math {b} {$b + 1};#var {rozk2[s]} {|};#var {rozk[s]} { |};#var {rozk[s2]}{ S };};
+            #case {"poludniowy-wschod"} {#math {b} {$b + 1};#var {rozk2[se]} {\\ };#var {rozk[se]} {\\  };#var {rozk[se2]}{ SE};};
+            #case {"poludniowy-zachod"} {#math {b} {$b + 1};#var {rozk2[sw]} { /};#var {rozk[sw]} {  /};#var {rozk[sw2]}{SW };};
+            #case {"wschod"} {#math {b} {$b + 1};#var {rozk2[e]} {-};#var {rozk[e]} {---};#var {rozk[e2]}{E};};
+            #case {"zachod"} {#math {b} {$b + 1};#var {rozk2[w]} {-};#var {rozk[w]} {---};#var {rozk[w2]}{W};};
+            #case {"dol"} {#math {b} {$b + 1};#var {rozk2[d]} {V}};
+            #case {"gora"} {#math {b} {$b + 1};#var {rozk2[u]} {A}};
+            #default {
+                #format defexitlen {%L} {$ROOM_INFO[exits][$i]};
+                #if {$defexitlen > 2} {
+                    #var roza_custom {$ROOM_INFO[exits][$i]};
+                };
             };
+          };
         };
-      };
     };
 
     #if {$frozen_status == 1} {

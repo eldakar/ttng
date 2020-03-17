@@ -1,0 +1,244 @@
+#var kalendarz_godziny[pierwsza] {1};
+#var kalendarz_godziny[druga] {2};
+#var kalendarz_godziny[trzecia] {3};
+#var kalendarz_godziny[czwarta] {4};
+#var kalendarz_godziny[piata] {5};
+#var kalendarz_godziny[szosta] {6};
+#var kalendarz_godziny[siodma] {7};
+#var kalendarz_godziny[osma] {8};
+#var kalendarz_godziny[dziewiata] {9};
+#var kalendarz_godziny[dziesiata] {10};
+#var kalendarz_godziny[jedenasta] {11};
+#var kalendarz_godziny[dwunasta w poludnie] {12};
+#var kalendarz_godziny[poludnie] {12};
+#var kalendarz_godziny[polnoc] {12};
+
+#var kalendarz_dni[pierwszy] {1};
+#var kalendarz_dni[drugi] {2};
+#var kalendarz_dni[trzeci] {3};
+#var kalendarz_dni[czwarty] {4};
+#var kalendarz_dni[piaty] {5};
+#var kalendarz_dni[szosty] {6};
+#var kalendarz_dni[siodmy] {7};
+#var kalendarz_dni[osmy] {8};
+#var kalendarz_dni[dziewiaty] {9};
+#var kalendarz_dni[dziesiaty] {10};
+#var kalendarz_dni[jedenasty] {11};
+#var kalendarz_dni[dwunasty] {12};
+#var kalendarz_dni[trzynasty] {13};
+#var kalendarz_dni[czternasty] {14};
+#var kalendarz_dni[pietnasty] {15};
+#var kalendarz_dni[szesnasty] {16};
+#var kalendarz_dni[siedemnasty] {17};
+#var kalendarz_dni[osiemnasty] {18};
+#var kalendarz_dni[dziewietnasty] {19};
+#var kalendarz_dni[dwudziesty] {20};
+#var kalendarz_dni[dwudziesty pierwszy] {21};
+#var kalendarz_dni[dwudziesty drugi] {22};
+#var kalendarz_dni[dwudziesty trzeci] {23};
+#var kalendarz_dni[dwudziesty czwarty] {24};
+#var kalendarz_dni[dwudziesty piaty] {25};
+#var kalendarz_dni[dwudziesty szosty] {26};
+#var kalendarz_dni[dwudziesty siodmy] {27};
+#var kalendarz_dni[dwudziesty osmy] {28};
+#var kalendarz_dni[dwudziesty dziewiaty] {29};
+#var kalendarz_dni[trzydziesty] {30};
+#var kalendarz_dni[trzydziesty pierwszy] {31};
+#var kalendarz_dni[trzydziesty drugi] {32};
+#var kalendarz_dni[trzydziesty trzeci] {33};
+#var kalendarz_dni[trzydziesty czwarty] {34};
+#var kalendarz_dni[trzydziesty piaty] {35};
+
+#var kalendarz_miesiace_ishtar[1][nazwa] {Yule};
+#var kalendarz_miesiace_ishtar[2][nazwa] {Imbaelk}
+#var kalendarz_miesiace_ishtar[3][nazwa] {Birke}
+#var kalendarz_miesiace_ishtar[4][nazwa] {Blathe}
+#var kalendarz_miesiace_ishtar[5][nazwa] {Feainn}
+#var kalendarz_miesiace_ishtar[6][nazwa] {Lammas}
+#var kalendarz_miesiace_ishtar[7][nazwa] {Velen}
+#var kalendarz_miesiace_ishtar[8][nazwa] {Saovine}
+
+
+#var kalendarz_miesiace_ishtar[Yule][index] {1}
+#var kalendarz_miesiace_ishtar[Imbaelk][index] {2}
+#var kalendarz_miesiace_ishtar[Birke][index] {3}
+#var kalendarz_miesiace_ishtar[Blathe][index] {4}
+#var kalendarz_miesiace_ishtar[Feainn][index] {5}
+#var kalendarz_miesiace_ishtar[Lammas][index] {6}
+#var kalendarz_miesiace_ishtar[Velen][index] {7}
+#var kalendarz_miesiace_ishtar[Saovine][index] {8}
+
+
+#var kalendarz_miesiace_ishtar[Yule][dni] {35}
+#var kalendarz_miesiace_ishtar[Imbaelk][dni] {35}
+#var kalendarz_miesiace_ishtar[Birke][dni] {35}
+#var kalendarz_miesiace_ishtar[Blathe][dni] {35}
+#var kalendarz_miesiace_ishtar[Feainn][dni] {35}
+#var kalendarz_miesiace_ishtar[Lammas][dni] {35}
+#var kalendarz_miesiace_ishtar[Velen][dni] {35}
+#var kalendarz_miesiace_ishtar[Saovine][dni] {35}
+
+
+#var kalendarz_miesiace_ishtar[Yule][wroku] {0};
+#var kalendarz_miesiace_ishtar[Imbaelk][wroku] {35}
+#var kalendarz_miesiace_ishtar[Birke][wroku] {70}
+#var kalendarz_miesiace_ishtar[Blathe][wroku] {105}
+#var kalendarz_miesiace_ishtar[Feainn][wroku] {140}
+#var kalendarz_miesiace_ishtar[Lammas][wroku] {175}
+#var kalendarz_miesiace_ishtar[Velen][wroku] {210}
+#var kalendarz_miesiace_ishtar[Saovine][wroku] {245}
+
+#var kalendarz_poradnia[rano] {0};
+#var kalendarz_poradnia[nad ranem] {0};
+#var kalendarz_poradnia[wieczorem] {12};
+#var kalendarz_poradnia[po poludniu] {12};
+#var kalendarz_poradnia[w nocy] {0};
+#var kalendarz_poradnia[poznym wieczorem] {12};
+
+#var kalendarz_poraroku[Wiosna][wschod] {6};
+#var kalendarz_poraroku[Wiosna][zachod] {19};
+#var kalendarz_poraroku[Lato][wschod] {4};
+#var kalendarz_poraroku[Lato][zachod] {22};
+#var kalendarz_poraroku[Jesien][wschod] {6};
+#var kalendarz_poraroku[Jesien][zachod] {19};
+#var kalendarz_poraroku[Zima][wschod] {8};
+#var kalendarz_poraroku[Zima][zachod] {16};
+
+#var kalendarz_miesiace_ishtar[Yule][pora] {Zima};
+#var kalendarz_miesiace_ishtar[Imbaelk][pora] {Wiosna};
+#var kalendarz_miesiace_ishtar[Birke][pora] {Wiosna};
+#var kalendarz_miesiace_ishtar[Blathe][pora] {Wiosna};
+#var kalendarz_miesiace_ishtar[Feainn][pora] {Lato};
+#var kalendarz_miesiace_ishtar[Lammas][pora] {Lato};
+#var kalendarz_miesiace_ishtar[Velen][pora] {Jesien};
+#var kalendarz_miesiace_ishtar[Saovine][pora] {Jesien};
+
+
+
+
+#nop Jest w przyblizeniu (@godzina) (@pora_dnia), (@opcjonalnie) w (@dzien_nazwa), (@dzien_liczba) dzien miesiaca (@miesiac) wedlug Kalendarza Imperialnego.;
+#nop Jest w przyblizeniu (@godzina) (@pora_dnia) w (@dzien_nazwa), (@dzien_liczba) dzien miesiaca (@miesiac) wedlug Kalendarza Imperialnego.;
+
+#nop Jest w przyblizeniu szosta nad ranem w Baeckertag, dziesiaty dzien miesiaca Kaltezeit wedlug Kalendarza Imperialnego.;
+#nop Jest w przyblizeniu siodma nad ranem, po wschodzie slonca w Markttag, osmy dzien miesiaca Ulrichszeit wedlug Kalendarza Imperialnego.;
+
+
+#action {Jest w przyblizeniu %1 {w poludnie|rano|nad ranem|wieczorem|po poludniu|w nocy|poznym wieczorem}, %3 dzien pory %4 wedlug rachuby czasu Starszego Ludu.}
+{
+#if {"%2" == "w nocy"} {
+#if {$kalendarz_godziny[%1] > 6} {
+#math czas_godzina {$kalendarz_godziny[%1] + 12};
+} {
+#math czas_godzina {$kalendarz_godziny[%1] + $kalendarz_poradnia[%2]};
+}
+} {
+#math czas_godzina {$kalendarz_godziny[%1] + $kalendarz_poradnia[%2]};
+};
+#math dzien_miesiaca {$kalendarz_dni[%3]};
+#math dzien_roku {$kalendarz_dni[%3] + $kalendarz_miesiace_ishtar[%4][wroku]};
+#var dniwmiesiacu {$kalendarz_miesiace_ishtar[%4][dni]};
+#var numermiesiaca {$kalendarz_miesiace_ishtar[%4][index]};
+#var wschod_slonca $kalendarz_poraroku[$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]][wschod];
+#var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]][zachod];
+#ticker {klepsydra} {
+#math {czas_godzina} {$czas_godzina + 1};
+#if {$czas_godzina > 24} {
+#var czas_godzina 1;
+#math {dzien_miesiaca} {$dzien_miesiaca + 1};
+#if {$dzien_miesiaca > $dniwmiesiacu} {
+#var dzien_miesiaca 1;
+#if {$numermiesiaca < 18} {
+#math numermiesiaca {$numermiesiaca + 1};
+#var dniwmiesiacu $kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][dni];
+} {
+#math numermiesiaca 1;
+#var dniwmiesiacu 1;
+};
+};
+};
+#var wschod_slonca $kalendarz_poraroku[$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]][wschod];
+#var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]][zachod];
+klepsydra_render;
+} {120};
+klepsydra_render
+} {1};
+
+#action {Jest w przyblizeniu %1 {w poludnie|rano|nad ranem|wieczorem|po poludniu|w nocy|poznym wieczorem} w %w, %4 dzien pory %5 wedlug rachuby czasu Starszego Ludu}
+{
+    #if {"%2" == "w nocy"} {
+        #if {$kalendarz_godziny[%1] > 6} {
+        	#math czas_godzina {$kalendarz_godziny[%1] + 12};
+        } {
+        	#math czas_godzina {$kalendarz_godziny[%1] + $kalendarz_poradnia[%2]};
+        }
+    } {
+        #math czas_godzina {$kalendarz_godziny[%1] + $kalendarz_poradnia[%2]};
+    };
+    #math dzien_miesiaca {$kalendarz_dni[%4]};
+    #math dzien_roku {$kalendarz_dni[%4] + $kalendarz_miesiace_ishtar[%5][wroku]};
+    #var dniwmiesiacu {$kalendarz_miesiace_ishtar[%5][dni]};
+    #var numermiesiaca {$kalendarz_miesiace_ishtar[%5][index]};
+    #var wschod_slonca $kalendarz_poraroku[$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]][wschod];
+    #var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]][zachod];
+    #ticker {klepsydra} {
+        #math {czas_godzina} {$czas_godzina + 1};
+        #if {$czas_godzina > 24} {
+            #var czas_godzina 1;
+            #math {dzien_miesiaca} {$dzien_miesiaca + 1};
+            #if {$dzien_miesiaca > $dniwmiesiacu} {
+                #var dzien_miesiaca 1;
+                #if {$numermiesiaca < 18} {
+                    #math numermiesiaca {$numermiesiaca + 1};
+                    #var dniwmiesiacu $kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][dni];
+                } {
+                    #math numermiesiaca 1;
+                    #var dniwmiesiacu 1;
+                };
+             };
+        };
+        #var wschod_slonca $kalendarz_poraroku[$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]][wschod];
+        #var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]][zachod];
+        klepsydra_render;
+    } {120};
+    klepsydra_render
+}
+
+#var czas_prompt {--|--|--|X};
+
+#alias {klepsydra_render}
+{
+    #if {$wschod_slonca > $czas_godzina} {
+        #var jasnosc_kolor {<148>};
+    } {
+        #if {$czas_godzina < $zachod_slonca} {
+            #var jasnosc_kolor {<128>};
+        } {
+            #var jasnosc_kolor {<148>};
+        };
+    };
+    #if {"$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]" == "Wiosna"} {#var poraroku_kolor {<128>W<088>};};
+    #elseif {"$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]" == "Lato"} {#var poraroku_kolor {<118>L<088>};};
+    #elseif {"$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]" == "Jesien"} {#var poraroku_kolor {<138>J<088>};};
+    #elseif {"$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]" == "Zima"} {#var poraroku_kolor {<178>Z<088>};};
+
+    #format czas_godzina_prmp {%+2s} {$czas_godzina};
+    #format wschod_slonca_prmp {%+2s} {$wschod_slonca};
+    #format zachod_slonca_prmp {%+2s} {$zachod_slonca};        
+    #var czas_prompt {<128>$wschod_slonca_prmp<088>|<088>$jasnosc_kolor$czas_godzina_prmp<088>|<148>$zachod_slonca_prmp<088>|$poraroku_kolor};
+    #nop sh {w:$wschod_slonca c:$czas_godzina z:$zachod_slonca (dzien: $dzien_miesiaca / $dniwmiesiacu  month: $numermiesiaca)};
+    #var czas_prompt2 {Minela godzina $czas_godzina_prmp, slonce wschodzi o ${wschod_slonca} a zachodzi o $zachod_slonca . Jest $kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora] };
+    #echo $czas_prompt2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
