@@ -237,11 +237,17 @@
 {
     #if {$wschod_slonca > $czas_godzina} {
         #var jasnosc_kolor {<148>};
+        #var poradnia Noc;
+        ustaw_noc;
     } {
         #if {$czas_godzina < $zachod_slonca} {
             #var jasnosc_kolor {<138>};
+            ustaw_dzien;
+            #var poradnia Dzien;
         } {
             #var jasnosc_kolor {<148>};
+            #var poradnia Noc;
+            ustaw_noc;
         };
     };
     #if {"$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]" == "Wiosna"} {#var poraroku_kolor {<128>};};
@@ -252,19 +258,20 @@
     #format czas_godzina_prmp {%+2s} {$czas_godzina};
     #format wschod_slonca_prmp {%+2s} {$wschod_slonca};
     #format zachod_slonca_prmp {%+2s} {$zachod_slonca};        
+    
     klepsydra_render_day;
     klepsydra_render_pelnia;
 }
 
 #alias {klepsydra_render_day} {
-    #line ignore #showme {<BBB><178>           Minela kolejna godzina            <088>};
-    #line ignore #showme {<138>      .        <088>Kalendarz    : $kalendarz_region  };
-    #line ignore #showme {<138>    \\ | /      <088>Miesiac      : $kalendarz_miesiac };
-    #line ignore #showme {<138>  '-.;;;.-'    <088>Pora Roku    : $poraroku_kolor$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]};
-    #line ignore #showme {<138> -==;;;;;==-   <088>Dzien/W Roku : $dzien_miesiaca/$dzien_roku    };
-    #line ignore #showme {<138>  .-';;;'-.    <088>Godzina      : $jasnosc_kolor$czas_godzina_prmp:00     };
-    #line ignore #showme {<138>    / | \\      <088>Wschod       :  <138>$wschod_slonca:00  };
-    #line ignore #showme {<138>      '        <088>Zachod       : <148>$zachod_slonca:00  };
+    #line ignore #showme {<BBB><138>        Rachuba czasu Starszego Ludu         <088>};
+    #line ignore #showme {$logo1 Pora Dnia    : $jasnosc_kolor$pora_dnia;  };
+    #line ignore #showme {$logo2 Miesiac      : $kalendarz_miesiac };
+    #line ignore #showme {$logo3 Pora Roku    : $poraroku_kolor$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]};
+    #line ignore #showme {$logo4 Dzien/W Roku : $dzien_miesiaca/$dzien_roku    };
+    #line ignore #showme {$logo5 Godzina      : $jasnosc_kolor$czas_godzina_prmp:00     };
+    #line ignore #showme {$logo6 Wschod       :  <138>$wschod_slonca:00  };
+    #line ignore #showme {$logo7 Zachod       : <148>$zachod_slonca:00  };
 }
 
 #var kalendarz_pelnie_ishtar[1] {6};
@@ -283,20 +290,44 @@
 #var kalendarz_pelnie_ishtar[14] {331};
 #var kalendarz_pelnie_ishtar[15] {356};
 
+
+#var kalendarz_pelnie_ishtar_zachod[1] {16};
+#var kalendarz_pelnie_ishtar_zachod[2] {16};
+#var kalendarz_pelnie_ishtar_zachod[3] {19};
+#var kalendarz_pelnie_ishtar_zachod[4] {19};
+#var kalendarz_pelnie_ishtar_zachod[5] {19};
+#var kalendarz_pelnie_ishtar_zachod[6] {19};
+#var kalendarz_pelnie_ishtar_zachod[7] {19};
+#var kalendarz_pelnie_ishtar_zachod[8] {22};
+#var kalendarz_pelnie_ishtar_zachod[9] {22};
+#var kalendarz_pelnie_ishtar_zachod[10] {22};
+#var kalendarz_pelnie_ishtar_zachod[11] {22};
+#var kalendarz_pelnie_ishtar_zachod[12] {19};
+#var kalendarz_pelnie_ishtar_zachod[13] {19};
+#var kalendarz_pelnie_ishtar_zachod[14] {19};
+#var kalendarz_pelnie_ishtar_zachod[15] {19};
+
+
 #alias {klepsydra_render_pelnia} {
     #var pelnia_startowa 0;
     #foreach {*kalendarz_pelnie_ishtar[]} {kpi} {
         #if {$dzien_roku < $kalendarz_pelnie_ishtar[$kpi]} {
-            #math {pelnia_za_dni} {$kalendarz_pelnie_ishtar[$kpi] - $dzien_roku};
-            #math {RLminuty} {$czas_godzina * 2};
-            #math {pelnia_za_RLminut} {($pelnia_za_dni * 48) - $RLminuty};
-            #math {pelnia_za_RLgodzin} {$pelnia_za_RLminut / 60};
-            #math {pelnia_za_RLresztam} {$pelnia_za_RLminut - ($pelnia_za_RLgodzin * 60)};
+#var zachod_w_pelni $kalendarz_pelnie_ishtar_zachod[$kpi];
+#math {pelnia_za_dni} {$kalendarz_pelnie_ishtar[$kpi] - $dzien_roku};   #nop odejmuje aktualny dzien w roku od kolejnej pelni;
+#math {RLminuty} {$czas_godzina * 2};                                   #nop kazda godzina arki to dwie minuty RL;
+#math {RLzachod} {$zachod_w_pelni * 2};                                 #nop ilosc RL minut od polnocy do zachodu slonca w czasie pelni;
+#math {pelnia_za_RLminut} {($pelnia_za_dni * 48) - $RLminuty + $RLzachod};  #nop kazdy dzien to 48 RL minut, odejmuje aktualna godzine;
+                                                                            #nop i dodaje czas do zachodu slonca;
+#math {pelnia_za_RLgodzin} {$pelnia_za_RLminut / 60};                       #nop wyciagam godzine z minut;
+#math {pelnia_za_RLresztam} {$pelnia_za_RLminut - ($pelnia_za_RLgodzin * 60)};  #nop wyciagam reszte RL minut z godzin;
 
             #var pelniastr {<AAB><138>Pelnia za $pelnia_za_RLgodzin godzin i $pelnia_za_RLresztam minut};
             #format {pelniadisplay_} {%-45s} {$pelniastr};
             #format {pelniadisplay} {%.45s} {$pelniadisplay_};
-            #if {$pelnia_za_RLgodzin < 100} {
+            #format time %T;
+            #math time $time + $pelnia_za_RLgodzin:$pelnia_za_RLresztam;
+            #nop echo %t {{<format>}{$time}};   
+            #if {$pelnia_za_RLgodzin < 400} {
                 #line ignore #showme $pelniadisplay;
             };
         };
@@ -304,12 +335,25 @@
 };
 
 
+#alias {ustaw_dzien} {
+    #var logo1 {+----------+};
+    #var logo2 {|<AAF>  <138>  o--  <fca>v<088>|};
+    #var logo3 {|<AAF>   <138> |\\  <fca>.X<088>|};
+    #var logo4 {|<AAF><fca>/\\     .X#<088>|};
+    #var logo5 {|<AFA><fca> ^`\\^/\\XX#<088>|};
+    #var logo6 {|<AFA><fca>` ^ `\\X##M<088>|};
+    #var logo7 {+----------+};
+};
 
-
-
-
-
-
+#alias {ustaw_noc} {
+    #var logo1 {+----------+};
+    #var logo2 {|<AAB>  <138>  o    <fca>v<088>|};
+    #var logo3 {|<AAB> <178>'      <fca>.X<088>|};
+    #var logo4 {|<BBB><fca>/\\     .X#<088>|};
+    #var logo5 {|<BBB><fca> ^`\\^/\\XX#<088>|};
+    #var logo6 {|<BBB><fca>` ^ `\\X##M<088>|};
+    #var logo7 {+----------+};
+};
 
 
 
