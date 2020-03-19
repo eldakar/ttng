@@ -311,7 +311,7 @@
 #alias {klepsydra_render_pelnia} {
     #var pelnia_startowa 0;
     #foreach {*kalendarz_pelnie_ishtar[]} {kpi} {
-        #if {$dzien_roku < $kalendarz_pelnie_ishtar[$kpi]} {
+        #if {$dzien_roku <= $kalendarz_pelnie_ishtar[$kpi]} {
 #var zachod_w_pelni $kalendarz_pelnie_ishtar_zachod[$kpi];
 #math {pelnia_za_dni} {$kalendarz_pelnie_ishtar[$kpi] - $dzien_roku};   #nop odejmuje aktualny dzien w roku od kolejnej pelni;
 #math {RLminuty} {$czas_godzina * 2};                                   #nop kazda godzina arki to dwie minuty RL;
@@ -327,7 +327,7 @@
             #format time %T;
             #math time $time + $pelnia_za_RLgodzin:$pelnia_za_RLresztam;
             #nop echo %t {{<format>}{$time}};   
-            #if {$pelnia_za_RLgodzin < 400} {
+            #if {$pelnia_za_RLgodzin < 49} {
                 #line ignore #showme $pelniadisplay;
             };
         };
