@@ -150,6 +150,8 @@
     #math curright {$cols - %1 + 1};
     #math curbott {$screenrows - %0};
 
+            #var {o_x} %0;
+            #var {o_y} %1;
     #if {$curbott == $top}
     {
         #var topdrag 1
@@ -157,14 +159,21 @@
 
     #if {$right == $curright}
     {
-	#var rightdrag 1
+	   #var rightdrag 1
     };
+    #if {$curright < $right} {
+        #if {$curbott > $top} {
+            #var mapcenter 1;
+        };
+    };
+    #sh {curright = $curright | curbott = $curbott | right = $right | top = $top | top: $topdrag right: $rightdrag map: $mapcenter};
 }
 
 #event {RELEASED MOUSE BUTTON ONE}
 {
     #var topdrag 0;
     #var rightdrag 0;
+    #var mapcenter 0;
 }
 
 #event {MOVED MOUSE BUTTON ONE}
@@ -181,5 +190,28 @@
 	#math boooom {$cols - %1};
         /conf SplitWingMapWidth $boooom;
     }
+    #if {$mapcenter} {
+        #var d_x %0;
+        #var d_y %1;
+        #math {c_x} {$o_x - $d_x};
+        #math {c_y} {$d_y - $o_y};
+        #map center $c_y $c_x 0;
+    }
 }
 
+#event {SCROLLED MOUSE WHEEL UP} {
+        #if {%1 == 0 || %1 == 1} {#cursor history prev} {
+            #buffer up 1;
+        }
+}
+
+#event {SCROLLED MOUSE WHEEL DOWN} {
+    #if {%1 == 0 || %1 == 1} {#cursor history next} {
+        #buffer down 1;
+    }
+}
+
+#event {MAP DOUBLE-CLICKED MOUSE BUTTON ONE} {
+    #map center;
+    #map run {%0} {0.25}
+};
