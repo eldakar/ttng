@@ -262,8 +262,8 @@
     calendar_clock_reset;
     calendar_render_hours;
     
-    #nop klepsydra_render_day;
-    #nop klepsydra_render_pelnia;
+    klepsydra_render_day;
+    klepsydra_render_pelnia;
 }
 
 #alias {klepsydra_render_day} {
