@@ -1,8 +1,265 @@
-#event {IAC SB GMCP room.time IAC SE}
-{
-	#var
+#alias {render_calendar} {
+	#math calendar_left_border {($screencols / 2) - 7};
+	calendar_clock_reset;
+	calendar_draw_clock;
+	#draw violet tubed box 1 $calendar_left_border+16 7 $screencols $toprighty;
+	#draw red tubed box 1 1 7 $calendar_left_border-2 $toplefty;
+};
+
+#alias {CalendarSize_DoNotEdit} {
+    #var global_bundle_slots_values[prompt][top] 7;
+    SplitRefreshRequestRefresh;
 }
 
+#alias {rozmowa} {
+    #var prozmowa $ConfigManager_Configs[rozmowa];
+}
+
+
+
+#event {IAC SB GMCP room.time IAC SE}
+{
+    #var roomtime {%0};
+	#foreach {*roomtime[]} {s} {
+		#list {ROOM_TIME} {find} {$s} {v}; 
+		#if {$v > 0} {
+			#list {ROOM_TIME}{set}{$s}{$roomtime[$s]}
+		} {
+			#var {ROOM_TIME[$s]} {$roomtime[$s]};
+		}
+	};
+}
+
+#event {VARIABLE UPDATED czas_godzina} {
+	#format czas_godzina_prmp {%+2s} {$czas_godzina};
+    #var clockhourpane {<178>$czas_godzina_prmp:00<088>};
+	calendar_clock_reset;
+    calendar_render_hours;
+}
+#alias {calendar_clock_reset} {
+	#var clockrender[char][12] {( )};
+	#var clockrender[char][1]  {( )};
+	#var clockrender[char][2]  {( )};
+	#var clockrender[char][3]  {( )};
+	#var clockrender[char][4]  {( )};
+	#var clockrender[char][5]  {( )};
+	#var clockrender[char][6]  {( )};
+	#var clockrender[char][7]  {( )};
+	#var clockrender[char][8]  {( )};
+	#var clockrender[char][9]  {( )};
+	#var clockrender[char][10] {( )};
+	#var clockrender[char][11] {( )};
+
+	#var clockrender[color][12] {<088>};
+	#var clockrender[color][1]  {<088>};
+	#var clockrender[color][2]  {<088>};
+	#var clockrender[color][3]  {<088>};
+	#var clockrender[color][4]  {<088>};
+	#var clockrender[color][5]  {<088>};
+	#var clockrender[color][6]  {<088>};
+	#var clockrender[color][7]  {<088>};
+	#var clockrender[color][8]  {<088>};
+	#var clockrender[color][9]  {<088>};
+	#var clockrender[color][10] {<088>};
+	#var clockrender[color][11] {<088>};
+};
+
+#var kalendarz_poraroku[Wiosna][wschod] {6};
+#var kalendarz_poraroku[Wiosna][zachod] {19};
+#var kalendarz_poraroku[Lato][wschod] {4};
+#var kalendarz_poraroku[Lato][zachod] {22};
+#var kalendarz_poraroku[Jesien][wschod] {6};
+#var kalendarz_poraroku[Jesien][zachod] {19};
+#var kalendarz_poraroku[Zima][wschod] {8};
+#var kalendarz_poraroku[Zima][zachod] {16};
+
+#var clockhourpane {00:00};
+#var clockseasonpane {     };
+#var clockdaypane {     };
+
+#alias {calendar_draw_clock} {
+	#switch {"$ROOM_TIME[season]"} {
+		#case {"0"} {#var clockseasonpane {<128>wiosna<088>}};
+		#case {"1"} {#var clockseasonpane {<118> lato <088>}};
+		#case {"2"} {#var clockseasonpane {<138>jesien<088>}};
+		#case {"3"} {#var clockseasonpane {<178> zima <088>}};		
+	};
+	#switch {"$ROOM_TIME[daylight]"} {
+		#case {"true"} {
+			#var clockdaypane {<138>dzien<088>};
+			#draw yellow tubed box 1 $calendar_left_border-1 7 $calendar_left_border+15;
+		};
+		#case {"false"}{
+			#var clockdaypane {<148> noc <088>};
+			#draw blue tubed box 1 $calendar_left_border-1 7 $calendar_left_border+15;
+		};
+	};
+
+	#sh {   $clockrender[color][11]$clockrender[char][11]<088>$clockrender[color][12]$clockrender[char][12]<088>$clockrender[color][1]$clockrender[char][1]<088>   } {2} {$calendar_left_border};
+	#sh { $clockrender[color][10]$clockrender[char][10]<088>$clockseasonpane $clockrender[color][2]$clockrender[char][2]<088> } {3} {$calendar_left_border};
+	#sh {$clockrender[color][9]$clockrender[char][9]<088>  $clockhourpane  $clockrender[color][3]$clockrender[char][3]<088>} {4} {$calendar_left_border};
+	#sh { $clockrender[color][8]$clockrender[char][8]<088>  ${clockdaypane}$clockrender[color][4]$clockrender[char][4]<088> } {5} {$calendar_left_border};
+	#sh {   $clockrender[color][7]$clockrender[char][7]<088>$clockrender[color][6]$clockrender[char][6]<088>$clockrender[color][5]$clockrender[char][5]<088>   } {6} {$calendar_left_border};
+
+};
+
+#var clocktranslate[24] 12;
+#var clocktranslate[23] 11;
+#var clocktranslate[22] 10;
+#var clocktranslate[21] 9;
+#var clocktranslate[20] 8;
+#var clocktranslate[19] 7;
+#var clocktranslate[18] 6;
+#var clocktranslate[17] 5;
+#var clocktranslate[16] 4;
+#var clocktranslate[15] 3;
+#var clocktranslate[14] 2;
+#var clocktranslate[13] 1;
+#var clocktranslate[12] 12;
+#var clocktranslate[11] 11;
+#var clocktranslate[10] 10;
+#var clocktranslate[9] 9;
+#var clocktranslate[8] 8;
+#var clocktranslate[7] 7;
+#var clocktranslate[6] 6;
+#var clocktranslate[5] 5;
+#var clocktranslate[4] 4;
+#var clocktranslate[3] 3;
+#var clocktranslate[2] 2;
+#var clocktranslate[1] 1;
+
+#nop WIOSNA;
+#var clockrendertable[1][0] {<148>};
+#var clockrendertable[2][0] {<148>};
+#var clockrendertable[3][0] {<148>};
+#var clockrendertable[4][0] {<148>};
+#var clockrendertable[5][0] {<148>};
+#var clockrendertable[6][0] {<138>}; #nop WSCHOD;
+#var clockrendertable[7][0] {<138>};
+#var clockrendertable[8][0] {<138>};
+#var clockrendertable[9][0] {<138>};
+#var clockrendertable[10][0] {<138>};
+#var clockrendertable[11][0] {<138>};
+#var clockrendertable[12][0] {<138>};
+#var clockrendertable[13][0] {<138>};
+#var clockrendertable[14][0] {<138>};
+#var clockrendertable[15][0] {<138>};
+#var clockrendertable[16][0] {<138>};
+#var clockrendertable[17][0] {<138>};
+#var clockrendertable[18][0] {<138>};
+#var clockrendertable[19][0] {<148>}; #nop ZACHOD;
+#var clockrendertable[20][0] {<148>};
+#var clockrendertable[21][0] {<148>};
+#var clockrendertable[22][0] {<148>};
+#var clockrendertable[23][0] {<148>};
+#var clockrendertable[24][0] {<148>};
+#nop LATO;
+#var clockrendertable[1][1] {<148>};
+#var clockrendertable[2][1] {<148>};
+#var clockrendertable[3][1] {<148>};
+#var clockrendertable[4][1] {<138>}; #nop WSCHOD;
+#var clockrendertable[5][1] {<138>};
+#var clockrendertable[6][1] {<138>};
+#var clockrendertable[7][1] {<138>};
+#var clockrendertable[8][1] {<138>};
+#var clockrendertable[9][1] {<138>};
+#var clockrendertable[10][1] {<138>};
+#var clockrendertable[11][1] {<138>};
+#var clockrendertable[12][1] {<138>};
+#var clockrendertable[13][1] {<138>};
+#var clockrendertable[14][1] {<138>};
+#var clockrendertable[15][1] {<138>};
+#var clockrendertable[16][1] {<138>};
+#var clockrendertable[17][1] {<138>};
+#var clockrendertable[18][1] {<138>};
+#var clockrendertable[19][1] {<138>};
+#var clockrendertable[20][1] {<138>};
+#var clockrendertable[21][1] {<138>};
+#var clockrendertable[22][1] {<148>}; #nop ZACHOD;
+#var clockrendertable[23][1] {<148>};
+#var clockrendertable[24][1] {<148>};
+#nop JESIEN;
+#var clockrendertable[1][2] {<148>};
+#var clockrendertable[2][2] {<148>};
+#var clockrendertable[3][2] {<148>};
+#var clockrendertable[4][2] {<148>};
+#var clockrendertable[5][2] {<148>};
+#var clockrendertable[6][2] {<138>}; #nop WSCHOD;
+#var clockrendertable[7][2] {<138>};
+#var clockrendertable[8][2] {<138>};
+#var clockrendertable[9][2] {<138>};
+#var clockrendertable[10][2] {<138>};
+#var clockrendertable[11][2] {<138>};
+#var clockrendertable[12][2] {<138>};
+#var clockrendertable[13][2] {<138>};
+#var clockrendertable[14][2] {<138>};
+#var clockrendertable[15][2] {<138>};
+#var clockrendertable[16][2] {<138>};
+#var clockrendertable[17][2] {<138>};
+#var clockrendertable[18][2] {<138>};
+#var clockrendertable[19][2] {<148>}; #nop ZACHOD;
+#var clockrendertable[20][2] {<148>};
+#var clockrendertable[21][2] {<148>};
+#var clockrendertable[22][2] {<148>};
+#var clockrendertable[23][2] {<148>};
+#var clockrendertable[24][2] {<148>};
+#nop ZIMA;
+#var clockrendertable[1][2] {<148>};
+#var clockrendertable[2][2] {<148>};
+#var clockrendertable[3][2] {<148>};
+#var clockrendertable[4][2] {<148>};
+#var clockrendertable[5][2] {<148>};
+#var clockrendertable[6][2] {<148>};
+#var clockrendertable[7][2] {<148>};
+#var clockrendertable[8][2] {<138>}; #nop WSCHOD;
+#var clockrendertable[9][2] {<138>};
+#var clockrendertable[10][2] {<138>};
+#var clockrendertable[11][2] {<138>};
+#var clockrendertable[12][2] {<138>};
+#var clockrendertable[13][2] {<138>};
+#var clockrendertable[14][2] {<138>};
+#var clockrendertable[15][2] {<138>};
+#var clockrendertable[16][2] {<148>}; #nop ZACHOD;
+#var clockrendertable[17][2] {<148>};
+#var clockrendertable[18][2] {<148>};
+#var clockrendertable[19][2] {<148>};
+#var clockrendertable[20][2] {<148>};
+#var clockrendertable[21][2] {<148>};
+#var clockrendertable[22][2] {<148>};
+#var clockrendertable[23][2] {<148>};
+#var clockrendertable[24][2] {<148>};
+
+
+
+#alias {calendar_render_hours} {
+	#var blu $clocktranslate[$czas_godzina];
+	#var rtd $ROOM_TIME[daylight];
+	#var rts $ROOM_TIME[season];
+	#var clockrender[char][$clocktranslate[$czas_godzina]] {(X)};
+	#if {$czas_godzina < 13} {
+		#loop {1} {$czas_godzina} {numerek} {
+			#var clockrender[color][$clocktranslate[$numerek]] $clockrendertable[$numerek][$rts];
+			#if {$numerek < $czas_godzina} {
+				#var clockrender[char][$clocktranslate[$numerek]] {(#)};
+			};
+		};
+		#loop {$czas_godzina + 1} {12} {numerek} {
+			#var clockrender[color][$clocktranslate[$numerek]] $clockrendertable[$numerek][$rts];
+		};
+	} {
+		#loop {13} {$czas_godzina} {numerek} {
+			#var clockrender[color][$clocktranslate[$numerek]] $clockrendertable[$numerek][$rts];
+			#if {$numerek < $czas_godzina} {
+				#var clockrender[char][$clocktranslate[$numerek]] {(#)};
+			};
+
+		};
+		#loop {$czas_godzina + 1} {24} {numerek} {
+			#var clockrender[color][$clocktranslate[$numerek]] $clockrendertable[$numerek][$rts];
+		};
+	};
+	calendar_draw_clock;
+};
 #nop Room.Time;
 #nop 	Komunikat dwustronny, Arkadia przesyla informacje o aktualnym czasie na lokacji,;
 #nop 	klient moze ja odpytac.;
@@ -11,3 +268,25 @@
 #nop 	Dane maja postac obiektu JSON i zawieraja parametry:;
 #nop 		daylight - BOOLEAN, czy na lokacji jest dzien;
 #nop 		season - INTEGER, od 0 do 3, pora roku (wiosna, lato, jesien, zima);
+
+
+
+#nop ALIASY DO NAKURWIANIA WALKI I CZATU NA GORZE;
+#alias topleftpane_add {
+	#var topleft[1] {$topleft[2]};
+	#var topleft[2] {$topleft[3]};
+	#var topleft[3] {$topleft[4]};
+	#var topleft[4] {$topleft[5]};
+	#var topleft[5] {%0};
+	#var toplefty {$topleft[1]\n$topleft[2]\n$topleft[3]\n$topleft[4]\n$topleft[5]};
+	#draw red tubed box 1 1 7 $calendar_left_border-2 $toplefty;
+}
+#alias toprightpane_add {
+	#var topright[1] {$topright[2]};
+	#var topright[2] {$topright[3]};
+	#var topright[3] {$topright[4]};
+	#var topright[4] {$topright[5]};
+	#var topright[5] {%0};
+	#var toprighty {$topright[1]\n$topright[2]\n$topright[3]\n$topright[4]\n$topright[5]};
+	#draw violet tubed box 1 $calendar_left_border+16 7 $screencols $toprighty;
+}

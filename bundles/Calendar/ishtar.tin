@@ -226,9 +226,8 @@
         };
         #var wschod_slonca $kalendarz_poraroku[$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]][wschod];
         #var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]][zachod];
-        #nop klepsydra_render;
     } {120};
-    klepsydra_render
+    klepsydra_render;
 } {1};
 
 #var czas_prompt {--|--|--|X};
@@ -259,8 +258,12 @@
     #format wschod_slonca_prmp {%+2s} {$wschod_slonca};
     #format zachod_slonca_prmp {%+2s} {$zachod_slonca};        
     
-    klepsydra_render_day;
-    klepsydra_render_pelnia;
+    #var clockhourpane {<178>$czas_godzina_prmp:00<088>};
+    calendar_clock_reset;
+    calendar_render_hours;
+    
+    #nop klepsydra_render_day;
+    #nop klepsydra_render_pelnia;
 }
 
 #alias {klepsydra_render_day} {

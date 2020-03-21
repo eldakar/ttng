@@ -130,10 +130,9 @@
         };
     };
 
-    #nop draw violet tubed box 1 1 10 $screencols;
-    
-    #nop draw violet tubed box 1 1 $ConfigManager_Configs[RaidBarDynamicTop] $screencols;
-    #sh {$hline} {$tmplinecnt - 1};
+
+    #draw violet tubed box $tmplinecnt-1 1 $screenrows-4 $screencols;
+    #nop sh {$hline} {$tmplinecnt - 1};
 
     #list duch size lds;
 };
@@ -166,7 +165,7 @@
             #var mapcenter 1;
         };
     };
-    #sh {curright = $curright | curbott = $curbott | right = $right | top = $top | top: $topdrag right: $rightdrag map: $mapcenter};
+    #nop sh {curright = $curright | curbott = $curbott | right = $right | top = $top | top: $topdrag right: $rightdrag map: $mapcenter};
 }
 
 #event {RELEASED MOUSE BUTTON ONE}

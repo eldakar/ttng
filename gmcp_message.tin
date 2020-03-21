@@ -5,8 +5,11 @@
 	};
 	#switch {"$GMCPMSGS[type]"} {
 		#case {"comm"} {
-			#replace {GMCPMSGS[text]} {\\n} {};			
-			#sh {$GMCPMSGS[text]};			
+			#replace {GMCPMSGS[text]} {\\n} {};
+			#if {"$prozmowa" == "widoczna"} {
+				#sh {$GMCPMSGS[text]};
+			};
+			toprightpane_add $GMCPMSGS[text];
 		};
 		#case {"notification.mail"} {Highlights_post $GMCPMSGS[text]};
 		#case {"notification.knowledge"} {Highlights_knowledge $GMCPMSGS[text]};

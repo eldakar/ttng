@@ -4,6 +4,9 @@
       #var gaglevel 0;
    };
 };
+#alias {walkarpg} {
+   #var rpggag $ConfigManager_Configs[walkarpg];
+};
 
 #NOP TWOJE CIOSY OGOLNE;
 #unaction {~Ledwo muskasz %*, trafiajac %* w %*.%D$} {#echo {<aca> [1/6]<088> %0<aaa>,};#line gag;};
@@ -284,14 +287,65 @@
 	#var collector[%2][received][damage] {$tmp_drcvd};
 
    #switch {"%3"} {
-      #case {"dodge"} {#if {$gaglevel < 1} {#line ignore {#showme {<078>[%3] $tmpvalue2}}}};
-      #case {"miss"} {#if {$gaglevel < 1} {#line ignore {#showme {<078>[%3] $tmpvalue2}}}};
-      #case {"parry"} {#if {$gaglevel < 1} {#line ignore {#showme {<078>[%3] $tmpvalue2}}}};
-      #case {"hit"} {#if {$gaglevel < 2} {#line ignore {#showme {<178>[%4/6]<088> $tmpvalue2}}}};
-      #case {"magic"} {#if {$gaglevel < 2} {#line ignore {#showme {<138>[%3 %4/6]<088> $tmpvalue2}}}};
-      #default {#line ignore {#showme {<118><fca>[%3 %4/6]<088> $tmpvalue2}}};
+      #case {"dodge"} {
+         #if {$gaglevel < 1} {
+            #if {"$rpggag" == "widoczna"} {
+               #line ignore {
+                  #showme {<078>[%3] $tmpvalue2}
+               };
+            };
+            topleftpane_add <078>[%3] $tmpvalue2;
+         };
+      };
+      #case {"miss"} {
+         #if {$gaglevel < 1} {
+            #if {"$rpggag" == "widoczna"} {
+               #line ignore {
+                  #showme {<078>[%3] $tmpvalue2}
+               };
+            };
+            topleftpane_add <078>[%3] $tmpvalue2;
+         };
+      };
+      #case {"parry"} {
+         #if {$gaglevel < 1} {
+            #if {"$rpggag" == "widoczna"} {
+               #line ignore {
+                  #showme {<078>[%3] $tmpvalue2}
+               };
+            };
+            topleftpane_add <078>[%3] $tmpvalue2;
+         };
+      };
+      #case {"hit"} {
+         #if {$gaglevel < 2} {
+            #if {"$rpggag" == "widoczna"} {
+               #line ignore {
+                  #showme {<178>[%4/6]<088> $tmpvalue2}
+               };
+            };
+            topleftpane_add <178>[%4/6]<088> $tmpvalue2;
+         };
+      };
+      #case {"magic"} {
+         #if {$gaglevel < 2} {
+            #if {"$rpggag" == "widoczna"} {
+               #line ignore {
+                  #showme {<138>[%3 %4/6]<088> $tmpvalue2}
+               };
+            };
+            topleftpane_add <138>[%3 %4/6]<088> $tmpvalue2;
+         };
+      };
+      #default {
+         #if {"$rpggag" == "widoczna"} {
+            #line ignore {
+               #showme {<118><fca>[%3 %4/6]<088> $tmpvalue2}
+            };
+         };
+         topleftpane_add <138>[%3 %4/6]<088> $tmpvalue2;
+      };
    };
-	#nop line ignore {#showme {<178>[%3 %4/6]<088> $tmpvalue2}};
 } {1};
 
 #function {dodajcios} {
@@ -479,7 +533,10 @@
 
    #nop FAILOVER;
    #if {"$tmpvalue" != ""} {
-      #line ignore {#sh {<088>[misc] <088>$tmpvalue2}};
+      #if {"$rpggag" == "widoczna"} {
+         #line ignore {#sh {<088>[misc] <088>$tmpvalue2}};
+      };
+      topleftpane_add <088>[misc] <088>$tmpvalue2;
    };
 	#return 0;
 };

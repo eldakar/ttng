@@ -1,6 +1,6 @@
 #alias SplitWingMap_Offset {
     #map flag vtmap on;
-    #math offsety {0};
+    #math offsety {$global_bundle_slots_values[prompt][top] + 1};
     #screen get cols screencols;
     #screen get rows screenrows;
     #math offsetx {$screencols - $global_bundle_slots_values[prompt][right] + 2};
