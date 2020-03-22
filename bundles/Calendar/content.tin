@@ -50,18 +50,18 @@
 	#var clockrender[char][10] {( )};
 	#var clockrender[char][11] {( )};
 
-	#var clockrender[color][12] {<088>};
-	#var clockrender[color][1]  {<088>};
-	#var clockrender[color][2]  {<088>};
-	#var clockrender[color][3]  {<088>};
-	#var clockrender[color][4]  {<088>};
-	#var clockrender[color][5]  {<088>};
-	#var clockrender[color][6]  {<088>};
-	#var clockrender[color][7]  {<088>};
-	#var clockrender[color][8]  {<088>};
-	#var clockrender[color][9]  {<088>};
-	#var clockrender[color][10] {<088>};
-	#var clockrender[color][11] {<088>};
+	#var clockrender[color][12] {};
+	#var clockrender[color][1]  {};
+	#var clockrender[color][2]  {};
+	#var clockrender[color][3]  {};
+	#var clockrender[color][4]  {};
+	#var clockrender[color][5]  {};
+	#var clockrender[color][6]  {};
+	#var clockrender[color][7]  {};
+	#var clockrender[color][8]  {};
+	#var clockrender[color][9]  {};
+	#var clockrender[color][10] {};
+	#var clockrender[color][11] {};
 };
 
 #var kalendarz_poraroku[Wiosna][wschod] {6};
@@ -88,18 +88,22 @@
 		#case {"true"} {
 			#var clockdaypane {<138>dzien<088>};
 			#draw yellow tubed box 1 $calendar_left_border-1 7 $calendar_left_border+15;
+			#var bgtop {<AAD>};
+			#var bgbot {<ABA>};
 		};
 		#case {"false"}{
 			#var clockdaypane {<148> noc <088>};
 			#draw blue tubed box 1 $calendar_left_border-1 7 $calendar_left_border+15;
+			#var bgtop {<AAB>};
+			#var bgbot {<G02>};
 		};
 	};
 
-	#sh {   $clockrender[color][11]$clockrender[char][11]<088>$clockrender[color][12]$clockrender[char][12]<088>$clockrender[color][1]$clockrender[char][1]<088>   } {2} {$calendar_left_border};
-	#sh { $clockrender[color][10]$clockrender[char][10]<088>$clockseasonpane $clockrender[color][2]$clockrender[char][2]<088> } {3} {$calendar_left_border};
-	#sh {$clockrender[color][9]$clockrender[char][9]<088>  $clockhourpane  $clockrender[color][3]$clockrender[char][3]<088>} {4} {$calendar_left_border};
-	#sh { $clockrender[color][8]$clockrender[char][8]<088>  ${clockdaypane}$clockrender[color][4]$clockrender[char][4]<088> } {5} {$calendar_left_border};
-	#sh {   $clockrender[color][7]$clockrender[char][7]<088>$clockrender[color][6]$clockrender[char][6]<088>$clockrender[color][5]$clockrender[char][5]<088>   } {6} {$calendar_left_border};
+	#sh {$bgtop   $clockrender[color][11]$clockrender[char][11]<088>$bgtop$clockrender[color][12]$clockrender[char][12]<088>$bgtop$clockrender[color][1]$clockrender[char][1]<088>$bgtop   } {2} {$calendar_left_border};
+	#sh {$bgtop $clockrender[color][10]$clockrender[char][10]<088>$bgtop$clockseasonpane$bgtop $clockrender[color][2]$clockrender[char][2]<088>$bgtop } {3} {$calendar_left_border};
+	#sh {$bgtop$clockrender[color][9]$clockrender[char][9]<088>$bgtop  $clockhourpane$bgtop  $clockrender[color][3]$clockrender[char][3]<088>$bgtop} {4} {$calendar_left_border};
+	#sh {$bgbot $clockrender[color][8]$clockrender[char][8]<088>$bgbot  ${clockdaypane}$bgbot$clockrender[color][4]$clockrender[char][4]<088>$bgbot <088>} {5} {$calendar_left_border};
+	#sh {$bgbot   $clockrender[color][7]$clockrender[char][7]<088>$bgbot$clockrender[color][6]$clockrender[char][6]<088>$bgbot$clockrender[color][5]$clockrender[char][5]<088>$bgbot   <088>} {6} {$calendar_left_border};
 
 };
 
@@ -270,7 +274,13 @@
 #nop 		season - INTEGER, od 0 do 3, pora roku (wiosna, lato, jesien, zima);
 
 
+#var bgtop {};
+#var bgbot {};
+#var czas_godzina {--};
+#var czas_godzina_prmp {};
 
+#var toplefty {};
+#var toprighty {};
 #nop ALIASY DO NAKURWIANIA WALKI I CZATU NA GORZE;
 #alias topleftpane_add {
 	#var topleft[1] {$topleft[2]};
@@ -278,7 +288,7 @@
 	#var topleft[3] {$topleft[4]};
 	#var topleft[4] {$topleft[5]};
 	#var topleft[5] {%0};
-	#var toplefty {$topleft[1]\n$topleft[2]\n$topleft[3]\n$topleft[4]\n$topleft[5]};
+	#var toplefty {<088>$topleft[1]\n$topleft[2]\n$topleft[3]\n$topleft[4]\n$topleft[5]};
 	#draw red tubed box 1 1 7 $calendar_left_border-2 $toplefty;
 }
 #alias toprightpane_add {
@@ -287,6 +297,6 @@
 	#var topright[3] {$topright[4]};
 	#var topright[4] {$topright[5]};
 	#var topright[5] {%0};
-	#var toprighty {$topright[1]\n$topright[2]\n$topright[3]\n$topright[4]\n$topright[5]};
+	#var toprighty {<088>$topright[1]\n$topright[2]\n$topright[3]\n$topright[4]\n$topright[5]};
 	#draw violet tubed box 1 $calendar_left_border+16 7 $screencols $toprighty;
 }

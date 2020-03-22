@@ -51,7 +51,7 @@
 			    #map get roomvnum roomId;
 			   	#math pendingstep {$pendingstep - 1};
     		};
-			SplitWingMap_LabelMap <128>$current_room_short_desc;
+			#nop SplitWingMap_LabelMap <128>$current_room_short_desc;
 		};
 		#case {"combat.team"} {
 			#var outputtext {$GMCPMSGS[text]};
