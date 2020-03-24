@@ -20,7 +20,7 @@
     #map color background <G02>;
     #map color exits <G02>;
     #map color rooms <G02>;
-    #map color paths <G02>;
+    #map color paths <138>;
     #map color user <G02>;
 };
 
@@ -39,7 +39,7 @@
     #map color background;
     #map color exits <eee>;
     #map color rooms <g12>;
-    #map color paths <ddd>;
+    #map color paths <138>;
     #map color user <118>;
 };
 

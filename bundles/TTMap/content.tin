@@ -9,6 +9,8 @@
 #map leg 200 /
 #map leg 218 >
 
+#map color paths <138>;
+
 #alias {trybmapy} {
     #switch {"$ConfigManager_Configs[trybmapy]"} {
         #case {"unicode"} {#map flag unicodegraphics on;};
@@ -422,7 +424,7 @@
         #undelay {PATH %*}; #nop zatrzymuje reszte komendy;
     };
     #if {$pathinprogress > 0} {
-        /lc;
+        #path stop;
     };
 }
 
