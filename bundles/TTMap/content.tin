@@ -424,7 +424,7 @@
         #undelay {PATH %*}; #nop zatrzymuje reszte komendy;
     };
     #if {$pathinprogress > 0} {
-        #path stop;
+        /lc;
     };
 }
 
