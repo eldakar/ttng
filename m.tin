@@ -9,8 +9,6 @@
     };
     #ses rpg arkadia.rpg.pl {23};
 
-    #nop event {SEND OUTPUT} {#echo {<118>COMMAND : %0<088>}};
-
     #read bundles/bundle_ops.tin;
 
     #read bundles/GMCPChar/manifest.tin;
@@ -79,3 +77,6 @@
         #end;
     };
 };
+
+#nop event {SEND OUTPUT} {#echo {<118>COMMAND : %0<088>}};
+

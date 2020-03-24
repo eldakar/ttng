@@ -52,6 +52,37 @@
     };
 };
 
+#alias {SplitWingMap_Journal_1} {
+    #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
+        #draw green circled box $offsetw-2 $offsetx $offsetw $offseth <088>%0;
+    };
+};
+
+#alias {SplitWingMap_Journal_2} {
+    #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
+        #draw green circled box $offsetw-3 $offsetx $offsetw $offseth <088>%0;
+    };
+};
+
+#alias {SplitWingMap_Journal_3} {
+    #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
+        #draw green circled box $offsetw-4 $offsetx $offsetw $offseth <088>%0;
+    };
+};
+
+#alias {SplitWingMap_Journal_4} {
+    #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
+        #draw green circled box $offsetw-5 $offsetx $offsetw $offseth <088>%0;
+    };
+};
+
+#alias {SplitWingMap_Journal_5} {
+    #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
+        #draw green circled box $offsetw-6 $offsetx $offsetw $offseth <088>%0;
+    };
+};
+
+
 #alias {SplitWingMap_Board} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
         #draw jeweled box $offsety+10 $offsetx+3 $offsetw-5 $offseth-3 <088>%0;
@@ -66,10 +97,17 @@
 
 #alias {SplitWingMap_LabelBind} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw green circled box $offsety+5 $offsetx+3 $offsety+7 $offseth-3 <128>BIND LOKACJA: %0;
+        #nop draw green circled box $offsety+5 $offsetx+3 $offsety+7 $offseth-3 <128>BIND LOKACJA: %0;
+        #draw green circled box $offsety $offsetx $offsety+2 $offseth <128>BIND LOKACJA: %0;
     };
 };
 
+#alias {SplitWingMap_LabelBind_Reverse} {
+    #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
+        #nop draw green circled box $offsety+5 $offsetx+3 $offsety+7 $offseth-3 <128>BIND LOKACJA: %0;
+        #draw <AFA> circled box $offsety $offsetx $offsety+2 $offseth <AFA><aaa>BIND LOKACJA: %0;
+    };
+};
 
 #alias {SplitWingMap_Warning} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {

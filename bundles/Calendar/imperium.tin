@@ -160,14 +160,7 @@
 
 
 
-#nop Jest w przyblizeniu (@godzina) (@pora_dnia), (@opcjonalnie) w (@dzien_nazwa), (@dzien_liczba) dzien miesiaca (@miesiac) wedlug Kalendarza Imperialnego.
-#nop Jest w przyblizeniu (@godzina) (@pora_dnia) w (@dzien_nazwa), (@dzien_liczba) dzien miesiaca (@miesiac) wedlug Kalendarza Imperialnego.
-
-#nop Jest w przyblizeniu szosta nad ranem w Baeckertag, dziesiaty dzien miesiaca Kaltezeit wedlug Kalendarza Imperialnego.
-#nop Jest w przyblizeniu siodma nad ranem, po wschodzie slonca w Markttag, osmy dzien miesiaca Ulrichszeit wedlug Kalendarza Imperialnego.
-
-
-#action {Jest w przyblizeniu %1 {w poludnie|rano|nad ranem|wieczorem|po poludniu|w nocy|poznym wieczorem}, %w w %w, %5 dzien miesiaca %6 wedlug Kalendarza Imperialnego.}
+#action {Jest w przyblizeniu %1 {w poludnie|rano|nad ranem|wieczorem|po poludniu|w nocy|poznym wieczorem}, %* w %w, %5 dzien miesiaca %6 wedlug Kalendarza Imperialnego.}
 {
 #if {"%2" == "w nocy"} {
 #if {$kalendarz_godziny[%1] > 6} {
@@ -202,7 +195,6 @@
 };
 #var wschod_slonca $kalendarz_poraroku[$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]][wschod];
 #var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]][zachod];
-klepsydra_render;
 } {120};
 klepsydra_render
 }
@@ -242,39 +234,9 @@ klepsydra_render
         };
         #var wschod_slonca $kalendarz_poraroku[$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]][wschod];
         #var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]][zachod];
-        klepsydra_render;
     } {120};
     klepsydra_render
 }
-
-#var czas_prompt {--|--|--|X};
-
-#alias {klepsydra_render}
-{
-    #if {$wschod_slonca > $czas_godzina} {
-        #var jasnosc_kolor {<148>};
-    } {
-        #if {$czas_godzina < $zachod_slonca} {
-            #var jasnosc_kolor {<128>};
-        } {
-            #var jasnosc_kolor {<148>};
-        };
-    };
-    #if {"$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]" == "Wiosna"} {#var poraroku_kolor {<128>W<088>};};
-    #elseif {"$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]" == "Lato"} {#var poraroku_kolor {<118>L<088>};};
-    #elseif {"$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]" == "Jesien"} {#var poraroku_kolor {<138>J<088>};};
-    #elseif {"$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]" == "Zima"} {#var poraroku_kolor {<178>Z<088>};};
-
-    #format czas_godzina_prmp {%+2s} {$czas_godzina};
-    #format wschod_slonca_prmp {%+2s} {$wschod_slonca};
-    #format zachod_slonca_prmp {%+2s} {$zachod_slonca};        
-    #var czas_prompt {<128>$wschod_slonca_prmp<088>|<088>$jasnosc_kolor$czas_godzina_prmp<088>|<148>$zachod_slonca_prmp<088>|$poraroku_kolor};
-    #nop sh {w:$wschod_slonca c:$czas_godzina z:$zachod_slonca (dzien: $dzien_miesiaca / $dniwmiesiacu  month: $numermiesiaca)};
-    #var czas_prompt2 {Minela godzina $czas_godzina_prmp, slonce wschodzi o ${wschod_slonca} a zachodzi o $zachod_slonca . Jest $kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora] };
-    #echo $czas_prompt2;
-}
-
-
 
 
 

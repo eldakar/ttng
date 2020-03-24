@@ -59,6 +59,25 @@
 #var kalendarz_dni[czterdziesty czwarty] {44};
 #var kalendarz_dni[czterdziesty piaty] {45};
 
+#var kalendarz_miesiace_imperium[Hexentag][pora] {Wiosna};
+#var kalendarz_miesiace_imperium[Nachhexen][pora] {Wiosna};
+#var kalendarz_miesiace_imperium[Jahrdrung][pora] {Wiosna};
+#var kalendarz_miesiace_imperium[Mitterfruhl][pora] {Wiosna};
+#var kalendarz_miesiace_imperium[Pflugzeit][pora] {Wiosna};
+#var kalendarz_miesiace_imperium[Sigmarszeit][pora] {Lato};
+#var kalendarz_miesiace_imperium[Sommerzeit][pora] {Lato};
+#var kalendarz_miesiace_imperium[Sonnstill][pora] {Lato};
+#var kalendarz_miesiace_imperium[Vorgeheim][pora] {Lato};
+#var kalendarz_miesiace_imperium[Geheimnisnacht][pora] {Jesien};
+#var kalendarz_miesiace_imperium[Nachgeheim][pora] {Jesien};
+#var kalendarz_miesiace_imperium[Erntezeit][pora] {Jesien};
+#var kalendarz_miesiace_imperium[Mittherbst][pora] {Jesien};
+#var kalendarz_miesiace_imperium[Brauzeit][pora] {Jesien};
+#var kalendarz_miesiace_imperium[Kaltezeit][pora] {Zima};
+#var kalendarz_miesiace_imperium[Ulrichszeit][pora] {Zima};
+#var kalendarz_miesiace_imperium[Monstille][pora] {Zima};
+#var kalendarz_miesiace_imperium[Vorhexen][pora] {Zima};
+
 #var kalendarz_miesiace_ishtar[1][nazwa] {Yule};
 #var kalendarz_miesiace_ishtar[2][nazwa] {Imbaelk}
 #var kalendarz_miesiace_ishtar[3][nazwa] {Birke}
@@ -68,6 +87,24 @@
 #var kalendarz_miesiace_ishtar[7][nazwa] {Velen}
 #var kalendarz_miesiace_ishtar[8][nazwa] {Saovine}
 
+#var kalendarz_miesiace_imperium[1][nazwa] {Hexentag};
+#var kalendarz_miesiace_imperium[2][nazwa] {Nachhexen}
+#var kalendarz_miesiace_imperium[3][nazwa] {Jahrdrung}
+#var kalendarz_miesiace_imperium[4][nazwa] {Mitterfruhl}
+#var kalendarz_miesiace_imperium[5][nazwa] {Pflugzeit}
+#var kalendarz_miesiace_imperium[6][nazwa] {Sigmarszeit}
+#var kalendarz_miesiace_imperium[7][nazwa] {Sommerzeit}
+#var kalendarz_miesiace_imperium[8][nazwa] {Sonnstill}
+#var kalendarz_miesiace_imperium[9][nazwa] {Vorgeheim}
+#var kalendarz_miesiace_imperium[10][nazwa] {Geheimnisnacht}
+#var kalendarz_miesiace_imperium[11][nazwa] {Nachgeheim}
+#var kalendarz_miesiace_imperium[12][nazwa] {Erntezeit}
+#var kalendarz_miesiace_imperium[13][nazwa] {Mittherbst}
+#var kalendarz_miesiace_imperium[14][nazwa] {Brauzeit}
+#var kalendarz_miesiace_imperium[15][nazwa] {Kaltezeit}
+#var kalendarz_miesiace_imperium[16][nazwa] {Ulrichszeit}
+#var kalendarz_miesiace_imperium[17][nazwa] {Monstille}
+#var kalendarz_miesiace_imperium[18][nazwa] {Vorhexen}
 
 #var kalendarz_miesiace_ishtar[Yule][index] {1}
 #var kalendarz_miesiace_ishtar[Imbaelk][index] {2}
@@ -78,6 +115,24 @@
 #var kalendarz_miesiace_ishtar[Velen][index] {7}
 #var kalendarz_miesiace_ishtar[Saovine][index] {8}
 
+#var kalendarz_miesiace_imperium[Hexentag][index] {1}
+#var kalendarz_miesiace_imperium[Nachhexen][index] {2}
+#var kalendarz_miesiace_imperium[Jahrdrung][index] {3}
+#var kalendarz_miesiace_imperium[Mitterfruhl][index] {4}
+#var kalendarz_miesiace_imperium[Pflugzeit][index] {5}
+#var kalendarz_miesiace_imperium[Sigmarszeit][index] {6}
+#var kalendarz_miesiace_imperium[Sommerzeit][index] {7}
+#var kalendarz_miesiace_imperium[Sonnstill][index] {8}
+#var kalendarz_miesiace_imperium[Vorgeheim][index] {9}
+#var kalendarz_miesiace_imperium[Geheimnisnacht][index] {10}
+#var kalendarz_miesiace_imperium[Nachgeheim][index] {11}
+#var kalendarz_miesiace_imperium[Erntezeit][index] {12}
+#var kalendarz_miesiace_imperium[Mittherbst][index] {13}
+#var kalendarz_miesiace_imperium[Brauzeit][index] {14}
+#var kalendarz_miesiace_imperium[Kaltezeit][index] {15}
+#var kalendarz_miesiace_imperium[Ulrichszeit][index] {16}
+#var kalendarz_miesiace_imperium[Monstille][index] {17}
+#var kalendarz_miesiace_imperium[Vorhexen][index] {18}
 
 #var kalendarz_miesiace_ishtar[Yule][dni] {45}
 #var kalendarz_miesiace_ishtar[Imbaelk][dni] {45}
@@ -88,6 +143,24 @@
 #var kalendarz_miesiace_ishtar[Velen][dni] {45}
 #var kalendarz_miesiace_ishtar[Saovine][dni] {45}
 
+#var kalendarz_miesiace_imperium[Hexentag][dni] {1};
+#var kalendarz_miesiace_imperium[Nachhexen][dni] {33}
+#var kalendarz_miesiace_imperium[Jahrdrung][dni] {32}
+#var kalendarz_miesiace_imperium[Mitterfruhl][dni] {1}
+#var kalendarz_miesiace_imperium[Pflugzeit][dni] {33}
+#var kalendarz_miesiace_imperium[Sigmarszeit][dni] {33}
+#var kalendarz_miesiace_imperium[Sommerzeit][dni] {33}
+#var kalendarz_miesiace_imperium[Sonnstill][dni] {1}
+#var kalendarz_miesiace_imperium[Vorgeheim][dni] {33}
+#var kalendarz_miesiace_imperium[Geheimnisnacht][dni] {1}
+#var kalendarz_miesiace_imperium[Nachgeheim][dni] {32}
+#var kalendarz_miesiace_imperium[Erntezeit][dni] {33}
+#var kalendarz_miesiace_imperium[Mittherbst][dni] {1}
+#var kalendarz_miesiace_imperium[Brauzeit][dni] {33}
+#var kalendarz_miesiace_imperium[Kaltezeit][dni] {33}
+#var kalendarz_miesiace_imperium[Ulrichszeit][dni] {33}
+#var kalendarz_miesiace_imperium[Monstille][dni] {1}
+#var kalendarz_miesiace_imperium[Vorhexen][dni] {33}
 
 #var kalendarz_miesiace_ishtar[Yule][wroku] {0};
 #var kalendarz_miesiace_ishtar[Imbaelk][wroku] {45}
@@ -97,6 +170,26 @@
 #var kalendarz_miesiace_ishtar[Lammas][wroku] {225}
 #var kalendarz_miesiace_ishtar[Velen][wroku] {270}
 #var kalendarz_miesiace_ishtar[Saovine][wroku] {305}
+
+#var kalendarz_miesiace_imperium[Hexentag][wroku] {0};
+#var kalendarz_miesiace_imperium[Nachhexen][wroku] {1}
+#var kalendarz_miesiace_imperium[Jahrdrung][wroku] {34}
+#var kalendarz_miesiace_imperium[Mitterfruhl][wroku] {66}
+#var kalendarz_miesiace_imperium[Pflugzeit][wroku] {67}
+#var kalendarz_miesiace_imperium[Sigmarszeit][wroku] {100}
+#var kalendarz_miesiace_imperium[Sommerzeit][wroku] {133}
+#var kalendarz_miesiace_imperium[Sonnstill][wroku] {166}
+#var kalendarz_miesiace_imperium[Vorgeheim][wroku] {167}
+#var kalendarz_miesiace_imperium[Geheimnisnacht][wroku] {200}
+#var kalendarz_miesiace_imperium[Nachgeheim][wroku] {201}
+#var kalendarz_miesiace_imperium[Erntezeit][wroku] {233}
+#var kalendarz_miesiace_imperium[Mittherbst][wroku] {266}
+#var kalendarz_miesiace_imperium[Brauzeit][wroku] {267}
+#var kalendarz_miesiace_imperium[Kaltezeit][wroku] {300}
+#var kalendarz_miesiace_imperium[Ulrichszeit][wroku] {333}
+#var kalendarz_miesiace_imperium[Monstille][wroku] {366}
+#var kalendarz_miesiace_imperium[Vorhexen][wroku] {367}
+
 
 #var kalendarz_poradnia[rano] {0};
 #var kalendarz_poradnia[nad ranem] {0};
@@ -229,8 +322,6 @@
     } {120};
     klepsydra_render;
 } {1};
-
-#var czas_prompt {--|--|--|X};
 
 #alias {klepsydra_render}
 {

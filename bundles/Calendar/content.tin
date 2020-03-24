@@ -28,7 +28,16 @@
 			#var {ROOM_TIME[$s]} {$roomtime[$s]};
 		}
 	};
+
+	#switch {"$ROOM_TIME[season]"} {
+		#case {"0"} {#var poraroku_kolor {<128>}};
+		#case {"1"} {#var poraroku_kolor {<118>}};
+		#case {"2"} {#var poraroku_kolor {<138>}};
+		#case {"3"} {#var poraroku_kolor {<178>}};
+	};
 }
+
+#var czas_godzina {--};
 
 #event {VARIABLE UPDATED czas_godzina} {
 	#format czas_godzina_prmp {%+2s} {$czas_godzina};
@@ -276,7 +285,6 @@
 
 #var bgtop {};
 #var bgbot {};
-#var czas_godzina {--};
 #var czas_godzina_prmp {};
 
 #var toplefty {};

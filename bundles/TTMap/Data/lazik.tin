@@ -10,6 +10,7 @@
 #alias {/lc} {
     #var lockroom 0;
     #map find 0;
+    #var pathinprogress 0;
 } {1};
 
 #alias {/idz} {

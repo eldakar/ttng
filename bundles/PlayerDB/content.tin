@@ -115,7 +115,7 @@
 	#line substitute {variables} {
 		#script {ktotolist} {$mysqlcommand"select ImieM, OpisM, Gildia from bazapostaci where ImieM = '$imiewielblad';" 2>/dev/null}
 	};	
-	SplitWingMap_Popup $ktotolist[1]\n$ktotolist[2];
-
+	#line ignore #sh {<ccc>PlayerDB <128>><088> $ktotolist[1]};
+	#line ignore #sh {<ccc>PlayerDB <128>><088> $ktotolist[2]};
 } {1};
 

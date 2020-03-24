@@ -161,11 +161,23 @@
 	   #var rightdrag 1
     };
     #if {$curright < $right} {
-        #if {$curbott > $top} {
+        #if {$curbott > $top && $o_x > 7} {
             #var mapcenter 1;
+            #if {$o_x < 11} {
+                #var mapbuttons 1;
+            };
         };
     };
-    #nop sh {curright = $curright | curbott = $curbott | right = $right | top = $top | top: $topdrag right: $rightdrag map: $mapcenter};
+
+    #if {$mapbuttons == 1} {
+    #nop czy jest tu lokacyjny button;
+        #map get roomarea roomAreaValue;
+        #regex {$roomAreaValue} {QB} {
+            SplitWingMap_LabelBind_Reverse $bind_run;
+            $bind_run;
+        };
+    };
+    #nop sh {curright = $curright | curbott = $curbott | right = $right | top = $top | top: $topdrag right: $rightdrag map: $mapcenter buttons $mapbuttons};
 }
 
 #event {RELEASED MOUSE BUTTON ONE}
@@ -173,6 +185,11 @@
     #var topdrag 0;
     #var rightdrag 0;
     #var mapcenter 0;
+    #var mapbuttons 0;
+    #regex {$roomAreaValue} {QB} {
+        SplitWingMap_LabelBind $bind_run;
+    };
+    #var roomAreaValue {};
 }
 
 #event {MOVED MOUSE BUTTON ONE}
@@ -212,5 +229,6 @@
 
 #event {MAP DOUBLE-CLICKED MOUSE BUTTON ONE} {
     #map center;
-    #map run {%0} {0.25}
+    #map run {%0} {0.25};
+    #var pathinprogress 1;
 };

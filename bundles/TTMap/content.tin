@@ -276,10 +276,13 @@
                 };
             };
         };
-        #switch {"$voom"} {
-            #case {"14133"} {SplitWingMap_Board $outputstr;};
-            #case {"14130"} {SplitWingMap_Board $outputstr;};
-            #default {SplitWingMap_Journal $outputstr;};
+        #switch {"$roonsize"} {
+            #case {"1"} {SplitWingMap_Journal_1 $outputstr;};
+            #case {"2"} {SplitWingMap_Journal_2 $outputstr;};
+            #case {"3"} {SplitWingMap_Journal_3 $outputstr;};
+            #case {"4"} {SplitWingMap_Journal_4 $outputstr;};
+            #case {"5"} {SplitWingMap_Journal_5 $outputstr;};
+            #default {SplitWingMap_Journal_5 $outputstr;};
         };
     };
 };
@@ -325,7 +328,6 @@
         #var widocznewyjscia {$ROOM_INFO[exits]};
         #var exitList {};
         #var vexits {};
-
         #var roomfound 0;
 
     #nop ##################################;
@@ -336,10 +338,14 @@
     #nop jesil jest jeden rezultat, przenies mape
     #nop ##################################;
 
-        #nop var k @_print_warn{Szukam pokoju <118><aff>$current_room_short_desc<088>};
-        #map list {} {} {$current_room_short_desc} {variable} {vexits};
+    #map list {} {} {$current_room_short_desc} {variable} {vexits};
  	#list vexitslist create {$vexits};
  	#list vexitslist {size} {listsize};
+
+#if {$findmedebug} {
+    #line ignore #sh {#debug <fac>findme:<088> szukam szorta:$current_room_short_desc - lista zawiera: $listsize pokojow!};
+    #nop $ROOM_INFO[exits];
+};    
         #if {$listsize == 2} {
             #var roomfound {1};
             #if {$vexitslist[1] != $rmvnum} {
@@ -414,6 +420,9 @@
     #if {$semifrozen_status == 1} {
         semifrozen_unset;   #nop wracam do zwyklego trybu;
         #undelay {PATH %*}; #nop zatrzymuje reszte komendy;
+    };
+    #if {$pathinprogress > 0} {
+        /lc;
     };
 }
 
