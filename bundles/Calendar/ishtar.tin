@@ -216,6 +216,24 @@
 #var kalendarz_miesiace_ishtar[Velen][pora] {Jesien};
 #var kalendarz_miesiace_ishtar[Saovine][pora] {Jesien};
 
+#var kalendarz_miesiace_imperium[Hexentag][pora] {Wiosna};
+#var kalendarz_miesiace_imperium[Nachhexen][pora] {Wiosna};
+#var kalendarz_miesiace_imperium[Jahrdrung][pora] {Wiosna};
+#var kalendarz_miesiace_imperium[Mitterfruhl][pora] {Wiosna};
+#var kalendarz_miesiace_imperium[Pflugzeit][pora] {Wiosna};
+#var kalendarz_miesiace_imperium[Sigmarszeit][pora] {Lato};
+#var kalendarz_miesiace_imperium[Sommerzeit][pora] {Lato};
+#var kalendarz_miesiace_imperium[Sonnstill][pora] {Lato};
+#var kalendarz_miesiace_imperium[Vorgeheim][pora] {Lato};
+#var kalendarz_miesiace_imperium[Geheimnisnacht][pora] {Jesien};
+#var kalendarz_miesiace_imperium[Nachgeheim][pora] {Jesien};
+#var kalendarz_miesiace_imperium[Erntezeit][pora] {Jesien};
+#var kalendarz_miesiace_imperium[Mittherbst][pora] {Jesien};
+#var kalendarz_miesiace_imperium[Brauzeit][pora] {Jesien};
+#var kalendarz_miesiace_imperium[Kaltezeit][pora] {Zima};
+#var kalendarz_miesiace_imperium[Ulrichszeit][pora] {Zima};
+#var kalendarz_miesiace_imperium[Monstille][pora] {Zima};
+#var kalendarz_miesiace_imperium[Vorhexen][pora] {Zima};
 
 
 
@@ -225,6 +243,200 @@
 #nop Jest w przyblizeniu szosta nad ranem w Baeckertag, dziesiaty dzien miesiaca Kaltezeit wedlug Kalendarza Imperialnego.;
 #nop Jest w przyblizeniu siodma nad ranem, po wschodzie slonca w Markttag, osmy dzien miesiaca Ulrichszeit wedlug Kalendarza Imperialnego.;
 
+#action {Jest w przyblizeniu %1 {w poludnie|rano|nad ranem|wieczorem|po poludniu|w nocy|poznym wieczorem} w %w, %4 dzien miesiaca %5 wedlug Kalendarza Imperialnego.}
+{
+    #var kalendarz_godzina_tekst %1;
+    #var kalendarz_dzien_tekst %4;
+    #var kalendarz_miesiac %5;
+    #var kalendarz_region Imperium;
+
+    #if {"%2" == "w nocy"} {
+        #if {$kalendarz_godziny[%1] > 6} {
+            #math czas_godzina {$kalendarz_godziny[%1] + 12};
+        } {
+            #math czas_godzina {$kalendarz_godziny[%1] + $kalendarz_poradnia[%2]};
+        }
+    } {
+        #math czas_godzina {$kalendarz_godziny[%1] + $kalendarz_poradnia[%2]};
+    };
+
+    #switch {"%3"} {
+        #case {"pierwszy"} {#var dzie 1};
+        #case {"drugi"} {#var dzie 2};
+        #case {"trzeci"} {#var dzie 3};
+        #case {"czwarty"} {#var dzie 4};
+        #case {"piaty"} {#var dzie 5};
+        #case {"szosty"} {#var dzie 6};
+        #case {"siodmy"} {#var dzie 7};
+        #case {"osmy"} {#var dzie 8};
+        #case {"dziewiaty"} {#var dzie 9};
+        #case {"dziesiaty"} {#var dzie 10};
+        #case {"jedenasty"} {#var dzie 11};
+        #case {"dwunasty"} {#var dzie 12};
+        #case {"trzynasty"} {#var dzie 13};
+        #case {"czternesty"} {#var dzie 14};
+        #case {"pietnasty"} {#var dzie 15};
+        #case {"szesnasty"} {#var dzie 16};
+        #case {"siedemnasty"} {#var dzie 17};
+        #case {"osiemnasty"} {#var dzie 18};
+        #case {"dziewietnasty"} {#var dzie 19};
+        #case {"dwudziesty"} {#var dzie 20};
+        #case {"dwudziesty pierwszy"} {#var dzie 21};
+        #case {"dwudziesty drugi"} {#var dzie 22};
+        #case {"dwudziesty trzeci"} {#var dzie 23};
+        #case {"dwudziesty czwarty"} {#var dzie 24};
+        #case {"dwudziesty piaty"} {#var dzie 25};
+        #case {"dwudziesty szosty"} {#var dzie 26};
+        #case {"dwudziesty siodmy"} {#var dzie 27};
+        #case {"dwudziesty osmy"} {#var dzie 28};
+        #case {"dwudziesty dziewiaty"} {#var dzie 29};
+        #case {"trzydziesty"} {#var dzie 30};
+        #case {"trzydziesty pierwszy"} {#var dzie 31};
+        #case {"trzydziesty drugi"} {#var dzie 32};
+        #case {"trzydziesty trzeci"} {#var dzie 33};
+        #case {"trzydziesty czwarty"} {#var dzie 34};
+        #case {"trzydziesty piaty"} {#var dzie 35};
+        #case {"trzydziesty szosty"} {#var dzie 36};
+        #case {"trzydziesty siodmy"} {#var dzie 37};
+        #case {"trzydziesty osmy"} {#var dzie 38};
+        #case {"trzydziesty dziewiaty"} {#var dzie 39};
+        #case {"czterdziesty"} {#var dzie 40};
+        #case {"czterdziesty pierwszy"} {#var dzie 41};
+        #case {"czterdziesty drugi"} {#var dzie 42};
+        #case {"czterdziesty trzeci"} {#var dzie 43};
+        #case {"czterdziesty czwarty"} {#var dzie 44};
+        #case {"czterdziesty piaty"} {#var dzie 45};
+        #case {"czterdziesty szosty"} {#var dzie 46};
+        #case {"czterdziesty siodmy"} {#var dzie 47};
+        #case {"czterdziesty osmy"} {#var dzie 48};
+        #case {"czterdziesty dziewiaty"} {#var dzie 49};
+    };
+
+    #math dzien_miesiaca {$dzie};
+    #math dzien_roku {$kalendarz_dni[%3] + $kalendarz_miesiace_imperium[%5][wroku]};
+    #var dniwmiesiacu {$kalendarz_miesiace_imperium[%5][dni]};
+    #var numermiesiaca {$kalendarz_miesiace_imperium[%5][index]};
+    #var wschod_slonca $kalendarz_poraroku[$kalendarz_miesiace_imperium[$kalendarz_miesiace_imperium[$numermiesiaca][nazwa]][pora]][wschod];
+    #var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace_imperium[$kalendarz_miesiace_imperium[$numermiesiaca][nazwa]][pora]][zachod];
+    #ticker {klepsydra} {
+        #math {czas_godzina} {$czas_godzina + 1};
+        #if {$czas_godzina > 24} {
+            #var czas_godzina 1;
+            #math {dzien_miesiaca} {$dzien_miesiaca + 1};
+            #if {$dzien_miesiaca > $dniwmiesiacu} {
+                #var dzien_miesiaca 1;
+                #if {$numermiesiaca < 18} {
+                    #math numermiesiaca {$numermiesiaca + 1};
+                    #var dniwmiesiacu $kalendarz_miesiace_imperium[$kalendarz_miesiace_imperium[$numermiesiaca][nazwa]][dni];
+                } {
+                    #math numermiesiaca 1;
+                    #var dniwmiesiacu 1;
+                };
+            };
+        };
+        #var wschod_slonca $kalendarz_poraroku[$kalendarz_miesiace_imperium[$kalendarz_miesiace_imperium[$numermiesiaca][nazwa]][pora]][wschod];
+        #var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace_imperium[$kalendarz_miesiace_imperium[$numermiesiaca][nazwa]][pora]][zachod];
+    } {120};
+    klepsydra_render;
+}
+
+
+#action {Jest w przyblizeniu %1 {w poludnie|rano|nad ranem|wieczorem|po poludniu|w nocy|poznym wieczorem}, %* w %w, %5 dzien miesiaca %6 wedlug Kalendarza Imperialnego.}
+{
+    #var kalendarz_godzina_tekst %1;
+    #var kalendarz_dzien_tekst %3;
+    #var kalendarz_miesiac %4;
+    #var kalendarz_region Imperium;
+
+    #if {"%2" == "w nocy"} {
+        #if {$kalendarz_godziny[%1] > 6} {
+            #math czas_godzina {$kalendarz_godziny[%1] + 12};
+        } {
+            #math czas_godzina {$kalendarz_godziny[%1] + $kalendarz_poradnia[%2]};
+        }
+    } {
+        #math czas_godzina {$kalendarz_godziny[%1] + $kalendarz_poradnia[%2]};
+    };
+
+    #switch {"%3"} {
+        #case {"pierwszy"} {#var dzie 1};
+        #case {"drugi"} {#var dzie 2};
+        #case {"trzeci"} {#var dzie 3};
+        #case {"czwarty"} {#var dzie 4};
+        #case {"piaty"} {#var dzie 5};
+        #case {"szosty"} {#var dzie 6};
+        #case {"siodmy"} {#var dzie 7};
+        #case {"osmy"} {#var dzie 8};
+        #case {"dziewiaty"} {#var dzie 9};
+        #case {"dziesiaty"} {#var dzie 10};
+        #case {"jedenasty"} {#var dzie 11};
+        #case {"dwunasty"} {#var dzie 12};
+        #case {"trzynasty"} {#var dzie 13};
+        #case {"czternesty"} {#var dzie 14};
+        #case {"pietnasty"} {#var dzie 15};
+        #case {"szesnasty"} {#var dzie 16};
+        #case {"siedemnasty"} {#var dzie 17};
+        #case {"osiemnasty"} {#var dzie 18};
+        #case {"dziewietnasty"} {#var dzie 19};
+        #case {"dwudziesty"} {#var dzie 20};
+        #case {"dwudziesty pierwszy"} {#var dzie 21};
+        #case {"dwudziesty drugi"} {#var dzie 22};
+        #case {"dwudziesty trzeci"} {#var dzie 23};
+        #case {"dwudziesty czwarty"} {#var dzie 24};
+        #case {"dwudziesty piaty"} {#var dzie 25};
+        #case {"dwudziesty szosty"} {#var dzie 26};
+        #case {"dwudziesty siodmy"} {#var dzie 27};
+        #case {"dwudziesty osmy"} {#var dzie 28};
+        #case {"dwudziesty dziewiaty"} {#var dzie 29};
+        #case {"trzydziesty"} {#var dzie 30};
+        #case {"trzydziesty pierwszy"} {#var dzie 31};
+        #case {"trzydziesty drugi"} {#var dzie 32};
+        #case {"trzydziesty trzeci"} {#var dzie 33};
+        #case {"trzydziesty czwarty"} {#var dzie 34};
+        #case {"trzydziesty piaty"} {#var dzie 35};
+        #case {"trzydziesty szosty"} {#var dzie 36};
+        #case {"trzydziesty siodmy"} {#var dzie 37};
+        #case {"trzydziesty osmy"} {#var dzie 38};
+        #case {"trzydziesty dziewiaty"} {#var dzie 39};
+        #case {"czterdziesty"} {#var dzie 40};
+        #case {"czterdziesty pierwszy"} {#var dzie 41};
+        #case {"czterdziesty drugi"} {#var dzie 42};
+        #case {"czterdziesty trzeci"} {#var dzie 43};
+        #case {"czterdziesty czwarty"} {#var dzie 44};
+        #case {"czterdziesty piaty"} {#var dzie 45};
+        #case {"czterdziesty szosty"} {#var dzie 46};
+        #case {"czterdziesty siodmy"} {#var dzie 47};
+        #case {"czterdziesty osmy"} {#var dzie 48};
+        #case {"czterdziesty dziewiaty"} {#var dzie 49};
+    };
+
+    #math dzien_miesiaca {$dzie};
+    #math dzien_roku {$kalendarz_dni[%3] + $kalendarz_miesiace_imperium[%4][wroku]};
+    #var dniwmiesiacu {$kalendarz_miesiace_imperium[%4][dni]};
+    #var numermiesiaca {$kalendarz_miesiace_imperium[%4][index]};
+    #var wschod_slonca $kalendarz_poraroku[$kalendarz_miesiace_imperium[$kalendarz_miesiace_imperium[$numermiesiaca][nazwa]][pora]][wschod];
+    #var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace_imperium[$kalendarz_miesiace_imperium[$numermiesiaca][nazwa]][pora]][zachod];
+    #ticker {klepsydra} {
+        #math {czas_godzina} {$czas_godzina + 1};
+        #if {$czas_godzina > 24} {
+            #var czas_godzina 1;
+            #math {dzien_miesiaca} {$dzien_miesiaca + 1};
+            #if {$dzien_miesiaca > $dniwmiesiacu} {
+                #var dzien_miesiaca 1;
+                #if {$numermiesiaca < 18} {
+                    #math numermiesiaca {$numermiesiaca + 1};
+                    #var dniwmiesiacu $kalendarz_miesiace_imperium[$kalendarz_miesiace_imperium[$numermiesiaca][nazwa]][dni];
+                } {
+                    #math numermiesiaca 1;
+                    #var dniwmiesiacu 1;
+                };
+            };
+        };
+        #var wschod_slonca $kalendarz_poraroku[$kalendarz_miesiace_imperium[$kalendarz_miesiace_imperium[$numermiesiaca][nazwa]][pora]][wschod];
+        #var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace_imperium[$kalendarz_miesiace_imperium[$numermiesiaca][nazwa]][pora]][zachod];
+    } {120};
+    klepsydra_render;
+}
 
 #action {Jest w przyblizeniu %1 {w poludnie|rano|nad ranem|wieczorem|po poludniu|w nocy|poznym wieczorem}, %3 dzien pory %4 wedlug rachuby czasu Starszego Ludu.}
 {
@@ -340,11 +552,18 @@
             ustaw_noc;
         };
     };
-    #if {"$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]" == "Wiosna"} {#var poraroku_kolor {<128>};};
-    #elseif {"$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]" == "Lato"} {#var poraroku_kolor {<118>};};
-    #elseif {"$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]" == "Jesien"} {#var poraroku_kolor {<138>};};
-    #elseif {"$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]" == "Zima"} {#var poraroku_kolor {<178>};};
 
+    #if {"$kalendarz_region" == "Ishtar"} {
+        #if {"$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]" == "Wiosna"} {#var poraroku_kolor {<128>};};
+        #elseif {"$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]" == "Lato"} {#var poraroku_kolor {<118>};};
+        #elseif {"$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]" == "Jesien"} {#var poraroku_kolor {<138>};};
+        #elseif {"$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]" == "Zima"} {#var poraroku_kolor {<178>};};
+    } {
+        #if {"$kalendarz_miesiace_imperium[$kalendarz_miesiace_imperium[$numermiesiaca][nazwa]][pora]" == "Wiosna"} {#var poraroku_kolor {<128>};};
+        #elseif {"$kalendarz_miesiace_imperium[$kalendarz_miesiace_imperium[$numermiesiaca][nazwa]][pora]" == "Lato"} {#var poraroku_kolor {<118>};};
+        #elseif {"$kalendarz_miesiace_imperium[$kalendarz_miesiace_imperium[$numermiesiaca][nazwa]][pora]" == "Jesien"} {#var poraroku_kolor {<138>};};
+        #elseif {"$kalendarz_miesiace_imperium[$kalendarz_miesiace_imperium[$numermiesiaca][nazwa]][pora]" == "Zima"} {#var poraroku_kolor {<178>};};
+    };
     #format czas_godzina_prmp {%+2s} {$czas_godzina};
     #format wschod_slonca_prmp {%+2s} {$wschod_slonca};
     #format zachod_slonca_prmp {%+2s} {$zachod_slonca};        
@@ -358,10 +577,13 @@
 }
 
 #alias {klepsydra_render_day} {
-    #line ignore #showme {<BBB><138>        Rachuba czasu Starszego Ludu         <088>};
     #line ignore #showme {$logo1 Pora Dnia    : $jasnosc_kolor$poradnia  };
     #line ignore #showme {$logo2 Miesiac      : $kalendarz_miesiac };
+#if {"$kalendarz_region" == "Ishtar"} {    
     #line ignore #showme {$logo3 Pora Roku    : $poraroku_kolor$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]};
+} {
+    #line ignore #showme {$logo3 Pora Roku    : $poraroku_kolor$kalendarz_miesiace_imperium[$kalendarz_miesiace_imperium[$numermiesiaca][nazwa]][pora]};
+};
     #line ignore #showme {$logo4 Dzien/W Roku : $dzien_miesiaca/$dzien_roku    };
     #line ignore #showme {$logo5 Godzina      : $jasnosc_kolor$czas_godzina_prmp:00     };
     #line ignore #showme {$logo6 Wschod       :  <138>$wschod_slonca:00  };
