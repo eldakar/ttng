@@ -12,6 +12,9 @@
 	#loop {1} {$screencols} {mee} {#var hline {$hline-}};
 	#math {meeee} {#screencols - $global_bundle_slots_values[prompt][right]}
 	#loop {1} {$meeee} {mee} {#var hline2 {$hline2-}};
+	#screen get SPLIT_BOT_BAR top;
+    #screen get SPLIT_RIGHT_BAR right;
+   	#screen get cols cols;
 };
 
 #event {SCREEN RESIZE} {

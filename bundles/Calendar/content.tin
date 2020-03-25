@@ -108,12 +108,14 @@
 		};
 	};
 
-	#sh {$bgtop   $clockrender[color][11]$clockrender[char][11]<088>$bgtop$clockrender[color][12]$clockrender[char][12]<088>$bgtop$clockrender[color][1]$clockrender[char][1]<088>$bgtop   } {2} {$calendar_left_border};
-	#sh {$bgtop $clockrender[color][10]$clockrender[char][10]<088>$bgtop$clockseasonpane$bgtop $clockrender[color][2]$clockrender[char][2]<088>$bgtop } {3} {$calendar_left_border};
-	#sh {$bgtop$clockrender[color][9]$clockrender[char][9]<088>$bgtop  $clockhourpane$bgtop  $clockrender[color][3]$clockrender[char][3]<088>$bgtop} {4} {$calendar_left_border};
-	#sh {$bgbot $clockrender[color][8]$clockrender[char][8]<088>$bgbot  ${clockdaypane}$bgbot$clockrender[color][4]$clockrender[char][4]<088>$bgbot <088>} {5} {$calendar_left_border};
-	#sh {$bgbot   $clockrender[color][7]$clockrender[char][7]<088>$bgbot$clockrender[color][6]$clockrender[char][6]<088>$bgbot$clockrender[color][5]$clockrender[char][5]<088>$bgbot   <088>} {6} {$calendar_left_border};
-
+	#screen get SPLIT_BOT_BAR top2;
+	#if {$top2 > 5} {
+		#sh {$bgtop   $clockrender[color][11]$clockrender[char][11]<088>$bgtop$clockrender[color][12]$clockrender[char][12]<088>$bgtop$clockrender[color][1]$clockrender[char][1]<088>$bgtop   } {2} {$calendar_left_border};
+		#sh {$bgtop $clockrender[color][10]$clockrender[char][10]<088>$bgtop$clockseasonpane$bgtop $clockrender[color][2]$clockrender[char][2]<088>$bgtop } {3} {$calendar_left_border};
+		#sh {$bgtop$clockrender[color][9]$clockrender[char][9]<088>$bgtop  $clockhourpane$bgtop  $clockrender[color][3]$clockrender[char][3]<088>$bgtop} {4} {$calendar_left_border};
+		#sh {$bgbot $clockrender[color][8]$clockrender[char][8]<088>$bgbot  ${clockdaypane}$bgbot$clockrender[color][4]$clockrender[char][4]<088>$bgbot <088>} {5} {$calendar_left_border};
+		#sh {$bgbot   $clockrender[color][7]$clockrender[char][7]<088>$bgbot$clockrender[color][6]$clockrender[char][6]<088>$bgbot$clockrender[color][5]$clockrender[char][5]<088>$bgbot   <088>} {6} {$calendar_left_border};
+	};
 };
 
 #var clocktranslate[24] 12;
@@ -307,4 +309,8 @@
 	#var topright[5] {%0};
 	#var toprighty {<088>$topright[1]\n$topright[2]\n$topright[3]\n$topright[4]\n$topright[5]};
 	#draw violet tubed box 1 $calendar_left_border+16 7 $screencols $toprighty;
+}
+
+#alias topleft_warning {
+	#draw huge red tile 1 1 7 $calendar_left_border-2 <178>%0;
 }

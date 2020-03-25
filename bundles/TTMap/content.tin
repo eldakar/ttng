@@ -236,6 +236,27 @@
 
 #event {MAP UPDATED VTMAP} {
     #nop SplitWingMap_LabelMap <128>$current_room_short_desc;
+    #nop SHOW BUTTONS;
+
+    #if {$right > 10} {
+        #sh {<G01><fca>/` `\\<088> } {$offsety+4} {$offsetx+1};
+        #sh {<G01><fca>,-,-,<088>} {$offsety+5} {$offsetx+1};
+        #sh {<G02><118> (>| <088>} {$offsety+6} {$offsetx+1};
+        #sh {<G02><118>   | <088>} {$offsety+7} {$offsetx+1};
+        #sh {<AAB><138> (~) <088>} {$offsety+8} {$offsetx+1};
+        #sh {<AAB><138>  #  <088>} {$offsety+9} {$offsetx+1};
+        #sh {<BAA><178>(x.x)<088>} {$offsety+10} {$offsetx+1};
+        #sh {<BAA><178> |=| <088>} {$offsety+11} {$offsetx+1};
+        #sh {<G03>  <128>\\  <088>} {$offsety+12} {$offsetx+1};
+        #sh {<G03>  <128>/  <088>} {$offsety+13} {$offsetx+1};
+        #sh {<G05>  <138>\\\\ <088>} {$offsety+14} {$offsetx+1};
+        #sh {<G05>  <138>// <088>} {$offsety+15} {$offsetx+1};
+        #sh {<G03> <118>\\\\\\ <088>} {$offsety+16} {$offsetx+1};
+        #sh {<G03> <118>/// <088>} {$offsety+17} {$offsetx+1};
+        #draw violet tubed box $offsety+3 $offsetx $offsety+18 $offsetx+6;
+    };
+
+    #nop SHOW BIND;
     #if {$bind_found > 0} {
         SplitWingMap_LabelBind $bind_run;
     };
