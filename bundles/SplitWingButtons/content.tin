@@ -1,5 +1,23 @@
 #alias SplitWingButtons_refresh {
-    #var global_bundle_slots_values[prompt][left] 8;
-    #draw black tubed box $global_bundle_slots_values[prompt][top]+1 1 $screenrows-$global_bundle_slots_values[prompt][bottom]-1 $global_bundle_slots_values[prompt][left];
-    #draw violet tubed box $global_bundle_slots_values[prompt][top]+1 1 $screenrows-$global_bundle_slots_values[prompt][bottom]-1 $global_bundle_slots_values[prompt][left]-1;
+    #var global_bundle_slots_values[prompt][left] 6;
+    #nop draw black tubed box $global_bundle_slots_values[prompt][top]+1 1 $screenrows-$global_bundle_slots_values[prompt][bottom]-1 $global_bundle_slots_values[prompt][left];
+    #nop draw violet tubed box $global_bundle_slots_values[prompt][top]+1 1 $screenrows-$global_bundle_slots_values[prompt][bottom]-1 $global_bundle_slots_values[prompt][left]-1;
+        #nop SHOW BUTTONS;
+
+    #if {$right > 10} {
+        #sh {<G01><fca>/` `\\<088>|} {$offsety} {1};
+        #sh {<G01><fca>,-,-,<088>} {$offsety+1} {1};
+        #sh {<G02><118> (>| <088>} {$offsety+2} {1};
+        #sh {<G02><118>   | <088>} {$offsety+3} {1};
+        #sh {<AAB><138> (~) <088>} {$offsety+4} {1};
+        #sh {<AAB><138>  #  <088>} {$offsety+5} {1};
+        #sh {<BAA><178>(x.x)<088>} {$offsety+6} {1};
+        #sh {<BAA><178> |=| <088>} {$offsety+7} {1};
+        #sh {<G03>  <128>\\  <088>} {$offsety+8} {1};
+        #sh {<G03>  <128>/  <088>} {$offsety+9} {1};
+        #sh {<G05>  <138>\\\\ <088>} {$offsety+10} {1};
+        #sh {<G05>  <138>// <088>} {$offsety+11} {1};
+        #sh {<G03> <118>\\\\\\ <088>} {$offsety+12} {1};
+        #sh {<G03> <118>/// <088>} {$offsety+13} {1};
+    };
 }

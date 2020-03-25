@@ -1,9 +1,13 @@
 #alias {render_calendar} {
 	#math calendar_left_border {($screencols / 2) - 7};
-	calendar_clock_reset;
-	calendar_draw_clock;
-	#draw violet tubed box 1 $calendar_left_border+16 7 $screencols $toprighty;
-	#draw red tubed box 1 1 7 $calendar_left_border-2 $toplefty;
+
+	#screen get SPLIT_BOT_BAR top2;
+	#if {$top2 > 5} {
+		calendar_clock_reset;
+		calendar_draw_clock;
+		#draw violet tubed box 1 $calendar_left_border+16 7 $screencols $toprighty;
+		#draw red tubed box 1 1 7 $calendar_left_border-2 $toplefty;
+	};
 };
 
 #alias {CalendarSize_DoNotEdit} {
@@ -42,8 +46,11 @@
 #event {VARIABLE UPDATED czas_godzina} {
 	#format czas_godzina_prmp {%+2s} {$czas_godzina};
     #var clockhourpane {<178>$czas_godzina_prmp:00<088>};
-	calendar_clock_reset;
-    calendar_render_hours;
+    #screen get SPLIT_BOT_BAR top2;
+	#if {$top2 > 5} {
+		calendar_clock_reset;
+		calendar_render_hours;
+	};
 }
 #alias {calendar_clock_reset} {
 	#var clockrender[char][12] {( )};

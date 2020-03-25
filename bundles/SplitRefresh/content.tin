@@ -20,5 +20,8 @@
 #event {SCREEN RESIZE} {
 	#screen get cols screencols;
 	#screen get rows screenrows;
+	#screen get SPLIT_BOT_BAR top;
+    #screen get SPLIT_RIGHT_BAR right;
+   	#screen get cols cols;
 	SplitRefreshRequestRefresh;
 }

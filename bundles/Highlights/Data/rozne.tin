@@ -10,3 +10,6 @@
 #high {Skelliganski drakkar Duch Hemdalla} {<BAC><178>};
 #high {Korsarski drakkar Demon} {<BAC><178>};
 #high {Korsarski snekkar Wloczega Morz} {<BAC><178>};
+
+#nop WOZNICA;
+#high {Woznica wola:} {<AAB><178>};

@@ -39,6 +39,7 @@
     #read bundles/KillStats/manifest.tin;
     #nop read bundles/Stones/manifest.tin;
     #read bundles/SplitWingMap/manifest.tin;
+#read bundles/SplitWingButtons/manifest.tin;
     #read bundles/SWQuickBind/manifest.tin;
     #read bundles/Highlights/manifest.tin;
     #read bundles/Drakkary/manifest.tin;

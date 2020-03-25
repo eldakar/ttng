@@ -34,13 +34,25 @@
 	zejdz ze statku;
 };
 
+#action {Woznica wola: %* - %*} {
+	#var woznicawola {%2};
+}
+
 #action {Powoli pojazd zaczyna tracic predkosc, by po chwili zatrzymac sie.}
 {
 		qb DYLIZANS_OUT;
+		#if {"$woznicawola" != ""} {
+			#line ignore #sh {<128>### <118> $woznicawola <088>};
+		};
+		#var woznicawola {};
 }
 #action {Monotonne kolysanie ustaje w koncu i woz zatrzymuje sie.}
 {
 		qb DYLIZANS_OUT;
+		#if {"$woznicawola" != ""} {
+			#line ignore #sh {<128>### <118> $woznicawola <088>};
+		};
+		#var woznicawola {};
 }
 #action {{.*} dylizans powoli zatrzymuje sie.}
 {
