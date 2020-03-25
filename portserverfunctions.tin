@@ -535,14 +535,6 @@
     #format {rmsym_len} {%L} {$rmsym};
     #if {"$rmcol" != ""} {
         #map set roomcolor $rmcol;
-        #map exit w color $rmcol;
-        #map exit e color $rmcol;
-        #map exit n color $rmcol;
-        #map exit sw color $rmcol;
-        #map exit se color $rmcol;
-        #map exit s color $rmcol;
-        #map exit ne color $rmcol;
-        #map exit nw color $rmcol;
     };
     #if {$rmsym_len > 0} {
         #map set roomsymbol $rmsym
