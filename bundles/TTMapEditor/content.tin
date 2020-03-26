@@ -682,7 +682,7 @@
         #case {"magma"}       {#var rmcol <018>;#var rmsym {}};
                     #case {"hellhall"}      {#var rmcol <218>;#var rmsym <088>. <218>.<088>};
                     #case {"hellinside"}        {#var rmcol <218>;#var rmsym <218>[ ]<088>};
-                    #case {"wzgorze"}         {#var rmcol <228>;#var rmsym <228>. ^<088>};
+        #case {"wzgorze"}         {#var rmcol <228>;#var rmsym {}};
                     #case {"hut"}           {#var rmcol <238>;#var rmsym <238>[ ]<088>};
                     #case {"ice"}           {#var rmcol <178>;#var rmsym <178>~ ~<088>};
                     #case {"icehills"}      {#var rmcol <178>;#var rmsym <178>^ ~<088>};
