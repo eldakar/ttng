@@ -854,6 +854,8 @@
 #ALIAS {fixy}
 {
      #map get roomcolor rc;
+#if {"$rc" != ""} {
      #line substitute variables {#map exit w color $rc;#map exit e color $rc;#map exit n color $rc;#map exit sw color $rc;#map exit se color $rc;#map exit s color $rc;#map exit ne color $rc;#map exit nw color $rc;#map set roomsymbol {}}
+};
 }
 
