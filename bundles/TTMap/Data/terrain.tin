@@ -1,7 +1,7 @@
-#map ter las <028>𐃉<088> VAST;
-#map ter las_iglasty <028>AA<088> DOUBLE VAST;
-#map ter las_bukowy <028>Ti<088> DOUBLE VAST;
-#map ter las_sosnowy <028>TT<088> DOUBLE VAST;
+#map ter las <aba>t<088> VAST;
+#map ter lasiglasty <aba>AA<088> DOUBLE VAST;
+#map ter lasbukowy <aca>Ti<088> DOUBLE VAST;
+#map ter lassosnowy <aca>TT<088> DOUBLE VAST;
 #map ter ogrod <028>,<038>.<088> DOUBLE SPARSE;
 #map ter laka <028>.<038>*<088> DOUBLE VAST;
 #map ter pole <038>i<028>.<088> DOUBLE VAST;
@@ -29,7 +29,7 @@
 #map ter wioska <cca>*<ada>,<088> DOUBLE VAST FADEIN;
 #map ter sciezka <018>.<088> NARROW;
 #map ter trakt <g08>.<088> DENSE NARROW;
-#map ter gory <fca>A<088>;
+#map ter gory <cba>A<088>;
 #map ter wzgorze <118><fca>/\<088> DOUBLE NARROW;
 #map ter skaly <ccc>Oo<088> DOUBLE DENSE NARROW;
 #map ter lawa <018>~<088>;
