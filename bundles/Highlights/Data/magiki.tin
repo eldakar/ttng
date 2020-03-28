@@ -64,6 +64,9 @@
 #sub {kruczoczarn%w mistern%w mie%w} {<118><caf>%0 <088>(<028>+hp<088>)};
 
 #sub {gorejac%w dlug%w talwar%w} {<118><caf>%0 <088>(<018>ogien<088>)};
+#sub {niezwyk%w koscian%w topor%w} {<118><caf>%0 <088>(<018>wpraw kamien<088>)};
+#sub {forem%w iskrzac%w mlot%w} {<118><caf>%0 <088>(<018>1h mlot<088>)};
+
 
 
 #high {lodow%w lsniac%w sztylet%w} {<118><caf>};
