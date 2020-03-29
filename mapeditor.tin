@@ -2,12 +2,10 @@
     #script mylogin {whoami};
     #var cport %0;
 
-    #if {$cport > 0} {
-        #port init brain ${cport}2;
+        #port init brain 7002;
         #delay {2} {
-            #port call {%1} {%2};
+            #port call {%3} {%4};
         };
-    };
     #read bundles/bundle_ops.tin;
 
     #read bundles/TTMap/manifest.tin;
@@ -332,6 +330,11 @@ TODO
     };
 } {1};
 
+#alias {/g} {
+        #line substitute variables {
+           #port send $brainId {CHAT general editor %0};
+        };
+} {1};
 
 #alias {/map link %w %d} {
     #if {$PONGED == 2} {

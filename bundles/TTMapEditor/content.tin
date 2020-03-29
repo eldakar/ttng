@@ -373,7 +373,7 @@
 #alias {/g} {
     #if {$PONGED > 0} {
         #line substitute variables {
-            #brain {#port send $brainId {CHAT general %0}};
+            #brain {#port send $brainId {CHAT general $AVATAR_NAME %0}};
         };
     } {show_ponged_error2};
 } {1};
