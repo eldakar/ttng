@@ -10,6 +10,7 @@
 #sub {ortoklaz{ |,}} {ortoklaz (<178>magia umyslu +20<088>)%1};
 #sub {fluoryt{ |,}} {fluoryt (<178>magia umyslu +10<088>)%1};
 #sub {oliwin{ |,}} {oliwin (<178>czysta magia +10<088>)%1};
+#sub {labrador{ |,}} {labrador (<178>czysta magia +10<088>)%1};
 
 #sub {lazuryt{ |,}} {lazuryt (<148>powietrze +10<088>)%1};
 #sub { azuryt{ |,}} { azuryt (<148>powietrze +10<088>)%1};
@@ -29,3 +30,4 @@
 #sub {kwarc{ |,}} {kwarc (<128>ziemia +10<088>)%1};
 #sub {monacyt{ |,}} {monacyt (<128>ziemia +10<088>)%1};
 #sub {turkus{ |,}} {turkus (<128>ziemia +10<088>)%1};
+#sub {gorski krysztal{ |,}} {gorski krysztal (<128>ziemia +10<088>)%1};
