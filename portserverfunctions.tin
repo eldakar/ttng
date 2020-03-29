@@ -3,6 +3,14 @@
 #map goto 1;
 #map at {1} {#map get roomdata MapStampValue};
 
+#var healthbars2[6] {<028>#######<088>};
+#var healthbars2[5] {<028>###### <088>};
+#var healthbars2[4] {<038>##### <088>5};
+#var healthbars2[3] {<038>#### <088>4/};
+#var healthbars2[2] {<018>### <088>3/7};
+#var healthbars2[1] {<018>##  <088>2/7};
+#var healthbars2[0] {<FAA><fff>#<088>   <088>1/7};
+
 #nop ACCEPT NEW CONNECTIONS;
 #action {<PORT> New connection: %* D%d.} {
 	#list userList add {%2};
@@ -18,14 +26,33 @@
     #map at {1} {#map get roomdata vrd};
     #line ignore #sh {<118> Sending checksum to <128>%2<088>};    
     #port send %2 CHECKSUM $vrd;
-    #line ignore #sh {<118> Sending Ident Details to <128>%2<088>};
+    #line ignore #sh {<118> Sending Ident Detail to <128>%2<088>};
     #port send %2 IDENTREQ %2;
 };
 
-#nop ;
-#action {<PORT> IDENT }
+#nop 1 - connection id;
+#nop 2 - avatar name;
+#nop 3 - status;
+#nop 4 - hp;
+#nop 4 - zmeczenie;
+#action {<PORT> IDENTDETAILS %d %w %w %d %d}
 {
+    #var userDetails[%1][name] {%2};
+    #var userDetails[%1][status] {%3};
+    #var userDetails[%1][hp] {%4};
+    #var userDetails[%1][zme] {%5};
 
+    #var userListTable {};
+    #foreach {*userList[]} {user} {
+        #var userSessId $userList[$user];
+        #switch {"$userDetails[$userSessId][hp]"} {
+            #case {"o"} {#var tmpuserstatus {   };}
+            #case {"a"} {#var tmpuserstatus {<138>afk<088>};};
+            #case {"b"} {#var tmpuserstatus {<118>afk<088>};};
+        };
+        #var userListTable {$userListTable$tmpuserstatus [$healthbars2{$userDetails[$userSessId][hp]}] $userDetails[$userSessId][name]\n};
+    };
+    broadcast USERTABLE $userListTable;
 }
 
 #action {<PORT> Closing connection to %* D%d.} {

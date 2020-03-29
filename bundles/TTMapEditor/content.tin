@@ -304,10 +304,12 @@
 
 #brain #action {<PORT> Connection made to %S.} {
     #rpg {
+        #var charStatus {o};
         #echo {%s} {<158>TTMapEditor: <118>Connected.};
     };
     #line substitute {variables} {
         #rpg #var brainId %1;
+        #rpg /sendident;
     };
 };
 
@@ -332,8 +334,8 @@
     };
 };
 
-#brain #action {<PORT> IDENTREQ %*} {
-    #line substitue variables {
+#brain #action {<PORT> IDENTREQ %d} {
+    #line substitute variables {
         #rpg #var chatIdent %1;
     };
 } {1};
@@ -381,7 +383,15 @@
         #line substitute variables {
             #brain {#port send $brainId {CHAT general $AVATAR_NAME %0}};
         };
-    } {show_ponged_error2};
+    } {show_ponged_error};
+} {1};
+
+#alias {/sendident} {
+    #if {$PONGED > 0} {
+        #line substitute variables {
+            #brain {#port send $brainId {IDENTDETAILS $chatIdent $AVATAR_NAME $charStatus $state[hp] $state[fatigue]}};
+        };
+    } {show_ponged_error};
 } {1};
 
 #alias {/ter} {
