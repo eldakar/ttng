@@ -16,7 +16,9 @@
 	};
 #nop wyslij checksum;   
     #map at {1} {#map get roomdata vrd};
+    #line ignore #sh {<118> Sending checksum to <128>%2<088>};    
     #port send %2 CHECKSUM $vrd;
+    #line ignore #sh {<118> Sending Ident Details to <128>%2<088>};
     #port send %2 IDENTREQ %2;
 };
 
