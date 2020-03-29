@@ -332,6 +332,10 @@
     };
 };
 
+#brain #action {<PORT> IDENTREQ %d} {
+    #var chatIdent %1;
+};
+
 #alias {show_ponged_error} {
     #echo {%s} {<158>TTMapEditor: <118>You are not connected!<088>};
 };

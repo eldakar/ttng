@@ -17,7 +17,14 @@
 #nop wyslij checksum;   
     #map at {1} {#map get roomdata vrd};
     #port send %2 CHECKSUM $vrd;
+    #port send %2 IDENTREQ %2;
 };
+
+#nop ;
+#action {<PORT> IDENT }
+{
+
+}
 
 #action {<PORT> Closing connection to %* D%d.} {
 	#list userList find %2 ulfv;
