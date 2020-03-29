@@ -327,7 +327,7 @@
 }
 
 #brain #action {<PORT> CHAT %w %*} {
-    topchat_add_static <128>%1 %2;
+    #rpg topchat_add_static <128>[%1] <168>$AVATAR_NAME<088> : <128>%2;
 };
 
 #alias {show_ponged_error} {
@@ -370,7 +370,9 @@
 
 #alias {/g} {
     #if {$PONGED > 0} {
+        #line substitute variables {
             #brain {#port send $brainId {CHAT general %0}};
+        };
     } {show_ponged_error2};
 } {1};
 

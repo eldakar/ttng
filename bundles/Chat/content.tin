@@ -17,11 +17,12 @@
 #var topchat {};
 #var topchaty {};
 #alias topchat_add_static {
+    #format {_p_c_stamp_} {%t} {%H:%M:%S};
     #loop {0} {49} {bcvc} {
         #math bcvppc {$bcvc + 1};
         #var topchat[$bcvc] {$topchat[$bcvppc]};
     };
-        #var topchat[50] {%0};
+        #var topchat[50] {$_p_c_stamp_ %0<088>};
 
     #var topchaty {};
     #loop {0} {50} {bcvc} {
