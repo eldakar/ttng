@@ -50,7 +50,7 @@
             #case {"a"} {#var tmpuserstatus {<138>afk<088>};};
             #case {"b"} {#var tmpuserstatus {<118>afk<088>};};
         };
-        #var userListTable {$userListTable $tmpuserstatus [$healthbars2[$userDetails[$userSessId][hp]]] $userDetails[$userSessId][name]\n};
+        #var userListTable {$userListTable $tmpuserstatus <088>[$healthbars2[$userDetails[$userSessId][hp]]] $userDetails[$userSessId][name]\n};
     };
     broadcast USERTABLE $userListTable;
 }
