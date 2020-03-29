@@ -326,9 +326,9 @@
     };
 }
 
-#brain #action {<PORT> CHAT %w %*} {
+#brain #action {<PORT> CHAT %w %w %*} {
     #line substitute variables {
-        #rpg topchat_add_static <128>[%1] <168>$AVATAR_NAME<088> : <128>%2;
+        #rpg topchat_add_static <128>[%1] <168>%2<088> : <128>%3;
     };
 };
 
