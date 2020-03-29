@@ -56,7 +56,8 @@
 	#elseif {"$ppochwa2" == "pochwa"} {
 		#if {"$pzawod" == "sc"} {powyciagnij bron z drugiej pochwy;gzdobadz jej};
 		podobadz broni z drugiej pochwy;
-	}
+	};
+	dobadz wszystkich broni;
 }
 #alias {obb} {
 	#nop ####################################
@@ -75,8 +76,7 @@
 		powsun bron do pierwszego temblaka;
 	};
 	#elseif {"$ppochwa" == "plecak"} {
-		opusc bron;
-		wl ja;
+		wl dobyta bron;
 	}
 	#nop ####################################
 	#nop DRUGA BRON;
@@ -93,9 +93,14 @@
 		powsun dobyta bron do drugiego temblaka;
 	};
 	#elseif {"$ppochwa2" == "pochwa"} {
-		#if {"$pzawod" == "sc"} {gzopusc dobta bron;powsun ja do drugiej pochwy};
+		#if {"$pzawod" == "sc"} {gzopusc dobyta bron;powsun ja do drugiej pochwy};
 		#else {powsun dobyta bron do drugiej pochwy};
-	};	
+	};
+	#elseif {"$ppochwa2" == "plecak"} {
+		#if {"$pzawod" == "sc"} {gzopusc dobyta bron;wl ja};
+		#else {wl dobyta bron};
+	};
+
 }
 
 

@@ -226,13 +226,32 @@
 
 #var qbvar {                                                                 };
 
+#var bbBGC {<G02>};
 #alias {BottomBarTinyFugue} {
+	calendar_clock_reset;
+	calendar_render_hours;
 	#var hspac {};
-	#math {spacelen} {$screencols - 108 - 23};
+	#math {spacelen} {$screencols - 108 - 20 - 15};
 	#loop {1} {$spacelen} {mee} {#var hspac {$hspac }};
 	#nop sh {$hline} {-5};
 
-	#line ignore {#sh {<088>[   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u] <088>]  K:[$TinyFugueBars[hp][$state[hp]]<088>] Z:[$TinyFugueBars[fatigue][$state[fatigue]]<088>] M:[$TinyFugueBars[mana][$state[mana]]<088>] Ukrycie: $hiddenlevel<088> Manewr: $manewrlevel<088> $hspac Forma : $state[form] Glod: $state[stuffed]} {-4};};
-	#line ignore {#sh {<088>[  <138>$rozk2[w]$rozk2[w] <088>o <138>$rozk2[e]$rozk2[e]  <088>]  B:[$blockselflevel<088>] W:[$warninglevel<088>] R:[                ] Plaszcz: off Rozkaz: rdy<088> $hspac Panika: $state[panic] Prag: $state[soaked]} {-3};};
-	#line ignore {#sh {<088>[  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d] <088>]  B:[$qbvar<088>] Dobycie: $weaponlevel<088> Alerts: ---<088> $hspac Ciezar: $state[encumbrance] Pija: $state[intox]  } {-2};};
+	#nop line ignore {#sh {<088>[   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u] <088>]  K:[$TinyFugueBars[hp][$state[hp]]<088>] Z:[$TinyFugueBars[fatigue][$state[fatigue]]<088>] M:[$TinyFugueBars[mana][$state[mana]]<088>] Ukrycie: $hiddenlevel<088> Manewr: $manewrlevel<088> $hspac Forma : $state[form] Glod: $state[stuffed]} {-4};};
+	#nop line ignore {#sh {<088>[  <138>$rozk2[w]$rozk2[w] <088>o <138>$rozk2[e]$rozk2[e]  <088>]  B:[$blockselflevel<088>] W:[$warninglevel<088>] R:[                ] Plaszcz: off Rozkaz: rdy<088> $hspac Panika: $state[panic] Prag: $state[soaked]} {-3};};
+	#nop line ignore {#sh {<088>[  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d] <088>]  B:[$qbvar<088>] Dobycie: $weaponlevel<088> Alerts: ---<088> $hspac Ciezar: $state[encumbrance] Pija: $state[intox]  } {-2};};
+
+	#nop draw tile $screenrows-3 1 $screenrows $screencols-1 <G02>;
+	#line ignore #sh {$bbBGC   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u]   <088>${bbBGC}K:[$TinyFugueBars[hp][$state[hp]]<088>${bbBGC}] Z:[$TinyFugueBars[fatigue][$state[fatigue]]<088>${bbBGC}] M:[$TinyFugueBars[mana][$state[mana]]<088>${bbBGC}] Ukrycie: $hiddenlevel<088>${bbBGC} Manewr: $manewrlevel<088>${bbBGC} $hspac Forma : $state[form] Glod: $state[stuffed]  <088>$bgtop$clockrender[color][10]$clockrender[char][10]<088>$bgtop$clockrender[color][11]$clockrender[char][11]<088>$bgtop$clockrender[color][12]$clockrender[char][12]<088>$bgtop$clockrender[color][1]$clockrender[char][1]<088>$bgbot$clockrender[color][2]$clockrender[char][2]<088>} {-4};
+	#line ignore #sh {$bbBGC  <138>$rozk2[w]$rozk2[w] o <138>$rozk2[e]$rozk2[e]    <088>${bbBGC}B:[$blockselflevel<088>${bbBGC}] W:[$warninglevel] R:[                ] Plaszcz: off Rozkaz: rdy $hspac Panika: $state[panic] Prag: $state[soaked]  <088>$bgtop$clockrender[color][9]$clockrender[char][9] $clockhourpane$bgbot   $clockrender[color][3]$clockrender[char][3]<088>} {-3};
+	#line ignore #sh {$bbBGC  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d]   <088>${bbBGC}B:[$qbvar] <088>${bbBGC}Dobycie: $weaponlevel<088>${bbBGC} Alerts: --- $hspac<088>${bbBGC} Ciezar: $state[encumbrance] Pija: $state[intox]  <088>$bgbot$clockrender[color][8]$clockrender[char][8]<088>$bgbot$clockrender[color][7]$clockrender[char][7]<088>$bgbot$clockrender[color][6]$clockrender[char][6]<088>$bgbot$clockrender[color][5]$clockrender[char][5]<088>$bgbot$clockrender[color][4]$clockrender[char][4]<088>$bgbot<088>} {-2};	
+
+	#nop math screencols2 {$screencols / 2 };
+
+	#nop draw tile $screenrows-3 1 $screenrows-1 $screencols <G02>$bottombuff<088>;
+
 };
+
+#alias zegartest {
+	#sh {$bgtop$clockrender[color][10]$clockrender[char][10]<088>$bgtop$clockrender[color][11]$clockrender[char][11]<088>$bgtop$clockrender[color][12]$clockrender[char][12]<088>$bgtop$clockrender[color][1]$clockrender[char][1]<088>$bgbot$clockrender[color][2]$clockrender[char][2]<088>};
+	#sh {$bgtop$clockrender[color][9]$clockrender[char][9] $clockhourpane$bgbot   $clockrender[color][3]$clockrender[char][3]<088>};
+	#sh {$bgbot$clockrender[color][8]$clockrender[char][8]<088>$bgbot$clockrender[color][7]$clockrender[char][7]<088>$bgbot$clockrender[color][6]$clockrender[char][6]<088>$bgbot$clockrender[color][5]$clockrender[char][5]<088>$bgbot$clockrender[color][4]$clockrender[char][4]<088>$bgbot<088>};
+}

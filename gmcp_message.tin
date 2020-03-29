@@ -9,7 +9,7 @@
 			#if {"$prozmowa" == "widoczna"} {
 				#sh {$GMCPMSGS[text]};
 			};
-			toprightpane_add $GMCPMSGS[text];
+			topchat_add_static $GMCPMSGS[text];
 		};
 		#case {"notification.mail"} {Highlights_post $GMCPMSGS[text]};
 		#case {"notification.knowledge"} {Highlights_knowledge $GMCPMSGS[text]};

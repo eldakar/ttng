@@ -294,7 +294,7 @@
                   #showme {<078>[%3] $tmpvalue2}
                };
             };
-            topleftpane_add <078>[%3] $tmpvalue2;
+            bottomright_add_static <078>[%3] $tmpvalue2;
          };
       };
       #case {"miss"} {
@@ -304,7 +304,7 @@
                   #showme {<078>[%3] $tmpvalue2}
                };
             };
-            topleftpane_add <078>[%3] $tmpvalue2;
+            bottomright_add_static <078>[%3] $tmpvalue2;
          };
       };
       #case {"parry"} {
@@ -314,7 +314,7 @@
                   #showme {<078>[%3] $tmpvalue2}
                };
             };
-            topleftpane_add <078>[%3] $tmpvalue2;
+            bottomright_add_static <078>[%3] $tmpvalue2;
          };
       };
       #case {"hit"} {
@@ -324,7 +324,7 @@
                   #showme {<178>[%4/6]<088> $tmpvalue2}
                };
             };
-            topleftpane_add <178>[%4/6]<088> $tmpvalue2;
+            bottomright_add_static <178>[%4/6]<088> $tmpvalue2;
          };
       };
       #case {"magic"} {
@@ -334,7 +334,7 @@
                   #showme {<138>[%3 %4/6]<088> $tmpvalue2}
                };
             };
-            topleftpane_add <138>[%3 %4/6]<088> $tmpvalue2;
+            bottomright_add_static <138>[%3 %4/6]<088> $tmpvalue2;
          };
       };
       #default {
@@ -343,7 +343,7 @@
                #showme {<118><fca>[%3 %4/6]<088> $tmpvalue2}
             };
          };
-         topleftpane_add <138>[%3 %4/6]<088> $tmpvalue2;
+         bottomright_add_static <138>[%3 %4/6]<088> $tmpvalue2;
       };
    };
 } {1};
@@ -536,7 +536,7 @@
       #if {"$rpggag" == "widoczna"} {
          #line ignore {#sh {<088>[misc] <088>$tmpvalue2}};
       };
-      topleftpane_add <088>[misc] <088>$tmpvalue2;
+      bottomright_add_static <088>[misc] <088>$tmpvalue2;
    };
 	#return 0;
 };

@@ -19,7 +19,7 @@
 #map ter szczelina <g08>#<088> DENSE NARROW;
 #map ter studnia_b <AAB><g08>.<088> DENSE NARROW;
 #map ter most <AAB><148>~<088> DENSE NARROW;
-#map ter swiatynia <BBC><078>+<088> DENSE NARROW;
+#map ter swiatynia <g07>+<088> DENSE NARROW;
 #map ter symbol <BAA><118>X<088> DENSE NARROW;
 #map ter oltarz <BAA><baa>.<088> DENSE NARROW;
 #map ter cmentarz <g08>+<088>;

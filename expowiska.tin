@@ -5,13 +5,26 @@
 #alias {expowisko} {
 	#sh {${c_arkatt}> Ustawiam expowisko na: <138>%1};
 	#line sub variables {#alias {_expo_} {%1}};
-}
+};
 #alias {expowiska_lista} {
 	#echo orki_orcal;
 	#echo orki_wsiowe;
 	#echo ryby_skellige;
 	#echo mekan;
 };
+
+#alias {pustkowia_chaosu} {
+	zabij trolla;
+	zabij zwierzoczleka;
+	_zabij_ przeciwnika;
+};
+
+#alias {snotlingi_nuln} {
+	zabij snotlinga;
+	zabij drugiego snotlinga;
+	_zabij_ przeciwnika;
+};
+
 #alias {orki_orcal} {
 	zabij goblina;
 	zabij drugiego orka;

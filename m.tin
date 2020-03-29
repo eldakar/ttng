@@ -15,6 +15,7 @@
     #read bundles/ConfigManager/manifest.tin;
     #read bundles/HelpManager/manifest.tin;
     #read bundles/SplitRefresh/manifest.tin;
+    #read bundles/Calendar/manifest.tin;
     #read bundles/BottomBarSimple/manifest.tin;    
     #read bundles/CharacterClass/manifest.tin;
     #read bundles/CombatMacros/manifest.tin;
@@ -39,7 +40,6 @@
     #read bundles/KillStats/manifest.tin;
     #nop read bundles/Stones/manifest.tin;
     #read bundles/SplitWingMap/manifest.tin;
-#read bundles/SplitWingButtons/manifest.tin;
     #read bundles/SWQuickBind/manifest.tin;
     #read bundles/Highlights/manifest.tin;
     #read bundles/Drakkary/manifest.tin;
@@ -49,8 +49,8 @@
     #read bundles/Macros/manifest.tin;
     #read bundles/CombatSubs/manifest.tin;
     #read bundles/Comparer/manifest.tin;
-
-#nop TEST;    #read bundles/Calendar/manifest.tin;
+    #read bundles/Chat/manifest.tin;
+    #nop read bundles/SplitWingButtons/manifest.tin;
 
     #var r @bundleops_loadglobals{};
 

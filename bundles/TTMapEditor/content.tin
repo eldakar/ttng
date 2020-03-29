@@ -140,7 +140,7 @@
 #brain #action {<PORT> COMMAND %d %*} {
     #line substitute {variables} {
         #rpg #map at {%1} {#map set roomsymbol {<138>E<088>}};
-        #rpg #map at {%1} {#map set roomarea {QB %2}};
+        #rpg #map at {%1} {#map set roomarea {%2}};
     };
 } {1};
 
@@ -325,6 +325,11 @@
         };
     };
 }
+
+#brain #action {<PORT> CHAT %w %*} {
+    topchat_add_static <128>%1 %2;
+};
+
 #alias {show_ponged_error} {
     #echo {%s} {<158>TTMapEditor: <118>You are not connected!<088>};
 };
@@ -360,6 +365,12 @@
         #line substitute {variables} {#brain {#port send $brainId {ROOMEXITS $voom $current_room_exits}}};
         #line substitute {variables} {#brain {#port send $brainId {ROOMSHORT $voom $current_room_short_desc}}};
         #line substitute {variables} {#brain {#port send $brainId {TERRAIN $voom $tmpterrain}}};
+    } {show_ponged_error2};
+} {1};
+
+#alias {/g} {
+    #if {$PONGED > 0} {
+            #brain {#port send $brainId {CHAT general %0}};
     } {show_ponged_error2};
 } {1};
 

@@ -25,10 +25,11 @@
 
 #alias {render_h2} {
     #screen get SPLIT_BOT_BAR sbb;
+    #var raidbartable {};
 #if {$sbb > 5} {
     #var a {%0};
     #math tmplinecnt {0 - $global_bundle_slots_values[prompt][bottom]};
-  	#loop {-6} {$tmplinecnt} {bubu} {#sh {                                                                                                       } {$bubu}};
+  	#nop loop {-6} {$tmplinecnt} {bubu} {#sh {                                                                                                       } {$bubu}};
   	#var r_curLineCnt {-6};
     #var expectedlines 0;
     #list team_offenders cle;
@@ -42,7 +43,10 @@
             #list team_offenders add {$duch[$avatarid][attack_num]};
         } {
             #if {$r_curLineCnt >=$tmplinecnt} {
-                #sh { $duch[$avatarid][bar][orc]<088>} {$r_curLineCnt} {1} {};
+
+                #nop sh { $duch[$avatarid][bar][orc]<088>} {$r_curLineCnt} {1} {};
+                #var raidbartable {$raidbartable\n $duch[$avatarid][bar][orc]<088>};
+
                 #math r_curLineCnt {$r_curLineCnt - 1};
                 #var duch[$avatarid][shown] {1};
             };
@@ -55,7 +59,10 @@
                         #list team_offenders add $duch[$team[$ti]][attack_num];
                     }   {
                         #if {$r_curLineCnt >= $tmplinecnt} {
-                            #sh { $duch[$team[$ti]][bar][orc]<088>} {$r_curLineCnt} {1} {};
+
+                            #nop sh { $duch[$team[$ti]][bar][orc]<088>} {$r_curLineCnt} {1} {};
+                            #var raidbartable {$raidbartable\n $duch[$team[$ti]][bar][orc]<088>};
+
                             #math r_curLineCnt {$r_curLineCnt - 1};
                             #var duch[$team[$ti]][shown] {1};
                         };
@@ -73,7 +80,10 @@
                     #if {$tmpnavigator == 1} {
                         #var tmpnavigator 0;
                         #if {$r_curLineCnt >=$tmplinecnt} {
-                            #sh { $duch[$ti][bar][orc]         ${c_stan_niski}*--><088>         $duch[$duch[$ti][attack_num]][bar][orc]<088>    *--> $duch[$duch[$duch[$ti][attack_num]][attack_num]][desc]} {$r_curLineCnt} {1} {};
+
+                            #nop sh { $duch[$ti][bar][orc]         ${c_stan_niski}*--><088>         $duch[$duch[$ti][attack_num]][bar][orc]<088>    *--> $duch[$duch[$duch[$ti][attack_num]][attack_num]][desc]} {$r_curLineCnt} {1} {};
+                            #var raidbartable {$raidbartable\n $duch[$ti][bar][orc]${c_stan_niski}  ><088> $duch[$duch[$ti][attack_num]][bar][orc]<088> <faa>><088> $duch[$duch[$duch[$ti][attack_num]][attack_num]][desc]};
+
                             #math r_curLineCnt {$r_curLineCnt - 1};
                             #var duch[$team_offenders[$to]][shown] {1};
                         };
@@ -81,7 +91,10 @@
                     }   {
                         #if {$r_curLineCnt >=$tmplinecnt} {
                             #math RaidBarCountUsedLines {$RaidBarCountUsedLines + 1};            
-                            #sh { $duch[$ti][bar][orc]        ${c_stan_niski}\\<088>} {$r_curLineCnt} {1} {};
+
+                            #nop sh { $duch[$ti][bar][orc]        ${c_stan_niski}\\<088>} {$r_curLineCnt} {1} {};
+                            #var raidbartable {$raidbartable\n $duch[$ti][bar][orc]${c_stan_niski}-'<088>};
+
                             #math r_curLineCnt {$r_curLineCnt - 1};
                         };
                         #math {expectedlines} {$expectedlines + 1};
@@ -95,7 +108,10 @@
     #foreach {*wrogi[]} {to} {
         #if {$duch[$wrogi[$to]][shown] < 1} {
             #if {$r_curLineCnt >=$tmplinecnt} {
-                #sh {                                                          $duch[$wrogi[$to]][bar][orc]<088>    *--> $duch[$duch[$wrogi[$to]][attack_num]][desc]} {$r_curLineCnt} {1} {};
+
+                #nop sh {                                                          $duch[$wrogi[$to]][bar][orc]<088>    *--> $duch[$duch[$wrogi[$to]][attack_num]][desc]} {$r_curLineCnt} {1} {};
+                #var raidbartable {$raidbartable\n                              $duch[$wrogi[$to]][bar][orc]<088> <118>><088> $duch[$duch[$wrogi[$to]][attack_num]][desc]};
+
                 #math r_curLineCnt {$r_curLineCnt - 1};
                 #var duch[$wrogi[$to]][shown] {1};
             };
@@ -110,7 +126,10 @@
             } {
             #nop sh {$duch[$wrogi[$wr]][bar][hug]} {$r_curLineCnt};
                 #if {$r_curLineCnt >=$tmplinecnt} {
-                    #sh { $duch[$wrogi[$wr]][bar][orc]<088>} {$r_curLineCnt} {$r_curLineCnt} {1} {};
+
+                    #nop sh { $duch[$wrogi[$wr]][bar][orc]<088>} {$r_curLineCnt} {$r_curLineCnt} {1} {};
+                    #var raidbartable {$raidbartable\n $duch[$wrogi[$wr]][bar][orc]<088>};
+
                     #math r_curLineCnt {$r_curLineCnt - 1};
                     #var duch[$wrogi[$wr]][shown] {1};
                 };
@@ -122,7 +141,10 @@
     #foreach {*duch[]} {wr} {
         #if {$duch[$wr][shown] < 1} {
             #if {$r_curLineCnt >=$tmplinecnt} {                
-                #sh { $duch[$wr][bar][orc]} {$r_curLineCnt} {1} {};
+
+                #nop sh { $duch[$wr][bar][orc]} {$r_curLineCnt} {1} {};
+                #var raidbartable {$raidbartable\n $duch[$wr][bar][orc]};
+
                 #math r_curLineCnt {$r_curLineCnt - 1};
                 #var duch[$wr][shown] {1};
             };
@@ -130,13 +152,74 @@
         };
     };
 
+    #regex {$raidbartable} {\\n%*} {
+            #var raidbartable {&1};
+    };
 
-    #draw violet tubed box $tmplinecnt-1 1 $screenrows-4 $screencols;
+    #math screencols2 {$screencols / 2 };
+    #draw violet tubed box $tmplinecnt-1 1 $screenrows-4 $screencols2 <088>$raidbartable;
+    #draw violet tubed box $tmplinecnt-1 $screencols2+1 $screenrows-4 $screencols $bottomrighty;
+    
     #nop sh {$hline} {$tmplinecnt - 1};
 
     #list duch size lds;
 };
 };
+
+#var BOTTOMRIGHT_COUNT 0;
+#var BOTTOMRIGHT_START 0;
+#var BOTTOMRIGHT_RESET 0;
+#var BOTTOMRIGHT_MAX 50;
+
+#alias bottomright_add {
+    #loop {$BOTTOMRIGHT_START} {$BOTTOMRIGHT_COUNT-2} {bcv} {
+#line debug        #var botright[$bcv] {$botright[$bcv + 1]};
+    };
+    #line debug    #var botright[$BOTTOMRIGHT_COUNT] {%0};
+    #line debug    #math BOTTOMRIGHT_COUNT {$BOTTOMRIGHT_COUNT + 1};
+
+    #var bottomrighty {};
+    #loop {$BOTTOMRIGHT_START} {$BOTTOMRIGHT_COUNT} {bcv} {
+        #var bottomrighty {$bottomrighty\n$botright[$bcv]};
+    };
+    #math screencols2 {$screencols / 2 };
+    #draw violet tubed box $tmplinecnt-1 $screencols2+1 $screenrows-4 $screencols <088>$bottomrighty;
+}
+
+
+#alias bottomright_add {
+    #loop {$BOTTOMRIGHT_START} {$BOTTOMRIGHT_COUNT-2} {bcv} {
+#line debug        #var botright[$bcv] {$botright[$bcv + 1]};
+    };
+    #line debug    #var botright[$BOTTOMRIGHT_COUNT] {%0};
+    #line debug    #math BOTTOMRIGHT_COUNT {$BOTTOMRIGHT_COUNT + 1};
+
+    #var bottomrighty {};
+    #loop {$BOTTOMRIGHT_START} {$BOTTOMRIGHT_COUNT} {bcv} {
+        #var bottomrighty {$bottomrighty\n$botright[$bcv]};
+    };
+    #math screencols2 {$screencols / 2 };
+    #draw violet tubed box $tmplinecnt-1 $screencols2+1 $screenrows-4 $screencols <088>$bottomrighty;
+}
+
+
+#var bottomrighty {};
+#alias bottomright_add_static {
+    #loop {0} {49} {bcv} {
+        #math bcvpp {$bcv + 1};
+        #var botright[$bcv] {$botright[$bcvpp]};
+    };
+        #var botright[50] {%0};
+
+    #var bottomrighty {};
+    #loop {0} {50} {bcv} {
+        #var bottomrighty {$bottomrighty\n$botright[$bcv]};
+    };
+    #math screencols2 {$screencols / 2 };
+    #draw violet tubed box $tmplinecnt-1 $screencols2+1 $screenrows-4 $screencols <088>$bottomrighty;
+}
+
+
 
 #con mouse on;
 #var topdrag 0
@@ -151,6 +234,11 @@
 
             #var {o_x} %0;
             #var {o_y} %1;
+
+    #if {$o_x == $global_bundle_slots_values[prompt][top]} {
+        #var chatdrag 1;
+    };
+
     #if {$curbott == $top}
     {
         #var topdrag 1
@@ -161,9 +249,9 @@
 	   #var rightdrag 1
     };
     #if {$curright < $right} {
-        #if {$curbott > $top && $o_x > 7} {
+        #if {$curbott > $top && $o_x > $global_bundle_slots_values[prompt][top]} {
             #var mapcenter 1;
-            #if {$o_x < 11} {
+            #if {$o_x < $global_bundle_slots_values[prompt][top] + 4} {
                 #var mapbuttons 1;
             };
         };
@@ -177,7 +265,7 @@
             $bind_run;
         };
     };
-    #nop sh {curright = $curright | curbott = $curbott | right = $right | top = $top | top: $topdrag right: $rightdrag map: $mapcenter buttons $mapbuttons};
+    #nop sh {curright = $curright | curbott = $curbott | right = $right | top = $top | topdrag: $topdrag rightdrag: $rightdrag map: $mapcenter buttons $mapbuttons | chatdrag: $chatdrag};
 }
 
 #event {RELEASED MOUSE BUTTON ONE}
@@ -186,6 +274,7 @@
     #var rightdrag 0;
     #var mapcenter 0;
     #var mapbuttons 0;
+    #var chatdrag 0;
     #regex {$roomAreaValue} {QB} {
         SplitWingMap_LabelBind $bind_run;
     };
@@ -200,6 +289,10 @@
             #math curbott {$screenrows - %0};
             /conf RaidBarDynamicTop $curbott;
         }
+    }
+    #if {$chatdrag} {
+        #math curbott {%0};
+        /conf chatsize $curbott;
     }
     #if {$rightdrag}
     {

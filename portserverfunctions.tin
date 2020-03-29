@@ -402,6 +402,11 @@
     };
 } {1};
 
+#action {<PORT> CHAT %w %*} {
+    broadcast CHAT %1 %2;
+};
+
+
 #alias {/symbol} {
     #var tmpterrain {};
     #var rmsym {};
