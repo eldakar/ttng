@@ -58,6 +58,18 @@
 #action {<PORT> Closing connection to %* D%d.} {
 	#list userList find %2 ulfv;
 	#list userList del $ulfv;
+
+    #var userListTable {};
+    #foreach {*userList[]} {user} {
+        #var userSessId $userList[$user];
+        #switch {"$userDetails[$userSessId][status]"} {
+            #case {"o"} {#var tmpuserstatus {   };}
+            #case {"a"} {#var tmpuserstatus {<138>afk<088>};};
+            #case {"b"} {#var tmpuserstatus {<118>afk<088>};};
+        };
+        #var userListTable {$userListTable $tmpuserstatus <088>[$healthbars2[$userDetails[$userSessId][hp]]] $userDetails[$userSessId][name] __};
+    };
+    broadcast USERTABLE $userListTable;    
 };
 
 #alias {broadcast} {
