@@ -10,12 +10,13 @@
     SplitRefreshRequestRefresh;
 }
 #alias chat_refresh {
-    #draw violet tubed box 1 1 $global_bundle_slots_values[prompt][top] $screencols <088>$topchaty;
-};
-
+    #draw violet tubed box 1 30 $global_bundle_slots_values[prompt][top] $screencols <088>$topchaty;
+    #draw violet tubed box 1 1 $global_bundle_slots_values[prompt][top] 29 <088>$CHATUSERTABLE;
+}
 
 #var topchat {};
 #var topchaty {};
+#var CHATUSERTABLE {};
 #alias topchat_add_static {
     #format {_p_c_stamp_} {%t} {%H:%M:%S};
     #loop {0} {49} {bcvc} {
@@ -28,5 +29,6 @@
     #loop {0} {50} {bcvc} {
         #var topchaty {$topchaty\n$topchat[$bcvc]};
     };
-    #draw violet tubed box 1 1 $global_bundle_slots_values[prompt][top] $screencols <088>$topchaty;
+    #draw violet tubed box 1 30 $global_bundle_slots_values[prompt][top] $screencols <088>$topchaty;
+    #draw violet tubed box 1 1 $global_bundle_slots_values[prompt][top] 29 <088>$CHATUSERTABLE;
 }

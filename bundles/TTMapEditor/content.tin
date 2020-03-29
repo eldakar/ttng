@@ -340,6 +340,15 @@
     };
 } {1};
 
+#brain #action {<PORT> USERTABLE %*} {
+    #line substitute variables {
+        #rpg #var CHATUSERTABLE %1;
+        #rpg chat_refresh;
+    };
+} {1};
+
+
+
 #alias {show_ponged_error} {
     #echo {%s} {<158>TTMapEditor: <118>You are not connected!<088>};
 };
