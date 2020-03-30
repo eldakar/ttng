@@ -41,7 +41,7 @@
 #high {kunsztown%w lekki%w pancerz} {<118><caf>};
 #high {kunsztown%w mithrylow%w topor%w bojow%w} {<118><caf>};
 #high {czarn%w zdobion%w helm%w} {<118><caf>};
-#high {krasnoludzk%w starozytn%w koron%w} {<118><caf>};
+#high {krasnoludzk%w starozytn%w koron%w} {<118><caf>%0 <088>(<fca>+3Cechy SERCE SMOKA! <018>-<048>man<088>)};
 
 #sub {masywn%w wyszczerbion%w tasak%w} {<118><caf>%0 <088>(<fca>meczy wroga <018>-<048>man<088>)};
 #sub {lekk%w lsniac%w bransolet%w} {<118><caf>%0 <088>(<028>+<fca>2 zreka<088>)};
