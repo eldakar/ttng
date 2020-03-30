@@ -69,6 +69,7 @@
 #sub {forem%w iskrzac%w mlot%w} {<118><caf>%0 <088>(<018>1h mlot<088>)};
 #sub {forem%w iskrzac%w mlot%w} {<118><caf>%0 <088>(<018>1h mlot<088>)};
 #sub {szkarlatn%w rogat%w tarcz%w} {<118><caf>%0 <088>(<018>Odpornosci:+niemagiczne,spaczen,czysta magia<088>)};
+#sub {obosieczn%w gwiezdn%w topo%w} {<118><caf>%0 <088>(<028>+GOBLINY<048>1,5Hand!<088>)};
 
 
 
