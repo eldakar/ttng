@@ -152,7 +152,72 @@
 #var twojpoziomText[12] {kto widzial i doswiadczyl wszystkiego}
 #var twojpoziomText[13] {osoba owiana legenda}
 
-#action {Jestes %1 i %2 ci brakuje, zebys mogl wyzej ocenic swa sile.\nJestes %3 i %4 ci brakuje, zebys mogl wyzej ocenic swa zrecznosc.\nJestes %5 i %6 ci brakuje, zebys mogl wyzej ocenic swa wytrzymalosc.\nJestes %7 i %8 ci brakuje, zebys mogl wyzej ocenic swoj intelekt.\nJestes %9 i %10 ci brakuje, zebys mogl wyzej ocenic swa odwage.\n\n} 
+
+#action {Twoje cechy} {
+	#var p_str_left 0;
+	#var p_dex_left 0;
+	#var p_sta_left 0;
+	#var p_int_left 0;
+	#var p_bra_left 0;
+	#var p_str 0;
+	#var p_dex 0;
+	#var p_sta 0;
+	#var p_int 0;
+	#var p_bra 0;
+
+	#var tmpOcena {$GMCPMSGS[text]};
+	#nop Sprawdzamy czy sa punkty karne;
+	#regex {$tmpOcena} {Twoje cechy sa oslabione po ostatniej smierci. By je odbudowac potrzebujesz zdobyc jeszcze %*.} {
+		#echo {+----------------------------------------------+};
+		#format {doOdrobienia} {%+31s} {&1};
+		#echo {| Do odrobienia <faa>$doOdrobienia<088>|};
+	};
+		#echo {+-----------------+--------------------+--+----+};
+	#regex {$tmpOcena} {Jestes %* i %* ci brakuje, zebys mogl wyzej ocenic swa sile} {
+		#var p_str @poziomsily{&1};
+		#var p_str_left @brakuje{&2};
+		#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Sila} {&1} {$p_str} {$p_str_left}; #echo $line;
+	};
+	#regex {$tmpOcena} {sile%*Jestes %* i %* ci brakuje, zebys mogl wyzej ocenic swa zrecznosc} {
+		#var p_dex @poziomzrecznosci{&2};
+		#var p_dex_left @brakuje{&3};
+		#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Zrecznosc} {&2} {$p_dex} {$p_dex_left}; #echo $line;
+	};
+	#regex {$tmpOcena} {zrecznosc%*Jestes %* i %* ci brakuje, zebys mogl wyzej ocenic swa wytrzymalosc} {
+		#var p_sta @poziomwytrzymalosci{&2};
+		#var p_sta_left @brakuje{&3};
+		#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Wytrzymalosc} {&2} {$p_sta} {$p_sta_left}; #echo $line;
+	};
+	#regex {$tmpOcena} {wytrzymalosc%*Jestes %* i %* ci brakuje, zebys mogl wyzej ocenic swoj intelekt} {
+		#var p_int @poziominteligencji{&2};
+		#var p_int_left @brakuje{&3};
+		#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Intelekt} {&2} {$p_int} {$p_int_left}; #echo $line;
+	};
+	#regex {$tmpOcena} {intelekt%*Jestes %* i %* ci brakuje, zebys mogl wyzej ocenic swa odwage} {
+		#var p_bra @poziomodwagi{&2};
+		#var p_bra_left @brakuje{&3};
+		#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Odwaga} {&2} {$p_bra} {$p_bra_left}; #echo $line;
+	};
+
+
+		#echo {+-----------------+--------------------+--+----+};
+
+		#var r @policz2{};
+		#var twojpoziom {};
+		#format {line} {| %-36s | %+5s |} {$twojpoziomText[$level]} {${c_stan_niski}$level.$cechyleft<088>};
+		#echo $line;
+		#echo {+--------------------------------------+-------+};
+
+	#line gag;
+};
+
+#unaction {Twoje cechy sa oslabione po ostatniej smierci. By je odbudowac potrzebujesz zdobyc jeszcze %w %*} {
+	#echo {<128>%1<088>};
+	#sh %2;
+	#line gag;
+} {1};
+
+#unaction {Jestes %1 i %2 ci brakuje, zebys mogl wyzej ocenic swa sile.\nJestes %3 i %4 ci brakuje, zebys mogl wyzej ocenic swa zrecznosc.\nJestes %5 i %6 ci brakuje, zebys mogl wyzej ocenic swa wytrzymalosc.\nJestes %7 i %8 ci brakuje, zebys mogl wyzej ocenic swoj intelekt.\nJestes %9 i %10 ci brakuje, zebys mogl wyzej ocenic swa odwage.\n\n} 
 {
 	#var p_str_left 0;
 	#var p_dex_left 0;
@@ -192,7 +257,9 @@
 	#line gag;
 }
 
-#action {Jestes %1 i %2 ci brakuje, zebys mogla wyzej ocenic swa sile.\nJestes %3 i %4 ci brakuje, zebys mogla wyzej ocenic swa zrecznosc.\nJestes %5 i %6 ci brakuje, zebys mogla wyzej ocenic swa wytrzymalosc.\nJestes %7 i %8 ci brakuje, zebys mogla wyzej ocenic swoj intelekt.\nJestes %9 i %10 ci brakuje, zebys mogla wyzej ocenic swa odwage.\n\n} 
+
+
+#unaction {Jestes %1 i %2 ci brakuje, zebys mogla wyzej ocenic swa sile.\nJestes %3 i %4 ci brakuje, zebys mogla wyzej ocenic swa zrecznosc.\nJestes %5 i %6 ci brakuje, zebys mogla wyzej ocenic swa wytrzymalosc.\nJestes %7 i %8 ci brakuje, zebys mogla wyzej ocenic swoj intelekt.\nJestes %9 i %10 ci brakuje, zebys mogla wyzej ocenic swa odwage.\n\n} 
 {
 	#var p_str_left 0;
 	#var p_dex_left 0;

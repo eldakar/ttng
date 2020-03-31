@@ -13,3 +13,12 @@
 
 #nop WOZNICA;
 #high {Woznica wola:} {<AAB><178>};
+
+#nop MUTACJE;
+#sub {Czarnozielony kamien naszyjnika rozblyskuje lekko, tworzac niemila sensacje mrowienia i zawrot glowy.} {<afa>[mutacja]<088> %0};
+#sub {Nie wiedziec czemu, swiat ciemnieje ci na chwile przed oczami.} {<afa>[mutacja]<088> %0};
+#sub {Na chwile robi ci sie ciemno przed oczami.} {<afa>[mutacja]<088> %0};
+#sub {Czujesz sie dziwnie slabo.} {<afa>[mutacja]<088> %0};
+#sub {Czujesz, jak twoje cialo gwaltownie sie rozgrzewa.} {<afa>[mutacja]<088> %0};
+#sub {Czujesz przenikliwe, potworne zimno.} {<afa>[mutacja]<088> %0};
+#sub {Nie wiedziec czemu, ogarnia cie poczucie nieskonczonej potegi.} {<afa>[mutacja]<088> %0};
