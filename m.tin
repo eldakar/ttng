@@ -74,9 +74,7 @@
 };
 
 #event {SESSION DISCONNECTED} {
-    #if {"%0" == "rpg"} {
-        #end;
-    };
+    #nop if {"%0" == "rpg"} {#end;};
 };
 
 #nop event {SEND OUTPUT} {#echo {<118>COMMAND : %0<088>}};
