@@ -136,7 +136,8 @@
 #action {%*{Podazasz|podazasz} za %1 na zewnatrz baraku.} {#map move wyjscie;#map move drzwi};
 #action {%*{Podazasz|podazasz} za %1 na polnoc uchylajac kraty do celi.} {#map move n;};
 #action {%*{Podazasz|podazasz} za %1 na poludnie uchylajac kraty do celi.} {#map move s;};
-#nop action {%*{Podazasz|podazasz} za %1 przez kraty do podziemnego korytarza.} {#map move s;};
+#action {%*{Podazasz|podazasz} za %1 na poludnie uchylajac kraty do celi.} {#map move s;};
+#action {%*{Podazasz|podazasz} za %1 schodami ku szczytowi szybu.} {#map move u;};
 
 #action {%*{Podazasz|podazasz} za %1 do wnetrza straznicy.} {#map move schody};
 #action {%*{Podazasz|podazasz} za %1 na zewnatrz straznicy.} {#map move schody};
