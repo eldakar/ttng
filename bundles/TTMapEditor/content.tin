@@ -169,14 +169,6 @@
     };
 };
 
-#brain #action {<PORT> NAME %d %*} {
-    #line substitute {variables} {
-        #rpg #map at {%1} {
-            #map set roomnote {%2};
-        };
-    };
-}
-
 #brain #action {<PORT> HIDE %d %w} {
     #line substitute {variables} {
         #rpg #map at {%1} {
@@ -328,27 +320,6 @@
     };
 }
 
-#brain #action {<PORT> CHAT %w %w %*} {
-    #line substitute variables {
-        #rpg topchat_add_static <128>[%1] <168>%2<088> : <128>%3;
-    };
-};
-
-#brain #action {<PORT> IDENTREQ %d} {
-    #line substitute variables {
-        #rpg #var chatIdent %1;
-    };
-} {1};
-
-#brain #action {<PORT> USERTABLE %*} {
-    #line substitute variables {
-        #rpg #var CHATUSERTABLE %1;
-        #rpg chat_refresh;
-    };
-} {1};
-
-
-
 #alias {show_ponged_error} {
     #echo {%s} {<158>TTMapEditor: <118>You are not connected!<088>};
 };
@@ -356,25 +327,6 @@
 #alias {show_ponged_error2} {
     #echo {%s} {<158>TTMapEditor: <138>Read-only mode: Please pull the latest map.<088>};
 };
-
-#alias {/r$} {
-    #if {$PONGED > 0} {
-        #map get roomvnum tmproomvnum;
-        #line substitute {variables} {#brain {#port send $brainId {COLOR $tmproomvnum R}}}; 
-    } {show_ponged_error};
-} {1};
-#alias {/y$} {
-    #if {$PONGED > 0} {
-        #map get roomvnum tmproomvnum;
-        #line substitute {variables} {#brain {#port send $brainId {COLOR $tmproomvnum Y}}};
-    } {show_ponged_error};
-} {1};
-
-#alias {/c$} {
-    #if {$PONGED > 0} {
-        #line substitute {variables} {#brain {#port send $brainId {CLEAR}}};
-    } {show_ponged_error};
-} {1};
 
 #alias {/disc$} {
     #if {$PONGED == 2} {
@@ -385,22 +337,6 @@
         #line substitute {variables} {#brain {#port send $brainId {ROOMSHORT $voom $current_room_short_desc}}};
         #line substitute {variables} {#brain {#port send $brainId {TERRAIN $voom $tmpterrain}}};
     } {show_ponged_error2};
-} {1};
-
-#alias {/g} {
-    #if {$PONGED > 0} {
-        #line substitute variables {
-            #brain {#port send $brainId {CHAT general $AVATAR_NAME %0}};
-        };
-    } {show_ponged_error};
-} {1};
-
-#alias {/sendident} {
-    #if {$PONGED > 0} {
-        #line substitute variables {
-            #brain {#port send $brainId {IDENTDETAILS $chatIdent $AVATAR_NAME $charStatus $state[hp] $state[fatigue]}};
-        };
-    } {show_ponged_error};
 } {1};
 
 #alias {/ter} {
@@ -591,10 +527,6 @@
     };
 
 } {1};
-
-#event {END OF PATH} {
-    #var pathinprogress 0;
-};
 
 #alias {/s %*} {
     #unvar checkpoints;

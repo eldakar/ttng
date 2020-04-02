@@ -150,11 +150,16 @@
 		#echo {| Do odrobienia <faa>$doOdrobienia<088>|};
 	};
 		#echo {+-----------------+--------------------+--+----+};
+	#regex {$tmpOcena} {Twoja sila osiagnela nadludzki poziom} {
+		#var p_str @poziomsily{45};
+		#var p_str_left @brakuje{0};
+		#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Sila} {&1} {$p_str} {$p_str_left}; #echo $line;
+	};
 	#regex {$tmpOcena} {Jestes %* i %* ci brakuje, zebys mogl wyzej ocenic swa sile} {
 		#var p_str @poziomsily{&1};
 		#var p_str_left @brakuje{&2};
 		#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Sila} {&1} {$p_str} {$p_str_left}; #echo $line;
-	};
+	};	
 	#regex {$tmpOcena} {sile%*Jestes %* i %* ci brakuje, zebys mogl wyzej ocenic swa zrecznosc} {
 		#var p_dex @poziomzrecznosci{&2};
 		#var p_dex_left @brakuje{&3};
@@ -165,6 +170,12 @@
 		#var p_sta_left @brakuje{&3};
 		#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Wytrzymalosc} {&2} {$p_sta} {$p_sta_left}; #echo $line;
 	};
+	#regex {$tmpOcena} {Twoja wytrzymalosc osiagnela nadludzki poziom} {
+		#var p_sta @poziomwytrzymalosci{45};
+		#var p_sta_left @brakuje{0};
+		#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Wytrzymalosc} {&2} {$p_sta} {$p_sta_left}; #echo $line;
+	};
+
 	#regex {$tmpOcena} {wytrzymalosc%*Jestes %* i %* ci brakuje, zebys mogl wyzej ocenic swoj intelekt} {
 		#var p_int @poziominteligencji{&2};
 		#var p_int_left @brakuje{&3};

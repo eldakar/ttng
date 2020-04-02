@@ -3,73 +3,19 @@
 #map goto 1;
 #map at {1} {#map get roomdata MapStampValue};
 
-#var healthbars2[6] {<028>#######<088>};
-#var healthbars2[5] {<028>###### <088>};
-#var healthbars2[4] {<038>##### <088>5};
-#var healthbars2[3] {<038>#### <088>4/};
-#var healthbars2[2] {<018>### <088>3/7};
-#var healthbars2[1] {<018>##  <088>2/7};
-#var healthbars2[0] {<FAA><fff>#<088>   <088>1/7};
-
 #nop ACCEPT NEW CONNECTIONS;
 #action {<PORT> New connection: %* D%d.} {
 	#list userList add {%2};
 	#var userDetails[%2][host] {%1};
-	serverinfo %2;
-
-#nop SEND DYNAMICS;
-	#delay {5} {
-    		refresh_dynamics;
-    		refresh_beacons;
-	};
 #nop wyslij checksum;   
     #map at {1} {#map get roomdata vrd};
     #line ignore #sh {<118> Sending checksum to <128>%2<088>};    
     #port send %2 CHECKSUM $vrd;
-    #line ignore #sh {<118> Sending Ident Detail to <128>%2<088>};
-    #port send %2 IDENTREQ %2;
 };
-
-#nop 1 - connection id;
-#nop 2 - avatar name;
-#nop 3 - status;
-#nop 4 - hp;
-#nop 4 - zmeczenie;
-#action {<PORT> IDENTDETAILS %d %w %w %d %d}
-{
-    #var userDetails[%1][name] {%2};
-    #var userDetails[%1][status] {%3};
-    #var userDetails[%1][hp] {%4};
-    #var userDetails[%1][zme] {%5};
-
-    #var userListTable {};
-    #foreach {*userList[]} {user} {
-        #var userSessId $userList[$user];
-        #switch {"$userDetails[$userSessId][status]"} {
-            #case {"o"} {#var tmpuserstatus {   };}
-            #case {"a"} {#var tmpuserstatus {<138>afk<088>};};
-            #case {"b"} {#var tmpuserstatus {<118>afk<088>};};
-        };
-        #var userListTable {$userListTable $tmpuserstatus <088>[$healthbars2[$userDetails[$userSessId][hp]]] $userDetails[$userSessId][name] __};
-    };
-    broadcast USERTABLE $userListTable;
-}
 
 #action {<PORT> Closing connection to %* D%d.} {
 	#list userList find %2 ulfv;
 	#list userList del $ulfv;
-
-    #var userListTable {};
-    #foreach {*userList[]} {user} {
-        #var userSessId $userList[$user];
-        #switch {"$userDetails[$userSessId][status]"} {
-            #case {"o"} {#var tmpuserstatus {   };}
-            #case {"a"} {#var tmpuserstatus {<138>afk<088>};};
-            #case {"b"} {#var tmpuserstatus {<118>afk<088>};};
-        };
-        #var userListTable {$userListTable $tmpuserstatus <088>[$healthbars2[$userDetails[$userSessId][hp]]] $userDetails[$userSessId][name] __};
-    };
-    broadcast USERTABLE $userListTable;    
 };
 
 #alias {broadcast} {
@@ -83,50 +29,12 @@
 #nop #######################################################;
 #nop #######################################################;
 
-
-#alias {serverinfo} {
-    #map at {1} {#map get roomdata MapStampValue};
-	#list userList size uls;
-	#port send %0 {INFO: Welcome to the TTMap server.};
-	#port send %0 {INFO: Number of active sessions: $uls.};
-	#port send %0 {INFO: Map stamp = $MapStampValue};
-};
-
-#alias refresh_dynamics {
-	#foreach {$drakkary[]} {drakkar} {
- 		broadcast LINKB $drakkary[$drakkar][foundat] $drakkary[$drakkar][linkto] $drakkary[$drakkar][id];
-    	broadcast MEXIT $drakkary[$drakkar][foundat] $drakkary[$drakkar][linkto] $drakkary[$drakkar][id] wejdz na drakkar;
-	};
-};
-#alias unload_dynamics {
-       #map at {$drakkary[demon][foundat]} {#map unlink $drakkary[demon][linkto] both};
-       #map at {$drakkary[perla][foundat]} {#map unlink $drakkary[perla][linkto] both};
-       #map at {$drakkary[krakken][foundat]} {#map unlink $drakkary[krakken][linkto] both};
-       #map at {$drakkary[zwiastun][foundat]} {#map unlink $drakkary[zwiastun][linkto] both};
-       #map at {$drakkary[wloczega][foundat]} {#map unlink $drakkary[wloczega][linkto] both};
-       
-       #map at {$drakkary[demon][foundat]} {#map unlink {wejdz na drakkar} both};
-       #map at {$drakkary[perla][foundat]} {#map unlink {wejdz na drakkar} both};
-       #map at {$drakkary[krakken][foundat]} {#map unlink {wejdz na drakkar} both};
-       #map at {$drakkary[zwiastun][foundat]} {#map unlink {wejdz na drakkar} both};
-       #map at {$drakkary[wloczega][foundat]} {#map unlink {wejdz na snekkar} both};
-};
-#alias load_dynamics {
-       #map at {$drakkary[demon][foundat]} {#map link $drakkary[demon][linkto] $drakkary[demon][id] both;};
-       #map at {$drakkary[perla][foundat]} {#map link $drakkary[perla][linkto] $drakkary[perla][id] both;};
-       #map at {$drakkary[krakken][foundat]} {#map link $drakkary[krakken][linkto] $drakkary[krakken][id] both;};
-       #map at {$drakkary[zwiastun][foundat]} {#map link $drakkary[zwiastun][linkto] $drakkary[zwiastun][id] both;};
-       #map at {$drakkary[wloczega][foundat]} {#map link $drakkary[wloczega][linkto] $drakkary[wloczega][id] both;};
-};
-
 #alias mapsave {
-	unload_dynamics;
 	#map at {1} {#map get roomdata vroomdata};
 	#math vroomdata {$vroomdata + 1};
 	#map at {1} {#map set roomdata $vroomdata};
-    	#map at {1} {#map get roomdata MapStampValue};
+    #map at {1} {#map get roomdata MapStampValue};
 	#map write bundles/TTMap/map.map;
-	load_dynamics;
 };
 
 #nop ###################################;
@@ -183,7 +91,6 @@
     mapsave;
 };
 
-#unaction {%*TER%*};
 #action {<PORT> TERRAIN %d %w} {
     #map goto %1;
     #map set roomterrain %2;
@@ -356,36 +263,6 @@
     mapsave;    
 } {1};
 
-#action {<PORT> COLOR %d %.} {
-    #nop UNCOLOR THE PREVIOUS ROOM IF SET;
-    #if {$beacon[%2][roomid] > 0} {
-        broadcast COLOR $beacon[%2][roomid] $beacon[%2][oldsym];
-    };
-    #map at {%1} {#map get roomcolor tmpsymbol};
-    #replace {tmpsymbol} {<} {-};
-    #replace {tmpsymbol} {>} {+};
-    #var beacon[%2][oldsym] {$tmpsymbol};
-    #var beacon[%2][roomid] {%1};
-    broadcast COLOR %1 $beacon[%2][symbol];
-};
-
-#action {<PORT> CLEAR} {
-    #foreach {$beacon[]} {bebe} {
-	  	#if {$beacon[$bebe][roomid] > 0} {
-       	 	broadcast COLOR $beacon[$bebe][roomid] $beacon[$bebe][oldsym];
-         	#var beacon[$bebe][roomid] {0};
-    	};    
-    };
-}
-
-#alias {refresh_beacons} {
-    #foreach {$beacon[]} {bebe} {
-  	#if {$beacon[$bebe][roomid] > 0} {
-       	 	broadcast COLOR $beacon[$bebe][roomid] $beacon[$bebe][symbol];
-    	};    
-    };
-}
-
 #nop ###################################;
 #nop new event, subscribers' mapevents.tin should be reloaded;
 #nop ###################################;
@@ -414,46 +291,6 @@
 	broadcast COMMAND %1 %2;
     mapsave;
 };
-
-#action {<PORT> DRAKKAR %d %w} {
-    #var tmpdrakkid {$drakkary[%2][id]};
-    #var tmpfoundat {$drakkary[%2][foundat]};
-    #var tmplinkto {$drakkary[%2][linkto]};
-
-    broadcast ZNALEZIONY $tmpdrakkid $tmpfoundat (%1) $tmplinkto;
-    #nop jesli dany drakar byl juz widziany;
-    #nop ale gdzie indziej;
-    #if {"$tmpfoundat" != "%1"} {
-        #if {"$tmpfoundat" != ""} {
-    	    #nop odepnij go od mapy;
-            #map at {$drakkary[%2][foundat]} {#map unlink $drakkary[%2][linkto] both};
-            broadcast UNLINKB $drakkary[%2][foundat] $drakkary[%2][linkto];
-            #var drakkary[%2][linkto] {};
-        };
-    	#nop uaktualnij jego lokacje;
-    	#var drakkary[%2][foundat] {%1};
-    	#nop znajdz miejsce na cume;
-   	    #map at {%1} {
-       		#map get roomexits tmproomexits;
-       		#map get roomvnum tmproomvnum;
-    	};
-
-    	#foreach {$kierunki[]} {kierunek} { 
-        		#if {"$tmproomexits[$kierunki[$kierunek]]" == ""} {
-           		 	#var drakkary[%2][linkto] {$kierunki[$kierunek]};
-           		 	#map at {$drakkary[%2][foundat]} {#map link $drakkary[%2][linkto] $drakkary[%2][id] both;};
-            		broadcast LINKB $drakkary[%2][foundat] $drakkary[%2][linkto] $drakkary[%2][id];
-        			broadcast MEXIT $drakkary[%2][foundat] $drakkary[%2][linkto] $drakkary[%2][id] wejdz na $drakkary[%2][typ];
-    			#break;
-    		};
-    	};
-    };
-} {1};
-
-#action {<PORT> CHAT %w %*} {
-    broadcast CHAT %1 %2;
-};
-
 
 #alias {/symbol} {
     #var tmpterrain {};
