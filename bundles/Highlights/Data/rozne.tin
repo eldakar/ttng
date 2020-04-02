@@ -21,4 +21,6 @@
 #sub {Czujesz sie dziwnie slabo.} {<afa>[mutacja]<088> %0};
 #sub {Czujesz, jak twoje cialo gwaltownie sie rozgrzewa.} {<afa>[mutacja]<088> %0};
 #sub {Czujesz przenikliwe, potworne zimno.} {<afa>[mutacja]<088> %0};
-#sub {Nie wiedziec czemu, ogarnia cie poczucie nieskonczonej potegi.} {<afa>[mutacja]<088> %0};
+#sub {Nie wiedziec czemu, ogarania cie poczucie nieskonczonej potegi.} {<afa>[mutacja]<088> %0};
+#nop Czujesz dziwne mrowienie;
+#nop Czujesz dziwna, nienaturalna radosc;

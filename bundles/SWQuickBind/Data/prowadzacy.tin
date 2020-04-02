@@ -151,3 +151,5 @@
 #action {%1 wskazuje na dol.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm trop}};
 #action {%1 przechodzi szybko przez row wyschnietej fosy i zabiera sie za wspinaczke po ogromnym gruzowisku.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wespnij sie po gruzowisku}}; 
 #action {%1 zaczyna wspinac sie po wielkich glazach skalnego rumowiska} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wespnij sie na gore}};
+
+#action {%1 bierze rozbieg i przeskakuje na most} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przeskocz na most}};

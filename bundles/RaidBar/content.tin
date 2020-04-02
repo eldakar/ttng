@@ -159,7 +159,7 @@
     #math screencols2 {$screencols / 2 };
     #draw violet tubed box $tmplinecnt-1 1 $screenrows-4 $screencols2 <088>$raidbartable;
     #draw violet tubed box $tmplinecnt-1 $screencols2+1 $screenrows-4 $screencols $bottomrighty;
-    
+    #line ignore #sh { <bad>manewr: $manewrlevel <bad> rozkaz: <128>rdy<bad> bron: $weaponlevel} {$tmplinecnt-1} {3};
     #nop sh {$hline} {$tmplinecnt - 1};
 
     #list duch size lds;

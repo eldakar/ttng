@@ -20,8 +20,8 @@
     #if {"$connstr[1]" != ""} {
         #if {"$connstr[2]" != ""} {
             #delay {1} {
-                #nop echo {%s} {<158>TTMapEditor: Probing $connstr[1] @ $connstr[2]};
-                #nop brain #port call {$connstr[1]} {$connstr[2]};
+                #echo {%s} {<158>TTMapEditor: Probing $connstr[1] @ $connstr[2]};
+                #brain #port call {$connstr[1]} {$connstr[2]};
             };
             #delay {1.5} {
                 #line substitute variables {

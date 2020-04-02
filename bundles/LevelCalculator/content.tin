@@ -112,29 +112,6 @@
 }
 
 
-#nop action {Ktora przystan chcesz wybrac? %*}
-{
-	#local index {1};
-	#format tmpnabrzeza {%l} {%1};
-	#replace tmpnabrzeza {,} {;};
-    #replace tmpnabrzeza {?} {};
-    #replace tmpnabrzeza { czy} {;};
-    #list nabrzezaDB create {$tmpnabrzeza};
-    #list nabrzezaDB size kdb;
-	#echo {+-----+-----------------------------------+};	
-	#foreach {*nabrzezaDB[]} {pdb} {
-		#format {line} {| %-3s | %+33s |} {<028>cu$index<088>} {$nabrzezaDB[$pdb]};
-		#line substitute {variables} {#alias cu$index {wybierz $nabrzezaDB[$pdb]}};
-		#echo {$line};
-		#math {index} {$index + 1};
-	};
-	#echo {+-----+-----------------------------------+};
-
-    #unvar tmpnabrzeza;
-    #unvar nabrzezaDB;
-    #line gag;
-}
-
 #nop NEWWW #;
 #nop #######;
 
@@ -153,7 +130,7 @@
 #var twojpoziomText[13] {osoba owiana legenda}
 
 
-#action {Twoje cechy} {
+#action {{Twoje cechy|Obecnie do waznych}} {
 	#var p_str_left 0;
 	#var p_dex_left 0;
 	#var p_sta_left 0;
@@ -199,6 +176,32 @@
 		#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Odwaga} {&2} {$p_bra} {$p_bra_left}; #echo $line;
 	};
 
+	#regex {$tmpOcena} {Jestes %* i %* ci brakuje, zebys mogla wyzej ocenic swa sile} {
+		#var p_str @poziomsily{&1};
+		#var p_str_left @brakuje{&2};
+		#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Sila} {&1} {$p_str} {$p_str_left}; #echo $line;
+	};
+	#regex {$tmpOcena} {sile%*Jestes %* i %* ci brakuje, zebys mogla wyzej ocenic swa zrecznosc} {
+		#var p_dex @poziomzrecznosci{&2};
+		#var p_dex_left @brakuje{&3};
+		#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Zrecznosc} {&2} {$p_dex} {$p_dex_left}; #echo $line;
+	};
+	#regex {$tmpOcena} {zrecznosc%*Jestes %* i %* ci brakuje, zebys mogla wyzej ocenic swa wytrzymalosc} {
+		#var p_sta @poziomwytrzymalosci{&2};
+		#var p_sta_left @brakuje{&3};
+		#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Wytrzymalosc} {&2} {$p_sta} {$p_sta_left}; #echo $line;
+	};
+	#regex {$tmpOcena} {wytrzymalosc%*Jestes %* i %* ci brakuje, zebys mogla wyzej ocenic swoj intelekt} {
+		#var p_int @poziominteligencji{&2};
+		#var p_int_left @brakuje{&3};
+		#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Intelekt} {&2} {$p_int} {$p_int_left}; #echo $line;
+	};
+	#regex {$tmpOcena} {intelekt%*Jestes %* i %* ci brakuje, zebys mogla wyzej ocenic swa odwage} {
+		#var p_bra @poziomodwagi{&2};
+		#var p_bra_left @brakuje{&3};
+		#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Odwaga} {&2} {$p_bra} {$p_bra_left}; #echo $line;
+	};
+
 
 		#echo {+-----------------+--------------------+--+----+};
 
@@ -211,93 +214,7 @@
 	#line gag;
 };
 
-#unaction {Twoje cechy sa oslabione po ostatniej smierci. By je odbudowac potrzebujesz zdobyc jeszcze %w %*} {
-	#echo {<128>%1<088>};
-	#sh %2;
-	#line gag;
-} {1};
 
-#unaction {Jestes %1 i %2 ci brakuje, zebys mogl wyzej ocenic swa sile.\nJestes %3 i %4 ci brakuje, zebys mogl wyzej ocenic swa zrecznosc.\nJestes %5 i %6 ci brakuje, zebys mogl wyzej ocenic swa wytrzymalosc.\nJestes %7 i %8 ci brakuje, zebys mogl wyzej ocenic swoj intelekt.\nJestes %9 i %10 ci brakuje, zebys mogl wyzej ocenic swa odwage.\n\n} 
-{
-	#var p_str_left 0;
-	#var p_dex_left 0;
-	#var p_sta_left 0;
-	#var p_int_left 0;
-	#var p_bra_left 0;
-	#var p_str 0;
-	#var p_dex 0;
-	#var p_sta 0;
-	#var p_int 0;
-	#var p_bra 0;
-
-	#echo {+-----------------+--------------------+--+----+};
-	#var p_str @poziomsily{%1};
-	#var p_str_left @brakuje{%2};
-	#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Sila} {%1} {$p_str} {$p_str_left}; #echo $line;
-	#var p_dex @poziomzrecznosci{%3};
-	#var p_dex_left @brakuje{%4};
-	#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Zrecznosc} {%3} {$p_dex} {$p_dex_left}; #echo $line;
-	#var p_sta @poziomwytrzymalosci{%5};
-	#var p_sta_left @brakuje{%6};
-	#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Wytrzymalosc} {%5} {$p_sta} {$p_sta_left}; #echo $line;
-	#var p_int @poziominteligencji{%7};
-	#var p_int_left @brakuje{%8};
-	#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Intelekt} {%7} {$p_int} {$p_int_left}; #echo $line;
-	#var p_bra @poziomodwagi{%9};
-	#var p_bra_left @brakuje{%10};
-	#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Odwaga} {%9} {$p_bra} {$p_bra_left}; #echo $line;
-	#echo {+-----------------+--------------------+--+----+};
-
-	#var r @policz2{};
-	#var twojpoziom {};
-	#format {line} {| %-36s | %+5s |} {$twojpoziomText[$level]} {${c_stan_niski}$level.$cechyleft<088>};
-	#echo $line;
-	#echo {+--------------------------------------+-------+};
-	
-	#line gag;
-}
-
-
-
-#unaction {Jestes %1 i %2 ci brakuje, zebys mogla wyzej ocenic swa sile.\nJestes %3 i %4 ci brakuje, zebys mogla wyzej ocenic swa zrecznosc.\nJestes %5 i %6 ci brakuje, zebys mogla wyzej ocenic swa wytrzymalosc.\nJestes %7 i %8 ci brakuje, zebys mogla wyzej ocenic swoj intelekt.\nJestes %9 i %10 ci brakuje, zebys mogla wyzej ocenic swa odwage.\n\n} 
-{
-	#var p_str_left 0;
-	#var p_dex_left 0;
-	#var p_sta_left 0;
-	#var p_int_left 0;
-	#var p_bra_left 0;
-	#var p_str 0;
-	#var p_dex 0;
-	#var p_sta 0;
-	#var p_int 0;
-	#var p_bra 0;
-
-	#echo {+-----------------+--------------------+--+----+};
-	#var p_str @poziomsily{%1};
-	#var p_str_left @brakuje{%2};
-	#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Sila} {%1} {$p_str} {$p_str_left}; #echo $line;
-	#var p_dex @poziomzrecznosci{%3};
-	#var p_dex_left @brakuje{%4};
-	#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Zrecznosc} {%3} {$p_dex} {$p_dex_left}; #echo $line;
-	#var p_sta @poziomwytrzymalosci{%5};
-	#var p_sta_left @brakuje{%6};
-	#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Wytrzymalosc} {%5} {$p_sta} {$p_sta_left}; #echo $line;
-	#var p_int @poziominteligencji{%7};
-	#var p_int_left @brakuje{%8};
-	#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Intelekt} {%7} {$p_int} {$p_int_left}; #echo $line;
-	#var p_bra @poziomodwagi{%9};
-	#var p_bra_left @brakuje{%10};
-	#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Odwaga} {%9} {$p_bra} {$p_bra_left}; #echo $line;
-	#echo {+-----------------+--------------------+--+----+};
-
-	#var r @policz2{};
-	#var twojpoziom {};
-	#format {line} {| %-36s | %+5s |} {$twojpoziomText[$level]} {${c_stan_niski}$level.$cechyleft<088>};
-	#echo $line;
-	#echo {+--------------------------------------+-------+};
-		
-	#line gag;
-}
 
 #function {policz_punkt}
 {

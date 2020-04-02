@@ -60,6 +60,7 @@
 #action {%*{Podazasz|podazasz} za %1 przez wode na poludniowy-wschod.} {#map move se;};
 #action {%*{Podazasz|podazasz} za %1 na ulice.} {#map move wyjscie;};
 #action {%*{Podazasz|podazasz} za %1 brama zamku na zachod.} {#map move w;};
+#action {%*{Podazasz|podazasz} za %1 przez szczeline.} {#map move szczelina;};
 #action {%*{Podazasz|podazasz} za %1 brodem przez strumien.} {#map move brod;};
 #action {%*{Podazasz|podazasz} za %1 brodzac w wodzie na druga strone rzeki.} {#map move woda;};
 #action {%*{Podazasz|podazasz} za %1 do alkierza.} {#map move alkierz;};
