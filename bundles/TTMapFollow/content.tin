@@ -47,6 +47,7 @@
 #action {%*{Podazasz|podazasz} za %1 na polnocny-wschod.} {#map move ne;};
 #action {%*{Podazasz|podazasz} za %1 na poludniowy-wschod.} {#map move se;};
 #action {%*{Podazasz|podazasz} za %1 w strone obozu.} {#map move oboz;};
+#action {%*{Podazasz|podazasz} za %1 na wyjsciem.} {#map move wyjscie;};
 #action {%*{Podazasz|podazasz} za %1 na trakt.} {#map move trakt;};
 #action {%*{Podazasz|podazasz} za %1 do chatki.} {#map move chatka;};
 #action {%*{Podazasz|podazasz} za %1 do wyjscia.} {#map move wyjscie;};
