@@ -24,7 +24,7 @@
 };
 
 #alias {RaidTableGuild} {
-    #local tmp {$ConfigManager_Configs[RaidTableGuildFriends]};
+    #local tmp {$ConfigManager_Configs[RaidTableGuild]};
     #replace tmp {,} {;};
     #list guildDB create {$tmp};
     #foreach {*guildDB[]} {pdb} {
