@@ -39,10 +39,11 @@
 #var healthbars2[2] {<018>### <088>3/7};
 #var healthbars2[1] {<018>##  <088>2/7};
 #var healthbars2[0] {<FAA><fff>#<088>   <088>1/7};
-#var c_char_h_mode[w] {$c_wrog_gildii};
+#var c_char_h_mode[w] {<faa>};
 #var c_char_h_mode[n] {<038>};
-#var c_char_h_mode[p] {<148>};
-#var c_char_h_mode[b] {<CAF><178>};
+#var c_char_h_mode[p] {<138>};
+#var c_char_h_mode[b] {<CAF><178>}; #nop BOSS;
+#var c_char_h_mode[g] {<caf>};
 #var c_char_h_mode[] {<178>};
 
 #var bbshpbar[0] {${c_stan_niski}#<088>------};

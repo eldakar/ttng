@@ -23,6 +23,16 @@
     };
 };
 
+#alias {RaidTableGuild} {
+    #local tmp {$ConfigManager_Configs[RaidTableGuildFriends]};
+    #replace tmp {,} {;};
+    #list guildDB create {$tmp};
+    #foreach {*guildDB[]} {pdb} {
+        #var gildie[$guildDB[$pdb]] {g}; 
+    };
+};
+
+
 #var gildie[CN] {n};
 #var gildie[CKN] {n};
 #var gildie[ES] {n};
@@ -421,9 +431,9 @@
                 #var tmpen {$tmpen};
             };
 
-            #if {"$duch[$du][enemy]" == "true"} {#var tmpkol {<118>}};
-            #if {"$duch[$du][team]" == "true"} {#var tmpkol {<148>}};
-            #if {"$duch[$du][typ]" == "wrog"} {#var tmpkol {<FAA><178>}};
+            #if {"$duch[$du][enemy]" == "true"} {#var tmpkol {<caf>}};
+            #if {"$duch[$du][team]" == "true"} {#var tmpkol {<acf>}};
+            #if {"$duch[$du][typ]" == "wrog"} {#var tmpkol {<faa>}};
             #if {"$duch[$du][typ]" == "boss"} {#var tmpkol {<fca>}};
 
             #if {"$duch[$du][attack_target]" == "true"} {#var tmpcel {CEL};#var tmpkol {<FAC><178>}};
