@@ -5,3 +5,13 @@
 #alias {gildia} {
 	#var pgildia $ConfigManager_Configs[gildia];
 };
+
+#alias {mowa} {
+	#if {"$ConfigManager_Configs[mowa]" == "wlaczona"} {
+		#nop alias {'} {};
+	};
+}
+
+#alias {mowajak} {
+	#var pmowajak $ConfigManager_Configs[mowajak];
+};
