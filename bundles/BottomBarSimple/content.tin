@@ -228,8 +228,6 @@
 
 #var bbBGC {<G02>};
 #alias {BottomBarTinyFugue} {
-	calendar_clock_reset;
-	calendar_render_hours;
 	#var hspac {};
 	#math {spacelen} {$screencols - 100};
 	#loop {1} {$spacelen} {mee} {#var hspac {$hspac }};

@@ -1,0 +1,10 @@
+#macro {\cu} {move_ne};
+#macro {\cy} {move_n};
+#macro {\ct} {move_nw};
+#macro {\cg} {move_w};
+#macro {\cj} {move_e};
+#macro {\cb} {move_sw};
+#macro {\cn} {move_s};
+#macro {\cm} {move_se};
+#macro {\cv} {move_d};
+#macro {\ci} {move_u};
