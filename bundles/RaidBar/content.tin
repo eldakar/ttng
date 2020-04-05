@@ -110,7 +110,7 @@
             #if {$r_curLineCnt >=$tmplinecnt} {
 
                 #nop sh {                                                          $duch[$wrogi[$to]][bar][orc]<088>    *--> $duch[$duch[$wrogi[$to]][attack_num]][desc]} {$r_curLineCnt} {1} {};
-                #var raidbartable {$raidbartable\n                              $duch[$wrogi[$to]][bar][orc]<088> <118>><088> $duch[$duch[$wrogi[$to]][attack_num]][desc]};
+                #var raidbartable {$raidbartable\n $duch[$wrogi[$to]][bar][orc]<088> <118>><088> $duch[$duch[$wrogi[$to]][attack_num]][desc]};
 
                 #math r_curLineCnt {$r_curLineCnt - 1};
                 #var duch[$wrogi[$to]][shown] {1};
