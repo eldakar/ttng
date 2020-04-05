@@ -6,12 +6,22 @@
 	#sh {${c_arkatt}> Ustawiam expowisko na: <138>%1};
 	#line sub variables {#alias {_expo_} {%1}};
 };
+
 #alias {expowiska_lista} {
 	#echo orki_orcal;
 	#echo orki_wsiowe;
 	#echo ryby_skellige;
 	#echo mekan;
 };
+
+#alias {haszuty} {
+	zabij krasnoluda;
+	zabij dostojnego krasnoluda;
+	zabij powaznego krasnoluda;
+	zabij wladczego krasnoluda;
+	zabij bykocentaura;
+	_zabij_ przeciwnika;
+}
 
 #alias {pustkowia_chaosu} {
 	zabij trolla;
