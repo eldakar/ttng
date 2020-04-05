@@ -113,6 +113,9 @@
 #action {%*{Podazasz|podazasz} za %1 w gore, ku wyjsciu z twierdzy.} {#map move u;};
 #action {%*{Podazasz|podazasz} za %1 schodami, wspinajac sie na szczyt.} {#map move schody;};
 #action {Podazasz za kims na dno rozpadliny.} {#map move rozpadlina;};
+#action {%*{Podazasz|podazasz} za %1 na dno rozpadliny.} {#map move rozpadlina;};
+
+
 #action {Podazasz za kims do kurhanu.} {#map move kurhan;};
 #action {%*{Podazasz|podazasz} za %1 na druga strone z trudem przeciskajac sie przez otwor.} {#map move otwor;};
 #action {%*{Podazasz|podazasz} za %1 w strone rufy.} {#map move rufa};
