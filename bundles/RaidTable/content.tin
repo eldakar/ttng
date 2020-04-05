@@ -147,20 +147,20 @@
             #var imietype {};
             #var tmpim {};
             #var confirmed {};
-	    #var tmpimietype 0;
+	        #var tmpimietype 0;
             #if {$gncheck > 1} {
                 #var confirmed {$postac[$postac[$test][imie]][cached]};
                 #var tmpim $postac[$test][imie];
                 #var tmpimie {$gildie[$postac[$test][gildia]] $postac[$test][gildia] $postac[$test][imie] $duch[dudu][desc]};
-		#var tmpimietype 1;
+		        #var tmpimietype 1;
             } {
                 #var confirmed {$postac[$test][cached]};
                 #var tmpim $test;
             
-            #if {"$postac[$test][gildia]" != ""} {
-                #var tmpimie {$gildie[$postac[$test][gildia]] $postac[$test][gildia] $test};
-            };
-		#var tmpimietype 2;
+                #if {"$postac[$test][gildia]" != ""} {
+                    #var tmpimie {$gildie[$postac[$test][gildia]] $postac[$test][gildia] $test};
+                };
+		        #var tmpimietype 2;
             };
             #if {"$confirmed" == "true"} {
                 #nop;
@@ -171,36 +171,36 @@
                     #if {"$duch[$dudu][avatar]" == "true"} {
                         #nop;
                     } {
-			#if {"$tmpimietype" == "1"} {
-				#nop;
-				#format dudu2 {%n} {$duch[$dudu][desc]};
-				#line substitute variables {
-                    #if {"$ConfigManager_Configs[gildie]" == "widoczne"} {
-#nop OPISY;             #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] - $postac[$test][imie]($postac[$test][gildia])};
-                        #sub {$dudu2} {$dudu2 - $postac[$test][imie]($postac[$test][gildia])};
-#nop POKOLORUJ;         #high {$duch[$dudu][desc]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
-                    } {
- #nop OPISY;            #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] - $postac[$test][imie]};
-                        #sub {$dudu2} {$dudu2 - $postac[$test][imie]};
-#nop POKOLORUJ;         #high {$duch[$dudu][desc]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
-                    };
- #nop POKOLORUJ;    #high {$dudu2} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};                     
-				};
-			};
-			#if {"$tmpimietype" == "2"} {
- #nop IMIE;                
-				#line substitute variables {
-                    #if {"$ConfigManager_Configs[gildie]" == "widoczne"} {
- #nop WSTAW GILDIE;     #sub {$duch[$dudu][desc]} {$duch[$dudu][desc]($postac[$test][gildia])};
- #nop POKOLORUJ;        #high {$duch[$dudu][desc]($postac[$test][gildia])} $ConfigManager_Configs[gildie]{$c_char_h_mode[$gildie[$postac[$test][gildia]]]}; 
-                    } {
- #nop POKOLORUJ;        #high {$duch[$dudu][desc]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};                         
-                    };
-				};
-			};
+            			#if {"$tmpimietype" == "1"} {
+            				#nop;
+            				#format dudu2 {%n} {$duch[$dudu][desc]};
+            				#line substitute variables {
+                                #if {"$ConfigManager_Configs[gildie]" == "widoczne"} {
+            #nop OPISY;             #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] - $postac[$test][imie]($postac[$test][gildia])};
+                                    #sub {$dudu2} {$dudu2 - $postac[$test][imie]($postac[$test][gildia])};
+            #nop POKOLORUJ;         #high {$duch[$dudu][desc]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
+                                } {
+             #nop OPISY;            #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] - $postac[$test][imie]};
+                                    #sub {$dudu2} {$dudu2 - $postac[$test][imie]};
+            #nop POKOLORUJ;         #high {$duch[$dudu][desc]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
+                                };
+             #nop POKOLORUJ;    #high {$dudu2} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};                     
+            				};
+            			};
+            			#if {"$tmpimietype" == "2"} {
+             #nop IMIE;                
+            				#line substitute variables {
+                                #if {"$ConfigManager_Configs[gildie]" == "widoczne"} {
+             #nop WSTAW GILDIE;     #sub {$duch[$dudu][desc]} {$duch[$dudu][desc]($postac[$test][gildia])};
+             #nop POKOLORUJ;        #high {$duch[$dudu][desc]($postac[$test][gildia])} $ConfigManager_Configs[gildie]{$c_char_h_mode[$gildie[$postac[$test][gildia]]]}; 
+                                } {
+             #nop POKOLORUJ;        #high {$duch[$dudu][desc]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};                         
+                                };
+            				};
+            			};
                     };
                 };
-              };
+        };
             
 	    #var duch[$dudu][rownr] {$localcnt};
             #var rowmap[$rcnt] {$dudu};
@@ -433,10 +433,10 @@
 
             #if {"$duch[$du][enemy]" == "true"} {#var tmpkol {<caf>}};
             #if {"$duch[$du][team]" == "true"} {#var tmpkol {<acf>}};
-            #if {"$duch[$du][typ]" == "wrog"} {#var tmpkol {<faa>}};
+            #if {"$duch[$du][typ]" == "wrog"} {#var tmpkol {<G01><118>}};
             #if {"$duch[$du][typ]" == "boss"} {#var tmpkol {<fca>}};
 
-            #if {"$duch[$du][attack_target]" == "true"} {#var tmpcel {CEL};#var tmpkol {<FAC><178>}};
+            #if {"$duch[$du][attack_target]" == "true"} {#var tmpcel {CEL};#var tmpkol {<faa>}};
             #if {"$duch[$du][defense_target]" == "true"} {#var tmpcel {COB};#var tmpkol {<AAB><178>}};
             #if {"$duch[$du][avatar_target]" == "true"} {#var tmpava {<FAA>  <088>}};
 
