@@ -49,7 +49,7 @@
     #read bundles/Macros/manifest.tin;
     #read bundles/CombatSubs/manifest.tin;
     #read bundles/Comparer/manifest.tin;
-    #nop read bundles/Chat/manifest.tin;
+    #read bundles/Chat/manifest.tin;
     #nop read bundles/SplitWingButtons/manifest.tin;
 
     #var r @bundleops_loadglobals{};
