@@ -1,7 +1,7 @@
 #nop Jesli jakis alias uzywa kolorow, trzeba ten plik go zaladowac po profilu;
 
 #alias {~/%*$} {
-  #echo {> Slucham?};
+  #echo {> Slucham? Niepoprawna komenda: <faa>%0<088>};
 } {1};
 
 
