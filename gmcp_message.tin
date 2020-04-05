@@ -6,10 +6,12 @@
 	#switch {"$GMCPMSGS[type]"} {
 		#case {"comm"} {
 			#replace {GMCPMSGS[text]} {\\n} {};
-			#if {"$prozmowa" == "widoczna"} {
-				#sh {$GMCPMSGS[text]};
-			};
+			#sh {$GMCPMSGS[text]};
 			topchat_add_static $GMCPMSGS[text];
+		};
+		#case {"emotes"} {
+			#replace {GMCPMSGS[text]} {\\n} {};
+			#sh {$GMCPMSGS[text]};
 		};
 		#case {"notification.mail"} {Highlights_post $GMCPMSGS[text]};
 		#case {"notification.knowledge"} {Highlights_knowledge $GMCPMSGS[text]};
