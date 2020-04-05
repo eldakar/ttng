@@ -71,6 +71,12 @@
 	#line sub variables {#macro {$KEY_F12_B} {$MacF12list}};
 };
 
+#alias {MacTab} {
+    	#var MacTablist {$ConfigManager_Configs[MacTab]};
+    	#replace MacTablist {,} {;};
+	#line sub variables {#macro {$KEY_TAB} {$MacTablist}};
+};
+
 #alias {MacNawiasLewy} {
 	#line sub variables {#macro {[} {$ConfigManager_Configs[MacNawiasLewy]}};
 };

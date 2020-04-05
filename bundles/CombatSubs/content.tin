@@ -277,6 +277,11 @@
 	#if {"$collector[%2][received][%3]" == ""} {#var collector[%1][received][%3] {0};};
 	#if {"$collector[%1][sent][damage]" == ""} {#var collector[%1][sent][damage] {0};};
 	#if {"$collector[%2][received][damage]" == ""} {#var collector[%1][received][damage] {0};};
+
+   #var hitcolor <fff>;
+   #if {"%1" == "$AVATAR_NAME"} {#var hitcolor <ddf>};
+   #if {"%2" == "$AVATAR_NAME"} {#var hitcolor <fdd>};
+
 	#math tmp_sent {$collector[%1][sent][%3] + 1};
 	#math tmp_rcvd {$collector[%2][received][%3] + 1};
 	#math tmp_dsent {$collector[%1][sent][damage] + %4};
@@ -286,45 +291,47 @@
 	#var collector[%1][sent][damage] {$tmp_dsent};
 	#var collector[%2][received][damage] {$tmp_drcvd};
 
+   #replace {tmpvalue2} {Lekko ranisz} {<afa>Lekko ranisz<088>};
+   #replace {tmpvalue2} {Ranisz} {<afa>Ranisz<088>};
+   #replace {tmpvalue2} {Ledwo muskasz} {<afa>Ledwo muskasz<088>};
+   #replace {tmpvalue2} {ledwo muska cie} {<fca>ledwo muska cie<088>};
+   
+   
    #switch {"%3"} {
       #case {"dodge"} {
          #if {$gaglevel < 1} {
             #if {"$rpggag" == "widoczna"} {
                #line ignore {
-                  #showme {<078>[%3] $tmpvalue2}
+                  #showme {<acf>[%3] $tmpvalue2}
                };
             };
-            bottomright_add_static <078>[%3] $tmpvalue2;
          };
       };
       #case {"miss"} {
          #if {$gaglevel < 1} {
             #if {"$rpggag" == "widoczna"} {
                #line ignore {
-                  #showme {<078>[%3] $tmpvalue2}
+                  #showme {<acf>[%3] $tmpvalue2}
                };
             };
-            bottomright_add_static <078>[%3] $tmpvalue2;
          };
       };
       #case {"parry"} {
          #if {$gaglevel < 1} {
             #if {"$rpggag" == "widoczna"} {
                #line ignore {
-                  #showme {<078>[%3] $tmpvalue2}
+                  #showme {<acf>[%3] $tmpvalue2}
                };
             };
-            bottomright_add_static <078>[%3] $tmpvalue2;
          };
       };
       #case {"hit"} {
          #if {$gaglevel < 2} {
             #if {"$rpggag" == "widoczna"} {
                #line ignore {
-                  #showme {<178>[%4/6]<088> $tmpvalue2}
+                  #showme {${hitcolor}[%4/6]<088> $tmpvalue2}
                };
             };
-            bottomright_add_static <178>[%4/6]<088> $tmpvalue2;
          };
       };
       #case {"magic"} {
@@ -334,7 +341,6 @@
                   #showme {<138>[%3 %4/6]<088> $tmpvalue2}
                };
             };
-            bottomright_add_static <138>[%3 %4/6]<088> $tmpvalue2;
          };
       };
       #default {
@@ -343,7 +349,6 @@
                #showme {<118><fca>[%3 %4/6]<088> $tmpvalue2}
             };
          };
-         bottomright_add_static <138>[%3 %4/6]<088> $tmpvalue2;
       };
    };
 } {1};
@@ -422,6 +427,7 @@
 
 	#regex {$tmpvalue} {%w wykonuje %+ mierzac w ciebie, lecz tobie udaje sie je zbic %+} {collect &1 $AVATAR_NAME parry 0;#var tmpvalue {}};
    #regex {$tmpvalue} {lecz udaje ci sie oslonic} {collect unknown $AVATAR_NAME parry 0;#var tmpvalue {}};
+   #regex {$tmpvalue} {lecz sprawnie parujesz} {collect unknown $AVATAR_NAME parry 0;#var tmpvalue {}};
 
 	#regex {$tmpvalue} {%w probuje cie trafic %+ uniknac tego ciosu.} {collect &1 $AVATAR_NAME dodge 0;#var tmpvalue {}};
 	#regex {$tmpvalue} {%w %w %w nie udaje sie trafic ciebie %+} {collect &3 $AVATAR_NAME miss 0;#var tmpvalue {}};
@@ -432,6 +438,7 @@
 	#regex {$tmpvalue} {%w %w %w wykonuje %+ mierzac w ciebie, lecz tobie udaje sie je zbic %*} {collect &3 $AVATAR_NAME parry 0;#var tmpvalue {}};
 	#regex {$tmpvalue} {%w %w %w probuje cie trafic %+ uniknac tego ciosu.} {collect &3 $AVATAR_NAME dodge 0;#var tmpvalue {}};
 	#regex {$tmpvalue} {%w %w %w probuje cie trafic %+ uniknac tego ciosu} {collect &3 $AVATAR_NAME dodge 0;#var tmpvalue {}};
+   #regex {$tmpvalue} {lecz tobie udaje sie go unik} {collect &1 $AVATAR_NAME dodge 0;#var tmpvalue {}};
 	#regex {$tmpvalue} {%w %w %w nie udaje sie trafic ciebie %+} {collect &3 $AVATAR_NAME miss 0;#var tmpvalue {}};
 	#regex {$tmpvalue} {Wyprowadzasz %+, lecz ten {zbija|oslania} je %+} {collect $AVATAR_NAME unknown parry 0;#var tmpvalue {}};
    #regex {$tmpvalue} {Probujesz trafic %*, lecz} {collect $AVATAR_NAME unknown miss 0;#var tmpvalue {}};
@@ -474,6 +481,9 @@
 #nop WKS1;   #regex {$tmpvalue} {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* pozostawiajac gleboka rane z wystajacymi na wierzchu tkankami.} {collect &1 unknown WKS 5;#var tmpvalue {}};
 #nop WKS1;   #regex {$tmpvalue} {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* zadajac smiertelne obrazenia.} {collect &1 unknown WKS 6;#var tmpvalue {}};
 #nop WKS1;   #regex {$tmpvalue} {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* traci rownowage} {collect &1 unknown WKS_PUDLO 0;#var tmpvalue {}};
+
+#nop KG1;    #regex {$tmpvalue} {Ruszasz do przodu, w pol kroku %* bolesnie zacina %*} {collect &1 unknown KG 1;#var tmpvalue {}};
+#nop KG1;    #regex {$tmpvalue} {Nie zwazajac na nic rozpoczynasz oburacz %* plytko tnie} {collect &1 unknown KG 2;#var tmpvalue {}};
 
 #nop KOR3;   #regex {$tmpvalue} {%w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect &1 unknown KS 4;#var tmpvalue {}};
 #nop KOR3;   #regex {$tmpvalue} {%w %w %w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect &4 unknown KS 4;#var tmpvalue {}};
@@ -536,7 +546,6 @@
       #if {"$rpggag" == "widoczna"} {
          #line ignore {#sh {<088>[misc] <088>$tmpvalue2}};
       };
-      bottomright_add_static <088>[misc] <088>$tmpvalue2;
    };
 	#return 0;
 };

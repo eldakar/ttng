@@ -32,7 +32,7 @@
     #read bundles/Herbs/manifest.tin;
     #read bundles/GMCPObjects/manifest.tin;
     #read bundles/RaidTable/manifest.tin;
-    #read bundles/RaidBar/manifest.tin;
+    #nop read bundles/RaidBar/manifest.tin;
     #read bundles/TTMapEditor/manifest.tin;
     #read bundles/PlayerDB/manifest.tin;
     #read bundles/EquipmentStatus/manifest.tin;

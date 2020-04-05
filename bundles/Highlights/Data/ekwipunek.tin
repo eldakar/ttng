@@ -1,5 +1,4 @@
 #nop NA SOBIE;
-	#action
 	#sub {Trzymasz} {<faa>TRZYMASZ<088>};
 	#sub {Trzyma } {<faa>TRZYMA <088>};
 	#sub {Masz na sobie} {<118><fca>MASZ NA SOBIE<088>};
@@ -40,6 +39,8 @@
 	#high {stalowa para nareczakow} {<028>};
 	#sub {dwuwypukly gladki napiersnik} {<028>%0 <088>( <038>Lyria Zboje<088> )}; 
 	#sub {czarn%w lsni%w zbroj%w plyt%w} {<028>%0 <088>( <038>Mekan Donegar<088> )}; 
+	#sub {fantazyjn%w grawerow%w polpanc%w} {<028>%0 <088>( <038>Elfka Grom<088> )}; 
+	#sub {peln%w srebrzyst%w zbroj%w plyt%w} {<028>%0 <088>( <038>?<088> )}; 
 
 #nop SREDNIE ZBROJE;
 	#high {posepna zbroja kolcza} {<028>};
@@ -88,6 +89,7 @@
 	#sub {masywny szeroki poltorak} {<028>%0 <088>( <038>Drachenfels<088> )};
 	#sub {srebrny kunsztowny miecz} {<028>%0 <088>( <038>Bretonia Zmory<088> )};
 	#sub {czarny potezny miecz poltorareczny} {<028>%0 <088>( <038>Drachenfels<088> )};
+	#sub {olbrzymi obosieczny miecz dwureczny} {<028>%0 <088>( <038>Rycerz Chaosu<088> )};
 
 #nop TOPORY JEDNORECZNE;
 	#sub {ciezki jednoreczny topor} {<028>%0 <088>( <038>Wsiowe Orki<088> )};

@@ -601,7 +601,7 @@
                     #case {"aylorcity"}     {#var rmcol <278>;#var rmsym <278>[ ]<088>};
         #case {"studnia"}       {#var rmcol <148>;#var rmsym <AAF><178> O <088>};
         #case {"studnia_b"}       {#var rmcol <148>;#var rmsym <AAB><118> O <088>};
-        #case {"szczelina"}       {#var rmcol <148>;#var rmsym <G08><118><fca> O <088>};
+        #case {"szczelina"}       {#var rmcol <148>;#var rmsym <G02><118><fca> O <088>};
         
         #case {"plaza"}         {#var rmcol <138>;#var rmsym {}};
                     #case {"bloodyhall"}        {#var rmcol <218>;#var rmsym {}};

@@ -47,6 +47,8 @@
 #var KEY_PAD_SW {\eOq};
 #var KEY_PAD_SE {\eOs};
 
+#var KEY_TAB {\t};
+
 #macro {$KEY_PAD_S} {move_s}
 #macro {$KEY_PAD_N} {move_n}
 #macro {$KEY_PAD_W} {move_w}

@@ -77,6 +77,8 @@
     szukaj_wroga;
     szukaj_team;
     tabela_odswiez;
+    render_h2;
+    #var objectnumsRefreshed {1};
 }
 
 #alias {RaidTable_GMCP_Objects_Data}
@@ -86,6 +88,8 @@
     szukaj_wroga;
     szukaj_team;
     tabela_odswiez;
+    render_h2;
+    #var objectnumsRefreshed {1};
 }
 
 
@@ -543,4 +547,110 @@
                 };
 			};
 	};
+};
+
+
+#alias {render_h2} {
+    #var raidbartable {};
+    #var a {%0};
+    #math tmplinecnt {0 - $global_bundle_slots_values[prompt][bottom]};
+    #nop loop {-6} {$tmplinecnt} {bubu} {#sh {                                                                                                       } {$bubu}};
+    #var r_curLineCnt {-6};
+    #var expectedlines 0;
+    #list team_offenders cle;
+    #list team_offenders cre;
+
+    #foreach {*duch[]} {du} {#var duch[$du][shown] {0}};
+    #list team siz ts;
+
+    #if {$ts < 1} {
+        #if {$duch[$avatarid][attack_num] > 0} {
+            #list team_offenders add {$duch[$avatarid][attack_num]};
+        } {
+            #var raidbartable {$raidbartable\n $duch[$avatarid][bar][orc]<088>};
+
+            #math r_curLineCnt {$r_curLineCnt - 1};
+            #var duch[$avatarid][shown] {1};
+            #math {expectedlines} {$expectedlines + 1};
+        };
+    }   {
+            #foreach {*team[]} {ti} {
+                #if {$duch[$team[$ti]][shown] < 1} {
+                    #if {$duch[$team[$ti]][attack_num] > 0} {
+                        #list team_offenders add $duch[$team[$ti]][attack_num];
+                    }   {
+                        #var raidbartable {$raidbartable\n $duch[$team[$ti]][bar][orc]<088>};
+
+                        #math r_curLineCnt {$r_curLineCnt - 1};
+                        #var duch[$team[$ti]][shown] {1};
+                        #math {expectedlines} {$expectedlines + 1};
+                    };
+                };
+            };
+        };
+#nop PRZECIWNICY DRUZYNY LUB AVATARA;
+    #foreach {*team_offenders[]} {to} {
+        #var tmpnavigator {1};
+        #foreach {*duch[]} {ti} {
+            #if {$duch[$ti][shown] < 1} {
+                #if {"$duch[$ti][attack_num]" == "$team_offenders[$to]"} {
+                    #if {$tmpnavigator == 1} {
+                        #var tmpnavigator 0;
+                        #var raidbartable {$raidbartable\n $duch[$ti][bar][orc]${c_stan_niski}  ><088> $duch[$duch[$ti][attack_num]][bar][orc]<088> <faa>><088> $duch[$duch[$duch[$ti][attack_num]][attack_num]][desc]};
+                        #math r_curLineCnt {$r_curLineCnt - 1};
+                        #var duch[$team_offenders[$to]][shown] {1};
+                        #math {expectedlines} {$expectedlines + 1};
+                    }   {
+                        #math RaidBarCountUsedLines {$RaidBarCountUsedLines + 1};            
+                        #var raidbartable {$raidbartable\n $duch[$ti][bar][orc]${c_stan_niski}-'<088>};
+                        #math r_curLineCnt {$r_curLineCnt - 1};
+                        #math {expectedlines} {$expectedlines + 1};
+                    };
+                    #var duch[$ti][shown] {1};
+                };
+            };
+        };  
+    };
+#nop RESZTA WALCZACYCH WROGOW;
+    #foreach {*wrogi[]} {to} {
+        #if {$duch[$wrogi[$to]][shown] < 1} {
+            #var raidbartable {$raidbartable\n $duch[$wrogi[$to]][bar][orc]<088> <118>><088> $duch[$duch[$wrogi[$to]][attack_num]][desc]};
+
+            #math r_curLineCnt {$r_curLineCnt - 1};
+            #var duch[$wrogi[$to]][shown] {1};
+            #math {expectedlines} {$expectedlines + 1};
+        };
+    };
+#nop WROGOWIE niewalczacy;
+    #foreach {*wrogi[]} {wr} {
+        #if {$duch[$wrogi[$wr]][shown] < 1} {
+            #if {$duch[$wrogi[$wr]][attack_num] > 0} {
+                #nop;
+            } {
+                #var raidbartable {$raidbartable\n $duch[$wrogi[$wr]][bar][orc]<088>};
+                #math r_curLineCnt {$r_curLineCnt - 1};
+                #var duch[$wrogi[$wr]][shown] {1};
+                #math {expectedlines} {$expectedlines + 1};
+            };
+        };
+    };
+#nop RESZTA wszystkiego gdzie shown == 0;
+    #foreach {*duch[]} {wr} {
+        #if {$duch[$wr][shown] < 1} {
+            #var raidbartable {$raidbartable\n $duch[$wr][bar][orc]};
+
+            #math r_curLineCnt {$r_curLineCnt - 1};
+            #var duch[$wr][shown] {1};
+            #math {expectedlines} {$expectedlines + 1};
+        };
+    };
+
+    #regex {$raidbartable} {\\n%*} {
+            #var raidbartable {&1};
+    };
+
+    #math screencols2 {$screencols / 2 };
+    #nop draw violet tubed box $tmplinecnt-1 1 $screenrows-4 $screencols2 <088>$raidbartable;
+
+    #list duch size lds;
 };

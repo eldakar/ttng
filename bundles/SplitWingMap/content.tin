@@ -1,6 +1,6 @@
 #alias SplitWingMap_Offset {
     #map flag vtmap on;
-    #math offsety {$global_bundle_slots_values[prompt][top] + 1};
+    #math offsety {$global_bundle_slots_values[prompt][top] + $praidsize + 1};
     #screen get cols screencols;
     #screen get rows screenrows;
     #math offsetx {$screencols - $global_bundle_slots_values[prompt][right] + 2};
@@ -21,9 +21,28 @@
 }
 #alias {SplitWingMapWidth} {
     #var global_bundle_slots_values[prompt][right] $ConfigManager_Configs[SplitWingMapWidth];
-    #nop Dependency: SplitRefresh;
     SplitWingMap_Offset;
+    RaidBar_refresh;
+    #nop Dependency: SplitRefresh;
     SplitRefreshRequestRefresh;
+};
+
+#alias {RaidSize} {
+    #if {$ConfigManager_Configs[RaidSize] > 0} {
+        #var praidsize $ConfigManager_Configs[RaidSize];
+    } {
+        #var praidsize 5;
+    };
+    SplitWingMap_Offset;
+    RaidBar_refresh;
+}
+
+#alias {RaidBar_refresh} {
+    #draw circled box 1 $offsetx-1 $praidsize $offseth <088>$raidbartable;
+    #line ignore #sh { <bad>manewr: $manewrlevel <bad> rozkaz: <128>rdy<bad> bron: $weaponlevel<088> } {1} {$offsetx + 3};    
+}
+#event {VARIABLE UPDATED objectnumsRefreshed} {
+    RaidBar_refresh
 };
 
 #alias {SplitWingMap_refresh} {
@@ -34,6 +53,7 @@
         #var global_bundle_slots_values[prompt][right] {10};
     };
     SplitWingMap_Offset;
+    RaidBar_refresh;
 };
 
 #alias {SplitWingMap_Popup} {
@@ -115,3 +135,88 @@
     };
 };
 
+
+
+#con mouse on;
+#var topdrag 0
+
+#event {PRESSED MOUSE BUTTON ONE}
+{
+    #screen get SPLIT_BOT_BAR top;
+    #screen get SPLIT_RIGHT_BAR right;
+    #screen get cols cols;
+    #math curright {$cols - %1 + 1};
+    #math curbott {$screenrows - %0};
+    #var {o_x} %0;
+    #var {o_y} %1;
+
+    #if {$right == $curright}
+    {
+       #var rightdrag 1
+    };
+    #if {$curright < $right} {
+        #if {$curbott > $top && $o_x > $global_bundle_slots_values[prompt][top]} {
+            #var mapcenter 1;
+            #if {$o_x < $global_bundle_slots_values[prompt][top] + 4} {
+                #var mapbuttons 1;
+            };
+        };
+    };
+
+    #if {$mapbuttons == 1} {
+        #nop czy jest tu lokacyjny button;
+        #map get roomarea roomAreaValue;
+        #regex {$roomAreaValue} {QB} {
+            SplitWingMap_LabelBind_Reverse $bind_run;
+            $bind_run;
+        };
+    };
+    #nop sh {curright = $curright | curbott = $curbott | right = $right | top = $top | topdrag: $topdrag rightdrag: $rightdrag map: $mapcenter buttons $mapbuttons | chatdrag: $chatdrag};
+}
+
+#event {RELEASED MOUSE BUTTON ONE}
+{
+    #var topdrag 0;
+    #var rightdrag 0;
+    #var mapcenter 0;
+    #var mapbuttons 0;
+    #var chatdrag 0;
+    #regex {$roomAreaValue} {QB} {
+        SplitWingMap_LabelBind $bind_run;
+    };
+    #var roomAreaValue {};
+}
+
+#event {MOVED MOUSE BUTTON ONE}
+{
+    #if {$rightdrag}
+    {
+        #math boooom {$cols - %1};
+        /conf SplitWingMapWidth $boooom;
+    };
+    #if {$mapcenter} {
+        #var d_x %0;
+        #var d_y %1;
+        #math {c_x} {$o_x - $d_x};
+        #math {c_y} {$d_y - $o_y};
+        #map center $c_y $c_x 0;
+    }
+}
+
+#event {SCROLLED MOUSE WHEEL UP} {
+        #if {%1 == 0 || %1 == 1} {#cursor history prev} {
+            #buffer up 1;
+        }
+}
+
+#event {SCROLLED MOUSE WHEEL DOWN} {
+    #if {%1 == 0 || %1 == 1} {#cursor history next} {
+        #buffer down 1;
+    }
+}
+
+#event {MAP DOUBLE-CLICKED MOUSE BUTTON ONE} {
+    #map center;
+    #map run {%0} {0.25};
+    #var pathinprogress 1;
+};
