@@ -1,15 +1,15 @@
-#alias rozmowa {
+#nop alias rozmowa {
     #var prozmowa $ConfigManager_Configs[rozmowa]; 
 };
 
-#alias chatsize {
+#nop alias chatsize {
     #math global_bundle_slots_values[prompt][top] {$ConfigManager_Configs[chatsize] + 0};
     #if {$global_bundle_slots_values[prompt][top] < 1} {
         /conf chatsize 3;
     };
     SplitRefreshRequestRefresh;
 }
-#alias chat_refresh {
+#nop alias chat_refresh {
     #draw violet tubed box 1 30 $global_bundle_slots_values[prompt][top] $screencols <088>$topchaty;
     #draw violet tubed box 1 1 $global_bundle_slots_values[prompt][top] 29 <088>$CHATUSERTABLE;
 }
@@ -29,6 +29,8 @@
     #loop {0} {50} {bcvc} {
         #var topchaty {$topchaty\n$topchat[$bcvc]};
     };
-    #draw violet tubed box 1 30 $global_bundle_slots_values[prompt][top] $screencols <088>$topchaty;
-    #draw violet tubed box 1 1 $global_bundle_slots_values[prompt][top] 29 <088>$CHATUSERTABLE;
 }
+
+#alias {/c} {
+    #line ignore #sh {$topchaty};
+} {1};
