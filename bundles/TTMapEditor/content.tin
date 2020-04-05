@@ -301,7 +301,6 @@
     };
     #line substitute {variables} {
         #rpg #var brainId %1;
-        #rpg /sendident;
     };
 };
 
