@@ -18,7 +18,7 @@ F 8202
 
 G 0
 
-I 5210
+I 5209
 
 L {ASCII NESW LINE} {NO EXITS} {x}
 L {ASCII NESW LINE} {N} {o}
@@ -336,7 +336,7 @@ T {zaulek} {<g08>.<088>} {DENSE NARROW}
 
 
 
-R {    1} {0} {} {Jest tutaj jedno widoczne wyjscie: gora.} {} {Ciasna ladownia.} {} {} {} {21086} {1.000} {}
+R {    1} {0} {} {Jest tutaj jedno widoczne wyjscie: gora.} {} {Ciasna ladownia.} {} {} {} {21099} {1.000} {}
 E {    2} {ne} {ne} {3} {0} {} {1.000} {}
 E {  672} {nw} {nw} {9} {0} {} {1.000} {}
 E {17078} {hello} {hello} {0} {0} {} {1.000} {}
@@ -1472,4 +1472,2640 @@ E {  165} {se} {se} {6} {0} {} {1.000} {<238>}
 E {  173} {e} {e} {2} {0} {} {1.000} {<238>}
 E {  171} {w} {w} {8} {0} {} {1.000} {<238>}
 E {  188} {ne} {ne} {3} {0} {} {1.000} {<238>}
-E {  189} {n} {n} 
+E {  189} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  192} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  173} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  166} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  165} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  164} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  174} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  187} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  188} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  189} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  172} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  174} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  165} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  164} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  163} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  175} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  186} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  187} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  188} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  173} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  175} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  164} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  163} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  162} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  176} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  185} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  186} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  187} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  174} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  176} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  163} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  162} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  161} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  177} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  184} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  185} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  186} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  175} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  177} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  162} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  161} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  160} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  178} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  183} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  184} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  185} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  176} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  178} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  161} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  160} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  159} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  179} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  181} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  183} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  184} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  177} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  179} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  160} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  159} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  158} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  180} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  182} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  181} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  183} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  178} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  180} {0} {<148>} {Jest tutaj piec widocznych wyjsc: poludniowy-zachod, polnocny-zachod, polnoc, zachod i poludnie.} {} {PUSZKI.} {} {} {rzeka} {} {1.000} {}
+E {  159} {sw} {sw} {12} {0} {} {1.000} {<148>}
+E {  158} {s} {s} {4} {0} {} {1.000} {<148>}
+E {  181} {nw} {nw} {9} {0} {} {1.000} {<148>}
+E {  182} {n} {n} {1} {0} {} {1.000} {<148>}
+E {  179} {w} {w} {8} {0} {} {1.000} {<148>}
+
+R {  181} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  180} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  179} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  178} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  193} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  182} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  194} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  195} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  183} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  182} {0} {<148>} {Jest tutaj piec widocznych wyjsc: poludniowy-zachod, polnocny-zachod, polnoc, zachod i poludnie.} {} {PUSZKI.} {} {} {rzeka} {} {1.000} {}
+E {  180} {s} {s} {4} {0} {} {1.000} {<148>}
+E {  179} {sw} {sw} {12} {0} {} {1.000} {<148>}
+E {  181} {w} {w} {8} {0} {} {1.000} {<148>}
+E {  194} {nw} {nw} {9} {0} {} {1.000} {<148>}
+E {  193} {n} {n} {1} {0} {} {1.000} {<148>}
+
+R {  183} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  179} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  178} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  177} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  181} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  194} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  195} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  196} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  184} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  184} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  178} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  177} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  176} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  183} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  195} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  196} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  197} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  185} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  185} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  177} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  176} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  175} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  184} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  196} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  197} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  198} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  186} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  186} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  176} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  175} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  174} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  185} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  197} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  198} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  199} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  187} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  187} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  175} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  174} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  173} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  186} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  198} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  199} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  200} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  188} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  188} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  174} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  173} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  172} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  187} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  199} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  200} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  201} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  189} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  189} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  173} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  171} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  172} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  188} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  200} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  201} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  202} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  192} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  190} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  128} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  169} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  170} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  191} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  203} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  204} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  127} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  129} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  191} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  169} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  170} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  171} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  192} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  202} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  203} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  204} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  190} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  192} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  170} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  171} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  172} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  189} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  201} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  202} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  203} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  191} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  193} {0} {<148>} {Jest tutaj szesc widocznych wyjsc: polnocny-wschod, poludnie, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {rzeka} {} {1.000} {}
+E {  181} {sw} {sw} {12} {0} {} {1.000} {<148>}
+E {  194} {w} {w} {8} {0} {} {1.000} {<148>}
+E {  218} {ne} {ne} {3} {0} {} {1.000} {<148>}
+E {  182} {s} {s} {4} {0} {} {1.000} {<148>}
+E {  217} {n} {n} {1} {0} {} {1.000} {<148>}
+E {  216} {nw} {nw} {9} {0} {} {1.000} {<148>}
+
+R {  194} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  181} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  183} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  195} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  217} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  182} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  193} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  216} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  215} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  195} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  181} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  183} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  184} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  196} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  216} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  194} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  215} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  214} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  196} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  183} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  184} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  185} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  197} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  215} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  195} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  214} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  213} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  197} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  184} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  185} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  186} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  198} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  214} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  196} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  213} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  212} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  198} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  185} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  186} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  187} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  199} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  213} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  197} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  212} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  211} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  199} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  186} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  187} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  188} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  200} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  212} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  198} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  211} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  210} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  200} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  187} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  188} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  189} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  201} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  211} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  199} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  210} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  209} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  201} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  188} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  189} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  192} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  202} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  210} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  200} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  209} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  208} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  202} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  189} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  192} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  191} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  203} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  209} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  201} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  208} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  207} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  203} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  192} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  191} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  190} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  204} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  208} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  202} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  207} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  206} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  204} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  191} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  190} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  129} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  127} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  207} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  203} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  206} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  205} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  205} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  126} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  127} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  204} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  206} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  231} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  232} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  233} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  125} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  206} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  127} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  204} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  203} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  207} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  230} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  231} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  232} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  205} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  207} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  204} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  203} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  202} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  208} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  229} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  230} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  231} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  206} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  208} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  203} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  202} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  201} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  209} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  228} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  229} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  230} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  207} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  209} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  202} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  201} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  200} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  210} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  227} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  228} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  229} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  208} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  210} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  201} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  200} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  199} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  211} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  226} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  227} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  228} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  209} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  211} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  200} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  199} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  198} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  212} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  225} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  226} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  227} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  210} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  212} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  199} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  198} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  197} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  213} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  224} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  225} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  226} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  211} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  213} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  198} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  197} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  196} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  214} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  223} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  224} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  225} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  212} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  214} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  197} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  196} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  195} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  215} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  222} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  223} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  224} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  213} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  215} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  196} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  195} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  194} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  216} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  221} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  222} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  223} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  214} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  216} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  195} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  194} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  193} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  217} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  220} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  221} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  222} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  215} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  217} {0} {<238>} {Jest tutaj siedem widocznych wyjsc: polnocny-wschod, wschod, poludnie, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  194} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  193} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  219} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  218} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  220} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  221} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  216} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  218} {0} {<148>} {Sa tutaj cztery widoczne wyjscia: polnocny-zachod, polnoc, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {rzeka} {} {1.000} {}
+E {  193} {sw} {sw} {12} {0} {} {1.000} {<148>}
+E {  217} {w} {w} {8} {0} {} {1.000} {<148>}
+E {  220} {nw} {nw} {9} {0} {} {1.000} {<148>}
+E {  219} {n} {n} {1} {0} {} {1.000} {<148>}
+
+R {  219} {0} {<148>} {Jest tutaj piec widocznych wyjsc: poludniowy-zachod, polnocny-zachod, polnoc, zachod i poludnie.} {} {PUSZKI.} {} {} {rzeka} {} {1.000} {}
+E {  217} {sw} {sw} {12} {0} {} {1.000} {<148>}
+E {  220} {w} {w} {8} {0} {} {1.000} {<148>}
+E {  246} {nw} {nw} {9} {0} {} {1.000} {<148>}
+E {  247} {n} {n} {1} {0} {} {1.000} {<148>}
+E {  218} {s} {s} {4} {0} {} {1.000} {<148>}
+
+R {  220} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  217} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  216} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  221} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  247} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  218} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  219} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  246} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  245} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  221} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  217} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  216} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  215} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  222} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  246} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  220} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  245} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  244} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  222} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  216} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  215} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  214} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  223} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  245} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  221} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  244} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  243} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  223} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  215} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  214} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  213} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  224} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  244} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  222} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  243} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  242} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  224} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  214} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  213} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  212} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  225} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  243} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  223} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  242} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  241} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  225} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  213} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  212} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  211} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  226} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  242} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  224} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  241} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  240} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  226} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  212} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  211} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  210} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  227} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  241} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  225} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  240} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  239} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  227} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  211} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  210} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  209} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  228} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  240} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  226} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  239} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  238} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  228} {0} {<228>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {wzgorze} {} {1.000} {}
+E {  210} {se} {se} {6} {0} {} {1.000} {<228>}
+E {  209} {s} {s} {4} {0} {} {1.000} {<228>}
+E {  208} {sw} {sw} {12} {0} {} {1.000} {<228>}
+E {  229} {w} {w} {8} {0} {} {1.000} {<228>}
+E {  239} {ne} {ne} {3} {0} {} {1.000} {<228>}
+E {  227} {e} {e} {2} {0} {} {1.000} {<228>}
+E {  238} {n} {n} {1} {0} {} {1.000} {<228>}
+E {  237} {nw} {nw} {9} {0} {} {1.000} {<228>}
+
+R {  229} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  209} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  208} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  207} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  230} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  238} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  228} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  237} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  236} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  230} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  208} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  207} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  206} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  231} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  237} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  229} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  236} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  235} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  231} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  207} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  206} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  205} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  232} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  236} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  230} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  235} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  234} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  232} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  206} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  205} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  125} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  233} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  235} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  231} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  234} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  115} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  233} {0} {<228>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {wzgorze} {} {1.000} {}
+E {  205} {se} {se} {6} {0} {} {1.000} {<228>}
+E {  125} {s} {s} {4} {0} {} {1.000} {<228>}
+E {  121} {sw} {sw} {12} {0} {} {1.000} {<228>}
+E {  119} {w} {w} {8} {0} {} {1.000} {<228>}
+E {  234} {ne} {ne} {3} {0} {} {1.000} {<228>}
+E {  232} {e} {e} {2} {0} {} {1.000} {<228>}
+E {  115} {n} {n} {1} {0} {} {1.000} {<228>}
+E {  117} {nw} {nw} {9} {0} {} {1.000} {<228>}
+
+R {  234} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  233} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  232} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  231} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  235} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  261} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  262} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  116} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  115} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  235} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  232} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  231} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  230} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  236} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  260} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  261} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  262} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  234} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  236} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  231} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  230} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  229} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  237} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  259} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  260} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  261} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  235} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  237} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  230} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  229} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  228} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  238} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  258} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  259} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  260} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  236} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  238} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  229} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  228} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  227} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  239} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  257} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  258} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  259} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  237} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  239} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  228} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  227} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  226} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  240} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  256} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  257} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  258} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  238} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  240} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  227} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  226} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  225} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  241} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  255} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  256} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  257} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  239} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  241} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  226} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  225} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  224} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  242} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  254} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  255} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  256} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  240} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  242} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  225} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  224} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  223} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  243} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  253} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  254} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  255} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  241} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  243} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  224} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  223} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  222} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  244} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  252} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  253} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  254} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  242} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  244} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  223} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  222} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  221} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  245} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  251} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  252} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  253} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  243} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  245} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  222} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  221} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  220} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  246} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  250} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  251} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  252} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  244} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  246} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  221} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  220} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  219} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  247} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  249} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  250} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  251} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  245} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  247} {0} {<148>} {Jest tutaj szesc widocznych wyjsc: polnocny-wschod, poludnie, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {rzeka} {} {1.000} {}
+E {  220} {sw} {sw} {12} {0} {} {1.000} {<148>}
+E {  219} {s} {s} {4} {0} {} {1.000} {<148>}
+E {  248} {ne} {ne} {3} {0} {} {1.000} {<148>}
+E {  249} {n} {n} {1} {0} {} {1.000} {<148>}
+E {  250} {nw} {nw} {9} {0} {} {1.000} {<148>}
+E {  246} {w} {w} {8} {0} {} {1.000} {<148>}
+
+R {  248} {0} {<148>} {Jest tutaj piec widocznych wyjsc: poludniowy-zachod, polnocny-zachod, polnoc, polnocny-wschod i zachod.} {} {PUSZKI.} {} {} {rzeka} {} {1.000} {}
+E {  247} {sw} {sw} {12} {0} {} {1.000} {<148>}
+E {  249} {w} {w} {8} {0} {} {1.000} {<148>}
+E {  276} {nw} {nw} {9} {0} {} {1.000} {<148>}
+E {  277} {n} {n} {1} {0} {} {1.000} {<148>}
+E {  278} {ne} {ne} {3} {0} {} {1.000} {<148>}
+
+R {  249} {0} {<238>} {Jest tutaj siedem widocznych wyjsc: polnocny-wschod, wschod, poludnie, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  247} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  246} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  250} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  277} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  248} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  276} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  275} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  250} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  247} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  246} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  245} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  251} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  276} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  249} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  275} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  274} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  251} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  246} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  245} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  244} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  252} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  275} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  250} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  274} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  273} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  252} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  245} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  244} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  243} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  253} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  274} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  251} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  273} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  272} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  253} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  244} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  243} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  242} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  254} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  273} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  252} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  272} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  271} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  254} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  243} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  242} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  241} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  255} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  272} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  253} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  271} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  270} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  255} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  242} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  241} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  240} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  256} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  271} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  254} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  270} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  269} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  256} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  241} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  240} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  239} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  257} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  270} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  255} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  269} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  268} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  257} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  240} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  239} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  238} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  258} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  269} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  256} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  268} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  267} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  258} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  239} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  238} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  237} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  259} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  268} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  257} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  267} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  266} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  259} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  238} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  237} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  236} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  260} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  267} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  258} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  266} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  265} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  260} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  237} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  236} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  235} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  261} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  266} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  259} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  265} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  264} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  261} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  236} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  235} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  234} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  262} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  265} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  260} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  264} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  263} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  262} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  235} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  234} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  115} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  116} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  264} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  261} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  263} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  114} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  263} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  116} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  262} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  261} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  264} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  293} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  294} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  295} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  114} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  264} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  262} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  261} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  260} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  265} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  292} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  293} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  294} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  263} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  265} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  261} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  260} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  259} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  266} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  291} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  292} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  293} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  264} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  266} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  260} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  259} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  258} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  267} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  290} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  291} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  292} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  265} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  267} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  259} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  258} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  257} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  268} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  289} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  290} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  291} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  266} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  268} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  258} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  257} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  256} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  269} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  288} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  289} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  290} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  267} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  269} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  257} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  256} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  255} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  270} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  287} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  288} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  289} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  268} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  270} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  256} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  255} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  254} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  271} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  286} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  287} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  288} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  269} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  271} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  255} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  254} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  253} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  272} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  285} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  286} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  287} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  270} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  272} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  254} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  253} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  252} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  273} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  284} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  285} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  286} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  271} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  273} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  253} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  252} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  251} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  274} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  283} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  284} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  285} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  272} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  274} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  252} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  251} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  250} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  275} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  282} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  283} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  284} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  273} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  275} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  251} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  250} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  249} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  276} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  281} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  282} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  283} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  274} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  276} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  250} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  249} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  248} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  277} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  280} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  281} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  282} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  275} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  277} {0} {<238>} {Jest tutaj siedem widocznych wyjsc: polnocny-wschod, wschod, poludnie, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  249} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  248} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  279} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  278} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  280} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  281} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  276} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  278} {0} {<148>} {Jest tutaj szesc widocznych wyjsc: polnocny-wschod, wschod, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {rzeka} {} {1.000} {}
+E {  248} {sw} {sw} {12} {0} {} {1.000} {<148>}
+E {  277} {w} {w} {8} {0} {} {1.000} {<148>}
+E {  280} {nw} {nw} {9} {0} {} {1.000} {<148>}
+E {  279} {n} {n} {1} {0} {} {1.000} {<148>}
+E {  313} {ne} {ne} {3} {0} {} {1.000} {<148>}
+E {  312} {e} {e} {2} {0} {} {1.000} {<148>}
+
+R {  279} {0} {<fac>} {Jest tutaj szesc widocznych wyjsc: poludniowy-wschod, poludnie, wschod, poludniowy-zachod, polnoc i zachod.} {} {PUSZKI.} {} {} {mur} {} {1.000} {}
+E {  277} {sw} {sw} {12} {0} {} {1.000} {<fac>}
+E {  280} {w} {w} {8} {0} {} {1.000} {<fac>}
+E {  312} {se} {se} {6} {0} {} {1.000} {<fac>}
+E {  278} {s} {s} {4} {0} {} {1.000} {<fac>}
+E {  313} {e} {e} {2} {0} {} {1.000} {<fac>}
+E {  682} {n} {n} {1} {1} {} {1.000} {<fac>}
+
+R {  280} {0} {<g05>} {Jest tutaj siedem widocznych wyjsc: poludniowy-wschod, wschod, poludnie, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustka} {} {1.000} {}
+E {  277} {s} {s} {4} {0} {} {1.000} {<g05>}
+E {  276} {sw} {sw} {12} {0} {} {1.000} {<g05>}
+E {  281} {w} {w} {8} {0} {} {1.000} {<g05>}
+E {  278} {se} {se} {6} {0} {} {1.000} {<g05>}
+E {  279} {e} {e} {2} {0} {} {1.000} {<g05>}
+E {  311} {n} {n} {1} {0} {} {1.000} {<g05>}
+E {  310} {nw} {nw} {9} {0} {} {1.000} {<g05>}
+
+R {  281} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  277} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  276} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  275} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  282} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  311} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  280} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  310} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  309} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  282} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  276} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  275} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  274} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  283} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  310} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  281} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  309} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  308} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  283} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  275} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  274} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  273} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  284} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  309} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  282} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  308} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  307} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  284} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  274} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  273} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  272} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  285} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  308} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  283} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  307} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  306} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  285} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  273} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  272} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  271} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  286} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  307} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  284} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  306} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  305} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  286} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  272} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  271} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  270} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  287} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  306} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  285} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  305} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  304} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  287} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  271} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  270} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  269} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  288} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  305} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  286} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  304} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  303} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  288} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  270} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  269} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  268} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  289} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  304} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  287} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  303} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  302} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  289} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  269} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  268} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  267} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  290} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  303} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  288} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  302} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  301} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  290} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  268} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  267} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  266} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  291} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  302} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  289} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  301} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  300} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  291} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  267} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  266} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  265} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  292} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  301} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  290} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  300} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  299} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  292} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  266} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  265} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  264} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  293} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  300} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  291} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  299} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  298} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  293} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  265} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  264} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  263} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  294} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  299} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  292} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  298} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  297} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  294} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  264} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  263} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  114} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  295} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  298} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  293} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  297} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  296} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  295} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  263} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  114} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  111} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  109} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  297} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  294} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  296} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  107} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  296} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  109} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  295} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  294} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  297} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  340} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  341} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  105} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  107} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  297} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  295} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  294} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  293} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  298} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  339} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  340} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  341} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  296} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  298} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  294} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  293} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  292} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  299} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  338} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  339} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  340} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  297} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  299} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  293} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  292} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  291} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  300} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  337} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  338} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  339} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  298} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  300} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  292} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  291} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  290} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  301} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  336} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  337} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  338} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  299} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  301} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  291} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  290} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  289} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  302} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  335} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  336} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  337} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  300} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  302} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  290} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  289} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  288} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  303} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  334} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  335} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  336} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  301} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  303} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  289} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  288} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  287} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  304} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  333} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  334} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  335} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  302} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  304} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  288} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  287} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  286} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  305} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  332} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  333} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  334} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  303} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  305} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  287} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  286} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  285} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  306} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  331} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  332} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  333} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  304} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  306} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  286} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  285} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  284} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  307} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  330} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  331} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  332} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  305} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  307} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  285} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  284} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  283} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  308} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  329} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  330} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  331} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  306} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  308} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  284} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  283} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  282} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  309} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  328} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  329} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  330} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  307} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  309} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  283} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  282} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  281} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  310} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  327} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  328} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  329} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  308} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  310} {0} {<g05>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustka} {} {1.000} {}
+E {  282} {sw} {sw} {12} {0} {} {1.000} {<g05>}
+E {  281} {s} {s} {4} {0} {} {1.000} {<g05>}
+E {  280} {se} {se} {6} {0} {} {1.000} {<g05>}
+E {  325} {ne} {ne} {3} {0} {} {1.000} {<g05>}
+E {  311} {e} {e} {2} {0} {} {1.000} {<g05>}
+E {  327} {n} {n} {1} {0} {} {1.000} {<g05>}
+E {  328} {nw} {nw} {9} {0} {} {1.000} {<g05>}
+E {  309} {w} {w} {8} {0} {} {1.000} {<g05>}
+
+R {  311} {0} {<g05>} {Jest tutaj piec widocznych wyjsc: poludniowy-zachod, polnocny-zachod, polnoc, zachod i poludnie.} {} {PUSZKI.} {} {} {pustka} {} {1.000} {}
+E {  281} {sw} {sw} {12} {0} {} {1.000} {<g05>}
+E {  280} {s} {s} {4} {0} {} {1.000} {<g05>}
+E {  325} {n} {n} {1} {0} {} {1.000} {<g05>}
+E {  327} {nw} {nw} {9} {0} {} {1.000} {<g05>}
+E {  310} {w} {w} {8} {0} {} {1.000} {<g05>}
+
+R {  312} {0} {<148>} {Sa tutaj cztery widoczne wyjscia: polnocny-zachod, polnoc, polnocny-wschod i zachod.} {} {PUSZKI.} {} {} {rzeka} {} {1.000} {}
+E {  279} {nw} {nw} {9} {0} {} {1.000} {<148>}
+E {  278} {w} {w} {8} {0} {} {1.000} {<148>}
+E {  313} {n} {n} {1} {0} {} {1.000} {<148>}
+E {  316} {ne} {ne} {3} {0} {} {1.000} {<148>}
+
+R {  313} {0} {<g05>} {Jest tutaj szesc widocznych wyjsc: polnocny-wschod, wschod, poludnie, polnoc, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustka} {} {1.000} {}
+E {  279} {w} {w} {8} {0} {} {1.000} {<g05>}
+E {  278} {sw} {sw} {12} {0} {} {1.000} {<g05>}
+E {  315} {ne} {ne} {3} {0} {} {1.000} {<g05>}
+E {  316} {e} {e} {2} {0} {} {1.000} {<g05>}
+E {  312} {s} {s} {4} {0} {} {1.000} {<g05>}
+E {  317} {n} {n} {1} {0} {} {1.000} {<g05>}
+
+R {  314} {0} {} {} {<faa>?<088>} {} {} {} {} {} {1.000} {}
+E {  279} {s} {s} {4} {0} {} {1.000} {}
+E {  642} {n} {n} {1} {0} {} {1.000} {}
+E {  311} {w} {w} {8} {0} {} {1.000} {}
+E {  280} {sw} {sw} {12} {0} {} {1.000} {}
+
+R {  315} {0} {<g05>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustka} {} {1.000} {}
+E {  313} {sw} {sw} {12} {0} {} {1.000} {<g05>}
+E {  317} {w} {w} {8} {0} {} {1.000} {<g05>}
+E {  318} {nw} {nw} {9} {0} {} {1.000} {<g05>}
+E {  452} {ne} {ne} {3} {0} {} {1.000} {<g05>}
+E {  319} {n} {n} {1} {0} {} {1.000} {<g05>}
+E {  454} {se} {se} {6} {0} {} {1.000} {<g05>}
+E {  451} {e} {e} {2} {0} {} {1.000} {<g05>}
+E {  316} {s} {s} {4} {0} {} {1.000} {<g05>}
+
+R {  316} {0} {<148>} {Jest tutaj szesc widocznych wyjsc: polnocny-wschod, wschod, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {rzeka} {} {1.000} {}
+E {  313} {w} {w} {8} {0} {} {1.000} {<148>}
+E {  312} {sw} {sw} {12} {0} {} {1.000} {<148>}
+E {  317} {nw} {nw} {9} {0} {} {1.000} {<148>}
+E {  315} {n} {n} {1} {0} {} {1.000} {<148>}
+E {  451} {ne} {ne} {3} {0} {} {1.000} {<148>}
+E {  454} {e} {e} {2} {0} {} {1.000} {<148>}
+
+R {  317} {0} {<g05>} {Jest tutaj piec widocznych wyjsc: poludniowy-wschod, polnoc, polnocny-wschod, poludnie i wschod.} {} {PUSZKI.} {} {} {pustka} {} {1.000} {}
+E {  313} {s} {s} {4} {0} {} {1.000} {<g05>}
+E {  316} {se} {se} {6} {0} {} {1.000} {<g05>}
+E {  318} {n} {n} {1} {0} {} {1.000} {<g05>}
+E {  319} {ne} {ne} {3} {0} {} {1.000} {<g05>}
+E {  315} {e} {e} {2} {0} {} {1.000} {<g05>}
+
+R {  318} {0} {<g05>} {Jest tutaj siedem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustka} {} {1.000} {}
+E {  317} {s} {s} {4} {0} {} {1.000} {<g05>}
+E {  320} {ne} {ne} {3} {0} {} {1.000} {<g05>}
+E {  315} {se} {se} {6} {0} {} {1.000} {<g05>}
+E {  319} {e} {e} {2} {0} {} {1.000} {<g05>}
+E {  321} {n} {n} {1} {0} {} {1.000} {<g05>}
+E {  322} {nw} {nw} {9} {0} {} {1.000} {<g05>}
+E {  323} {w} {w} {8} {0} {} {1.000} {<g05>}
+
+R {  319} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  317} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  318} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  321} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  320} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  450} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  452} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  451} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  315} {s} {s} {4} {0} {} {1.000} {<238>}
+
+R {  320} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  318} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  321} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  400} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  453} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  401} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  452} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  450} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  319} {s} {s} {4} {0} {} {1.000} {<238>}
+
+R {  321} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  318} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  323} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  322} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  401} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  319} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  320} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  400} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  399} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  322} {0} {<g05>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustka} {} {1.000} {}
+E {  318} {se} {se} {6} {0} {} {1.000} {<g05>}
+E {  323} {s} {s} {4} {0} {} {1.000} {<g05>}
+E {  325} {sw} {sw} {12} {0} {} {1.000} {<g05>}
+E {  324} {w} {w} {8} {0} {} {1.000} {<g05>}
+E {  400} {ne} {ne} {3} {0} {} {1.000} {<g05>}
+E {  321} {e} {e} {2} {0} {} {1.000} {<g05>}
+E {  399} {n} {n} {1} {0} {} {1.000} {<g05>}
+E {  398} {nw} {nw} {9} {0} {} {1.000} {<g05>}
+
+R {  323} {0} {<fac>} {Jest tutaj szesc widocznych wyjsc: polnocny-wschod, wschod, poludnie, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {mur} {} {1.000} {}
+E {  318} {e} {e} {2} {0} {} {1.000} {<fac>}
+E {  321} {ne} {ne} {3} {0} {} {1.000} {<fac>}
+E {  322} {n} {n} {1} {0} {} {1.000} {<fac>}
+E {  324} {nw} {nw} {9} {0} {} {1.000} {<fac>}
+E {  325} {w} {w} {8} {0} {} {1.000} {<fac>}
+E {  732} {s} {s} {4} {1} {} {1.000} {<fac>}
+
+R {  324} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  323} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  325} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  327} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  326} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  399} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  322} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  398} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  397} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  325} {0} {<g05>} {Jest tutaj siedem widocznych wyjsc: polnocny-wschod, wschod, poludnie, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustka} {} {1.000} {}
+E {  323} {e} {e} {2} {0} {} {1.000} {<g05>}
+E {  322} {ne} {ne} {3} {0} {} {1.000} {<g05>}
+E {  311} {s} {s} {4} {0} {} {1.000} {<g05>}
+E {  324} {n} {n} {1} {0} {} {1.000} {<g05>}
+E {  326} {nw} {nw} {9} {0} {} {1.000} {<g05>}
+E {  310} {sw} {sw} {12} {0} {} {1.000} {<g05>}
+E {  327} {w} {w} {8} {0} {} {1.000} {<g05>}
+
+R {  326} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  325} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  348} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  328} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  327} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  398} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  324} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  397} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  347} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  327} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  325} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  311} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  310} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  309} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  348} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  328} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  324} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  326} {n} {n} {1} {0} {} {1.000} {<238>}
+
+R {  328} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  310} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  309} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  308} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  346} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  348} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  326} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  327} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  329} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  329} {0} {<238>} {Jest tutaj siedem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, polnoc, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  309} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  308} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  307} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  330} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  346} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  348} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  328} {e} {e} {2} {0} {} {1.000} {<238>}
+
+R {  330} {0} {<238>} {Jest tutaj szesc widocznych wyjsc: poludniowy-wschod, polnocny-wschod, wschod, poludnie, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  308} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  307} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  306} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  331} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  346} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  329} {e} {e} {2} {0} {} {1.000} {<238>}
+
+R {  331} {0} {<238>} {Jest tutaj piec widocznych wyjsc: poludniowy-zachod, poludniowy-wschod, zachod, wschod i poludnie.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  307} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  306} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  305} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  332} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  330} {e} {e} {2} {0} {} {1.000} {<238>}
+
+R {  332} {0} {<238>} {Jest tutaj piec widocznych wyjsc: poludniowy-zachod, poludniowy-wschod, zachod, wschod i poludnie.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  306} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  305} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  304} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  333} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  331} {e} {e} {2} {0} {} {1.000} {<238>}
+
+R {  333} {0} {<238>} {Jest tutaj piec widocznych wyjsc: poludniowy-zachod, poludniowy-wschod, zachod, wschod i poludnie.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  305} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  304} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  303} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  334} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  332} {e} {e} {2} {0} {} {1.000} {<238>}
+
+R {  334} {0} {<238>} {Jest tutaj piec widocznych wyjsc: poludniowy-zachod, poludniowy-wschod, zachod, wschod i poludnie.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  304} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  303} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  302} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  335} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  333} {e} {e} {2} {0} {} {1.000} {<238>}
+
+R {  335} {0} {<238>} {Jest tutaj piec widocznych wyjsc: poludniowy-zachod, poludniowy-wschod, zachod, wschod i poludnie.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  303} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  302} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  301} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  336} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  334} {e} {e} {2} {0} {} {1.000} {<238>}
+
+R {  336} {0} {<238>} {Jest tutaj szesc widocznych wyjsc: poludniowy-wschod, wschod, poludnie, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  302} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  301} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  300} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  337} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  335} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  345} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  337} {0} {<238>} {Jest tutaj siedem widocznych wyjsc: poludniowy-wschod, wschod, poludnie, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  301} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  300} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  299} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  338} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  336} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  345} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  344} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  338} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  300} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  299} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  298} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  339} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  345} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  337} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  344} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  343} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  339} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  299} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  298} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  297} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  340} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  344} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  338} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  343} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  342} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  340} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  298} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  297} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  296} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  341} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  343} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  339} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  342} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  102} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  341} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  297} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  296} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  107} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  105} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  342} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  340} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  102} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  103} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  342} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  341} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  340} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  339} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  102} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  377} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  343} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  378} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  100} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  343} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  340} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  339} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  338} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  376} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  344} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  342} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  377} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  378} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  344} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  339} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  338} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  337} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  376} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  368} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  345} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  377} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  343} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  345} {0} {<238>} {Jest tutaj siedem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, poludnie, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  338} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  337} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  336} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  376} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  344} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  366} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  368} {n} {n} {1} {0} {} {1.000} {<238>}
+
+R {  346} {0} {<238>} {Jest tutaj siedem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc i polnocny-zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  330} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  347} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  328} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  348} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  329} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  349} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  350} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  347} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  346} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  349} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  348} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  326} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  397} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  406} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  396} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  353} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  348} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  346} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  349} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  397} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  327} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  326} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  328} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  329} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  347} {n} {n} {1} {0} {} {1.000} {<238>}
+
+R {  349} {0} {<238>} {Jest tutaj siedem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  346} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  350} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  352} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  396} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  348} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  347} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  353} {n} {n} {1} {0} {} {1.000} {<238>}
+
+R {  350} {0} {<238>} {Jest tutaj piec widocznych wyjsc: poludniowy-wschod, polnocny-zachod, polnoc, polnocny-wschod i wschod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  346} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  351} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  352} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  353} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  349} {e} {e} {2} {0} {} {1.000} {<238>}
+
+R {  351} {0} {<228>} {Jest tutaj szesc widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {las} {} {1.000} {}
+E {  350} {se} {se} {6} {0} {} {1.000} {<228>}
+E {  354} {ne} {ne} {3} {0} {} {1.000} {<228>}
+E {  352} {e} {e} {2} {0} {} {1.000} {<228>}
+E {  355} {n} {n} {1} {0} {} {1.000} {<228>}
+E {  356} {nw} {nw} {9} {0} {} {1.000} {<228>}
+E {  357} {w} {w} {8} {0} {} {1.000} {<228>}
+
+R {  352} {0} {<238>} {Jest tutaj siedem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  350} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  351} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  355} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  395} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  349} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  353} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  354} {n} {n} {1} {0} {} {1.000} {<238>}
+
+R {  353} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  350} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  352} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  349} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  347} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  396} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  408} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  395} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  354} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  354} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  351} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  355} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  352} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  353} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  395} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  419} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  394} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  393} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  355} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  351} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  357} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  383} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  356} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  394} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  352} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  354} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  393} {n} {n} {1} {0} {} {1.000} {<238>}
+
+R {  356} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  351} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  357} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  360} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  358} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  384} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  383} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  393} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  355} {e} {e} {2} {0} {} {1.000} {<238>}
+
+R {  357} {0} {<228>} {Jest tutaj szesc widocznych wyjsc: polnocny-wschod, wschod, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {las} {} {1.000} {}
+E {  351} {e} {e} {2} {0} {} {1.000} {<228>}
+E {  355} {ne} {ne} {3} {0} {} {1.000} {<228>}
+E {  356} {n} {n} {1} {0} {} {1.000} {<228>}
+E {  358} {nw} {nw} {9} {0} {} {1.000} {<228>}
+E {  359} {sw} {sw} {12} {0} {} {1.000} {<228>}
+E {  360} {w} {w} {8} {0} {} {1.000} {<228>}
+
+R {  358} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  357} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  361} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  360} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  383} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  356} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  384} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  385} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  382} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  359} {0} {<238>} {Sa tutaj cztery widoczne wyjscia: polnocny-zachod, polnoc, polnocny-wschod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  357} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  361} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  360} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  362} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  360} {0} {<238>} {Jest tutaj siedem widocznych wyjsc: polnocny-wschod, wschod, poludnie, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  357} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  359} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  362} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  361} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  356} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  358} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  382} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  361} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  359} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  362} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  364} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  363} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  358} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  360} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  382} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  367} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  362} {0} {<238>} {Jest tutaj piec widocznych wyjsc: polnocny-zachod, polnoc, polnocny-wschod, zachod i wschod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  359} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  363} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  361} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  360} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  364} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  363} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  362} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  364} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  365} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  366} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  382} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  361} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  367} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  369} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  364} {0} {<238>} {Jest tutaj piec widocznych wyjsc: polnocny-zachod, polnoc, polnocny-wschod, zachod i wschod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  362} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  365} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  363} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  361} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  366} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  365} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  364} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  367} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  363} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  366} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  368} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  369} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  370} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  371} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  366} {0} {<238>} {Jest tutaj szesc widocznych wyjsc: polnocny-wschod, wschod, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  364} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  365} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  345} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  368} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  363} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  371} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  367} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  365} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  363} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  361} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  382} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  385} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  386} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  372} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  369} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  368} {0} {<238>} {Jest tutaj szesc widocznych wyjsc: polnocny-wschod, wschod, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  365} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  376} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  344} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  345} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  366} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  371} {n} {n} {1} {0} {} {1.000} {<238>}
+
+R {  369} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  365} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  370} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  371} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  363} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  367} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  386} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  372} {n} {n} {1} {0} {} {1.000} {<238>}
+E {   86} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  370} {0} {<238>} {Jest tutaj siedem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  365} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  372} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  369} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  371} {s} {s} {4} {0} {} {1.000} {<238>}
+E {   86} {n} {n} {1} {0} {} {1.000} {<238>}
+E {   87} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  373} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  371} {0} {<238>} {Jest tutaj piec widocznych wyjsc: poludniowy-wschod, polnoc, polnocny-wschod, poludnie i wschod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  365} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  370} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  368} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  366} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  369} {ne} {ne} {3} {0} {} {1.000} {<238>}
+
+R {  372} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  370} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  367} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  369} {s} {s} {4} {0} {} {1.000} {<238>}
+E {   86} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  388} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  386} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  387} {n} {n} {1} {0} {} {1.000} {<238>}
+E {   82} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  373} {0} {<238>} {Jest tutaj szesc widocznych wyjsc: polnocny-wschod, wschod, poludnie, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  370} {e} {e} {2} {0} {} {1.000} {<238>}
+E {   86} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  374} {s} {s} {4} {0} {} {1.000} {<238>}
+E {   87} {n} {n} {1} {0} {} {1.000} {<238>}
+E {   88} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  375} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  374} {0} {<228>} {} {} {} {} {} {wzgorze} {} {1.000} {}
+E {  373} {n} {n} {1} {0} {} {1.000} {<228>}
+E {  376} {s} {s} {4} {0} {} {1.000} {<228>}
+
+R {  375} {0} {<238>} {Jest tutaj siedem widocznych wyjsc: polnocny-wschod, wschod, poludnie, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  373} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  380} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  379} {s} {s} {4} {0} {} {1.000} {<238>}
+E {   87} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {   88} {n} {n} {1} {0} {} {1.000} {<238>}
+E {   90} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  381} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  376} {0} {<228>} {} {} {} {} {} {wzgorze} {} {1.000} {}
+E {  374} {n} {n} {1} {0} {} {1.000} {<228>}
+E {  345} {se} {se} {6} {0} {} {1.000} {<228>}
+E {  368} {e} {e} {2} {0} {} {1.000} {<228>}
+E {  344} {s} {s} {4} {0} {} {1.000} {<228>}
+E {  343} {sw} {sw} {12} {0} {} {1.000} {<228>}
+E {  377} {w} {w} {8} {0} {} {1.000} {<228>}
+
+R {  377} {0} {<238>} {Jest tutaj siedem widocznych wyjsc: poludniowy-wschod, wschod, poludnie, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  376} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  344} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  342} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  343} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  379} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  380} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  378} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  378} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  102} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  342} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  343} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  377} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  379} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  380} {n} {n} {1} {0} {} {1.000} {<238>}
+E {   98} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  100} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  379} {0} {<238>} {Jest tutaj piec widocznych wyjsc: poludniowy-zachod, polnocny-zachod, polnoc, zachod i poludnie.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  377} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  378} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  380} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  381} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  375} {n} {n} {1} {0} {} {1.000} {<238>}
+
+R {  380} {0} {<238>} {} {} {} {} {} {pustynia} {} {1.000} {}
+E {  377} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  378} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  100} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {   98} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  375} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  379} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  381} {n} {n} {1} {0} {} {1.000} {<238>}
+E {   96} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  381} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {   98} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  380} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  379} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  375} {e} {e} {2} {0} {} {1.000} {<238>}
+E {   88} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {   90} {n} {n} {1} {0} {} {1.000} {<238>}
+E {   92} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {   96} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  382} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  363} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  361} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  360} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  358} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  384} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  385} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  386} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  367} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  383} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  358} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  384} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  392} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  355} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  393} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  356} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  391} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  390} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  384} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  358} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  382} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  385} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  391} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  356} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  383} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  390} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  389} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  385} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  358} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  382} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  367} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  386} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  390} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  384} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  389} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  388} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  386} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  382} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  367} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  369} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  372} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  389} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  385} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  388} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  387} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  387} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {   86} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  372} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  386} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  388} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  468} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  469} {n} {n} {1} {0} {} {1.000} {<238>}
+E {   83} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {   82} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  388} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  372} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  386} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  385} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  389} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  467} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  468} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  469} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  387} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  389} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  386} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  385} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  384} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  390} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  466} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  467} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  468} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  388} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  390} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  385} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  384} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  383} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  391} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  465} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  466} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  467} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  389} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  391} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  384} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  383} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  393} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  392} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  464} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  465} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  466} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  390} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  392} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  383} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  393} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  394} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  420} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  463} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  464} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  465} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  391} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  393} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  383} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  356} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  355} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  354} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  420} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  394} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  392} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  391} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  394} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  355} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  395} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  354} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  393} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  421} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  419} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  420} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  392} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  395} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  352} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  396} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  353} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  408} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  418} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  419} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  394} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  354} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  396} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  349} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  397} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  347} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  407} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  406} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  408} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  395} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  353} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  397} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  348} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  326} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  324} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  398} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  405} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  406} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  396} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  347} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  398} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  326} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  324} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  322} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  399} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  404} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  405} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  406} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  397} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  399} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  324} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  322} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  321} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  400} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  403} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  404} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  405} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  398} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  400} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  322} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  321} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  402} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  320} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  401} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  403} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  404} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  399} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  401} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  321} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  400} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  403} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  402} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  439} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  453} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  450} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  320} {s} {s} {4} {0} {} {1.000} {<238>}
+
+R {  402} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  400} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  403} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  411} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  429} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  412} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  453} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  439} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  401} {s} {s} {4} {0} {} {1.000} {<238>}
+
+R {  403} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  400} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  399} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  404} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  412} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  401} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  402} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  411} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  410} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  404} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  400} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  399} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  398} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  405} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  411} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  403} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  410} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  409} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  405} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  399} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  398} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  397} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  406} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  410} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  404} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  409} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  407} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  406} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  398} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  397} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  347} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  396} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  409} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  405} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  407} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  408} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  407} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  396} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  406} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  405} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  409} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  416} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  417} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  418} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  408} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  408} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  396} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  353} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  406} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  407} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  417} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  418} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  419} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  395} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  409} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  406} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  405} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  404} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  410} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  415} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  416} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  417} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  407} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  410} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  405} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  404} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  403} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  411} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  414} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  415} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  416} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  409} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  411} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  404} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  403} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  413} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  402} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  412} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  414} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  415} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  410} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  412} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  403} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  411} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  414} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  413} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  430} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  429} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  439} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  402} {s} {s} {4} {0} {} {1.000} {<238>}
+
+R {  413} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  411} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  414} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  428} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  429} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  430} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  412} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  427} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  426} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  414} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {QB rozejrzyj sie} {} {pustynia} {} {1.000} {}
+E {  411} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  410} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  415} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  427} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  412} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  413} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  426} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  425} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  415} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  411} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  410} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  409} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  416} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  426} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  414} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  425} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  424} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  416} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  410} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  409} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  407} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  417} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  425} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  415} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  424} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  423} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  417} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  409} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  407} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  408} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  418} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  424} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  416} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  423} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  422} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  418} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  407} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  408} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  395} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  419} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  423} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  417} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  422} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  421} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  419} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  408} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  395} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  354} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  394} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  422} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  418} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  421} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  420} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  420} {0} {<238>} {} {} {} {} {} {pustynia} {} {1.000} {}
+E {  393} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  394} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  419} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  421} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  462} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  463} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  464} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  392} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  421} {0} {<238>} {} {} {} {} {} {pustynia} {} {1.000} {}
+E {  394} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  419} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  418} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  422} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  461} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  462} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  463} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  420} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  422} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  419} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  418} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  417} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  423} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  460} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  461} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  462} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  421} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  423} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  418} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  417} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  416} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  424} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  459} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  460} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  461} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  422} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  424} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  417} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  416} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  415} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  425} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  458} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  459} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  460} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  423} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  425} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  416} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  415} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  414} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  426} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  457} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  458} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  459} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  424} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  426} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  415} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  414} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  413} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  427} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  456} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  457} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  458} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  425} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  427} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  414} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  413} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  430} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  428} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  455} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  456} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  457} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  426} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  428} {0} {<238>} {Jest tutaj siedem widocznych wyjsc: poludniowy-wschod, wschod, poludnie, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  413} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  430} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  433} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  431} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  455} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  456} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  427} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  429} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  413} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  430} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  433} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  432} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  438} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  439} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  402} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  412} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  430} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  413} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  431} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  432} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  433} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  429} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  412} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  428} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  427} {nw} {nw} {9} {0} {} {1.000} {<238>}
+
+R {  431} {0} {<148>} {Jest tutaj piec widocznych wyjsc: poludniowy-zachod, polnocny-zachod, poludniowy-wschod, zachod i poludnie.} {} {PUSZKI.} {} {} {rzeka} {} {1.000} {}
+E {  430} {sw} {sw} {12} {0} {} {1.000} {<148>}
+E {  433} {s} {s} {4} {0} {} {1.000} {<148>}
+E {  435} {se} {se} {6} {0} {} {1.000} {<148>}
+E {  455} {nw} {nw} {9} {0} {} {1.000} {<148>}
+E {  428} {w} {w} {8} {0} {} {1.000} {<148>}
+
+R {  432} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  430} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  433} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  435} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  437} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  434} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  438} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  439} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  429} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  433} {0} {<238>} {Jest tutaj siedem widocznych wyjsc: poludniowy-wschod, wschod, poludnie, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  430} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  434} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  435} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  432} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  431} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  428} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  429} {sw} {sw} {12} {0} {} {1.000} {<238>}
+
+R {  434} {0} {<238>} {Jest tutaj siedem widocznych wyjsc: poludniowy-wschod, wschod, poludnie, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  433} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  435} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  432} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  440} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  436} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  437} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  438} {sw} {sw} {12} {0} {} {1.000} {<238>}
+
+R {  435} {0} {<148>} {Jest tutaj piec widocznych wyjsc: poludniowy-zachod, polnocny-zachod, poludniowy-wschod, zachod i poludnie.} {} {PUSZKI.} {} {} {rzeka} {} {1.000} {}
+E {  433} {w} {w} {8} {0} {} {1.000} {<148>}
+E {  432} {sw} {sw} {12} {0} {} {1.000} {<148>}
+E {  431} {nw} {nw} {9} {0} {} {1.000} {<148>}
+E {  436} {se} {se} {6} {0} {} {1.000} {<148>}
+E {  434} {s} {s} {4} {0} {} {1.000} {<148>}
+
+R {  436} {0} {<148>} {Sa tutaj cztery widoczne wyjscia: polnocny-zachod, poludniowy-zachod, zachod i poludnie.} {} {PUSZKI.} {} {} {rzeka} {} {1.000} {}
+E {  435} {nw} {nw} {9} {0} {} {1.000} {<148>}
+E {  434} {w} {w} {8} {0} {} {1.000} {<148>}
+E {  437} {sw} {sw} {12} {0} {} {1.000} {<148>}
+E {  440} {s} {s} {4} {0} {} {1.000} {<148>}
+
+R {  437} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  432} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  434} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  436} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  441} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  440} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  442} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  443} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  438} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  438} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  432} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  434} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  437} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  442} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  443} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  453} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  429} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  439} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  439} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  432} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  443} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  438} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  429} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  412} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  402} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  453} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  401} {sw} {sw} {12} {0} {} {1.000} {<238>}
+
+R {  440} {0} {<148>} {Jest tutaj piec widocznych wyjsc: poludniowy-zachod, polnocny-zachod, polnoc, zachod i poludnie.} {} {PUSZKI.} {} {} {rzeka} {} {1.000} {}
+E {  434} {nw} {nw} {9} {0} {} {1.000} {<148>}
+E {  437} {w} {w} {8} {0} {} {1.000} {<148>}
+E {  442} {sw} {sw} {12} {0} {} {1.000} {<148>}
+E {  441} {s} {s} {4} {0} {} {1.000} {<148>}
+E {  436} {n} {n} {1} {0} {} {1.000} {<148>}
+
+R {  441} {0} {<148>} {Jest tutaj piec widocznych wyjsc: poludniowy-zachod, polnocny-zachod, polnoc, zachod i poludnie.} {} {PUSZKI.} {} {} {rzeka} {} {1.000} {}
+E {  437} {nw} {nw} {9} {0} {} {1.000} {<148>}
+E {  442} {w} {w} {8} {0} {} {1.000} {<148>}
+E {  445} {sw} {sw} {12} {0} {} {1.000} {<148>}
+E {  440} {n} {n} {1} {0} {} {1.000} {<148>}
+E {  444} {s} {s} {4} {0} {} {1.000} {<148>}
+
+R {  442} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  437} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  440} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  444} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  441} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  445} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  446} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  438} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  443} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  443} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  437} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  442} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  445} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  446} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  450} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  438} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  439} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  453} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  444} {0} {<148>} {Sa tutaj cztery widoczne wyjscia: polnocny-zachod, polnoc, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {rzeka} {} {1.000} {}
+E {  442} {nw} {nw} {9} {0} {} {1.000} {<148>}
+E {  441} {n} {n} {1} {0} {} {1.000} {<148>}
+E {  445} {w} {w} {8} {0} {} {1.000} {<148>}
+E {  447} {sw} {sw} {12} {0} {} {1.000} {<148>}
+
+R {  445} {0} {<238>} {Jest tutaj siedem widocznych wyjsc: polnocny-wschod, wschod, poludnie, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  442} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  441} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  444} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  447} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  443} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  448} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  446} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  446} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  442} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  445} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  447} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  448} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  452} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  443} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  453} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  450} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  447} {0} {<148>} {Jest tutaj piec widocznych wyjsc: poludniowy-zachod, polnocny-zachod, polnoc, polnocny-wschod i zachod.} {} {PUSZKI.} {} {} {rzeka} {} {1.000} {}
+E {  445} {n} {n} {1} {0} {} {1.000} {<148>}
+E {  449} {sw} {sw} {12} {0} {} {1.000} {<148>}
+E {  446} {nw} {nw} {9} {0} {} {1.000} {<148>}
+E {  444} {ne} {ne} {3} {0} {} {1.000} {<148>}
+E {  448} {w} {w} {8} {0} {} {1.000} {<148>}
+
+R {  448} {0} {<238>} {Jest tutaj siedem widocznych wyjsc: polnocny-wschod, wschod, poludnie, polnoc, polnocny-zachod, poludniowy-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  445} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  447} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  449} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  446} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  450} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  451} {sw} {sw} {12} {0} {} {1.000} {<238>}
+E {  452} {w} {w} {8} {0} {} {1.000} {<238>}
+
+R {  449} {0} {<148>} {Jest tutaj piec widocznych wyjsc: poludniowy-zachod, polnocny-zachod, polnoc, polnocny-wschod i zachod.} {} {Wypalone Pustkowia.} {} {} {rzeka} {} {1.000} {}
+E {  447} {ne} {ne} {3} {0} {} {1.000} {<148>}
+E {  448} {n} {n} {1} {0} {} {1.000} {<148>}
+E {  452} {nw} {nw} {9} {0} {} {1.000} {<148>}
+E {  451} {w} {w} {8} {0} {} {1.000} {<148>}
+E {  454} {sw} {sw} {12} {0} {} {1.000} {<148>}
+
+R {  450} {0} {<238>} {Jest tutaj osiem widocznych wyjsc: polnocny-wschod, poludniowy-wschod, wschod, poludnie, poludniowy-zachod, polnoc, polnocny-zachod i zachod.} {} {PUSZKI.} {} {} {pustynia} {} {1.000} {}
+E {  448} {se} {se} {6} {0} {} {1.000} {<238>}
+E {  446} {e} {e} {2} {0} {} {1.000} {<238>}
+E {  443} {ne} {ne} {3} {0} {} {1.000} {<238>}
+E {  453} {n} {n} {1} {0} {} {1.000} {<238>}
+E {  401} {nw} {nw} {9} {0} {} {1.000} {<238>}
+E {  320} {w} {w} {8} {0} {} {1.000} {<238>}
+E {  452} {s} {s} {4} {0} {} {1.000} {<238>}
+E {  319} {sw} {sw} {12} {0} {} {1.000} {<238>}
+
+R {  451} {0} {<
