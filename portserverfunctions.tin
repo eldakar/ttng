@@ -421,6 +421,9 @@
         #case {"osada"}        {#var rmcol <fca>;#var rmsym {}};
         #case {"wioska"}       {#var rmcol <118><fca>;#var rmsym {}};
         #case {"plac"}       {#var rmcol <118><fca>;#var rmsym {}};        
+        #case {"mur"}       {#var rmcol <fac>;#var rmsym {}};
+        #case {"brama"}     {#var rmcol <afc>;#var rmsym {}};
+        #case {"pustka"}     {#var rmcol <g05>;#var rmsym {}};
     };
 
     #if {"$rmcol" != ""} {

@@ -218,7 +218,7 @@
 #alias {/walka} {
    #local totalhits 0;
    #local totaldmg 0;
-   #local totalmiss 0;
+   #local totalmis 0;
 
    #foreach {*collector[$AVATAR_NAME][sent][]} {avasent} {
       #switch {"$avasent"} {
@@ -228,43 +228,43 @@
          #case {"WKS"} {#math totalhits {$totalhits + $collector[$AVATAR_NAME][sent][$avasent]};};
          #case {"magic"} {#math totalhits {$totalhits + $collector[$AVATAR_NAME][sent][$avasent]};};
 
-         #case {"miss"} {#math totalmiss {$totalmiss + $collector[$AVATAR_NAME][sent][$avasent]};};
-         #case {"parry"} {#math totalmiss {$totalmiss + $collector[$AVATAR_NAME][sent][$avasent]};};
-         #case {"dodge"} {#math totalmiss {$totalmiss + $collector[$AVATAR_NAME][sent][$avasent]};};
+         #case {"mis"} {#math totalmis {$totalmis + $collector[$AVATAR_NAME][sent][$avasent]};};
+         #case {"par"} {#math totalmis {$totalmis + $collector[$AVATAR_NAME][sent][$avasent]};};
+         #case {"dod"} {#math totalmis {$totalmis + $collector[$AVATAR_NAME][sent][$avasent]};};
       };
    };
-   #math hitsperc {($totalhits / ($totalhits + $totalmiss)) * 100};
+   #math hitsperc {($totalhits / ($totalhits + $totalmis)) * 100};
    
    #unvar hitsperc;
    
-   #local totalmiss 0;
+   #local totalmis 0;
    #local totalparr 0;
    #local totaldodg 0;
    #local totalothe 0;
 
    #foreach {*collector[$AVATAR_NAME][received][]} {avasent} {
       #switch {"$avasent"} {
-         #case {"miss"} {#math totalmiss {$totalmiss + $collector[$AVATAR_NAME][received][$avasent]};};
-         #case {"parry"} {#math totalparr {$totalparr + $collector[$AVATAR_NAME][received][$avasent]};};
-         #case {"dodge"} {#math totaldodg {$totaldodg + $collector[$AVATAR_NAME][received][$avasent]};};
+         #case {"mis"} {#math totalmis {$totalmis + $collector[$AVATAR_NAME][received][$avasent]};};
+         #case {"par"} {#math totalparr {$totalparr + $collector[$AVATAR_NAME][received][$avasent]};};
+         #case {"dod"} {#math totaldodg {$totaldodg + $collector[$AVATAR_NAME][received][$avasent]};};
          #default {#math totalothe {$totalothe + $collector[$AVATAR_NAME][received][$avasent]};};
       };
    };
-   #math grandtotal {$totalmiss + $totalparr + $totaldodg + $totalothe};
-   #math percmiss {($totalmiss * 100) / $grandtotal};
+   #math grandtotal {$totalmis + $totalparr + $totaldodg + $totalothe};
+   #math percmis {($totalmis * 100) / $grandtotal};
    #math percparr {($totalparr * 100) / $grandtotal};
    #math percdodg {($totaldodg * 100) / $grandtotal};
    #math percothe {($totalothe * 100) / $grandtotal};
    
    #sh {----- Otrzymane ciosy -----};
-   #sh {Miss  $totalmiss (${percmiss}%)};
+   #sh {Miss  $totalmis (${percmis}%)};
    #sh {Parry $totalparr (${percparr}%)};
    #sh {Dodge $totaldodg (${percdodg}%)};
    #sh {Hit   $totalothe (${percothe}%)};
    #sh {---------------------------};
    #sh {Total $grandtotal};
    #unvar grandtotal;
-   #unvar percmiss;
+   #unvar percmis;
    #unvar percparr;
    #unvar percdodg;
    #unvar percothe;
@@ -298,7 +298,7 @@
    
    
    #switch {"%3"} {
-      #case {"dodge"} {
+      #case {"dod"} {
          #if {$gaglevel < 1} {
             #if {"$rpggag" == "widoczna"} {
                #line ignore {
@@ -307,7 +307,7 @@
             };
          };
       };
-      #case {"miss"} {
+      #case {"mis"} {
          #if {$gaglevel < 1} {
             #if {"$rpggag" == "widoczna"} {
                #line ignore {
@@ -316,7 +316,7 @@
             };
          };
       };
-      #case {"parry"} {
+      #case {"par"} {
          #if {$gaglevel < 1} {
             #if {"$rpggag" == "widoczna"} {
                #line ignore {
@@ -356,13 +356,13 @@
 #function {dodajcios} {
 	#line substitute variables {#line strip {#var tmpvalue {%0};};};
 	#var tmpvalue2 {%0};
-	#regex {$tmpvalue} {%w trafia cie %+, lecz caly impet uderzenia zostaje wyparowany %+} {collect &1 $AVATAR_NAME parry 0;#var tmpvalue {}};
+	#regex {$tmpvalue} {%w trafia cie %+, lecz caly impet uderzenia zostaje wyparowany %+} {collect &1 $AVATAR_NAME par 0;#var tmpvalue {}};
 	#regex {$tmpvalue} {%w ledwo muska cie %+, trafiajac cie %+} {collect &1 $AVATAR_NAME hit 1;#var tmpvalue {}};
 	#regex {$tmpvalue} {%w rani cie %+, trafiajac cie %+} {collect &1 $AVATAR_NAME hit 3;#var tmpvalue {}};
 	#regex {$tmpvalue} {%w powaznie rani cie %+, trafiajac cie %+} {collect &1 $AVATAR_NAME hit 4;#var tmpvalue {}};
 	#regex {$tmpvalue} {%w masakruje cie %+, trafiajac cie %+} {collect &1 $AVATAR_NAME hit 5;#var tmpvalue {}};
 	#regex {$tmpvalue} {%w lekko rani cie %+, trafiajac cie %+} {collect &1 $AVATAR_NAME hit 2;#var tmpvalue {}};
-	#regex {$tmpvalue} {%w %w %w trafia cie %+, lecz caly impet uderzenia zostaje wyparowany %+} {collect &3 $AVATAR_NAME parry 0;#var tmpvalue {}};
+	#regex {$tmpvalue} {%w %w %w trafia cie %+, lecz caly impet uderzenia zostaje wyparowany %+} {collect &3 $AVATAR_NAME par 0;#var tmpvalue {}};
 	#regex {$tmpvalue} {%w %w %w ledwo muska cie %+, trafiajac cie %+} {collect &3 $AVATAR_NAME hit 1;#var tmpvalue {}};
 	#regex {$tmpvalue} {%w %w %w rani cie %+, trafiajac cie %+} {collect &3 $AVATAR_NAME hit 3;#var tmpvalue {}};
 	#regex {$tmpvalue} {%w %w %w lekko rani cie %+, trafiajac cie %+} {collect &3 $AVATAR_NAME hit 2;#var tmpvalue {}};
@@ -425,29 +425,29 @@
 	#regex {$tmpvalue} {Masakrujesz %w %w %w %w,} {collect $AVATAR_NAME &1 hit 6;#var tmpvalue {}};
    #regex {$tmpvalue} {Masakrujesz %*,} {collect $AVATAR_NAME unknown hit 6;#var tmpvalue {}};
 
-	#regex {$tmpvalue} {%w wykonuje %+ mierzac w ciebie, lecz tobie udaje sie je zbic %+} {collect &1 $AVATAR_NAME parry 0;#var tmpvalue {}};
-   #regex {$tmpvalue} {lecz udaje ci sie oslonic} {collect unknown $AVATAR_NAME parry 0;#var tmpvalue {}};
-   #regex {$tmpvalue} {lecz sprawnie parujesz} {collect unknown $AVATAR_NAME parry 0;#var tmpvalue {}};
+	#regex {$tmpvalue} {%w wykonuje %+ mierzac w ciebie, lecz tobie udaje sie je zbic %+} {collect &1 $AVATAR_NAME par 0;#var tmpvalue {}};
+   #regex {$tmpvalue} {lecz udaje ci sie oslonic} {collect unknown $AVATAR_NAME par 0;#var tmpvalue {}};
+   #regex {$tmpvalue} {lecz sprawnie parujesz} {collect unknown $AVATAR_NAME par 0;#var tmpvalue {}};
 
-	#regex {$tmpvalue} {%w probuje cie trafic %+ uniknac tego ciosu.} {collect &1 $AVATAR_NAME dodge 0;#var tmpvalue {}};
-	#regex {$tmpvalue} {%w %w %w nie udaje sie trafic ciebie %+} {collect &3 $AVATAR_NAME miss 0;#var tmpvalue {}};
-   #regex {$tmpvalue} {%w nie udaje sie trafic ciebie %+} {collect &1 $AVATAR_NAME miss 0;#var tmpvalue {}};
-   #regex {$tmpvalue} {%w %w %w nie udaje sie trafic %w} {collect &3 unknown miss 0;#var tmpvalue {}};
-   #regex {$tmpvalue} {%w nie udaje sie trafic %w} {collect &1 unknown miss 0;#var tmpvalue {}};
+	#regex {$tmpvalue} {%w probuje cie trafic %+ uniknac tego ciosu.} {collect &1 $AVATAR_NAME dod 0;#var tmpvalue {}};
+	#regex {$tmpvalue} {%w %w %w nie udaje sie trafic ciebie %+} {collect &3 $AVATAR_NAME mis 0;#var tmpvalue {}};
+   #regex {$tmpvalue} {%w nie udaje sie trafic ciebie %+} {collect &1 $AVATAR_NAME mis 0;#var tmpvalue {}};
+   #regex {$tmpvalue} {%w %w %w nie udaje sie trafic %w} {collect &3 unknown mis 0;#var tmpvalue {}};
+   #regex {$tmpvalue} {%w nie udaje sie trafic %w} {collect &1 unknown mis 0;#var tmpvalue {}};
 
-	#regex {$tmpvalue} {%w %w %w wykonuje %+ mierzac w ciebie, lecz tobie udaje sie je zbic %*} {collect &3 $AVATAR_NAME parry 0;#var tmpvalue {}};
-	#regex {$tmpvalue} {%w %w %w probuje cie trafic %+ uniknac tego ciosu.} {collect &3 $AVATAR_NAME dodge 0;#var tmpvalue {}};
-	#regex {$tmpvalue} {%w %w %w probuje cie trafic %+ uniknac tego ciosu} {collect &3 $AVATAR_NAME dodge 0;#var tmpvalue {}};
-   #regex {$tmpvalue} {lecz tobie udaje sie go unik} {collect &1 $AVATAR_NAME dodge 0;#var tmpvalue {}};
-	#regex {$tmpvalue} {%w %w %w nie udaje sie trafic ciebie %+} {collect &3 $AVATAR_NAME miss 0;#var tmpvalue {}};
-	#regex {$tmpvalue} {Wyprowadzasz %+, lecz ten {zbija|oslania} je %+} {collect $AVATAR_NAME unknown parry 0;#var tmpvalue {}};
-   #regex {$tmpvalue} {Probujesz trafic %*, lecz} {collect $AVATAR_NAME unknown miss 0;#var tmpvalue {}};
-   #regex {$tmpvalue} {%w %w %w wyprowadza %* ciebie, lecz} {collect &3 $AVATAR_NAME parry 0;#var tmpvalue {}};
-   #regex {$tmpvalue} {%w wyprowadza %* ciebie, lecz} {collect &1 $AVATAR_NAME parry 0;#var tmpvalue {}};
-   #regex {$tmpvalue} {%w %w %w probuje trafic %* przed tym ciosem.} {collect &3 unknown dodge 0;#var tmpvalue {}};
-   #regex {$tmpvalue} {%w probuje trafic %* przed tym ciosem.} {collect &1 unknown dodge 0;#var tmpvalue {}};
-   #regex {$tmpvalue} {%w %w %w wykonuje %* mierzac w %*, lecz %* {oslania|udaje sie} %*} {collect &3 unknown parry 0;#var tmpvalue {}};
-   #regex {$tmpvalue} {%w wykonuje %* mierzac w %*, lecz %* {oslania|udaje sie} %*} {collect &1 unknown parry 0;#var tmpvalue {}};
+	#regex {$tmpvalue} {%w %w %w wykonuje %+ mierzac w ciebie, lecz tobie udaje sie je zbic %*} {collect &3 $AVATAR_NAME par 0;#var tmpvalue {}};
+	#regex {$tmpvalue} {%w %w %w probuje cie trafic %+ uniknac tego ciosu.} {collect &3 $AVATAR_NAME dod 0;#var tmpvalue {}};
+	#regex {$tmpvalue} {%w %w %w probuje cie trafic %+ uniknac tego ciosu} {collect &3 $AVATAR_NAME dod 0;#var tmpvalue {}};
+   #regex {$tmpvalue} {lecz tobie udaje sie go unik} {collect &1 $AVATAR_NAME dod 0;#var tmpvalue {}};
+	#regex {$tmpvalue} {%w %w %w nie udaje sie trafic ciebie %+} {collect &3 $AVATAR_NAME mis 0;#var tmpvalue {}};
+	#regex {$tmpvalue} {Wyprowadzasz %+, lecz ten {zbija|oslania} je %+} {collect $AVATAR_NAME unknown par 0;#var tmpvalue {}};
+   #regex {$tmpvalue} {Probujesz trafic %*, lecz} {collect $AVATAR_NAME unknown mis 0;#var tmpvalue {}};
+   #regex {$tmpvalue} {%w %w %w wyprowadza %* ciebie, lecz} {collect &3 $AVATAR_NAME par 0;#var tmpvalue {}};
+   #regex {$tmpvalue} {%w wyprowadza %* ciebie, lecz} {collect &1 $AVATAR_NAME par 0;#var tmpvalue {}};
+   #regex {$tmpvalue} {%w %w %w probuje trafic %* przed tym ciosem.} {collect &3 unknown dod 0;#var tmpvalue {}};
+   #regex {$tmpvalue} {%w probuje trafic %* przed tym ciosem.} {collect &1 unknown dod 0;#var tmpvalue {}};
+   #regex {$tmpvalue} {%w %w %w wykonuje %* mierzac w %*, lecz %* {oslania|udaje sie} %*} {collect &3 unknown par 0;#var tmpvalue {}};
+   #regex {$tmpvalue} {%w wykonuje %* mierzac w %*, lecz %* {oslania|udaje sie} %*} {collect &1 unknown par 0;#var tmpvalue {}};
    
 #nop WKS1;   #regex {$tmpvalue} {Szybkim niczym mysl ruchem %* wytracasz %*} {collect $AVATAR_NAME unknown WKS_WYTRACASZ 0;#var tmpvalue {}};
 #nop WKS1;   #regex {$tmpvalue} {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* pozostawiajac ledwie sinca.} {collect $AVATAR_NAME unknown WKS 1;#var tmpvalue {}};
@@ -474,7 +474,7 @@
 
 #nop WKS3;   #regex {$tmpvalue} {%* szybkim niczym mysl ruchem %* wytraca ci} {collect &1 $AVATAR_NAME WKS_WYTRACA_CI 0;#var tmpvalue {}};
 #nop WKS3;   #regex {$tmpvalue} {%* szybkim niczym mysl ruchem %* wytraca} {collect &1 unknown WKS_WYTRACA 0;#var tmpvalue {}};
-#nop WKS3;   #regex {$tmpvalue} {%* wyprowadza %+, lecz ten {zbija|oslania} je %+} {collect &1 unknown parry 0;#var tmpvalue {}};
+#nop WKS3;   #regex {$tmpvalue} {%* wyprowadza %+, lecz ten {zbija|oslania} je %+} {collect &1 unknown par 0;#var tmpvalue {}};
 #nop WKS1;   #regex {$tmpvalue} {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* pozostawiajac ledwie sinca.} {collect &1 unknown WKS 1;#var tmpvalue {}};
 #nop WKS1;   #regex {$tmpvalue} {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* pozostawiajac krwawiace zadrapanie.} {collect &1 unknown WKS 2;#var tmpvalue {}};
 #nop WKS1;   #regex {$tmpvalue} {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* pozostawiajac dluga, poszarpana rane.} {collect &1 unknown WKS 4;#var tmpvalue {}};
@@ -482,8 +482,8 @@
 #nop WKS1;   #regex {$tmpvalue} {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* zadajac smiertelne obrazenia.} {collect &1 unknown WKS 6;#var tmpvalue {}};
 #nop WKS1;   #regex {$tmpvalue} {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* traci rownowage} {collect &1 unknown WKS_PUDLO 0;#var tmpvalue {}};
 
-#nop KG1;    #regex {$tmpvalue} {Ruszasz do przodu, w pol kroku %* bolesnie zacina %*} {collect &1 unknown KG 1;#var tmpvalue {}};
-#nop KG1;    #regex {$tmpvalue} {Nie zwazajac na nic rozpoczynasz oburacz %* plytko tnie} {collect &1 unknown KG 2;#var tmpvalue {}};
+#nop KG1;    #regex {$tmpvalue} {Ruszasz do przodu, w pol kroku %* bolesnie zacina %*} {collect $AVATAR_NAME unknown KG 1;#var tmpvalue {}};
+#nop KG1;    #regex {$tmpvalue} {Nie zwazajac na nic rozpoczynasz oburacz %* plytko tnie} {collect $AVATAR_NAME unknown KG 2;#var tmpvalue {}};
 
 #nop KOR3;   #regex {$tmpvalue} {%w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect &1 unknown KS 4;#var tmpvalue {}};
 #nop KOR3;   #regex {$tmpvalue} {%w %w %w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect &4 unknown KS 4;#var tmpvalue {}};
@@ -501,15 +501,15 @@
 
 #nop JAS;	#regex {$tmpvalue} {%* jaszczur doskakuje do ciebie i niegroznie wgryza sie ostrymi zebami w twoje cialo.} {collect jaszczur $AVATAR_NAME JAS 1;#var tmpvalue {}};
 #nop JAS;   #regex {$tmpvalue} {%* jaszczur doskakuje do ciebie i bardzo lekko wgryza sie ostrymi zebami w twoje cialo.} {collect jaszczur $AVATAR_NAME JAS 2;#var tmpvalue {}};
-#nop RYB;   #regex {$tmpvalue} {%* nadyma swe miesiste %* uskakujesz, a z sykiem skrzel laczy sie swist mijajacej cie broni.} {collect ryboczlek $AVATAR_NAME miss 0;#var tmpvalue {}};
-#nop RYB;   #regex {$tmpvalue} {%* nadyma swe miesiste %*.%w w ostatniej chwili szczesliwie} {collect ryboczlek &3 dodge 0;#var tmpvalue {}};
+#nop RYB;   #regex {$tmpvalue} {%* nadyma swe miesiste %* uskakujesz, a z sykiem skrzel laczy sie swist mijajacej cie broni.} {collect ryboczlek $AVATAR_NAME mis 0;#var tmpvalue {}};
+#nop RYB;   #regex {$tmpvalue} {%* nadyma swe miesiste %*.%w w ostatniej chwili szczesliwie} {collect ryboczlek &3 dod 0;#var tmpvalue {}};
 #nop RYB;   #regex {$tmpvalue} {%* nadyma swe miesiste %* twoich %* z wlasnie powstalej niewielkiej rany} {collect ryboczlek $AVATAR_NAME RYB 1;#var tmpvalue {}};
 
    #nop TALWAR;
 #nop MAG;   #regex {$tmpvalue} {Widzac, ze na ostrzu %* talwara %*, %w %w %w wykonuje %*, pozostawiajac tam spore oparzenie} {collect &5 unknown magic 3;#var tmpvalue {}};   
 #nop MAG;   #regex {$tmpvalue} {Widzac, ze na ostrzu %* talwara %*, %w wykonuje %*, pozostawiajac tam spore oparzenie} {collect &3 unknown magic 3;#var tmpvalue {}};
    #nop TROJZAB Z PIERWSZEJ OSOBY;
-#nop MAG;   #regex {$tmpvalue} {Energicznie wyrzuconym ramieniem prowadzisz ogromny} {collect $AVATAR_NAME unknown miss 0;#var tmpvalue {}};
+#nop MAG;   #regex {$tmpvalue} {Energicznie wyrzuconym ramieniem prowadzisz ogromny} {collect $AVATAR_NAME unknown mis 0;#var tmpvalue {}};
 #nop MAG;   #regex {$tmpvalue} {Wykonujac zamach uderzasz %* ogromnym ognistym %* smugi} {collect $AVATAR_NAME unknown magic 1;#var tmpvalue {}};
 #nop MAG;   #regex {$tmpvalue} {Uderzasz ogromnym ognistym trojzebem} {collect $AVATAR_NAME unknown magic 2;#var tmpvalue {}};
 #nop MAG;   #regex {$tmpvalue} {Plonaca stala ogromnego ognistego trojzebu przebijasz %* z zaskakujaca latwoscia wyrywajac tkanki} {collect $AVATAR_NAME unknown magic 3;#var tmpvalue {}};

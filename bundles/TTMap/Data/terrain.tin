@@ -9,10 +9,10 @@
 #map ter brzeg <138>,<cca>.<088> DOUBLE;
 #map ter plaza <cca>~<dda>~<088> DOUBLE SPARSE;
 #map ter pustynia <ffa>~<088> SPARSE VAST;
-#map ter rzeka <aaf>~<148>~<088> DOUBLE VAST DENSE FADEOUT;
+#map ter rzeka <aab>~<088>
 #map ter bagno <cfa>o<fca>O<088> DOUBLE NARROW;
 #map ter jaskinia <g08>O<088> DENSE;
-#map ter tunel <g08>Oo<088> DOUBLE DENSE;
+#map ter tunel <g04>Oo<088> DOUBLE DENSE;
 #map ter krypta <caa>#<088> DENSE NARROW;
 #map ter korytarz <g08>.<088> DENSE NARROW;
 #map ter wnetrze <cba>D<088> DENSE NARROW;
@@ -36,3 +36,6 @@
 #map ter magma <018>Oo<088> DOUBLE SPARSE;
 #map ter chata <cba>#<088> DENSE NARROW;
 #map ter plac <cba>.<088> DENSE NARROW;
+#map ter mur <baa>#<088> DENSE NARROW;
+#map ter brama <caa>#<088> DENSE NARROW;
+#map ter pustka <g03>,
