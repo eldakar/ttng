@@ -1,11 +1,10 @@
 #nop NA SOBIE;
-	#sub {Trzymasz} {<faa>TRZYMASZ<088>};
-	#sub {Trzyma } {<faa>TRZYMA <088>};
-	#sub {Masz na sobie} {<118><fca>MASZ NA SOBIE<088>};
-	#sub {Ma na sobie} {<118><fca>MA NA SOBIE<088>};
-	#sub {Na plecach} {<cfc>NA PLECACH<088>};
-	#high {Ponad {jego|jej} %*.} {$c_ponad};
-
+	#nop sub {Trzymasz} {<faa>TRZYMASZ<088>};
+	#nop sub {Trzyma } {<faa>TRZYMA <088>};
+	#nop sub {Masz na sobie} {<118><fca>MASZ NA SOBIE<088>};
+	#nop sub {Ma na sobie} {<118><fca>MA NA SOBIE<088>};
+	#nop sub {Na plecach} {<cfc>NA PLECACH<088>};
+	#nop high {Ponad {jego|jej} %*.} {$c_ponad};
 #nop SPRZET DOBREJ JAKOSCI;
 
 		#sub {zlowr%w stalow%w drann%w} {<028>%0 <088>( <038>Obstawa Wiedzm<088> )}; 
@@ -51,7 +50,8 @@
 	#sub {dluga misterna tunika kolcza} {<028>%0 <088>( <038>Bagna Espa Ozyw<088> )}; 
 	#sub {wygodna dwuwarstwowa kolczuga} {<028>%0 <088>( <038>Lyria Cmentarz<088> )};
 	#sub {szmaragdowozlot%w smocz%w karacen%w} {<028>%0 <088>( <038>Raon Amorgoth<088> )};
-	#high {lsniac%w smukl%w miecz%w} {<028>} {1}	;
+	#high {lsniac%w smukl%w miecz%w} {<028>};
+	#sub {lsniac%w luskow%w pancerz%w} {<028>%0 <088>( <038>Grom<088> )}; 
 
 #nop LEKKIE ZBROJE;
 	#sub {gigantycz%w wzmacnia%w czaszk%w} {<028>%0 <088>( <038>Szaman Wsiowy<088> )}; 

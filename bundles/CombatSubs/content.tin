@@ -438,7 +438,7 @@
 	#regex {$tmpvalue} {%w %w %w wykonuje %+ mierzac w ciebie, lecz tobie udaje sie je zbic %*} {collect &3 $AVATAR_NAME par 0;#var tmpvalue {}};
 	#regex {$tmpvalue} {%w %w %w probuje cie trafic %+ uniknac tego ciosu.} {collect &3 $AVATAR_NAME dod 0;#var tmpvalue {}};
 	#regex {$tmpvalue} {%w %w %w probuje cie trafic %+ uniknac tego ciosu} {collect &3 $AVATAR_NAME dod 0;#var tmpvalue {}};
-   #regex {$tmpvalue} {lecz tobie udaje sie go unik} {collect &1 $AVATAR_NAME dod 0;#var tmpvalue {}};
+   #regex {$tmpvalue} {lecz tobie udaje sie go unik} {collect unknown $AVATAR_NAME dod 0;#var tmpvalue {}};
 	#regex {$tmpvalue} {%w %w %w nie udaje sie trafic ciebie %+} {collect &3 $AVATAR_NAME mis 0;#var tmpvalue {}};
 	#regex {$tmpvalue} {Wyprowadzasz %+, lecz ten {zbija|oslania} je %+} {collect $AVATAR_NAME unknown par 0;#var tmpvalue {}};
    #regex {$tmpvalue} {Probujesz trafic %*, lecz} {collect $AVATAR_NAME unknown mis 0;#var tmpvalue {}};

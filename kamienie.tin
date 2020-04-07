@@ -1,0 +1,102 @@
+#alias {kamienie} {
+  #var stonevalue 0;
+  ocen wszystkie kamienie;
+  #delay {2} {kamienie_}
+}
+#alias {kamienie_} {
+    #var svalue_mith {0};
+    #var svalue_gold {0};
+    #var svalue_silv {0};
+    #var svalue_copp {$stonevalue};
+
+    #if {$svalue_copp >= 24000} {
+      #math svalue_mith {$svalue_copp / 24000};
+      #math svalue_copp {$svalue_copp % 24000};
+    };
+
+    #if {$svalue_copp >= 240} {
+      #math svalue_gold {$svalue_copp / 240};
+      #math svalue_copp {$svalue_copp % 240};
+    };
+    #if {$svalue_copp >= 12} {
+      #math svalue_silv {$svalue_copp / 12};
+      #math svalue_copp {$svalue_copp % 12};
+    };
+    #sh Wartosc kamieni: ${svalue_mith}/${svalue_gold}/${svalue_silv}/${svalue_copp}
+}
+
+#action {{Sa|Jest} tu %2 {sztuki|sztuk} {warte|wartych} %5 miedziakow.}
+{
+    #var value_mith {0};
+    #var value_gold {0};
+    #var value_silv {0};
+    #var value_copp {%5};
+    #math stonevalue {$stonevalue + $value_copp};
+
+    #if {$value_copp >= 24000} {
+      #math value_mith {$value_copp / 24000};
+      #math value_copp {$value_copp % 24000};
+    };
+
+    #if {$value_copp >= 240} {
+      #math value_gold {$value_copp / 240};
+      #math value_copp {$value_copp % 240};
+    };
+    #if {$value_copp >= 12} {
+      #math value_silv {$value_copp / 12};
+      #math value_copp {$value_copp % 12};
+    };
+    #ec {Wydaje ci sie, ze jest war%1 okolo %2 miedziakow, czyli ${value_mith}/${value_gold}/${value_silv}/${value_copp}};
+    #line gag;
+
+}
+#action {^%*\n%*\n\n%*\nWydaje ci sie, ze jest war{ta|t} okolo %2 miedziak{i|ow}.$}
+{
+    #var value_mith {0};
+    #var value_gold {0};
+    #var value_silv {0};
+    #var value_copp {%2};
+    #math stonevalue {$stonevalue + $value_copp};
+
+    #if {$value_copp >= 24000} {
+      #math value_mith {$value_copp / 24000};
+      #math value_copp {$value_copp % 24000};
+    };
+
+    #if {$value_copp >= 240} {
+      #math value_gold {$value_copp / 240};
+      #math value_copp {$value_copp % 240};
+    };
+    #if {$value_copp >= 12} {
+      #math value_silv {$value_copp / 12};
+      #math value_copp {$value_copp % 12};
+    };
+    #ec {%1 ${value_mith}/${value_gold}/${value_silv}/${value_copp}};
+    #line gag;
+}
+
+#action {^%*\n%*\n\n%*\nSa tu %* sztuk%. wart%* okolo %7 miedziak{i|ow}.$}
+{
+    #var value_mith {0};
+    #var value_gold {0};
+    #var value_silv {0};
+    #var value_copp {%7};
+    #math stonevalue {$stonevalue + $value_copp};
+
+    #if {$value_copp >= 24000} {
+      #math value_mith {$value_copp / 24000};
+      #math value_copp {$value_copp % 24000};
+    };
+
+    #if {$value_copp >= 240} {
+      #math value_gold {$value_copp / 240};
+      #math value_copp {$value_copp % 240};
+    };
+    #if {$value_copp >= 12} {
+      #math value_silv {$value_copp / 12};
+      #math value_copp {$value_copp % 12};
+    };
+    #ec {%1 ${value_mith}/${value_gold}/${value_silv}/${value_copp}};
+    #line gag;
+}
+

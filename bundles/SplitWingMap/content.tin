@@ -157,7 +157,7 @@
     #if {$curright < $right} {
         #if {$curbott > $top && $o_x > $global_bundle_slots_values[prompt][top]} {
             #var mapcenter 1;
-            #if {$o_x < $global_bundle_slots_values[prompt][top] + 4} {
+            #if {$o_x < $global_bundle_slots_values[prompt][top] + 4+ $praidsize} {
                 #var mapbuttons 1;
             };
         };

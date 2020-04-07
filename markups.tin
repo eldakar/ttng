@@ -1,0 +1,43 @@
+#class markups read bundles/ConfigManager/Profiles/markups.tt;
+		
+#var markupsStatus off;
+#alias {/a} {
+	#map get roomvnum markupsRoomVnum;
+	#line sub variables {
+		#class markups read bundles/ConfigManager/Profiles/markups.tt;
+		#class markups open;
+		#list m add $markupsRoomVnum;
+		#class markups close;
+		#class markups write bundles/ConfigManager/Profiles/markups.tt;
+	};
+} {1};
+
+
+#alias {/d} {
+	#map get roomvnum markupsRoomVnum;
+	#line sub variables {
+		#class markups read bundles/ConfigManager/Profiles/markups.tt;
+		#class markups open;
+		#list m add $markupsRoomVnum;
+		#class markups close;
+		#class markups write bundles/ConfigManager/Profiles/markups.tt;
+	};
+} {1};
+
+
+
+#alias {/show} {
+	#if {"$markupsStatus" == "off"} {
+		#var markupsStatus on;
+		#foreach {*m[]} {_m} {
+			#sh {$m[$_m]};
+			#map at {$m[$_m]} {
+				#map get roomsymbol _rs;
+				#var markups[$m[$_m]][symbol] $_rs;
+				#map set roomsymbol {<AFA>   <088>};
+			};
+		};
+	} {
+		#line ignore #sh {<168>juz pokolorowane!<088>};
+	};
+} {1};
