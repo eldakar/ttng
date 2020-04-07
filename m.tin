@@ -50,6 +50,10 @@
     #read bundles/CombatSubs/manifest.tin;
     #read bundles/Comparer/manifest.tin;
     #read bundles/Chat/manifest.tin;
+
+    #read markups.tin;
+    #read kamienie.tin;
+
     #nop read bundles/SplitWingButtons/manifest.tin;
 
     #var r @bundleops_loadglobals{};
