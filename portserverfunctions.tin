@@ -253,7 +253,7 @@
     mapsave;
 } {1};
 
-#action {<PORT> UNLINK %d %w'} {
+#action {<PORT> UNLINK %d %w} {
     #map at {%1} {
         #line substitute variables {
             #map unlink %2;         
