@@ -315,7 +315,7 @@
                     #case {"bookshelves_ns"}    {#var rmcol <238>;#var rmsym <238>=<148>.<238>=<088>};
         #case {"most"}        {#var rmcol <238>;#var rmsym {}};
                     #case {"cabin"}         {#var rmcol <238>;#var rmsym <238># #<088>};
-        #case {"jaskinia"}          {#var rmcol <248>;#var rmsym {}};
+        #case {"jaskinia"}          {#var rmcol <058>;#var rmsym {}};
                     #case {"castle"}        {#var rmcol <178>;#var rmsym <278>###<088>};
         #case {"symbol"}     {#var rmcol <258>;#var rmsym {}};
                     #case {"chessblack"}        {#var rmcol <248>;#var rmsym <248>[ ]<088>};
