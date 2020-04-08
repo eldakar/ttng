@@ -47,6 +47,7 @@
 };
 
 #action {<PORT> DEL %d %w} {
+    #map goto %1;
     #map at {%1} {#map del %2};
     broadcast DEL %1 %2;
     mapsave;
