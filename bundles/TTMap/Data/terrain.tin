@@ -1,17 +1,17 @@
-#map ter las <aba>t<088> SPARSE VAST;
-#map ter lasiglasty <aba>AA<088> DOUBLE VAST;
+#map ter las <abb>t<088> SPARSE VAST;
+#map ter lasiglasty <abc>T<088> SCANT;
 #map ter lasbukowy <aca>Ti<088> DOUBLE VAST;
 #map ter lassosnowy <aca>TT<088> DOUBLE VAST;
 #map ter ogrod <028>,<038>.<088> DOUBLE SPARSE;
-#map ter laka <028>.<038>*<088> DOUBLE VAST;
-#map ter pole <038>i<028>.<088> DOUBLE VAST;
+#map ter laka <aba>.<bba>*<088> DOUBLE SPARSE;
+#map ter pole <aba>i<bba>.<088> DOUBLE VAST;
 #map ter gaszcz <128>£V<088> DOUBLE DENSE NARROW;
 #map ter brzeg <138>,<cca>.<088> DOUBLE;
 #map ter plaza <cca>~<dda>~<088> DOUBLE SPARSE;
 #map ter pustynia <ffa>~<088> SPARSE VAST;
 #map ter rzeka <aab>~<088>
 #map ter bagno <cfa>o<fca>O<088> DOUBLE NARROW;
-#map ter jaskinia <g02>Oo<088> DENSE;
+#map ter jaskinia <g02>Oo<088> DENSE DOUBLE;
 #map ter tunel <g04>Oo<088> DOUBLE DENSE;
 #map ter krypta <caa>#<088> DENSE NARROW;
 #map ter korytarz <g08>.<088> DENSE NARROW;
@@ -35,7 +35,7 @@
 #map ter lawa <018>~<088>;
 #map ter magma <018>Oo<088> DOUBLE SPARSE;
 #map ter chata <cba>#<088> DENSE NARROW;
-#map ter plac <cba>.<088> DENSE NARROW;
+#map ter plac <cab>.<088> DENSE NARROW;
 #map ter mur <baa>#<088> DENSE NARROW;
 #map ter brama <caa>#<088> DENSE NARROW;
 #map ter pustka <g03>,

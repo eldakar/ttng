@@ -72,13 +72,6 @@
 #NOP SNOTLINGI;
 #unaction {~Odbiwszy sie od ziemi %* doskakuje do ciebie i piszczac przerazliwie bije cie lekko w %*.$} {#echo {<aca> <fff>[sno ?/?]<088> %0<aaa>,};#line gag;};
 #unaction {~Odbiwszy sie od ziemi %* doskakuje do ciebie i piszczac przerazliwie bije cie odczuwalnie w %*.$} {#echo {<aca> <fff>[sno ?/?]<088> %0<aaa>,};#line gag;};
-#NOP GOBLINOIDY;
-#unaction {~W slepiach %* pojawia sie nienawistny blysk, gdy zdecydowanym uderzeniem %* kaleczy ci %*.$} {#echo {<caa> [gob 1/?]<088> %0<aaa>,};#line gag;};
-#unaction {~W slepiach %* pojawia sie nienawistny blysk, gdy zdecydowanym uderzeniem %* rozkrwawia ci %*.$} {#echo {<caa> [gob 2/?]<088> %0<aaa>,};#line gag;};
-#unaction {~%* doskakuje do %*.$} {#echo { <118><ffa><fff>[gob ?/?]<088> %0<aaa>,};#line gag;} {6};
-#NOP TROLLE
-#unaction {~^Jedna z ran zwalistego szarawego trolla zamyka sie z ohydnym mlasnieciem.$}
- {#echo {<caa> [trl ?/?]<088> %0<aaa>,};#line gag;} {6};
 #NOP * FANATYK *;
 #NOP WALKA INNYCH
 #unaction {~^%* ledwo muska %*.$} {#echo { <118><ffa><fff>[1/6]<088> %0<aaa>,};#line gag;};
@@ -294,8 +287,16 @@
    #replace {tmpvalue2} {Lekko ranisz} {<afa>Lekko ranisz<088>};
    #replace {tmpvalue2} {Ranisz} {<afa>Ranisz<088>};
    #replace {tmpvalue2} {Ledwo muskasz} {<afa>Ledwo muskasz<088>};
+   #replace {tmpvalue2} {Lekko muskasz} {<afa>Lekko muskasz<088>};
+   #replace {tmpvalue2} {niezbyt mocno ranisz} {<afa>niezbyt mocno ranisz<088>};
+   #replace {tmpvalue2} {ranisz} {<afa>ranisz<088>};
+   #replace {tmpvalue2} {rozcinasz} {<afa>rozcinasz<088>};
+   #replace {tmpvalue2} {plytko tnie} {<afa>plytko tnie<088>};
+   #replace {tmpvalue2} {gleboko tnie} {<afa>gleboko tnie<088>};
+   #replace {tmpvalue2} {bolesnie zacina} {<afa>bolesnie zacina<088>};
    #replace {tmpvalue2} {ledwo muska cie} {<fca>ledwo muska cie<088>};
-   
+
+
    
    #switch {"%3"} {
       #case {"dod"} {
@@ -442,6 +443,7 @@
 	#regex {$tmpvalue} {%w %w %w nie udaje sie trafic ciebie %+} {collect &3 $AVATAR_NAME mis 0;#var tmpvalue {}};
 	#regex {$tmpvalue} {Wyprowadzasz %+, lecz ten {zbija|oslania} je %+} {collect $AVATAR_NAME unknown par 0;#var tmpvalue {}};
    #regex {$tmpvalue} {Probujesz trafic %*, lecz} {collect $AVATAR_NAME unknown mis 0;#var tmpvalue {}};
+   #regex {$tmpvalue} {Niespodziewanie skrecasz tulow %* jakims cudem nie dosiega} {collect $AVATAR_NAME unknown mis 0;#var tmpvalue {}};
    #regex {$tmpvalue} {%w %w %w wyprowadza %* ciebie, lecz} {collect &3 $AVATAR_NAME par 0;#var tmpvalue {}};
    #regex {$tmpvalue} {%w wyprowadza %* ciebie, lecz} {collect &1 $AVATAR_NAME par 0;#var tmpvalue {}};
    #regex {$tmpvalue} {%w %w %w probuje trafic %* przed tym ciosem.} {collect &3 unknown dod 0;#var tmpvalue {}};
@@ -482,8 +484,15 @@
 #nop WKS1;   #regex {$tmpvalue} {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* zadajac smiertelne obrazenia.} {collect &1 unknown WKS 6;#var tmpvalue {}};
 #nop WKS1;   #regex {$tmpvalue} {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* traci rownowage} {collect &1 unknown WKS_PUDLO 0;#var tmpvalue {}};
 
-#nop KG1;    #regex {$tmpvalue} {Ruszasz do przodu, w pol kroku %* bolesnie zacina %*} {collect $AVATAR_NAME unknown KG 1;#var tmpvalue {}};
+#nop KG1;    #regex {$tmpvalue} {Ruszasz do przodu, w pol kroku %* bolesnie zacina %*} {collect $AVATAR_NAME unknown KG 4;#var tmpvalue {}};
 #nop KG1;    #regex {$tmpvalue} {Nie zwazajac na nic rozpoczynasz oburacz %* plytko tnie} {collect $AVATAR_NAME unknown KG 2;#var tmpvalue {}};
+#nop KG1;    #regex {$tmpvalue} {Wyrzucasz do przodu %* plytko tnie} {collect $AVATAR_NAME unknown KG 2;#var tmpvalue {}};
+#nop KG1;    #regex {$tmpvalue} {Wyrzucasz do przodu %* ledwo zacina} {collect $AVATAR_NAME unknown KG 1;#var tmpvalue {}};
+#nop KG1;    #regex {$tmpvalue} {Nie zwazajac na nic rozpoczynasz oburacz %* bolesnie zacina} {collect $AVATAR_NAME unknown KG 4;#var tmpvalue {}};
+#nop KG1;    #regex {$tmpvalue} {Z okrzykiem na ustach dopadasz} {collect $AVATAR_NAME unknown KG 7;#var tmpvalue {}};
+#nop KG1;    #regex {$tmpvalue} {Niespodziewanie skrecasz tulow %* plytko tnie} {collect $AVATAR_NAME unknown KG 2;#var tmpvalue {}};
+#nop KG1;    #regex {$tmpvalue} {Niespodziewanie skrecasz tulow %* gleboko tnie} {collect $AVATAR_NAME unknown KG 4;#var tmpvalue {}};
+#nop KG1;    #regex {$tmpvalue} {Niespodziewanie skrecasz tulow %* bolesnie zacina} {collect $AVATAR_NAME unknown KG 3;#var tmpvalue {}};
 
 #nop KOR3;   #regex {$tmpvalue} {%w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect &1 unknown KS 4;#var tmpvalue {}};
 #nop KOR3;   #regex {$tmpvalue} {%w %w %w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect &4 unknown KS 4;#var tmpvalue {}};
@@ -496,8 +505,13 @@
 #nop FAN3;   #regex {$tmpvalue} {%* rzuca sie do ataku. %* masakrujac %*} {collect &1 unknown MC 6;#var tmpvalue {}};
 #nop FAN3;   #regex {$tmpvalue} {%* staje pewnie %* uderzenie %*} {collect &1 unknown MC 7;#var tmpvalue {}};
 
-#nop GOB;	#regex {$tmpvalue} {%* wskakuje znienacka na twoje plecy i z upiornym chichotem gryzie cie niegroznie w szyje!} {collect gremlin $AVATAR_NAME GOB 1;#var tmpvalue {}};
-#nop GOB;   #regex {$tmpvalue} {%* wskakuje znienacka na twoje plecy i z upiornym chichotem gryzie cie bardzo lekko w szyje!} {collect gremlin $AVATAR_NAME GOB 2;#var tmpvalue {}};
+#nop GRE;	#regex {$tmpvalue} {chichotem gryzie cie niegroznie w szyje!} {collect gremlin $AVATAR_NAME GRE 1;#var tmpvalue {}};
+#nop GRE;   #regex {$tmpvalue} {chichotem gryzie cie bardzo lekko w szyje!} {collect gremlin $AVATAR_NAME GRE 2;#var tmpvalue {}};
+
+#nop GOB;   #regex {$tmpvalue} {pojawia sie nienawistny %* kaleczy ci} {collect goblinoid $AVATAR_NAME GOB 1;#var tmpvalue {}};
+#nop GOB;   #regex {$tmpvalue} {pojawia sie nienawistny %* rozkrwawia ci} {collect goblinoid $AVATAR_NAME GOB 3;#var tmpvalue {}};
+#nop GOB;   #regex {$tmpvalue} {zamyka sie z ohydnym mlasnieciem} {collect troll troll TROLL 0;#var tmpvalue {}};
+
 
 #nop JAS;	#regex {$tmpvalue} {%* jaszczur doskakuje do ciebie i niegroznie wgryza sie ostrymi zebami w twoje cialo.} {collect jaszczur $AVATAR_NAME JAS 1;#var tmpvalue {}};
 #nop JAS;   #regex {$tmpvalue} {%* jaszczur doskakuje do ciebie i bardzo lekko wgryza sie ostrymi zebami w twoje cialo.} {collect jaszczur $AVATAR_NAME JAS 2;#var tmpvalue {}};
@@ -537,6 +551,17 @@
 #nop MAG;   #regex {$tmpvalue} {{Widok slabnacego wroga tylko dodaje ci sil|Z kazdym kolejnym ciosem nabierasz nowej sily do walki|Powolne, pozbawione sily ruchy wroga zagrzewaja cie do walki, dodajac zapalu.}} {collect $AVATAR_NAME unknown magic 0;#var tmpvalue {}};
    #nop HELM;
 #nop MAG;   #regex {$tmpvalue} {zaczyna wpatrywac sie pustym wzrokiem w slepia weza wijacego sie u podstawy twojego ciemnogranatowego smuklego helmu.} {collect $AVATAR_NAME unknown STUN 0;#var tmpvalue {}};
+
+ #nop ESPA;
+#nop MAG;   #regex {$tmpvalue} {Lekko muskasz} {collect $AVATAR_NAME unknown magic 1;#var tmpvalue {}};
+#nop MAG;   #regex {$tmpvalue} {Bez wysilku, niezbyt mocno} {collect $AVATAR_NAME unknown magic 2;#var tmpvalue {}};
+#nop MAG;   #regex {$tmpvalue} {Ruszasz do przodu %* gleboko tnie} {collect $AVATAR_NAME unknown magic 4;#var tmpvalue {}};
+#nop MAG;   #regex {$tmpvalue} {Skutecznym uderzeniem} {collect $AVATAR_NAME unknown magic 3;#var tmpvalue {}};
+#nop MAG;   #regex {$tmpvalue} {Bierzesz mocny zamach i poteznym ciosem} {collect $AVATAR_NAME unknown magic 4;#var tmpvalue {}};
+#nop MAG;   #regex {$tmpvalue} {Wyprowadzasz znad glowy} {collect $AVATAR_NAME unknown magic 5;#var tmpvalue {}};
+#nop MAG;   #regex {$tmpvalue} {Korzystajac z nieuwagi} {collect $AVATAR_NAME unknown magic 6;#var tmpvalue {}};
+#nop MAG;   #regex {$tmpvalue} {Unosisz nagle swoj espadon} {collect $AVATAR_NAME unknown magic 7;#var tmpvalue {}};
+
 
 #nop PANIC; #regex {$tmpvalue} {w panice umyka} {#sh $tmpvalue2;#var tmpvalue {}};
 #nop PANIC; #regex {$tmpvalue} {uciekl ci.} {#sh $tmpvalue2;#var tmpvalue {}};

@@ -11,7 +11,6 @@
 #var zmeczenie[9] {calkowicie wycienczony};
 
 #var bbs_fixer 0;
-#var bbs_fixermin 2;
 #alias {BottomBarSimple_char_state} {
 	#var charstate {%0};
 	#foreach {*charstate[]} {s} {
@@ -32,7 +31,7 @@
 			qb melduj_zmeczenie;
 		};
 	};
-	#if {$bbs_fixer > $bbs_fixermin} {
+	#if {$bbs_fixer > 2} {
 		#nop BottomBarClassic;
 		BottomBarTinyFugue;
 	} {
@@ -227,6 +226,10 @@
 #var qbvar {                                                                 };
 
 #var bbBGC {<G02>};
+#event {VARIABLE UPDATED bbBGC} {
+	BottomBarTinyFugue;	
+};
+
 #alias {BottomBarTinyFugue} {
 	#var global_bundle_slots_values[prompt][bottom] {3};
 	#var hspac {};
@@ -237,7 +240,7 @@
 	#line ignore #sh {$bbBGC  <138>$rozk2[w]$rozk2[w] o <138>$rozk2[e]$rozk2[e]    <088>${bbBGC}                                                                     $hspac Panika: $state[panic] Prag: $state[soaked]<088>} {-3};
 	#line ignore #sh {$bbBGC  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d]   <088>${bbBGC}B:[$qbvar<088>${bbBGC}]$hspac Ciezar: $state[encumbrance] Pija: $state[intox]<088>} {-2};	
 
-
+	#nop draw tubed box $screenrows-3 12 $screenrows-1 35;
 };
 
 #alias zegartest {

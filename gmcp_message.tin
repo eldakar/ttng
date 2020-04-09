@@ -39,7 +39,6 @@
 				#var gmcp_short {$outputtext};
 			}};
 			#if {$bind_found > 0} {
-				#nop line sub variables {#alias _quickbind_ {$bind_run}};
 				SplitWingMap_LabelBind $bind_run;
 			};
 			#sh {$outputtext};
@@ -51,7 +50,6 @@
 			#if {$trytomove > 0} {
         		#var trytomove 0;
 			    #map get roomvnum roomId;
-			   	#math pendingstep {$pendingstep - 1};
     		};
 			#nop SplitWingMap_LabelMap <128>$current_room_short_desc;
 		};
@@ -73,17 +71,3 @@
 		#default {#sh $GMCPMSGS[text]};
 	};		
 };
-
-#alias {/info} {
-	#format {b} {%h} { ODNAJDYWANIE MAPY };
-	#echo $b;
-
-	#sh {gmc_coord> <028>$gmcp_coords<088>};
-	#sh {gmc_short> <028>$gmcp_short<088>};
-	#sh {gmc_exits> <028>$gmcp_exits<088>};
-
-	#sh {map_short> <fca>$map_short<088>};
-	#sh {map_exits> <fca>$map_exits<088>};
-	#format {b} {%h};
-	#echo $b;
-} {1};

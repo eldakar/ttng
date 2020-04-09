@@ -1,12 +1,27 @@
 #class markups read bundles/ConfigManager/Profiles/markups.tt;
 		
 #var markupsStatus off;
-#alias {/a} {
+#alias {/a %w} {
 	#map get roomvnum markupsRoomVnum;
+	#map get roomsymbol _rs;
+	#map get roomterrain _rt;
 	#line sub variables {
 		#class markups read bundles/ConfigManager/Profiles/markups.tt;
 		#class markups open;
-		#list m add $markupsRoomVnum;
+
+		#var markupsymbols[mob] {<FFA><aaa>MOB<088>};
+		#var markupsymbols[ext] {<168>[ ]<088>};
+		#var markupsymbols[rot] {<faa>[X]<088>};
+		#if {$m[$markupsRoomVnum][rendered] > 0} {
+			#line ignore #sh {<178>Highlighter: <038>Juz podswietlam ten pokoj!};
+		} {
+			#var m[$markupsRoomVnum][rendered] {1};
+			#var m[$markupsRoomVnum][type] {%1};
+			#var m[$markupsRoomVnum][symbol] {$_rs};
+			#var m[$markupsRoomVnum][terrain] {$_rt};
+			#map set roomsymbol {$markupsymbols[%1]};
+			#line ignore #sh {<178>Highlighter: <028>Dodalem %1};
+		};
 		#class markups close;
 		#class markups write bundles/ConfigManager/Profiles/markups.tt;
 	};
@@ -18,26 +33,42 @@
 	#line sub variables {
 		#class markups read bundles/ConfigManager/Profiles/markups.tt;
 		#class markups open;
-		#list m add $markupsRoomVnum;
+		#if {$m[$markupsRoomVnum][rendered] > 0} {
+			#map set roomsymbol {$m[$markupsRoomVnum][symbol]};
+			#map set roomterrain {$m[$markupsRoomVnum][terrain]}; 
+			#unvar m[$markupsRoomVnum];
+			#line ignore #sh {<178>Highlighter: <028>Usunalem.};
+		} {
+			#line ignore #sh {<178>Highlighter: <038>Pokoj nie byl podswietlony!};
+		}
+		
 		#class markups close;
 		#class markups write bundles/ConfigManager/Profiles/markups.tt;
 	};
 } {1};
 
 
-
+#var showingmarkups 0;
 #alias {/show} {
-	#if {"$markupsStatus" == "off"} {
-		#var markupsStatus on;
+	#if {$showingmarkups < 1} {
 		#foreach {*m[]} {_m} {
-			#sh {$m[$_m]};
-			#map at {$m[$_m]} {
-				#map get roomsymbol _rs;
-				#var markups[$m[$_m]][symbol] $_rs;
-				#map set roomsymbol {<AFA>   <088>};
+			#map at {$_m} {
+				#var m[$_m][rendered] {1};
+				#map set roomsymbol $markupsymbols[$m[$_m][type]];
+			};
+		}
+		#var showingmarkups 1;
+	};
+} {1};
+
+#alias {/hide} {
+	#if {$showingmarkups > 0} {
+		#foreach {*m[]} {_m} {
+			#map at {$_m} {
+				#var m[$_m][rendered] {0};
+				#map set roomsymbol $m[$_m][symbol];
 			};
 		};
-	} {
-		#line ignore #sh {<168>juz pokolorowane!<088>};
+		#var showingmarkups 0;
 	};
 } {1};

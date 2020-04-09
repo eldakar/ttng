@@ -26,13 +26,6 @@
 #map ter water2 <aac>~ VAST SPARSE;
 #map ter deepwater <aab>~ SCANT WIDE;
 
-#nop 🌊 - water;
-#nop ⏅ - drzew;
-#nop ☘ - koniczyna;
-#nop ✿ - kwiatek;
-#nop ❀ - kwiatek2;
-#nop ⭐ - gwiazdka;
-
 #map ter lava1 <118>O VAST;
 #map ter lava2 <caa>o SPARSE VAST;
 #map ter lava3 <daa>. SPARSE VAST;
@@ -64,18 +57,4 @@
 #map ter cave6 <cba>. SCANT;
 #map ter tunnel1 <g04>@ SPARSE NARROW;
 #map ter underground1 <g06>@ SPARSE WIDE;
-
-#alias terrain_exits {
-	#loop {1} {25000} {aa} {
-		#map at $aa {#map get roomterrain tmproomterrain};
-		#format {tmproomtlen} {%L} {$tmproomterrain};	
-		#if {$tmproomtlen > 2} {
-			#regex {$tmproomterrain} {{forest|field}} {#map at $aa {#map set roomcolor <128>}};
-			#regex {$tmproomterrain} {plaza} {#map at $aa {#map set roomcolor <138>}};
-			#regex {$tmproomterrain} {water} {#map at $aa {#map set roomcolor <148>}};
-			#regex {$tmproomterrain} {cave} {#map at $aa {#map set roomcolor <158>}};
-			#regex {$tmproomterrain} {lava} {#map at $aa {#map set roomcolor <118>}};
-		};
-	};
-}
 

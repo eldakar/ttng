@@ -7,6 +7,7 @@
 #action {Zaczynasz plynac %*.} {frozen_set};
 #action {Zaczynasz szukac ziol.} {frozen_set};
 #action {Zaczynasz kopac w ziemi.} {frozen_set};
+#action {Zaczynasz szukac %*} {frozen_set};
 
 #action {Zaczynasz wioslowac.} {frozen_set};
 #action {Skryt{a|y} za %* zaczynasz plynac na} {frozen_set};
