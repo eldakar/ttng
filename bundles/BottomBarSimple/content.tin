@@ -240,7 +240,36 @@
 	#line ignore #sh {$bbBGC  <138>$rozk2[w]$rozk2[w] o <138>$rozk2[e]$rozk2[e]    <088>${bbBGC}                                                                     $hspac Panika: $state[panic] Prag: $state[soaked]<088>} {-3};
 	#line ignore #sh {$bbBGC  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d]   <088>${bbBGC}B:[$qbvar<088>${bbBGC}]$hspac Ciezar: $state[encumbrance] Pija: $state[intox]<088>} {-2};	
 
-	#nop draw tubed box $screenrows-3 12 $screenrows-1 35;
+};
+
+#alias barstest {
+	#math barcols {($screencols - 32) / 3};
+
+	#var hpbar {};
+	#math curhp {$state[hp] + 1};
+	#math hpslot {($barcols - 2) / 7}; 
+	#math hpmodu {($barcols - 2) % 7};
+	#math hplen {($curhp * $hpslot) + $hpmodu};
+	#loop {1} {$hplen} {hpl} {#var hpbar {$hpbar#};};
+
+	#var stbar {};
+	#math curst {10 - $state[fatigue]};
+	#math stslot {($barcols - 2) / 10}; 
+	#math stmodu {($barcols - 2) % 10};
+	#math stlen {($curst * $stslot) + $stmodu};
+	#loop {1} {$stlen} {stl} {#var stbar {$stbar#};};
+
+	#var mnbar {};
+	#math curmn {$state[mana] + 1};
+	#math mnslot {($barcols - 2) / 9}; 
+	#math mnmodu {($barcols - 2) % 9};
+	#math mnlen {($curmn * $mnslot) + $mnmodu};
+	#loop {1} {$mnlen} {mnl} {#var mnbar {$mnbar#};};
+
+
+	#draw jeweled box $screenrows-3 12 $screenrows-1 12+$barcols <afa>$hpbar<088>;
+	#draw jeweled box $screenrows-3 12+$barcols $screenrows-1 12+$barcols+$barcols <078>$stbar<088>;
+	#draw jeweled box $screenrows-3 12+$barcols+$barcols $screenrows-1 12+$barcols+$barcols+$barcols <048>$mnbar<088>;
 };
 
 #alias zegartest {

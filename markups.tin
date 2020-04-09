@@ -11,9 +11,9 @@
 
 		#var markupsymbols[mob] {<FFA><aaa>MOB<088>};
 		#var markupsymbols[ext] {<168>[ ]<088>};
-		#var markupsymbols[rot] {<faa>[X]<088>};
+		#var markupsymbols[rot] {<faa>;~;<088>};
 		#if {$m[$markupsRoomVnum][rendered] > 0} {
-			#line ignore #sh {<178>Highlighter: <038>Juz podswietlam ten pokoj!};
+			#nop line ignore #sh {<178>Highlighter: <038>Juz podswietlam ten pokoj!};
 		} {
 			#var m[$markupsRoomVnum][rendered] {1};
 			#var m[$markupsRoomVnum][type] {%1};

@@ -56,17 +56,25 @@
 		#case {"combat.team"} {
 			#var outputtext {$GMCPMSGS[text]};
 			#replace {outputtext} {\\n} {};
-			#var ciosy @dodajcios{$outputtext};
+			#sh $outputtext;
 		};
 		#case {"combat.others"} {
 			#var outputtext {$GMCPMSGS[text]};
 			#replace {outputtext} {\\n} {};
-			#var ciosy @dodajcios{$outputtext};
+			#sh $outputtext;
 		};
 		#case {"combat.avatar"} {
 			#var outputtext {$GMCPMSGS[text]};
 			#replace {outputtext} {\\n} {};
-			#var ciosy @dodajcios{$outputtext};
+			#sh $outputtext;
+			#delay {wwalce} {#sh {Odsapnales po walce.}} {30};
+			/a rot;
+			#line sub variables {
+				#delay {$voom} {
+					#map at {$voom} {/d};
+				} {600};
+			};
+
 		};	
 		#default {#sh $GMCPMSGS[text]};
 	};		
