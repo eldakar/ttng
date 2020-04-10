@@ -96,10 +96,39 @@
     #map goto %1;
     #map set roomterrain %2;
     broadcast TERRAIN %1 %2;
-    /symbol;
     mapsave;
 } {1};
 
+#action {<PORT> ROOMCOLOR %d %*} {
+    #map goto %1;
+    #map set roomcolor <%2>;
+    #map set roomsymbol {};
+
+    #var rc <%2>;
+    #map get roomexits re;
+    #foreach {*re[]} {_re} {
+        #switch {"$_re"} {
+            #case {"e"} {#map exit e color $rc};
+            #case {"n"} {#map exit n color $rc};
+            #case {"w"} {#map exit w color $rc};
+            #case {"s"} {#map exit s color $rc};
+            #case {"ne"} {#map exit ne color $rc};
+            #case {"nw"} {#map exit nw color $rc};
+            #case {"se"} {#map exit se color $rc};
+            #case {"sw"} {#map exit sw color $rc};
+        };
+    };
+
+    broadcast ROOMCOLOR %1 %2;
+    mapsave;
+};
+
+#action {<PORT> EXITCOLOR %d %w %*} {
+    #map goto %1;
+    #map exit %2 color <%3>;
+    broadcast EXITCOLOR %1 %2 %3;
+    mapsave;    
+}
 #action {<PORT> HIDE %d %w} {
     #map goto %1;
     #line substitute variables {#map exitflag %2 hide on};

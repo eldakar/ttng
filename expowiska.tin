@@ -14,15 +14,6 @@
 	#echo mekan;
 };
 
-#alias {haszuty} {
-	zabij krasnoluda chaosu;
-	zabij dostojnego krasnoluda chaosu;
-	zabij powaznego krasnoluda chaosu;
-	zabij wladczego krasnoluda chaosu;
-	zabij bykocentaura;
-	_zabij_ przeciwnika;
-}
-
 #alias {pustkowia_chaosu} {
 	zabij trolla;
 	zabij zwierzoczleka;
@@ -75,3 +66,49 @@
 	zabij oficera;
 	_zabij_ przeciwnika;
 }
+
+
+
+
+#var ktorego[1] {pierwszego};
+#var ktorego[2] {drugiego};
+#var ktorego[3] {trzeciego};
+#var ktorego[4] {czwartego};
+#alias {_obozy_krasnala} {
+#nop ustawiam alias na normalne bicie;
+	#alias {haszuty} {_obozy_reszta};
+	#action {Trzyma} {
+		#math {ktory} {$ktory + 1};
+	} {2};
+	#action {Trzyma %* partyzane} {
+		#math {ktory} {$ktory + 1};
+		#var ktoryparte $ktory;
+		#alias {haszuty} {
+			zabij $ktorego[$ktory] krasnoluda chaosu;
+			zabij bykocentaura;
+			_zabij_ przeciwnika;
+			#alias {haszuty} {_obozy_krasnala};
+		};
+	} {1};	
+
+	#var ktoryparte 0;
+	#var ktory 0;
+
+	obejrzyj pierwszego krasnoluda chaosu;
+	obejrzyj drugiego krasnoluda chaosu;
+	obejrzyj trzeciego krasnoluda chaosu;
+	obejrzyj czwartego krasnoluda chaosu;
+	obejrzyj piatego krasnoluda chaosu;
+};
+
+#alias {_obozy_reszta} {
+	zabij krasnoluda chaosu;
+	zabij dostojnego krasnoluda chaosu;
+	zabij powaznego krasnoluda chaosu;
+	zabij wladczego krasnoluda chaosu;
+	zabij bykocentaura;
+	_zabij_ przeciwnika;
+	#alias {haszuty} {_obozy_krasnala};
+}
+
+#alias {haszuty} {_obozy_krasnala};

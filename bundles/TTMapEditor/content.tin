@@ -217,7 +217,6 @@
             #line substitute variables {
                 #map set roomterrain %2;
             };
-            /symbol;
         };
     };
 } {1};
@@ -293,6 +292,39 @@
         #rpg #map at {%1} {#map set roomcolor {$tmpsymbol}};
     };
 };
+
+#brain #action {<PORT> ROOMCOLOR %d %*} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {
+            #map set roomcolor <%2>;
+            #map set roomsymbol {};
+
+            #var rc <%2>;
+            #map get roomexits re;
+            #foreach {*re[]} {_re} {
+                #switch {"$_re"} {
+                    #case {"e"} {#map exit e color $rc};
+                    #case {"n"} {#map exit n color $rc};
+                    #case {"w"} {#map exit w color $rc};
+                    #case {"s"} {#map exit s color $rc};
+                    #case {"ne"} {#map exit ne color $rc};
+                    #case {"nw"} {#map exit nw color $rc};
+                    #case {"se"} {#map exit se color $rc};
+                    #case {"sw"} {#map exit sw color $rc};
+                };
+            };
+        };
+    };
+};
+
+#brain #action {<PORT> EXITCOLOR %d %w %*} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {
+            #map exit %2 color <%3>;
+        };
+    };
+};
+
 
 #brain #action {<PORT> Connection made to %S.} {
     #rpg {
@@ -721,13 +753,6 @@
         #case {"brama"}     {#var rmcol <afc>;#var rmsym {}};
         #case {"pustka"}     {#var rmcol <g05>;#var rmsym {}};
     };
-
-    #if {"$rmcol" != ""} {
-        #map set roomcolor $rmcol;
-        #var rc $rmcol;
-        #line substitute variables {#map exit w color $rc;#map exit e color $rc;#map exit n color $rc;#map exit sw color $rc;#map exit se color $rc;#map exit s color $rc;#map exit ne color $rc;#map exit nw color $rc;#map set roomsymbol {}};
-    };
-    #map set roomsymbol $rmsym;
 } {1};
 
 
