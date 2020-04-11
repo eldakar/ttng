@@ -80,6 +80,8 @@
 	#action {Trzyma} {
 		#math {ktory} {$ktory + 1};
 	} {2};
+
+#line sub variables {	
 	#action {Trzyma %* partyzane} {
 		#math {ktory} {$ktory + 1};
 		#var ktoryparte $ktory;
@@ -90,6 +92,7 @@
 			#alias {haszuty} {_obozy_krasnala};
 		};
 	} {1};	
+};
 
 	#var ktoryparte 0;
 	#var ktory 0;

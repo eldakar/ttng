@@ -68,13 +68,8 @@
 			#replace {outputtext} {\\n} {};
 			#sh $outputtext;
 			#delay {wwalce} {#sh {Odsapnales po walce.}} {30};
-			/a rot;
-			#line sub variables {
-				#delay {$voom} {
-					#map at {$voom} {/d};
-				} {600};
-			};
-
+			#nop /a rot;
+			#nop line sub variables {#delay {$voom} {#map at {$voom} {/d};} {600};};
 		};	
 		#default {#sh $GMCPMSGS[text]};
 	};		

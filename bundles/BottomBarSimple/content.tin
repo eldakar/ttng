@@ -240,6 +240,7 @@
 	#line ignore #sh {$bbBGC  <138>$rozk2[w]$rozk2[w] o <138>$rozk2[e]$rozk2[e]    <088>${bbBGC}                                                                     $hspac Panika: $state[panic] Prag: $state[soaked]<088>} {-3};
 	#line ignore #sh {$bbBGC  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d]   <088>${bbBGC}B:[$qbvar<088>${bbBGC}]$hspac Ciezar: $state[encumbrance] Pija: $state[intox]<088>} {-2};	
 
+	barstest;
 };
 
 #alias barstest {
@@ -267,9 +268,9 @@
 	#loop {1} {$mnlen} {mnl} {#var mnbar {$mnbar#};};
 
 
-	#draw jeweled box $screenrows-3 12 $screenrows-1 12+$barcols <afa>$hpbar<088>;
-	#draw jeweled box $screenrows-3 12+$barcols $screenrows-1 12+$barcols+$barcols <078>$stbar<088>;
-	#draw jeweled box $screenrows-3 12+$barcols+$barcols $screenrows-1 12+$barcols+$barcols+$barcols <048>$mnbar<088>;
+	#draw {<088>$bbBGC} jeweled box $screenrows-3 12 $screenrows-1 12+$barcols <afa>$hpbar$bbBGC;
+	#draw {<088>$bbBGC} jeweled box $screenrows-3 12+$barcols $screenrows-1 12+$barcols+$barcols <078>$bbBGC$stbar$bbBGC;
+	#draw {<088>$bbBGC} jeweled box $screenrows-3 12+$barcols+$barcols $screenrows-1 12+$barcols+$barcols+$barcols <048>$bbBGC$mnbar$bbBGC;
 };
 
 #alias zegartest {
