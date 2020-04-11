@@ -138,6 +138,36 @@
 	manewr_start;
 	#line gag;
 };
+
+#action {%* rzuca sie na %* przebijajac sie przez %*} {
+	#format ktozaslonil {%l} {%1};
+	#var pokazalem 0;
+	#foreach {*duch[]} {ktoto} {
+		#if {"$ktozaslonil" == "$duch[$ktoto][desc]"} {
+			#if {"$duch[$ktoto][team]" == "true"} {
+				#line ignore #sh {<fac>[  PRZELAMAL - POPRAW CEL  ] %0<088>};
+				#var pokazalem 1;
+			} {
+				#nop line ignore #sh {<FAA><178>[ZASLONA] %0<088>};
+				#line ignore #sh {<fac>[PRZELAMAL] %0<088>};
+				#var pokazalem 1;
+			};
+		};
+	};
+	#if {$pokazalem != 1} {
+				#line ignore #sh {<fac>[PRZELAMAL] %0<088>};
+	};
+	#line gag;
+}
+
+
+#action {%* rzuca sie na %* bezskutecznie %*} {
+	#line ignore #sh {<bad>[NIE PRZELAMAL] %0<088>};
+	manewr_start;
+	#line gag;
+};
+
+
 #action {%* zrecznie zaslania %*} {
 	#format ktozaslonil {%l} {%1};
 	#var pokazalem 0;

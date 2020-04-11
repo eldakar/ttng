@@ -111,7 +111,7 @@
 #nop MC1;    #action {Dostrzegajac luke w obronie przeciwnika rzucasz %* masakrujac} {collect $AVATAR_NAME unknown MC 6;#line gag};
 #nop MC1;    #action {Dostrzegajac luke w obronie przeciwnika rzucasz %* raniac} {collect $AVATAR_NAME unknown MC 3;#line gag};
 #nop MC1;    #action {Dostrzegajac luke w obronie przeciwnika rzucasz %* ledwo muskajac} {collect $AVATAR_NAME unknown MC 1;#line gag};
-#nop MC1;    #action {Stajesz pewnie %*} {collect $AVATAR_NAME unknown MC 7;#line gag};
+#nop MC1;    #unaction {Stajesz pewnie %*} {collect $AVATAR_NAME unknown MC 7;#line gag};
 #nop WKS3;   #action {%* szybkim niczym mysl ruchem %* wytraca ci} {collect %1 $AVATAR_NAME WKS_WYTRACA_CI 0;#line gag};
 #nop WKS3;   #action {%* szybkim niczym mysl ruchem %* wytraca} {collect %1 unknown WKS_WYTRACA 0;#line gag};
 #nop WKS3;   #action {%* wyprowadza %+, lecz ten {zbija|oslania} je %+} {collect %1 unknown par 0;#line gag};
