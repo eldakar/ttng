@@ -73,58 +73,68 @@
 	#delay {manewrlevel2} {#var manewrlevel {${c_stan_niski} 3 <088>};RaidBar_refresh;} {2};
 	#delay {manewrlevel1} {#var manewrlevel {${c_stan_niski} 4 <088>};RaidBar_refresh;} {1};
 };
+
 #nop ROZKAZY;	
 #action {Wydajesz rozkaz %1} {
-	#line ignore #sh {<168>[ROZKAZ] %0<088>};
+	#line ignore #sh {<168>[  ROZKAZ  ] %0<088>};
 	manewr_start;
 	#line gag;
 };
 #action {Twoja wysoka forma pozwala %*} {manewr_start};
 #action {Na rozkaz %* zaslaniasz {go|ja} przed ciosami wrogow.} {
-	#line ignore #sh {<168>[ROZKAZ]<028>[ZASLONA] %0<088>};
+	#line ignore #sh {\n<acf>[  ROZKAZ ZASLONA  ] %0<088>\n};
 	manewr_start;
 	#line gag;
 };
 #action {Glosno wypowiadasz rozkaz, chyba jednak nikt cie nie zrozumial!} {
-	#line ignore #sh {<018>[ROZKAZ] %0<088>};
+	#line ignore #sh {<bad>[ROZKAZ NIEUDANY] %0<088>};
 	manewr_start;
 	#line gag;
 };
 #action {Probujesz zaslonic %* przed ciosami %*, jednak nie jestes w stanie tego uczynic.} {
-	#line ignore #sh {<018>[ZASLONA] %0<088>};
+	#line ignore #sh {<bad>[NIE ZASLANIASZ] %0<088>};
 	manewr_start;
 	#line gag;
-};
+}
+#action {%* probuje zaslonic %* przed ciosami %*, jednak nie jest w stanie tego uczynic.} {
+	#line ignore #sh {<bad>[NIE ZASLANIA] %0<088>};
+	#line gag;
+} {1};
+
 #action {Zrecznie zaslaniasz %* przed ciosami %*.} {
-	#line ignore #sh {<028>[ZASLONA] %0<088>};
+	#line ignore #sh {\n<acf>[  ZASLANIASZ  ] %0<088>\n};
 	manewr_start;
 	#line gag;
 }
 #action {Stajesz u boku %1, gotow w kazdej chwili %*} {
-	#line ignore #sh {<028>[ZASLONA] %0<088>};
+	#line ignore #sh {\n<acf>[  ZASLANIASZ  ] %0<088>\n};
 	manewr_start;
 	#line gag;
 }
 #action {Z wprawa stajesz pomiedzy %* a %*, przyjmujac na siebie nadchodzace ciosy.} {
-	#line ignore #sh {<028>[ZASLONA] %0<088>};
+	#line ignore #sh {\n<acf>[  ZASLANIASZ  ] %0<088>\n};
 	manewr_start;
 	#line gag;
 } {2}
 #action {Przestajesz zaslaniac %*} {
-	#line ignore #sh {<038>[ZASLONA] %0<088>};
+	#line ignore #sh {<aaf>[  ZDEJMUJESZ  ] %0<088>};
 	#line gag;
 }
 #action {%* przestaje zaslaniac %*} {
-	#line ignore #sh {<038>[ZASLONA] %0<088>};
+	#line ignore #sh {<aaf>[  ZDEJMUJE  ] %0<088>};
+	#line gag;	
+}
+#action {%* przestaje cie zaslaniac %*} {
+	#line ignore #sh {<aaf>[  ZDEJMUJE  ] %0<088>};
 	#line gag;	
 }
 #action {%1 unosi %2 i szybko przesuwa sie za ciebie, kryjac sie przed atakami %3.} {
-	#line ignore #sh {<028>[ZASLONA] %0<088>};
+	#line ignore #sh {\n<acf>[  ZASLANIASZ  ] %0<088>\n};
 	manewr_start;
 	#line gag;
 };
 #action {Rzucasz sie na %* przebijajac sie przez %*} {
-	#line ignore #sh {<168>[PRZELAMANIE] %0<088>};
+	#line ignore #sh {\n<fac>[  PRZELAMALES  ] %0<088>\n};
 	manewr_start;
 	#line gag;
 };
@@ -134,17 +144,17 @@
 	#foreach {*duch[]} {ktoto} {
 		#if {"$ktozaslonil" == "$duch[$ktoto][desc]"} {
 			#if {"$duch[$ktoto][team]" == "true"} {
-				#line ignore #sh {<028>[ZASLONA] %0<088>};
+				#line ignore #sh {<acf>[  ZASLANIA  ] %0<088>};
 				#var pokazalem 1;
 			} {
 				#nop line ignore #sh {<FAA><178>[ZASLONA] %0<088>};
-				Highlights_event <138>%0\n<088><138>Wrog zaslonil - Przelam!<088>;
+				#line ignore #sh {<fac>[  ZASLANIA - PRZELAM  ] %0<088>};
 				#var pokazalem 1;
 			};
 		};
 	};
 	#if {$pokazalem != 1} {
-				#line ignore #sh {<028>[ZASLONA] %0<088>};		
+				#line ignore #sh {<acf>[  ZASLANIA  ] %0<088>};
 	};
 	#line gag;
 }
