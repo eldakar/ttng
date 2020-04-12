@@ -161,8 +161,12 @@
    #replace {outputtext} {plytko tnie} {<afa>plytko tnie<088>};
    #replace {outputtext} {gleboko tnie} {<afa>gleboko tnie<088>};
    #replace {outputtext} {bolesnie zacina} {<afa>bolesnie zacina<088>};
+   #replace {outputtext} {niemalze rozcina} {<afa>niemalze rozcina<088>};
+   #replace {outputtext} {tnie} {<afa>tnie<088>};
+
    #replace {outputtext} {ledwo muska cie} {<fca>ledwo muska cie<088>};
    #replace {outputtext} {lekko rani cie} {<fca>lekko rani cie<088>};
+   #replace {outputtext} {rani cie} {<fca>rani cie<088>};
 
    #if {"pwalkapvp" == "wlaczona"} {
       #switch {"$typeSent"} {

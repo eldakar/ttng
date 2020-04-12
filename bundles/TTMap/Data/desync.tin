@@ -3,3 +3,5 @@
 #action {Oplacasz podroz u woznicy i wsiadasz do %1.} {#var MAPPER_SYNC {0}};
 #action {Wykonuje komende 'idz %1'} {#var MAPPER_SYNC {0};}
 #action {Bierzesz rozbieg i zeskakujesz z drakkara na brzeg.} {#var MAPPER_SYNC {0};}
+#action {Ostroznie wchodzisz w marmurowy polokragly portal.} {#var MAPPER_SYNC {0};}
+#action {Ostroznie wchodzisz w mgle wypelniajaca %* portal.} {#var MAPPER_SYNC {0};}

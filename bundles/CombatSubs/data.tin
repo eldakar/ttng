@@ -40,22 +40,60 @@
 
 #nop BRON;
 #action {Uderzenie jest tak silne %* opuszcza %*} {collect OPUSZCZA 0 unknown;#line gag};
-#nop SPECE GOBLINY;
+
+#nop SPECE GOBLINOIDY;
 #action {W slepiach %* kaleczy %*} {collect GOB 1 unknown;#line gag};
 #action {W slepiach %* rozkrwawia %*} {collect GOB 3 unknown;#line gag};
 #action {W slepiach %* przecina powietrze %*} {collect mis 0 unknown;#line gag};
 #action {Z gardla %* zeslizguje %*} {collect par 0 unknown;#line gag};
+#action {%* chichotem gryzie %* niegroznie w szyje!} {collect GOB 1 unknown;#line gag};
+#action {%* chichotem gryzie %* bardzo lekko w szyje!} {collect GOB 2 unknown;#line gag};
+#nop SPECE JASZCZUROWATE;
+#action {%* doskakuje do %* i niegroznie wgryza %*} {collect JAS 1 %1;#line gag};
+#action {%* doskakuje do %* i bardzo lekko wgryza %*} {collect JAS 2 %1;#line gag};
+#nop SPECE RYBOCZLEKI;
+#action {%* nadyma swe miesiste %* swist %*} {collect mis 0 %1;#line gag};
+#action {%* nadyma swe miesiste %* ostatniej chwili szczesliwie %*} {collect dod 0 %1;#line gag};
+#action {%* nadyma swe miesiste %* niewielkiej rany %*} {collect RYB 1 %1;#line gag};
+
 
 #nop SPECE KG Z PIERWSZEJ OSOBY;
-#nop Ruszasz do przodu;
-#nop Poprawiasz chwyt;
-
 #action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* ledwo zacina %*} {collect KG 1 $AVATAR_NAME;#line gag};
 #action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* plytko tnie %*} {collect KG 2 $AVATAR_NAME;#line gag};
 #action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* tnie %*} {collect KG 3 $AVATAR_NAME;#line gag} {6};
 #action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* bolesnie zacina %*} {collect KG 4 $AVATAR_NAME;#line gag};
 #action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* gleboko tnie %*} {collect KG 5 $AVATAR_NAME;#line gag};
+#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* niemalze rozcina %*} {collect KG 6 $AVATAR_NAME;#line gag};
 #action {Z okrzykiem na ustach dopadasz %*} {collect KG 7 $AVATAR_NAME;#line gag};
+#nop SPECE KG Z TRZECIEJ OSOBY;
+#action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* ledwo zacina %*} {collect KG 1 %1;#line gag};
+#action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* plytko tnie %*} {collect KG 2 %1;#line gag};
+#action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* tnie %*} {collect KG 3 %1;#line gag} {6};
+#action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* bolesnie zacina %*} {collect KG 4 %1;#line gag};
+#action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* gleboko tnie %*} {collect KG 5 %1;#line gag};
+#action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* niemalze rozcina %*} {collect KG 6 %1;#line gag};
+#action {Nie zwazaajac na nic %* rozpoczyna %* ledwo zacina %*} {collect KG 1 %1;#line gag};
+#action {Nie zwazaajac na nic %* rozpoczyna %* plytko tnie %*} {collect KG 2 %1;#line gag};
+#action {Nie zwazaajac na nic %* rozpoczyna %* tnie %*} {collect KG 3 %1;#line gag} {6};
+#action {Nie zwazaajac na nic %* rozpoczyna %* bolesnie zacina %*} {collect KG 4 %1;#line gag};
+#action {Nie zwazaajac na nic %* rozpoczyna %* gleboko tnie %*} {collect KG 5 %1;#line gag};
+#action {Nie zwazaajac na nic %* rozpoczyna %* niemalze rozcina %*} {collect KG 6 %1;#line gag};
+
+#nop SPECE MC Z PIERWSZEJ OSOBY;
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* powaznie raniac} {collect MC 4 $AVATAR_NAME;#line gag};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* lekko raniac} {collect MC 2 $AVATAR_NAME;#line gag};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* bardzo ciezko raniac} {collect MC 5 $AVATAR_NAME;#line gag};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* masakrujac} {collect MC 6 $AVATAR_NAME;#line gag};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* raniac} {collect MC 3 $AVATAR_NAME;#line gag};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* ledwo muskajac} {collect MC 1 $AVATAR_NAME;#line gag};
+#nop SPECE MC Z TRZECIEJ OSOBY;
+#action {%* rzuca sie do ataku. %* ledwo muskajac %*} {collect MC 1 %1;#line gag};
+#action {%* rzuca sie do ataku. %* lekko raniac %*} {collect MC 2 %1;#line gag};
+#action {%* rzuca sie do ataku. %* powaznie raniac %*} {collect MC 4 %1;#line gag};
+#action {%* rzuca sie do ataku. %* bardzo ciezko raniac %*} {collect MC 5 %1;#line gag};
+#action {%* rzuca sie do ataku. %* masakrujac %*} {collect MC 6 %1;#line gag};
+#action {%* staje pewnie %* uderzenie %*} {collect MC 7 %1;#line gag};
+
 
 #nop SPECE WKS Z PIERWSZEJ OSOBY;
 #action {Szybkim niczym mysl ruchem %* wytracasz %*} {collect WKS_WYTRACASZ 0 $AVATAR_NAME;#line gag};
@@ -65,6 +103,20 @@
 #action {Wykorzystujac brak broni u przeciwnika, %* gleboka rane z wystajacymi na wierzchu tkankami.} {collect WKS 5 $AVATAR_NAME;#line gag};
 #action {Wykorzystujac brak broni u przeciwnika, %* smiertelne obrazenia.} {collect WKS 6 $AVATAR_NAME;#line gag};
 #action {Wykorzystujac brak broni u przeciwnika, %* rownowage} {collect mis 0 $AVATAR_NAME;#line gag};
+#nop SPECE WKS Z TRZECIEJ OSOBY;
+#action {%* szybkim niczym mysl ruchem %* wytraca %*} {collect WKS_WYTRACA 0 %1;#line gag};
+#action {%* wykorzystujac brak broni u przeciwnika, %* pozostawiajac ledwie sinca.} {collect WKS 1 %1;#line gag};
+#action {%* wykorzystujac brak broni u przeciwnika, %* pozostawiajac krwawiace zadrapanie.} {collect WKS 2 %1;#line gag};
+#action {%* wykorzystujac brak broni u przeciwnika, %* pozostawiajac dluga, poszarpana rane.} {collect WKS 4 %1;#line gag};
+#action {%* wykorzystujac brak broni u przeciwnika, %* pozostawiajac gleboka rane z wystajacymi na wierzchu tkankami.} {collect WKS 3 %1;#line gag};
+#action {%* wykorzystujac brak broni u przeciwnika, %* zadajac smiertelne obrazenia.} {collect WKS 6 %1;#line gag};
+#action {%* wykorzystujac brak broni u przeciwnika, %* traci rownowage} {collect mis 0 %1;#line gag};
+#action {%* wyprowadza %*, lecz %*} {collect par 0 %1;#line gag};
+
+#nop SPECE KS Z TRZECIEJ OSOBY;
+#action {%* zgrabnym ruchem unika ciosu %* gleboko rozrywajac %*} {collect KS 4 %1;#line gag};
+
+
 
 #nop MAGIKI - ESPADON;
 #action {Lekko muskasz %*} {collect magic 1 $AVATAR_NAME;#line gag};
@@ -82,49 +134,10 @@
 
 
 
-#nop MC1;    #action {Krzywisz wargi w pelnym satysfakcji %* powaznie raniac} {collect $AVATAR_NAME unknown MC 4;#line gag};
-#nop MC1;    #action {Krzywisz wargi w pelnym satysfakcji %* lekko raniac} {collect $AVATAR_NAME unknown MC 2;#line gag};
-#nop MC1;    #action {Krzywisz wargi w pelnym satysfakcji %* bardzo ciezko raniac} {collect $AVATAR_NAME unknown MC 5;#line gag};
-#nop MC1;    #action {Krzywisz wargi w pelnym satysfakcji %* masakrujac} {collect $AVATAR_NAME unknown MC 6;#line gag};
-#nop MC1;    #action {Krzywisz wargi w pelnym satysfakcji %* raniac} {collect $AVATAR_NAME unknown MC 3;#line gag};
-#nop MC1;    #action {Krzywisz wargi w pelnym satysfakcji %* ledwo muskajac} {collect $AVATAR_NAME unknown MC 1;#line gag};
-#nop MC1;    #action {Dostrzegajac luke w obronie przeciwnika rzucasz %* powaznie raniac} {collect $AVATAR_NAME unknown MC 4;#line gag};
-#nop MC1;    #action {Dostrzegajac luke w obronie przeciwnika rzucasz %* lekko raniac} {collect $AVATAR_NAME unknown MC 2;#line gag};
-#nop MC1;    #action {Dostrzegajac luke w obronie przeciwnika rzucasz %* bardzo ciezko raniac} {collect $AVATAR_NAME unknown MC 5;#line gag};
-#nop MC1;    #action {Dostrzegajac luke w obronie przeciwnika rzucasz %* masakrujac} {collect $AVATAR_NAME unknown MC 6;#line gag};
-#nop MC1;    #action {Dostrzegajac luke w obronie przeciwnika rzucasz %* raniac} {collect $AVATAR_NAME unknown MC 3;#line gag};
-#nop MC1;    #action {Dostrzegajac luke w obronie przeciwnika rzucasz %* ledwo muskajac} {collect $AVATAR_NAME unknown MC 1;#line gag};
-#nop MC1;    #unaction {Stajesz pewnie %*} {collect $AVATAR_NAME unknown MC 7;#line gag};
-
-#nop WKS3;   #action {%* szybkim niczym mysl ruchem %* wytraca ci} {collect %1 $AVATAR_NAME WKS_WYTRACA_CI 0;#line gag};
-#nop WKS3;   #action {%* szybkim niczym mysl ruchem %* wytraca} {collect %1 unknown WKS_WYTRACA 0;#line gag};
-#nop WKS3;   #action {%* wyprowadza %+, lecz ten {zbija|oslania} je %+} {collect %1 unknown par 0;#line gag};
-#nop WKS1;   #action {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* pozostawiajac ledwie sinca.} {collect %1 unknown WKS 1;#line gag};
-#nop WKS1;   #action {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* pozostawiajac krwawiace zadrapanie.} {collect %1 unknown WKS 2;#line gag};
-#nop WKS1;   #action {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* pozostawiajac dluga, poszarpana rane.} {collect %1 unknown WKS 4;#line gag};
-#nop WKS1;   #action {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* pozostawiajac gleboka rane z wystajacymi na wierzchu tkankami.} {collect %1 unknown WKS 5;#line gag};
-#nop WKS1;   #action {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* zadajac smiertelne obrazenia.} {collect %1 unknown WKS 6;#line gag};
-#nop WKS1;   #action {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* traci rownowage} {collect %1 unknown WKS_PUDLO 0;#line gag};
-
-#nop KOR3;   #action {%w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect %1 unknown KS 4;#line gag};
-#nop KOR3;   #action {%w %w %w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect &4 unknown KS 4;#line gag};
-#nop FAN3;   #action {%* rzuca sie do ataku. %* ledwo muskajac %*} {collect %1 unknown MC 1;#line gag};
-#nop FAN3;   #action {%* rzuca sie do ataku. %* lekko raniac %*} {collect %1 unknown MC 2;#line gag};
-#nop FAN3;   #action {%* rzuca sie do ataku. %* powaznie raniac %*} {collect %1 unknown MC 4;#line gag};
-#nop FAN3;   #action {%* rzuca sie do ataku. %* bardzo ciezko raniac %*} {collect %1 unknown MC 5;#line gag};
-#nop FAN3;   #action {%* rzuca sie do ataku. %* masakrujac %*} {collect %1 unknown MC 6;#line gag};
-#nop FAN3;   #action {%* rzuca sie do ataku. %* masakrujac %*} {collect %1 unknown MC 6;#line gag};
-#nop FAN3;   #action {%* staje pewnie %* uderzenie %*} {collect %1 unknown MC 7;#line gag};
-#nop GRE;	 #action {chichotem gryzie cie niegroznie w szyje!} {collect gremlin $AVATAR_NAME GRE 1;#line gag};
-#nop GRE;    #action {chichotem gryzie cie bardzo lekko w szyje!} {collect gremlin $AVATAR_NAME GRE 2;#line gag};
 
 
 
-#nop JAS;    #action {%* jaszczur doskakuje do ciebie i niegroznie wgryza sie ostrymi zebami w twoje cialo.} {collect jaszczur $AVATAR_NAME JAS 1;#line gag};
-#nop JAS;    #action {%* jaszczur doskakuje do ciebie i bardzo lekko wgryza sie ostrymi zebami w twoje cialo.} {collect jaszczur $AVATAR_NAME JAS 2;#line gag};
-#nop RYB;    #action {%* nadyma swe miesiste %* uskakujesz, a z sykiem skrzel laczy sie swist mijajacej cie broni.} {collect ryboczlek $AVATAR_NAME mis 0;#line gag};
-#nop RYB;    #action {%* nadyma swe miesiste %*.%w w ostatniej chwili szczesliwie} {collect ryboczlek %3 dod 0;#line gag};
-#nop RYB;    #action {%* nadyma swe miesiste %* twoich %* z wlasnie powstalej niewielkiej rany} {collect ryboczlek $AVATAR_NAME RYB 1;#line gag};
+
 
    #nop TALWAR;
 #nop MAG;    #action {Widzac, ze na ostrzu %* talwara %*, %w %w %w wykonuje %*, pozostawiajac tam spore oparzenie} {collect &5 unknown magic 3;#line gag};   
