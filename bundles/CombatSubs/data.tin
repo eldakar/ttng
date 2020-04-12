@@ -1,104 +1,87 @@
-#CLASS {WALKA} OPEN
+#class {WALKA} KILL
+#class {WALKA} OPEN
 
-#action {%w trafia cie %+, lecz caly impet uderzenia zostaje wyparowany %+} {collect %1 $AVATAR_NAME par 0;#line gag};
-#action {%w ledwo muska cie %+, trafiajac cie %+} {collect %1 $AVATAR_NAME hit 1;#line gag};
-#action {%w rani cie %+, trafiajac cie %+} {collect %1 $AVATAR_NAME hit 3;#line gag};
-#action {%w powaznie rani cie %+, trafiajac cie %+} {collect %1 $AVATAR_NAME hit 4;#line gag};
-#action {%w masakruje cie %+, trafiajac cie %+} {collect %1 $AVATAR_NAME hit 5;#line gag};
-#action {%w lekko rani cie %+, trafiajac cie %+} {collect %1 $AVATAR_NAME hit 2;#line gag};
-#action {%w %w %w trafia cie %+, lecz caly impet uderzenia zostaje wyparowany %+} {collect %3 $AVATAR_NAME par 0;#line gag};
-#action {%w %w %w ledwo muska cie %+, trafiajac cie %+} {collect %3 $AVATAR_NAME hit 1;#line gag};
-#action {%w %w %w rani cie %+, trafiajac cie %+} {collect %3 $AVATAR_NAME hit 3;#line gag};
-#action {%w %w %w lekko rani cie %+, trafiajac cie %+} {collect %3 $AVATAR_NAME hit 2;#line gag};
-#action {%w %w %w masakruje cie %+, trafiajac cie %+} {collect %3 $AVATAR_NAME hit 5;#line gag};
-#action {%w %w %w powaznie rani cie %+, trafiajac cie %+} {collect %3 $AVATAR_NAME hit 4;#line gag};
-#action {%w ledwo muska %w %w %w %w %w %w, trafiajac %+} {collect %1 &4 hit 1;#line gag};
-#action {%w %w %w ledwo muska %w %w %w %w %w %w, trafiajac %+} {collect %3 &6 hit 1;#line gag};
-#action {%w ledwo muska %w %w %w %w, trafiajac %+} {collect %1 %2 hit 1;#line gag};
-#action {%w %w %w ledwo muska %w %w %w %w, trafiajac %+} {collect %3 &6 hit 1;#line gag};
-#action {%w ledwo muska %*, trafiajac %+} {collect %1 unknown hit 1;#line gag};
-#action {%w %w %w ledwo muska %*, trafiajac %+} {collect %3 unknown hit 1;#line gag};
-#action {%w lekko rani %w %w %w %w %w %w, trafiajac %+} {collect %1 &4 hit 2;#line gag};
-#action {%w %w %w lekko rani %w %w %w %w %w %w, trafiajac %+} {collect %3 &6 hit 2;#line gag};
-#action {%w lekko rani %w %w %w %w, trafiajac %+} {collect %1 &4 hit 2;#line gag};
-#action {%w %w %w lekko rani %w %w %w %w, trafiajac %+} {collect %3 &6 hit 2;#line gag};
-#action {%w lekko rani %*, trafiajac %+} {collect %1 unknown hit 2;#line gag};
-#action {%w %w %w lekko rani %*, trafiajac %+} {collect %3 unknown hit 2;#line gag};
-#action {%w rani %w %w %w %w %w %w, trafiajac %+} {collect %1 &4 hit 3;#line gag};
-#action {%w %w %w rnai %w %w %w %w %w %w, trafiajac %+} {collect %3 &6 hit 3;#line gag};
-#action {%w rani %w %w %w %w, trafiajac %+} {collect %1 &4 hit 3;#line gag};
-#action {%w %w %w rani %w %w %w %w, trafiajac %+} {collect %3 &6 hit 3;#line gag};
-#action {%w rani %*, trafiajac %+} {collect %1 unknown hit 3;#line gag};
-#action {%w %w %w rani %*, trafiajac %+} {collect %3 unknown hit 3;#line gag};
-#action {%w powaznie rani %w %w %w %w %w %w, trafiajac %+} {collect %1 &4 hit 4;#line gag};
-#action {%w %w %w powaznie rani %w %w %w %w %w %w, trafiajac %+} {collect %3 &6 hit 4;#line gag};
-#action {%w powaznie rani %w %w %w %w, trafiajac %+} {collect %1 &4 hit 4;#line gag};
-#action {%w %w %w powaznie rani %w %w %w %w, trafiajac %+} {collect %3 &6 hit 4;#line gag};
-#action {%w powaznie rani %*, trafiajac %+} {collect %1 unknown hit 4;#line gag};
-#action {%w %w %w powaznie rani %*, trafiajac %+} {collect %3 unknown hit 4;#line gag};
-#action {%w bardzo ciezko rani %w %w %w %w %w %w, trafiajac %+} {collect %1 &4 hit 5;#line gag};
-#action {%w %w %w bardzo ciezko rani %w %w %w %w %w %w, trafiajac %+} {collect %3 &6 hit 5;#line gag};
-#action {%w bardzo ciezko rani %w %w %w %w, trafiajac %+} {collect %1 &4 hit 5;#line gag};
-#action {%w %w %w bardzo ciezko rani %w %w %w %w, trafiajac %+} {collect %3 &6 hit 5;#line gag};
-#action {%w bardzo ciezko rani %*, trafiajac %+} {collect %1 unknown hit 5;#line gag};
-#action {%w %w %w bardzo ciezko rani %*, trafiajac %+} {collect %3 unknown hit 5;#line gag};
-#action {%w masakruje %w %w %w %w %w %w, trafiajac %+} {collect %1 &4 hit 6;#line gag};
-#action {%w %w %w masakruje %w %w %w %w %w %w, trafiajac %+} {collect %3 &6 hit 6;#line gag};
-#action {%w masakruje %w %w %w %w, trafiajac %+} {collect %1 &4 hit 6;#line gag};
-#action {%w %w %w masakruje %w %w %w %w, trafiajac %+} {collect %3 &6 hit 6;#line gag};
-#action {%w masakruje %*, trafiajac %+} {collect %1 unknown hit 6;#line gag};
-#action {%w %w %w masakruje %*, trafiajac %+} {collect %3 unknown hit 6;#line gag};
+#nop PODSTAWOWA;
+#action {%* ledwo muska %* trafiajac %*} {collect hit 1 %1;#line gag} {3};
+#action {%* lekko rani %* trafiajac %*} {collect hit 2 %1;#line gag} {3};
+#action {%* rani %* trafiajac %*} {collect hit 3 %1;#line gag} {5};
+#action {%* powaznie rani %* trafiajac %*} {collect hit 4 %1;#line gag} {3};
+#action {%* bardzo ciezko rani %* trafiajac %*} {collect hit 5 %1;#line gag} {3};
+#action {%* masakruje %* trafiajac %*} {collect hit 6 %1;#line gag} {3};
 
-#action {anisz %+, trafiajac cie %+} {collect %1 $AVATAR_NAME hit 1;#line gag};
-#action {Ledwo muskasz %w %w %w %w %w %w,} {collect $AVATAR_NAME %3 hit 1;#line gag};
-#action {Ledwo muskasz %w %w %w %w,} {collect $AVATAR_NAME %1 hit 1;#line gag};
-#action {Ledwo muskasz %*,} {collect $AVATAR_NAME unknown hit 1;#line gag};
-#action {Lekko ranisz %w %w %w %w %w %w,} {collect $AVATAR_NAME %3 hit 2;#line gag};
-#action {Lekko ranisz %w %w %w %w,} {collect $AVATAR_NAME %1 hit 2;#line gag};
-#action {Lekko ranisz %*,} {collect $AVATAR_NAME unknown hit 2;#line gag};
-#action {Ranisz %w %w %w %w %w %w,} {collect $AVATAR_NAME %3 hit 3;#line gag};
-#action {Ranisz %w %w %w %w,} {collect $AVATAR_NAME %1 hit 3;#line gag};
-#action {Ranisz %*,} {collect $AVATAR_NAME unknown hit 3;#line gag};
-#action {Powaznie ranisz %w %w %w %w %w %w,} {collect $AVATAR_NAME %3 hit 4;#line gag};
-#action {Powaznie ranisz %w %w %w %w,} {collect $AVATAR_NAME %1 hit 4;#line gag};
-#action {Powaznie ranisz %*,} {collect $AVATAR_NAME unknown hit 4;#line gag};
-#action {Bardzo ciezko ranisz %w %w %w %w %w %w,} {collect $AVATAR_NAME %3 hit 5;#line gag};
-#action {Bardzo ciezko ranisz %w %w %w %w,} {collect $AVATAR_NAME %1 hit 5;#line gag};
-#action {Bardzo ciezko ranisz %*,} {collect $AVATAR_NAME unknown hit 5;#line gag};
-#action {Masakrujesz %w %w %w %w %w %w,} {collect $AVATAR_NAME %3 hit 6;#line gag};
-#action {Masakrujesz %w %w %w %w,} {collect $AVATAR_NAME %1 hit 6;#line gag};
-#action {Masakrujesz %*,} {collect $AVATAR_NAME unknown hit 6;#line gag};
+#action {Ledwo muskasz %*} {collect hit 1 $AVATAR_NAME;#line gag};
+#action {Lekko ranisz %*} {collect hit 2 $AVATAR_NAME;#line gag};
+#action {Ranisz %*} {collect hit 3 $AVATAR_NAME;#line gag};
+#action {Powaznie ranisz %*} {collect hit 4 $AVATAR_NAME;#line gag};
+#action {Bardzo ciezko ranisz %*} {collect hit 5 $AVATAR_NAME;#line gag};
+#action {Masakrujesz %*} {collect hit 6 $AVATAR_NAME;#line gag};
 
-#action {%w wykonuje %+ mierzac w ciebie, lecz tobie udaje sie je zbic %+} {collect %1 $AVATAR_NAME par 0;#line gag};
-#action {lecz udaje ci sie oslonic} {collect unknown $AVATAR_NAME par 0;#line gag};
-#action {lecz sprawnie parujesz} {collect unknown $AVATAR_NAME par 0;#line gag};
-#action {%w probuje cie trafic %+ uniknac tego ciosu.} {collect %1 $AVATAR_NAME dod 0;#line gag};
-#action {%w %w %w nie udaje sie trafic ciebie %+} {collect %3 $AVATAR_NAME mis 0;#line gag};
-#action {%w nie udaje sie trafic ciebie %+} {collect %1 $AVATAR_NAME mis 0;#line gag};
-#action {%w %w %w nie udaje sie trafic %w} {collect %3 unknown mis 0;#line gag};
-#action {%w nie udaje sie trafic %w} {collect %1 unknown mis 0;#line gag};
-#action {%w %w %w wykonuje %+ mierzac w ciebie, lecz tobie udaje sie je zbic %*} {collect %3 $AVATAR_NAME par 0;#line gag};
-#action {%w %w %w probuje cie trafic %+ uniknac tego ciosu.} {collect %3 $AVATAR_NAME dod 0;#line gag};
-#action {%w %w %w probuje cie trafic %+ uniknac tego ciosu} {collect %3 $AVATAR_NAME dod 0;#line gag};
-#action {lecz tobie udaje sie go unik} {collect unknown $AVATAR_NAME dod 0;#line gag};
-#action {%w %w %w nie udaje sie trafic ciebie %+} {collect %3 $AVATAR_NAME mis 0;#line gag};
-#action {Wyprowadzasz %+, lecz ten {zbija|oslania} je %+} {collect $AVATAR_NAME unknown par 0;#line gag};
-#action {Probujesz trafic %*, lecz} {collect $AVATAR_NAME unknown mis 0;#line gag};
-#action {Niespodziewanie skrecasz tulow %* jakims cudem nie dosiega} {collect $AVATAR_NAME unknown mis 0;#line gag};
-#action {%w %w %w wyprowadza %* ciebie, lecz} {collect %3 $AVATAR_NAME par 0;#line gag};
-#action {%w wyprowadza %* ciebie, lecz} {collect %1 $AVATAR_NAME par 0;#line gag};
-#action {%w %w %w probuje trafic %* przed tym ciosem.} {collect %3 unknown dod 0;#line gag};
-#action {%w probuje trafic %* przed tym ciosem.} {collect %1 unknown dod 0;#line gag};
-#action {%w %w %w wykonuje %* mierzac w %*, lecz %* {oslania|udaje sie} %*} {collect %3 unknown par 0;#line gag};
-#action {%w wykonuje %* mierzac w %*, lecz %* {oslania|udaje sie} %*} {collect %1 unknown par 0;#line gag};
-   
-#nop WKS1;   #action {Szybkim niczym mysl ruchem %* wytracasz %*} {collect $AVATAR_NAME unknown WKS_WYTRACASZ 0;#line gag};
-#nop WKS1;   #action {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* pozostawiajac ledwie sinca.} {collect $AVATAR_NAME unknown WKS 1;#line gag};
-#nop WKS1;   #action {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* pozostawiajac krwawiace zadrapanie.} {collect $AVATAR_NAME unknown WKS 2;#line gag};
-#nop WKS1;   #action {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* pozostawiajac dluga, poszarpana rane.} {collect $AVATAR_NAME unknown WKS 4;#line gag};
-#nop WKS1;   #action {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* pozostawiajac gleboka rane z wystajacymi na wierzchu tkankami.} {collect $AVATAR_NAME unknown WKS 5;#line gag};
-#nop WKS1;   #action {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* zadajac smiertelne obrazenia.} {collect $AVATAR_NAME unknown WKS 6;#line gag};
-#nop WKS1;   #action {Wykorzystujac brak broni u przeciwnika, %* wyprowadzasz cios %* tracisz rownowage} {collect $AVATAR_NAME unknown WKS_PUDLO 0;#line gag};
+#nop INNE CIOSY;
+#action {Nagle %* wykonuje %* ledwo muska %*} {collect hit 1 %1;#line gag} {1};
+#action {Nagle %* wykonuje %* lekko rani %*} {collect hit 2 %1;#line gag} {1};
+#action {Nagle %* wykonuje %* rani %*} {collect hit 3 %1;#line gag} {2};
+#action {Nagle %* wykonuje %* powaznie rani %*} {collect hit 4 %1;#line gag} {1};
+#action {Nagle %* wykonuje %* bardzo ciezko rani %*} {collect hit 5 %1;#line gag} {1};
+#action {Nagle %* wykonuje %* masakruje %*} {collect hit 6 %1;#line gag} {1};
+
+#nop PAROWANIA;
+#action {%* trafia %* lecz %*} {collect par 0 %1;#line gag} {1};
+#action {%* wyprowadza %* lecz %*} {collect par 0 %1;#line gag};
+#action {%* wykonuje %* lecz %*} {collect par 0 %1;#line gag};
+#action {Wyprowadzasz %*, lecz %*} {collect par 0 $AVATAR_NAME;#line gag};
+#action {Szybkim pchnieciem %* zbijasz %*} {collect par 0 $AVATAR_NAME;#line gag};
+#nop UNIKI;
+#action {%* probuje%*trafic %*} {collect dod 0 %1;#line gag};
+
+#nop CHYBIONE;
+#action {%* nie udaje sie trafic %*} {collect mis 0 %1;#line gag};
+#action {Probujesz trafic %*, lecz %*} {collect mis 0 $AVATAR_NAME;#line gag};
+#action {Niespodziewanie skrecasz tulow %* jakims cudem nie dosiega %*} {collect mis 0 $AVATAR_NAME;#line gag};
+
+#nop BRON;
+#action {Uderzenie jest tak silne %* opuszcza %*} {collect OPUSZCZA 0 unknown;#line gag};
+#nop SPECE GOBLINY;
+#action {W slepiach %* kaleczy %*} {collect GOB 1 unknown;#line gag};
+#action {W slepiach %* rozkrwawia %*} {collect GOB 3 unknown;#line gag};
+#action {W slepiach %* przecina powietrze %*} {collect mis 0 unknown;#line gag};
+#action {Z gardla %* zeslizguje %*} {collect par 0 unknown;#line gag};
+
+#nop SPECE KG Z PIERWSZEJ OSOBY;
+#nop Ruszasz do przodu;
+#nop Poprawiasz chwyt;
+
+#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* ledwo zacina %*} {collect KG 1 $AVATAR_NAME;#line gag};
+#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* plytko tnie %*} {collect KG 2 $AVATAR_NAME;#line gag};
+#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* tnie %*} {collect KG 3 $AVATAR_NAME;#line gag} {6};
+#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* bolesnie zacina %*} {collect KG 4 $AVATAR_NAME;#line gag};
+#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* gleboko tnie %*} {collect KG 5 $AVATAR_NAME;#line gag};
+#action {Z okrzykiem na ustach dopadasz %*} {collect KG 7 $AVATAR_NAME;#line gag};
+
+#nop SPECE WKS Z PIERWSZEJ OSOBY;
+#action {Szybkim niczym mysl ruchem %* wytracasz %*} {collect WKS_WYTRACASZ 0 $AVATAR_NAME;#line gag};
+#action {Wykorzystujac brak broni u przeciwnika, %* ledwie sinca.} {collect WKS 1 $AVATAR_NAME;#line gag};
+#action {Wykorzystujac brak broni u przeciwnika, %* krwawiace zadrapanie.} {collect WKS 2 $AVATAR_NAME;#line gag};
+#action {Wykorzystujac brak broni u przeciwnika, %* dluga, poszarpana rane.} {collect WKS 4 $AVATAR_NAME;#line gag};
+#action {Wykorzystujac brak broni u przeciwnika, %* gleboka rane z wystajacymi na wierzchu tkankami.} {collect WKS 5 $AVATAR_NAME;#line gag};
+#action {Wykorzystujac brak broni u przeciwnika, %* smiertelne obrazenia.} {collect WKS 6 $AVATAR_NAME;#line gag};
+#action {Wykorzystujac brak broni u przeciwnika, %* rownowage} {collect mis 0 $AVATAR_NAME;#line gag};
+
+#nop MAGIKI - ESPADON;
+#action {Lekko muskasz %*} {collect magic 1 $AVATAR_NAME;#line gag};
+#action {Bez wysilku, niezbyt mocno %*} {collect magic 2 $AVATAR_NAME;#line gag};
+#action {Ruszasz do przodu %* gleboko tnie %*} {collect magic 4 $AVATAR_NAME;#line gag};
+#action {Skutecznym uderzeniem %*} {collect magic 3 $AVATAR_NAME;#line gag};
+#action {Bierzesz mocny zamach i poteznym ciosem %*} {collect magic 4 $AVATAR_NAME;#line gag};
+#action {Wyprowadzasz znad glowy %*} {collect magic 5 $AVATAR_NAME;#line gag};
+#action {Korzystajac z nieuwagi %*} {collect magic 6 $AVATAR_NAME;#line gag};
+#action {Unosisz nagle swoj espadon %*} {collect magic 7 $AVATAR_NAME;#line gag};
+#action {Przerzucasz swoj %* na wysokosc ramion %*} {collect magic 6 $AVATAR_NAME;#line gag};
+
+#nop MAGIKI - HELM OGLUSZAJACY;
+#action {%* zaczyna wpatrywac sie %* ciemnogranatowego smuklego helmu%*} {collect OGLUSZONY_HELMEM 0 %1;#line gag};
+
+
+
 #nop MC1;    #action {Krzywisz wargi w pelnym satysfakcji %* powaznie raniac} {collect $AVATAR_NAME unknown MC 4;#line gag};
 #nop MC1;    #action {Krzywisz wargi w pelnym satysfakcji %* lekko raniac} {collect $AVATAR_NAME unknown MC 2;#line gag};
 #nop MC1;    #action {Krzywisz wargi w pelnym satysfakcji %* bardzo ciezko raniac} {collect $AVATAR_NAME unknown MC 5;#line gag};
@@ -112,6 +95,7 @@
 #nop MC1;    #action {Dostrzegajac luke w obronie przeciwnika rzucasz %* raniac} {collect $AVATAR_NAME unknown MC 3;#line gag};
 #nop MC1;    #action {Dostrzegajac luke w obronie przeciwnika rzucasz %* ledwo muskajac} {collect $AVATAR_NAME unknown MC 1;#line gag};
 #nop MC1;    #unaction {Stajesz pewnie %*} {collect $AVATAR_NAME unknown MC 7;#line gag};
+
 #nop WKS3;   #action {%* szybkim niczym mysl ruchem %* wytraca ci} {collect %1 $AVATAR_NAME WKS_WYTRACA_CI 0;#line gag};
 #nop WKS3;   #action {%* szybkim niczym mysl ruchem %* wytraca} {collect %1 unknown WKS_WYTRACA 0;#line gag};
 #nop WKS3;   #action {%* wyprowadza %+, lecz ten {zbija|oslania} je %+} {collect %1 unknown par 0;#line gag};
@@ -121,15 +105,7 @@
 #nop WKS1;   #action {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* pozostawiajac gleboka rane z wystajacymi na wierzchu tkankami.} {collect %1 unknown WKS 5;#line gag};
 #nop WKS1;   #action {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* zadajac smiertelne obrazenia.} {collect %1 unknown WKS 6;#line gag};
 #nop WKS1;   #action {%* wykorzystujac brak broni u przeciwnika, %* wyprowadza cios %* traci rownowage} {collect %1 unknown WKS_PUDLO 0;#line gag};
-#nop KG1;    #action {Ruszasz do przodu, w pol kroku %* bolesnie zacina %*} {collect $AVATAR_NAME unknown KG 4;#line gag};
-#nop KG1;    #action {Nie zwazajac na nic rozpoczynasz oburacz %* plytko tnie} {collect $AVATAR_NAME unknown KG 2;#line gag};
-#nop KG1;    #action {Wyrzucasz do przodu %* plytko tnie} {collect $AVATAR_NAME unknown KG 2;#line gag};
-#nop KG1;    #action {Wyrzucasz do przodu %* ledwo zacina} {collect $AVATAR_NAME unknown KG 1;#line gag};
-#nop KG1;    #action {Nie zwazajac na nic rozpoczynasz oburacz %* bolesnie zacina} {collect $AVATAR_NAME unknown KG 4;#line gag};
-#nop KG1;    #action {Z okrzykiem na ustach dopadasz} {collect $AVATAR_NAME unknown KG 7;#line gag};
-#nop KG1;    #action {Niespodziewanie skrecasz tulow %* plytko tnie} {collect $AVATAR_NAME unknown KG 2;#line gag};
-#nop KG1;    #action {Niespodziewanie skrecasz tulow %* gleboko tnie} {collect $AVATAR_NAME unknown KG 4;#line gag};
-#nop KG1;    #action {Niespodziewanie skrecasz tulow %* bolesnie zacina} {collect $AVATAR_NAME unknown KG 3;#line gag};
+
 #nop KOR3;   #action {%w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect %1 unknown KS 4;#line gag};
 #nop KOR3;   #action {%w %w %w zgrabnym ruchem unika ciosu %* i korzystajac z dogodnej pozycji rabie %* na odlew %*, gleboko rozrywajac} {collect &4 unknown KS 4;#line gag};
 #nop FAN3;   #action {%* rzuca sie do ataku. %* ledwo muskajac %*} {collect %1 unknown MC 1;#line gag};
@@ -142,9 +118,6 @@
 #nop GRE;	 #action {chichotem gryzie cie niegroznie w szyje!} {collect gremlin $AVATAR_NAME GRE 1;#line gag};
 #nop GRE;    #action {chichotem gryzie cie bardzo lekko w szyje!} {collect gremlin $AVATAR_NAME GRE 2;#line gag};
 
-#nop GOB;    #action {pojawia sie nienawistny %* kaleczy ci} {collect goblinoid $AVATAR_NAME GOB 1;#line gag};
-#nop GOB;    #action {pojawia sie nienawistny %* rozkrwawia ci} {collect goblinoid $AVATAR_NAME GOB 3;#line gag};
-#nop GOB;    #unaction {zamyka sie z ohydnym mlasnieciem} {collect troll troll TROLL 0;#line gag};
 
 
 #nop JAS;    #action {%* jaszczur doskakuje do ciebie i niegroznie wgryza sie ostrymi zebami w twoje cialo.} {collect jaszczur $AVATAR_NAME JAS 1;#line gag};
@@ -183,18 +156,6 @@
 #nop MAG;    #action {Zgrabnym ruchem zwodzisz %* i gwaltownie skracajac dystans} {collect $AVATAR_NAME unknown magic 7;#line gag};
    #nop TASAK;
 #nop MAG;    #action {{Widok slabnacego wroga tylko dodaje ci sil|Z kazdym kolejnym ciosem nabierasz nowej sily do walki|Powolne, pozbawione sily ruchy wroga zagrzewaja cie do walki, dodajac zapalu.}} {collect $AVATAR_NAME unknown magic 0;#line gag};
-   #nop HELM;
-#nop MAG;    #action {zaczyna wpatrywac sie pustym wzrokiem w slepia weza wijacego sie u podstawy twojego ciemnogranatowego smuklego helmu.} {collect $AVATAR_NAME unknown STUN 0;#line gag};
-   #nop ESPA;
-#nop MAG;    #action {Lekko muskasz} {collect $AVATAR_NAME unknown magic 1;#line gag};
-#nop MAG;    #action {Bez wysilku, niezbyt mocno} {collect $AVATAR_NAME unknown magic 2;#line gag};
-#nop MAG;    #action {Ruszasz do przodu %* gleboko tnie} {collect $AVATAR_NAME unknown magic 4;#line gag};
-#nop MAG;    #action {Skutecznym uderzeniem} {collect $AVATAR_NAME unknown magic 3;#line gag};
-#nop MAG;    #action {Bierzesz mocny zamach i poteznym ciosem} {collect $AVATAR_NAME unknown magic 4;#line gag};
-#nop MAG;    #action {Wyprowadzasz znad glowy} {collect $AVATAR_NAME unknown magic 5;#line gag};
-#nop MAG;    #action {Korzystajac z nieuwagi} {collect $AVATAR_NAME unknown magic 6;#line gag};
-#nop MAG;    #action {Unosisz nagle swoj espadon} {collect $AVATAR_NAME unknown magic 7;#line gag};
-
 
 #nop PANIC;  #action {w panice umyka} {#sh $tmpvalue2;#line gag};
 #nop PANIC;  #action {uciekl ci.} {#sh $tmpvalue2;#line gag};

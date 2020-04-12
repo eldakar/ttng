@@ -234,6 +234,47 @@
     }; #nop foreach duch;
 };
 
+#nop ###########################################;
+#nop # FUNKCJE                                 #;
+#nop ###########################################;
+#function ShortToId {
+    #format tmpShort {%l} {%0};
+    #foreach {*duch[]} {tmpObjNum} {
+        #format tmpDuch {%l} {$duch[$tmpObjNum][desc]};
+        #if {"$tmpShort" == "$tmpDuch"} {
+            #return {$tmpObjNum};
+        };
+    };
+    #return 0;
+};
+
+#function GetEnemyTarget {
+    #local myTmpId @ShortToId{%0};
+    #return $duch[$myTmpId][attack_num];
+};
+#function IsIdTeam {
+    #if {"$duch[%0][team]" == "true"} {
+        #return 1;
+    } {
+        #return 0;
+    };    
+}
+#function IsShortTeam {
+    #local myTmpId @ShortToId{%0};
+    #if {"$duch[$myTmpId][team]" == "true"} {
+        #return 1;
+    } {
+        #return 0;
+    };
+};
+#function StrLen {
+    #format tmpStrLen {%L} {%0};
+    #return $tmpStrLen;
+};
+#nop ###########################################;
+#nop ###########################################;
+#nop ###########################################;
+
 #alias {szukaj_wroga}
 {
     #nop ##############;

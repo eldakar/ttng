@@ -58,16 +58,16 @@
 #macro {$KEY_PAD_SW} {move_sw}
 #macro {$KEY_PAD_SE} {move_se}
 
-#macro {\ce} {move_nw};
-#macro {\cr} {move_n};
-#macro {\ct} {move_ne};
-#macro {\cd} {move_w};
-#macro {\cg} {move_e};
-#macro {\cf} {move_u};
-#macro {\cc} {move_sw};
-#macro {\cv} {move_s};
-#macro {\cb} {move_se};
-#macro {\cn} {move_d};
+#unmacro {\ce} {move_nw};
+#unmacro {\cr} {move_n};
+#unmacro {\ct} {move_ne};
+#unmacro {\cd} {move_w};
+#unmacro {\cg} {move_e};
+#unmacro {\cf} {move_u};
+#unmacro {\cc} {move_sw};
+#unmacro {\cv} {move_s};
+#unmacro {\cb} {move_se};
+#unmacro {\cn} {move_d};
 
 
 #macro {\e[1;2A} {#buffer up};		#nop shift-kursor-gora;

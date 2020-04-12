@@ -5,86 +5,156 @@
    };
 };
 
+#alias {walkapvp} {
+   #var pwalkapvp $ConfigManager_Configs[walkapvp];
+};
+
 #alias {/walka} {
    #local totalhits 0;
    #local totaldmg 0;
    #local totalmis 0;
 
-   #foreach {*collector[$AVATAR_NAME][sent][]} {avasent} {
-      #switch {"$avasent"} {
-         #case {"damage"} {#math totaldmg {$totaldmg} + $collector[$AVATAR_NAME][sent][$avasent]};
-         
-         #case {"hit"} {#math totalhits {$totalhits + $collector[$AVATAR_NAME][sent][$avasent]};};
-         #case {"WKS"} {#math totalhits {$totalhits + $collector[$AVATAR_NAME][sent][$avasent]};};
-         #case {"magic"} {#math totalhits {$totalhits + $collector[$AVATAR_NAME][sent][$avasent]};};
 
-         #case {"mis"} {#math totalmis {$totalmis + $collector[$AVATAR_NAME][sent][$avasent]};};
-         #case {"par"} {#math totalmis {$totalmis + $collector[$AVATAR_NAME][sent][$avasent]};};
-         #case {"dod"} {#math totalmis {$totalmis + $collector[$AVATAR_NAME][sent][$avasent]};};
+#nop sent hit, magic, spec, par, dod, mis ;
+#nop recv hit, magic, spec, par, dod, mis ;
+
+#nop totalhits = total sent minus damage  ;
+#nop totalarmor = total received          ;
+
+      #line ignore #sh {<cba>+-----------------------------------+-----------------------+-----------------------+};
+      #line ignore #sh {<cba>|                                   | Zadane                | Otrzymane             |};
+      #line ignore #sh {<cba>| KTO                               | Norma | Magic | Specj | Parow | Uniki | Chybi |};
+      #line ignore #sh {<cba>+-----------------------------------+-------+-------+-------+-----------------------+};
+
+
+   #foreach {*collector[]} {collId} {
+      #if {@IsIdTeam{$collId} > 0 || "$collId" == "$CHAR_INFO[object_num]" && @StrLen{$collector[$collId][short]} > 0} {
+
+#nop SENT ITEMS;
+         #var total_zadane 0;
+         #var total_spec 0;
+         #foreach {*collector[$collId][sent][]} {sentitems} {
+            #switch {"$sentitems"} {
+               #case {"damage"} {#nop {};};
+               #case {"dod"} {#math {total_zadane} {$total_zadane + $collector[$collId][sent][$sentitems]}};
+               #case {"magic"} {#math {total_zadane} {$total_zadane + $collector[$collId][sent][$sentitems]}};
+               #case {"mis"} {#math {total_zadane} {$total_zadane + $collector[$collId][sent][$sentitems]}};
+               #case {"par"} {#math {total_zadane} {$total_zadane + $collector[$collId][sent][$sentitems]}};
+               #case {"hit"} {#math {total_zadane} {$total_zadane + $collector[$collId][sent][$sentitems]}};
+               #default {
+                  #math {total_zadane} {$total_zadane + $collector[$collId][sent][$sentitems]};
+                  #math {total_spec} {$total_spec +  + $collector[$collId][sent][$sentitems]};
+               };
+            };
+         };
+         #math {procent_normalne} {($collector[$collId][sent][hit] * 100) / $total_zadane};
+         #math {procent_magiczne} {($collector[$collId][sent][magic] * 100) / $total_zadane};
+         #math {procent_specjalne} {($total_spec * 100) / $total_zadane};
+#nop RECEIVED ITEMS;
+         #var total_otrzymane 0;
+         #foreach {*collector[$collId][received][]} {recvitems} {
+            #switch {"$recvitems"} {
+               #case {"damage"} {#nop {};};
+               #default {
+                  #math {total_otrzymane} {$total_otrzymane + $collector[$collId][received][$recvitems]};
+               };
+            };
+         };
+         #math {procent_parowane} {($collector[$collId][received][par] * 100) / $total_otrzymane};
+         #math {procent_unikniete} {($collector[$collId][received][dod] * 100) / $total_otrzymane};
+         #math {procent_chybione} {($collector[$collId][received][mis] * 100) / $total_otrzymane};
+
+         #format encounterline {<cba>|<088> %-34s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>} {<148>$collector[$collId][short]<088>} {$collector[$collId][sent][hit]} {$procent_normalne%} {$collector[$collId][sent][magic]} {$procent_magiczne%} {$total_spec} {$procent_specjalne%} {$collector[$collId][received][par]} {$procent_parowane%} {$collector[$collId][received][dod]} {$procent_unikniete%} {$collector[$collId][received][mis]} {$procent_chybione%};
+         #line ignore #sh {$encounterline};
       };
    };
-   #math hitsperc {($totalhits / ($totalhits + $totalmis)) * 100};
-   
-   #unvar hitsperc;
-   
-   #local totalmis 0;
-   #local totalparr 0;
-   #local totaldodg 0;
-   #local totalothe 0;
 
-   #foreach {*collector[$AVATAR_NAME][received][]} {avasent} {
-      #switch {"$avasent"} {
-         #case {"mis"} {#math totalmis {$totalmis + $collector[$AVATAR_NAME][received][$avasent]};};
-         #case {"par"} {#math totalparr {$totalparr + $collector[$AVATAR_NAME][received][$avasent]};};
-         #case {"dod"} {#math totaldodg {$totaldodg + $collector[$AVATAR_NAME][received][$avasent]};};
-         #default {#math totalothe {$totalothe + $collector[$AVATAR_NAME][received][$avasent]};};
+
+
+   #foreach {*collector[]} {collId} {
+      #if {@IsIdTeam{$collId} < 1 && $collId != $CHAR_INFO[object_num] && $collId > 0 && @StrLen{$collector[$collId][short]} > 0} {
+#nop SENT ITEMS;
+         #var total_zadane 0;
+         #var total_spec 0;
+         #foreach {*collector[$collId][sent][]} {sentitems} {
+            #switch {"$sentitems"} {
+               #case {"damage"} {#nop {};};
+               #case {"dod"} {#math {total_zadane} {$total_zadane + $collector[$collId][sent][$sentitems]}};
+               #case {"magic"} {#math {total_zadane} {$total_zadane + $collector[$collId][sent][$sentitems]}};
+               #case {"mis"} {#math {total_zadane} {$total_zadane + $collector[$collId][sent][$sentitems]}};
+               #case {"par"} {#math {total_zadane} {$total_zadane + $collector[$collId][sent][$sentitems]}};
+               #case {"hit"} {#math {total_zadane} {$total_zadane + $collector[$collId][sent][$sentitems]}};
+               #default {
+                  #math {total_zadane} {$total_zadane + $collector[$collId][sent][$sentitems]};
+                  #math {total_spec} {$total_spec +  + $collector[$collId][sent][$sentitems]};
+               };
+            };
+         };
+         #math {procent_normalne} {($collector[$collId][sent][hit] * 100) / $total_zadane};
+         #math {procent_magiczne} {($collector[$collId][sent][magic] * 100) / $total_zadane};
+         #math {procent_specjalne} {($total_spec * 100) / $total_zadane};
+#nop RECEIVED ITEMS;
+         #var total_otrzymane 0;
+         #foreach {*collector[$collId][received][]} {recvitems} {
+            #switch {"$recvitems"} {
+               #case {"damage"} {#nop {};};
+               #default {
+                  #math {total_otrzymane} {$total_otrzymane + $collector[$collId][received][$recvitems]};
+               };
+            };
+         };
+         #math {procent_parowane} {($collector[$collId][received][par] * 100) / $total_otrzymane};
+         #math {procent_unikniete} {($collector[$collId][received][dod] * 100) / $total_otrzymane};
+         #math {procent_chybione} {($collector[$collId][received][mis] * 100) / $total_otrzymane};
+
+         #format encounterline {<cba>|<088> %-34s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>} {<118>$collector[$collId][short]<088>} {$collector[$collId][sent][hit]} {$procent_normalne%} {$collector[$collId][sent][magic]} {$procent_magiczne%} {$total_spec} {$procent_specjalne%} {$collector[$collId][received][par]} {$procent_parowane%} {$collector[$collId][received][dod]} {$procent_unikniete%} {$collector[$collId][received][mis]} {$procent_chybione%};
+         #line ignore #sh {$encounterline};
       };
    };
-   #math grandtotal {$totalmis + $totalparr + $totaldodg + $totalothe};
-   #math percmis {($totalmis * 100) / $grandtotal};
-   #math percparr {($totalparr * 100) / $grandtotal};
-   #math percdodg {($totaldodg * 100) / $grandtotal};
-   #math percothe {($totalothe * 100) / $grandtotal};
-   
-   #sh {----- Otrzymane ciosy -----};
-   #sh {Miss  $totalmis (${percmis}%)};
-   #sh {Parry $totalparr (${percparr}%)};
-   #sh {Dodge $totaldodg (${percdodg}%)};
-   #sh {Hit   $totalothe (${percothe}%)};
-   #sh {---------------------------};
-   #sh {Total $grandtotal};
-   #unvar grandtotal;
-   #unvar percmis;
-   #unvar percparr;
-   #unvar percdodg;
-   #unvar percothe;
+
+      #line ignore #sh {<cba>+-----------------------------------+-------+-------+-------+-----------------------+};
 
 } {1};
 
-#alias {collect} {
+#nop #function ShortToId {};
+#nop GetEnemyTarget;
+
+#alias {collect %w %d %*} {
 	#nop 1_GIVER 2_RECIEVER 3_TYPE 4_VALUE;
-	#if {"$collector[%1][sent][%3]" == ""} {#var collector[%1][sent][%3] {0};};
-	#if {"$collector[%2][received][%3]" == ""} {#var collector[%1][received][%3] {0};};
-	#if {"$collector[%1][sent][damage]" == ""} {#var collector[%1][sent][damage] {0};};
-	#if {"$collector[%2][received][damage]" == ""} {#var collector[%1][received][damage] {0};};
+   #nop 1_TYPE 2_VALUE 3_SENDER;
+   #local senderID @ShortToId{%3};
+   #local receiverID @GetEnemyTarget{%3};
+   #local valueSent {%2};
+   #local typeSent {%1};
+
+   #nop sh {collector debug > type:%1 value:%2 sender:%3 ($senderID -> $receiverID)};
+
+   #var collector[$senderID][short] {%3};
+   #var collector[$receiverID][short] $duch[$receiverID][desc];
+
+	#if {"$collector[$senderID][sent][$typeSent]" == ""} {#var collector[$senderID][sent][$typeSent] {0};};
+	#if {"$collector[$receiverID][received][$typeSent]" == ""} {#var collector[$receiverID][received][%3] {0};};
+	#if {"$collector[$senderID][sent][damage]" == ""} {#var collector[$senderID][sent][damage] {0};};
+	#if {"$collector[$receiverID][received][damage]" == ""} {#var collector[$receiverID][received][damage] {0};};
 
    #var hitcolor <fff>;
-   #if {"%1" == "$AVATAR_NAME"} {#var hitcolor <ddf>} {#var hitcolor <fdd>};
+   #if {"%3" == "$AVATAR_NAME"} {#var hitcolor <ddf>} {#var hitcolor <fdd>};
    #nop if {"%2" == "$AVATAR_NAME"} {#var hitcolor <fdd>};
 
-	#math tmp_sent {$collector[%1][sent][%3] + 1};
-	#math tmp_rcvd {$collector[%2][received][%3] + 1};
-	#math tmp_dsent {$collector[%1][sent][damage] + %4};
-	#math tmp_drcvd {$collector[%2][received][damage] + %4};
-	#var collector[%1][sent][%3] {$tmp_sent};
-	#var collector[%2][received][%3] {$tmp_rcvd};
-	#var collector[%1][sent][damage] {$tmp_dsent};
-	#var collector[%2][received][damage] {$tmp_drcvd};
+	#math tmp_sent {$collector[$senderID][sent][$typeSent] + 1};
+	#math tmp_rcvd {$collector[$receiverID][received][$typeSent] + 1};
+	#math tmp_dsent {$collector[$senderID][sent][damage] + $valueSent};
+	#math tmp_drcvd {$collector[$receiverID][received][damage] + $valueSent};
+	#var collector[$senderID][sent][$typeSent] {$tmp_sent};
+	#var collector[$receiverID][received][$typeSent] {$tmp_rcvd};
+	#var collector[$senderID][sent][damage] {$tmp_dsent};
+	#var collector[$receiverID][received][damage] {$tmp_drcvd};
 
    #replace {outputtext} {Lekko ranisz} {<afa>Lekko ranisz<088>};
    #replace {outputtext} {Ranisz} {<afa>Ranisz<088>};
    #replace {outputtext} {Ledwo muskasz} {<afa>Ledwo muskasz<088>};
    #replace {outputtext} {Lekko muskasz} {<afa>Lekko muskasz<088>};
+   #replace {outputtext} {Powaznie ranisz} {<afa>Powaznie ranisz<088>};
    #replace {outputtext} {niezbyt mocno ranisz} {<afa>niezbyt mocno ranisz<088>};
    #replace {outputtext} {ranisz} {<afa>ranisz<088>};
    #replace {outputtext} {rozcinasz} {<afa>rozcinasz<088>};
@@ -92,13 +162,26 @@
    #replace {outputtext} {gleboko tnie} {<afa>gleboko tnie<088>};
    #replace {outputtext} {bolesnie zacina} {<afa>bolesnie zacina<088>};
    #replace {outputtext} {ledwo muska cie} {<fca>ledwo muska cie<088>};
+   #replace {outputtext} {lekko rani cie} {<fca>lekko rani cie<088>};
 
-   #switch {"%3"} {
-      #case {"dod"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[%3] $outputtext}};};};
-      #case {"mis"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[%3] $outputtext}};};};
-      #case {"par"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[%3] $outputtext}};};};
-      #case {"hit"} {#if {$gaglevel < 2} {#line ignore {#showme {${hitcolor}[%4/6]<088> $outputtext}};};};
-      #case {"magic"} {#if {$gaglevel < 2} {#line ignore {#showme {<138>[%3 %4/6]<088> $outputtext}};};};
-      #default {#line ignore {#showme {<cfa>[%3 %4/6]<088> $outputtext}};};
-   };
+   #if {"pwalkapvp" == "wlaczona"} {
+      #switch {"$typeSent"} {
+         #case {"dod"} {#if {$gaglevel < 1} {#format pvpdisplay {<bcf>%-8s %-2s <088>%-35s -> %-35s} {$typeSent} {$valueSent} {$collector[$senderID][short]} {$collector[$receiverID][short]}}};
+         #case {"mis"} {#if {$gaglevel < 1} {#format pvpdisplay {<bcf>%-8s %-2s <088>%-35s -> %-35s} {$typeSent} {$valueSent} {$collector[$senderID][short]} {$collector[$receiverID][short]}}};
+         #case {"par"} {#if {$gaglevel < 1} {#format pvpdisplay {<bcf>%-8s %-2s <088>%-35s -> %-35s} {$typeSent} {$valueSent} {$collector[$senderID][short]} {$collector[$receiverID][short]}}};
+         #case {"hit"} {#if {$gaglevel < 2} {#format pvpdisplay {${hitcolor}%-8s %-2s <088>%-35s -> %-35s} {$typeSent} {$valueSent} {$collector[$senderID][short]} {$collector[$receiverID][short]}}};
+         #case {"magic"} {#if {$gaglevel < 2} {#format pvpdisplay {<138>%-8s %-2s <088>%-35s -> %-35s} {$typeSent} {$valueSent} {$collector[$senderID][short]} {$collector[$receiverID][short]}}};
+         #default {#format pvpdisplay {<cfa>%-8s %-2s <088>%-35s -> %-35s} {$typeSent} {$valueSent} {$collector[$senderID][short]} {$collector[$receiverID][short]}};
+      };  
+      #line ignore {#sh $pvpdisplay};
+   } {
+      #switch {"$typeSent"} {
+         #case {"dod"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] $outputtext}};};};
+         #case {"mis"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] $outputtext}};};};
+         #case {"par"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] $outputtext}};};};
+         #case {"hit"} {#if {$gaglevel < 2} {#line ignore {#showme {${hitcolor}[$valueSent/6]<088> $outputtext}};};};
+         #case {"magic"} {#if {$gaglevel < 2} {#line ignore {#showme {<138>[$typeSent $valueSent/6]<088> $outputtext}};};};
+         #default {#line ignore {#showme {<cfa>[$typeSent $valueSent/6]<088> $outputtext}};};
+      };
+   }
 } {1};

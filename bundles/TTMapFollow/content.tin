@@ -105,6 +105,7 @@
 #action {%*{Podazasz|podazasz} za %1 w kierunku otworu.} {#map move otwor;};
 #action {%*{Podazasz|podazasz} za %1 na zewnatrz.} {#map move wyjscie;};
 #action {%*{Podazasz|podazasz} za %1 do srodka otworu.} {#map move otwor;};
+#action {%*{Podazasz|podazasz} za %1 do srodka jaskini.} {#map move jaskinia;};
 #action {%*{Podazasz|podazasz} za %1 za brame.} {#map move brama;};
 #action {%*{Podazasz|podazasz} za %1 do wiezy.} {#map move wieza;};
 #action {%*{Podazasz|podazasz} za %1 na zewnatrz baszty.} {#map move wyjscie;};
@@ -148,6 +149,7 @@
 
 #action {%*{Podazasz|podazasz} za %1 do baraku.} {#map move barak};
 #action {%*{Podazasz|podazasz} za %1 przez otwor do jaskini.} {#map move otwor};
+#action {%*{Podazasz|podazasz} za %1 przez otwor.} {#map move otwor};
 #action {%*{Podazasz|podazasz} za %1 przez otwor na zewnatrz.} {#map move otwor};
 #action {Podazasz za kims przez otwor do jaskini.} {#map move otwor} {1};
 #action {Podazasz w kierunku krzakow i po chwili znajdujesz przesmyk, przez ktory mozna sie dostac pomiedzy poskrecane ze soba galezie.} 

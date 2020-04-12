@@ -50,6 +50,11 @@
 
 #var showingmarkups 0;
 #alias {/show} {
+	#foreach {*m[]} {_m} {
+		#if {"$m[$_m][type]" == "rot"} {
+			#map at {$_m} {/d};
+		};
+	};
 	#if {$showingmarkups < 1} {
 		#foreach {*m[]} {_m} {
 			#map at {$_m} {
