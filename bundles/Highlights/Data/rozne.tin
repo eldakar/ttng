@@ -22,5 +22,13 @@
 #sub {Czujesz, jak twoje cialo gwaltownie sie rozgrzewa.} {<afa>[mutacja]<088> %0};
 #sub {Czujesz przenikliwe, potworne zimno.} {<afa>[mutacja]<088> %0};
 #sub {Nie wiedziec czemu, ogarania cie poczucie nieskonczonej potegi.} {<afa>[mutacja]<088> %0};
+#sub {Swiat zaczyna ci wirowac przed oczami.} {<afa>[mutacja]<088> %0};
 #nop Czujesz dziwne mrowienie;
 #nop Czujesz dziwna, nienaturalna radosc;
+
+#nop podazanie;
+#high {podaza} {<ccf>};
+#high {podazasz} {<ccf>};
+#high {podazaja} {<ccf>};
+#high {przybywa} {<eef>};
+#high {przybywaja} {<eef>};

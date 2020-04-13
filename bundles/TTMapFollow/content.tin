@@ -75,10 +75,8 @@
 #action {%*{Podazasz|podazasz} za %1 drzwiami na zewnatrz baraku.} {#map move drzwi;#map move wyjscie} {1};
 #action {%*{Podazasz|podazasz} za %1 do gory na most.} {#map move most;};
 #action {%*{Podazasz|podazasz} za %1 na most.} {#map move most;};
-
 #action {%*{Podazasz|podazasz} za %1 do gospody.} {#map move n;};
 #action {%*{Podazasz|podazasz} za %1 na zewnatrz gospody.} {#map move s;};
-
 #action {%*{Podazasz|podazasz} za %1 w strone wyjscia.} {#map move wyjscie;};
 #action {%*{Podazasz|podazasz} za %1 w kierunku traktu.} {#map move trakt;};
 #action {%*{Podazasz|podazasz} za %1 przez dziure w murze} {#map move sw;} {2};

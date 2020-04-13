@@ -104,7 +104,7 @@
 #action {Wykorzystujac brak broni u przeciwnika, %* smiertelne obrazenia.} {collect WKS 6 $AVATAR_NAME;#line gag};
 #action {Wykorzystujac brak broni u przeciwnika, %* rownowage} {collect mis 0 $AVATAR_NAME;#line gag};
 #nop SPECE WKS Z TRZECIEJ OSOBY;
-#action {%* szybkim niczym mysl ruchem %* wytraca %*} {collect WKS_WYTRACA 0 %1;#line gag};
+#action {%* szybkim niczym mysl ruchem %* wytraca %*} {collect WYTRACA 0 %1;#line gag};
 #action {%* wykorzystujac brak broni u przeciwnika, %* pozostawiajac ledwie sinca.} {collect WKS 1 %1;#line gag};
 #action {%* wykorzystujac brak broni u przeciwnika, %* pozostawiajac krwawiace zadrapanie.} {collect WKS 2 %1;#line gag};
 #action {%* wykorzystujac brak broni u przeciwnika, %* pozostawiajac dluga, poszarpana rane.} {collect WKS 4 %1;#line gag};

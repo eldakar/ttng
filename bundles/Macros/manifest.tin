@@ -24,6 +24,8 @@
 	#list bundle_configs add {MacNawiasPrawy};
 	#list bundle_configs add {MacTylda};
 
+	#list bundle_configs add {MacTab};
+
 	#list bundle_configs add {Mac_eOo};
 	#list bundle_configs add {Mac_eOj};
 	#list bundle_configs add {Mac_eOn};
@@ -32,6 +34,7 @@
 	#list bundle_configs add {Mac_eOu};
 	#list bundle_configs add {Mac_eOp};
 	#list bundle_configs add {Mac_eOl};
+
 	
 #list bundle_slots clear;
 	#list bundle_slots add {macros};

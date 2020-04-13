@@ -81,5 +81,5 @@
     #nop if {"%0" == "rpg"} {#end;};
 };
 
-#nop event {SEND OUTPUT} {#echo {<118>COMMAND : %0<088>}};
+#event {SEND OUTPUT} {#var sendoutput %0;#replace {sendoutput} {\n} {};#echo {<cca>$sendoutput<088>}};
 

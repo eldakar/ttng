@@ -120,14 +120,11 @@
 #nop GetEnemyTarget;
 
 #alias {collect %w %d %*} {
-	#nop 1_GIVER 2_RECIEVER 3_TYPE 4_VALUE;
    #nop 1_TYPE 2_VALUE 3_SENDER;
    #local senderID @ShortToId{%3};
    #local receiverID @GetEnemyTarget{%3};
    #local valueSent {%2};
    #local typeSent {%1};
-
-   #nop sh {collector debug > type:%1 value:%2 sender:%3 ($senderID -> $receiverID)};
 
    #var collector[$senderID][short] {%3};
    #var collector[$receiverID][short] $duch[$receiverID][desc];
