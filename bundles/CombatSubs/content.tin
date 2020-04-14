@@ -165,7 +165,7 @@
    #replace {outputtext} {lekko rani cie} {<fca>lekko rani cie<088>};
    #replace {outputtext} {rani cie} {<fca>rani cie<088>};
 
-   #if {"pwalkapvp" == "wlaczona"} {
+   #if {"$pwalkapvp" == "wlaczona"} {
       #switch {"$typeSent"} {
          #case {"dod"} {#if {$gaglevel < 1} {#format pvpdisplay {<bcf>%-8s %-2s <088>%-35s -> %-35s} {$typeSent} {$valueSent} {$collector[$senderID][short]} {$collector[$receiverID][short]}}};
          #case {"mis"} {#if {$gaglevel < 1} {#format pvpdisplay {<bcf>%-8s %-2s <088>%-35s -> %-35s} {$typeSent} {$valueSent} {$collector[$senderID][short]} {$collector[$receiverID][short]}}};
