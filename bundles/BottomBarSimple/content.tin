@@ -12,8 +12,8 @@
 
 #var bbs_fixer 0;
 
-#alias {PasekDolny} {
-	#var ppasek $ConfigManager_Configs[PasekDolny];
+#alias {pasekdolny} {
+	#var ppasek $ConfigManager_Configs[pasekdolny];
 };
 
 #alias {BottomBarSimple_char_state} {
