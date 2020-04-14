@@ -96,7 +96,7 @@
 
 
 #nop SPECE WKS Z PIERWSZEJ OSOBY;
-#action {Szybkim niczym mysl ruchem %* wytracasz %*} {collect WKS_WYTRACASZ 0 $AVATAR_NAME;#line gag};
+#action {Szybkim niczym mysl ruchem %* wytracasz %*} {collect WYTRACASZ 0 $AVATAR_NAME;#line gag};
 #action {Wykorzystujac brak broni u przeciwnika, %* ledwie sinca.} {collect WKS 1 $AVATAR_NAME;#line gag};
 #action {Wykorzystujac brak broni u przeciwnika, %* krwawiace zadrapanie.} {collect WKS 2 $AVATAR_NAME;#line gag};
 #action {Wykorzystujac brak broni u przeciwnika, %* dluga, poszarpana rane.} {collect WKS 4 $AVATAR_NAME;#line gag};
