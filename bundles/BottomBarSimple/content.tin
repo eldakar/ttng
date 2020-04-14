@@ -11,6 +11,11 @@
 #var zmeczenie[9] {calkowicie wycienczony};
 
 #var bbs_fixer 0;
+
+#alias {PasekDolny} {
+	#var ppasek $ConfigManager_Configs[PasekDolny];
+};
+
 #alias {BottomBarSimple_char_state} {
 	#var charstate {%0};
 	#foreach {*charstate[]} {s} {
@@ -280,7 +285,9 @@
 	#line ignore #sh {$bbBGC  <138>$rozk2[w]$rozk2[w] o <138>$rozk2[e]$rozk2[e]    <088>${bbBGC}                                                                     $hspac Panika: $state[panic] Prag: $state[soaked]<088>} {-3};
 	#line ignore #sh {$bbBGC  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d]   <088>${bbBGC}B:[$qbvar<088>${bbBGC}]$hspac Ciezar: $state[encumbrance] Pija: $state[intox]<088>} {-2};	
 
-	barstest;
+	#if {"$ppasek" <> "stary"} {
+		barstest;
+	};
 };
 
 #alias barstest {

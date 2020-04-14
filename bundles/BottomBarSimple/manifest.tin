@@ -13,6 +13,7 @@
 		#list bundle_handler_char_state add {BottomBarSimple_char_state};
 	#list bundle_deps add {SplitRefresh};
 		#list bundle_handler_split_request add {BottomBarTinyFugue};
+	#list bundle_condigs add {PasekDolny};
 #list bundle_alias clear;
 
 #var bundle_ready @bundleops_validate{};
