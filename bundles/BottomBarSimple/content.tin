@@ -281,13 +281,16 @@
 	#math {spacelen} {$screencols - 100};
 	#loop {1} {$spacelen} {mee} {#var hspac {$hspac }};
 
-	#line ignore #sh {$bbBGC   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u]   <088>${bbBGC}K:[$TinyFugueBars[hp][$state[hp]]<088>${bbBGC}] Z:[$TinyFugueBars[fatigue][$state[fatigue]]<088>${bbBGC}] M:[$TinyFugueBars[mana][$state[mana]]<088>${bbBGC}]$hspac Forma : $state[form] Glod: $state[stuffed]<088>} {-4};
-	#line ignore #sh {$bbBGC  <138>$rozk2[w]$rozk2[w] o <138>$rozk2[e]$rozk2[e]    <088>${bbBGC}                                                                     $hspac Panika: $state[panic] Prag: $state[soaked]<088>} {-3};
-	#line ignore #sh {$bbBGC  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d]   <088>${bbBGC}B:[$qbvar<088>${bbBGC}]$hspac Ciezar: $state[encumbrance] Pija: $state[intox]<088>} {-2};	
-
-	#if {"$ppasek" <> "stary"} {
+	#if {"$ppasek" == "stary"} {
+		#line ignore #sh {$bbBGC   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u]   <088>${bbBGC}K:[$TinyFugueBars[hp][$state[hp]]<088>${bbBGC}] Z:[$TinyFugueBars[fatigue][$state[fatigue]]<088>${bbBGC}] M:[$TinyFugueBars[mana][$state[mana]]<088>${bbBGC}]$hspac Forma : $state[form] Glod: $state[stuffed]<088>} {-4};
+		#line ignore #sh {$bbBGC  <138>$rozk2[w]$rozk2[w] o <138>$rozk2[e]$rozk2[e]    <088>${bbBGC}                                                                     $hspac Panika: $state[panic] Prag: $state[soaked]<088>} {-3};
+		#line ignore #sh {$bbBGC  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d]   <088>${bbBGC}B:[$qbvar<088>${bbBGC}]$hspac Ciezar: $state[encumbrance] Pija: $state[intox]<088>} {-2};	
+	} {
+		#line ignore #sh {$bbBGC   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u]   <088>${bbBGC}K:[$TinyFugueBars[hp][$state[hp]]<088>${bbBGC}] Z:[$TinyFugueBars[fatigue][$state[fatigue]]<088>${bbBGC}] M:[$TinyFugueBars[mana][$state[mana]]<088>${bbBGC}]$hspac Forma : $state[form] Glod: $state[stuffed]<088>} {-4};
+		#line ignore #sh {$bbBGC  <138>$rozk2[w]$rozk2[w] o <138>$rozk2[e]$rozk2[e]    <088>${bbBGC}                                                                     $hspac Panika: $state[panic] Prag: $state[soaked]<088>} {-3};
+		#line ignore #sh {$bbBGC  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d]   <088>${bbBGC}B:[$qbvar<088>${bbBGC}]$hspac Ciezar: $state[encumbrance] Pija: $state[intox]<088>} {-2};	
 		barstest;
-	};
+	}
 };
 
 #alias barstest {
