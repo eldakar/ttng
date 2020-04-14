@@ -6,10 +6,3 @@
 	};	
 };
 
-#alias {echokomend} {
-	#if {"$ConfigManager_Configs[echokomend]" == "wlaczone"} {
-		#config {COMMAND ECHO} {on};
-	} {
-		#config {COMMAND ECHO} {off};
-	};
-}
