@@ -67,7 +67,7 @@
 			#var outputtext {$GMCPMSGS[text]};
 			#replace {outputtext} {\\n} {};
 			#sh $outputtext;
-			#delay {wwalce} {#sh {Odsapnales po walce.}} {30};
+			#delay {wwalce} {#sh {Odsapnales po walce.};#unvar collector} {30};
 			#nop /a rot;
 			#nop line sub variables {#delay {$voom} {#map at {$voom} {/d};} {600};};
 		};	
