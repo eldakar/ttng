@@ -2,6 +2,33 @@
 #var ConfigManager_Configs[dummy] {0};
 #class ConfigManagerProfile close;
 
+#alias {migruj_makra} {
+	/macro F1 $ConfigManager_Configs[MacF1];
+	/macro F2 $ConfigManager_Configs[MacF2];
+	/macro F3 $ConfigManager_Configs[MacF3];
+	/macro F4 $ConfigManager_Configs[MacF4];
+	/macro F5 $ConfigManager_Configs[MacF5];
+	/macro F6 $ConfigManager_Configs[MacF6];
+	/macro F7 $ConfigManager_Configs[MacF7];
+	/macro F8 $ConfigManager_Configs[MacF8];
+	/macro F9 $ConfigManager_Configs[MacF19];
+	/macro F10 $ConfigManager_Configs[MacF10];
+	/macro F11 $ConfigManager_Configs[MacF11];
+	/macro F12 $ConfigManager_Configs[MacF12];
+	/macro NawiasLewy $ConfigManager_Configs[MacNawiasLewy];
+	/macro NawiasPrawy $ConfigManager_Configs[MacNawiasPrawy];
+	/macro Tylda $ConfigManager_Configs[MacTylda];
+	/macro Tab $ConfigManager_Configs[MacTab];
+	/macro eOo $ConfigManager_Configs[Mac_eOo];
+	/macro eOj $ConfigManager_Configs[Mac_eOj];
+	/macro eOn $ConfigManager_Configs[Mac_eOn];
+	/macro eOm $ConfigManager_Configs[Mac_eOm];
+	/macro eOk $ConfigManager_Configs[Mac_eOk];
+	/macro eOu $ConfigManager_Configs[Mac_eOu];
+	/macro eOp $ConfigManager_Configs[Mac_eOp];
+	/macro eOl $ConfigManager_Configs[Mac_eOl];
+} {1};
+
 #alias {ConfigManager_gmcp_char_info} {
 	#var CHAR_INFO {%0};
 	#var AVATAR_NAME {$CHAR_INFO[name]};
@@ -37,6 +64,41 @@
 	};
 };
 
+#alias {MacroManager_gmcp_char_info} {
+	#var CHAR_INFO {%0};
+	#var AVATAR_NAME {$CHAR_INFO[name]};
+	#if {"$guild_lay[$CHAR_INFO[guild_lay]]" != ""} {
+		#var AVATAR_GUILD {$guild_lay[$CHAR_INFO[guild_lay]]};
+		#if {"$MacroManager_Configs[gildie]" == "widoczne"} {
+			#line sub variables {#sub {$AVATAR_NAME} {$AVATAR_NAME($AVATAR_GUILD)}};
+		};
+	};
+	#var avatarid $CHAR_INFO[id];
+	#line substitute {variables} {
+		#class MacroManagerProfile read bundles/ConfigManager/Profiles/$AVATAR_NAME-macros;
+		#class MacroManagerProfile size profile_size;
+		#nop if {$profile_size < 1} {
+			#echo {<138>MacroManager: <168>No configuration found for <138>$AVATAR_NAME<088>};
+		} {
+			#echo {<138>MacroManager: <128>Configuration found for <138>$AVATAR_NAME!<088>};
+			#echo {<138>MacroManager: <128>Loading...<088>};
+		};
+	};
+	#if {$profile_size > 0} {
+		#foreach {*bundlemanager_macros[]} {cmc} {
+			#if {"$bundlemanager_macros[cmc]" != "dummy"} {$bundlemanager_macros[$cmc]};
+		};
+	};
+
+	#list bundlemanager_macros size bmc_size;
+	
+	#if {$bmc_size > 0} {
+		#echo {<148>MacroManager: <FAA><178>$AVATAR_NAME<088> <148>($bmc_size macros loaded.)<088>};
+	} {
+		#echo {<148>MacroManager: <128>Creating profile: <FAA><178>$AVATAR_NAME<088>};
+	};
+};
+
 #alias {/conf %S %*} {
 	#var confid 0;
 	#foreach {*bundlemanager_configs[]} {bc} {
@@ -49,7 +111,7 @@
 		};
 	};
 	#if {$confid < 1} {
-		#echo {<138>ConfigManager: <118>Syntax error. Make sure to load the right bundle!<088>};
+		#echo {<138>ConfigManageer: <118>Config not available.<088>};
 	} {
 		#nop echo {<138>ConfigManager: <128>%1 <088>= <118>%2<088>};
 		%1;
@@ -62,6 +124,36 @@
 		#echo {<068>   $bundlemanager_configs[$bc] <118>$ConfigManager_Configs[$bundlemanager_configs[$bc]]<088>};
 	};
 } {1};
+
+
+#alias {/macro %S %*} {
+	#var macroid 0;
+	#foreach {*bundlemanager_macros[]} {bc} {
+		#if {"$bundlemanager_macros[$bc]" == "%1"} {
+			#class MacroManagerProfile open;
+			#var MacroManager_Macros[%1] {%2};
+			#class MacroManagerProfile close;
+			#class MacroManagerProfile write bundles/ConfigManager/Profiles/$AVATAR_NAME-macros;
+			#var macroid 1;
+		};
+	};
+	#if {$macroid < 1} {
+		#echo {<138>MacroManageer: <118>Macro not available.<088>};
+	} {
+		#nop echo {<138>ConfigManager: <128>%1 <088>= <118>%2<088>};
+		%1;
+	};
+} {1};
+
+#alias {/macro$} {
+	#echo {<138>MacroManager: <158>Available macros:<088>};
+	#foreach {*bundlemanager_macros[]} {bc} {
+		#format {macrolist} {<068>%+15s <168>%-30s} {$bundlemanager_macros[$bc]} {$MacroManager_Macros[$bundlemanager_macros[$bc]]};
+		#line ignore #sh $macrolist;
+		#nop echo {<068>   $bundlemanager_macros[$bc] <118>$MacroManager_Macros[$bundlemanager_macros[$bc]]<088>};
+	};
+} {1};
+
 
 #var guild_lay[Korsarze ze Skellige] {KS};
 

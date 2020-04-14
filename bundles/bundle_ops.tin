@@ -5,14 +5,17 @@
 #unvar bundlemanager_slots;
 #unvar bundlemanager_bundles;
 #unvar bundlemanager_configs;
+#unvar bundlemanager_macros;
 #unvar bundlemanager_helps;
 
 #list bundlemanager_slots clear;
 #list bundlemanager_bundles clear;
 #list bundlemanager_configs clear;
+#list bundlemanager_macros clear;
 #list bundlemanager_helps clear;
 #list bundle_slots clear;
 #list bundle_configs clear;
+#list bundle_macros clear;
 #list bundle_deps clear;
 
 #var global_bundle_slots_values[prompt][top] {0};
@@ -42,6 +45,16 @@
 		};
 	};
 
+
+	#foreach {*bundle_macros[]} {bc} {
+		#list {bundlemanager_macros} find {$bundle_macros[$bc]} {vbmc};
+		#if {$vbmc > 0} {
+			#echo {<118>Bundle Error: <168>$bundle_name <118>Macro key already in use: $bundle_macros[$bs]<088>};
+			#var ret 1;
+		};
+	};
+
+
 	#foreach {*bundle_deps[]} {bd} {
 		#list {bundlemanager_bundles} find {$bundle_deps[$bd]} {vbmb};
 		#if {"$vbmb" == "0"} {
@@ -58,6 +71,10 @@
 		#foreach {*bundle_configs[]} {bc} {
 			#list bundlemanager_configs add {$bundle_configs[$bc]};
 		};
+		#foreach {*bundle_macros[]} {bc} {
+			#list bundlemanager_macros add {$bundle_macros[$bc]};
+		};
+
 		#list bundlemanager_bundles add {$bundle_name};
 		#var bundles_$bundle_name {1};
 		#nop echo {<128>Bundle Loaded: <168>$bundle_name<088>};
@@ -73,10 +90,11 @@
 			#if {$bundle_data > 0} {
 				#read bundles/$bundle_name/data.tin;
 			};
-			#CLASS {$bundle_name} CLOSE;	
+			#CLASS {$bundle_name} CLOSE;
 		};
 	};
 	#list bundle_configs clear;
+	#list bundle_macros clear;
 	#list bundle_slots clear;
 	#list bundle_deps clear;
 	#return $ret;

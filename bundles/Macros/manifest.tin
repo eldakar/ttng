@@ -8,32 +8,30 @@
 
 
 #list bundle_configs clear;
-	#list bundle_configs add {MacF1};
-	#list bundle_configs add {MacF2};
-	#list bundle_configs add {MacF3};
-	#list bundle_configs add {MacF4};
-	#list bundle_configs add {MacF5};
-	#list bundle_configs add {MacF6};
-	#list bundle_configs add {MacF7};
-	#list bundle_configs add {MacF8};
-	#list bundle_configs add {MacF9};
-	#list bundle_configs add {MacF10};
-	#list bundle_configs add {MacF11};
-	#list bundle_configs add {MacF12};
-	#list bundle_configs add {MacNawiasLewy};
-	#list bundle_configs add {MacNawiasPrawy};
-	#list bundle_configs add {MacTylda};
-
-	#list bundle_configs add {MacTab};
-
-	#list bundle_configs add {Mac_eOo};
-	#list bundle_configs add {Mac_eOj};
-	#list bundle_configs add {Mac_eOn};
-	#list bundle_configs add {Mac_eOm};
-	#list bundle_configs add {Mac_eOk};
-	#list bundle_configs add {Mac_eOu};
-	#list bundle_configs add {Mac_eOp};
-	#list bundle_configs add {Mac_eOl};
+	#list bundle_macros add {F1};
+	#list bundle_macros add {F2};
+	#list bundle_macros add {F3};
+	#list bundle_macros add {F4};
+	#list bundle_macros add {F5};
+	#list bundle_macros add {F6};
+	#list bundle_macros add {F7};
+	#list bundle_macros add {F8};
+	#list bundle_macros add {F9};
+	#list bundle_macros add {F10};
+	#list bundle_macros add {F11};
+	#list bundle_macros add {F12};
+	#list bundle_macros add {NawiasLewy};
+	#list bundle_macros add {NawiasPrawy};
+	#list bundle_macros add {Tylda};
+	#list bundle_macros add {Tab};
+	#list bundle_macros add {eOo};
+	#list bundle_macros add {eOj};
+	#list bundle_macros add {eOn};
+	#list bundle_macros add {eOm};
+	#list bundle_macros add {eOk};
+	#list bundle_macros add {eOu};
+	#list bundle_macros add {eOp};
+	#list bundle_macros add {eOl};
 
 	
 #list bundle_slots clear;

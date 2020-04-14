@@ -10,6 +10,9 @@
 #map leg 200 /
 #map leg 218 <  
 #map leg 217 >
+#map leg 215 |
+#map leg 219 -
+
 
 #map color paths <138>;
 
