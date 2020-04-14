@@ -130,7 +130,7 @@
 #action {Przerzucasz swoj %* na wysokosc ramion %*} {collect magic 6 $AVATAR_NAME;#line gag};
 
 #nop MAGIKI - HELM OGLUSZAJACY;
-#action {%* zaczyna wpatrywac sie %* ciemnogranatowego smuklego helmu%*} {collect OGLUSZONY_HELMEM 0 %1;#line gag};
+#action {%* zaczyna wpatrywac sie %* ciemnogranatowego smuklego helmu%*} {collect OGLUSZONY 0 %1;#line gag};
 
 
 
