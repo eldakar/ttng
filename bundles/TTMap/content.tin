@@ -2,7 +2,6 @@
 #map goto 1;
 #var MAPPER_SYNC 0;
 #map flag unicodegraphics on;
-#map flag static on;
 #map flag vtmap off;
 #map legend 48 <FAA>#<088>;
 #map leg 197 \\
@@ -20,8 +19,10 @@
     #var pdynamic $ConfigManager_Configs[dynamicznamapa];
     #if {"$pdynamic" == "wlaczona"} {
         #map flag static off;
+        #action {Nie widzisz zadnego wyjscia %*} {undo};
     } {
         #map flag static on;
+        #unaction {Nie widzisz zadnego wyjscia %*};
     };
 };
 
@@ -203,7 +204,7 @@
                 #var roomId $vexitslist[1];
                 #var MAPPER_SYNC $vexitslist[1];
                 #map get roomdata tmproomdata;
-                #map flag static on;
+                #map flag static off;
             };
         };
 
@@ -223,7 +224,7 @@
                 #var roomfound {1};
                 #if {$vexitslist[1] != $rmvnum} {#ec {Odnalazlem mapke na: $vexitslist[1]<088>};#map goto $vexitslist[1];#var roomId $vexitslist[1];#var MAPPER_SYNC $vexitslist[1]};
                 #var MAPPER_SYNC $vexitslist[1];    
-                #map flag static on;    
+                #map flag static off;    
             };
             #if {$listsize == 0} {
                 #map dig test new;
@@ -483,5 +484,7 @@
         #var creatorMode {1};
         #var MAPPER_SYNC 0;
         #var creatorHook {%0};
+    } {
+        #map find $creatorHook;
     };
-}
+};
