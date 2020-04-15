@@ -17,6 +17,7 @@
 	#list bundle_configs add {trybmapy};
 	#list bundle_configs add {kolorowaniemapy};
 	#list bundle_configs add {startowa};
+	#list bundle_configs add {dynamicznamapa};
 
 #nop IS HELP PRESENT;
 #var bundle_help {0};

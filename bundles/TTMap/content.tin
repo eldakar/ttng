@@ -16,6 +16,15 @@
 
 #map color paths <138>;
 
+#alias {dynamicznamapa} {
+    #var pdynamic $ConfigManager_Configs[dynamicznamapa];
+    #if {"$pdynamic" == "wlaczona"} {
+        #map flag static off;
+    } {
+        #map flag static on;
+    };
+};
+
 #alias {trybmapy} {
     #switch {"$ConfigManager_Configs[trybmapy]"} {
         #case {"unicode"} {#map flag unicodegraphics on;};
@@ -424,7 +433,7 @@
         semifrozen_unset;   #nop wracam do zwyklego trybu;
         #undelay {PATH %*}; #nop zatrzymuje reszte komendy;
     };
-    #if {$pathinprogress > 0} {
+    #if {$pathinprogress > 0 && "$pdynamic" != "wlaczona"} {
         /lc;
     };
 }
@@ -472,3 +481,10 @@
     };
 }
 
+#event {MAP CREATE ROOM} {
+    #if {$creatorMorde < 1} {
+        #var creatorMode {1};
+        #var MAPPER_SYNC 0;
+        #var creatorHook {%0};
+    };
+}
