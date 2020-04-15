@@ -23,8 +23,16 @@
         #case {"d"} khpiesn;                      #nop druchii;
         #case {"u"} drwskaz %0;                   #nop upiorny pancerz;
         #case {"z"} zabijcmd %0;                  #nop komenda zabij;
-        #case {"w"} wskaz %0 jako cel ataku;      #nop wskazywanie;
-        #case {"r"} rozkaz druzynie zabic %0;     #nop rozkaz;
+        #case {"w"} {
+          #if {"$duch[$CHAR_INFO[object_num]][team_leader]" == "true"} {
+                    wskaz %0 jako cel ataku;      #nop wskazywanie;
+          };
+        };
+        #case {"r"} {
+          #if {"$duch[$CHAR_INFO[object_num]][team_leader]" == "true"} {
+                    rozkaz druzynie zabic %0;     #nop rozkaz;
+          };
+        };
 	      #case {"k"} ksznienawidz %0;	          #nop korki;
         #case {"p"} {przestan zaslaniac;przelam obrone celu ataku;};#nop przelamanie TODO;
       };
