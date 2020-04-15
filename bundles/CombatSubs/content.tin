@@ -21,10 +21,10 @@
 #nop totalhits = total sent minus damage  ;
 #nop totalarmor = total received          ;
 
-      #line ignore #sh {<cba>+-----------------------------------+-----------------------+-----------------------+};
-      #line ignore #sh {<cba>|                                   | Zadane                | Otrzymane             |};
-      #line ignore #sh {<cba>| KTO                               | Norma | Magic | Specj | Parow | Uniki | Chybi |};
-      #line ignore #sh {<cba>+-----------------------------------+-------+-------+-------+-----------------------+};
+      #line ignore #sh {<cba>+----------------+--------------------------+--------------------------+};
+      #line ignore #sh {<cba>|                | Zadane                   | Otrzymane                |};
+      #line ignore #sh {<cba>| KTO            | Norma  | Magic  | Specj  | Parow  | Uniki  |  Chybi |};
+      #line ignore #sh {<cba>+----------------+--------+--------+--------+--------+--------+--------+};
 
 
    #foreach {*collector[]} {collId} {
@@ -64,8 +64,10 @@
          #math {procent_unikniete} {($collector[$collId][received][dod] * 100) / $total_otrzymane};
          #math {procent_chybione} {($collector[$collId][received][mis] * 100) / $total_otrzymane};
 
-         #format encounterline {<cba>|<088> %-34s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>} {<148>$collector[$collId][short]<088>} {$collector[$collId][sent][hit]} {$procent_normalne%} {$collector[$collId][sent][magic]} {$procent_magiczne%} {$total_spec} {$procent_specjalne%} {$collector[$collId][received][par]} {$procent_parowane%} {$collector[$collId][received][dod]} {$procent_unikniete%} {$collector[$collId][received][mis]} {$procent_chybione%};
+         #format tempShort {%.15s} {$collector[$collId][short]};
+         #format encounterline {<cba>|<088> %-15s<cba>|<088>%+3s %+4s<cba>|<088>%+3s %+4s<cba>|<088>%+3s %+4s<cba>|<088>%+3s %+4s<cba>|<088>%+3s %+4s<cba>|<088>%+3s %+4s<cba>|<088>} {<148>$tempShort<088>} {$collector[$collId][sent][hit]} {$procent_normalne%} {$collector[$collId][sent][magic]} {$procent_magiczne%} {$total_spec} {$procent_specjalne%} {$collector[$collId][received][par]} {$procent_parowane%} {$collector[$collId][received][dod]} {$procent_unikniete%} {$collector[$collId][received][mis]} {$procent_chybione%};
          #line ignore #sh {$encounterline};
+         #unvar tempShort;
       };
    };
 
@@ -107,12 +109,13 @@
          #math {procent_unikniete} {($collector[$collId][received][dod] * 100) / $total_otrzymane};
          #math {procent_chybione} {($collector[$collId][received][mis] * 100) / $total_otrzymane};
 
-         #format encounterline {<cba>|<088> %-34s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>%+3s%+4s<cba>|<088>} {<118>$collector[$collId][short]<088>} {$collector[$collId][sent][hit]} {$procent_normalne%} {$collector[$collId][sent][magic]} {$procent_magiczne%} {$total_spec} {$procent_specjalne%} {$collector[$collId][received][par]} {$procent_parowane%} {$collector[$collId][received][dod]} {$procent_unikniete%} {$collector[$collId][received][mis]} {$procent_chybione%};
+         #format tempShort {%.15s} {$collector[$collId][short]};
+         #format encounterline {<cba>|<088> %-15s<cba>|<088>%+3s %+4s<cba>|<088>%+3s %+4s<cba>|<088>%+3s %+4s<cba>|<088>%+3s %+4s<cba>|<088>%+3s %+4s<cba>|<088>%+3s %+4s<cba>|<088>} {<118>$tempShort<088>} {$collector[$collId][sent][hit]} {$procent_normalne%} {$collector[$collId][sent][magic]} {$procent_magiczne%} {$total_spec} {$procent_specjalne%} {$collector[$collId][received][par]} {$procent_parowane%} {$collector[$collId][received][dod]} {$procent_unikniete%} {$collector[$collId][received][mis]} {$procent_chybione%};
          #line ignore #sh {$encounterline};
       };
    };
 
-      #line ignore #sh {<cba>+-----------------------------------+-------+-------+-------+-----------------------+};
+   #line ignore #sh {<cba>+----------------+--------+--------+--------+--------+--------+--------+};
 
 } {1};
 
