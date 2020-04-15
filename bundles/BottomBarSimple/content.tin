@@ -100,7 +100,16 @@
 	#line ignore #sh {<bad>[NIE ZASLANIASZ] %0<088>};
 	manewr_start;
 	#line gag;
-}
+};
+#action {Nie jestes jeszcze gotow do wykonania kolejnego manewru.} {
+	#var bbBGC {<FAA>};
+	#delay {manewrDelay} {#var bbBGC {<G02>}} {0.1};
+	#line gag;
+};
+#action {Nie zaslaniasz nikogo.} {
+	#line gag;
+};
+
 #action {%* probuje zaslonic %* przed ciosami %*, jednak nie jest w stanie tego uczynic.} {
 	#line ignore #sh {<bad>[NIE ZASLANIA] %0<088>};
 	#line gag;
@@ -297,16 +306,16 @@
 	#math barcols {($screencols - 32) / 3};
 
 	#var hpbar {};
-	#math curhp {$state[hp] + 1};
-	#math hpslot {($barcols - 2) / 7}; 
-	#math hpmodu {($barcols - 2) % 7};
+	#math curhp {$state[hp]};
+	#math hpslot {($barcols - 2) / 6}; 
+	#math hpmodu {($barcols - 2) % 6};
 	#math hplen {($curhp * $hpslot) + $hpmodu};
 	#loop {1} {$hplen} {hpl} {#var hpbar {$hpbar#};};
 
 	#var stbar {};
-	#math curst {10 - $state[fatigue]};
-	#math stslot {($barcols - 2) / 10}; 
-	#math stmodu {($barcols - 2) % 10};
+	#math curst {9 - $state[fatigue]};
+	#math stslot {($barcols - 2) / 9}; 
+	#math stmodu {($barcols - 2) % 9};
 	#math stlen {($curst * $stslot) + $stmodu};
 	#loop {1} {$stlen} {stl} {#var stbar {$stbar#};};
 
