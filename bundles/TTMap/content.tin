@@ -362,7 +362,6 @@
                 #var roomId $vexitslist[1];
                 #var MAPPER_SYNC $vexitslist[1];
                 #map get roomdata tmproomdata;
-                #map flag static on;
             };
         };
 
@@ -387,8 +386,7 @@
         #if {$listsize == 2} {
             #var roomfound {1};
             #if {$vexitslist[1] != $rmvnum} {#ec {Odnalazlem mapke na: $vexitslist[1]<088>};#map goto $vexitslist[1];#var roomId $vexitslist[1];#var MAPPER_SYNC $vexitslist[1]};
-            #var MAPPER_SYNC $vexitslist[1];    
-            #map flag static on;    
+            #var MAPPER_SYNC $vexitslist[1];     
         };
         #if {$listsize > 2} {
             #if {$listsize < 4} {
@@ -413,7 +411,6 @@
                     #var roomId $nearestroomid;
                     #var MAPPER_SYNC $nearestroomid;
                     #map get roomdata tmproomdata;
-                    #map flag static on;
                 };
             };
         };
@@ -482,7 +479,7 @@
 }
 
 #event {MAP CREATE ROOM} {
-    #if {$creatorMorde < 1} {
+    #if {$creatorMode < 1} {
         #var creatorMode {1};
         #var MAPPER_SYNC 0;
         #var creatorHook {%0};
