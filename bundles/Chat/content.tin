@@ -36,5 +36,5 @@
 } {1};
 
 #alias {/chat} {
-    #draw green circled box $offsetw-5 $offsetx $offsetw $offseth <088>%$topchaty;
+    #draw green circled box $offsetw-10 $offsetx $offsetw $offseth <088>$topchaty;
 } {1};
