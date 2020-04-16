@@ -117,7 +117,6 @@
 #action {%* zgrabnym ruchem unika ciosu %* gleboko rozrywajac %*} {collect KS 4 %1;#line gag};
 
 
-
 #nop MAGIKI - ESPADON;
 #action {Lekko muskasz %*} {collect magic 1 $AVATAR_NAME;#line gag};
 #action {Bez wysilku, niezbyt mocno %*} {collect magic 2 $AVATAR_NAME;#line gag};
@@ -132,6 +131,13 @@
 #nop MAGIKI - HELM OGLUSZAJACY;
 #action {%* zaczyna wpatrywac sie %* ciemnogranatowego smuklego helmu%*} {collect OGLUSZONY 0 %1;#line gag};
 
+#nop MAGIKI - JATAGAN;
+#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana ledwo muskasz %*} {collect magic 1 $AVATAR_NAME;#line gag};
+#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana lekko ranisz %*} {collect magic 2 $AVATAR_NAME;#line gag};
+#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana ranisz %*} {collect magic 3 $AVATAR_NAME;#line gag};
+#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana powaznie ranisz %*} {collect magic 4 $AVATAR_NAME;#line gag};
+#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana bardzo ciezko ranisz %*} {collect magic 5 $AVATAR_NAME;#line gag};
+#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana masakrujesz %*} {collect magic 6 $AVATAR_NAME;#line gag};
 
 
 
@@ -151,13 +157,6 @@
 #nop MAG;    #action {Z impetem pozostawiajacym jeno plomienny} {collect $AVATAR_NAME unknown magic 5;#line gag};
 #nop MAG;    #action {Straszliwym ciosem, przekraczajacym niemal mozliwosci smiertelnika} {collect $AVATAR_NAME unknown magic 6;#line gag};
 #nop MAG;    #action {Momentalnie dostrzegasz stan wroga, decydujesz sie na ostateczny cios.} {collect $AVATAR_NAME unknown magic 7;#line gag};
-   #nop JATAGAN;
-#nop MAG;    #action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana ledwo muskasz %*} {collect $AVATAR_NAME unknown magic 1;#line gag};
-#nop MAG;    #action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana lekko ranisz %*} {collect $AVATAR_NAME unknown magic 2;#line gag};
-#nop MAG;    #action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana ranisz %*} {collect $AVATAR_NAME unknown magic 3;#line gag};
-#nop MAG;    #action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana powaznie ranisz %*} {collect $AVATAR_NAME unknown magic 4;#line gag};
-#nop MAG;    #action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana bardzo ciezko ranisz %*} {collect $AVATAR_NAME unknown magic 5;#line gag};
-#nop MAG;    #action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana masakrujesz %*} {collect $AVATAR_NAME unknown magic 6;#line gag};
    #nop AMULET;
 #nop MAG1;   #action {Od twojego amuletu emanuje przyjemne cieplo.} {collect $AVATAR_NAME unknown magic 0;#line gag};
    #nop SIHILL;

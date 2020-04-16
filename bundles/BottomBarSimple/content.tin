@@ -302,6 +302,12 @@
 	}
 };
 
+#alias rysuj_roze {
+	#line ignore #sh {$bbBGC   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u]<088>} {-4} {1};
+	#line ignore #sh {$bbBGC  <138>$rozk2[w]$rozk2[w] o <138>$rozk2[e]$rozk2[e]<088>} {-3} {1};
+	#line ignore #sh {$bbBGC  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d]<088>} {-2} {1};
+};
+
 #alias barstest {
 	#math barcols {($screencols - 32) / 3};
 

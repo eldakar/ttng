@@ -1,8 +1,7 @@
 #map read bundles/TTMap/map.map;
 #map goto 1;
 #var MAPPER_SYNC 0;
-#map flag unicodegraphics on;
-#map flag vtmap off;
+#map flag vtmap on;
 #map legend 48 <FAA>#<088>;
 #map leg 197 \\
 #map leg 198 /
@@ -19,7 +18,7 @@
     #var pdynamic $ConfigManager_Configs[dynamicznamapa];
     #if {"$pdynamic" == "wlaczona"} {
         #map flag static off;
-        #action {Nie widzisz zadnego wyjscia %*} {undo};
+        #action {Nie widzisz zadnego wyjscia %*} {undo;#var creatorMode 0};
     } {
         #map flag static on;
         #unaction {Nie widzisz zadnego wyjscia %*};
@@ -80,6 +79,55 @@
 #alias {u} {move_u};
 #alias {w} {move_w};
 #alias {e} {move_e};
+
+#function draw_dynamics {
+    #list ROOM_INFO[exits] size ris;
+    #if {$ris > 1}  {
+        #foreach {$ROOM_INFO[exits]} {i}
+        {
+            #switch {"$ROOM_INFO[exits][$i]"}
+            {
+                #case {"polnoc"} {#map dig n};
+                #case {"polnocny-wschod"} {#map dig ne};
+                #case {"polnocny-zachod"} {#map dig nw};
+                #case {"poludnie"} {#map dig s};
+                #case {"poludniowy-wschod"} {#map dig se};
+                #case {"poludniowy-zachod"} {#map dig sw};
+                #case {"wschod"} {#map dig e};
+                #case {"zachod"} {#map dig w};
+                #case {"dol"} {#map dig d};
+                #case {"gora"} {#map dig u};
+                #default {
+                    #format defexitlen {%L} {$ROOM_INFO[exits][$i]};
+                    #if {$defexitlen > 2} {
+                        #map dig $ROOM_INFO[exits][$i];
+                    };
+                };
+            };
+        };
+    };
+    #elseif {$ris > 0}  {
+        #switch {"$ROOM_INFO[exits][1]"}
+        {
+            #case {"polnoc"} {#map dig n};
+            #case {"polnocny-wschod"} {#map dig ne};
+            #case {"polnocny-zachod"} {#map dig nw};
+            #case {"poludnie"} {#map dig s};
+            #case {"poludniowy-wschod"} {#map dig se};
+            #case {"poludniowy-zachod"} {#map dig sw};
+            #case {"wschod"} {#map dig e};
+            #case {"zachod"} {#map dig w};
+            #case {"dol"} {#map dig d};
+            #case {"gora"} {#map dig u};
+            #default {
+                #format defexitlen {%L} {$ROOM_INFO[exits][1]};
+                #if {$defexitlen > 2} {
+                    #map dig $ROOM_INFO[exits][1];
+                };
+            };
+        };
+    };
+}
 
 #function buduj_roze {
     #local b {0};
@@ -145,6 +193,11 @@
     #nop KAZDY komunikat ROOM_INFO resetuje 'freezera';
     #if {$frozen_status == 1} {
         frozen_unset;
+    };
+
+    #nop W TRYBIE dynamicznym, rozwijamy roze na mapie;
+    #if {$creatorMode > 0} {
+        #local res @draw_dynamics{};
     };
 
     #nop ZAPISUJEMY GMPC ROOM INFO zamiast Shorta;
@@ -356,6 +409,7 @@
             #if {$vexitslist[1] != $rmvnum} {
                 #ec {Odnalazlem mapke na: $vexitslist[1]<088>};
                 #map goto $vexitslist[1];
+                #var creatorMode 0;
                 #if {$findmedebug} {
                     #line ignore #sh {#debug <fac>findme:<088> Przekone kulke na: <028>$vexitslist[1]<088>};
                 };    
@@ -386,7 +440,7 @@
         };    
         #if {$listsize == 2} {
             #var roomfound {1};
-            #if {$vexitslist[1] != $rmvnum} {#ec {Odnalazlem mapke na: $vexitslist[1]<088>};#map goto $vexitslist[1];#var roomId $vexitslist[1];#var MAPPER_SYNC $vexitslist[1]};
+            #if {$vexitslist[1] != $rmvnum} {#ec {Odnalazlem mapke na: $vexitslist[1]<088>};#map goto $vexitslist[1];#var creatorMode 0;#var roomId $vexitslist[1];#var MAPPER_SYNC $vexitslist[1]};
             #var MAPPER_SYNC $vexitslist[1];     
         };
         #if {$listsize > 2} {
@@ -405,6 +459,7 @@
                 #if {$nearestroomid != $rmvnum} {
                     #ec {Odnalazlem mapke na: $nearestroomid<088>};
                     #map goto $nearestroomid;
+                    #var creatorMode 0;
                     #if {$findmedebug} {
                         #line ignore #sh {#debug <fac>findme:<088> Przekone kulke na: <028>$vexitslist[1]<088>};
                     };    
@@ -480,11 +535,11 @@
 }
 
 #event {MAP CREATE ROOM} {
-    #if {$creatorMode < 1} {
-        #var creatorMode {1};
-        #var MAPPER_SYNC 0;
-        #var creatorHook {%0};
-    } {
-        #map find $creatorHook;
+    #if {"$pdynamic" == "wlaczona"} {
+        #if {$creatorMode < 1} {
+            #var creatorMode {1};
+            #var MAPPER_SYNC 0;
+            #var creatorHook {%0};
+        };
     };
 };
