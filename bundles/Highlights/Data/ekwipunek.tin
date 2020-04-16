@@ -9,9 +9,10 @@
 
 		#sub {zlowr%w stalow%w drann%w} {<028>%0 <088>( <038>Obstawa Wiedzm<088> )}; 
 		#sub {wask%w szkarlat%w miecz%w} {<028>%0 <088>( <038>Wiedzmy Druchii<088> )}; 
-
 		#sub {posep%w miecz%w katowsk%w} {<028>%0 <088>( <038>Wyspa Druchii<088> )}; 
 
+#nop SREBRNE;
+	#high {masywn%w posrebrzan%w flamberg%w} {<178>};
 
 #nop TARCZE;
 	#sub {wysoka masywna pawez} {<028>%0 <088>( <038>Orcall<088> )}; 

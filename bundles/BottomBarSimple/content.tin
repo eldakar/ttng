@@ -106,6 +106,12 @@
 	#delay {manewrDelay} {#var bbBGC {<G02>}} {0.1};
 	#line gag;
 };
+
+#action {Nie jestes jeszcze gotowa do wykonania kolejnego manewru.} {
+	#var bbBGC {<FAA>};
+	#delay {manewrDelay} {#var bbBGC {<G02>}} {0.1};#line gag;
+};
+
 #action {Nie zaslaniasz nikogo.} {
 	#line gag;
 };

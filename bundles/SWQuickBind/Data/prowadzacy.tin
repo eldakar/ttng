@@ -157,6 +157,9 @@
 
 #action {%1 bierze rozbieg i przeskakuje na most} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przeskocz na most}};
 
+#action {%1 bierze rozbieg i przeskakuje osuwisko} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przeskocz osuwisko}};
+
+
 #action {%1 bierze rozbieg i przeskakuje szczeline} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przeskocz szczeline}};
 #action {%1 zaczyna wspinac sie na polke} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wespnij sie na polke}};
 

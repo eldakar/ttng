@@ -59,23 +59,23 @@
 
 #nop SPECE KG Z PIERWSZEJ OSOBY;
 #action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* ledwo zacina %*} {collect KG 1 $AVATAR_NAME;#line gag};
-#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* plytko tnie %*} {collect KG 2 $AVATAR_NAME;#line gag};
-#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* tnie %*} {collect KG 3 $AVATAR_NAME;#line gag} {6};
-#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* bolesnie zacina %*} {collect KG 4 $AVATAR_NAME;#line gag};
+#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* plytko tnie %*} {collect KG 3 $AVATAR_NAME;#line gag};
+#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* tnie %*} {collect KG 4 $AVATAR_NAME;#line gag} {6};
+#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* bolesnie zacina %*} {collect KG 2 $AVATAR_NAME;#line gag};
 #action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* gleboko tnie %*} {collect KG 5 $AVATAR_NAME;#line gag};
 #action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* niemalze rozcina %*} {collect KG 6 $AVATAR_NAME;#line gag};
 #action {Z okrzykiem na ustach dopadasz %*} {collect KG 7 $AVATAR_NAME;#line gag};
 #nop SPECE KG Z TRZECIEJ OSOBY;
 #action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* ledwo zacina %*} {collect KG 1 %1;#line gag};
-#action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* plytko tnie %*} {collect KG 2 %1;#line gag};
-#action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* tnie %*} {collect KG 3 %1;#line gag} {6};
-#action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* bolesnie zacina %*} {collect KG 4 %1;#line gag};
+#action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* plytko tnie %*} {collect KG 3 %1;#line gag};
+#action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* tnie %*} {collect KG 4 %1;#line gag} {6};
+#action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* bolesnie zacina %*} {collect KG 2 %1;#line gag};
 #action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* gleboko tnie %*} {collect KG 5 %1;#line gag};
 #action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* niemalze rozcina %*} {collect KG 6 %1;#line gag};
 #action {Nie zwazaajac na nic %* rozpoczyna %* ledwo zacina %*} {collect KG 1 %1;#line gag};
-#action {Nie zwazaajac na nic %* rozpoczyna %* plytko tnie %*} {collect KG 2 %1;#line gag};
-#action {Nie zwazaajac na nic %* rozpoczyna %* tnie %*} {collect KG 3 %1;#line gag} {6};
-#action {Nie zwazaajac na nic %* rozpoczyna %* bolesnie zacina %*} {collect KG 4 %1;#line gag};
+#action {Nie zwazaajac na nic %* rozpoczyna %* plytko tnie %*} {collect KG 3 %1;#line gag};
+#action {Nie zwazaajac na nic %* rozpoczyna %* tnie %*} {collect KG 4 %1;#line gag} {6};
+#action {Nie zwazaajac na nic %* rozpoczyna %* bolesnie zacina %*} {collect KG 2 %1;#line gag};
 #action {Nie zwazaajac na nic %* rozpoczyna %* gleboko tnie %*} {collect KG 5 %1;#line gag};
 #action {Nie zwazaajac na nic %* rozpoczyna %* niemalze rozcina %*} {collect KG 6 %1;#line gag};
 

@@ -62,6 +62,7 @@
 	} {
 		#echo {<138>ConfigManager: <128>Creating profile: <FAA><178>$AVATAR_NAME<088>};
 	};
+	BottomBarTinyFugue;
 };
 
 #alias {MacroManager_gmcp_char_info} {

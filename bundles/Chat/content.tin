@@ -34,3 +34,7 @@
 #alias {/c} {
     #line ignore #sh {$topchaty};
 } {1};
+
+#alias {/chat} {
+    #draw green circled box $offsetw-5 $offsetx $offsetw $offseth <088>%$topchaty;
+} {1};
