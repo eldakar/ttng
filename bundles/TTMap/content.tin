@@ -80,6 +80,25 @@
 #alias {w} {move_w};
 #alias {e} {move_e};
 
+
+#event {IAC SB GMCP room.time IAC SE}
+{
+    #var roomtime {%0};
+    #foreach {*roomtime[]} {s} {
+        #list {ROOM_TIME} {find} {$s} {v}; 
+        #if {$v > 0} {
+            #list {ROOM_TIME}{set}{$s}{$roomtime[$s]}
+        } {
+            #var {ROOM_TIME[$s]} {$roomtime[$s]};
+        }
+    };
+    #if {$ROOM_TIME[daylight] > 0} {
+        #map color symbols <cfc>;
+    } {
+        #map color symbols <ccf>;
+    };
+}
+
 #function draw_dynamics {
     #list ROOM_INFO[exits] size ris;
     #if {$ris > 1}  {
