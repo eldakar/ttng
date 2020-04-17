@@ -44,12 +44,7 @@
 			qb melduj_zmeczenie;
 		};
 	};
-	#if {$bbs_fixer > 2} {
-		#nop BottomBarClassic;
-		BottomBarTinyFugue;
-	} {
-		#math bbs_fixer {$bbs_fixer + 1};
-	};
+	BottomBarTinyFugue;
 };
 
 #alias {BottomBarClassic} {
@@ -295,6 +290,9 @@
 
 #var bbBGC {<G02>};
 #event {VARIABLE UPDATED bbBGC} {
+	BottomBarTinyFugue;	
+};
+#event {VARIABLE UPDATED charstate} {
 	BottomBarTinyFugue;	
 };
 
