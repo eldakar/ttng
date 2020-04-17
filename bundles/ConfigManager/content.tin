@@ -62,7 +62,6 @@
 	} {
 		#echo {<138>ConfigManager: <128>Creating profile: <FAA><178>$AVATAR_NAME<088>};
 	};
-	BottomBarTinyFugue;
 };
 
 #alias {MacroManager_gmcp_char_info} {
@@ -120,6 +119,7 @@
 } {1};
 
 #alias {/conf$} {
+	#list bundlemanager_configs sort;
 	#echo {<138>ConfigManager: <158>Available configurations:<088>};
 	#foreach {*bundlemanager_configs[]} {bc} {
 		#echo {<068>   $bundlemanager_configs[$bc] <118>$ConfigManager_Configs[$bundlemanager_configs[$bc]]<088>};
