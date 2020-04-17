@@ -16,6 +16,14 @@
 	#var ppasek $ConfigManager_Configs[pasekdolny];
 };
 
+#alias {/zme} {
+	#if {"$duch[$avatarid][team]" == "true"} {
+		szepnij ob_$team_lead_id $zmeczenie[$charstate[fatigue]];
+	} {
+		#line ignore #sh {Nie jestes w zadnej druzynie.};
+	};
+} {1};
+
 #alias {BottomBarSimple_char_state} {
 	#var charstate {%0};
 	#foreach {*charstate[]} {s} {
