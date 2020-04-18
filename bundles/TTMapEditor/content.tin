@@ -254,7 +254,7 @@
     };
 };
 
-#brain #action {<PORT> SYMBOL %d %w %*} {
+#brain #action {<PORT> SYMBOL %d %S %S} {
     #line substitute {variables} {
         #rpg #map at {%1} {#map set roomsymbol {<%3>%2<088>}};
     };
