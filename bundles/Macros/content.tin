@@ -101,7 +101,7 @@
 	#line sub variables {
 	#local _macrolist {$MacroManager_Macros[eOo]};
    	#replace _macrolist {,} {;};
-	#line sub variables {#macro {[} {$_macrolist}};
+	#line sub variables {#macro {\eOo} {$_macrolist}};
 	};
 };
 
@@ -109,46 +109,46 @@
 	#line sub variables {
 	#local _macrolist {$MacroManager_Macros[eOj]};
    	#replace _macrolist {,} {;};
-	#line sub variables {#macro {[} {$_macrolist}};
+	#line sub variables {#macro {\eOj} {$_macrolist}};
 	};
 };
 
 #alias {eOn} {#line sub variables {
 	#local _macrolist {$MacroManager_Macros[eOn]};
    	#replace _macrolist {,} {;};
-	#line sub variables {#macro {[} {$_macrolist}};
+	#line sub variables {#macro {\eOn} {$_macrolist}};
 };};
 
 #alias {eOm} {#line sub variables {
 	#local _macrolist {$MacroManager_Macros[eOm]};
    	#replace _macrolist {,} {;};
-	#line sub variables {#macro {[} {$_macrolist}};
+	#line sub variables {#macro {\eOm} {$_macrolist}};
 };};
 
 #alias {eOk} {#line sub variables {
 	#local _macrolist {$MacroManager_Macros[eOk]};
    	#replace _macrolist {,} {;};
-	#line sub variables {#macro {[} {$_macrolist}};
+	#line sub variables {#macro {\eOk} {$_macrolist}};
 };};
 
 #alias {eOu} {#line sub variables {
 	#local _macrolist {$MacroManager_Macros[eOu]};
    	#replace _macrolist {,} {;};
-	#line sub variables {#macro {[} {$_macrolist}};
+	#line sub variables {#macro {\eOu} {$_macrolist}};
 };};
 
 
 #alias {eOp} {#line sub variables {
 	#local _macrolist {$MacroManager_Macros[eOp]};
    	#replace _macrolist {,} {;};
-	#line sub variables {#macro {[} {$_macrolist}};
+	#line sub variables {#macro {\eOp} {$_macrolist}};
 };};
 
 
 #alias {eOl} {#line sub variables {
 	#local _macrolist {$MacroManager_Macros[eOl]};
    	#replace _macrolist {,} {;};
-	#line sub variables {#macro {[} {$_macrolist}};
+	#line sub variables {#macro {\eOl} {$_macrolist}};
 };};
 
 
