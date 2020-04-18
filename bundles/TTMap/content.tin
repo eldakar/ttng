@@ -1,27 +1,21 @@
 #line quiet #map create;
 
-#alias {rodzajmapy} {
-    #map flag vtmap on;
-    #map legend 48 <FAA>#<088>;
+#map flag vtmap on;
+#map legend 48 <FAA>#<088>;
 
-    #var prodzaj $ConfigManager_Configs[rodzajmapy];
-    #if {"$prodzaj" == "mini"} {
-        #map read bundles/TTMap/map_new.map;
-    } {
-        #map read bundles/TTMap/map.map;
-    };
-    #map goto 1;
-    #var MAPPER_SYNC 0;
-    #map leg 197 {\\};
-    #map leg 198 {/};
-    #map leg 200 {/};
-    #map leg 218 {<};  
-    #map leg 217 {>};
-    #map leg 215 {|};
-    #map leg 219 {-};   
+#map read bundles/TTMap/map.map;
 
-    #map color paths <138>;
-}
+#map goto 1;
+#var MAPPER_SYNC 0;
+#map leg 197 {\\};
+#map leg 198 {/};
+#map leg 200 {/};
+#map leg 218 {<};  
+#map leg 217 {>};
+#map leg 215 {|};
+#map leg 219 {-};   
+
+#map color paths <138>;
 
 #alias {dynamicznamapa} {
     #var pdynamic $ConfigManager_Configs[dynamicznamapa];

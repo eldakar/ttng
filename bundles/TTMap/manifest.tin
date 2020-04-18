@@ -14,7 +14,6 @@
 #nop IS CONFIG PRSENT;
 #var bundle_config {1};
 #list bundle_configs clear;
-	#list bundle_configs add {rodzajmapy};
 	#list bundle_configs add {trybmapy};
 	#list bundle_configs add {kolorowaniemapy};
 	#list bundle_configs add {startowa};

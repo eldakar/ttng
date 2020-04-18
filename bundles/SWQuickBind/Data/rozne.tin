@@ -15,10 +15,6 @@
     #unvar randomkrzesloindex;
 };
 
-#nop action {Nie mozesz sie tam udac, gdyz siedzisz} {
-	qm wstan;
-};
-
 
 #nop #####################################################################;
 #nop LOWIENIE RYB ########################################################;
