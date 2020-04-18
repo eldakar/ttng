@@ -40,6 +40,10 @@
 #nop ###################################;
 #nop tworze pokoj w mapce glownej, zapisuje, wysylam komende wszystkim;
 #nop ###################################;
+#event {MAP CREATE ROOM} {
+    #map at {%0} {#map set roomsymbol { O }};
+};
+
 #action {<PORT> MCREATE %d %w} {
 	#map at {%1} {#map dig %2};
 	broadcast MCREATE %1 %2;
@@ -56,84 +60,12 @@
 #action {<PORT> MEXIT %d %w %*} {
     #map goto %1;
     #map exit %2 command {%3};
-#nop NEW;  #map exit %2 color <118>;
+#nop NEW;  #map exit %2 color <faa>;
     #map move %2;
     #map get roomvnum tmproomvnum;
     #map undo;
     #map link {%3} $tmproomvnum;
     broadcast MEXIT %1 %2 $tmproomvnum %3;
-    mapsave;
-};
-
-#action {<PORT> SPECIAL %d %w} {
-    #line sub {variables} {
-        #map at {%1} {
-            #map exit %2 color <118>;
-        };
-    };
-    broadcast SPECIAL %1 %2;
-    mapsave;
-};
-
-#action {<PORT> MARK %d %w} {
-    #map at {%1} {#map set roomweight $roominfo[%2][index]};
-    #map at {%1} {#map get roomterrain rter};
-
-    #if {"$roominfo[%2][symbol]" != ""} {
-        #map at {%1} {#map set roomsymbol $roominfo[%2][symbol]};
-    } {
-        #map at {%1} {#map set roomsymbol;};
-    };
-    #if {"$roominfo[%2][command]" != ""} {
-        #map at {%1} {#map set roomarea $roominfo[%2][command]};            
-    };
-    
-    broadcast MARK %1 %2;
-    mapsave;
-};
-
-#action {<PORT> TERRAIN %d %w} {
-    #map goto %1;
-    #map set roomterrain %2;
-    broadcast TERRAIN %1 %2;
-    mapsave;
-} {1};
-
-#action {<PORT> ROOMCOLOR %d %*} {
-    #map goto %1;
-    #map set roomcolor <%2>;
-    #map set roomsymbol {};
-
-    #var rc <%2>;
-    #map get roomexits re;
-    #foreach {*re[]} {_re} {
-        #switch {"$_re"} {
-            #case {"e"} {#map exit e color $rc};
-            #case {"n"} {#map exit n color $rc};
-            #case {"w"} {#map exit w color $rc};
-            #case {"s"} {#map exit s color $rc};
-            #case {"ne"} {#map exit ne color $rc};
-            #case {"nw"} {#map exit nw color $rc};
-            #case {"se"} {#map exit se color $rc};
-            #case {"sw"} {#map exit sw color $rc};
-        };
-    };
-
-    broadcast ROOMCOLOR %1 %2;
-    mapsave;
-};
-
-#action {<PORT> EXITCOLOR %d %w %*} {
-    #map goto %1;
-    #map exit %2 color <%3>;
-    broadcast EXITCOLOR %1 %2 %3;
-    mapsave;    
-}
-#action {<PORT> HIDE %d %w} {
-    #map goto %1;
-    #line substitute variables {#map exitflag %2 hide on};
-    #map exit %2 color <138>;
-    broadcast HIDE %1 %2;
     mapsave;
 };
 
@@ -163,6 +95,14 @@
     #line substitute variables {#map exitflag %2 hide off};
     #map exit %2 color;
     broadcast UNHIDE %1 %2;
+    mapsave;
+};
+
+#action {<PORT> HIDE %d %w} {
+    #map goto %1;
+    #line substitute variables {#map exitflag %2 hide on};
+    #map exit %2 color <ffa>;
+    broadcast HIDE %1 %2;
     mapsave;
 };
 
@@ -298,7 +238,7 @@
 #nop ###################################;
 #action {<PORT> EVENT %d %*} {
     broadcast EVENT %1 %2;
-    #map at {%1} {#map set roomsymbol {<168>@<088>}};
+    #map at {%1} {#map set roomsymbol { <168>@<088> }};
     #map at {%1} {#map set roomarea {QB %2}};
 
 	broadcast EVENT %1 %2;
@@ -306,7 +246,7 @@
 };
 
 #action {<PORT> UNEVENT %d} {
-    #map at {%1} {#map set roomsymbol};
+    #map at {%1} {#map set roomsymbol { O }};
     #map at {%1} {#map set roomarea};
     
     broadcast UNEVENT %1;
@@ -314,153 +254,36 @@
 } {1};
 
 #action {<PORT> COMMAND %d %*} {
-    broadcast COMMAND %1 %2;
-    #map at {%1} {#map set roomsymbol {<138>E<088>}};
+    #map at {%1} {#map set roomsymbol {<158>EXE<088>}};
     #map at {%1} {#map set roomarea {%2}};
-
 	broadcast COMMAND %1 %2;
     mapsave;
 };
-
-#alias {/symbol} {
-    #var tmpterrain {};
-    #var rmsym {};
-    #var rmcol {};
-    #map get roomterrain tmpterrain;
-    #switch {"$tmpterrain"} {
-                    #case {"air"}           {#var rmcol <268>;#var rmsym {}};
-                    #case {"alley"}         {#var rmcol <248>;#var rmsym <248>. .<088>};
-                    #case {"ashen_field"}       {#var rmcol <278>;#var rmsym <278>, `<088>};
-                    #case {"areaexit"}      {#var rmcol <168>;#var rmsym <168>[<278>?<168>]<088>};
-                    #case {"aylorcity"}     {#var rmcol <278>;#var rmsym <278>[ ]<088>};
-        #case {"studnia"}       {#var rmcol <148>;#var rmsym <AAF><178> O <088>};
-        #case {"studnia_b"}       {#var rmcol <148>;#var rmsym <AAB><118> O <088>};
-        #case {"szczelina"}       {#var rmcol <148>;#var rmsym <G02><118><fca> O <088>};
-        
-        #case {"plaza"}         {#var rmcol <138>;#var rmsym {}};
-                    #case {"bloodyhall"}        {#var rmcol <218>;#var rmsym {}};
-                    #case {"bloodyroom"}        {#var rmcol <118>;#var rmsym {}};
-                    #case {"bookshelves"}       {#var rmcol <238>;#var rmsym <238>"""<088>};
-                    #case {"bookshelves_ns"}    {#var rmcol <238>;#var rmsym <238>=<148>.<238>=<088>};
-        #case {"most"}        {#var rmcol <238>;#var rmsym {}};
-                    #case {"cabin"}         {#var rmcol <238>;#var rmsym <238># #<088>};
-        #case {"jaskinia"}          {#var rmcol <058>;#var rmsym {}};
-                    #case {"castle"}        {#var rmcol <178>;#var rmsym <278>###<088>};
-        #case {"symbol"}     {#var rmcol <258>;#var rmsym {}};
-                    #case {"chessblack"}        {#var rmcol <248>;#var rmsym <248>[ ]<088>};
-                    #case {"chesswhite"}        {#var rmcol <178>;#var rmsym <178>[ ]<088>};
-                    #case {"city"}          {#var rmcol <278>;#var rmsym <278>. .<088>};
-                    #case {"city_underground"}  {#var rmcol <238>;#var rmsym <238>. .<088>};
-                    #case {"cloud1"}        {#var rmcol <178>;#var rmsym <178>~ ~<088>};
-                    #case {"cloud2"}        {#var rmcol <108>;#var rmsym <108>~ ~<088>};
-                    #case {"cloud3"}        {#var rmcol <278>;#var rmsym <128>.<138>*<088>~<088>};
-                    #case {"crossroad_ews"}     {#var rmcol <278>;#var rmsym <278>-+-<088>};
-                    #case {"crossroad_nw"}      {#var rmcol <278>;#var rmsym <278>-+ <088>};
-                    #case {"crossroad_se"}      {#var rmcol <278>;#var rmsym <278> +-<088>};
-        #case {"krypta"}         {#var rmcol <248>;#var rmsym {}};
-                    #case {"dark"}          {#var rmcol <208>;#var rmsym <208>[ ]<088>};
-                    #case {"dead_field"}        {#var rmcol <238>;#var rmsym <238>, `<088>};
-                    #case {"dead_forest"}       {#var rmcol <238>;#var rmsym <238>( *<088>};
-                    #case {"dead_jungle"}       {#var rmcol <238>;#var rmsym <238>* *<088>};
-        #case {"pustynia"}        {#var rmcol <238>;#var rmsym {}};
-                    #case {"dungeon"}       {#var rmcol <248>;#var rmsym <248># #<088>};
-                    #case {"dustdevil"}     {#var rmcol <238>;#var rmsym <238>.VV<088>};
-        #case {"pole"}         {#var rmcol <228>;#var rmsym {}};
-        #case {"laka"}        {#var rmcol <228>;#var rmsym {}};
-        #nop case {"gaszcz"}        {#var rmcol <228>;#var rmsym <228>, .<088>};
-        #case {"zagajnik"}        {#var rmcol <228>;#var rmsym {}};
-                    #case {"flowers1"}      {#var rmcol <178>;#var rmsym <168>*<158>*<138>*<088>};
-                    #case {"flowers2"}      {#var rmcol <178>;#var rmsym <158>*<168>*<138>*<088>};
-        #case {"las"}        {#var rmcol <228>;#var rmsym {}};
-        #case {"las_iglasty"}        {#var rmcol <228>;#var rmsym {}};
-        #case {"las_bukowy"}        {#var rmcol <228>;#var rmsym {}};    
-        #case {"las_sosnowy"}        {#var rmcol <228>;#var rmsym {}};                
-                    #case {"fountain"}      {#var rmcol <278>;#var rmsym <278>( )<088>};
-        #case {"cmentarz"}     {#var rmcol <238>;#var rmsym {}};
-        #case {"korytarz"}       {#var rmcol <268>;#var rmsym {}};
-                    #case {"hell1"}         {#var rmcol <218>;#var rmsym <218>` <118>,<088>};
-                    #case {"hell2"}         {#var rmcol <218>;#var rmsym <218>~ .<088>};
-                    #case {"hell3"}         {#var rmcol <218>;#var rmsym <218>~ <118>^<088>};
-                    #case {"hell4"}         {#var rmcol <218>;#var rmsym <118>^ <218>^<088>};
-        #case {"oltarz"}      {#var rmcol <218>;#var rmsym {}};
-        #case {"lawa"}        {#var rmcol <218>;#var rmsym {}};
-        #case {"magma"}       {#var rmcol <018>;#var rmsym {}};
-                    #case {"hellhall"}      {#var rmcol <218>;#var rmsym <088>. <218>.<088>};
-                    #case {"hellinside"}        {#var rmcol <218>;#var rmsym <218>[ ]<088>};
-        #case {"wzgorze"}         {#var rmcol <228>;#var rmsym {}};
-                    #case {"hut"}           {#var rmcol <238>;#var rmsym <238>[ ]<088>};
-                    #case {"ice"}           {#var rmcol <178>;#var rmsym <178>~ ~<088>};
-                    #case {"icehills"}      {#var rmcol <178>;#var rmsym <178>^ ~<088>};
-                    #case {"icemount"}      {#var rmcol <178>;#var rmsym <178>A A<088>};
-        #case {"wnetrze"}        {#var rmcol <fca>;#var rmsym {}};
-                    #case {"insideice"}     {#var rmcol <178>;#var rmsym <178>[ ]<088>};
-        #case {"gaszcz"}        {#var rmcol <228>;#var rmsym {}};
-                    #case {"lightning"}     {#var rmcol <138>;#var rmsym <138>  /<088>};
-                    #case {"mist"}          {#var rmcol <178>;#var rmsym <178>~ ~<088>};
-                    #case {"moon"}          {#var rmcol <248>;#var rmsym <248> * <088>};
-        #case {"gory"}      {#var rmcol <238>;#var rmsym {}};
-                    #case {"mountain_cyan"}     {#var rmcol <268>;#var rmsym <268>A A<088>};
-                    #case {"ocean"}         {#var rmcol <148>;#var rmsym <148>~ ~<088>};
-                    #case {"ocean2"}        {#var rmcol <148>;#var rmsym <148>~ ^<088>};
-                    #case {"ocean3"}        {#var rmcol <148>;#var rmsym <148>^ ~<088>};
-                    #case {"ocean4"}        {#var rmcol <148>;#var rmsym <148>, ~<088>};
-                    #case {"office"}        {#var rmcol <238>;#var rmsym <238>[ ]<088>};
-                    #case {"palace_room"}       {#var rmcol <138>;#var rmsym <138>[ ]<088>};
-                    #case {"pillar"}        {#var rmcol <278>;#var rmsym <278> * <088>};
-                    #case {"plain"}         {#var rmcol <238>;#var rmsym <238>, `<088>};
-                    #case {"quicksand"}     {#var rmcol <138>;#var rmsym <138>%%%<088>};
-                    #case {"rain"}          {#var rmcol <148>;#var rmsym <148>'.'<088>};
-                    #case {"rainbow"}       {#var rmcol <148>;#var rmsym <118>)<138>)<148>)<088>};
-                    #case {"redcarpet"}     {#var rmcol <118>;#var rmsym <118>. .<088>};
-        #case {"rzeka"}         {#var rmcol <148>;#var rmsym {}};
-        #case {"trakt"}          {#var rmcol <278>;#var rmsym {}};
-                    #case {"road_crossroads"}   {#var rmcol <278>;#var rmsym <278>-+-<088>};
-                    #case {"road_eastwest"}     {#var rmcol <278>;#var rmsym <278>- -<088>};
-        #case {"skaly"}         {#var rmcol <238>;#var rmsym {}};
-                    #case {"ruins"}         {#var rmcol <178>;#var rmsym <178>{<148>*<178>}<088>};
-                    #case {"ship"}          {#var rmcol <238>;#var rmsym <238>V_V<088>};
-        #case {"brzeg"}         {#var rmcol <268>;#var rmsym {}};
-                    #case {"shop"}          {#var rmcol <138>;#var rmsym <138>*<128>$<138>*<088>};
-                    #case {"smallroad"}     {#var rmcol <278>;#var rmsym <228>,<278>|<228>`<088>};
-                    #case {"smallroad_ew"}      {#var rmcol <278>;#var rmsym <278>---<088>};
-                    #case {"snow"}          {#var rmcol <178>;#var rmsym <178>. ,<088>};
-                    #case {"space1"}        {#var rmcol <108>;#var rmsym <208>[ ]<088>};
-                    #case {"underground"}       {#var rmcol <148>;#var rmsym <148>. .<088>};
-                    #case {"underwater"}        {#var rmcol <248>;#var rmsym <248>~ ~<088>};
-                    #case {"vertical_shaft"}    {#var rmcol <278>;#var rmsym <278>< ><088>};
-                    #case {"volcano"}       {#var rmcol <218>;#var rmsym <218>A A<088>};
-                    #case {"waterswim"}     {#var rmcol <148>;#var rmsym <148>~ ~<088>};
-                    #case {"waternoswim"}       {#var rmcol <148>;#var rmsym <148>~ ~<088>};
-                    #case {"well"}          {#var rmcol <238>;#var rmsym <238>(<148>~<238>)<088>};
-                    #case {"wind1"}         {#var rmcol <168>;#var rmsym <168>~ ~<088>};
-                    #case {"wind2"}         {#var rmcol <108>;#var rmsym <108>~-~<088>};
-        #case {"zaulek"}           {#var rmcol {};#var rmsym {}};
-        #case {"droga"}            {#var rmcol {};#var rmsym {};};
-        #case {"sciezka"}          {#var rmcol <fca>;#var rmsym {}};
-        #case {"chata"}            {#var rmcol <fca>;#var rmsym {}};
-                    #case {"space2"}        {#var rmcol <278>;#var rmsym <278>*  <088>};
-                    #case {"space3"}        {#var rmcol <278>;#var rmsym <278>  .<088>};
-                    #case {"space4"}        {#var rmcol <108>;#var rmsym <208>[ ]<088>};
-                    #case {"stairs"}        {#var rmcol <278>;#var rmsym <278>.@.<088>};
-                    #case {"sun"}           {#var rmcol <138>;#var rmsym <138> * <088>};
-        #case {"bagno"}         {#var rmcol <228>;#var rmsym {}};
-                    #case {"swiatynia"}        {#var rmcol <268>;#var rmsym <268>{<178>+<268>}<088>};
-                    #case {"tornado"}       {#var rmcol <108>;#var rmsym <108>.VV<088>};
-                    #case {"trail_ew"}      {#var rmcol <238>;#var rmsym <238>. .<088>};
-        #case {"tunel"}        {#var rmcol <238>;#var rmsym {}};
-        #case {"osada"}        {#var rmcol <fca>;#var rmsym {}};
-        #case {"wioska"}       {#var rmcol <118><fca>;#var rmsym {}};
-        #case {"plac"}       {#var rmcol <118><fca>;#var rmsym {}};        
-        #case {"mur"}       {#var rmcol <fac>;#var rmsym {}};
-        #case {"brama"}     {#var rmcol <afc>;#var rmsym {}};
-        #case {"pustka"}     {#var rmcol <g05>;#var rmsym {}};
-    };
-
-    #if {"$rmcol" != ""} {
-        #map set roomcolor $rmcol;
-        #var rc $rmcol;
-        #line substitute variables {#map exit w color $rc;#map exit e color $rc;#map exit n color $rc;#map exit sw color $rc;#map exit se color $rc;#map exit s color $rc;#map exit ne color $rc;#map exit nw color $rc;#map set roomsymbol {}};
-    };
-    #map set roomsymbol $rmsym;
+#nop ####################################;
+#nop POKOLORUJ KIERUNEK JAKO CUSTOM;
+#nop ####################################;
+#action {<PORT> SPECIAL %d %w} {
+    #map at {%1} {#map exit %2 color <faa>};
+    broadcast SPECIAL %1 %2;
+    mapsave;
+};
+#nop ####################################;
+#nop DODAJ SYMBOL I KOLOR;
+#nop ####################################;
+#action {<PORT> SYMBOL %d %S %S} {
+    #map at {%1} {#map set roomsymbol {<%3>%2<088>}};
+    broadcast SYMBOL %1 %2 %3;
+    mapsave;
 } {1};
 
+#nop ####################################;
+#nop USUN WSZYSTKO Z DANEGO POKOJU;
+#nop ####################################;
+#action {<PORT> CLEAR %d} {
+    #map at {%1} {#map set roomsymbol { O }};
+    #map at {%1} {#map set roomarea};
+    #map at {%1} {#map set roomdata};
+    #map at {%1} {#map set roomnote};
+    broadcast CLEAR %1;
+    mapsave;
+};
