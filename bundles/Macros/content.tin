@@ -92,7 +92,7 @@
 	#line sub variables {
 		#local _macrolist {$MacroManager_Macros[Tylda]};
 	   	#replace _macrolist {,} {;};
-		#line sub variables {#macro {\t} {$_macrolist}};
+		#line sub variables {#macro {`} {$_macrolist}};
 	};
 };
 
