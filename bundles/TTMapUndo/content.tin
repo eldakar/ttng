@@ -15,7 +15,7 @@
 #action {Wysoki zezowaty sierzant mowi do ciebie: Nikt z zakryta twarza nie wejdzie na teren Uniwersytetu.} {undo} {1};
 #action {Wysoki wasaty sierzant mowi do ciebie: Nikt z zakryta twarza nie wejdzie na teren Uniwersytetu.} {undo} {1};
 #action {Nie zmiescisz sie w budzie!} {undo} {1};
-#action {Nie mozesz sie tam udac, gdyz siedzisz.$} {undo};
+#action {Nie mozesz sie tam udac, gdyz siedzisz} {undo} {1};
 #action {Nie mozesz tego robic w czasie medytacji} {undo};
 #action {Nie mozesz sie tam udac, gdyz nie masz sily wydostac sie z bagna.} {undo};
 #action {Najpierw wejdz do kabiny i sie rozbierz!} {undo};
