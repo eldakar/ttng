@@ -82,67 +82,74 @@
    	#replace _macrolist {,} {;};
 	#line sub variables {#macro {[} {$_macrolist}};
 };
+
 #alias {NawiasPrawy} {
 	#local _macrolist {$MacroManager_Macros[NawiasPrawy]};
    	#replace _macrolist {,} {;};
 	#line sub variables {#macro {[} {$_macrolist}};
 };
-#alias {Tylda} {#line sub variables {
-	#local _macrolist {$MacroManager_Macros[Tylda]};
-   	#replace _macrolist {,} {;};
-	#line sub variables {#macro {[} {$_macrolist}};
+#alias {Tylda} {
+	#line sub variables {
+		#local _macrolist {$MacroManager_Macros[Tylda]};
+	   	#replace _macrolist {,} {;};
+		#line sub variables {#macro {[} {$_macrolist}};
+	};
 };
 
 
-#alias {eOo} {#line sub variables {
+#alias {eOo} {
+	#line sub variables {
 	#local _macrolist {$MacroManager_Macros[eOo]};
    	#replace _macrolist {,} {;};
 	#line sub variables {#macro {[} {$_macrolist}};
+	};
 };
 
-#alias {eOj} {#line sub variables {
+#alias {eOj} {
+	#line sub variables {
 	#local _macrolist {$MacroManager_Macros[eOj]};
    	#replace _macrolist {,} {;};
 	#line sub variables {#macro {[} {$_macrolist}};
+	};
 };
 
 #alias {eOn} {#line sub variables {
 	#local _macrolist {$MacroManager_Macros[eOn]};
    	#replace _macrolist {,} {;};
 	#line sub variables {#macro {[} {$_macrolist}};
-};
+};};
 
 #alias {eOm} {#line sub variables {
 	#local _macrolist {$MacroManager_Macros[eOm]};
    	#replace _macrolist {,} {;};
 	#line sub variables {#macro {[} {$_macrolist}};
-};
+};};
 
 #alias {eOk} {#line sub variables {
 	#local _macrolist {$MacroManager_Macros[eOk]};
    	#replace _macrolist {,} {;};
 	#line sub variables {#macro {[} {$_macrolist}};
-};
+};};
 
 #alias {eOu} {#line sub variables {
 	#local _macrolist {$MacroManager_Macros[eOu]};
    	#replace _macrolist {,} {;};
 	#line sub variables {#macro {[} {$_macrolist}};
-};
+};};
 
 
 #alias {eOp} {#line sub variables {
 	#local _macrolist {$MacroManager_Macros[eOp]};
    	#replace _macrolist {,} {;};
 	#line sub variables {#macro {[} {$_macrolist}};
-};
+};};
 
 
 #alias {eOl} {#line sub variables {
 	#local _macrolist {$MacroManager_Macros[eOl]};
    	#replace _macrolist {,} {;};
 	#line sub variables {#macro {[} {$_macrolist}};
-};
+};};
 
 
 
