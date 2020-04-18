@@ -78,20 +78,73 @@
 };
 
 #alias {NawiasLewy} {
-	#line sub variables {#macro {[} {$MacroManager_Macros[NawiasLewy]}};
+	#local _macrolist {$MacroManager_Macros[NawiasLewy]};
+   	#replace _macrolist {,} {;};
+	#line sub variables {#macro {[} {$_macrolist}};
 };
 #alias {NawiasPrawy} {
-	#line sub variables {#macro {]} {$MacroManager_Macros[NawiasPrawy]}};
+	#local _macrolist {$MacroManager_Macros[NawiasPrawy]};
+   	#replace _macrolist {,} {;};
+	#line sub variables {#macro {[} {$_macrolist}};
 };
 #alias {Tylda} {#line sub variables {
-	#macro {`} {$MacroManager_Macros[Tylda]}};
+	#local _macrolist {$MacroManager_Macros[Tylda]};
+   	#replace _macrolist {,} {;};
+	#line sub variables {#macro {[} {$_macrolist}};
 };
 
-#alias {eOo} {#line sub variables {#macro {\eOo} {$MacroManager_Macros[eOo]}}};
-#alias {eOj} {#line sub variables {#macro {\eOj} {$MacroManager_Macros[eOj]}}};
-#alias {eOn} {#line sub variables {#macro {\eOn} {$MacroManager_Macros[eOn]}}};
-#alias {eOm} {#line sub variables {#macro {\eOm} {$MacroManager_Macros[eOm]}}};
-#alias {eOk} {#line sub variables {#macro {\eOk} {$MacroManager_Macros[eOk]}}};
-#alias {eOu} {#line sub variables {#macro {\eOu} {$MacroManager_Macros[eOu]}}};
-#alias {eOp} {#line sub variables {#macro {\eOp} {$MacroManager_Macros[eOp]}}};
-#alias {eOl} {#line sub variables {#macro {\eOl} {$MacroManager_Macros[eOl]}}};
+
+#alias {eOo} {#line sub variables {
+	#local _macrolist {$MacroManager_Macros[eOo]};
+   	#replace _macrolist {,} {;};
+	#line sub variables {#macro {[} {$_macrolist}};
+};
+
+#alias {eOj} {#line sub variables {
+	#local _macrolist {$MacroManager_Macros[eOj]};
+   	#replace _macrolist {,} {;};
+	#line sub variables {#macro {[} {$_macrolist}};
+};
+
+#alias {eOn} {#line sub variables {
+	#local _macrolist {$MacroManager_Macros[eOn]};
+   	#replace _macrolist {,} {;};
+	#line sub variables {#macro {[} {$_macrolist}};
+};
+
+#alias {eOm} {#line sub variables {
+	#local _macrolist {$MacroManager_Macros[eOm]};
+   	#replace _macrolist {,} {;};
+	#line sub variables {#macro {[} {$_macrolist}};
+};
+
+#alias {eOk} {#line sub variables {
+	#local _macrolist {$MacroManager_Macros[eOk]};
+   	#replace _macrolist {,} {;};
+	#line sub variables {#macro {[} {$_macrolist}};
+};
+
+#alias {eOu} {#line sub variables {
+	#local _macrolist {$MacroManager_Macros[eOu]};
+   	#replace _macrolist {,} {;};
+	#line sub variables {#macro {[} {$_macrolist}};
+};
+
+
+#alias {eOp} {#line sub variables {
+	#local _macrolist {$MacroManager_Macros[eOp]};
+   	#replace _macrolist {,} {;};
+	#line sub variables {#macro {[} {$_macrolist}};
+};
+
+
+#alias {eOl} {#line sub variables {
+	#local _macrolist {$MacroManager_Macros[eOl]};
+   	#replace _macrolist {,} {;};
+	#line sub variables {#macro {[} {$_macrolist}};
+};
+
+
+
+
+
