@@ -15,7 +15,7 @@
     #unvar randomkrzesloindex;
 };
 
-#action {Nie mozesz sie tam udac, gdyz siedzisz} {
+#nop action {Nie mozesz sie tam udac, gdyz siedzisz} {
 	qm wstan;
 };
 
