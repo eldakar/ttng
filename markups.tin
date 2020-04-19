@@ -10,7 +10,7 @@
 		#class markups open;
 
 		#var markupsymbols[mob] {<FFA><aaa>MOB<088>};
-		#var markupsymbols[ext] {<168>[ ]<088>};
+		#var markupsymbols[ext] {<138> @ <088>};
 		#var markupsymbols[rot] {<faa>;~;<088>};
 		#if {$m[$markupsRoomVnum][rendered] > 0} {
 			#nop line ignore #sh {<178>Highlighter: <038>Juz podswietlam ten pokoj!};
@@ -25,8 +25,42 @@
 		#class markups close;
 		#class markups write bundles/ConfigManager/Profiles/markups.tt;
 	};
+} {2};
+
+#alias {/a ext %*} {
+	#map get roomvnum markupsRoomVnum;
+	#map get roomsymbol _rs;
+	#map get roomterrain _rt;
+	#line sub variables {
+		#class markups read bundles/ConfigManager/Profiles/markups.tt;
+		#class markups open;
+
+		#if {$m[$markupsRoomVnum][rendered] > 0} {
+			#nop line ignore #sh {<178>Highlighter: <038>Juz podswietlam ten pokoj!};
+		} {
+			#var m[$markupsRoomVnum][rendered] {1};
+			#var m[$markupsRoomVnum][type] {ext};
+			#var m[$markupsRoomVnum][direction] {%1};
+			#var m[$markupsRoomVnum][symbol] {$_rs};
+			#var m[$markupsRoomVnum][terrain] {$_rt};
+			#map set roomsymbol {<138> @ <088>};
+			#map exit %1 color <138>;
+			#line ignore #sh {<178>Highlighter: <028>Dodalem ext %1};
+		};
+		#class markups close;
+		#class markups write bundles/ConfigManager/Profiles/markups.tt;
+	};
 } {1};
 
+#alias {/gettrolle} {
+	#foreach {*m[]} {_m} {
+		#if {"$m[$_m][type]" == "mob"} {
+			#map find $_m;
+			#path save forward trollpath;
+			#sh {room:$_m path:$trollpath};
+		};
+	};
+} {1};
 
 #alias {/d} {
 	#map get roomvnum markupsRoomVnum;
@@ -60,9 +94,20 @@
 			#map at {$_m} {
 				#var m[$_m][rendered] {1};
 				#map set roomsymbol $markupsymbols[$m[$_m][type]];
+				#if {"$m[$_m][type]" == "ext"} {
+					#map exit $m[$_m][direction] color <138>;
+				};
 			};
-		}
+		};	
 		#var showingmarkups 1;
+	};
+} {1};
+
+#alias {/destroy} {
+	#foreach {*m[]} {_m} {
+		#if {"$m[$_m][type]" == "%1"} {
+			#map at {$_m} {/d};
+		};
 	};
 } {1};
 
@@ -72,6 +117,9 @@
 			#map at {$_m} {
 				#var m[$_m][rendered] {0};
 				#map set roomsymbol $m[$_m][symbol];
+				#if {"$m[$_m][type]" == "ext"} {
+					#map exit $m[$_m][direction] color;
+				};
 			};
 		};
 		#var showingmarkups 0;

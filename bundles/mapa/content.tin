@@ -49,6 +49,47 @@
     #map goto $ConfigManager_Configs[startowa];
 };
 
+#alias {/chodzenie} {
+    #alias {move_n} {#send n;#var trytomove 1;#var movedir {polnoc}};
+    #alias {move_s} {#send s;#var trytomove 1;#var movedir {poludnie}};
+    #alias {move_e} {#send e;#var trytomove 1;#var movedir {wschod}};
+    #alias {move_w} {#send w;#var trytomove 1;#var movedir {zachod}};
+    #alias {move_d} {#send d;#var trytomove 1;#var movedir {dol}};
+    #alias {move_u} {#send u;#var trytomove 1;#var movedir {gora}};
+    #alias {move_ne} {#send ne;#var trytomove 1;#var movedir {polnocny-wschod}};
+    #alias {move_nw} {#send nw;#var trytomove 1;#var movedir {polnocny-zachod}};
+    #alias {move_sw} {#send sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
+    #alias {move_se} {#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};    
+} {1};
+
+#alias {/przemykanie} {
+    #alias {move_n} {#send przemknij n;#map move n;#var trytomove 1;#var movedir {polnoc}};
+    #alias {move_s} {#send przemknij s;#map move s;#var trytomove 1;#var movedir {poludnie}};
+    #alias {move_e} {#send przemknij e;#map move e;#var trytomove 1;#var movedir {wschod}};
+    #alias {move_w} {#send przemknij w;#map move w;#var trytomove 1;#var movedir {zachod}};
+    #alias {move_d} {#send przemknij d;#map move d;#var trytomove 1;#var movedir {dol}};
+    #alias {move_u} {#send przemknij u;#map move u;#var trytomove 1;#var movedir {gora}};
+    #alias {move_ne} {#send przemknij ne;map move ne#var trytomove 1;#var movedir {polnocny-wschod}};
+    #alias {move_nw} {#send przemknij nw;map move nw#var trytomove 1;#var movedir {polnocny-zachod}};
+    #alias {move_sw} {#send przemknij sw;map move sw#var trytomove 1;#var movedir {poludniowy-zachod}};
+    #alias {move_se} {#send przemknij se;map move se#var trytomove 1;#var movedir {poludniowy-wschod}};    
+} {1};
+
+#alias {/sprawdzanie} {
+    #alias {move_n} {#send {sprawdz polnoc};#send n;#var trytomove 1;#var movedir {polnoc}};
+    #alias {move_s} {#send {sprawdz polnoc};#send s;#var trytomove 1;#var movedir {poludnie}};
+    #alias {move_e} {#send {sprawdz polnoc};#send e;#var trytomove 1;#var movedir {wschod}};
+    #alias {move_w} {#send {sprawdz polnoc};#send w;#var trytomove 1;#var movedir {zachod}};
+    #alias {move_d} {#send {sprawdz polnoc};#send d;#var trytomove 1;#var movedir {dol}};
+    #alias {move_u} {#send {sprawdz polnoc};#send u;#var trytomove 1;#var movedir {gora}};
+    #alias {move_ne} {#send {sprawdz polnoc};#send ne;#var trytomove 1;#var movedir {polnocny-wschod}};
+    #alias {move_nw} {#send {sprawdz polnoc};#send nw;#var trytomove 1;#var movedir {polnocny-zachod}};
+    #alias {move_sw} {#send {sprawdz polnoc};#send sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
+    #alias {move_se} {#send {sprawdz polnoc};#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};    
+} {1};
+
+
+
 #alias {move_n} {#send n;#var trytomove 1;#var movedir {polnoc}};
 #alias {move_s} {#send s;#var trytomove 1;#var movedir {poludnie}};
 #alias {move_e} {#send e;#var trytomove 1;#var movedir {wschod}};
@@ -97,10 +138,61 @@
     };
     #if {"$ROOM_TIME[daylight]" == "true"} {
         #map color symbols <cfc>;
+        #map color exits <bcb>;
     } {
         #map color symbols <ccf>;
+        #map color exits <bbc>;
     };
 }
+
+#alias {/resetujKolory} {
+    #if {"$ROOM_TIME[daylight]" == "true"} {
+        #map color symbols <cfc>;
+        #map color exits <bcb>;
+    } {
+        #map color symbols <ccf>;
+        #map color exits <bbc>;
+    };
+} {1};
+
+
+#function highlight_exits {
+    #list ROOM_INFO[exits] size ris;
+    #if {$ris > 1}  {
+        #foreach {$ROOM_INFO[exits]} {i}
+        {
+            #switch {"$ROOM_INFO[exits][$i]"}
+            {
+                #case {"polnoc"} {/a ext n;#map move n;/a ext s;#map move s};
+                #case {"polnocny-wschod"} {/a ext ne;#map move ne;/a ext sw;#map move sw};
+                #case {"polnocny-zachod"} {/a ext nw;#map move nw;/a ext se;#map move se};
+                #case {"poludnie"} {/a ext s;#map move s;/a ext n;#map move n};
+                #case {"poludniowy-wschod"} {/a ext se;#map move se;/a ext nw;#map move nw};
+                #case {"poludniowy-zachod"} {/a ext sw;#map move sw;/a ext ne;#map move ne};
+                #case {"wschod"} {/a ext e;#map move e;/a ext w;#map move w};
+                #case {"zachod"} {/a ext w;#map dig w;/a ext e;#map move e};
+                #case {"dol"} {/a ext d;#map dig d;/a ext u;#map move u};
+                #case {"gora"} {/a ext u;#map dig u;/a ext d;#map move d};
+            };
+        };
+    };
+    #elseif {$ris > 0}  {
+        #switch {"$ROOM_INFO[exits][1]"}
+        {
+                #case {"polnoc"} {/a ext n;#map move n;/a ext s;#map move s};
+                #case {"polnocny-wschod"} {/a ext ne;#map move ne;/a ext sw;#map move sw};
+                #case {"polnocny-zachod"} {/a ext nw;#map move nw;/a ext se;#map move se};
+                #case {"poludnie"} {/a ext s;#map move s;/a ext n;#map move n};
+                #case {"poludniowy-wschod"} {/a ext se;#map move se;/a ext nw;#map move nw};
+                #case {"poludniowy-zachod"} {/a ext sw;#map move sw;/a ext ne;#map move ne};
+                #case {"wschod"} {/a ext e;#map move e;/a ext w;#map move w};
+                #case {"zachod"} {/a ext w;#map dig w;/a ext e;#map move e};
+                #case {"dol"} {/a ext d;#map dig d;/a ext u;#map move u};
+                #case {"gora"} {/a ext u;#map dig u;/a ext d;#map move d};
+        };
+    };
+}
+
 
 #function draw_dynamics {
     #list ROOM_INFO[exits] size ris;
@@ -220,6 +312,10 @@
     #nop W TRYBIE dynamicznym, rozwijamy roze na mapie;
     #if {$creatorMode > 0} {
         #local res @draw_dynamics{};
+    };
+    #nop W TRYBIE PODSWIETLANIA kolorujemy;
+    #if {$highlightMode > 0} {
+        #local res @highlight_exits{};
     };
 
     #nop ZAPISUJEMY GMPC ROOM INFO zamiast Shorta;

@@ -4,32 +4,32 @@
 #nop simultaniously.
 #nop -------------------------------------------------------------------------;
 
-#macro {\e[1;2A} {#cursor preserve;#delay {move} {#cursor reset_macro;n} {0.005}}
-#macro {\e[1;2C} {#cursor preserve;#delay {move} {#cursor reset_macro;e} {0.005}}
-#macro {\e[1;2B} {#cursor preserve;#delay {move} {#cursor reset_macro;s} {0.005}}
-#macro {\e[1;2D} {#cursor preserve;#delay {move} {#cursor reset_macro;w} {0.005}}
+#macro {\e[1;2A} {#cursor preserve;#delay {move} {#cursor reset_macro;n} {0.01}}
+#macro {\e[1;2C} {#cursor preserve;#delay {move} {#cursor reset_macro;e} {0.01}}
+#macro {\e[1;2B} {#cursor preserve;#delay {move} {#cursor reset_macro;s} {0.01}}
+#macro {\e[1;2D} {#cursor preserve;#delay {move} {#cursor reset_macro;w} {0.01}}
 
 #nop ONE DIRECTION DOUBLE;
-#macro {\e[1;2A\e[1;2A} {#undelay {move};#cursor reset_macro;n;n}
-#macro {\e[1;2C\e[1;2C} {#undelay {move};#cursor reset_macro;e;e}
-#macro {\e[1;2B\e[1;2B} {#undelay {move};#cursor reset_macro;s;s}
-#macro {\e[1;2D\e[1;2D} {#undelay {move};#cursor reset_macro;w;w}
+#macro {\e[1;2A\e[1;2A} {#undelay {move};#cursor reset_macro;move_n;move_n}
+#macro {\e[1;2C\e[1;2C} {#undelay {move};#cursor reset_macro;move_e;move_e}
+#macro {\e[1;2B\e[1;2B} {#undelay {move};#cursor reset_macro;move_s;move_s}
+#macro {\e[1;2D\e[1;2D} {#undelay {move};#cursor reset_macro;move_w;move_w}
 
 #nop NE;
-#macro {\e[1;2A\e[1;2C} {#undelay {move};#cursor reset_macro;ne}
-#macro {\e[1;2C\e[1;2A} {#undelay {move};#cursor reset_macro;ne}
+#macro {\e[1;2A\e[1;2C} {#undelay {move};#cursor reset_macro;move_ne}
+#macro {\e[1;2C\e[1;2A} {#undelay {move};#cursor reset_macro;move_ne}
 #nop SE;
-#macro {\e[1;2B\e[1;2C} {#undelay {move};#cursor reset_macro;se}
-#macro {\e[1;2C\e[1;2B} {#undelay {move};#cursor reset_macro;se}
+#macro {\e[1;2B\e[1;2C} {#undelay {move};#cursor reset_macro;move_se}
+#macro {\e[1;2C\e[1;2B} {#undelay {move};#cursor reset_macro;move_se}
 #nop SW;
-#macro {\e[1;2D\e[1;2B} {#undelay {move};#cursor reset_macro;sw}
-#macro {\e[1;2B\e[1;2D} {#undelay {move};#cursor reset_macro;sw}
+#macro {\e[1;2D\e[1;2B} {#undelay {move};#cursor reset_macro;move_sw}
+#macro {\e[1;2B\e[1;2D} {#undelay {move};#cursor reset_macro;move_sw}
 #nop NW;
-#macro {\e[1;2D\e[1;2A} {#undelay {move};#cursor reset_macro;nw}
-#macro {\e[1;2A\e[1;2D} {#undelay {move};#cursor reset_macro;nw}
+#macro {\e[1;2D\e[1;2A} {#undelay {move};#cursor reset_macro;move_nw}
+#macro {\e[1;2A\e[1;2D} {#undelay {move};#cursor reset_macro;move_nw}
 #nop DOWN;
-#macro {\e[1;2C\e[1;2D} {#undelay {move};#cursor reset_macro;d}
-#macro {\e[1;2D\e[1;2C} {#undelay {move};#cursor reset_macro;d}
+#macro {\e[1;2C\e[1;2D} {#undelay {move};#cursor reset_macro;move_d}
+#macro {\e[1;2D\e[1;2C} {#undelay {move};#cursor reset_macro;move_d}
 #nop UP;
-#macro {\e[1;2B\e[1;2A} {#undelay {move};#cursor reset_macro;u}
-#macro {\e[1;2A\e[1;2B} {#undelay {move};#cursor reset_macro;u}
+#macro {\e[1;2B\e[1;2A} {#undelay {move};#cursor reset_macro;move_u}
+#macro {\e[1;2A\e[1;2B} {#undelay {move};#cursor reset_macro;move_u}
