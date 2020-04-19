@@ -15,7 +15,7 @@
 
 #action {Zapierasz sie nogami o grunt i probujesz uniesc stalowa krate.} {frozen_set};
 
-#action {Siadasz %*} {frozen_set};
+#action {^Siadasz %*} {frozen_set};
 #action {Wstajesz %*} {frozen_unset};
 
 #action {Przestajesz probowac uniesc krate.} {frozen_unset};
