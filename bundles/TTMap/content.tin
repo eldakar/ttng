@@ -259,11 +259,11 @@
         #var roomfound 0;
 
     #nop ##################################;
-    #nop szukaj pokoju wedlug jego opisu
-    #nop w lokacjach gmcp, opis jest koordynata
-    #nop w reszcie lokacji, ostatnio widziany short w danej lokacji
-    #nop
-    #nop jesil jest jeden rezultat, przenies mape
+    #nop szukaj pokoju wedlug jego opisu;
+    #nop w lokacjach gmcp, opis jest koordynata;
+    #nop w reszcie lokacji, ostatnio widziany short w danej lokacji;
+    #nop;
+    #nop jesil jest jeden rezultat, przenies mape;
     #nop ##################################;
 
         #nop var k @_print_warn{Szukam pokoju <118><aff>$current_room_short_desc<088>};
@@ -284,7 +284,7 @@
         };
 
     #nop ##################################;
-    #nop szukamy pokoju wedlug opisu i dostepnych wyjsc
+    #nop szukamy pokoju wedlug opisu i dostepnych wyjsc;
     #nop ##################################;
         #if {$roomfound == 0} {
             #var vexits {};
@@ -387,7 +387,7 @@
 
 
 #nop #################################################################################;
-#nop ODNAJDYWANIE SIE NA MAPIE
+#nop ODNAJDYWANIE SIE NA MAPIE;
 #nop #################################################################################;
 #action {Schodzisz z %1.} {#var MAPPER_SYNC {0};}
 #action {Oplacasz podroz u woznicy i wsiadasz do %1.} {#var MAPPER_SYNC {0}};
@@ -410,11 +410,11 @@
         #var roomfound 0;
 
     #nop ##################################;
-    #nop szukaj pokoju wedlug jego opisu
-    #nop w lokacjach gmcp, opis jest koordynata
-    #nop w reszcie lokacji, ostatnio widziany short w danej lokacji
-    #nop
-    #nop jesil jest jeden rezultat, przenies mape
+    #nop szukaj pokoju wedlug jego opisu;
+    #nop w lokacjach gmcp, opis jest koordynata;
+    #nop w reszcie lokacji, ostatnio widziany short w danej lokacji;
+    #nop;
+    #nop jesil jest jeden rezultat, przenies mape;
     #nop ##################################;
 
         #map list {} {} {$current_room_short_desc} {variable} {vexits};
@@ -443,7 +443,7 @@
         };
 
     #nop ##################################;
-    #nop szukamy pokoju wedlug opisu i dostepnych wyjsc
+    #nop szukamy pokoju wedlug opisu i dostepnych wyjsc;
     #nop ##################################;
 
     #if {$roomfound == 0} {
@@ -494,6 +494,79 @@
         };
     };
 };
+#nop FINDME SHORT ONLY;
+#alias findme_short {
+        #map get roomvnum rmvnum;
+        #var widocznewyjscia {$ROOM_INFO[exits]};
+        #var exitList {};
+        #var vexits {};
+        #var roomfound 0;
+
+    #nop ##################################;
+    #nop szukaj pokoju wedlug jego opisu;
+    #nop w lokacjach gmcp, opis jest koordynata;
+    #nop w reszcie lokacji, ostatnio widziany short w danej lokacji;
+    #nop;
+    #nop jesil jest jeden rezultat, przenies mape;
+    #nop ##################################;
+
+        #map list {} {} {$current_room_short_desc} {variable} {vexits};
+        #list vexitslist create {$vexits};
+        #list vexitslist {size} {listsize};
+
+        #if {$findmedebug} {
+            #math noOfRooms {$listsize / 2};
+            #line ignore #sh {#debug <fac>findme:<088> short <038>$current_room_short_desc<088> - lista zawiera: <018>$noOfRooms<088>.};
+            #nop $ROOM_INFO[exits];
+        };    
+        #if {$listsize == 2} {
+            #var roomfound {1};
+            #if {$vexitslist[1] != $rmvnum} {
+                #ec {Odnalazlem mapke na: $vexitslist[1]<088>};
+                #map goto $vexitslist[1];
+                #var creatorMode 0;
+                #if {$findmedebug} {
+                    #line ignore #sh {#debug <fac>findme:<088> short Przekone kulke na: <028>$vexitslist[1]<088>};
+                };    
+            #nop map map ${screen_w}x15;
+                #var roomId $vexitslist[1];
+                #var MAPPER_SYNC $vexitslist[1];
+                #map get roomdata tmproomdata;
+            };
+        };
+};
+#alias findme_exits {
+        #nop ##################################;
+        #nop szukamy pokoju wedlug opisu i dostepnych wyjsc;
+        #nop ##################################;
+        #var vexits {};
+        #list vexitslist clear;
+        #map list {$current_room_exits} {} {$current_room_short_desc} {variable} {vexits};
+        #list vexitslist create {$vexits};
+        #list vexitslist {size} {listsize};
+        #list vexitslist_filter clear;
+        #var velf 0;
+
+        #if {$findmedebug} {
+            #math noOfRooms {$listsize / 2};
+            #line ignore #sh {#debug <fac>findme:<088> exits <038>$current_room_short_desc <088>| <038>$current_room_exits<088> - lista zawiera: <018>$noOfRooms<088>.};
+            #nop $ROOM_INFO[exits];
+        };    
+        #if {$listsize == 2} {
+            #var roomfound {1};
+            #if {$vexitslist[1] != $rmvnum} {
+                #ec {Odnalazlem mapke na: $vexitslist[1]<088>};
+                #map goto $vexitslist[1];
+                #var creatorMode 0;
+                #var roomId $vexitslist[1];
+                #var MAPPER_SYNC $vexitslist[1]};
+                #if {$findmedebug} {
+                    #line ignore #sh {#debug <fac>findme:<088> exits Przekone kulke na: <028>$vexitslist[1]<088>};
+                };    
+            #var MAPPER_SYNC $vexitslist[1];
+        };
+};
+
 
 #nop #################################################################################;
 #nop Komenda UNDO - uzywana do cofania kulki;
