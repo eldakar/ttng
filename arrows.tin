@@ -1,0 +1,35 @@
+#nop -------------------------------------------------------------------------
+#nop These macros will allow you to move around with the arrow keys while
+#nop holding down the control key. You can move ne by pressing arrow up + down
+#nop simultaniously.
+#nop -------------------------------------------------------------------------;
+
+#macro {\e[1;2A} {#cursor preserve;#delay {move} {#cursor reset_macro;n} {0.005}}
+#macro {\e[1;2C} {#cursor preserve;#delay {move} {#cursor reset_macro;e} {0.005}}
+#macro {\e[1;2B} {#cursor preserve;#delay {move} {#cursor reset_macro;s} {0.005}}
+#macro {\e[1;2D} {#cursor preserve;#delay {move} {#cursor reset_macro;w} {0.005}}
+
+#nop ONE DIRECTION DOUBLE;
+#macro {\e[1;2A\e[1;2A} {#undelay {move};#cursor reset_macro;n;n}
+#macro {\e[1;2C\e[1;2C} {#undelay {move};#cursor reset_macro;e;e}
+#macro {\e[1;2B\e[1;2B} {#undelay {move};#cursor reset_macro;s;s}
+#macro {\e[1;2D\e[1;2D} {#undelay {move};#cursor reset_macro;w;w}
+
+#nop NE;
+#macro {\e[1;2A\e[1;2C} {#undelay {move};#cursor reset_macro;ne}
+#macro {\e[1;2C\e[1;2A} {#undelay {move};#cursor reset_macro;ne}
+#nop SE;
+#macro {\e[1;2B\e[1;2C} {#undelay {move};#cursor reset_macro;se}
+#macro {\e[1;2C\e[1;2B} {#undelay {move};#cursor reset_macro;se}
+#nop SW;
+#macro {\e[1;2D\e[1;2B} {#undelay {move};#cursor reset_macro;sw}
+#macro {\e[1;2B\e[1;2D} {#undelay {move};#cursor reset_macro;sw}
+#nop NW;
+#macro {\e[1;2D\e[1;2A} {#undelay {move};#cursor reset_macro;nw}
+#macro {\e[1;2A\e[1;2D} {#undelay {move};#cursor reset_macro;nw}
+#nop DOWN;
+#macro {\e[1;2C\e[1;2D} {#undelay {move};#cursor reset_macro;d}
+#macro {\e[1;2D\e[1;2C} {#undelay {move};#cursor reset_macro;d}
+#nop UP;
+#macro {\e[1;2B\e[1;2A} {#undelay {move};#cursor reset_macro;u}
+#macro {\e[1;2A\e[1;2B} {#undelay {move};#cursor reset_macro;u}
