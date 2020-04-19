@@ -19,7 +19,8 @@
 	#if {"%1" == "mocna"} {#return 25};
 	#if {"%1" == "potezna"} {#return 30};
 	#if {"%1" == "mocarna"} {#return 35};
-	#if {"%1" == "epicko silna"} {#return 40};	
+	#if {"%1" == "epicko silna"} {#return 40};
+	#if {"%1" == "nadludzka"} {#return 45};
 }
 #function {poziomzrecznosci}
 {
@@ -40,7 +41,8 @@
 	#if {"%1" == "zwinna"} {#return 20};
 	#if {"%1" == "zreczna"} {#return 25};
 	#if {"%1" == "gibka"} {#return 30};
-	#if {"%1" == "akrobatyczna"} {#return 35};	
+	#if {"%1" == "akrobatyczna"} {#return 35};
+	#if {"%1" == "nadludzka"} {#return 45};
 }
 #function {poziomwytrzymalosci}
 {
@@ -61,7 +63,8 @@
 	#if {"%1" == "wytrzymala"} {#return 20};
 	#if {"%1" == "twarda"} {#return 25};
 	#if {"%1" == "muskularna"} {#return 30};
-	#if {"%1" == "atletyczna"} {#return 35};	
+	#if {"%1" == "atletyczna"} {#return 35};
+	#if {"%1" == "nadludzka"} {#return 45};
 }
 #function {poziominteligencji}
 {
@@ -151,7 +154,7 @@
 	};
 		#echo {+-----------------+--------------------+--+----+};
 	#regex {$tmpOcena} {Twoja sila osiagnela nadludzki poziom} {
-		#var p_str @poziomsily{45};
+		#var p_str @poziomsily{nadludzka};
 		#var p_str_left @brakuje{bardzo duzo};
 		#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Sila} {&1} {$p_str} {$p_str_left}; #echo $line;
 	};
@@ -171,7 +174,7 @@
 		#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Wytrzymalosc} {&2} {$p_sta} {$p_sta_left}; #echo $line;
 	};
 	#regex {$tmpOcena} {Twoja wytrzymalosc osiagnela nadludzki poziom} {
-		#var p_sta @poziomwytrzymalosci{45};
+		#var p_sta @poziomwytrzymalosci{nadludzka};
 		#var p_sta_left @brakuje{bardzo duzo};
 		#format {line} {| %-15s | %+18s |%-2s| %-2s |} {Wytrzymalosc} {&2} {$p_sta} {$p_sta_left}; #echo $line;
 	};
