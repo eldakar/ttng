@@ -1,11 +1,15 @@
-#var bundle_name {chat};
-#var bundle_data {0};
+#var bundle_name {mapeditor};
+#var bundle_data {1};
 #var bundle_content {1};
-#var bundle_config {1};
-#list bundle_configs clear;
 #var bundle_help {1};
+
+#list bundle_configs clear;
+	#list bundle_configs add {TTMapEditorAddress};
+	
 #list bundle_slots clear;
+
 #list bundle_deps clear;
+	#list bundle_deps add {mapa};
 
 #list bundle_alias clear;
 

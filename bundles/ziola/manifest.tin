@@ -3,7 +3,7 @@
 #nop ############################;
 
 #nop NAME ###########;
-#var bundle_name {TTMapUndo};
+#var bundle_name {ziola};
 
 #nop IS DATA PRESENT #;
 #var bundle_data {0};
@@ -15,7 +15,7 @@
 #var bundle_config {0};
 
 #nop IS HELP PRESENT;
-#var bundle_help {0};
+#var bundle_help {1};
 
 #nop ############################;
 #nop EVENT SLOTS ##########;
@@ -23,14 +23,13 @@
 #nop in order to load the bundle;
 #nop ############################;
 #list bundle_slots clear;
-#list bundle_slots add {map.undo};
+#list bundle_slots add {herbs};
 
 #nop ############################;
 #nop BUNDLE DEPENDENCIES ###;
 #nop All dependencies have to be met;
 #nop ############################;
 #list bundle_deps clear;
-#list bundle_deps add {mapa};
 
 #nop ############################;
 #nop BUNDLE ALIASES ########;

@@ -1,0 +1,24 @@
+#alias {zawod} {
+	#var pzawod $ConfigManager_Configs[zawod];
+};
+
+#alias {gildia} {
+	#var pgildia $ConfigManager_Configs[gildia];
+};
+
+#unalias {echokomend} {
+	#if {"$ConfigManager_Configs[echokomend]" == "wlaczone"} {
+		#event {SEND OUTPUT} {#var sendoutput %%0;#replace {sendoutput} {\n} {};#echo {<cca>$sendoutput<088>}};
+	} {
+		#unevent {SEND OUTPUT};
+	};
+}
+#alias {mowa} {
+	#if {"$ConfigManager_Configs[mowa]" == "wlaczona"} {
+		#nop alias {'} {};
+	};
+}
+
+#alias {mowajak} {
+	#var pmowajak $ConfigManager_Configs[mowajak];
+};

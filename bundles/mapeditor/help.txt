@@ -1,0 +1,28 @@
+WARN 1. Konfiguracje
+TUTOR 	/conf TTMapEditorAddress - ustawia adres zdalnej mapy
+WARN 2. Aliasy
+Komendy:
+TUTOR /event <komenda>                 - dodaje komende _lokacyjna_
+TUTOR /command <string>                - dodaje komende, ktora wykona sie po wejsciu
+Notatki:
+TUTOR /s <string>                      - wyszukaj pokoj z notka zawierajaca <string>
+TUTOR /n <string>                      - dodaj nowa notke
+TUTOR /n F1|F2|F3 <string>             - dodaj alias 1/2/3 na danej lokacji
+TUTOR 
+Ogolne:
+TUTOR /reconnect                       - odnawia polaczenie
+TUTOR /map clear                       - usuwa notki, komendy, eventy, kolory
+Rysowanie i edytacji nowych wyjsc:
+TUTOR /map dig <kierunek>              - stworz pokoj na <kierunek>
+TUTOR /map del <kierunek>              - usun pokoj znajdujacy sie na <kierunek>
+TUTOR /map wyj <kierunek> <wyjscie>    - uzywaj <wyjscie> przy przejsciu na <kierunek>
+TUTOR /map hide <kierunek>             - ukryj pokoj w danym kierunku
+TUTOR /map unhide <kierunek>           - odkryj pokoj w danym kierunku
+TUTOR /map link <kierunek> <nrpokoju>  - laczy <kierunek> z pokojem <nrpokoju> jednostronnie
+TUTOR /map linkb <kierunek> <nrpokoju> - laczy <kierunek> z pokojem <nrpokoju> dwustronnie
+TUTOR /map unlink <kierunek>           - rozlacza z pokojem <kierunek> jednostronnie
+TUTOR /map unlinkb <kierunek>          - rozlacza z pokojem <kierunek> dwustronnie
+TUTOR /map long <kierunek>             - przedluzenie dystansu na <kierunek>
+TUTOR /map short <kierunek>            - skrocenie dystansu na <kierunek>
+TUTOR /map void                        - aktualny pokoj zostaje pominiety przy chodzeniu
+TUTOR /map spe <kierunek>              - koloruje polaczenie miedzy pokojami na czerwono

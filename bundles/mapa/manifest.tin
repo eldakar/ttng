@@ -3,16 +3,21 @@
 #nop ############################;
 
 #nop NAME ###########;
-#var bundle_name {TTMapUndo};
+#var bundle_name {mapa};
 
 #nop IS DATA PRESENT #;
-#var bundle_data {0};
+#var bundle_data {1};
 
 #nop IS CONTENT PRESENT;
 #var bundle_content {1};
 
 #nop IS CONFIG PRSENT;
-#var bundle_config {0};
+#var bundle_config {1};
+#list bundle_configs clear;
+	#list bundle_configs add {trybmapy};
+	#list bundle_configs add {kolorowaniemapy};
+	#list bundle_configs add {startowa};
+	#list bundle_configs add {dynamicznamapa};
 
 #nop IS HELP PRESENT;
 #var bundle_help {0};
@@ -23,20 +28,24 @@
 #nop in order to load the bundle;
 #nop ############################;
 #list bundle_slots clear;
-#list bundle_slots add {map.undo};
+#list bundle_slots add {gmcp.room.info};
+#list bundle_slots add {map.enter.room};
+#list bundle_slots add {alias.findme};
+
 
 #nop ############################;
 #nop BUNDLE DEPENDENCIES ###;
 #nop All dependencies have to be met;
 #nop ############################;
 #list bundle_deps clear;
-#list bundle_deps add {mapa};
 
 #nop ############################;
 #nop BUNDLE ALIASES ########;
 #nop Check if any alias already in use;
 #nop ############################;
 #list bundle_alias clear;
+#list bundle_alias add {findme};
+#list bundle_alias add {/f};
 
 #nop ############################;
 #nop Validate configuration;

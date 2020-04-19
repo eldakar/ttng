@@ -1,0 +1,20 @@
+#var bundle_name {ekwipunek};
+#var bundle_data {0};
+#var bundle_content {1};
+#var bundle_help {1};
+#list bundle_configs clear;
+	#list bundle_configs add {pochwa};
+	#list bundle_configs add {pochwa2};
+	#list bundle_configs add {plecak};
+	#list bundle_configs add {sakiewka};
+	#list bundle_configs add {przewijanie};
+	
+#list bundle_slots clear;
+	#list bundle_slots add {equipment};
+
+#list bundle_deps clear;
+	#list bundle_deps add {ConfigManager};
+
+#list bundle_alias clear;
+
+#var bundle_ready @bundleops_validate{};

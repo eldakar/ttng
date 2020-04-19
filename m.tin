@@ -15,12 +15,11 @@
     #read bundles/ConfigManager/manifest.tin;
     #read bundles/HelpManager/manifest.tin;
     #read bundles/SplitRefresh/manifest.tin;
-    #nop read bundles/Calendar/manifest.tin;
-    #read bundles/BottomBarSimple/manifest.tin;    
-    #read bundles/CharacterClass/manifest.tin;
-    #read bundles/CombatMacros/manifest.tin;
-    #read bundles/Equipment/manifest.tin;
-    #read bundles/TTMap/manifest.tin;
+    #read bundles/prompt/manifest.tin;    
+    #read bundles/postac/manifest.tin;
+    #read bundles/wskazywanie/manifest.tin;
+    #read bundles/ekwipunek/manifest.tin;
+    #read bundles/mapa/manifest.tin;
     #read bundles/TTMapFollow/manifest.tin;
     #read bundles/TTMapFreezer/manifest.tin;
     #read bundles/TTMapSigns/manifest.tin;
@@ -29,16 +28,14 @@
     #read bundles/TTMapUndo/manifest.tin;
     #read bundles/NumPad/manifest.tin;
     #read bundles/ItemQualitySimple/manifest.tin;
-    #read bundles/Herbs/manifest.tin;
+    #read bundles/ziola/manifest.tin;
     #read bundles/GMCPObjects/manifest.tin;
     #read bundles/RaidTable/manifest.tin;
-    #nop read bundles/RaidBar/manifest.tin;
-    #read bundles/TTMapEditor/manifest.tin;
+    #read bundles/mapeditor/manifest.tin;
     #read bundles/PlayerDB/manifest.tin;
     #read bundles/EquipmentStatus/manifest.tin;
     #read bundles/LootManager/manifest.tin;
-    #read bundles/KillStats/manifest.tin;
-    #nop read bundles/Stones/manifest.tin;
+    #read bundles/postepy/manifest.tin;
     #read bundles/SplitWingMap/manifest.tin;
     #read bundles/SWQuickBind/manifest.tin;
     #read bundles/Highlights/manifest.tin;
@@ -47,9 +44,9 @@
     #read bundles/Vehicles/manifest.tin;
     #read bundles/LogManager/manifest.tin;
     #read bundles/Macros/manifest.tin;
-    #read bundles/CombatSubs/manifest.tin;
+    #read bundles/walkasuby/manifest.tin;
     #read bundles/Comparer/manifest.tin;
-    #read bundles/Chat/manifest.tin;
+    #read bundles/chat/manifest.tin;
 
     #read markups.tin;
     #read kamienie.tin;
@@ -75,10 +72,6 @@
         #send {\xFF\xFD\xC9\};
         #send {\xFF\xFA\xC9core.supports.set [ "Core", "Objects", "Room", "Char", "Messages", "Mail", "Gmcp_msgs"]\xFF\xF0\};
     };
-};
-
-#event {SESSION DISCONNECTED} {
-    #nop if {"%0" == "rpg"} {#end;};
 };
 
 #event {SEND OUTPUT} {#var sendoutput %0;#replace {sendoutput} {\n} {};#echo {<cca>$sendoutput<088>}};

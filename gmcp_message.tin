@@ -20,7 +20,7 @@
 			#sh {$GMCPMSGS[text]};
 			#line substitute {variables} {#line strip {#var current_room_exits {$GMCPMSGS[text]}}};
 #nop DEBUG;	#line substitute {variables} {#line strip {#var gmcp_exits {$GMCPMSGS[text]}}};
-			#if {$MAPPER_SYNC == 0} {findme};
+			#if {$MAPPER_SYNC == 0} {findme_exits};
 		    rysuj_roze;
 		    #if {$discovery == 1} {
 		    	/disc;
@@ -46,7 +46,7 @@
 			#line substitute {variables} {
 				#if {$ROOM_INFO[map][x] > 0} {} {#line strip {#var current_room_short_desc {$outputtext}}};
 			};
-			#nop if {$MAPPER_SYNC == 0} {findme};
+			#if {$MAPPER_SYNC == 0} {findme_short};
 			#if {$trytomove > 0} {
         		#var trytomove 0;
 			    #map get roomvnum roomId;

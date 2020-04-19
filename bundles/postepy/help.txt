@@ -1,0 +1,7 @@
+WARN Konfiguracje
+TUTOR 	/conf globalnypostep <wartosc>
+		Ustawia globalny postep. Naliczaja sie do niego nieznaki.
+		TODO zgony i forma
+WARN Aliasy
+TUTOR 	/kills
+		Wyswietla ista nieznakow plus liczba globalnych postepow.

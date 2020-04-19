@@ -68,10 +68,6 @@
 	qr porty_i_przystanie;
 }
 
-#alias {porty_i_przystanie} {
-	sprawdz liste portow;
-	wybierz;
-};
 #action {%* Odleglosc (mile)%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*} 
 {
 	#var buff {%0};

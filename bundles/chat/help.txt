@@ -1,0 +1,3 @@
+WARN Aliasy
+TUTOR 	/c    - wyswietla ostatnie 50 wiadomosci
+TUTOR 	/chat - wyswietla statyczne okienko z ostnimi wiadomosciami

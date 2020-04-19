@@ -1,0 +1,640 @@
+#line quiet #map create;
+
+#map flag vtmap on;
+#map legend 48 <FAA>#<088>;
+
+#map read bundles/mapa/map.map;
+
+#map goto 1;
+#var MAPPER_SYNC 0;
+#map leg 197 {\\};
+#map leg 198 {/};
+#map leg 200 {/};
+#map leg 218 {<};  
+#map leg 217 {>};
+#map leg 215 {|};
+#map leg 219 {-};   
+
+#map color paths <138>;
+
+#alias {dynamicznamapa} {
+    #var pdynamic $ConfigManager_Configs[dynamicznamapa];
+    #if {"$pdynamic" == "wlaczona"} {
+        #map flag static off;
+        #action {Nie widzisz zadnego wyjscia %*} {undo;#var creatorMode 0};
+    } {
+        #map flag static on;
+        #unaction {Nie widzisz zadnego wyjscia %*};
+    };
+};
+
+#alias {trybmapy} {
+    #switch {"$ConfigManager_Configs[trybmapy]"} {
+        #case {"unicode"} {#map flag unicodegraphics on;};
+        #case {"ascii"} {#map flag asciigraphics on;};
+        #default {#map flag asciigraphics on;}
+    };
+};
+#alias {kolorowaniemapy} {
+    #switch {"$ConfigManager_Configs[kolorowaniemapy]"} {
+        #case {"wlaczone"} {
+            #map flag terrain on;
+        };
+        #default {
+            #map flag terrain off;
+        }
+    }
+};
+#alias {startowa} {
+    #map goto $ConfigManager_Configs[startowa];
+};
+
+#alias {move_n} {#send n;#var trytomove 1;#var movedir {polnoc}};
+#alias {move_s} {#send s;#var trytomove 1;#var movedir {poludnie}};
+#alias {move_e} {#send e;#var trytomove 1;#var movedir {wschod}};
+#alias {move_w} {#send w;#var trytomove 1;#var movedir {zachod}};
+#alias {move_d} {#send d;#var trytomove 1;#var movedir {dol}};
+#alias {move_u} {#send u;#var trytomove 1;#var movedir {gora}};
+#alias {move_ne} {#send ne;#var trytomove 1;#var movedir {polnocny-wschod}};
+#alias {move_nw} {#send nw;#var trytomove 1;#var movedir {polnocny-zachod}};
+#alias {move_sw} {#send sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
+#alias {move_se} {#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};
+
+#alias {sneak_n} {#send przemknij n;#map move n;#var trytomove 1;#var movedir {polnoc}};
+#alias {sneak_s} {#send przemknij s;#map move s;#var trytomove 1;#var movedir {poludnie}};
+#alias {sneak_e} {#send przemknij e;#map move e;#var trytomove 1;#var movedir {wschod}};
+#alias {sneak_w} {#send przemknij w;#map move w;#var trytomove 1;#var movedir {zachod}};
+#alias {sneak_d} {#send przemknij d;#map move d;#var trytomove 1;#var movedir {dol}};
+#alias {sneak_u} {#send przemknij u;#map move u;#var trytomove 1;#var movedir {gora}};
+#alias {sneak_ne} {#send przemknij ne;#map move ne;#var trytomove 1;#var movedir {polnocny-wschod}};
+#alias {sneak_nw} {#send przemknij nw;#map move nw;#var trytomove 1;#var movedir {polnocny-zachod}};
+#alias {sneak_sw} {#send przemknij sw;#map move sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
+#alias {sneak_se} {#send przemknij se;#map move se;#var trytomove 1;#var movedir {poludniowy-wschod}};
+
+
+#alias {n} {move_n};
+#alias {s} {move_s};
+#alias {ne} {move_ne};
+#alias {nw} {move_nw};
+#alias {sw} {move_sw};
+#alias {se} {move_se};
+#alias {d} {move_d};
+#alias {u} {move_u};
+#alias {w} {move_w};
+#alias {e} {move_e};
+
+
+#event {IAC SB GMCP room.time IAC SE}
+{
+    #var roomtime {%0};
+    #foreach {*roomtime[]} {s} {
+        #list {ROOM_TIME} {find} {$s} {v}; 
+        #if {$v > 0} {
+            #list {ROOM_TIME}{set}{$s}{$roomtime[$s]}
+        } {
+            #var {ROOM_TIME[$s]} {$roomtime[$s]};
+        }
+    };
+    #if {"$ROOM_TIME[daylight]" == "true"} {
+        #map color symbols <cfc>;
+    } {
+        #map color symbols <ccf>;
+    };
+}
+
+#function draw_dynamics {
+    #list ROOM_INFO[exits] size ris;
+    #if {$ris > 1}  {
+        #foreach {$ROOM_INFO[exits]} {i}
+        {
+            #switch {"$ROOM_INFO[exits][$i]"}
+            {
+                #case {"polnoc"} {#map dig n};
+                #case {"polnocny-wschod"} {#map dig ne};
+                #case {"polnocny-zachod"} {#map dig nw};
+                #case {"poludnie"} {#map dig s};
+                #case {"poludniowy-wschod"} {#map dig se};
+                #case {"poludniowy-zachod"} {#map dig sw};
+                #case {"wschod"} {#map dig e};
+                #case {"zachod"} {#map dig w};
+                #case {"dol"} {#map dig d};
+                #case {"gora"} {#map dig u};
+                #default {
+                    #format defexitlen {%L} {$ROOM_INFO[exits][$i]};
+                    #if {$defexitlen > 2} {
+                        #map dig $ROOM_INFO[exits][$i];
+                    };
+                };
+            };
+        };
+    };
+    #elseif {$ris > 0}  {
+        #switch {"$ROOM_INFO[exits][1]"}
+        {
+            #case {"polnoc"} {#map dig n};
+            #case {"polnocny-wschod"} {#map dig ne};
+            #case {"polnocny-zachod"} {#map dig nw};
+            #case {"poludnie"} {#map dig s};
+            #case {"poludniowy-wschod"} {#map dig se};
+            #case {"poludniowy-zachod"} {#map dig sw};
+            #case {"wschod"} {#map dig e};
+            #case {"zachod"} {#map dig w};
+            #case {"dol"} {#map dig d};
+            #case {"gora"} {#map dig u};
+            #default {
+                #format defexitlen {%L} {$ROOM_INFO[exits][1]};
+                #if {$defexitlen > 2} {
+                    #map dig $ROOM_INFO[exits][1];
+                };
+            };
+        };
+    };
+}
+
+#function buduj_roze {
+    #local b {0};
+    #var roza_custom {};
+    #var rozk2 {{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
+
+    #list ROOM_INFO[exits] size ris;
+    #if {$ris > 1}  {
+        #foreach {$ROOM_INFO[exits]} {i}
+        {
+          #switch {"$ROOM_INFO[exits][$i]"}
+          {
+            #case {"polnoc"} {#math {b} {$b + 1};#var {rozk2[n]} {|};};
+            #case {"polnocny-wschod"} {#math {b} {$b + 1};#var {rozk2[ne]} {/};};
+            #case {"polnocny-zachod"} {#math {b} {$b + 1};#var {rozk2[nw]} {\\};};
+            #case {"poludnie"} {#math {b} {$b + 1};#var {rozk2[s]} {|}};
+            #case {"poludniowy-wschod"} {#math {b} {$b + 1};#var {rozk2[se]} {\\ };};
+            #case {"poludniowy-zachod"} {#math {b} {$b + 1};#var {rozk2[sw]} { /};};
+            #case {"wschod"} {#math {b} {$b + 1};#var {rozk2[e]} {-};};
+            #case {"zachod"} {#math {b} {$b + 1};#var {rozk2[w]} {-};};
+            #case {"dol"} {#math {b} {$b + 1};#var {rozk2[d]} {V}};
+            #case {"gora"} {#math {b} {$b + 1};#var {rozk2[u]} {A}};
+            #default {
+                #format defexitlen {%L} {$ROOM_INFO[exits][$i]};
+                #if {$defexitlen > 2} {
+                    #var roza_custom {$roza_custom\n$ROOM_INFO[exits][$i]};
+                };
+            };
+          };
+        };
+    };
+    #elseif {$ris > 0}  {
+      #switch {"$ROOM_INFO[exits][1]"}
+      {
+            #case {"polnoc"} {#math {b} {$b + 1};#var {rozk2[n]} {|};};
+            #case {"polnocny-wschod"} {#math {b} {$b + 1};#var {rozk2[ne]} {/};};
+            #case {"polnocny-zachod"} {#math {b} {$b + 1};#var {rozk2[nw]} {\\};};
+            #case {"poludnie"} {#math {b} {$b + 1};#var {rozk2[s]} {|}};
+            #case {"poludniowy-wschod"} {#math {b} {$b + 1};#var {rozk2[se]} {\\ };};
+            #case {"poludniowy-zachod"} {#math {b} {$b + 1};#var {rozk2[sw]} { /};};
+            #case {"wschod"} {#math {b} {$b + 1};#var {rozk2[e]} {-};};
+            #case {"zachod"} {#math {b} {$b + 1};#var {rozk2[w]} {-};};
+            #case {"dol"} {#math {b} {$b + 1};#var {rozk2[d]} {V}};
+            #case {"gora"} {#math {b} {$b + 1};#var {rozk2[u]} {A}};
+            #default {
+                #format defexitlen {%L} {$ROOM_INFO[exits][$i]};
+                #if {$defexitlen > 2} {
+                    #var roza_custom {$ROOM_INFO[exits][$i]};
+                };
+            };
+      };
+    };
+}
+#nop #################################################################################;
+#nop EVENTY GMCP;
+#nop #################################################################################;
+#event {IAC SB GMCP room.info IAC SE} {
+    #var ROOM_INFO {%0};
+
+    #nop Roza wiatrow;
+    #local res @buduj_roze{};
+
+    #nop KAZDY komunikat ROOM_INFO resetuje 'freezera';
+    #if {$frozen_status == 1} {
+        frozen_unset;
+    };
+
+    #nop W TRYBIE dynamicznym, rozwijamy roze na mapie;
+    #if {$creatorMode > 0} {
+        #local res @draw_dynamics{};
+    };
+
+    #nop ZAPISUJEMY GMPC ROOM INFO zamiast Shorta;
+    #if {$ROOM_INFO[map][x] > 0} {        
+        #var current_room_short_desc {$ROOM_INFO[map][name] $ROOM_INFO[map][x] $ROOM_INFO[map][y]};
+    };
+};
+
+
+#alias roomCheck {
+    #nop var map_short {0 $map_short};
+    #nop var map_exits {1 $map_exits};
+    #nop var current_room_short_desc;
+    #local allow 0;
+
+    #if {$ROOM_INFO[map][x] > 0} {        
+        #echo {<138>MAP <028>$current_room_short_desc|$map_short|};
+        #if {"$current_room_short_desc" != "$map_short"} {
+            #echo {<138>MAP <118>MISMATCH<088>};
+            #local allow 1
+        };
+    } {
+        #echo {<138>MAP <028>$gmcp_short|$map_short|};
+        #if {"$gmcp_short" != "$map_short"} {
+            #echo {<138>MAP <118>MISMATCH<088>};
+            #local allow 1
+        };            
+    };
+    #if {$allow == 1} {
+        #var MAPPER_SYNC 0;
+
+        #map get roomvnum rmvnum;
+        #var widocznewyjscia {$ROOM_INFO[exits]};
+        #var exitList {};
+        #var vexits {};
+
+        #var roomfound 0;
+
+    #nop ##################################;
+    #nop szukaj pokoju wedlug jego opisu;
+    #nop w lokacjach gmcp, opis jest koordynata;
+    #nop w reszcie lokacji, ostatnio widziany short w danej lokacji;
+    #nop;
+    #nop jesil jest jeden rezultat, przenies mape;
+    #nop ##################################;
+
+        #nop var k @_print_warn{Szukam pokoju <118><aff>$current_room_short_desc<088>};
+        #map list {} {} {$current_room_short_desc} {variable} {vexits};
+        #list vexitslist create {$vexits};
+        #list vexitslist {size} {listsize};
+        #if {$listsize == 2} {
+            #var roomfound {1};
+            #if {$vexitslist[1] != $rmvnum} {
+                #ec {Odnalazlem mapke na: $vexitslist[1]<088>};
+                #map goto $vexitslist[1];
+            #nop map map ${screen_w}x15;
+                #var roomId $vexitslist[1];
+                #var MAPPER_SYNC $vexitslist[1];
+                #map get roomdata tmproomdata;
+                #map flag static off;
+            };
+        };
+
+    #nop ##################################;
+    #nop szukamy pokoju wedlug opisu i dostepnych wyjsc;
+    #nop ##################################;
+        #if {$roomfound == 0} {
+            #var vexits {};
+            #list vexitslist clear;
+            #map list {$current_room_exits} {} {$current_room_short_desc} {variable} {vexits};
+            #list vexitslist create {$vexits};
+            #list vexitslist {size} {listsize};
+            #list vexitslist_filter clear;
+            #var velf 0;
+
+            #if {$listsize == 2} {
+                #var roomfound {1};
+                #if {$vexitslist[1] != $rmvnum} {#ec {Odnalazlem mapke na: $vexitslist[1]<088>};#map goto $vexitslist[1];#var roomId $vexitslist[1];#var MAPPER_SYNC $vexitslist[1]};
+                #var MAPPER_SYNC $vexitslist[1];    
+                #map flag static off;    
+            };
+            #if {$listsize == 0} {
+                #map dig test new;
+                #map goto test;
+                #map flag static off;
+            };
+        };
+    };
+};
+
+#event {MAP ENTER ROOM} {
+    #var gmcp_order 2;
+    #var note_found 0;
+    #var bind_found 0;
+    #map get roomvnum voom;
+    #map get roomarea rooa;
+    #map get roomdata roon;
+    #map get roomdesc {map_short};
+    #map get roomname {map_exits};
+    #var map_short {$map_short};
+    #var map_exits {$map_exits};
+
+    #list roon size roonsize;
+    #if {"$rooa" != ""} {$rooa};
+    #if {$lockroom > 0} {#map find $lockroom};
+};
+
+#event {MAP UPDATED VTMAP} {
+    #nop SplitWingMap_LabelMap <128>$current_room_short_desc;
+
+    #nop SHOW BIND;
+    #if {$bind_found > 0} {
+        SplitWingMap_LabelBind $bind_run;
+    };
+    #if {$roonsize > 0} {
+        #local outputstr {};
+        #foreach {*roon[]} {roonvec} {
+            #switch {"$roon[$roonvec][type]"} {
+                #case {"test"} {
+                    #format {line} {%s %s %s} {<178>$roon[$roonvec][author]<088>} {$roon[$roonvec][stamp]} {<028>$roon[$roonvec][message]<088>};
+                    #local outputstr {$outputstr\n$line};
+                };
+                #case {"command"} {
+                    #switch {"$roon[$roonvec][macrokey]"} {
+                        #case {"F1"} {
+                            #local outputstr {$outputstr\n<118> *** <128> LOK1 <118> *** <138> $roon[$roonvec][message] <088>};
+                            #var tmpF1value {$roon[$roonvec][message]};
+                            #replace tmpF1value {,} {;};
+                            #alias LOK1 {$tmpF1value;};
+                            #alias 1 {$tmpF1value;};                            
+                        };
+                        #case {"F2"} {
+                            #local outputstr {$outputstr\n<118> *** <128> LOK2 <118> *** <138> $roon[$roonvec][message] <088>};
+                            #var tmpF2value {$roon[$roonvec][message]};
+                            #replace tmpF2value {,} {;};
+                            #alias LOK2 {$tmpF2value;};                            
+                            #alias 2 {$tmpF2value;};                            
+                        };
+                        #case {"F3"} {
+                            #local outputstr {$outputstr\n<118> *** <128> LOK3 <118> *** <138> $roon[$roonvec][message] <088>};
+                            #var tmpF3value {$roon[$roonvec][message]};
+                            #replace tmpF3value {,} {;};
+                            #alias LOK3 {$tmpF3value;};                            
+                            #alias 3 {$tmpF3value};
+                            #alias {3 %w} {$tmpF3value %1};
+                        };
+                        #default {
+                            #local outputstr {$outputstr\n<118> ***  ??  *** <138> $roon[$roonvec][message] <088>};
+                        };
+                    };
+                };
+            };
+        };
+        #switch {"$roonsize"} {
+            #case {"1"} {SplitWingMap_Journal_1 $outputstr;};
+            #case {"2"} {SplitWingMap_Journal_2 $outputstr;};
+            #case {"3"} {SplitWingMap_Journal_3 $outputstr;};
+            #case {"4"} {SplitWingMap_Journal_4 $outputstr;};
+            #case {"5"} {SplitWingMap_Journal_5 $outputstr;};
+            #default {SplitWingMap_Journal_5 $outputstr;};
+        };
+    };
+};
+
+
+
+#nop #################################################################################;
+#nop ODNAJDYWANIE SIE NA MAPIE;
+#nop #################################################################################;
+#action {Schodzisz z %1.} {#var MAPPER_SYNC {0};}
+#action {Oplacasz podroz u woznicy i wsiadasz do %1.} {#var MAPPER_SYNC {0}};
+#action {Wykonuje komende 'idz %1'} {#var MAPPER_SYNC {0};}
+#action {Bierzesz rozbieg i zeskakujesz z drakkara na brzeg.} {#var MAPPER_SYNC {0};}
+
+    #nop ##################################;
+    #nop funkcja szukajaca;
+    #nop map list <name> <exits> <desc> <area> <note> <terrain>;
+    #nop ##################################;
+#var current_room_short_desc {unknown2};
+#var current_room_exits {unknown2};
+#alias {/f$} {findme} {1}; 
+#nop alias findme {#echo a};
+#alias findme {
+        #map get roomvnum rmvnum;
+        #var widocznewyjscia {$ROOM_INFO[exits]};
+        #var exitList {};
+        #var vexits {};
+        #var roomfound 0;
+
+    #nop ##################################;
+    #nop szukaj pokoju wedlug jego opisu;
+    #nop w lokacjach gmcp, opis jest koordynata;
+    #nop w reszcie lokacji, ostatnio widziany short w danej lokacji;
+    #nop;
+    #nop jesil jest jeden rezultat, przenies mape;
+    #nop ##################################;
+
+        #map list {} {} {$current_room_short_desc} {variable} {vexits};
+     	#list vexitslist create {$vexits};
+     	#list vexitslist {size} {listsize};
+
+        #if {$findmedebug} {
+            #math noOfRooms {$listsize / 2};
+            #line ignore #sh {#debug <fac>findme:<088> szukam szorta: <038>$current_room_short_desc<088> - lista zawiera: <018>$noOfRooms<088>.};
+            #nop $ROOM_INFO[exits];
+        };    
+        #if {$listsize == 2} {
+            #var roomfound {1};
+            #if {$vexitslist[1] != $rmvnum} {
+                #ec {Odnalazlem mapke na: $vexitslist[1]<088>};
+                #map goto $vexitslist[1];
+                #var creatorMode 0;
+                #if {$findmedebug} {
+                    #line ignore #sh {#debug <fac>findme:<088> Przekone kulke na: <028>$vexitslist[1]<088>};
+                };    
+            #nop map map ${screen_w}x15;
+                #var roomId $vexitslist[1];
+                #var MAPPER_SYNC $vexitslist[1];
+                #map get roomdata tmproomdata;
+            };
+        };
+
+    #nop ##################################;
+    #nop szukamy pokoju wedlug opisu i dostepnych wyjsc;
+    #nop ##################################;
+
+    #if {$roomfound == 0} {
+        #var vexits {};
+        #list vexitslist clear;
+        #map list {$current_room_exits} {} {$current_room_short_desc} {variable} {vexits};
+ 	      #list vexitslist create {$vexits};
+        #list vexitslist {size} {listsize};
+        #list vexitslist_filter clear;
+        #var velf 0;
+    
+        #if {$findmedebug} {
+            #math noOfRooms {$listsize / 2};
+            #line ignore #sh {#debug <fac>findme:<088> szukam szort + wyjscia: <038>$current_room_short_desc <088>| <038>$current_room_exits<088> - lista zawiera: <018>$noOfRooms<088>.};
+            #nop $ROOM_INFO[exits];
+        };    
+        #if {$listsize == 2} {
+            #var roomfound {1};
+            #if {$vexitslist[1] != $rmvnum} {#ec {Odnalazlem mapke na: $vexitslist[1]<088>};#map goto $vexitslist[1];#var creatorMode 0;#var roomId $vexitslist[1];#var MAPPER_SYNC $vexitslist[1]};
+            #var MAPPER_SYNC $vexitslist[1];     
+        };
+        #if {$listsize > 2} {
+            #if {$listsize < 4} {
+                #echo {%s} {Znalazlem pokoj <118><ffa>$current_room_short_desc<088> z wyjsciami na: <118><aff>$current_room_exits<088> $listsize razy.<088>};
+                
+                #var nearestexitdistance 100000;
+                #var nearestroomid $rmvnum;
+                #foreach {*vexits[]} {exitvector} {
+                    #sh $exitvector $vexits[$exitvector];
+                    #if {$vexits[$exitvector] < $nearestexitdistance} {
+                        #var nearestexitdistance $vexits[$exitvector];
+                        #var nearestroomid $exitvector;
+                    };
+                };
+                #if {$nearestroomid != $rmvnum} {
+                    #ec {Odnalazlem mapke na: $nearestroomid<088>};
+                    #map goto $nearestroomid;
+                    #var creatorMode 0;
+                    #if {$findmedebug} {
+                        #line ignore #sh {#debug <fac>findme:<088> Przekone kulke na: <028>$vexitslist[1]<088>};
+                    };    
+
+                    #var roomId $nearestroomid;
+                    #var MAPPER_SYNC $nearestroomid;
+                    #map get roomdata tmproomdata;
+                };
+            };
+        };
+    };
+};
+#nop FINDME SHORT ONLY;
+#alias findme_short {
+        #map get roomvnum rmvnum;
+        #var widocznewyjscia {$ROOM_INFO[exits]};
+        #var exitList {};
+        #var vexits {};
+        #var roomfound 0;
+
+    #nop ##################################;
+    #nop szukaj pokoju wedlug jego opisu;
+    #nop w lokacjach gmcp, opis jest koordynata;
+    #nop w reszcie lokacji, ostatnio widziany short w danej lokacji;
+    #nop;
+    #nop jesil jest jeden rezultat, przenies mape;
+    #nop ##################################;
+
+        #map list {} {} {$current_room_short_desc} {variable} {vexits};
+        #list vexitslist create {$vexits};
+        #list vexitslist {size} {listsize};
+
+        #if {$findmedebug} {
+            #math noOfRooms {$listsize / 2};
+            #line ignore #sh {#debug <fac>findme:<088> short <038>$current_room_short_desc<088> - lista zawiera: <018>$noOfRooms<088>.};
+            #nop $ROOM_INFO[exits];
+        };    
+        #if {$listsize == 2} {
+            #var roomfound {1};
+            #if {$vexitslist[1] != $rmvnum} {
+                #ec {Odnalazlem mapke na: $vexitslist[1]<088>};
+                #map goto $vexitslist[1];
+                #var creatorMode 0;
+                #if {$findmedebug} {
+                    #line ignore #sh {#debug <fac>findme:<088> short Przekone kulke na: <028>$vexitslist[1]<088>};
+                };    
+            #nop map map ${screen_w}x15;
+                #var roomId $vexitslist[1];
+                #var MAPPER_SYNC $vexitslist[1];
+                #map get roomdata tmproomdata;
+            };
+        };
+};
+#alias findme_exits {
+        #nop ##################################;
+        #nop szukamy pokoju wedlug opisu i dostepnych wyjsc;
+        #nop ##################################;
+        #var vexits {};
+        #list vexitslist clear;
+        #map list {$current_room_exits} {} {$current_room_short_desc} {variable} {vexits};
+        #list vexitslist create {$vexits};
+        #list vexitslist {size} {listsize};
+        #list vexitslist_filter clear;
+        #var velf 0;
+
+        #if {$findmedebug} {
+            #math noOfRooms {$listsize / 2};
+            #line ignore #sh {#debug <fac>findme:<088> exits <038>$current_room_short_desc <088>| <038>$current_room_exits<088> - lista zawiera: <018>$noOfRooms<088>.};
+            #nop $ROOM_INFO[exits];
+        };    
+        #if {$listsize == 2} {
+            #var roomfound {1};
+            #if {$vexitslist[1] != $rmvnum} {
+                #ec {Odnalazlem mapke na: $vexitslist[1]<088>};
+                #map goto $vexitslist[1];
+                #var creatorMode 0;
+                #var roomId $vexitslist[1];
+                #var MAPPER_SYNC $vexitslist[1]};
+                #if {$findmedebug} {
+                    #line ignore #sh {#debug <fac>findme:<088> exits Przekone kulke na: <028>$vexitslist[1]<088>};
+                };    
+            #var MAPPER_SYNC $vexitslist[1];
+        };
+};
+
+
+#nop #################################################################################;
+#nop Komenda UNDO - uzywana do cofania kulki;
+#nop #################################################################################;
+#alias undo {
+    #if {$trytomove == 1} {
+        #map undo;
+        #map goto $roomId;
+        #var trytomove 0;
+    };
+    #if {$semifrozen_status == 1} {
+        semifrozen_unset;   #nop wracam do zwyklego trybu;
+        #undelay {PATH %*}; #nop zatrzymuje reszte komendy;
+    };
+    #if {$pathinprogress > 0 && "$pdynamic" != "wlaczona"} {
+        /lc;
+    };
+}
+
+#nop #################################################################################;
+#nop Lazik;
+#nop #################################################################################;
+#var arkadirections[polnocny-wschod] {ne};
+#var arkadirections[poludniowy-wschod] {se};
+#var arkadirections[wschod] {e};
+#var arkadirections[zachod] {w};
+#var arkadirections[polnocny-zachod] {nw};
+#var arkadirections[poludniowy-zachod] {sw};
+#var arkadirections[polnoc] {n};
+#var arkadirections[poludnie] {s};
+#var arkadirections[gora] {u};
+#var arkadirections[dol] {d};
+#var arkadirections[gore] {u};
+
+#alias {pidz} {
+    #if {$b == 2} {
+        #switch {"$movedir"} {
+            #case {"zachod"} {#var lastmove {wschod}};
+            #case {"wschod"} {#var lastmove {zachod}};
+            #case {"gora"} {#var lastmove {dol}};
+            #case {"dol"} {#var lastmove {gora}};
+            #case {"polnoc"} {#var lastmove {poludnie}};
+            #case {"poludnie"} {#var lastmove {polnoc}};
+            #case {"poludniowy-zachod"} {#var lastmove {polnocny-wschod}};
+            #case {"poludniowy-wschod"} {#var lastmove {polnocny-zachod}};
+            #case {"polnocny-zachod"} {#var lastmove {poludniowy-wschod}};
+            #case {"polnocny-wschod"} {#var lastmove {poludniowy-zachod}};
+        };
+        #if {"$ROOM_INFO[exits][1]" == "$lastmove"} {
+            #var trytomove 1;
+            #send {$arkadirections[$ROOM_INFO[exits][2]]};
+            #map move {$arkadirections[$ROOM_INFO[exits][2]]};
+            #var movedir {$ROOM_INFO[exits][2]};
+        } {
+            #var trytomove 1;
+            #send {$arkadirections[$ROOM_INFO[exits][1]]};
+            #map move {$arkadirections[$ROOM_INFO[exits][1]]};
+            #var movedir {$ROOM_INFO[exits][1]};
+        };
+    };
+}
+
+#event {MAP CREATE ROOM} {
+    #if {"$pdynamic" == "wlaczona"} {
+        #if {$creatorMode < 1} {
+            #var creatorMode {1};
+            #var MAPPER_SYNC 0;
+            #var creatorHook {%0};
+        };
+    };
+};

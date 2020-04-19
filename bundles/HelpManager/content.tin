@@ -1,5 +1,9 @@
 #alias {/help$} {
-	#sh {<138>HelpManager: <158>Available manuals:<088>};
+	#line ignore {
+		#sh {+--------------------------------------+};
+		#sh {| TTNG::POMOC::KATEGORIE               |};
+		#sh {+--------------------------------------+};
+	};
 	#foreach {*bundlemanager_helps[]} {bh} {
 		#sh {<068>   $bundlemanager_helps[$bh] <088>};
 	};

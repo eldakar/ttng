@@ -1,0 +1,7 @@
+WARN Konfiguracje
+TUTOR 	/conf CombatGag
+		0 - wyswietlaj wszystko
+		1 - wyciczaj dodge, miss & parry
+		2 - wyciszaj dodge, miss, parry, hits, magic (pozostaw tylko spece)
+TUTOR 	/conf walkapvp wlaczona|wylaczona
+		Uproszczone wyswietlanie walki

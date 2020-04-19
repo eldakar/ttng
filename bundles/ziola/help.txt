@@ -1,0 +1,16 @@
+WARN Aliasy
+TUTOR 	worki
+		Komenda zaglada do wszystkich przytroczonych woreczkow,
+		zlicza ziola i tworzy liste aliasow do uzycia.
+TUTOR 	ziola
+		Wyswietla woreczki i aliasy
+TUTOR 	z[numer]
+		Uzyj danego ziola w kontekscie (Jednio ziolo ma rozne wlasciwosci)
+TUTOR 	wlziola
+		Komenda wklada ziola do przytroczonych woreczkow
+
+TUTOR 	dziur    - wez 1 dziurawiec
+TUTOR 	delion   - wez 1 deliona	
+TUTOR 	mandra   - wez 1 mandragora
+TUTOR 	przelot  - wez 1 przelot
+TUTOR 	przelot3 - wez 33 przeloty	

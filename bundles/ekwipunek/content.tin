@@ -1,0 +1,178 @@
+#alias {pochwa} {
+	#var ppochwa $ConfigManager_Configs[pochwa];
+};
+
+#alias {pochwa2} {
+	#var ppochwa2 $ConfigManager_Configs[pochwa2];
+};
+
+#alias {plecak} {
+	#var pplecak $ConfigManager_Configs[plecak];
+};
+
+#alias {sakiewka} {
+	#var psakiewka $ConfigManager_Configs[sakiewka];
+};
+
+#alias {przewijanie} {
+	#var jakieprzewijanie $ConfigManager_Configs[przewijanie];
+
+}
+
+#alias {dbb} {
+	#nop ####################################
+	#nop PIERWSZA BRON;
+	#if {"$ppochwa" == "uprzaz"} {
+		#if {"$pzawod" == "wks"} {powyciagnij bron z pierwszej uprzezy;gzdobadz jej};
+		#else {podobadz broni z pierwszej uprzezy};
+	};
+	#elseif {"$ppochwa" == "pochwa"} {
+		#if {"$pzawod" == "sc"} {powyciagnij bron z pierwszej pochwy;gzdobadz jej};
+		#if {"$pzawod" == "kg"} {gzdobadz szybko};
+		#else {podobadz broni z pierwszej pochwy};
+	};
+	#elseif {"$ppochwa" == "temblak"} {
+		#if {"$pzawod" == "sc"} {powyciagnij bron z pierwszego temblaka;gzdobadz jej};
+		podobadz broni z pierwszego temblaka;
+	};
+	#elseif {"$ppochwa" == "plecak"} {
+		wy bron;
+		dobadz broni;
+	};
+	#nop ####################################
+	#nop DRUGA BRON;
+	#if {"$ppochwa2" == "tarcza"} {
+		#if {"$pzawod" == "ks"} {gzzdejmij tarcze};
+		#else {zaloz tarcze};
+	};
+	#elseif {"$ppochwa2" == "pawez"} {
+		#if {"$pzawod" == "ks"} {gzzdejmij tarcze};
+		#else {zaloz pawez};
+	};
+	#elseif {"$ppochwa2" == "temblak"} {
+		#if {"$pzawod" == "sc"} {powyciagnij bron z drugiego temblaka;gzdobadz jej};
+		podobadz broni z drugiego temblaka;
+	};		
+	#elseif {"$ppochwa2" == "pochwa"} {
+		#if {"$pzawod" == "sc"} {powyciagnij bron z drugiej pochwy;gzdobadz jej};
+		podobadz broni z drugiej pochwy;
+	};
+	dobadz wszystkich broni;
+}
+#alias {obb} {
+	#nop ####################################
+	#nop PIERWSZA BRON;
+	#if {"$ppochwa" == "uprzaz"} {
+		#if {"$pzawod" == "wks"} {gzopusc bron;powsun ja do pierwszej uprzezy};
+		#else {powsun dobyta bron do pierwszej uprzezy};
+	};
+	#elseif {"$ppochwa" == "pochwa"} {
+		#if {"$pzawod" == "sc"} {gzopusc bron;powsun ja do pierwszej pochwy};
+		#if {"$pzawod" == "kg"} {gzprzewies dobyty miecz};
+		#else {powsun dobyta bron do pierwszej pochwy};
+	};
+	#elseif {"$ppochwa" == "temblak"} {
+		#if {"$pzawod" == "sc"} {gzopusc bron;powsun ja do pierwszego temblaka};
+		powsun bron do pierwszego temblaka;
+	};
+	#elseif {"$ppochwa" == "plecak"} {
+		wl dobyta bron;
+	}
+	#nop ####################################
+	#nop DRUGA BRON;
+	#if {"$ppochwa2" == "tarcza"} {
+		#if {"$pzawod" == "ks"} {gzzarzuc tarcze};
+		#else {zdejmij zalozona tarcze};
+	};
+	#elseif {"$ppochwa2" == "pawez"} {
+		#if {"$profiles_zawod" == "ks"} {gzzarzuc pawez};
+		#else {zdejmij zalozona pawez};
+	};	
+	#elseif {"$ppochwa2" == "temblak"} {
+		#if {"$pzawod" == "sc"} {gzopusc dobyta bron;powsun ja do drugiego temblaka};
+		powsun dobyta bron do drugiego temblaka;
+	};
+	#elseif {"$ppochwa2" == "pochwa"} {
+		#if {"$pzawod" == "sc"} {gzopusc dobyta bron;powsun ja do drugiej pochwy};
+		#else {powsun dobyta bron do drugiej pochwy};
+	};
+	#elseif {"$ppochwa2" == "plecak"} {
+		#if {"$pzawod" == "sc"} {gzopusc dobyta bron;wl ja};
+		#else {wl dobyta bron};
+	};
+
+}
+
+
+
+#alias {wy} {
+	#format inamelen {%L} {%1};
+	#if {$inamelen < 2} {
+		#if {"$pplecak" == "sakwa"} {zajrzyj do zalozonej sakwy};
+		#if {"$pplecak" == "plecak"} {zajrzyj do zalozonego plecaka};
+		#if {"$pplecak" == "torba"} {zajrzyj do zalozonej torby};
+		#if {"$pplecak" == "wor"} {zajrzyj do zalozonego wora};
+	};
+	#else {
+		#if {"$pplecak" == "sakwa"} {otworz zalozona sakwe;wez %0 z zalozonej sakwy;zamknij zalozona sakwe};
+		#if {"$pplecak" == "plecak"} {otworz zalozony plecak;wez %0 z zalozonego plecaka;zamknij zalozony plecak};
+		#if {"$pplecak" == "torba"} {otworz zalozona torbe;wez %0 z zalozonej torby;zamknij zalozona torbe};
+		#if {"$pplecak" == "wor"} {otworz zalozony wor;wez %0 z zalozonego wora;zamknij zalozony wor};
+	};
+}
+#alias {wl} {
+	#if {"$pplecak" == "sakwa"} {otworz zalozona sakwe;wloz %0 do zalozonej sakwy;zamknij zalozona sakwe};
+	#if {"$pplecak" == "plecak"} {otworz zalozony plecak;wloz %0 do zalozonego plecaka;zamknij zalozony plecak};
+	#if {"$pplecak" == "torba"} {otworz zalozona torbe;wloz %0 do zalozonej torby;zamknij zalozona torbe};
+	#if {"$pplecak" == "wor"} {otworz zalozony wor;wloz %0 do zalozonego wora;zamknij zalozony wor};
+}
+#alias {sak} {wy};
+#alias {dsak} {wl};
+
+#alias {wym}
+{
+	#switch {"$psakiewka"}
+	{		
+		#case {"sakiewka"} {otworz swoja sakiewke;wez monety ze swojej sakiewki;zamknij swoja sakiewke;};
+		#case {"szkatulka"} {otworz swoja szkatulke;wez monety ze swojej szkatulki;zamknij swoja szkatulke;};
+		#case {"sakwa"} {otworz swoja sakwe;wez monety ze swojej sakwy;zamknij swoja sakwe;};
+		#default {wy monety};
+	};
+}
+#alias {wlm}
+{
+	#switch {"$psakiewka"}
+	{		
+		#case {"sakiewka"} {otworz swoja sakiewke;wloz monety do swojej sakiewki;zamknij swoja sakiewke;};
+		#case {"szkatulka"} {otworz swoja szkatulke;wloz monety do swojej szkatulki;zamknij swoja szkatulke;};
+		#case {"sakwa"} {otworz swoja sakwe;wloz monety do swojej sakwy;zamknij swoja sakwe;};
+		#default {wl monety};
+	};	
+}
+
+#alias {/dos} {
+	otworz skrzynie;
+	wloz %0 do skrzyni;
+	zamknij skrzynie;
+} {1};
+
+#alias {/zes} {
+	otworz skrzynie;
+	wez %0 ze skrzyni;
+	zakmnij skrzynie;
+} {1};
+
+
+#action {ENTER} {
+	#if {"$jakieprzewijanie" == "automatyczne"} {
+		#send {};
+	};
+}
+
+#nop action {{*|!|$} (%d) %* .%*(%)} {
+	#line gag;
+}
+
+#alias {/wybierz} {
+
+} {1};

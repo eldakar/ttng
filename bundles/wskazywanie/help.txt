@@ -1,0 +1,18 @@
+WARN Konfiguracje
+TUTOR 	/conf atakkomenda
+		Ustawienie komendy do wykonania zabij. Naprzyklad ksatakuj.
+TUTOR 	/conf atakflagi
+		Kombinacja liter, np zw
+		z - zabij
+		w - wskaz
+		r - rozkaz
+		d - khpiesn (kult Khaine'a)
+		u - drwskaz (plyta druchii)
+		k - ksznienawidz (korsarze)
+TUTOR 	/conf zdejmowanie
+		auto - kazda proba zaslony, wysyla 'przestan zaslaniac'
+		off - wylacza powyzsze
+WARN Aliasy uzywajace powyzszych
+TUTOR 	_sugerowanywrog_
+TUTOR 	_sugerowanaobrona_
+TUTOR 	_zaznaczcel_
