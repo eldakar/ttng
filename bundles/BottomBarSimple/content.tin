@@ -16,6 +16,10 @@
 	#var ppasek $ConfigManager_Configs[pasekdolny];
 };
 
+#alias {meldujprzy} {
+	#var pmeldujprzy $ConfigManager_Configs[pasekdolny];
+};
+
 #alias {/zme} {
 	#if {"$duch[$avatarid][team]" == "true"} {
 		szepnij ob_$team_lead_id $zmeczenie[$charstate[fatigue]];
@@ -34,7 +38,7 @@
 			#var {state[$s]} {$charstate[$s]};
 		}
 	};
-	#if {$charstate[fatigue] > 0} {
+	#if {$charstate[fatigue] >= $pmeldujprzy} {
 		#if {"$duch[$avatarid][team]" == "true"} {
 			#line sub variables {
 				#alias melduj_zmeczenie {
