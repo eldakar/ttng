@@ -1,5 +1,5 @@
-#map read bundles/TTMap/map.map;
-#read bundles/TTMapEditor/data.tin;
+#map read bundles/mapa/map.map;
+#read bundles/mapeditor/data.tin;
 #map goto 1;
 #map at {1} {#map get roomdata MapStampValue};
 
@@ -34,7 +34,7 @@
 	#math vroomdata {$vroomdata + 1};
 	#map at {1} {#map set roomdata $vroomdata};
     #map at {1} {#map get roomdata MapStampValue};
-	#map write bundles/TTMap/map.map;
+	#map write bundles/mapa/map.map;
 };
 
 #nop ###################################;
