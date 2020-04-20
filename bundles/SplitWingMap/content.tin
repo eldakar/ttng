@@ -38,7 +38,8 @@
 }
 
 #alias {RaidBar_refresh} {
-    #draw circled box 1 $offsetx-1 $praidsize $offseth <088>$raidbartable;
+    #nop draw circled box 1 $offsetx-1 $praidsize $offseth <088>$raidbartable;
+    #draw blanked box 1 $offsetx $praidsize $offseth <088>$raidbartable;
 }
 #event {VARIABLE UPDATED objectnumsRefreshed} {
     RaidBar_refresh

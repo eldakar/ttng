@@ -9,6 +9,10 @@
 	#var pwskazywanie $ConfigManager_Configs[atakflagi];
 };
 
+#alias {zaslonaflagi} {
+  #var pzaslonaflagi $ConfigManager_Configs[zaslonaflagi];
+};
+
 #alias {atakkomenda} {
   #if {"$ConfigManager_Configs[atakkomenda]" == ""} {
     #var ConfigManager_Configs[atakkomenda] {zabij};
@@ -38,6 +42,47 @@
       };
     };
 }
+
+#alias {_zaslon_} 
+{
+  #if {"$CHAR_INFO[object_num]" == "%0"} {
+    #parse {$pzaslonaflagi} {zaslanianie_typ} {
+        #switch {"$zaslanianie_typ"} {
+          #case {"w"} {
+            #if {"$duch[$CHAR_INFO[object_num]][team_leader]" == "true"} {
+                      wskaz siebie jako cel obrony;
+            };
+          };
+          #case {"r"} {
+            #if {"$duch[$CHAR_INFO[object_num]][team_leader]" == "true"} {
+                      rozkaz druzynie zaslonic cie;
+            };
+          };
+        };
+    };    
+  } {
+    #parse {$pzaslonaflagi} {zaslanianie_typ} {
+        #switch {"$zaslanianie_typ"} {
+          #case {"w"} {
+            #if {"$duch[$CHAR_INFO[object_num]][team_leader]" == "true"} {
+                      wskaz ob_%0 jako cel obrony;
+            };
+          };
+          #case {"r"} {
+            #if {"$duch[$CHAR_INFO[object_num]][team_leader]" == "true"} {
+                      rozkaz druzynie zaslonic ob_%0;     #nop rozkaz;
+            };
+          };
+          #case {"z"} zaslon ob_%0;            #nop korki;
+        };
+    };
+  };
+
+  #if {"$pzdjeciezaslon" == "auto"} {
+        przestan zaslaniac;
+  };
+};
+
 
 #alias {_zaznaczcel_} {
   zabijcmd 1. wroga;

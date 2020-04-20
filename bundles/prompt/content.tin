@@ -79,9 +79,14 @@
 #nop #############################################################;
 #nop ############# ROZKAZY                 #######################;
 #nop #############################################################;
-#var rozkazlevel {10};
+#var rozkazlevel {15};
 #alias {rozkaz_start} {
 	#var rozkazlevel {0};
+	#delay {rozkazlevel15} {#var rozkazlevel {15};BottomBarTinyFugue;} {15};
+	#delay {rozkazlevel14} {#var rozkazlevel {14};BottomBarTinyFugue;} {14};
+	#delay {rozkazlevel13} {#var rozkazlevel {13};BottomBarTinyFugue;} {13};
+	#delay {rozkazlevel12} {#var rozkazlevel {12};BottomBarTinyFugue;} {12};	
+	#delay {rozkazlevel11} {#var rozkazlevel {11};BottomBarTinyFugue;} {11};
 	#delay {rozkazlevel10} {#var rozkazlevel {10};BottomBarTinyFugue;} {10};
 	#delay {rozkazlevel9} {#var rozkazlevel {9};BottomBarTinyFugue;} {9};
 	#delay {rozkazlevel8} {#var rozkazlevel {8};BottomBarTinyFugue;} {8};
@@ -297,6 +302,8 @@
 	rysuj_customs;
 	#nop RYSUJEMY PASKI GLOWNE;
 	rysuj_paski;
+	#nop RYSUJEMY PRZYCISKI WALKI;
+	rysuj_przyciski;
 };
 
 #alias rysuj_forme {
@@ -310,6 +317,12 @@
 	#line ignore #sh {$bbBGC  <138>$rozk2[w]$rozk2[w] o <138>$rozk2[e]$rozk2[e]  <088>} {-3} {1};
 	#line ignore #sh {$bbBGC  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d] <088>} {-2} {1};
 };
+#alias rysuj_przyciski {
+	#math {pozycjaprzyciskow} {$screencols - 42};
+	#line ignore #sh {${bbBGC}Atak    <088>ZAB${bbBGC} <088>WSK${bbBGC} <088>ROZ${bbBGC}    <088>} {-4} {$pozycjaprzyciskow};
+	#line ignore #sh {${bbBGC}Zaslona <088>ZAS${bbBGC} <088>WSK${bbBGC} <088>ROZ${bbBGC} <088>ZDE} {-3} {$pozycjaprzyciskow};
+};
+
 #alias rysuj_customs {
 	#draw {<088>$bbBGC} tile $screenrows-3 12 $screenrows-1 22 $bbBGC<ffa>$roza_custom;
 };
@@ -318,7 +331,7 @@
 	#math maxBarSize {($remainingArea / 3) - 10};
 	#math realFatigue {9 - $state[fatigue]};
 	#sh {${bbBGC}HP: [@buildBar{$state[hp];6;$maxBarSize;ada}<088>${bbBGC}]  MA: [@buildBar{$manewrlevel;5;$maxBarSize;ccc}<088>${bbBGC}]<088>} {-4} {23};
-	#sh {${bbBGC}ST: [@buildBar{$realFatigue;9;$maxBarSize;ddd}<088>${bbBGC}]  RO: [@buildBar{$rozkazlevel;10;$maxBarSize;ccc}<088>${bbBGC}]<088>} {-3} {23};
+	#sh {${bbBGC}ST: [@buildBar{$realFatigue;9;$maxBarSize;ddd}<088>${bbBGC}]  RO: [@buildBar{$rozkazlevel;15;$maxBarSize;ccc}<088>${bbBGC}]<088>} {-3} {23};
 	#sh {${bbBGC}MA: [@buildBar{$state[mana];8;$maxBarSize;aad}<088>${bbBGC}]  BL: [@buildBar{$blockselflevel;5;$maxBarSize;faa}<088>${bbBGC}]<088>} {-2} {23};
 };
 

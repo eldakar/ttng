@@ -6,6 +6,7 @@
 #list bundle_configs clear;
 	#list bundle_configs add {atakkomenda};
 	#list bundle_configs add {atakflagi};
+	#list bundle_configs add {zaslonaflagi};
 	#list bundle_configs add {zdejmowanie};
 	
 #list bundle_slots clear;

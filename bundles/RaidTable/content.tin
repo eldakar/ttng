@@ -392,10 +392,7 @@
 	
 	#line sub variables {
 		#alias _sugerowanaobrona_ {
-			zaslon ob_$team_najslabszy;
-		   	#if {"$pzdjeciezaslon" == "auto"} {
-            			przestan zaslaniac;
-        		};
+			_zaslon_ $team_najslabszy;
 		};
 	};
 
@@ -451,7 +448,7 @@
             #line substitute {variables} {#alias zp$indexchar {zaslon przed ob_$du}};
             #line substitute {variables} {#alias b$indexchar {zablokuj ob_$du}};
             #line substitute {variables} {#alias p$indexchar {przelam obrone ob_$du}};
-            #line substitute {variables} {#alias z$indexchar {zaslon ob_$du;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+            #line substitute {variables} {#alias z$indexchar {_zaslon_ $du}};
             #line substitute {variables} {#alias wz${indexchar} {gzwycofaj sie za ob_$du;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
             #line substitute {variables} {#alias z${indexchar}2 {opcje grupa 2;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
             #line substitute {variables} {#alias z${indexchar}3 {opcje grupa 3;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
