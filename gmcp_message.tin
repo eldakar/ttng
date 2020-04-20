@@ -22,6 +22,7 @@
 #nop DEBUG;	#line substitute {variables} {#line strip {#var gmcp_exits {$GMCPMSGS[text]}}};
 			#if {$MAPPER_SYNC == 0} {findme_exits};
 		    rysuj_roze;
+		    rysuj_customs;
 		    #if {$discovery == 1} {
 		    	/disc;
 		    };

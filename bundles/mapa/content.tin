@@ -243,6 +243,8 @@
     };
 }
 
+#var rozk2 {{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
+
 #function buduj_roze {
     #local b {0};
     #var roza_custom {};
@@ -287,9 +289,9 @@
             #case {"dol"} {#math {b} {$b + 1};#var {rozk2[d]} {V}};
             #case {"gora"} {#math {b} {$b + 1};#var {rozk2[u]} {A}};
             #default {
-                #format defexitlen {%L} {$ROOM_INFO[exits][$i]};
+                #format defexitlen {%L} {$ROOM_INFO[exits][1]};
                 #if {$defexitlen > 2} {
-                    #var roza_custom {$ROOM_INFO[exits][$i]};
+                    #var roza_custom {$ROOM_INFO[exits][1]};
                 };
             };
       };

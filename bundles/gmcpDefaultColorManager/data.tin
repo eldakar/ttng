@@ -111,9 +111,7 @@
 #var TinyFugueBars[blockself][3] {################     };
 #var TinyFugueBars[blockself][4] {#####################};
 
-#var manewrlevel {${c_stan_wysoki}rdy<088>};
 #var hiddenlevel {${c_stan_niski}off};
 #var weaponlevel {${c_stan_niski}off};
-#var blockselflevel {${c_stan_niski}$TinyFugueBars[blockself][0]};
 #var warninglevel {                  };
 

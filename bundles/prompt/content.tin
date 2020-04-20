@@ -12,10 +12,6 @@
 
 #var bbs_fixer 0;
 
-#alias {pasekdolny} {
-	#var ppasek $ConfigManager_Configs[pasekdolny];
-};
-
 #alias {meldujprzy} {
 	#var pmeldujprzy $ConfigManager_Configs[meldujprzy];
 };
@@ -51,55 +47,88 @@
 	BottomBarTinyFugue;
 };
 
-#alias {BottomBarClassic} {
-	#nop var global_bundle_slots_values[prompt][bottom] {$Config};
-	#draw violet tubed box $screenrows-3 1 $screenrows-1 $screencols {<088>hp: $bbshpbar[$state[hp]] ma: $bbsmanabar[$state[mana]] fa: $bbsstabar[$state[fatigue]] en: $state[encumbrance]       fo: $state[form] im: $state[improve]       in: $state[intox] he: $state[headache] st: $state[stuffed] so: $state[soaked]       pa: $state[panic]};
-};
-
 #nop #############################################################;
 #nop ############# UKRYWANIE               #######################;
 #nop #############################################################;
 #var hiddenlevel {${c_stan_niski}off};
 #action {Chowasz sie najlepiej jak potrafisz} {
 	#var hiddenlevel {${c_stan_sredni} 0%};BottomBarTinyFugue;
-	#delay {delayhidden1} {#var hiddenlevel {${c_stan_sredni}33%};BottomBarTinyFugue} {5};
-	#delay {delayhidden2} {#var hiddenlevel {${c_stan_sredni}66%};BottomBarTinyFugue} {10};
-	#delay {delayhidden3} {#var hiddenlevel {${c_stan_wysoki}on };BottomBarTinyFugue} {15};
+	#delay {delayhidden1} {#var hiddenlevel {${c_stan_sredni}33%}} {5};
+	#delay {delayhidden2} {#var hiddenlevel {${c_stan_sredni}66%}} {10};
+	#delay {delayhidden3} {#var hiddenlevel {${c_stan_wysoki}on }} {15};
 };
 #action {Nie jestes juz schowany} {
 	#undelay {delahidden%*};
 	#var hiddenlevel {${c_stan_niski}off};
-	BottomBarTinyFugue;
 };
 
 
 #nop #############################################################;
 #nop ############# MANEWRY                 #######################;
 #nop #############################################################;
-#var manewrlevel {${c_stan_wysoki}rdy<088>};
+#var manewrlevel {5};
 #alias {manewr_start} {
-	#var manewrlevel {${c_stan_niski} 5 };RaidBar_refresh;
-	#delay {manewrlevel5} {#var manewrlevel {${c_stan_wysoki}rdy<088>};RaidBar_refresh;} {5};
-	#delay {manewrlevel4} {#var manewrlevel {${c_stan_sredni} 1 <088>};RaidBar_refresh;} {4};
-	#delay {manewrlevel3} {#var manewrlevel {${c_stan_sredni} 2 <088>};RaidBar_refresh;} {3};
-	#delay {manewrlevel2} {#var manewrlevel {${c_stan_niski} 3 <088>};RaidBar_refresh;} {2};
-	#delay {manewrlevel1} {#var manewrlevel {${c_stan_niski} 4 <088>};RaidBar_refresh;} {1};
+	#var manewrlevel {0};BottomBarTinyFugue;
+	#delay {manewrlevel5} {#var manewrlevel {5};BottomBarTinyFugue;} {5};
+	#delay {manewrlevel4} {#var manewrlevel {4};BottomBarTinyFugue;} {4};
+	#delay {manewrlevel3} {#var manewrlevel {3};BottomBarTinyFugue;} {3};
+	#delay {manewrlevel2} {#var manewrlevel {2};BottomBarTinyFugue;} {2};
+	#delay {manewrlevel1} {#var manewrlevel {1};BottomBarTinyFugue;} {1};
+	
+};
+#nop #############################################################;
+#nop ############# ROZKAZY                 #######################;
+#nop #############################################################;
+#var rozkazlevel {10};
+#alias {rozkaz_start} {
+	#var rozkazlevel {0};
+	#delay {rozkazlevel10} {#var rozkazlevel {10};BottomBarTinyFugue;} {10};
+	#delay {rozkazlevel9} {#var rozkazlevel {9};BottomBarTinyFugue;} {9};
+	#delay {rozkazlevel8} {#var rozkazlevel {8};BottomBarTinyFugue;} {8};
+	#delay {rozkazlevel7} {#var rozkazlevel {7};BottomBarTinyFugue;} {7};
+	#delay {rozkazlevel6} {#var rozkazlevel {6};BottomBarTinyFugue;} {6};
+	#delay {rozkazlevel5} {#var rozkazlevel {5};BottomBarTinyFugue;} {5};
+	#delay {rozkazlevel4} {#var rozkazlevel {4};BottomBarTinyFugue;} {4};
+	#delay {rozkazlevel3} {#var rozkazlevel {3};BottomBarTinyFugue;} {3};
+	#delay {rozkazlevel2} {#var rozkazlevel {2};BottomBarTinyFugue;} {2};
+	#delay {rozkazlevel1} {#var rozkazlevel {1};BottomBarTinyFugue;} {1};
+	BottomBarTinyFugue;
+};
+#nop #############################################################;
+#nop ############# BLOKOWANIE TWOJE        #######################;
+#nop #############################################################;
+#var blockselflevel {0};
+#alias {blok_start} {
+	#var blockselflevel {0};
+	#delay {blockselflevel5} {#var blockselflevel {5};BottomBarTinyFugue;} {5};
+	#delay {blockselflevel4} {#var blockselflevel {4};BottomBarTinyFugue;} {4};
+	#delay {blockselflevel3} {#var blockselflevel {3};BottomBarTinyFugue;} {3};
+	#delay {blockselflevel2} {#var blockselflevel {2};BottomBarTinyFugue;} {2};
+	#delay {blockselflevel1} {#var blockselflevel {1};BottomBarTinyFugue;} {1};
+	BottomBarTinyFugue;
 };
 
-#nop ROZKAZY;	
+
+
+#nop ROZKAZY;
 #action {Wydajesz rozkaz %1} {
 	#line ignore #sh {<168>[  ROZKAZ  ] %0<088>};
 	manewr_start;
-	#line gag;
-};
-#action {Twoja wysoka forma pozwala %*} {manewr_start};
-#action {Na rozkaz %* zaslaniasz {go|ja} przed ciosami wrogow.} {
-	#line ignore #sh {\n<acf>[  ROZKAZ ZASLONA  ] %0<088>\n};
-	manewr_start;
+	rozkaz_start;
 	#line gag;
 };
 #action {Glosno wypowiadasz rozkaz, chyba jednak nikt cie nie zrozumial!} {
 	#line ignore #sh {<bad>[ROZKAZ NIEUDANY] %0<088>};
+	manewr_start;
+	rozkaz_start;
+	#line gag;
+};
+#nop MANEWRY;
+#action {Twoja wysoka forma pozwala %*} {
+	manewr_start;
+};
+#action {Na rozkaz %* zaslaniasz {go|ja} przed ciosami wrogow.} {
+	#line ignore #sh {\n<acf>[  ROZKAZ ZASLONA  ] %0<088>\n};
 	manewr_start;
 	#line gag;
 };
@@ -113,12 +142,10 @@
 	#delay {manewrDelay} {#var bbBGC {<G02>}} {0.1};
 	#line gag;
 };
-
 #action {Nie jestes jeszcze gotowa do wykonania kolejnego manewru.} {
 	#var bbBGC {<FAA>};
 	#delay {manewrDelay} {#var bbBGC {<G02>}} {0.1};#line gag;
 };
-
 #action {Nie zaslaniasz nikogo.} {
 	#line gag;
 };
@@ -190,7 +217,6 @@
 
 #action {%* rzuca sie na %* bezskutecznie %*} {
 	#line ignore #sh {<bad>[NIE PRZELAMAL] %0<088>};
-	manewr_start;
 	#line gag;
 };
 
@@ -215,82 +241,42 @@
 	};
 	#line gag;
 }
-#nop #############################################################;
-#nop ############# BLOKOWANIE TWOJE        #######################;
-#nop #############################################################;
-#alias {blok_start} {
-	#var blockselflevel {${c_stan_wysoki}$TinyFugueBars[blockself][0]};
-		BottomBarTinyFugue;
-	#delay {blockselflevel1} {#var blockselflevel {${c_stan_wysoki}$TinyFugueBars[blockself][1]<088>};BottomBarTinyFugue;} {1};
-	#delay {blockselflevel2} {#var blockselflevel {${c_stan_wysoki}$TinyFugueBars[blockself][2]<088>};BottomBarTinyFugue;} {2};
-	#delay {blockselflevel3} {#var blockselflevel {${c_stan_wysoki}$TinyFugueBars[blockself][3]<088>};BottomBarTinyFugue;} {3};
-	#delay {blockselflevel4} {#var blockselflevel {${c_stan_wysoki}$TinyFugueBars[blockself][4]<088>};BottomBarTinyFugue;} {4};
-};
-#action {Przymierzasz sie do odciecia} {blok_start};
-#action {Zajmujesz pozycje umozliwiajaca odciecie} {
-	#var warninglevel {${c_stan_sredni}     BLOKUJESZ    };
-	#var blockselflevel {${c_stan_wysoki}$TinyFugueBars[blockself][0]};
-	BottomBarTinyFugue;
-};
-#action {{Przerywasz przygotowania do odciecia|Przestajesz odcinac droge |Udaje ci sie ominac | omija twoj nieskuteczny |Uciekl{e|a}s|przestaje%* odcinac| podazasz}} {
-	#var warninglevel {${c_stan_sredni}                  };
-	#var blockselflevel {${c_stan_wysoki}$TinyFugueBars[blockself][0]};
-	#undelay {blockself%*};
-	BottomBarTinyFugue;
-};
+
+#nop BLOCKOWANIE;
+#nop action {Przymierzasz sie do odciecia} {blok_start};
+#nop action {Zajmujesz pozycje umozliwiajaca odciecie};
+#nop action {{Przerywasz przygotowania do odciecia|Przestajesz odcinac droge |Udaje ci sie ominac | omija twoj nieskuteczny |Uciekl{e|a}s|przestaje%* odcinac| podazasz}};
 
 #nop #############################################################;
 #nop ############# BLOKOWANIE W CIEBIE     #######################;
 #nop #############################################################;
-#alias {blok2_start} {
-	#undelay {block2%*};
-	#var blockselflevel {${c_stan_niski}$TinyFugueBars[blockself][0]};
-		BottomBarTinyFugue;
-	#delay {block2level1} {#var blockselflevel {${c_stan_niski}$TinyFugueBars[blockself][1]<088>};BottomBarTinyFugue;} {1};
-	#delay {block2level2} {#var blockselflevel {${c_stan_niski}$TinyFugueBars[blockself][2]<088>};BottomBarTinyFugue;} {2};
-	#delay {block2level3} {#var blockselflevel {${c_stan_niski}$TinyFugueBars[blockself][3]<088>};BottomBarTinyFugue;} {3};
-	#delay {block2level4} {#var blockselflevel {${c_stan_niski}$TinyFugueBars[blockself][4]<088>};BottomBarTinyFugue;} {4};
-};
 #action {przymierza sie do odciecia ci drogi ucieczki} {
-	blok2_start;
+	blok_start;
 };
 #action {zajmuje pozycje umozliwiajaca odciecie ci drogi ucieczki} {
-	#var blockselflevel {${c_stan_wysoki}$TinyFugueBars[blockself][0]};
-	#var warninglevel {${c_stan_niski}   ZABLOKOWANY    };
 	BottomBarTinyFugue;
 };
 #action {przestaje odcinac twoja droge ucieczki} {
-	#var warninglevel {${c_stan_sredni}                  };BottomBarTinyFugue;
+	#var blockselflevel 0;BottomBarTinyFugue;
 };
 
 
 #nop #############################################################;
 #nop ############# WARNINGS                #######################;
 #nop #############################################################;
-#action {{Powoli osuwasz sie na ziemie|Potem robi sie ciemno|Sila uderzania zamroczyla cie|czujesz, ze tracisz przytomnosc|Nagle czujesz jak na glowe spada ci ciezki sznur|Nagle czujesz, ze tracisz kontrole nad swym cialem| wali cie na odlew %* chwiejesz|ze swiat przed twoimi oczami niknie|Przymroczony tym uderzeniem czujesz jak nogi|Swiat przed twoimi oczami ciemnieje. Czujesz, ze tracisz wzrok!}} {
-	#var warninglevel {${c_stan_sredni}     OGLUSZONY    };BottomBarTinyFugue;
-};
-#action {{Powoli dochodzisz do siebie|Czujesz jak slabosc po zadanym ciosie w glowe mija|Udaje ci sie uwolnic z sieci|Powoli odzyskujesz swobode ruchow}} {
-	#var warninglevel {${c_stan_sredni}                  };BottomBarTinyFugue;
-};
-#action {{wytraca ci|Uderzenie jest tak silne, ze bezwiednie puszczasz|Czujesz potezne szarpniecie|Bezwladnie opuszczasz}} {
-	#var warninglevel {${c_stan_sredni}     WYRTACONY    };BottomBarTinyFugue;
-};
+#nop action {{Powoli osuwasz sie na ziemie|Potem robi sie ciemno|Sila uderzania zamroczyla cie|czujesz, ze tracisz przytomnosc|Nagle czujesz jak na glowe spada ci ciezki sznur|Nagle czujesz, ze tracisz kontrole nad swym cialem| wali cie na odlew %* chwiejesz|ze swiat przed twoimi oczami niknie|Przymroczony tym uderzeniem czujesz jak nogi|Swiat przed twoimi oczami ciemnieje. Czujesz, ze tracisz wzrok!}} {};
+#nop action {{Powoli dochodzisz do siebie|Czujesz jak slabosc po zadanym ciosie w glowe mija|Udaje ci sie uwolnic z sieci|Powoli odzyskujesz swobode ruchow}} {};
+#nop action {{wytraca ci|Uderzenie jest tak silne, ze bezwiednie puszczasz|Czujesz potezne szarpniecie|Bezwladnie opuszczasz}} {};
 
 
 #nop #############################################################;
 #nop ############# WEAPONS                 #######################;
 #nop #############################################################;
-#action {{{D|d}obywasz|Wiedziony naglym instynktem siegasz|Pelnym pewnosci siebie ruchem dobywasz| twego pewnego chwytu, | zaciskasz dlon |Trzymasz|dobywajac}} {
-	#var weaponlevel {${c_stan_wysoki}on };
-	BottomBarTinyFugue;
-};
-#action {{Opuszczasz | ogarniajac wzrokiem cala okolice| opuszczasz | rozluzniasz uchwyt | do tej pory twe serce }} {
-	#var weaponlevel {${c_stan_niski}off};
-	BottomBarTinyFugue;
-};
+#nop action {{{D|d}obywasz|Wiedziony naglym instynktem siegasz|Pelnym pewnosci siebie ruchem dobywasz| twego pewnego chwytu, | zaciskasz dlon |Trzymasz|dobywajac}} {};
+#nop action {{Opuszczasz | ogarniajac wzrokiem cala okolice| opuszczasz | rozluzniasz uchwyt | do tej pory twe serce }} {};
 
 #var qbvar {                                                                 };
+
 
 #var bbBGC {<G02>};
 #event {VARIABLE UPDATED bbBGC} {
@@ -302,63 +288,39 @@
 
 #alias {BottomBarTinyFugue} {
 	#var global_bundle_slots_values[prompt][bottom] {3};
-	#var hspac {};
-	#math {spacelen} {$screencols - 100};
-	#loop {1} {$spacelen} {mee} {#var hspac {$hspac }};
-
-	#if {"$ppasek" == "stary"} {
-		#line ignore #sh {$bbBGC   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u]   <088>${bbBGC}K:[$TinyFugueBars[hp][$state[hp]]<088>${bbBGC}] Z:[$TinyFugueBars[fatigue][$state[fatigue]]<088>${bbBGC}] M:[$TinyFugueBars[mana][$state[mana]]<088>${bbBGC}]$hspac Forma : $state[form] Glod: $state[stuffed]<088>} {-4};
-		#line ignore #sh {$bbBGC  <138>$rozk2[w]$rozk2[w] o <138>$rozk2[e]$rozk2[e]    <088>${bbBGC}                                                                     $hspac Panika: $state[panic] Prag: $state[soaked]<088>} {-3};
-		#line ignore #sh {$bbBGC  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d]   <088>${bbBGC}B:[$qbvar<088>${bbBGC}]$hspac Ciezar: $state[encumbrance] Pija: $state[intox]<088>} {-2};	
-	} {
-		#line ignore #sh {$bbBGC   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u]   <088>${bbBGC}K:[$TinyFugueBars[hp][$state[hp]]<088>${bbBGC}] Z:[$TinyFugueBars[fatigue][$state[fatigue]]<088>${bbBGC}] M:[$TinyFugueBars[mana][$state[mana]]<088>${bbBGC}]$hspac Forma : $state[form] Glod: $state[stuffed]<088>} {-4};
-		#line ignore #sh {$bbBGC  <138>$rozk2[w]$rozk2[w] o <138>$rozk2[e]$rozk2[e]    <088>${bbBGC}                                                                     $hspac Panika: $state[panic] Prag: $state[soaked]<088>} {-3};
-		#line ignore #sh {$bbBGC  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d]   <088>${bbBGC}B:[$qbvar<088>${bbBGC}]$hspac Ciezar: $state[encumbrance] Pija: $state[intox]<088>} {-2};	
-		barstest;
-	}
+	#draw {$bbBGC} tile $screenrows-3 1 $screenrows-1 $screencols-1;
+	#nop RYSUJEMY ROZE PO LEWEJ;
+	rysuj_roze; 
+	#nop RYSUJEMY PASEK FORMY;
+	rysuj_forme;
+	#nop RYSUJEMY CUSTOM EXITS;
+	rysuj_customs;
+	#nop RYSUJEMY PASKI GLOWNE;
+	rysuj_paski;
 };
 
-#alias rysuj_roze {
-	#line ignore #sh {$bbBGC   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u]<088>} {-4} {1};
-	#line ignore #sh {$bbBGC  <138>$rozk2[w]$rozk2[w] o <138>$rozk2[e]$rozk2[e]<088>} {-3} {1};
-	#line ignore #sh {$bbBGC  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d]<088>} {-2} {1};
-};
-
-#alias barstest {
-	#math barcols {($screencols - 32) / 3};
-
-	#var hpbar {};
-	#math curhp {$state[hp]};
-	#math hpslot {($barcols - 2) / 6}; 
-	#math hpmodu {($barcols - 2) % 6};
-	#math hplen {($curhp * $hpslot) + $hpmodu};
-	#loop {1} {$hplen} {hpl} {#var hpbar {$hpbar#};};
-
-	#var stbar {};
-	#math curst {9 - $state[fatigue]};
-	#math stslot {($barcols - 2) / 9}; 
-	#math stmodu {($barcols - 2) % 9};
-	#math stlen {($curst * $stslot) + $stmodu};
-	#loop {1} {$stlen} {stl} {#var stbar {$stbar#};};
-
-	#var mnbar {};
-	#math curmn {$state[mana] + 1};
-	#math mnslot {($barcols - 2) / 9}; 
-	#math mnmodu {($barcols - 2) % 9};
-	#math mnlen {($curmn * $mnslot) + $mnmodu};
-	#loop {1} {$mnlen} {mnl} {#var mnbar {$mnbar#};};
-
-
-	#draw {<088>$bbBGC} jeweled box $screenrows-3 12 $screenrows-1 12+$barcols <afa>$hpbar$bbBGC;
-	#draw {<088>$bbBGC} jeweled box $screenrows-3 12+$barcols $screenrows-1 12+$barcols+$barcols <078>$bbBGC$stbar$bbBGC;
-	#draw {<088>$bbBGC} jeweled box $screenrows-3 12+$barcols+$barcols $screenrows-1 12+$barcols+$barcols+$barcols <048>$bbBGC$mnbar$bbBGC;
-};
-
-#alias zegartest {
-	#sh {$bgtop$clockrender[color][10]$clockrender[char][10]<088>$bgtop$clockrender[color][11]$clockrender[char][11]<088>$bgtop$clockrender[color][12]$clockrender[char][12]<088>$bgtop$clockrender[color][1]$clockrender[char][1]<088>$bgbot$clockrender[color][2]$clockrender[char][2]<088>};
-	#sh {$bgtop$clockrender[color][9]$clockrender[char][9] $clockhourpane$bgbot   $clockrender[color][3]$clockrender[char][3]<088>};
-	#sh {$bgbot$clockrender[color][8]$clockrender[char][8]<088>$bgbot$clockrender[color][7]$clockrender[char][7]<088>$bgbot$clockrender[color][6]$clockrender[char][6]<088>$bgbot$clockrender[color][5]$clockrender[char][5]<088>$bgbot$clockrender[color][4]$clockrender[char][4]<088>$bgbot<088>};
+#alias rysuj_forme {
+	#math {pozycjapaskaformy} {$screencols - 16};
+	#line ignore #sh {${bbBGC}Forma : $state[form] Glod: $state[stuffed]<088>} {-4} {$pozycjapaskaformy};
+	#line ignore #sh {${bbBGC}Panika: $state[panic] Prag: $state[soaked]<088>} {-3} {$pozycjapaskaformy};
+	#line ignore #sh {${bbBGC}Ciezar: $state[encumbrance] Pija: $state[intox]<088>} {-2} {$pozycjapaskaformy};
 }
+#alias rysuj_roze {
+	#line ignore #sh {$bbBGC   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u] <088>} {-4} {1};
+	#line ignore #sh {$bbBGC  <138>$rozk2[w]$rozk2[w] o <138>$rozk2[e]$rozk2[e]  <088>} {-3} {1};
+	#line ignore #sh {$bbBGC  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d] <088>} {-2} {1};
+};
+#alias rysuj_customs {
+	#draw {<088>$bbBGC} tile $screenrows-3 12 $screenrows-1 22 $bbBGC<ffa>$roza_custom;
+};
+#alias rysuj_paski {
+	#math remainingArea {$screencols - (16 + 10 + 12)};
+	#math maxBarSize {($remainingArea / 3) - 10};
+	#math realFatigue {9 - $state[fatigue]};
+	#sh {${bbBGC}HP: [@buildBar{$state[hp];6;$maxBarSize;ada}<088>${bbBGC}]  MA: [@buildBar{$manewrlevel;5;$maxBarSize;ccc}<088>${bbBGC}]<088>} {-4} {23};
+	#sh {${bbBGC}ST: [@buildBar{$realFatigue;9;$maxBarSize;ddd}<088>${bbBGC}]  RO: [@buildBar{$rozkazlevel;10;$maxBarSize;ccc}<088>${bbBGC}]<088>} {-3} {23};
+	#sh {${bbBGC}MA: [@buildBar{$state[mana];8;$maxBarSize;aad}<088>${bbBGC}]  BL: [@buildBar{$blockselflevel;5;$maxBarSize;faa}<088>${bbBGC}]<088>} {-2} {23};
+};
 
 #nop 1. current state;
 #nop 2. max state;
@@ -366,11 +328,15 @@
 #nop 4. colour;
 #function buildBar {
 	#local outputbar {};
-	#math curst {%1};
-	#math stslot {%3 / %2}; 
-	#math stmodu {%3 % %2};
-	#math stlen {($curst * $stslot) + $stmodu};
-	#loop {1} {$stlen} {stl} {#local outputbar {$outputbar#};};
-	#loop {$stlen} {%3} {stl}  {#local outputbar {$outputbar };};
-	#return {<%4>$outputbar<088>;
+	#if {%1 > 0} {
+		#local curst {%1};
+		#math stslot {%3 / %2}; 
+		#math stmodu {%3 % %2};
+		#math stlen {($curst * $stslot) + $stmodu};
+		#loop {1} {$stlen} {stl} {#local outputbar {$outputbar#};};
+		#loop {$stlen} {%3} {stl}  {#local outputbar {$outputbar };};
+	} {
+		#loop {0} {%3} {stl} {#local outputbar {$outputbar };};
+	};
+	#return {<%4>$outputbar<088>};
 };
