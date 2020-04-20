@@ -1,3 +1,3 @@
-#read bundles/TTMap/Data/lazik.tin;
-#read bundles/TTMap/Data/desync.tin;
-#read bundles/TTMap/Data/terrain.tin;
+#read bundles/mapa/Data/lazik.tin;
+#read bundles/mapa/Data/desync.tin;
+#read bundles/mapa/Data/terrain.tin;

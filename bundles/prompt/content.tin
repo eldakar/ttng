@@ -359,3 +359,18 @@
 	#sh {$bgtop$clockrender[color][9]$clockrender[char][9] $clockhourpane$bgbot   $clockrender[color][3]$clockrender[char][3]<088>};
 	#sh {$bgbot$clockrender[color][8]$clockrender[char][8]<088>$bgbot$clockrender[color][7]$clockrender[char][7]<088>$bgbot$clockrender[color][6]$clockrender[char][6]<088>$bgbot$clockrender[color][5]$clockrender[char][5]<088>$bgbot$clockrender[color][4]$clockrender[char][4]<088>$bgbot<088>};
 }
+
+#nop 1. current state;
+#nop 2. max state;
+#nop 3. max width;
+#nop 4. colour;
+#function buildBar {
+	#local outputbar {};
+	#math curst {%1};
+	#math stslot {%3 / %2}; 
+	#math stmodu {%3 % %2};
+	#math stlen {($curst * $stslot) + $stmodu};
+	#loop {1} {$stlen} {stl} {#local outputbar {$outputbar#};};
+	#loop {$stlen} {%3} {stl}  {#local outputbar {$outputbar };};
+	#return {<%4>$outputbar<088>;
+};
