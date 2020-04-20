@@ -60,9 +60,18 @@
 #action {Drakkar doplywa do celu swojej podrozy.} {
 	#unticker plyniemy;
 	#echo {${c_noob}Drakkar: [ $plyniemy_sekundy sekund ]<088> %0};
+	qr porty_i_przystanie;
 	#line gag;
 };
 
+#action {Drakkar odplywa od brzegu.} {
+ 	qr porty_i_przystanie;
+ }
+
+#alias porty_i_przystanie {
+	sprawdz liste portow;
+	wybierz;
+};
 
 #action {%* Odleglosc (mile)%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*} 
 {
