@@ -39,7 +39,6 @@
 
 #alias {RaidBar_refresh} {
     #draw circled box 1 $offsetx-1 $praidsize $offseth <088>$raidbartable;
-    #line ignore #sh { <bad>manewr: $manewrlevel <bad> rozkaz: <128>rdy<bad> bron: $weaponlevel<088> } {1} {$offsetx + 3};    
 }
 #event {VARIABLE UPDATED objectnumsRefreshed} {
     RaidBar_refresh
