@@ -1,5 +1,4 @@
 bundles/ConfigManager/Profiles/*
-bundles/mapka/map.map
 bundles/EquipmentStatus/sprzet.class
 bundles/RaidTable/data.tin
 stats-*
