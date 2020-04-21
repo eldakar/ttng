@@ -193,10 +193,9 @@
     #screen get ROWS sr;
     #screen get SPLIT_BOT_BAR sb;
     #math topButtonsFrameBorder {$sr - $sb};
-    #line ignore #sh {<028>Mouse> <128>Coordinates:<g08> %0 %1 %2 %3<088>};
     #if {%0 >= $topButtonsFrameBorder && %0 < $topButtonsFrameBorder+5 && %1 > 1 && %1 < $screencols} {
-        #math currRow {%0 - ($topButtonsFrameBorder+3)};
-        #math currCol {(%1 - 1) / 4};
+        #math currRow {%0 - ($topButtonsFrameBorder)};
+        #math currCol {($screencols - %1 + 1) / 4};
 
         #line ignore #sh {<028>Mouse> <128>Button Click [$currRow] [$currCol]};
     };
@@ -248,4 +247,78 @@
     #map center;
     #map run {%0} {0.25};
     #var pathinprogress 1;
+};
+
+#nop pwskazywanie;
+#nop pzaslonaflagi;
+
+#var buttons[0][8][label] {ZAB};
+#var buttons[0][8][status] {off};
+#var buttons[0][8][press] {wskazywanie_swap};
+#var buttons[0][7][label] {WSK};
+#var buttons[0][7][status] {off};
+#var buttons[0][7][press] {wskazywanie_swap};
+#var buttons[0][6][label] {ROZ};
+#var buttons[0][6][status] {off};
+#var buttons[0][6][press] {wskazywanie_swap};
+
+#var buttons[1][8][label] {ZAS};
+#var buttons[1][8][status] {off};
+#var buttons[1][8][press] {zaslona_swap};
+#var buttons[1][7][label] {WSK};
+#var buttons[1][7][status] {off};
+#var buttons[1][7][press] {zaslona_swap};
+#var buttons[1][6][label] {ROZ};
+#var buttons[1][6][status] {off};
+#var buttons[1][6][press] {zaslona_swap};
+
+
+#event {VARIABLE UPDATED pwskazywanie} {
+    #regex {$pwskazywanie} {z} {
+        #var buttons[0][8][label] {<BAA><fff>ZAB<088>};
+        #var buttons[0][8][status] {on};
+    } {
+        #var buttons[0][8][label] {ZAB};
+        #var buttons[0][8][status] {off};
+    };
+    #regex {$pwskazywanie} {w} {
+        #var buttons[0][7][label] {<BAB><fff>WSK<088>};
+        #var buttons[0][7][status] {on};
+    } {
+        #var buttons[0][7][label] {WSK};
+        #var buttons[0][7][status] {off};
+    };
+    #regex {$pwskazywanie} {r} {
+        #var buttons[0][6][label] {<ABB><fff>ROZ<088>};
+        #var buttons[0][6][status] {on};
+    } {
+        #var buttons[0][6][label] {ROZ};
+        #var buttons[0][6][status] {off};
+    };
+    rysuj_przyciski;
+};
+
+#event {VARIABLE UPDATED pzaslonaflagi} {
+    #regex {$pzaslonaflagi} {z} {
+        #var buttons[1][8][label] {<AAB><fff>ZAS<088>};
+        #var buttons[1][8][status] {on};
+    } {
+        #var buttons[1][8][label] {ZAB};
+        #var buttons[1][8][status] {off};
+    };
+    #regex {$pzaslonaflagi} {w} {
+        #var buttons[1][7][label] {<BAB><fff>WSK<088>};
+        #var buttons[1][7][status] {on};
+    } {
+        #var buttons[1][7][label] {WSK};
+        #var buttons[1][7][status] {off};
+    };
+    #regex {$pzaslonaflagi} {r} {
+        #var buttons[1][6][label] {<ABB><fff>ROZ<088>};
+        #var buttons[1][6][status] {on};
+    } {
+        #var buttons[1][6][label] {ROZ};
+        #var buttons[1][6][status] {off};
+    };
+    rysuj_przyciski;
 };
