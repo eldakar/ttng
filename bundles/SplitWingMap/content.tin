@@ -188,6 +188,19 @@
         };
     };
     #nop sh {curright = $curright | curbott = $curbott | right = $right | top = $top | topdrag: $topdrag rightdrag: $rightdrag map: $mapcenter buttons $mapbuttons | chatdrag: $chatdrag};
+
+
+    #screen get ROWS sr;
+    #screen get SPLIT_BOT_BAR sb;
+    #math topButtonsFrameBorder {$sr - $sb};
+    #line ignore #sh {<028>Mouse> <128>Coordinates:<g08> %0 %1 %2 %3<088>};
+    #if {%0 >= $topButtonsFrameBorder && %0 < $topButtonsFrameBorder+5 && %1 > 1 && %1 < $screencols} {
+        #math currRow {%0 - ($topButtonsFrameBorder+3)};
+        #math currCol {(%1 - 1) / 4};
+
+        #line ignore #sh {<028>Mouse> <128>Button Click [$currRow] [$currCol]};
+    };
+
 }
 
 #event {RELEASED MOUSE BUTTON ONE}

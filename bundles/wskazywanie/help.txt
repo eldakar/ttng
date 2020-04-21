@@ -9,6 +9,10 @@ TUTOR 	/conf atakflagi
 		d - khpiesn (kult Khaine'a)
 		u - drwskaz (plyta druchii)
 		k - ksznienawidz (korsarze)
+TUTOR 	/conf zaslonaflagi
+		z - zaslon
+		w - wskaz
+		r - rozkaz
 TUTOR 	/conf zdejmowanie
 		auto - kazda proba zaslony, wysyla 'przestan zaslaniac'
 		off - wylacza powyzsze
