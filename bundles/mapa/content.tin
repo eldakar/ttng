@@ -76,16 +76,16 @@
 } {1};
 
 #alias {/sprawdzanie} {
-    #alias {move_n} {#send {sprawdz polnoc};#send n;#var trytomove 1;#var movedir {polnoc}};
-    #alias {move_s} {#send {sprawdz polnoc};#send s;#var trytomove 1;#var movedir {poludnie}};
-    #alias {move_e} {#send {sprawdz polnoc};#send e;#var trytomove 1;#var movedir {wschod}};
-    #alias {move_w} {#send {sprawdz polnoc};#send w;#var trytomove 1;#var movedir {zachod}};
-    #alias {move_d} {#send {sprawdz polnoc};#send d;#var trytomove 1;#var movedir {dol}};
-    #alias {move_u} {#send {sprawdz polnoc};#send u;#var trytomove 1;#var movedir {gora}};
-    #alias {move_ne} {#send {sprawdz polnoc};#send ne;#var trytomove 1;#var movedir {polnocny-wschod}};
-    #alias {move_nw} {#send {sprawdz polnoc};#send nw;#var trytomove 1;#var movedir {polnocny-zachod}};
-    #alias {move_sw} {#send {sprawdz polnoc};#send sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
-    #alias {move_se} {#send {sprawdz polnoc};#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};    
+    #alias {move_n} {sprawdz polnoc;#send n;#var trytomove 1;#var movedir {polnoc}};
+    #alias {move_s} {sprawdz polnoc;#send s;#var trytomove 1;#var movedir {poludnie}};
+    #alias {move_e} {sprawdz polnoc;#send e;#var trytomove 1;#var movedir {wschod}};
+    #alias {move_w} {sprawdz polnoc;#send w;#var trytomove 1;#var movedir {zachod}};
+    #alias {move_d} {sprawdz polnoc;#send d;#var trytomove 1;#var movedir {dol}};
+    #alias {move_u} {sprawdz polnoc;#send u;#var trytomove 1;#var movedir {gora}};
+    #alias {move_ne} {sprawdz polnoc;#send ne;#var trytomove 1;#var movedir {polnocny-wschod}};
+    #alias {move_nw} {sprawdz polnoc;#send nw;#var trytomove 1;#var movedir {polnocny-zachod}};
+    #alias {move_sw} {sprawdz polnoc;#send sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
+    #alias {move_se} {sprawdz polnoc;#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};    
 } {1};
 
 
@@ -480,6 +480,7 @@
             #default {SplitWingMap_Journal_5 $outputstr;};
         };
     };
+    RaidBar_refresh;
 };
 
 

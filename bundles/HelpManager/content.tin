@@ -16,27 +16,13 @@
 } {1};
 
 #alias {man_read} {
-	#var manline {};
-	#script {man_file} {
-		cat %0;
-	};
-	#echo {<138>HelpManager: <158>%0<088>};
+	#high {/conf} {<cca>};
+	#action {TUTOR%*} {#sh <add>%%1;#line gag};
+	#action {WARN%*} {#sh <caa>%%1;#line gag};
 
-	#foreach {*man_file[]} {mf} {
-		#regexp {$man_file[$mf]} {TUTOR %*} {
-			#local tmpvar {&1};
-			#replace {tmpvar} {\t} {      };
-			#sh {<148>$tmpvar<088>};
-		} {
-			#regexp {$man_file[$mf]} {WARN %*} {
-				#local tmpvar {&1};
-				#replace {tmpvar} {\t} {      };
-				#sh {<118>$tmpvar<088>};
-			} {
-				#local tmpvar {$man_file[$mf]};
-				#replace {tmpvar} {\t} {      };
-				#sh {<068>$tmpvar<088>};
-			};
-		};
-	};
+	#echo {<138>HelpManager: <158>%0<088>};
+	#scan {txt} {%1};
+	#unhigh {/conf};
+	#unaction {TUTOR%*};
+	#unaction {WARN%*};
 }

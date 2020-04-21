@@ -20,14 +20,12 @@
 #high {antyczn%w zdobion%w sztylet%w} {<118><caf>};
 #high {ciemn%w owaln%w mask%w} {<118><caf>};
 #high {ciemn%w owaln%w mask%w} {<118><caf>};
-#high {ciezki%w krwist%w amulet%w} {<118><caf>};
 #high {czarnoblekitn%w pulsujac%w morgenstern%w} {<118><caf>};
 #high {czarn%w zdobion%w amulet%w} {<118><caf>};
 #high {czerwon%w zakrwawion%w pierscien%w} {<118><caf>};
 #high {dlug%w czarn%w szat%w} {<118><caf>};
 #high {dlug%w krasnoludzk%w bajdan%w} {<118><caf>};
 #high {dlugi%w runiczn%w korba%w} {<118><caf>};
-#high {szar%w wygodn%w par%w but%w} {<118><caf>};
 #high {mistern%w snieznobial%w harpu%w} {<118><caf>};
 #high {rezonujac%w krysztalow%w mlot%w} {<118><caf>}; 
 #high {szylkretow%w falist%w sztyle%w} {<118><caf>}; 
@@ -65,6 +63,7 @@
 #sub {masywn%w oksydowan%w pas%w} {<118><caf>%0 <088>(<028>+<fca>sila<088>)};
 #sub {jasniejac%w zdobion%w jatagan%w}{<118><caf>%0 <088>(<138>swiatlo<088>)};
 #sub {kruczoczarn%w mistern%w mie%w} {<118><caf>%0 <088>(<028>+hp<088>)};
+#sub {szar%w wygodn%w par%w but%w} {<118><caf>%0 <088>(<fca>bez sladow<088>)};
 
 #sub {gorejac%w dlug%w talwar%w} {<118><caf>%0 <088>(<018>ogien<088>)};
 #sub {niezwyk%w koscian%w topor%w} {<118><caf>%0 <088>(<018>wpraw kamien<088>)};
@@ -72,7 +71,7 @@
 #sub {forem%w iskrzac%w mlot%w} {<118><caf>%0 <088>(<018>1h mlot<088>)};
 #sub {szkarlatn%w rogat%w tarcz%w} {<118><caf>%0 <088>(<018>Odpornosci:+niemagiczne,spaczen,czysta magia<088>)};
 #sub {obosieczn%w gwiezdn%w topo%w} {<118><caf>%0 <088>(<028>+GOBLINY<048> 1,5Hand!<088>)};
-
+#sub {ciezki%w krwist%w amulet%w} {<118><caf>%0 <088>(<028>+ziola<088>)};
 
 
 #high {lodow%w lsniac%w sztylet%w} {<118><caf>};
