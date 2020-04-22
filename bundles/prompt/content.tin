@@ -259,10 +259,11 @@
 	blok_start;
 };
 #action {zajmuje pozycje umozliwiajaca odciecie ci drogi ucieczki} {
-	BottomBarTinyFugue;
+	blok_start;
 };
 #action {przestaje odcinac twoja droge ucieczki} {
-	#var blockselflevel 0;BottomBarTinyFugue;
+	#var blockselflevel 0;
+	rysuj_paski;
 };
 
 
@@ -271,14 +272,31 @@
 #nop #############################################################;
 #nop action {{Powoli osuwasz sie na ziemie|Potem robi sie ciemno|Sila uderzania zamroczyla cie|czujesz, ze tracisz przytomnosc|Nagle czujesz jak na glowe spada ci ciezki sznur|Nagle czujesz, ze tracisz kontrole nad swym cialem| wali cie na odlew %* chwiejesz|ze swiat przed twoimi oczami niknie|Przymroczony tym uderzeniem czujesz jak nogi|Swiat przed twoimi oczami ciemnieje. Czujesz, ze tracisz wzrok!}} {};
 #nop action {{Powoli dochodzisz do siebie|Czujesz jak slabosc po zadanym ciosie w glowe mija|Udaje ci sie uwolnic z sieci|Powoli odzyskujesz swobode ruchow}} {};
-#nop action {{wytraca ci|Uderzenie jest tak silne, ze bezwiednie puszczasz|Czujesz potezne szarpniecie|Bezwladnie opuszczasz}} {};
 
 
 #nop #############################################################;
 #nop ############# WEAPONS                 #######################;
 #nop #############################################################;
-#nop action {{{D|d}obywasz|Wiedziony naglym instynktem siegasz|Pelnym pewnosci siebie ruchem dobywasz| twego pewnego chwytu, | zaciskasz dlon |Trzymasz|dobywajac}} {};
-#nop action {{Opuszczasz | ogarniajac wzrokiem cala okolice| opuszczasz | rozluzniasz uchwyt | do tej pory twe serce }} {};
+#var bronstatus off;
+#action {{Juz dzierzysz|Gwaltownym ruchem wyszarpujesz|Dobywasz|Wiedziony naglym instynktem siegasz|Pelnym pewnosci siebie ruchem dobywasz| twego pewnego chwytu, | zaciskasz dlon |Trzymasz|dobywajac}}
+{
+	#var bronstatus on;
+};
+#action {{Opuszczasz | ogarniajac wzrokiem cala okolice| opuszczasz | rozluzniasz uchwyt | do tej pory twe serce }}
+{
+	#var bronstatus off;
+};
+#action {{wytraca ci|Uderzenie jest tak silne, ze bezwiednie puszczasz|Czujesz potezne szarpniecie|Bezwladnie opuszczasz}} {
+	#var bronstatus off;
+};
+#action {Opuszczasz obszar} {
+	#nop;
+} {1};
+#nop #############################################################;
+#nop #############################################################;
+#nop #############################################################;
+
+
 
 #var qbvar {                                                                 };
 
@@ -320,8 +338,8 @@
 #alias rysuj_przyciski {
 	#math {pozycjaprzyciskow} {$screencols - 42};
 	#line ignore #sh {${bbBGC}Atak    <088>$buttons[0][8][label]${bbBGC} <088>$buttons[0][7][label]${bbBGC} <088>$buttons[0][6][label]${bbBGC} <088>$buttons[0][5][label]${bbBGC}<088>} {-4} {$pozycjaprzyciskow};
-	#line ignore #sh {${bbBGC}Zaslona <088>$buttons[1][8][label]${bbBGC} <088>$buttons[1][7][label]${bbBGC} <088>$buttons[1][6][label]${bbBGC} <088>ZDE} {-3} {$pozycjaprzyciskow};
-	#line ignore #sh {${bbBGC}Reszta  <088>BRO${bbBGC} <088>LAM${bbBGC} <088>PLA${bbBGC}    <088>} {-2} {$pozycjaprzyciskow};	
+	#line ignore #sh {${bbBGC}Zaslona <088>$buttons[1][8][label]${bbBGC} <088>$buttons[1][7][label]${bbBGC} <088>$buttons[1][6][label]${bbBGC} <088>$buttons[1][5][label]${bbBGC}<088>} {-3} {$pozycjaprzyciskow};
+	#line ignore #sh {${bbBGC}Reszta  <088>$buttons[2][8][label]${bbBGC} <088>LAM${bbBGC} <088>PLA${bbBGC}    <088>} {-2} {$pozycjaprzyciskow};	
 };
 
 #alias rysuj_customs {

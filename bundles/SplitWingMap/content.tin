@@ -218,7 +218,13 @@
             };
             /conf zaslonaflagi A${tmpflagi};
         };
-
+        #if {"$buttons[$currRow][$currCol][type]" == "switch"} {
+            #if {"$buttons[$currRow][$currCol][status]" == "on"} {
+                $buttons[$currRow][$currCol][cmdoff];
+            } {
+                $buttons[$currRow][$currCol][cmdon];
+            }
+        };
     };
 }
 
@@ -307,6 +313,18 @@
 #var buttons[1][6][type] {zaslanianie};
 #var buttons[1][6][value] {r};
 
+#nop bronstatus;
+#var buttons[2][8][label] {BRO};
+#var buttons[2][8][status] {off};
+#var buttons[2][8][type] {switch};
+#var buttons[2][8][cmdoff] {obb};
+#var buttons[2][8][cmdon] {dbb};
+#nop pzdjeciezaslon;
+#var buttons[1][5][label] {ZDE};
+#var buttons[1][5][status] {off};
+#var buttons[1][5][type] {switch};
+#var buttons[1][5][cmdoff] {/conf zdejmowanie wylaczone};
+#var buttons[1][5][cmdon] {/conf zdejmowanie auto};
 
 
 #event {VARIABLE UPDATED pwskazywanie} {
@@ -365,3 +383,25 @@
     };
     rysuj_przyciski;
 };
+
+#event {VARIABLE UPDATED bronstatus} {
+    #if {"$bronstatus" == "on"} {
+        #var buttons[2][8][label] {<FAA><fff>BRO<088>};
+        #var buttons[2][8][status] {on};
+    } {
+        #var buttons[2][8][label] {BRO};
+        #var buttons[2][8][status] {off};
+    };
+    rysuj_przyciski;
+};
+
+#event {VARIABLE UPDATED pzdjeciezaslon} {
+    #if {"$pzdjeciezaslon" == "auto"} {
+        #var buttons[1][5][label] {<AAB><fff>ZDE<088>};
+        #var buttons[1][5][status] {on};
+    } {
+        #var buttons[1][5][label] {ZDE};
+        #var buttons[1][5][status] {off};
+    };
+    rysuj_przyciski;
+}
