@@ -77,7 +77,7 @@
 
 #alias {/sprawdzanie} {
     #alias {move_n} {sprawdz polnoc;#send n;#var trytomove 1;#var movedir {polnoc}};
-    #alias {move_s} {sprawdz polnoc;#send s;#var trytomove 1;#var movedir {poludnie}};
+    #alias {move_s} {#send s;#var trytomove 1;#var movedir {poludnie}};
     #alias {move_e} {sprawdz polnoc;#send e;#var trytomove 1;#var movedir {wschod}};
     #alias {move_w} {sprawdz polnoc;#send w;#var trytomove 1;#var movedir {zachod}};
     #alias {move_d} {sprawdz polnoc;#send d;#var trytomove 1;#var movedir {dol}};
@@ -89,6 +89,8 @@
 } {1};
 
 
+#alias {/rysuj} {#line ignore #show {Zaczynam rysowac};#var creatorMode 1} {1};
+#alias {/nierysuj} {#line ignore #sh {Przestaje rysowac};#var creatorMode 0} {1};
 
 #alias {move_n} {#send n;#var trytomove 1;#var movedir {polnoc}};
 #alias {move_s} {#send s;#var trytomove 1;#var movedir {poludnie}};
@@ -170,9 +172,9 @@
                 #case {"poludniowy-wschod"} {/a ext se;#map move se;/a ext nw;#map move nw};
                 #case {"poludniowy-zachod"} {/a ext sw;#map move sw;/a ext ne;#map move ne};
                 #case {"wschod"} {/a ext e;#map move e;/a ext w;#map move w};
-                #case {"zachod"} {/a ext w;#map dig w;/a ext e;#map move e};
-                #case {"dol"} {/a ext d;#map dig d;/a ext u;#map move u};
-                #case {"gora"} {/a ext u;#map dig u;/a ext d;#map move d};
+                #case {"zachod"} {/a ext w;#map move w;/a ext e;#map move e};
+                #case {"dol"} {/a ext d;#map move d;/a ext u;#map move u};
+                #case {"gora"} {/a ext u;#map move u;/a ext d;#map move d};
             };
         };
     };
@@ -186,9 +188,9 @@
                 #case {"poludniowy-wschod"} {/a ext se;#map move se;/a ext nw;#map move nw};
                 #case {"poludniowy-zachod"} {/a ext sw;#map move sw;/a ext ne;#map move ne};
                 #case {"wschod"} {/a ext e;#map move e;/a ext w;#map move w};
-                #case {"zachod"} {/a ext w;#map dig w;/a ext e;#map move e};
-                #case {"dol"} {/a ext d;#map dig d;/a ext u;#map move u};
-                #case {"gora"} {/a ext u;#map dig u;/a ext d;#map move d};
+                #case {"zachod"} {/a ext w;#map move w;/a ext e;#map move e};
+                #case {"dol"} {/a ext d;#map move d;/a ext u;#map move u};
+                #case {"gora"} {/a ext u;#map move u;/a ext d;#map move d};
         };
     };
 }
@@ -431,6 +433,7 @@
     #nop SHOW BIND;
     #if {$bind_found > 0} {
         SplitWingMap_LabelBind $bind_run;
+        #line ignore #sh {\n<AAB><fff>BIND LOKACJA <088><168> $bind_run<088>\n};
     };
     #if {$roonsize > 0} {
         #local outputstr {};

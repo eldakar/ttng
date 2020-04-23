@@ -6,26 +6,42 @@
 };
 
 #action {Zapalasz} {
+	#var lampastatus on;
 	#ticker lampa {
 		Highlights_event <138>Lampa - Alias: <028>nap<088><138> - Napelnij lampe!<088>;
 	} {180};
 };
 
 #action {lampa wypala sie i gasnie} {
+	#var lampastatus off;
 	#untick lampa;
 	Highlights_event <138>Lampa - Alias: <028>nap<088><138> -  Napelnij i zapal lampe!<088>;
 };
 
 #action {Gasisz %* lampe} {
+	#var lampastatus off;
 	#untick lampa;
 };
 
 #action {Probujesz zapalic %* jest wyczerpana} {
+	#var lampastatus off;
 	#untick lampa;
 	Highlights_event <138>Lampa - Alias: <028>nap<088><138> - Napelnij i zapal lampe!<088>;
 };
+
+#action {Dopelniasz zapalona %*, oprozniajac zupelnie butelke oleju.} {
+	#var lampastatus on;
+	Highlights_event <118>Lampa - Dopelniasz %1, oprozniajac zupelnie butelke oleju.<088>;
+	#line gag;
+} {1};
 
 #action {Dopelniasz %*, oprozniajac zupelnie butelke oleju.} {
 	Highlights_event <118>Lampa - Dopelniasz %1, oprozniajac zupelnie butelke oleju.<088>;
 	#line gag;
 };
+
+#action {Dopelniasz zapalona %*} {
+	#var lampastatus on;
+	Highlights_event <118>Lampa - Dopelniasz %1.<088>;
+	#line gag;
+} {1};

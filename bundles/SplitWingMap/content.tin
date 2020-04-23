@@ -1,19 +1,4 @@
-#alias SplitWingMap_Offset_TEST {
-    #map flag vtmap on;
-    #math offsety {$global_bundle_slots_values[prompt][top] + 1};
-    #screen get cols screencols;
-    #screen get rows screenrows;
-    #math offsetx {$screencols - $global_bundle_slots_values[prompt][right] + 2};
-    #math offseth {$screencols};
-    #math offsetw {$screenrows - $global_bundle_slots_values[prompt][bottom]-1};
-    #map offset $offsety $offsetx $offsetw $offseth;
-    #map center 0 $expectedlines 0;
-    #nop draw black tubed box $offsety $offsetx-2 $offsetw-1 $offseth-1;
-    #nop sh {|} {$offsety} {$offsetx - 3};
-};
-
 #alias SplitWingMap_Offset {
-    #map flag vtmap on;
     #math offsety {$global_bundle_slots_values[prompt][top] + $praidsize + 1};
     #screen get cols screencols;
     #screen get rows screenrows;
@@ -26,16 +11,15 @@
     #nop sh {|} {$offsety} {$offsetx - 3};
 };
 
-
-#alias STARTRAIN {
-    #map offset $offsety $offsetx $offsetw $offseth;
-
-    #ticker RAINING {
-        #draw blue rain $offsety+1 $offsetx $offsetw-3 $offseth rain 50 80 {.*};
-    } {0.5};
-}
 #alias {SplitWingMapWidth} {
     #var global_bundle_slots_values[prompt][right] $ConfigManager_Configs[SplitWingMapWidth];
+    #if {$ConfigManager_Configs[SplitWingMapWidth] < 1} {
+        #map flag vtmap off;
+        #unevent {VARIABLE UPDATED objectnumsRefreshed} {RaidBar_refresh};  #nop RAIDTABLE HOOK;
+    } {
+        #map flag vtmap on;
+        #event {VARIABLE UPDATED objectnumsRefreshed} {RaidBar_refresh};    #nop RAIDTABLE HOOK;
+    };
     SplitWingMap_Offset;
     RaidBar_refresh;
     #nop Dependency: SplitRefresh;
@@ -57,9 +41,6 @@
     #nop draw blanked box 1 $offsetx $praidsize $offseth <088>$raidbartable;   #nop ALFA;
     #nop draw blanked box 1 $offsetx $expectedlines+2 $offseth <088>$raidbartable;   #nop BETA;
 }
-#event {VARIABLE UPDATED objectnumsRefreshed} {
-    RaidBar_refresh
-};
 
 #alias {SplitWingMap_refresh} {
     #math global_bundle_slots_values[prompt][right] {$ConfigManager_Configs[SplitWingMapWidth] + 0};
