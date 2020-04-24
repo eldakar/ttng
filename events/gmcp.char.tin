@@ -1,0 +1,13 @@
+#event {IAC SB GMCP char.info IAC SE}
+{
+    #foreach {*event_handler_char_info[]} {bhon} {
+        $event_handler_char_info[$bhon] %0;
+    };
+}
+
+#event {IAC SB GMCP char.state IAC SE}
+{
+    #foreach {*event_handler_char_state[]} {bhod} {
+        $event_handler_char_state[$bhod] %0;
+    };
+}

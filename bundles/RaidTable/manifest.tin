@@ -33,9 +33,8 @@
 #nop ############################;
 #list bundle_deps clear;
 
-#list bundle_deps add {GMCPObjects};
-	#list bundle_handler_objects_nums add {RaidTable_GMCP_Objects_Nums};
-	#list bundle_handler_objects_data add {RaidTable_GMCP_Objects_Data};
+#list event_handler_objects_nums add {RaidTable_GMCP_Objects_Nums};
+#list event_handler_objects_data add {RaidTable_GMCP_Objects_Data};
 
 #list bundle_deps add {ConfigManager};
 

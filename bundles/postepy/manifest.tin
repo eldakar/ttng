@@ -12,9 +12,9 @@
 
 #list bundle_deps clear;
 	#list bundle_deps add {gmcpDefaultColorManager};
-	#list bundle_deps add {GMCPChar};
+
 	
-#list bundle_handler_char_state add {_killstats_check_progress};
+#list event_handler_char_state add {_killstats_check_progress};
 
 #list bundle_alias clear;
 

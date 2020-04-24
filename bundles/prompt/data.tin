@@ -1,0 +1,51 @@
+#nop pwskazywanie;
+#nop pzaslonaflagi;
+
+#var buttons[0][8][label] {ZAB};
+#var buttons[0][8][status] {off};
+#var buttons[0][8][type] {wskazywanie};
+#var buttons[0][8][value] {z};
+
+#var buttons[0][7][label] {WSK};
+#var buttons[0][7][status] {off};
+#var buttons[0][7][type] {wskazywanie};
+#var buttons[0][7][value] {w};
+
+#var buttons[0][6][label] {ROZ};
+#var buttons[0][6][status] {off};
+#var buttons[0][6][type] {wskazywanie};
+#var buttons[0][6][value] {r}
+
+#var buttons[0][5][label] {PRZ};
+#var buttons[0][5][status] {off};
+#var buttons[0][5][type] {wskazywanie};
+#var buttons[0][5][value] {p}
+
+#var buttons[1][8][label] {ZAS};
+#var buttons[1][8][status] {off};
+#var buttons[1][8][type] {zaslanianie};
+#var buttons[1][8][value] {z};
+
+#var buttons[1][7][label] {WSK};
+#var buttons[1][7][status] {off};
+#var buttons[1][7][type] {zaslanianie};
+#var buttons[1][7][value] {w};
+
+#var buttons[1][6][label] {ROZ};
+#var buttons[1][6][status] {off};
+#var buttons[1][6][type] {zaslanianie};
+#var buttons[1][6][value] {r};
+
+#nop bronstatus;
+#var buttons[2][8][label] {BRO};
+#var buttons[2][8][status] {off};
+#var buttons[2][8][type] {switch};
+#var buttons[2][8][cmdoff] {obb};
+#var buttons[2][8][cmdon] {dbb};
+#nop pzdjeciezaslon;
+#var buttons[1][5][label] {ZDE};
+#var buttons[1][5][status] {off};
+#var buttons[1][5][type] {switch};
+#var buttons[1][5][cmdoff] {/conf zdejmowanie wylaczone};
+#var buttons[1][5][cmdon] {/conf zdejmowanie auto};
+

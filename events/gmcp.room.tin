@@ -1,0 +1,12 @@
+#event {IAC SB GMCP room.time IAC SE}
+{
+	#foreach {*event_handler_room_time[]} {ehrt} {
+        $event_handler_room_time[$ehrt] %0;
+    };
+}
+#event {IAC SB GMCP room.info IAC SE} 
+{
+	#foreach {*event_handler_room_info[]} {ehri} {
+        $event_handler_room_info[$ehri] %0;
+    };
+}

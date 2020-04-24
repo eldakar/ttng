@@ -89,8 +89,8 @@
 } {1};
 
 
-#alias {/rysuj} {#line ignore #show {Zaczynam rysowac};#var creatorMode 1} {1};
-#alias {/nierysuj} {#line ignore #sh {Przestaje rysowac};#var creatorMode 0} {1};
+#alias {/rysuj} {#line ignore #show {Zaczynam rysowac};#var highlightMode 1} {1};
+#alias {/nierysuj} {#line ignore #sh {Przestaje rysowac};#var highlightMode 0} {1};
 
 #alias {move_n} {#send n;#var trytomove 1;#var movedir {polnoc}};
 #alias {move_s} {#send s;#var trytomove 1;#var movedir {poludnie}};
@@ -127,7 +127,7 @@
 #alias {e} {move_e};
 
 
-#event {IAC SB GMCP room.time IAC SE}
+#alias mapa_room_time
 {
     #var roomtime {%0};
     #foreach {*roomtime[]} {s} {
@@ -302,7 +302,7 @@
 #nop #################################################################################;
 #nop EVENTY GMCP;
 #nop #################################################################################;
-#event {IAC SB GMCP room.info IAC SE} {
+#alias mapa_room_info {
     #var ROOM_INFO {%0};
 
     #nop Roza wiatrow;
@@ -410,10 +410,9 @@
     };
 };
 
-#event {MAP ENTER ROOM} {
+#alias mapa_map_enter_room {
     #var gmcp_order 2;
     #var note_found 0;
-    #var bind_found 0;
     #map get roomvnum voom;
     #map get roomarea rooa;
     #map get roomdata roon;
@@ -423,18 +422,11 @@
     #var map_exits {$map_exits};
 
     #list roon size roonsize;
-    #if {"$rooa" != ""} {$rooa};
+    #nop WYSWIETL SCIEZKE jesli szukamy pokoju;
     #if {$lockroom > 0} {#map find $lockroom};
 };
 
-#event {MAP UPDATED VTMAP} {
-    #nop SplitWingMap_LabelMap <128>$current_room_short_desc;
-
-    #nop SHOW BIND;
-    #if {$bind_found > 0} {
-        SplitWingMap_LabelBind $bind_run;
-        #line ignore #sh {\n<AAB><fff>BIND LOKACJA <088><168> $bind_run<088>\n};
-    };
+#alias mapa_map_updated_vtmap {
     #if {$roonsize > 0} {
         #local outputstr {};
         #foreach {*roon[]} {roonvec} {
@@ -487,14 +479,6 @@
 };
 
 
-
-#nop #################################################################################;
-#nop ODNAJDYWANIE SIE NA MAPIE;
-#nop #################################################################################;
-#action {Schodzisz z %1.} {#var MAPPER_SYNC {0};}
-#action {Oplacasz podroz u woznicy i wsiadasz do %1.} {#var MAPPER_SYNC {0}};
-#action {Wykonuje komende 'idz %1'} {#var MAPPER_SYNC {0};}
-#action {Bierzesz rozbieg i zeskakujesz z drakkara na brzeg.} {#var MAPPER_SYNC {0};}
 
     #nop ##################################;
     #nop funkcja szukajaca;
@@ -731,7 +715,7 @@
     };
 }
 
-#event {MAP CREATE ROOM} {
+#alias mapa_map_create_room {
     #if {"$pdynamic" == "wlaczona"} {
         #if {$creatorMode < 1} {
             #var creatorMode {1};

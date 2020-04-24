@@ -1,0 +1,13 @@
+#event {IAC SB GMCP objects.nums IAC SE}
+{
+    #foreach {*event_handler_objects_nums[]} {ehon} {
+        $event_handler_objects_nums[$ehon] %0;
+    };
+}
+
+#event {IAC SB GMCP objects.data IAC SE}
+{
+    #foreach {*event_handler_objects_data[]} {ehod} {
+        $event_handler_objects_data[$ehod] %0;
+    };
+}

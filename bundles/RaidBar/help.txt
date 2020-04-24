@@ -1,4 +1,0 @@
-WARN 1. Obsluga myszki
-TUTOR 	Gorny pasek dzielacy okno kondycji i okno scroll
-		mozna najechac na niego myszka, po czym przytrzymujac
-		lewy przycisk, zwiekszyc go lub zmniejszyc.

@@ -1,3 +1,5 @@
+#event {SEND OUTPUT} {#var sendoutput %0;#replace {sendoutput} {\n} {};#echo {<cca>$sendoutput<088>}};
+
 #event {PROGRAM START} {
     #script mylogin {whoami};
     #var cport %0;
@@ -9,9 +11,17 @@
     };
     #ses rpg arkadia.rpg.pl {23};
 
-    #read bundles/bundle_ops.tin;
 
-    #read bundles/GMCPChar/manifest.tin;
+    #read bundles/bundle_ops.tin;
+    #nop mape trzeba zaladowac przed zaladowaniem eventow;
+    #read bundles/mapa/manifest.tin;
+ 
+    #read events/map.tin;
+    #read events/gmcp.char.tin;
+    #read events/gmcp.object.tin;
+    #read events/gmcp.room.tin;
+    #read events/mouse.tin;
+ 
     #read bundles/ConfigManager/manifest.tin;
     #read bundles/HelpManager/manifest.tin;
     #read bundles/SplitRefresh/manifest.tin;
@@ -19,7 +29,6 @@
     #read bundles/postac/manifest.tin;
     #read bundles/wskazywanie/manifest.tin;
     #read bundles/ekwipunek/manifest.tin;
-    #read bundles/mapa/manifest.tin;
     #read bundles/TTMapFollow/manifest.tin;
     #read bundles/TTMapFreezer/manifest.tin;
     #read bundles/TTMapSigns/manifest.tin;
@@ -29,7 +38,6 @@
     #read bundles/NumPad/manifest.tin;
     #read bundles/ItemQualitySimple/manifest.tin;
     #read bundles/ziola/manifest.tin;
-    #read bundles/GMCPObjects/manifest.tin;
     #read bundles/RaidTable/manifest.tin;
     #read bundles/mapeditor/manifest.tin;
     #read bundles/PlayerDB/manifest.tin;
@@ -40,7 +48,6 @@
     #read bundles/SWQuickBind/manifest.tin;
     #read bundles/Highlights/manifest.tin;
     #read bundles/Drakkary/manifest.tin;
-    #read bundles/Assets_TerrainTheme/content.tin;
     #read bundles/Vehicles/manifest.tin;
     #read bundles/LogManager/manifest.tin;
     #read bundles/Macros/manifest.tin;
@@ -74,5 +81,4 @@
     };
 };
 
-#event {SEND OUTPUT} {#var sendoutput %0;#replace {sendoutput} {\n} {};#echo {<cca>$sendoutput<088>}};
 

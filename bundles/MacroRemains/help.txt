@@ -1,6 +1,0 @@
-Obsluga zbierania szczatek z cial.
-WARN 1. Konfiguracja
-TUTOR 	/conf MacroRemainsMethod <metoda>
-		wyrwij lub wytnij
-TUTOR 	/conf MacroRemainsKey <klawisz>
-		Klawisz do obslugi: F5,F6,F7,F8,F9,F10

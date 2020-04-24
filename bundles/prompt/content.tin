@@ -372,3 +372,122 @@
 	};
 	#return {<%4>$outputbar<088>};
 };
+
+#alias prompt_pressed_mouse_button_one {
+    #screen get ROWS sr;
+    #screen get SPLIT_BOT_BAR sb;
+    #math topButtonsFrameBorder {$sr - $sb};
+    #if {%1 >= $topButtonsFrameBorder && %1 < $topButtonsFrameBorder+5 && %2 > 1 && %2 < $screencols} {
+        #math currRow {%1 - ($topButtonsFrameBorder)};
+        #math currCol {($screencols - %2 + 1) / 4};
+
+        #line ignore #sh {<028>Mouse> <128>Button Click [$currRow] [$currCol]};
+        #if {"$buttons[$currRow][$currCol][type]" == "wskazywanie"} {
+            #local tmpflagi $pwskazywanie;
+            #replace tmpflagi {A} {};
+            #if {"$buttons[$currRow][$currCol][status]" == "on"} {
+                #replace tmpflagi {$buttons[$currRow][$currCol][value]} {};
+            } {
+                #local tmpflagi {${tmpflagi}$buttons[$currRow][$currCol][value]};
+            };
+            /conf atakflagi A${tmpflagi};
+        };
+        #if {"$buttons[$currRow][$currCol][type]" == "zaslanianie"} {
+            #local tmpflagi $pzaslonaflagi;
+            #replace tmpflagi {A} {};
+            #if {"$buttons[$currRow][$currCol][status]" == "on"} {
+                #replace tmpflagi {$buttons[$currRow][$currCol][value]} {};
+            } {
+                #local tmpflagi {${tmpflagi}$buttons[$currRow][$currCol][value]};
+            };
+            /conf zaslonaflagi A${tmpflagi};
+        };
+        #if {"$buttons[$currRow][$currCol][type]" == "switch"} {
+            #if {"$buttons[$currRow][$currCol][status]" == "on"} {
+                $buttons[$currRow][$currCol][cmdoff];
+            } {
+                $buttons[$currRow][$currCol][cmdon];
+            }
+        };
+    };
+};
+
+
+#event {VARIABLE UPDATED pwskazywanie} {
+    #regex {$pwskazywanie} {z} {
+        #var buttons[0][8][label] {<BAA><fff>ZAB<088>};
+        #var buttons[0][8][status] {on};
+    } {
+        #var buttons[0][8][label] {ZAB};
+        #var buttons[0][8][status] {off};
+    };
+    #regex {$pwskazywanie} {w} {
+        #var buttons[0][7][label] {<BAB><fff>WSK<088>};
+        #var buttons[0][7][status] {on};
+    } {
+        #var buttons[0][7][label] {WSK};
+        #var buttons[0][7][status] {off};
+    };
+    #regex {$pwskazywanie} {r} {
+        #var buttons[0][6][label] {<ABB><fff>ROZ<088>};
+        #var buttons[0][6][status] {on};
+    } {
+        #var buttons[0][6][label] {ROZ};
+        #var buttons[0][6][status] {off};
+    };
+    #regex {$pwskazywanie} {p} {
+        #var buttons[0][5][label] {<FAA><fff>PRZ<088>};
+        #var buttons[0][5][status] {on};
+    } {
+        #var buttons[0][5][label] {PRZ};
+        #var buttons[0][5][status] {off};
+    };    
+    rysuj_przyciski;
+};
+
+#event {VARIABLE UPDATED pzaslonaflagi} {
+    #regex {$pzaslonaflagi} {z} {
+        #var buttons[1][8][label] {<AAB><fff>ZAS<088>};
+        #var buttons[1][8][status] {on};
+    } {
+        #var buttons[1][8][label] {ZAB};
+        #var buttons[1][8][status] {off};
+    };
+    #regex {$pzaslonaflagi} {w} {
+        #var buttons[1][7][label] {<BAB><fff>WSK<088>};
+        #var buttons[1][7][status] {on};
+    } {
+        #var buttons[1][7][label] {WSK};
+        #var buttons[1][7][status] {off};
+    };
+    #regex {$pzaslonaflagi} {r} {
+        #var buttons[1][6][label] {<ABB><fff>ROZ<088>};
+        #var buttons[1][6][status] {on};
+    } {
+        #var buttons[1][6][label] {ROZ};
+        #var buttons[1][6][status] {off};
+    };
+    rysuj_przyciski;
+};
+
+#event {VARIABLE UPDATED bronstatus} {
+    #if {"$bronstatus" == "on"} {
+        #var buttons[2][8][label] {<FAA><fff>BRO<088>};
+        #var buttons[2][8][status] {on};
+    } {
+        #var buttons[2][8][label] {BRO};
+        #var buttons[2][8][status] {off};
+    };
+    rysuj_przyciski;
+};
+
+#event {VARIABLE UPDATED pzdjeciezaslon} {
+    #if {"$pzdjeciezaslon" == "auto"} {
+        #var buttons[1][5][label] {<AAB><fff>ZDE<088>};
+        #var buttons[1][5][status] {on};
+    } {
+        #var buttons[1][5][label] {ZDE};
+        #var buttons[1][5][status] {off};
+    };
+    rysuj_przyciski;
+}

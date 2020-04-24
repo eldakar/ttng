@@ -530,6 +530,22 @@
     };
 };
 
+#nop 1 hp;
+#nop 2 kolorbg;
+#nop 3 kolorfg;
+#nop 4 short/imie;
+#function kondycjaMini {
+    #var myshort %4;
+    #regex {%4} {%w %w %w} {
+        #var myshort &3;
+    };
+    #regex {%4} {%w %w %w %w} {
+        #var myshort &4;
+    };
+    
+    #return 1;
+};
+
 #action {Zapamietane przez ciebie imiona to %* i %2.} {
 	#list przedstawieni clear;
 	#var str_przedstawieni {%1};

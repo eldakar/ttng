@@ -1,18 +1,23 @@
 #var bundle_name {SplitWingMap};
 #var bundle_data {0};
 #var bundle_content {1};
-#var bundle_config {0};
 #list bundle_configs clear;
 	#list bundle_configs add {RaidSize};
 	#list bundle_configs add {SplitWingMapWidth};
 #var bundle_help {0};
-#list bundle_slots clear;
-#list bundle_slots add {prompt.right};
 #list bundle_deps clear;
-	#list bundle_deps add {ConfigManager};
-	#list bundle_deps add {SplitRefresh};
-		#list bundle_handler_split_request add {SplitWingMap_refresh};
-
-#list bundle_alias clear;
+	
+#list bundle_handler_split_request                       add {SplitWingMap_refresh}
+#list event_handler_pressed_mouse_button_one             add {raidmap_pressed_mouse_button_one}
+#list event_handler_released_mouse_button_one            add {raidmap_released_mouse_button_one}
+#list event_handler_moved_mouse_button_one               add {raidmap_moved_mouse_button_one}
+#list event_handler_scrolled_mouse_wheel_up              add {raidmap_scrolled_mouse_wheel_up}
+#list event_handler_scrolled_mouse_wheel_down            add {raidmap_scrolled_mouse_wheel_down}
+#list event_handler_map_double_clicked_mouse_button_one  add {raidmap_map_double_clicked_mouse_button_one}
 
 #var bundle_ready @bundleops_validate{};
+
+
+
+
+

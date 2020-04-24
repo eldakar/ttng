@@ -1,0 +1,42 @@
+#config mouse on;
+#event {PRESSED MOUSE BUTTON ONE}
+{
+    #foreach {*event_handler_pressed_mouse_button_one[]} {ehpmbo} {
+        $event_handler_pressed_mouse_button_one[$ehpmbo] %0 %1;
+    };
+}
+
+#event {RELEASED MOUSE BUTTON ONE}
+{
+    #foreach {*event_handler_released_mouse_button_one[]} {ehrmbo} {
+        $event_handler_released_mouse_button_one[$ehrmbo];
+    };
+}
+
+#event {MOVED MOUSE BUTTON ONE}
+{
+    #foreach {*event_handler_moved_mouse_button_one[]} {ehmmbo} {
+        $event_handler_moved_mouse_button_one[$ehmmbo] %0 %1;
+    };
+}
+
+#event {SCROLLED MOUSE WHEEL UP}
+{
+    #foreach {*event_handler_scrolled_mouse_wheel_up[]} {ehsmwu} {
+        $event_handler_scrolled_mouse_wheel_up[$ehsmwu] %0 %1;
+    };
+}
+
+#event {SCROLLED MOUSE WHEEL DOWN}
+{
+    #foreach {*event_handler_scrolled_mouse_wheel_down[]} {ehsmwd} {
+        $event_handler_scrolled_mouse_wheel_down[$ehsmwd] %0 %1;
+    };
+}
+
+#event {MAP DOUBLE-CLICKED MOUSE BUTTON ONE}
+{
+    #foreach {*event_handler_map_double_clicked_mouse_button_one[]} {ehmdcmbo} {
+        $event_handler_map_double_clicked_mouse_button_one[$ehmdcmbo] %0 %1;
+    };    
+};

@@ -1,0 +1,20 @@
+#event {MAP ENTER ROOM}
+{
+	#foreach {*event_handler_map_enter_room[]} {ehmer} {
+        $event_handler_map_enter_room[$ehmer];
+    };
+}
+
+#event {MAP UPDATED VTMAP}
+{
+	#foreach {*event_handler_map_updated_vtmap[]} {ehmuv} {
+        $event_handler_map_updated_vtmap[$ehmuv];
+    };
+}
+
+#event {MAP CREATE ROOM} 
+{
+	#foreach {*event_handler_map_create_room[]} {ehmcr} {
+        $event_handler_map_create_room[$ehmcr] %0;
+    };
+}

@@ -6,9 +6,6 @@
     #math offseth {$screencols};
     #math offsetw {$screenrows - $global_bundle_slots_values[prompt][bottom]-1};
     #map offset $offsety $offsetx $offsetw $offseth;
-
-    #nop draw black tubed box $offsety $offsetx-2 $offsetw-1 $offseth-1;
-    #nop sh {|} {$offsety} {$offsetx - 3};
 };
 
 #alias {SplitWingMapWidth} {
@@ -134,18 +131,17 @@
 
 
 
-#con mouse on;
 #var topdrag 0
 
-#event {PRESSED MOUSE BUTTON ONE}
+#alias {raidmap_pressed_mouse_button_one}
 {
     #screen get SPLIT_BOT_BAR top;
     #screen get SPLIT_RIGHT_BAR right;
     #screen get cols cols;
-    #math curright {$cols - %1 + 1};
-    #math curbott {$screenrows - %0};
-    #var {o_x} %0;
-    #var {o_y} %1;
+    #math curright {$cols - %2 + 1};
+    #math curbott {$screenrows - %1};
+    #var {o_x} %1;
+    #var {o_y} %2;
 
     #if {$right == $curright}
     {
@@ -154,235 +150,102 @@
     #if {$curright < $right} {
         #if {$curbott > $top && $o_x > $global_bundle_slots_values[prompt][top]} {
             #var mapcenter 1;
-            #if {$o_x < $global_bundle_slots_values[prompt][top] + 4+ $praidsize} {
-                #var mapbuttons 1;
-            };
         };
     };
 
-    #if {$mapbuttons == 1} {
-        #nop czy jest tu lokacyjny button;
-        #map get roomarea roomAreaValue;
-        #regex {$roomAreaValue} {QB} {
-            SplitWingMap_LabelBind_Reverse $bind_run;
-            $bind_run;
-        };
-    };
     #nop sh {curright = $curright | curbott = $curbott | right = $right | top = $top | topdrag: $topdrag rightdrag: $rightdrag map: $mapcenter buttons $mapbuttons | chatdrag: $chatdrag};
-
-
-    #screen get ROWS sr;
-    #screen get SPLIT_BOT_BAR sb;
-    #math topButtonsFrameBorder {$sr - $sb};
-    #if {%0 >= $topButtonsFrameBorder && %0 < $topButtonsFrameBorder+5 && %1 > 1 && %1 < $screencols} {
-        #math currRow {%0 - ($topButtonsFrameBorder)};
-        #math currCol {($screencols - %1 + 1) / 4};
-
-        #line ignore #sh {<028>Mouse> <128>Button Click [$currRow] [$currCol]};
-        #if {"$buttons[$currRow][$currCol][type]" == "wskazywanie"} {
-            #local tmpflagi $pwskazywanie;
-            #replace tmpflagi {A} {};
-            #if {"$buttons[$currRow][$currCol][status]" == "on"} {
-                #replace tmpflagi {$buttons[$currRow][$currCol][value]} {};
-            } {
-                #local tmpflagi {${tmpflagi}$buttons[$currRow][$currCol][value]};
-            };
-            /conf atakflagi A${tmpflagi};
-        };
-        #if {"$buttons[$currRow][$currCol][type]" == "zaslanianie"} {
-            #local tmpflagi $pzaslonaflagi;
-            #replace tmpflagi {A} {};
-            #if {"$buttons[$currRow][$currCol][status]" == "on"} {
-                #replace tmpflagi {$buttons[$currRow][$currCol][value]} {};
-            } {
-                #local tmpflagi {${tmpflagi}$buttons[$currRow][$currCol][value]};
-            };
-            /conf zaslonaflagi A${tmpflagi};
-        };
-        #if {"$buttons[$currRow][$currCol][type]" == "switch"} {
-            #if {"$buttons[$currRow][$currCol][status]" == "on"} {
-                $buttons[$currRow][$currCol][cmdoff];
-            } {
-                $buttons[$currRow][$currCol][cmdon];
-            }
-        };
-    };
 }
 
-#event {RELEASED MOUSE BUTTON ONE}
+#alias raidmap_released_mouse_button_one
 {
     #var topdrag 0;
     #var rightdrag 0;
     #var mapcenter 0;
-    #var mapbuttons 0;
     #var chatdrag 0;
-    #regex {$roomAreaValue} {QB} {
-        SplitWingMap_LabelBind $bind_run;
-    };
-    #var roomAreaValue {};
 }
 
-#event {MOVED MOUSE BUTTON ONE}
+#alias raidmap_moved_mouse_button_one
 {
     #if {$rightdrag}
     {
-        #math boooom {$cols - %1};
+        #math boooom {$cols - %2};
         /conf SplitWingMapWidth $boooom;
     };
     #if {$mapcenter} {
-        #var d_x %0;
-        #var d_y %1;
+        #var d_x %1;
+        #var d_y %2;
         #math {c_x} {$o_x - $d_x};
         #math {c_y} {$d_y - $o_y};
         #map center $c_y $c_x 0;
     }
 }
 
-#event {SCROLLED MOUSE WHEEL UP} {
-        #if {%1 == 0 || %1 == 1} {#cursor history prev} {
-            #buffer up 1;
-        }
+#alias raidmap_scrolled_mouse_wheel_up
+{
+    #if {%2 == 0 || %2 == 1} {#cursor history prev} {
+        #buffer up 1;
+    }
 }
 
-#event {SCROLLED MOUSE WHEEL DOWN} {
-    #if {%1 == 0 || %1 == 1} {#cursor history next} {
+#alias raidmap_scrolled_mouse_wheel_down
+{
+    #if {%2 == 0 || %2 == 1} {#cursor history next} {
         #buffer down 1;
     }
 }
 
-#event {MAP DOUBLE-CLICKED MOUSE BUTTON ONE} {
+#alias raidmap_map_double_clicked_mouse_button_one {
     #map center;
-    #map run {%0} {0.25};
+    #map run {%1} {0.25};
     #var pathinprogress 1;
 };
 
-#nop pwskazywanie;
-#nop pzaslonaflagi;
+#alias raidmap_hide {
+    #var hidden_raidmap_size $global_bundle_slots_values[prompt][right];    
+    #list bundle_handler_split_request                       find SplitWingMap_refresh _eva;
+    #list bundle_handler_split_request                       delete $_eva;
+    #list event_handler_pressed_mouse_button_one             find raidmap_pressed_mouse_button_one _evb;
+    #list event_handler_pressed_mouse_button_one             delete $_evb;
+    #list event_handler_released_mouse_button_one            find raidmap_released_mouse_button_one _evc;
+    #list event_handler_released_mouse_button_one            delete $_evc;
+    #list event_handler_moved_mouse_button_one               find raidmap_moved_mouse_button_one _evd;
+    #list event_handler_moved_mouse_button_one               delete $_evd;
+    #list event_handler_scrolled_mouse_wheel_up              find raidmap_scrolled_mouse_wheel_up _eve;
+    #list event_handler_scrolled_mouse_wheel_up              delete $_eve;
+    #list event_handler_scrolled_mouse_wheel_down            find raidmap_scrolled_mouse_wheel_down _evf;
+    #list event_handler_scrolled_mouse_wheel_down            delete $_evf;
+    #list event_handler_map_double_clicked_mouse_button_one  find raidmap_map_double_clicked_mouse_button_one _evg;
+    #list event_handler_map_double_clicked_mouse_button_one  delete $_evg;
 
-#var buttons[0][8][label] {ZAB};
-#var buttons[0][8][status] {off};
-#var buttons[0][8][type] {wskazywanie};
-#var buttons[0][8][value] {z};
+    #list event_handler_map_updated_vtmap                    find mapa_map_updated_vtmap _evh;
+    #list event_handler_map_updated_vtmap                    delete $_evh;
 
-#var buttons[0][7][label] {WSK};
-#var buttons[0][7][status] {off};
-#var buttons[0][7][type] {wskazywanie};
-#var buttons[0][7][value] {w};
+    #unvar _eva;
+    #unvar _evb;
+    #unvar _evc;
+    #unvar _evd;
+    #unvar _eve;
+    #unvar _evf;
+    #unvar _evg;
 
-#var buttons[0][6][label] {ROZ};
-#var buttons[0][6][status] {off};
-#var buttons[0][6][type] {wskazywanie};
-#var buttons[0][6][value] {r}
-
-#var buttons[0][5][label] {PRZ};
-#var buttons[0][5][status] {off};
-#var buttons[0][5][type] {wskazywanie};
-#var buttons[0][5][value] {p}
-
-#var buttons[1][8][label] {ZAS};
-#var buttons[1][8][status] {off};
-#var buttons[1][8][type] {zaslanianie};
-#var buttons[1][8][value] {z};
-
-#var buttons[1][7][label] {WSK};
-#var buttons[1][7][status] {off};
-#var buttons[1][7][type] {zaslanianie};
-#var buttons[1][7][value] {w};
-
-#var buttons[1][6][label] {ROZ};
-#var buttons[1][6][status] {off};
-#var buttons[1][6][type] {zaslanianie};
-#var buttons[1][6][value] {r};
-
-#nop bronstatus;
-#var buttons[2][8][label] {BRO};
-#var buttons[2][8][status] {off};
-#var buttons[2][8][type] {switch};
-#var buttons[2][8][cmdoff] {obb};
-#var buttons[2][8][cmdon] {dbb};
-#nop pzdjeciezaslon;
-#var buttons[1][5][label] {ZDE};
-#var buttons[1][5][status] {off};
-#var buttons[1][5][type] {switch};
-#var buttons[1][5][cmdoff] {/conf zdejmowanie wylaczone};
-#var buttons[1][5][cmdon] {/conf zdejmowanie auto};
-
-
-#event {VARIABLE UPDATED pwskazywanie} {
-    #regex {$pwskazywanie} {z} {
-        #var buttons[0][8][label] {<BAA><fff>ZAB<088>};
-        #var buttons[0][8][status] {on};
-    } {
-        #var buttons[0][8][label] {ZAB};
-        #var buttons[0][8][status] {off};
-    };
-    #regex {$pwskazywanie} {w} {
-        #var buttons[0][7][label] {<BAB><fff>WSK<088>};
-        #var buttons[0][7][status] {on};
-    } {
-        #var buttons[0][7][label] {WSK};
-        #var buttons[0][7][status] {off};
-    };
-    #regex {$pwskazywanie} {r} {
-        #var buttons[0][6][label] {<ABB><fff>ROZ<088>};
-        #var buttons[0][6][status] {on};
-    } {
-        #var buttons[0][6][label] {ROZ};
-        #var buttons[0][6][status] {off};
-    };
-    #regex {$pwskazywanie} {p} {
-        #var buttons[0][5][label] {<FAA><fff>PRZ<088>};
-        #var buttons[0][5][status] {on};
-    } {
-        #var buttons[0][5][label] {PRZ};
-        #var buttons[0][5][status] {off};
-    };    
-    rysuj_przyciski;
+    #var global_bundle_slots_values[prompt][right] 1;
+    #unevent {VARIABLE UPDATED objectnumsRefreshed} {RaidBar_refresh};
+    #map flag vtmap off;
+    #line quiet SplitRefreshRequestRefresh;
 };
 
-#event {VARIABLE UPDATED pzaslonaflagi} {
-    #regex {$pzaslonaflagi} {z} {
-        #var buttons[1][8][label] {<AAB><fff>ZAS<088>};
-        #var buttons[1][8][status] {on};
-    } {
-        #var buttons[1][8][label] {ZAB};
-        #var buttons[1][8][status] {off};
-    };
-    #regex {$pzaslonaflagi} {w} {
-        #var buttons[1][7][label] {<BAB><fff>WSK<088>};
-        #var buttons[1][7][status] {on};
-    } {
-        #var buttons[1][7][label] {WSK};
-        #var buttons[1][7][status] {off};
-    };
-    #regex {$pzaslonaflagi} {r} {
-        #var buttons[1][6][label] {<ABB><fff>ROZ<088>};
-        #var buttons[1][6][status] {on};
-    } {
-        #var buttons[1][6][label] {ROZ};
-        #var buttons[1][6][status] {off};
-    };
-    rysuj_przyciski;
-};
-
-#event {VARIABLE UPDATED bronstatus} {
-    #if {"$bronstatus" == "on"} {
-        #var buttons[2][8][label] {<FAA><fff>BRO<088>};
-        #var buttons[2][8][status] {on};
-    } {
-        #var buttons[2][8][label] {BRO};
-        #var buttons[2][8][status] {off};
-    };
-    rysuj_przyciski;
-};
-
-#event {VARIABLE UPDATED pzdjeciezaslon} {
-    #if {"$pzdjeciezaslon" == "auto"} {
-        #var buttons[1][5][label] {<AAB><fff>ZDE<088>};
-        #var buttons[1][5][status] {on};
-    } {
-        #var buttons[1][5][label] {ZDE};
-        #var buttons[1][5][status] {off};
-    };
-    rysuj_przyciski;
+#alias raidmap_show {
+    #list bundle_handler_split_request                       add {SplitWingMap_refresh}
+    #list event_handler_pressed_mouse_button_one             add {raidmap_pressed_mouse_button_one}
+    #list event_handler_released_mouse_button_one            add {raidmap_released_mouse_button_one}
+    #list event_handler_moved_mouse_button_one               add {raidmap_moved_mouse_button_one}
+    #list event_handler_scrolled_mouse_wheel_up              add {raidmap_scrolled_mouse_wheel_up}
+    #list event_handler_scrolled_mouse_wheel_down            add {raidmap_scrolled_mouse_wheel_down}
+    #list event_handler_map_double_clicked_mouse_button_one  add {raidmap_map_double_clicked_mouse_button_one}
+    
+    #list event_handler_map_updated_vtmap add {mapa_map_updated_vtmap};
+    #event {VARIABLE UPDATED objectnumsRefreshed} {RaidBar_refresh};    #nop RAIDTABLE HOOK;
+    #map flag vtmap on;
+    /conf SplitWingMapWidth $hidden_raidmap_size;
 }
+

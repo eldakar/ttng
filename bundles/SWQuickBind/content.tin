@@ -61,8 +61,7 @@
 }
 
 #alias {QB} {
-    #var bind_found 1;
-    #var bind_run {%0};
+    #line ignore #sh {<AAB><fff>BIND LOKACJA <088><168> %0<088>};
     #alias _lokacyjny_ {%0};
 };
 
