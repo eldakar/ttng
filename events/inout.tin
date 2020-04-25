@@ -1,0 +1,8 @@
+#list event_handler_send_output create;
+
+#event {SEND OUTPUT}
+{
+	#foreach {*event_handler_send_output[]} {ehso} {
+        $event_handler_send_output[$ehso] %0;
+    };
+};
