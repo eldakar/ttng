@@ -1,5 +1,3 @@
-#event {SEND OUTPUT} {#var sendoutput %0;#replace {sendoutput} {\n} {};#echo {<cca>$sendoutput<088>}};
-
 #event {PROGRAM START} {
     #script mylogin {whoami};
     #var cport %0;
@@ -21,7 +19,8 @@
     #read events/gmcp.object.tin;
     #read events/gmcp.room.tin;
     #read events/mouse.tin;
-    
+    #read events/inout.tin;
+
     #read bundles/ConfigManager/manifest.tin;
     #read bundles/HelpManager/manifest.tin;
     #read bundles/SplitRefresh/manifest.tin;

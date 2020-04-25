@@ -1,0 +1,4 @@
+WARN1. Konfiguracje
+TUTOR /conf echokomend               - widoczne | niewidoczne
+TUTOR /conf logowanie                - wlaczone | wylaczone
+       	Logi zapisywane sa do Profiles/Logs

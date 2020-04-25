@@ -1,5 +1,5 @@
 #class markups read bundles/ConfigManager/Profiles/markups.tt;
-		
+
 #var markupsStatus off;
 #alias {/a %w} {
 	#map get roomvnum markupsRoomVnum;
@@ -125,3 +125,29 @@
 		#var showingmarkups 0;
 	};
 } {1};
+
+#action {%*% swiata zostalo opanowane przez Ciemnosc.} {
+	#var tmpvalue %1;
+
+	#class markups read bundles/ConfigManager/Profiles/markups.tt;
+	#class markups open;
+	#if {$apka} {
+		#if {$tmpvalue < $apka} {
+			#line ignore #showme {<138>Podswietlanie: <088>Baza pokojow jest przedawniona. Wpisz <118>/destroy<088> aby usunac stare wpisy.};
+		} {
+			#list m size msize;
+			#line ignore #showme {<138>Podswietlanie: <088>Odswiezam stan apokalipsy. Zaladowane jest: <128>$msize<088> pokojow.};
+			#var apka $tmpvalue;
+			#unvar msize;				
+		}
+	} {
+		#list m size msize;
+		#line ignore #showme {<138>Podswietlanie: <088>Dodaje stan apokalipsy. Zaladowane jest: <128>$msize<088> pokojow.};
+		#var apka $tmpvalue;
+		#unvar msize;	
+	}
+	#class markups close;
+	#class markups write bundles/ConfigManager/Profiles/markups.tt;
+};
+
+/show

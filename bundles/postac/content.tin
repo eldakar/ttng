@@ -44,7 +44,7 @@
 
 	#line ignore #sh {                   ${gilcol[SC]}SC ${gilcol[MC]}MC ${gilcol[OH]}OH ${gilcol[GL]}GL ${gilcol[KS]}KS ${gilcol[WK]}WK ${gilcol[KG]}KG ${gilcol[RA]}RA ${gilcol[OK]}OK ${gilcol[OS]}OS ${gilcol[CK]}CK ${gilcol[SG]}SG ${gilcol[GP]}GP<088>};
 	#line ignore #sh {broń               ${gilcol[SC]}70 ${gilcol[MC]}74 ${gilcol[OH]}71 ${gilcol[GL]}75 ${gilcol[KS]}73 ${gilcol[WK]}74 ${gilcol[KG]}72 ${gilcol[RA]}72 ${gilcol[OK]}71 ${gilcol[OS]}65 ${gilcol[CK]}xx ${gilcol[SG]}60 ${gilcol[GP]}30<088>};
-	#line ignore #sh {uniki              ${gilcol[SC]}60 ${gilcol[MC]}45 ${gilcol[OH]}30 ${gilcol[GL]}42 ${gilcol[KS]}40 ${gilcol[WK]}50 ${gilcol[KG]}51 ${gilcol[RA]}70 ${gilcol[OK]}46 ${gilcol[OS]}55 ${gilcol[CK]}xx ${gilcol[SG]}34 ${gilcol[GP]}25<088>};
+	#line ignore #sh {uniki              ${gilcol[SC]}60 ${gilcol[MC]}45 ${gilcol[OH]}30 ${gilcol[GL]}42 ${gilcol[KS]}40 ${gilcol[WK]}50 ${gilcol[KG]}54 ${gilcol[RA]}70 ${gilcol[OK]}46 ${gilcol[OS]}55 ${gilcol[CK]}xx ${gilcol[SG]}34 ${gilcol[GP]}25<088>};
 	#line ignore #sh {walka dwiema       ${gilcol[SC]}50 ${gilcol[MC]}65 ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}xx ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}55 ${gilcol[OK]}xx ${gilcol[OS]}xx ${gilcol[CK]}xx ${gilcol[SG]}xx ${gilcol[GP]}19<088>};
 	#line ignore #sh {tarczownictwo      ${gilcol[SC]}xx ${gilcol[MC]}xx ${gilcol[OH]}75 ${gilcol[GL]}60 ${gilcol[KS]}71 ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}xx ${gilcol[OK]}xx ${gilcol[OS]}xx ${gilcol[CK]}xx ${gilcol[SG]}xx ${gilcol[GP]}25<088>};
 	#line ignore #sh {parowanie          ${gilcol[SC]}40 ${gilcol[MC]}45 ${gilcol[OH]}50 ${gilcol[GL]}41 ${gilcol[KS]}xx ${gilcol[WK]}71 ${gilcol[KG]}71 ${gilcol[RA]}xx ${gilcol[OK]}52 ${gilcol[OS]}xx ${gilcol[CK]}xx ${gilcol[SG]}45 ${gilcol[GP]}25<088>};
