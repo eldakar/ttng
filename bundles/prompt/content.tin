@@ -292,6 +292,12 @@
 #action {Opuszczasz obszar} {
 	#nop;
 } {1};
+
+#action {Ciemne miejsce} {
+	#var rozk2 {{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
+	rysuj_roze;
+};
+
 #nop #############################################################;
 #nop #############################################################;
 #nop #############################################################;
@@ -330,11 +336,13 @@
 	#line ignore #sh {${bbBGC}Panika: $state[panic] Prag: $state[soaked]<088>} {-3} {$pozycjapaskaformy};
 	#line ignore #sh {${bbBGC}Ciezar: $state[encumbrance] Pija: $state[intox]<088>} {-2} {$pozycjapaskaformy};
 }
+#var ptrybchodzeniasymbol {<128>W};
 #alias rysuj_roze {
 	#line ignore #sh {$bbBGC   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u] <088>} {-4} {1};
-	#line ignore #sh {$bbBGC  <138>$rozk2[w]$rozk2[w] o <138>$rozk2[e]$rozk2[e]  <088>} {-3} {1};
+	#line ignore #sh {$bbBGC  <138>$rozk2[w]$rozk2[w] $ptrybchodzeniasymbol <138>$rozk2[e]$rozk2[e]  <088>} {-3} {1};
 	#line ignore #sh {$bbBGC  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d] <088>} {-2} {1};
 };
+
 #alias rysuj_przyciski {
 	#math {pozycjaprzyciskow} {$screencols - 42};
 	#line ignore #sh {${bbBGC}Atak    <088>$buttons[0][8][label]${bbBGC} <088>$buttons[0][7][label]${bbBGC} <088>$buttons[0][6][label]${bbBGC} <088>$buttons[0][5][label]${bbBGC}<088>} {-4} {$pozycjaprzyciskow};
@@ -490,4 +498,13 @@
         #var buttons[1][5][status] {off};
     };
     rysuj_przyciski;
+}
+
+#event {VARIABLE UPDATED ptrybchodzenia} {
+	#switch {$ptrybchodzenia} {
+		#case {0} {#var ptrybchodzeniasymbol <128>W};
+		#case {1} {#var ptrybchodzeniasymbol <138>P};
+		#case {2} {#var ptrybchodzeniasymbol <118>K};
+	};
+	rysuj_roze;
 }

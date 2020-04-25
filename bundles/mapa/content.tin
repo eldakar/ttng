@@ -49,44 +49,50 @@
     #map goto $ConfigManager_Configs[startowa];
 };
 
-#alias {/chodzenie} {
-    #alias {move_n} {#send n;#var trytomove 1;#var movedir {polnoc}};
-    #alias {move_s} {#send s;#var trytomove 1;#var movedir {poludnie}};
-    #alias {move_e} {#send e;#var trytomove 1;#var movedir {wschod}};
-    #alias {move_w} {#send w;#var trytomove 1;#var movedir {zachod}};
-    #alias {move_d} {#send d;#var trytomove 1;#var movedir {dol}};
-    #alias {move_u} {#send u;#var trytomove 1;#var movedir {gora}};
-    #alias {move_ne} {#send ne;#var trytomove 1;#var movedir {polnocny-wschod}};
-    #alias {move_nw} {#send nw;#var trytomove 1;#var movedir {polnocny-zachod}};
-    #alias {move_sw} {#send sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
-    #alias {move_se} {#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};    
-} {1};
-
-#alias {/przemykanie} {
-    #alias {move_n} {#send przemknij n;#map move n;#var trytomove 1;#var movedir {polnoc}};
-    #alias {move_s} {#send przemknij s;#map move s;#var trytomove 1;#var movedir {poludnie}};
-    #alias {move_e} {#send przemknij e;#map move e;#var trytomove 1;#var movedir {wschod}};
-    #alias {move_w} {#send przemknij w;#map move w;#var trytomove 1;#var movedir {zachod}};
-    #alias {move_d} {#send przemknij d;#map move d;#var trytomove 1;#var movedir {dol}};
-    #alias {move_u} {#send przemknij u;#map move u;#var trytomove 1;#var movedir {gora}};
-    #alias {move_ne} {#send przemknij ne;map move ne#var trytomove 1;#var movedir {polnocny-wschod}};
-    #alias {move_nw} {#send przemknij nw;map move nw#var trytomove 1;#var movedir {polnocny-zachod}};
-    #alias {move_sw} {#send przemknij sw;map move sw#var trytomove 1;#var movedir {poludniowy-zachod}};
-    #alias {move_se} {#send przemknij se;map move se#var trytomove 1;#var movedir {poludniowy-wschod}};    
-} {1};
-
-#alias {/sprawdzanie} {
-    #alias {move_n} {sprawdz polnoc;#send n;#var trytomove 1;#var movedir {polnoc}};
-    #alias {move_s} {#send s;#var trytomove 1;#var movedir {poludnie}};
-    #alias {move_e} {sprawdz polnoc;#send e;#var trytomove 1;#var movedir {wschod}};
-    #alias {move_w} {sprawdz polnoc;#send w;#var trytomove 1;#var movedir {zachod}};
-    #alias {move_d} {sprawdz polnoc;#send d;#var trytomove 1;#var movedir {dol}};
-    #alias {move_u} {sprawdz polnoc;#send u;#var trytomove 1;#var movedir {gora}};
-    #alias {move_ne} {sprawdz polnoc;#send ne;#var trytomove 1;#var movedir {polnocny-wschod}};
-    #alias {move_nw} {sprawdz polnoc;#send nw;#var trytomove 1;#var movedir {polnocny-zachod}};
-    #alias {move_sw} {sprawdz polnoc;#send sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
-    #alias {move_se} {sprawdz polnoc;#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};    
-} {1};
+#var ptrybchodzenia 0;
+#alias {_trybchodzenia_} {
+    #switch {$ptrybchodzenia} {
+        #case {0} {
+            #alias {move_n} {#send przemknij n;#map move n;#var trytomove 1;#var movedir {polnoc}};
+            #alias {move_s} {#send przemknij s;#map move s;#var trytomove 1;#var movedir {poludnie}};
+            #alias {move_e} {#send przemknij e;#map move e;#var trytomove 1;#var movedir {wschod}};
+            #alias {move_w} {#send przemknij w;#map move w;#var trytomove 1;#var movedir {zachod}};
+            #alias {move_d} {#send przemknij d;#map move d;#var trytomove 1;#var movedir {dol}};
+            #alias {move_u} {#send przemknij u;#map move u;#var trytomove 1;#var movedir {gora}};
+            #alias {move_ne} {#send przemknij ne;map move ne#var trytomove 1;#var movedir {polnocny-wschod}};
+            #alias {move_nw} {#send przemknij nw;map move nw#var trytomove 1;#var movedir {polnocny-zachod}};
+            #alias {move_sw} {#send przemknij sw;map move sw#var trytomove 1;#var movedir {poludniowy-zachod}};
+            #alias {move_se} {#send przemknij se;map move se#var trytomove 1;#var movedir {poludniowy-wschod}};    
+            #var ptrybchodzenia 1;            
+        };
+        #case {1} {
+            #alias {move_n} {sprawdz polnoc;#send n;#var trytomove 1;#var movedir {polnoc}};
+            #alias {move_s} {sprawdz polnoc;#send s;#var trytomove 1;#var movedir {poludnie}};
+            #alias {move_e} {sprawdz polnoc;#send e;#var trytomove 1;#var movedir {wschod}};
+            #alias {move_w} {sprawdz polnoc;#send w;#var trytomove 1;#var movedir {zachod}};
+            #alias {move_d} {sprawdz polnoc;#send d;#var trytomove 1;#var movedir {dol}};
+            #alias {move_u} {sprawdz polnoc;#send u;#var trytomove 1;#var movedir {gora}};
+            #alias {move_ne} {sprawdz polnoc;#send ne;#var trytomove 1;#var movedir {polnocny-wschod}};
+            #alias {move_nw} {sprawdz polnoc;#send nw;#var trytomove 1;#var movedir {polnocny-zachod}};
+            #alias {move_sw} {sprawdz polnoc;#send sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
+            #alias {move_se} {sprawdz polnoc;#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};
+            #var ptrybchodzenia 2;
+        };
+        #case {2} {
+            #alias {move_n} {#send n;#var trytomove 1;#var movedir {polnoc}};
+            #alias {move_s} {#send s;#var trytomove 1;#var movedir {poludnie}};
+            #alias {move_e} {#send e;#var trytomove 1;#var movedir {wschod}};
+            #alias {move_w} {#send w;#var trytomove 1;#var movedir {zachod}};
+            #alias {move_d} {#send d;#var trytomove 1;#var movedir {dol}};
+            #alias {move_u} {#send u;#var trytomove 1;#var movedir {gora}};
+            #alias {move_ne} {#send ne;#var trytomove 1;#var movedir {polnocny-wschod}};
+            #alias {move_nw} {#send nw;#var trytomove 1;#var movedir {polnocny-zachod}};
+            #alias {move_sw} {#send sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
+            #alias {move_se} {#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};                
+            #var ptrybchodzenia 0;
+        };
+    };
+};
 
 
 #alias {/rysuj} {#line ignore #show {Zaczynam rysowac};#var highlightMode 1} {1};

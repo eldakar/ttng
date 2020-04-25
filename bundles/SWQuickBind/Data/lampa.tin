@@ -45,3 +45,17 @@
 	Highlights_event <118>Lampa - Dopelniasz %1.<088>;
 	#line gag;
 } {1};
+
+#alias {/lampa} {
+	#switch {"$lampastatus"} {
+		#case {"on"} {
+				zgas lampe
+		};
+		#case {"off"} {
+				wy oleje;
+				odloz pusta butelke;
+				napelnij lampe olejem;
+				zapal lampe;
+		};
+	};
+} {1};

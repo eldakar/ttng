@@ -5,6 +5,18 @@
     #nop;
 };
 
+#alias {zacheta} {
+    #var pzacheta $ConfigManager_Configs[zacheta];
+
+    #nop TODO;
+    #nop EVENT: BUFFER UPDATE;
+    #nop EVENT: SEND OUTPUT;
+    #if {"$pzacheta" == "widoczna"} {
+        #sh {$duch[$CHAR_INFO[object_num]][bar][orc] <128>> <088>} {$screenrows} {1};
+    }; 
+
+}
+
 #alias {RaidTableGuildEnemies} {
     #local tmp {$ConfigManager_Configs[RaidTableGuildEnemies]};
     #replace tmp {,} {;};

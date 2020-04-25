@@ -3,7 +3,7 @@
 #nop ############################;
 
 #nop NAME ###########;
-#var bundle_name {LogManager};
+#var bundle_name {system};
 
 #nop IS DATA PRESENT #;
 #var bundle_data {0};

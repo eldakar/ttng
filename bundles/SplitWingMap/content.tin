@@ -235,13 +235,13 @@
 };
 
 #alias raidmap_show {
-    #list bundle_handler_split_request                       add {SplitWingMap_refresh}
-    #list event_handler_pressed_mouse_button_one             add {raidmap_pressed_mouse_button_one}
-    #list event_handler_released_mouse_button_one            add {raidmap_released_mouse_button_one}
-    #list event_handler_moved_mouse_button_one               add {raidmap_moved_mouse_button_one}
-    #list event_handler_scrolled_mouse_wheel_up              add {raidmap_scrolled_mouse_wheel_up}
-    #list event_handler_scrolled_mouse_wheel_down            add {raidmap_scrolled_mouse_wheel_down}
-    #list event_handler_map_double_clicked_mouse_button_one  add {raidmap_map_double_clicked_mouse_button_one}
+    #list bundle_handler_split_request                       add {SplitWingMap_refresh};
+    #list event_handler_pressed_mouse_button_one             add {raidmap_pressed_mouse_button_one};
+    #list event_handler_released_mouse_button_one            add {raidmap_released_mouse_button_one};
+    #list event_handler_moved_mouse_button_one               add {raidmap_moved_mouse_button_one};
+    #list event_handler_scrolled_mouse_wheel_up              add {raidmap_scrolled_mouse_wheel_up};
+    #list event_handler_scrolled_mouse_wheel_down            add {raidmap_scrolled_mouse_wheel_down};
+    #list event_handler_map_double_clicked_mouse_button_one  add {raidmap_map_double_clicked_mouse_button_one};
     
     #list event_handler_map_updated_vtmap add {mapa_map_updated_vtmap};
     #event {VARIABLE UPDATED objectnumsRefreshed} {RaidBar_refresh};    #nop RAIDTABLE HOOK;
