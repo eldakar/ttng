@@ -66,17 +66,17 @@
             #var ptrybchodzenia 1;            
         };
         #case {1} {
-            #alias {move_n} {sprawdz polnoc;#send n;#var trytomove 1;#var movedir {polnoc}};
-            #alias {move_s} {sprawdz polnoc;#send s;#var trytomove 1;#var movedir {poludnie}};
-            #alias {move_e} {sprawdz polnoc;#send e;#var trytomove 1;#var movedir {wschod}};
-            #alias {move_w} {sprawdz polnoc;#send w;#var trytomove 1;#var movedir {zachod}};
-            #alias {move_d} {sprawdz polnoc;#send d;#var trytomove 1;#var movedir {dol}};
-            #alias {move_u} {sprawdz polnoc;#send u;#var trytomove 1;#var movedir {gora}};
-            #alias {move_ne} {sprawdz polnoc;#send ne;#var trytomove 1;#var movedir {polnocny-wschod}};
-            #alias {move_nw} {sprawdz polnoc;#send nw;#var trytomove 1;#var movedir {polnocny-zachod}};
-            #alias {move_sw} {sprawdz polnoc;#send sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
-            #alias {move_se} {sprawdz polnoc;#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};
-            #var ptrybchodzenia 2;
+            #alias {move_n} {#send n;#var trytomove 1;#var movedir {polnoc}};
+            #alias {move_s} {#send s;#var trytomove 1;#var movedir {poludnie}};
+            #alias {move_e} {#send e;#var trytomove 1;#var movedir {wschod}};
+            #alias {move_w} {#send w;#var trytomove 1;#var movedir {zachod}};
+            #alias {move_d} {#send d;#var trytomove 1;#var movedir {dol}};
+            #alias {move_u} {#send u;#var trytomove 1;#var movedir {gora}};
+            #alias {move_ne} {#send ne;#var trytomove 1;#var movedir {polnocny-wschod}};
+            #alias {move_nw} {#send nw;#var trytomove 1;#var movedir {polnocny-zachod}};
+            #alias {move_sw} {#send sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
+            #alias {move_se} {#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};
+            #var ptrybchodzenia 0;
         };
         #case {2} {
             #alias {move_n} {#send n;#var trytomove 1;#var movedir {polnoc}};
@@ -108,18 +108,6 @@
 #alias {move_nw} {#send nw;#var trytomove 1;#var movedir {polnocny-zachod}};
 #alias {move_sw} {#send sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
 #alias {move_se} {#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};
-
-#alias {sneak_n} {#send przemknij n;#map move n;#var trytomove 1;#var movedir {polnoc}};
-#alias {sneak_s} {#send przemknij s;#map move s;#var trytomove 1;#var movedir {poludnie}};
-#alias {sneak_e} {#send przemknij e;#map move e;#var trytomove 1;#var movedir {wschod}};
-#alias {sneak_w} {#send przemknij w;#map move w;#var trytomove 1;#var movedir {zachod}};
-#alias {sneak_d} {#send przemknij d;#map move d;#var trytomove 1;#var movedir {dol}};
-#alias {sneak_u} {#send przemknij u;#map move u;#var trytomove 1;#var movedir {gora}};
-#alias {sneak_ne} {#send przemknij ne;#map move ne;#var trytomove 1;#var movedir {polnocny-wschod}};
-#alias {sneak_nw} {#send przemknij nw;#map move nw;#var trytomove 1;#var movedir {polnocny-zachod}};
-#alias {sneak_sw} {#send przemknij sw;#map move sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
-#alias {sneak_se} {#send przemknij se;#map move se;#var trytomove 1;#var movedir {poludniowy-wschod}};
-
 
 #alias {n} {move_n};
 #alias {s} {move_s};
@@ -254,7 +242,7 @@
 #var rozk2 {{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
 
 #function buduj_roze {
-    #local b {0};
+    #var b {0};
     #var roza_custom {};
     #var rozk2 {{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
 
@@ -720,6 +708,12 @@
         };
     };
 }
+
+#alias {/run %w %*}
+{
+    #map explore %1;
+    #path run %2;
+} {1};
 
 #alias mapa_map_create_room {
     #if {"$pdynamic" == "wlaczona"} {

@@ -1,0 +1,35 @@
+WARN Konfiguracja
+TUTOR /conf kolorowaniemapy wlaczone|wylaczone
+       wyswietla ozdobniki dookola pokojow
+TUTOR /conf dynamicznamapa wlaczona|wylaczona
+       BETA: wykrywa czy znalelezlismy sie na obszarze niezmapowanym. 
+       Jesli tak, zaczyna rysowac.
+TUTOR /conf startowa numer_pokoju
+       Po zalogowaniu ustawia kulke na danym pokoju.
+TUTOR /conf trybmapy
+       unicode - jeden wiersz oddziela od siebie pokoje
+       ascii   - dwa wiersze oddzielaja od siebie pokoje
+WARN Aliasy
+TUTOR       _trybchodzenia_ - ALIAS SYSTEMOWY - zmienia tryb chodzenia       
+       normalne    (znak W na rozy wiatrow)
+       przemykanie (znak P na rozy wiatrow)
+       kompas      (znak K na rozy wiatrow) (wymaga addona IN/OUT)
+TUTOR       /f lub findme
+       Probuje odnalesc mape wedlug GMCP lub dostepnych wyjsc
+TUTOR       pidz
+       Tintinowa wersja komendy idz
+TUTOR       /run <kierunek> <czas>
+       Odkrywa najblizsze skrzyzowanie w <kierunku>
+       Idzie do niego co <czas> sekund (Mozna uzywac wartosci 0.3 itp)
+TUTOR       #var findmedebug 1
+       Wlacza debugowanie komendy /f
+TUTOR       /rysuj       - wlacz eksploracje
+TUTOR       /nierysuj    - wylacz eksploracje
+       Ruch po mapie koloruje dostepne kierunki, w celu skonstruowania
+       dostepnych wyjsc, w lokacjach, ktore zmieniaja sie co apke.
+       Ma to zastosowanie w Lesie Hobgoblinow, Lakach dookola Queneles, etc.
+       Elementy podswietlaja sie na tej samej zasadzie co /a mob.
+TUTOR       /go          - BETA - wyswietla tabele miejsc.
+       Wybranie danego miejsca ustawia LAZIK na ruch w jego strone.
+TUTOR       /idz         - wykonuje KROK w strone wybranego miejsca
+TUTOR       /lc          - czysci droga pod komenda /idz
