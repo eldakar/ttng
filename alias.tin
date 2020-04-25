@@ -25,6 +25,7 @@
 
 #alias {w_kuzni}
 {
+  #action {Nie masz niczego takiego.} {#line gag};
   wym;
   naostrz bron;
   naostrz druga bron;
@@ -36,6 +37,7 @@
   napraw szosta zalozona zbroje;
   napraw siodma zalozona zbroje;
   wlm;
+  #delay {unhide} {#unaction {Nie masz niczego takiego.}} {1};
 }
 
 
@@ -94,7 +96,7 @@
   zamow bigos;
   zamow bigos;
   wy manierke;
-  wy buklak
+  wy buklak;
   wloz manierke do torby;
   wstan;
 };

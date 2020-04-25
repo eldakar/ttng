@@ -14,4 +14,4 @@
 	#list bundle_deps add {gmcpDefaultColorManager};
 #list bundle_alias clear;
 
-#var bundle_ready @bundleops_validate{};
+#var bundle_ready @bundleops_validate{bundles};

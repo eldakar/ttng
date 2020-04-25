@@ -86,9 +86,9 @@
 		#line substitute variables {
 			#CLASS {$bundle_name} OPEN;
 			#var bundles[$bundle_name] {1};
-			#read bundles/$bundle_name/content.tin;
+			#read %1/$bundle_name/content.tin;
 			#if {$bundle_data > 0} {
-				#read bundles/$bundle_name/data.tin;
+				#read %1/$bundle_name/data.tin;
 			};
 			#CLASS {$bundle_name} CLOSE;
 		};

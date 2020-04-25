@@ -16,6 +16,7 @@
 #list bundle_configs clear;
 #list bundle_configs add {logowanie};
 #list bundle_configs add {echokomend};
+#list bundle_configs add {powtorzenter}
 
 #nop ############################;
 #nop BUNDLE DEPENDENCIES ###;
@@ -33,5 +34,5 @@
 #nop ############################;
 #nop Validate configuration;
 #nop ############################;
-#var bundle_ready @bundleops_validate{};
+#var bundle_ready @bundleops_validate{bundles};
 

@@ -11,4 +11,4 @@
 	#list bundle_deps add {ConfigManager};
 #list bundle_alias clear;
 
-#var bundle_ready @bundleops_validate{};
+#var bundle_ready @bundleops_validate{bundles};

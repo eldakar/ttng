@@ -15,7 +15,7 @@
 #list event_handler_scrolled_mouse_wheel_down            add {raidmap_scrolled_mouse_wheel_down}
 #list event_handler_map_double_clicked_mouse_button_one  add {raidmap_map_double_clicked_mouse_button_one}
 
-#var bundle_ready @bundleops_validate{};
+#var bundle_ready @bundleops_validate{bundles};
 
 
 

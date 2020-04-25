@@ -1,5 +1,5 @@
 #var bundle_name {HelpManager};
 #var bundle_help {0};
 #var bundle_content {1};
-#var bundle_ready @bundleops_validate{};
+#var bundle_ready @bundleops_validate{bundles};
 

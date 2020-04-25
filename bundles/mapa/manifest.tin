@@ -28,4 +28,4 @@
 #nop IS HELP PRESENT;
 #var bundle_help {0};
 
-#var bundle_ready @bundleops_validate{};
+#var bundle_ready @bundleops_validate{bundles};

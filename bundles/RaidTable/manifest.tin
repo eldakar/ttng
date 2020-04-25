@@ -48,5 +48,5 @@
 #nop ############################;
 #nop Validate configuration;
 #nop ############################;
-#var bundle_ready @bundleops_validate{};
+#var bundle_ready @bundleops_validate{bundles};
 

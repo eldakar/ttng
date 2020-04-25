@@ -20,7 +20,7 @@
 }
 
 #alias {dbb} {
-	#nop ####################################
+	#nop ####################################;
 	#nop PIERWSZA BRON;
 	#if {"$ppochwa" == "uprzaz"} {
 		#if {"$pzawod" == "wks"} {powyciagnij bron z pierwszej uprzezy;gzdobadz jej};
@@ -39,7 +39,7 @@
 		wy bron;
 		dobadz broni;
 	};
-	#nop ####################################
+	#nop ####################################;
 	#nop DRUGA BRON;
 	#if {"$ppochwa2" == "tarcza"} {
 		#if {"$pzawod" == "ks"} {gzzdejmij tarcze};
@@ -60,7 +60,7 @@
 	dobadz wszystkich broni;
 }
 #alias {obb} {
-	#nop ####################################
+	#nop ####################################;
 	#nop PIERWSZA BRON;
 	#if {"$ppochwa" == "uprzaz"} {
 		#if {"$pzawod" == "wks"} {gzopusc bron;powsun ja do pierwszej uprzezy};
@@ -78,7 +78,7 @@
 	#elseif {"$ppochwa" == "plecak"} {
 		wl dobyta bron;
 	}
-	#nop ####################################
+	#nop ####################################;
 	#nop DRUGA BRON;
 	#if {"$ppochwa2" == "tarcza"} {
 		#if {"$pzawod" == "ks"} {gzzarzuc tarcze};

@@ -38,4 +38,4 @@
 	#list bundle_slots add {macros};
 #list bundle_alias clear;
 
-#var bundle_ready @bundleops_validate{};
+#var bundle_ready @bundleops_validate{bundles};

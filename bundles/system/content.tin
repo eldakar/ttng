@@ -6,6 +6,15 @@
 	};
 };
 
+#alias {powtorzenter} {
+	#if {"$ConfigManager_Configs[powtorzenter]" == "wlaczony"} {
+		#config {REPEAT ENTER} {on};
+	} {
+		#config {REPEAT ENTER} {off};
+	}
+};
+
+
 #alias {echokomend} {
 	#if {"$ConfigManager_Configs[echokomend]" == "widoczne"} {
 		#list event_handler_send_output add {system_send_output_echokomend};
