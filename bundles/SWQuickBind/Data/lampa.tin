@@ -49,9 +49,9 @@
 #alias {/lampa} {
 	#switch {"$lampastatus"} {
 		#case {"on"} {
-				zgas lampe
+				zgas lampe;
 		};
-		#case {"off"} {
+		#default {
 				wy oleje;
 				odloz pusta butelke;
 				napelnij lampe olejem;
