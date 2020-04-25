@@ -8,14 +8,30 @@
 #alias {zacheta} {
     #var pzacheta $ConfigManager_Configs[zacheta];
 
-    #nop TODO;
-    #nop EVENT: BUFFER UPDATE;
-    #nop EVENT: SEND OUTPUT;
     #if {"$pzacheta" == "widoczna"} {
-        #sh {$duch[$CHAR_INFO[object_num]][bar][orc] <128>> <088>} {$screenrows} {1};
-    }; 
-
+        _zacheta_pokaz_;
+        #list event_handler_buffer_update add _zacheta_pokaz_;
+    } {
+        #list event_handler_buffer_update find _zacheta_pokaz_ _ehbuf;
+        #if {$_ehbuf} {
+            #list event_handler_buffer_update delete $_ehbuf;
+        };
+    };
 }
+
+#alias {_zacheta_pokaz_} {
+    #if {"$ConfigManager_Configs[powtorzenter]" == "wlaczony"} {
+        #var lastcmd $sendoutput;
+        #format lastcmdLen {%L} {$lastcmd};
+        #if {$lastcmdLen > 0} {
+            #sh {$duch[$CHAR_INFO[object_num]][bar][orc] <138>> <088>} {$screenrows} {1};
+        };
+    } {
+        #sh {$duch[$CHAR_INFO[object_num]][bar][orc] <128>> <088>} {$screenrows} {1};
+    };
+};
+
+
 
 #alias {RaidTableGuildEnemies} {
     #local tmp {$ConfigManager_Configs[RaidTableGuildEnemies]};
@@ -199,6 +215,7 @@
              #nop OPISY;            #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] - $postac[$test][imie]};
                                     #sub {$dudu2} {$dudu2 - $postac[$test][imie]};
             #nop POKOLORUJ;         #high {$duch[$dudu][desc]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
+                                    #nop high {$postac[$test][imie]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
                                 };
              #nop POKOLORUJ;    #high {$dudu2} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};                     
             				};
@@ -208,7 +225,7 @@
             				#line substitute variables {
                                 #if {"$ConfigManager_Configs[gildie]" == "widoczne"} {
              #nop WSTAW GILDIE;     #sub {$duch[$dudu][desc]} {$duch[$dudu][desc]($postac[$test][gildia])};
-             #nop POKOLORUJ;        #high {$duch[$dudu][desc]($postac[$test][gildia])} $ConfigManager_Configs[gildie]{$c_char_h_mode[$gildie[$postac[$test][gildia]]]}; 
+             #nop POKOLORUJ;        #high {$duch[$dudu][desc]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]}; 
                                 } {
              #nop POKOLORUJ;        #high {$duch[$dudu][desc]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};                         
                                 };

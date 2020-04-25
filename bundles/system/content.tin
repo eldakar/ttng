@@ -28,5 +28,11 @@
 
 #alias {system_send_output_echokomend} 
 {
-	#var sendoutput %0;#replace {sendoutput} {\n} {};#echo {<cca>$sendoutput<088>};
+	#var sendoutput %0;
+	#replace {sendoutput} {\n} {};
+	#format sop {%L} {$sendoutput};
+	#if {$sop} {
+		#echo {<cca>$sendoutput<088>};
+	};
+	#unvar sop;
 }

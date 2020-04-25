@@ -19,7 +19,7 @@
     #read events/gmcp.object.tin;
     #read events/gmcp.room.tin;
     #read events/mouse.tin;
-    #read events/inout.tin;
+    #read events/io.tin;
 
     #read bundles/ConfigManager/manifest.tin;
     #read bundles/HelpManager/manifest.tin;
