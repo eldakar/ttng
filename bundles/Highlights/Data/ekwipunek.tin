@@ -91,6 +91,7 @@
 	#sub {srebrny kunsztowny miecz} {<028>%0 <088>( <038>Bretonia Zmory<088> )};
 	#sub {czarny potezny miecz poltorareczny} {<028>%0 <088>( <038>Drachenfels<088> )};
 	#sub {olbrzymi obosieczny miecz dwureczny} {<028>%0 <088>( <038>Rycerz Chaosu<088> )};
+	#sub {grafitowy ogromny miecz} {<028>%0 <088>( <038>Straznik GKS<088> )};
 
 #nop TOPORY JEDNORECZNE;
 	#sub {ciezki jednoreczny topor} {<028>%0 <088>( <038>Wsiowe Orki<088> )};

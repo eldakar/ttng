@@ -151,6 +151,12 @@
 	#line sub variables {#macro {\eOl} {$_macrolist}};
 };};
 
+#alias {paragraf} {#line sub variables {
+	#local _macrolist {$MacroManager_Macros[paragraf]};
+   	#replace _macrolist {,} {;};
+	#line sub variables {#macro {§} {$_macrolist}};
+};};
+
 
 
 

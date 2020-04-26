@@ -156,8 +156,20 @@
 #action {Atakujesz waskim kunsztownym %* ogromne} {collect magic 5 $AVATAR_NAME;#line gag};
 #action {Zgrabnym ruchem zwodzisz %* i gwaltownie skracajac dystans} {collect magic 6 $AVATAR_NAME;#line gag};
 
-#nop AMULET;
+#nop MAGIKI - AMULET;
 #action {Od twojego amuletu emanuje przyjemne cieplo.} {collect AMULET 0 $AVATAR_NAME;#line gag};
+
+#nop MAGIKI - TASAK;
+#action {{Widok slabnacego wroga tylko dodaje ci sil|Z kazdym kolejnym ciosem nabierasz nowej sily do walki|Powolne, pozbawione sily ruchy wroga zagrzewaja cie do walki, dodajac zapalu.}} {collect TASAKMECZY 0 $AVATAR_NAME;#line gag};
+#nop TROJZAB Z PIERWSZEJ OSOBY;
+#action {Energicznie wyrzuconym ramieniem prowadzisz ogromny} {collect TROJZAB 0 $AVATAR_NAME;#line gag};
+#action {Wykonujac zamach uderzasz %* ogromnym ognistym %* smugi} {collect TROJZAB 1 $AVATAR_NAME;#line gag};
+#action {Uderzasz ogromnym ognistym trojzebem} {collect TROJZAB 2 $AVATAR_NAME;#line gag};
+#action {Plonaca stala ogromnego ognistego trojzebu przebijasz %* z zaskakujaca latwoscia wyrywajac tkanki%*} {collect TROJZAB 3 $AVATAR_NAME;#line gag};
+#action {Z moca uderzasz %* ogromnym ognistym trojzebem %* Swad} {collect TROJZAB 4 $AVATAR_NAME;#line gag};
+#action {Z impetem pozostawiajacym jeno plomienny} {collect TROJZAB 5 $AVATAR_NAME;#line gag};
+#action {Straszliwym ciosem, przekraczajacym niemal mozliwosci smiertelnika} {collect TROJZAB 6 $AVATAR_NAME;#line gag};
+#action {Momentalnie dostrzegasz stan wroga, decydujesz sie na ostateczny cios.} {collect TROJZAB 7 $AVATAR_NAME;#line gag};
 
 
 
@@ -167,17 +179,6 @@
    #nop TALWAR;
 #nop MAG;    #action {Widzac, ze na ostrzu %* talwara %*, %w %w %w wykonuje %*, pozostawiajac tam spore oparzenie} {collect &5 unknown magic 3;#line gag};   
 #nop MAG;    #action {Widzac, ze na ostrzu %* talwara %*, %w wykonuje %*, pozostawiajac tam spore oparzenie} {collect %3 unknown magic 3;#line gag};
-   #nop TROJZAB Z PIERWSZEJ OSOBY;
-#nop MAG;    #action {Energicznie wyrzuconym ramieniem prowadzisz ogromny} {collect $AVATAR_NAME unknown mis 0;#line gag};
-#nop MAG;    #action {Wykonujac zamach uderzasz %* ogromnym ognistym %* smugi} {collect $AVATAR_NAME unknown magic 1;#line gag};
-#nop MAG;    #action {Uderzasz ogromnym ognistym trojzebem} {collect $AVATAR_NAME unknown magic 2;#line gag};
-#nop MAG;    #action {Plonaca stala ogromnego ognistego trojzebu przebijasz %* z zaskakujaca latwoscia wyrywajac tkanki} {collect $AVATAR_NAME unknown magic 3;#line gag};
-#nop MAG;    #action {Z moca uderzasz %* ogromnym ognistym trojzebem %* Swad} {collect $AVATAR_NAME unknown magic 4;#line gag};
-#nop MAG;    #action {Z impetem pozostawiajacym jeno plomienny} {collect $AVATAR_NAME unknown magic 5;#line gag};
-#nop MAG;    #action {Straszliwym ciosem, przekraczajacym niemal mozliwosci smiertelnika} {collect $AVATAR_NAME unknown magic 6;#line gag};
-#nop MAG;    #action {Momentalnie dostrzegasz stan wroga, decydujesz sie na ostateczny cios.} {collect $AVATAR_NAME unknown magic 7;#line gag};
-   #nop TASAK;
-#nop MAG;    #action {{Widok slabnacego wroga tylko dodaje ci sil|Z kazdym kolejnym ciosem nabierasz nowej sily do walki|Powolne, pozbawione sily ruchy wroga zagrzewaja cie do walki, dodajac zapalu.}} {collect $AVATAR_NAME unknown magic 0;#line gag};
 
 #nop PANIC;  #action {w panice umyka} {#sh $tmpvalue2;#line gag};
 #nop PANIC;  #action {uciekl ci.} {#sh $tmpvalue2;#line gag};

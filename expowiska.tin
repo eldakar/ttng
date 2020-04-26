@@ -20,6 +20,14 @@
 	_zabij_ przeciwnika;
 };
 
+#alias {high_pass} {
+	zabij rycerza;
+	zabij oficera;
+	zabij zolnierza;
+	_zabij_ przeciwnika;
+};
+
+
 #alias {snotlingi_nuln} {
 	zabij snotlinga;
 	zabij drugiego snotlinga;

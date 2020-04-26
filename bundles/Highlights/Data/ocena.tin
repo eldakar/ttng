@@ -2,7 +2,8 @@
 #sub {$ \(} {<138>$ <088>\(};
 #nop poziomy zuzycia;
 #high {(w znakomitym stanie)} {<118><afa>};
-#high {(lekko podniszczone)} {<038>};
+#high {(lekko podniszczon%w)} {<038>};
+
 #high {(w kiepskim stanie)} {<018>};
 #high {(w oplakanym stanie)} {<118>};
 #high {(w dobrym stanie)} {<028>};
