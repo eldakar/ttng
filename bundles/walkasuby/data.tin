@@ -171,14 +171,8 @@
 #action {Straszliwym ciosem, przekraczajacym niemal mozliwosci smiertelnika} {collect TROJZAB 6 $AVATAR_NAME;#line gag};
 #action {Momentalnie dostrzegasz stan wroga, decydujesz sie na ostateczny cios.} {collect TROJZAB 7 $AVATAR_NAME;#line gag};
 
-
-
-
-
-
-   #nop TALWAR;
-#nop MAG;    #action {Widzac, ze na ostrzu %* talwara %*, %w %w %w wykonuje %*, pozostawiajac tam spore oparzenie} {collect &5 unknown magic 3;#line gag};   
-#nop MAG;    #action {Widzac, ze na ostrzu %* talwara %*, %w wykonuje %*, pozostawiajac tam spore oparzenie} {collect %3 unknown magic 3;#line gag};
+#nop MAGIKI - TALWAR - Z TRZECIEJ OSOBY;
+#action {Widzac, ze na ostrzu %* talwara %*, %w wykonuje %* tam spore oparzenie} {collect TALWAR 3 %3;#line gag};
 
 #nop PANIC;  #action {w panice umyka} {#sh $tmpvalue2;#line gag};
 #nop PANIC;  #action {uciekl ci.} {#sh $tmpvalue2;#line gag};
