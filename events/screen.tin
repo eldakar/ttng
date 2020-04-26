@@ -1,0 +1,6 @@
+#event {SCREEN RESIZE}
+{
+    #foreach {*event_handler_screen_resize[]} {ehsr} {
+        $event_handler_screen_resize[$ehsr];
+    };
+}

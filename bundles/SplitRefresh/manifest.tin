@@ -33,6 +33,8 @@
 #nop ############################;
 #list bundle_deps clear;
 
+#list event_handler_screen_resize add SplitRefreshRequestRefresh;
+
 #nop ############################;
 #nop BUNDLE ALIASES ########;
 #nop Check if any alias already in use;

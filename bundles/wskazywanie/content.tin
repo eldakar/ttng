@@ -38,7 +38,7 @@
           };
         };
 	      #case {"k"} ksznienawidz %0;	          #nop korki;
-        #case {"p"} {przestan zaslaniac;przelam obrone celu ataku;};#nop przelamanie TODO;
+        #case {"p"} {przestan kryc sie za zaslona;przelam obrone celu ataku;};#nop przelamanie TODO;
       };
     };
 }
