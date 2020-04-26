@@ -39,6 +39,23 @@
 #var healthbars2[2] {<018>### <088>3/7};
 #var healthbars2[1] {<018>##  <088>2/7};
 #var healthbars2[0] {<FAA><fff>#<088>   <088>1/7};
+
+#var healthbars3[6] {<aaf>#######};
+#var healthbars3[5] {-<afa>######};
+#var healthbars3[4] {--<ffa>#####};
+#var healthbars3[3] {---<ffa>####};
+#var healthbars3[2] {----<fca>###};
+#var healthbars3[1] {-----<faa>##};
+#var healthbars3[0] {------<faa>#};
+
+#var healthbarsp[6] {#######};
+#var healthbarsp[5] {-######};
+#var healthbarsp[4] {--#####};
+#var healthbarsp[3] {---####};
+#var healthbarsp[2] {----###};
+#var healthbarsp[1] {-----##};
+#var healthbarsp[0] {------#};
+
 #var c_char_h_mode[w] {<faa>};
 #var c_char_h_mode[n] {<038>};
 #var c_char_h_mode[p] {<138>};
