@@ -126,16 +126,47 @@
 #nop SPECE KS Z TRZECIEJ OSOBY;
 #action {%* zgrabnym ruchem unika ciosu %* gleboko rozrywajac %*} {collect KS 4 %1;#line gag};
 
+
+
+#nop SPECE OK Z PIERWSZEJ OSOBY;
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} z calej sily walisz %* jednak bron} {collect OK 0 $AVATAR_NAME;#line gag} {1};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} z calej sily walisz %* probuje walnac} {collect OK 0 $AVATAR_NAME;#line gag} {1};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} z calej sily walisz %* tlukac} {collect OK 1 $AVATAR_NAME;#line gag} {1};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} z calej sily walisz %* obijajac} {collect OK 2 $AVATAR_NAME;#line gag} {1};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} z calej sily walisz %* kaleczac} {collect OK 3 $AVATAR_NAME;#line gag} {1};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} z calej sily walisz %* gruchoczac} {collect OK 4 $AVATAR_NAME;#line gag} {1};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} z calej sily walisz %* druzgoczac} {collect OK 5 $AVATAR_NAME;#line gag} {1};
+#action {Twarz %* wykrzywia grymas wysilku} {collect OK 7 %1;#line gag};
+
+#nop SPECE OK Z TRZECIEJ OSOBY;
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* jednak bron} {collect OK 0 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* probuje walnac} {collect OK 0 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* tlukac} {collect OK 1 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* obijajac} {collect OK 2 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* kaleczac} {collect OK 3 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* gruchoczac} {collect OK 4 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* druzgoczac} {collect OK 5 %2;#line gag};
+
 #nop MAGIKI - ESPADON;
-#action {Lekko muskasz %*} {collect magic 1 $AVATAR_NAME;#line gag};
-#action {Bez wysilku, niezbyt mocno %*} {collect magic 2 $AVATAR_NAME;#line gag};
-#action {Ruszasz do przodu %* gleboko tnie %*} {collect magic 4 $AVATAR_NAME;#line gag};
-#action {Skutecznym uderzeniem %*} {collect magic 3 $AVATAR_NAME;#line gag};
-#action {Bierzesz mocny zamach i poteznym ciosem %*} {collect magic 4 $AVATAR_NAME;#line gag};
-#action {Wyprowadzasz znad glowy %*} {collect magic 5 $AVATAR_NAME;#line gag};
-#action {Korzystajac z nieuwagi %*} {collect magic 6 $AVATAR_NAME;#line gag};
-#action {Unosisz nagle swoj espadon %*} {collect magic 7 $AVATAR_NAME;#line gag};
-#action {Przerzucasz swoj %* na wysokosc ramion %*} {collect magic 6 $AVATAR_NAME;#line gag};
+#action {Lekko muskasz %*} {collect ESPA 1 $AVATAR_NAME;#line gag};
+#action {Bez wysilku, niezbyt mocno %*} {collect ESPA 2 $AVATAR_NAME;#line gag};
+#action {Ruszasz do przodu %* gleboko tnie %*} {collect ESPA 4 $AVATAR_NAME;#line gag};
+#action {Skutecznym uderzeniem %*} {collect ESPA 3 $AVATAR_NAME;#line gag};
+#action {Bierzesz mocny zamach i poteznym ciosem %*} {collect ESPA 4 $AVATAR_NAME;#line gag};
+#action {Wyprowadzasz znad glowy %*} {collect ESPA 5 $AVATAR_NAME;#line gag};
+#action {Korzystajac z nieuwagi %*} {collect ESPA 6 $AVATAR_NAME;#line gag};
+#action {Unosisz nagle swoj espadon %*} {collect ESPA 7 $AVATAR_NAME;#line gag};
+#action {Przerzucasz swoj %* na wysokosc ramion %*} {collect ESPA 6 $AVATAR_NAME;#line gag};
+
+#nop MAGIKI - LODOWA MACZUGA - 1 OSOBA;
+#action {Dostrzegajac dogodna okazje do ataku, rzucasz sie do przodu %* fioletowego siniaka.} {collect LODOWA 1 $AVATAR_NAME;#line gag}; 
+#action {Dostrzegajac dogodna okazje do ataku, rzucasz sie do przodu %* zmrozonego siniaka.} {collect LODOWA 2 $AVATAR_NAME;#line gag}; 
+#action {Korzystajac z tego, %* nogach, unosisz} {collect LODOWA 7 $AVATAR_NAME;#line gag};
+
+#nop MAGIKI - LODOWA MACZUGA - 3 OSOBA;
+#action {Dostrzegajac dogodna okazje do ataku, %* rzuca sie do przodu %* fioletowego siniaka.} {collect LODOWA 1 %1;#line gag}; 
+#action {Dostrzegajac dogodna okazje do ataku, %* rzuca sie do przodu %* zmrozonego siniaka.} {collect LODOWA 2 %1;#line gag};
+#action {Korzystajac z tego, %* nogach, %* unosi} {collect LODOWA 7 %1;#line gag};
 
 #nop MAGIKI - HELM OGLUSZAJACY;
 #action {%* zaczyna wpatrywac sie %* ciemnogranatowego smuklego helmu%*} {collect OGLUSZONY 0 %1;#line gag};
@@ -173,6 +204,12 @@
 
 #nop MAGIKI - TALWAR - Z TRZECIEJ OSOBY;
 #action {Widzac, ze na ostrzu %* talwara %*, %w wykonuje %* tam spore oparzenie} {collect TALWAR 3 %3;#line gag};
+
+#nop MAGIKI - GRANIT - Z TRZECIEJ OSOBY;
+#action {Bierze ogromny zamach %* zamroczylo} {collect GRANIT_OGLUCH 0 $AVATAR_NAME;#line gag};
+#action {%* bierze ogromny zamach %* zamroczylo} {collect GRANIT_OGLUCH 0 %1;#line gag};
+
+
 
 #nop PANIC;  #action {w panice umyka} {#sh $tmpvalue2;#line gag};
 #nop PANIC;  #action {uciekl ci.} {#sh $tmpvalue2;#line gag};

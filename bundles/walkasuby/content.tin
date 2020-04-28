@@ -122,7 +122,7 @@
 #nop #function ShortToId {};
 #nop GetEnemyTarget;
 
-#alias {collect %w %d %*} {
+#alias {collect %S %d %*} {
    #nop 1_TYPE 2_VALUE 3_SENDER;
    #local senderID @ShortToId{%3};
    #local receiverID @GetEnemyTarget{%3};
@@ -188,4 +188,4 @@
          #default {#line ignore {#showme {<cfa>[$typeSent $valueSent/6]<088> $outputtext}};};
       };
    }
-} {1};
+} {0};

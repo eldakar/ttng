@@ -99,10 +99,13 @@
 #action {%*{Podazasz|podazasz} za %1 w dol traktem.} {#map move d;};
 #action {%*{Podazasz|podazasz} za %1 droga w dol.} {#map move d;};
 #action {%*{Podazasz|podazasz} za %1 droga w gore.} {#map move u;};
-#action {%*{Podazasz|podazasz} za %1 do otworu.} {#map move otwor;};
+
+#action {%*{Podazasz|podazasz} za %1 do otworu.} {#map move rozpadlina;#map move otwor;};
+#action {%*{Podazasz|podazasz} za %1 na zewnatrz przechodzac przez szczeline} {#map move szczelina};
+#action {%*{Podazasz|podazasz} za %1 do srodka otworu.} {#map move rozpadlina;#map move otwor;};
+
 #action {%*{Podazasz|podazasz} za %1 w kierunku otworu.} {#map move otwor;};
 #action {%*{Podazasz|podazasz} za %1 na zewnatrz.} {#map move wyjscie;};
-#action {%*{Podazasz|podazasz} za %1 do srodka otworu.} {#map move otwor;};
 #action {%*{Podazasz|podazasz} za %1 do srodka jaskini.} {#map move jaskinia;};
 #action {%*{Podazasz|podazasz} za %1 za brame.} {#map move brama;};
 #action {%*{Podazasz|podazasz} za %1 do wiezy.} {#map move wieza;};
