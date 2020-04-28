@@ -139,13 +139,13 @@
 #action {Twarz %* wykrzywia grymas wysilku} {collect OK 7 %1;#line gag};
 
 #nop SPECE OK Z TRZECIEJ OSOBY;
-#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* jednak bron} {collect OK 0 %2;#line gag};
-#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* probuje walnac} {collect OK 0 %2;#line gag};
-#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* tlukac} {collect OK 1 %2;#line gag};
-#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* obijajac} {collect OK 2 %2;#line gag};
-#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* kaleczac} {collect OK 3 %2;#line gag};
-#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* gruchoczac} {collect OK 4 %2;#line gag};
-#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* druzgoczac} {collect OK 5 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* wali %* jednak bron} {collect OK 0 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* wali %* probuje walnac} {collect OK 0 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* wali %* tlukac} {collect OK 1 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* wali %* obijajac} {collect OK 2 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* wali %* kaleczac} {collect OK 3 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* wali %* gruchoczac} {collect OK 4 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* wali %* druzgoczac} {collect OK 5 %2;#line gag};
 
 #nop MAGIKI - ESPADON;
 #action {Lekko muskasz %*} {collect ESPA 1 $AVATAR_NAME;#line gag};
