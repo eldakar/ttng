@@ -138,40 +138,60 @@
 	#echo {${c_stan_wysoki} >> ${c_druzyna}Od teraz F2 oznacza: 'wyciagnij siec;zarzuc siec'};
 }
 
-#unalias {/przejrzyj magiki} {
+#nop alias {/przejrzyj magiki} {
   /conf przewijanie automatyczne;
-  przejrzyj przedmioty
+  przejrzyj przedmioty;
   #delay {napraw_przewijanie} {/conf przewijanie manualne} {3};
   #delay {obejrzyj_magiki} {#grep posluzy} {2};
 } {1};
 
 #alias {/przejrzyj magiki} {
-    #line ignore #showme {<138>##################### Szukam magikow ####################<088>};
-    #action {w znakomitym stanie} {#line gag};
-    #action {lekko podniszczon%w} {#line gag};
-    #action {w kiepskim stanie} {#line gag};
-    #action {w oplakanym stanie} {#line gag};
-    #action {w dobrym stanie} {#line gag};
-    #action {liczne walki wyryly na niej swoje pietno} {#line gag};
-    #action {liczne walki wyryly na nim swoje pietno} {#line gag};
-    #action {w bardzo zlym stanie} {#line gag};
-    #action {w zlym stanie} {#line gag};
-    #action {wymaga natychmiastowej konserwacji} {#line gag};
-    #action {*} {#line gag};
+      #line ignore #showme {<138>##################### Szukam magikow ####################<088>};
+      #action {(w znakomitym stanie)} {#line gag};
+      #action {(lekko podniszczon%w)} {#line gag};
+      #action {(w kiepskim stanie)} {#line gag};
+      #action {(w oplakanym stanie)} {#line gag};
+      #action {(w dobrym stanie)} {#line gag};
+      #action {(liczne walki wyryly na niej swoje pietno)} {#line gag};
+      #action {(liczne walki wyryly na nim swoje pietno)} {#line gag};
+      #action {(w bardzo zlym stanie)} {#line gag};
+      #action {(w zlym stanie)} {#line gag};
+      #action {(wymaga natychmiastowej konserwacji)} {#line gag};
+      #action {* } {#line gag};
+      #action {oleju} {#line gag};
+      #action {czasomierz} {#line gag};
+      #action {kulka} {#line gag};
+
+      #switch {"$ppochwa"} {
+        #case {"uprzaz"} {#high {%w %w {trojzab|harpun|partyzana|kosa}} {<118>} {1};;};
+        #case {"pochwa"} {#high {%w %w {espadon|miecz|jatagan|tasak}} {<118>} {1};;};
+        #case {"temblak"} {#high {%w %w {bulawa|mlot|maczuga|}} {<118>} {1};;};
+      };
+
     /conf przewijanie automatyczne;
     przejrzyj przedmioty;
     #delay {obejrzyjmagiki} {
-      #unaction {w znakomitym stanie} {#line gag};
-      #unaction {lekko podniszczon%w} {#line gag};
-      #unaction {w kiepskim stanie} {#line gag};
-      #unaction {w oplakanym stanie} {#line gag};
-      #unaction {w dobrym stanie} {#line gag};
-      #unaction {liczne walki wyryly na niej swoje pietno} {#line gag};
-      #unaction {liczne walki wyryly na nim swoje pietno} {#line gag};
-      #unaction {w bardzo zlym stanie} {#line gag};
-      #unaction {w zlym stanie} {#line gag};
-      #unaction {wymaga natychmiastowej konserwacji} {#line gag};
-      #unaction {*} {#line gag};
+      #unaction {(w znakomitym stanie)} {#line gag};
+      #unaction {(lekko podniszczon%w)} {#line gag};
+      #unaction {(w kiepskim stanie)} {#line gag};
+      #unaction {(w oplakanym stanie)} {#line gag};
+      #unaction {(w dobrym stanie)} {#line gag};
+      #unaction {(liczne walki wyryly na niej swoje pietno)} {#line gag};
+      #unaction {(liczne walki wyryly na nim swoje pietno)} {#line gag};
+      #unaction {(w bardzo zlym stanie)} {#line gag};
+      #unaction {(w zlym stanie)} {#line gag};
+      #unaction {(wymaga natychmiastowej konserwacji)} {#line gag};
+      #unaction {* } {#line gag};
+      #unaction {oleju} {#line gag};
+      #unaction {czasomierz} {#line gag};
+      #unaction {kulka} {#line gag};
+
+      #switch {"$ppochwa"} {
+        #case {"uprzaz"} {#unhigh {%w %w {trojzab|harpun|partyzana|kosa}} {<BAD><fff>};};
+        #case {"pochwa"} {#unhigh {%w %w {espadon|miecz|jatagan|tasak}} {<BAD><fff>};};
+        #case {"temblak"} {#unhigh {%w %w {bulawa|mlot|maczuga|}} {<BAD><fff>};};
+      };
+
       /conf przewijanie 0;      
     } {3};
 } {1}

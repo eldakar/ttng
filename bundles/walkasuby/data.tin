@@ -92,12 +92,12 @@
 #action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* raniac} {collect MC 3 $AVATAR_NAME;#line gag};
 #action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* ledwo muskajac} {collect MC 1 $AVATAR_NAME;#line gag};
 #nop SPECE MC Z TRZECIEJ OSOBY;
-#action {%* krzywi wargi %* rzuca sie do ataku. %* ledwo muskajac %*} {collect MC 1 %1;#line gag};
-#action {%* krzywi wargi %* rzuca sie do ataku. %* lekko raniac %*} {collect MC 2 %1;#line gag};
-#action {%* krzywi wargi %* rzuca sie do ataku. %* raniac %*} {collect MC 3 %1;#line gag} {8};
-#action {%* krzywi wargi %* rzuca sie do ataku. %* powaznie raniac %*} {collect MC 4 %1;#line gag};
-#action {%* krzywi wargi %* rzuca sie do ataku. %* bardzo ciezko raniac %*} {collect MC 5 %1;#line gag};
-#action {%* krzywi wargi %* rzuca sie do ataku. %* masakrujac %*} {collect MC 6 %1;#line gag};
+#action {%* {wykrzywia twarz|krzywi wargi} %* rzuca sie do ataku. %* ledwo muskajac %*} {collect MC 1 %1;#line gag};
+#action {%* {wykrzywia twarz|krzywi wargi} %* rzuca sie do ataku. %* lekko raniac %*} {collect MC 2 %1;#line gag};
+#action {%* {wykrzywia twarz|krzywi wargi} %* rzuca sie do ataku. %* raniac %*} {collect MC 3 %1;#line gag} {8};
+#action {%* {wykrzywia twarz|krzywi wargi} %* rzuca sie do ataku. %* powaznie raniac %*} {collect MC 4 %1;#line gag};
+#action {%* {wykrzywia twarz|krzywi wargi} %* rzuca sie do ataku. %* bardzo ciezko raniac %*} {collect MC 5 %1;#line gag};
+#action {%* {wykrzywia twarz|krzywi wargi} %* rzuca sie do ataku. %* masakrujac %*} {collect MC 6 %1;#line gag};
 #action {%* staje pewnie %* uderzenie %*} {collect MC 7 %1;#line gag};
 
 #nop SPECE WKS Z PIERWSZEJ OSOBY;
