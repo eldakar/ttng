@@ -48,6 +48,7 @@
 #action {Z gardla %* zeslizguje %*} {collect par 0 unknown;#line gag};
 #action {%* chichotem gryzie %* niegroznie w szyje!} {collect GOB 1 unknown;#line gag};
 #action {%* chichotem gryzie %* bardzo lekko w szyje!} {collect GOB 2 unknown;#line gag};
+#action {Z rozprutego brzucha} {collect TROLL_AOE 2 troll;#line gag};
 #nop SPECE JASZCZUROWATE;
 #action {%* doskakuje do %* i niegroznie wgryza %*} {collect JAS 1 %1;#line gag};
 #action {%* doskakuje do %* i bardzo lekko wgryza %*} {collect JAS 2 %1;#line gag};
@@ -55,9 +56,11 @@
 #action {%* nadyma swe miesiste %* swist %*} {collect mis 0 %1;#line gag};
 #action {%* nadyma swe miesiste %* ostatniej chwili szczesliwie %*} {collect dod 0 %1;#line gag};
 #action {%* nadyma swe miesiste %* niewielkiej rany %*} {collect RYB 1 %1;#line gag};
-
+#nop SPECE SMOK CHAOSU;
+#action {%* otwiera paszcze} {collect SMOK_PANIKA 0 %1;#line gag};
 
 #nop SPECE KG Z PIERWSZEJ OSOBY;
+#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* tylko jakims cudem %*} {collect KG 0 $AVATAR_NAME;#line gag};
 #action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* ledwo zacina %*} {collect KG 1 $AVATAR_NAME;#line gag};
 #action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* plytko tnie %*} {collect KG 3 $AVATAR_NAME;#line gag};
 #action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* tnie %*} {collect KG 4 $AVATAR_NAME;#line gag} {6};
@@ -66,6 +69,7 @@
 #action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* niemalze rozcina %*} {collect KG 6 $AVATAR_NAME;#line gag};
 #action {Z okrzykiem na ustach dopadasz %*} {collect KG 7 $AVATAR_NAME;#line gag};
 #nop SPECE KG Z TRZECIEJ OSOBY;
+#action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* tylko jakims cudem %*} {collect KG 0 %1;#line gag};
 #action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* ledwo zacina %*} {collect KG 1 %1;#line gag};
 #action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* plytko tnie %*} {collect KG 3 %1;#line gag};
 #action {%* {rusza|wyrzuca do przodu|niespodziewanie skreca|poprawia} %* tnie %*} {collect KG 4 %1;#line gag} {6};
@@ -82,21 +86,23 @@
 #nop SPECE MC Z PIERWSZEJ OSOBY;
 #action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* powaznie raniac} {collect MC 4 $AVATAR_NAME;#line gag};
 #action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* lekko raniac} {collect MC 2 $AVATAR_NAME;#line gag};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* raniac} {collect MC 2 $AVATAR_NAME;#line gag} {8};
 #action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* bardzo ciezko raniac} {collect MC 5 $AVATAR_NAME;#line gag};
 #action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* masakrujac} {collect MC 6 $AVATAR_NAME;#line gag};
 #action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* raniac} {collect MC 3 $AVATAR_NAME;#line gag};
 #action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* ledwo muskajac} {collect MC 1 $AVATAR_NAME;#line gag};
 #nop SPECE MC Z TRZECIEJ OSOBY;
-#action {%* rzuca sie do ataku. %* ledwo muskajac %*} {collect MC 1 %1;#line gag};
-#action {%* rzuca sie do ataku. %* lekko raniac %*} {collect MC 2 %1;#line gag};
-#action {%* rzuca sie do ataku. %* powaznie raniac %*} {collect MC 4 %1;#line gag};
-#action {%* rzuca sie do ataku. %* bardzo ciezko raniac %*} {collect MC 5 %1;#line gag};
-#action {%* rzuca sie do ataku. %* masakrujac %*} {collect MC 6 %1;#line gag};
+#action {%* krzywi wargi %* rzuca sie do ataku. %* ledwo muskajac %*} {collect MC 1 %1;#line gag};
+#action {%* krzywi wargi %* rzuca sie do ataku. %* lekko raniac %*} {collect MC 2 %1;#line gag};
+#action {%* krzywi wargi %* rzuca sie do ataku. %* raniac %*} {collect MC 3 %1;#line gag} {8};
+#action {%* krzywi wargi %* rzuca sie do ataku. %* powaznie raniac %*} {collect MC 4 %1;#line gag};
+#action {%* krzywi wargi %* rzuca sie do ataku. %* bardzo ciezko raniac %*} {collect MC 5 %1;#line gag};
+#action {%* krzywi wargi %* rzuca sie do ataku. %* masakrujac %*} {collect MC 6 %1;#line gag};
 #action {%* staje pewnie %* uderzenie %*} {collect MC 7 %1;#line gag};
-
 
 #nop SPECE WKS Z PIERWSZEJ OSOBY;
 #action {Szybkim niczym mysl ruchem %* wytracasz %*} {collect WYTRACASZ 0 $AVATAR_NAME;#line gag};
+#action {Slamazarnym wymachem %* probujesz} {collect NIE_WYTRACASZ 0 $AVATAR_NAME;#line gag};
 #action {Wykorzystujac brak broni u przeciwnika, %* ledwie sinca.} {collect WKS 1 $AVATAR_NAME;#line gag};
 #action {Wykorzystujac brak broni u przeciwnika, %* krwawiace zadrapanie.} {collect WKS 2 $AVATAR_NAME;#line gag};
 #action {Wykorzystujac brak broni u przeciwnika, %* dluga, poszarpana rane.} {collect WKS 4 $AVATAR_NAME;#line gag};
@@ -105,6 +111,7 @@
 #action {Wykorzystujac brak broni u przeciwnika, %* rownowage} {collect mis 0 $AVATAR_NAME;#line gag};
 #nop SPECE WKS Z TRZECIEJ OSOBY;
 #action {%* szybkim niczym mysl ruchem %* wytraca %*} {collect WYTRACA 0 %1;#line gag};
+#action {%* slamazarnym wymachem %* probuje} {collect NIE_WYTRACA 0 %1;#line gag};
 #action {%* wykorzystujac brak broni u przeciwnika, %* pozostawiajac ledwie sinca.} {collect WKS 1 %1;#line gag};
 #action {%* wykorzystujac brak broni u przeciwnika, %* pozostawiajac krwawiace zadrapanie.} {collect WKS 2 %1;#line gag};
 #action {%* wykorzystujac brak broni u przeciwnika, %* pozostawiajac dluga, poszarpana rane.} {collect WKS 4 %1;#line gag};
@@ -124,7 +131,18 @@
 #action {{Blyskawicznym polobrotem unikasz ciosu|Niezgrabnym ruchem unikasz ciosu|Oszczednym ruchem unikasz ciosu|Plynnym ruchem unikasz ciosu|Plynnym wypadem w przod atakujesz|Powolnym ruchem unikasz ciosu|Zgrabnym ruchem unikasz ciosu|Zgrabnym wypadem do przodu atakujesz|Oszczednym wypadem do przodu atakujesz|Blyskawicznym wypadem do przodu atakujesz|Niezgrabnym wypadem do przodu probujesz zaskoczyc} %*ogromne obrazenia%*} {collect KS 5 $AVATAR_NAME;#line gag};
 #action {{Blyskawicznym polobrotem unikasz ciosu|Niezgrabnym ruchem unikasz ciosu|Oszczednym ruchem unikasz ciosu|Plynnym ruchem unikasz ciosu|Plynnym wypadem w przod atakujesz|Powolnym ruchem unikasz ciosu|Zgrabnym ruchem unikasz ciosu|Zgrabnym wypadem do przodu atakujesz|Oszczednym wypadem do przodu atakujesz|Blyskawicznym wypadem do przodu atakujesz|Niezgrabnym wypadem do przodu probujesz zaskoczyc} %*krwawy warkocz smierci%*} {collect KS 6 $AVATAR_NAME;#line gag};
 #nop SPECE KS Z TRZECIEJ OSOBY;
-#action {%* zgrabnym ruchem unika ciosu %* gleboko rozrywajac %*} {collect KS 4 %1;#line gag};
+#action {%* {blyskawicznym polobrotem unika ciosu|niezgrabnym ruchem unika ciosu|oszczednym ruchem unika ciosu|plynnym ruchem unika ciosu|plynnym wypadem w przod atakuje|powolnym ruchem unika ciosu|zgrabnym ruchem unika ciosu|zgrabnym wypadem do przodu atakuje|oszczednym wypadem do przodu atakuje|nlyskawicznym wypadem do przodu atakuje|niezgrabnym wypadem do przodu probuje zaskoczyc} %*przecina tylko powietrze%*} {collect KS 0 %1;#line gag}{1};
+#action {%* {blyskawicznym polobrotem unika ciosu|niezgrabnym ruchem unika ciosu|oszczednym ruchem unika ciosu|plynnym ruchem unika ciosu|plynnym wypadem w przod atakuje|powolnym ruchem unika ciosu|zgrabnym ruchem unika ciosu|zgrabnym wypadem do przodu atakuje|oszczednym wypadem do przodu atakuje|nlyskawicznym wypadem do przodu atakuje|niezgrabnym wypadem do przodu probuje zaskoczyc} %*dzga tylko powietrze.%*} {collect KS 0 %1;#line gag}{2};
+#action {%* {blyskawicznym polobrotem unika ciosu|niezgrabnym ruchem unika ciosu|oszczednym ruchem unika ciosu|plynnym ruchem unika ciosu|plynnym wypadem w przod atakuje|powolnym ruchem unika ciosu|zgrabnym ruchem unika ciosu|zgrabnym wypadem do przodu atakuje|oszczednym wypadem do przodu atakuje|nlyskawicznym wypadem do przodu atakuje|niezgrabnym wypadem do przodu probuje zaskoczyc} %*nieznaczne obrazenia%*} {collect KS 1 %1;#line gag}; 
+#action {%* {blyskawicznym polobrotem unika ciosu|niezgrabnym ruchem unika ciosu|oszczednym ruchem unika ciosu|plynnym ruchem unika ciosu|plynnym wypadem w przod atakuje|powolnym ruchem unika ciosu|zgrabnym ruchem unika ciosu|zgrabnym wypadem do przodu atakuje|oszczednym wypadem do przodu atakuje|nlyskawicznym wypadem do przodu atakuje|niezgrabnym wypadem do przodu probuje zaskoczyc} %*szeroka rane%*} {collect KS 2 %1;#line gag};
+#action {%* {blyskawicznym polobrotem unika ciosu|niezgrabnym ruchem unika ciosu|oszczednym ruchem unika ciosu|plynnym ruchem unika ciosu|plynnym wypadem w przod atakuje|powolnym ruchem unika ciosu|zgrabnym ruchem unika ciosu|zgrabnym wypadem do przodu atakuje|oszczednym wypadem do przodu atakuje|nlyskawicznym wypadem do przodu atakuje|niezgrabnym wypadem do przodu probuje zaskoczyc} %*gleboka wbijajac%*} {collect KS 3 %1;#line gag};
+#action {%* {blyskawicznym polobrotem unika ciosu|niezgrabnym ruchem unika ciosu|oszczednym ruchem unika ciosu|plynnym ruchem unika ciosu|plynnym wypadem w przod atakuje|powolnym ruchem unika ciosu|zgrabnym ruchem unika ciosu|zgrabnym wypadem do przodu atakuje|oszczednym wypadem do przodu atakuje|nlyskawicznym wypadem do przodu atakuje|niezgrabnym wypadem do przodu probuje zaskoczyc} %*gleboka rane%*} {collect KS 4 %1;#line gag}{1};
+#action {%* {blyskawicznym polobrotem unika ciosu|niezgrabnym ruchem unika ciosu|oszczednym ruchem unika ciosu|plynnym ruchem unika ciosu|plynnym wypadem w przod atakuje|powolnym ruchem unika ciosu|zgrabnym ruchem unika ciosu|zgrabnym wypadem do przodu atakuje|oszczednym wypadem do przodu atakuje|nlyskawicznym wypadem do przodu atakuje|niezgrabnym wypadem do przodu probuje zaskoczyc} %*gleboko rozyrwajac%*} {collect KS 4 %1;#line gag}{2};
+#action {%* {blyskawicznym polobrotem unika ciosu|niezgrabnym ruchem unika ciosu|oszczednym ruchem unika ciosu|plynnym ruchem unika ciosu|plynnym wypadem w przod atakuje|powolnym ruchem unika ciosu|zgrabnym ruchem unika ciosu|zgrabnym wypadem do przodu atakuje|oszczednym wypadem do przodu atakuje|nlyskawicznym wypadem do przodu atakuje|niezgrabnym wypadem do przodu probuje zaskoczyc} %*ogromne obrazenia%*} {collect KS 5 %1;#line gag};
+#action {%* {blyskawicznym polobrotem unika ciosu|niezgrabnym ruchem unika ciosu|oszczednym ruchem unika ciosu|plynnym ruchem unika ciosu|plynnym wypadem w przod atakuje|powolnym ruchem unika ciosu|zgrabnym ruchem unika ciosu|zgrabnym wypadem do przodu atakuje|oszczednym wypadem do przodu atakuje|nlyskawicznym wypadem do przodu atakuje|niezgrabnym wypadem do przodu probuje zaskoczyc} %*krwawy warkocz smierci%*} {collect KS 6 %1;#line gag};
+
+#unaction {%* zgrabnym ruchem unika ciosu %* gleboko rozrywajac %*} {collect KS 4 %1;#line gag};
+
 
 
 
@@ -139,15 +157,22 @@
 #action {Twarz %* wykrzywia grymas wysilku} {collect OK 7 %1;#line gag};
 
 #nop SPECE OK Z TRZECIEJ OSOBY;
-#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* wali %* jednak bron} {collect OK 0 %2;#line gag};
-#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* wali %* probuje walnac} {collect OK 0 %2;#line gag};
-#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* wali %* tlukac} {collect OK 1 %2;#line gag};
-#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* wali %* obijajac} {collect OK 2 %2;#line gag};
-#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* wali %* kaleczac} {collect OK 3 %2;#line gag};
-#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* wali %* gruchoczac} {collect OK 4 %2;#line gag};
-#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* wali %* druzgoczac} {collect OK 5 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* z calej sily wali %* jednak bron} {collect OK 0 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* z calej sily wali %* probuje walnac} {collect OK 0 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* z calej sily wali %* tlukac} {collect OK 1 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* z calej sily wali %* obijajac} {collect OK 2 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* z calej sily wali %* kaleczac} {collect OK 3 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* z calej sily wali %* gruchoczac} {collect OK 4 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* z calej sily wali %* druzgoczac} {collect OK 5 %2;#line gag};
 
-#nop MAGIKI - ESPADON;
+#nop SPECE RA Z TRZECIEJ OSOBY;
+#action {Unikajac uderzenia %*, %* doskakuje} {collect RA 7 %2;#line gag};
+#nop wyprowadza z furia|wyprowadza z calej sily|wyprowadza z impetem uderzenie;
+#nop wyprowadza z furia|wyprowadza z calej sily|wyprowadza z impetem uderzenie;
+#nop wyprowadza z furia|wyprowadza z calej sily|wyprowadza z impetem uderzenie;
+
+
+#nop MAGIKI - ESPADON - Z PIERWSZEJ OSOBY;
 #action {Lekko muskasz %*} {collect ESPA 1 $AVATAR_NAME;#line gag};
 #action {Bez wysilku, niezbyt mocno %*} {collect ESPA 2 $AVATAR_NAME;#line gag};
 #action {Ruszasz do przodu %* gleboko tnie %*} {collect ESPA 4 $AVATAR_NAME;#line gag};
@@ -162,36 +187,37 @@
 #action {Dostrzegajac dogodna okazje do ataku, rzucasz sie do przodu %* fioletowego siniaka.} {collect LODOWA 1 $AVATAR_NAME;#line gag}; 
 #action {Dostrzegajac dogodna okazje do ataku, rzucasz sie do przodu %* zmrozonego siniaka.} {collect LODOWA 2 $AVATAR_NAME;#line gag}; 
 #action {Korzystajac z tego, %* nogach, unosisz} {collect LODOWA 7 $AVATAR_NAME;#line gag};
-
 #nop MAGIKI - LODOWA MACZUGA - 3 OSOBA;
 #action {Dostrzegajac dogodna okazje do ataku, %* rzuca sie do przodu %* fioletowego siniaka.} {collect LODOWA 1 %1;#line gag}; 
 #action {Dostrzegajac dogodna okazje do ataku, %* rzuca sie do przodu %* zmrozonego siniaka.} {collect LODOWA 2 %1;#line gag};
 #action {Korzystajac z tego, %* nogach, %* unosi} {collect LODOWA 7 %1;#line gag};
 
 #nop MAGIKI - HELM OGLUSZAJACY;
-#action {%* zaczyna wpatrywac sie %* ciemnogranatowego smuklego helmu%*} {collect OGLUSZONY 0 %1;#line gag};
+#action {%* zaczyna wpatrywac sie %* ciemnogranatowego smuklego helmu%*} {collect HELM_OGLUSZONY 0 %1;#line gag};
+#action {Zaczynasz wpatrywac sie %* ciemnogranatowego smuklego helmu%*} {collect HELM_OGLUSZONY 0 $AVATAR_NAME;#line gag};
 
-#nop MAGIKI - JATAGAN;
-#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana ledwo muskasz %*} {collect magic 1 $AVATAR_NAME;#line gag};
-#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana lekko ranisz %*} {collect magic 2 $AVATAR_NAME;#line gag};
-#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana ranisz %*} {collect magic 3 $AVATAR_NAME;#line gag};
-#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana powaznie ranisz %*} {collect magic 4 $AVATAR_NAME;#line gag};
-#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana bardzo ciezko ranisz %*} {collect magic 5 $AVATAR_NAME;#line gag};
-#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana masakrujesz %*} {collect magic 6 $AVATAR_NAME;#line gag};
+#nop MAGIKI - JATAGAN - 1 OSOBA;
+#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana ledwo muskasz %*} {collect JATAGAN 1 $AVATAR_NAME;#line gag};
+#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana lekko ranisz %*} {collect JATAGAN 2 $AVATAR_NAME;#line gag};
+#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana ranisz %*} {collect JATAGAN 3 $AVATAR_NAME;#line gag};
+#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana powaznie ranisz %*} {collect JATAGAN 4 $AVATAR_NAME;#line gag};
+#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana bardzo ciezko ranisz %*} {collect JATAGAN 5 $AVATAR_NAME;#line gag};
+#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana masakrujesz %*} {collect JATAGAN 6 $AVATAR_NAME;#line gag};
 
-#nop MAGIKI - SIHILL;
-#action {Niezbyt czysto trafiasz %* waskim kunsztownym sihillem} {collect magic 1 $AVATAR_NAME;#line gag};
-#action {Wykonujesz oszczedne {ciecie|pchniecie}, lekko raniac %* koncowka} {collect magic 2 $AVATAR_NAME;#line gag};
-#action {Blyskawicznie kontrujesz atak %* {dzgajac|tnac}} {collect magic 3 $AVATAR_NAME;#line gag};
-#action {Precyzyjnym i mocnym sztychem %* gleboko} {collect magic 4 $AVATAR_NAME;#line gag};
-#action {Atakujesz waskim kunsztownym %* ogromne} {collect magic 5 $AVATAR_NAME;#line gag};
-#action {Zgrabnym ruchem zwodzisz %* i gwaltownie skracajac dystans} {collect magic 6 $AVATAR_NAME;#line gag};
+#nop MAGIKI - SIHILL - 1 OSOBA;
+#action {Niezbyt czysto trafiasz %* waskim kunsztownym sihillem} {collect SIHILL 1 $AVATAR_NAME;#line gag};
+#action {Wykonujesz oszczedne {ciecie|pchniecie}, lekko raniac %* koncowka} {collect SIHILL 2 $AVATAR_NAME;#line gag};
+#action {Blyskawicznie kontrujesz atak %* {dzgajac|tnac}} {collect SIHILL 3 $AVATAR_NAME;#line gag};
+#action {Precyzyjnym i mocnym sztychem %* gleboko} {collect SIHILL 4 $AVATAR_NAME;#line gag};
+#action {Atakujesz waskim kunsztownym %* ogromne} {collect SIHILL 5 $AVATAR_NAME;#line gag};
+#action {Zgrabnym ruchem zwodzisz %* i gwaltownie skracajac dystans} {collect SIHILL 6 $AVATAR_NAME;#line gag};
 
 #nop MAGIKI - AMULET;
 #action {Od twojego amuletu emanuje przyjemne cieplo.} {collect AMULET 0 $AVATAR_NAME;#line gag};
 
 #nop MAGIKI - TASAK;
-#action {{Widok slabnacego wroga tylko dodaje ci sil|Z kazdym kolejnym ciosem nabierasz nowej sily do walki|Powolne, pozbawione sily ruchy wroga zagrzewaja cie do walki, dodajac zapalu.}} {collect TASAKMECZY 0 $AVATAR_NAME;#line gag};
+#action {{Widok slabnacego wroga tylko dodaje ci sil|Z kazdym kolejnym ciosem nabierasz nowej sily do walki|Powolne, pozbawione sily ruchy wroga zagrzewaja cie do walki, dodajac zapalu.}} {collect TASAK_MECZY 0 $AVATAR_NAME;#line gag};
+
 #nop TROJZAB Z PIERWSZEJ OSOBY;
 #action {Energicznie wyrzuconym ramieniem prowadzisz ogromny} {collect TROJZAB 0 $AVATAR_NAME;#line gag};
 #action {Wykonujac zamach uderzasz %* ogromnym ognistym %* smugi} {collect TROJZAB 1 $AVATAR_NAME;#line gag};
@@ -205,9 +231,35 @@
 #nop MAGIKI - TALWAR - Z TRZECIEJ OSOBY;
 #action {Widzac, ze na ostrzu %* talwara %*, %w wykonuje %* tam spore oparzenie} {collect TALWAR 3 %3;#line gag};
 
+#nop MAGIKI - GRANIT - Z PIERWSZEJ OSOBY;
+#action {Bierzesz ogromny zamach %* zamroczylo} {collect GRANIT_OGLUCH 0 $AVATAR_NAME;#line gag};
 #nop MAGIKI - GRANIT - Z TRZECIEJ OSOBY;
-#action {Bierze ogromny zamach %* zamroczylo} {collect GRANIT_OGLUCH 0 $AVATAR_NAME;#line gag};
 #action {%* bierze ogromny zamach %* zamroczylo} {collect GRANIT_OGLUCH 0 %1;#line gag};
+
+#nop MAGIKI - BERLO - Z PIERWSZEJ OSOBY;
+#action {{Uderzasz starozytnym|Bierzesz mocny zamach|Wykorzystujesz straszliwy ped|Bierzesz potezny zamach|Wykorzystujesz zrecznie ped|Wykorzystujesz umiejetnie ped} %* ledwie zahaczajac} {collect BERLO 1 $AVATAR_NAME;#line gag}; 
+#action {{Uderzasz starozytnym|Bierzesz mocny zamach|Wykorzystujesz straszliwy ped|Bierzesz potezny zamach|Wykorzystujesz zrecznie ped|Wykorzystujesz umiejetnie ped} %* nieznacznie tlukac} {collect BERLO 2 $AVATAR_NAME;#line gag}; 
+#action {{Uderzasz starozytnym|Bierzesz mocny zamach|Wykorzystujesz straszliwy ped|Bierzesz potezny zamach|Wykorzystujesz zrecznie ped|Wykorzystujesz umiejetnie ped} %* dotkliwie raniac} {collect BERLO 4 $AVATAR_NAME;#line gag}; 
+#nop MAGIKI - BERLO - Z TRZECIEJ OSOBY;
+#action {%* {uderza starozytnym|bierze mocny zamach|wykorzystuje straszliwy ped|bierze potezny zamach|wykorzystuje zrecznie ped|wykorzystuje umiejetnie ped} %* ledwie zahaczajac} {collect BERLO 1 %1;#line gag}; 
+#action {%* {uderza starozytnym|bierze mocny zamach|wykorzystuje straszliwy ped|bierze potezny zamach|wykorzystuje zrecznie ped|wykorzystuje umiejetnie ped} %* nieznacznie tlukac} {collect BERLO 2 %1;#line gag}; 
+#action {%* {uderza starozytnym|bierze mocny zamach|wykorzystuje straszliwy ped|bierze potezny zamach|wykorzystuje zrecznie ped|wykorzystuje umiejetnie ped} %* dotkliwie raniac} {collect BERLO 4 %1;#line gag}; 
+
+#nop MAGIKI - KOSCIANY - Z PIERWSZEJ OSOBY;
+#action {{Uderzasz niezwyklym|Bierzesz mocny zamach|Wykorzystujesz straszliwy ped|Bierzesz potezny zamach|Wykorzystujesz zrecznie ped|Wykorzystujesz umiejetnie ped} %* ledwie zahaczajac} {collect KOSCIANY 1 $AVATAR_NAME;#line gag}; 
+#action {{Uderzasz niezwyklym|Bierzesz mocny zamach|Wykorzystujesz straszliwy ped|Bierzesz potezny zamach|Wykorzystujesz zrecznie ped|Wykorzystujesz umiejetnie ped} %* nieznacznie raniac} {collect KOSCIANY 2 $AVATAR_NAME;#line gag}; 
+#action {{Uderzasz niezwyklym|Bierzesz mocny zamach|Wykorzystujesz straszliwy ped|Bierzesz potezny zamach|Wykorzystujesz zrecznie ped|Wykorzystujesz umiejetnie ped} %* dotkliwie raniac} {collect KOSCIANY 4 $AVATAR_NAME;#line gag}; 
+#nop MAGIKI - KOSCIANY - Z TRZECIEJ OSOBY;
+#action {%* {uderza niezwyklym|bierze mocny zamach|wykorzystuje straszliwy ped|bierze potezny zamach|wykorzystuje zrecznie ped|wykorzystuje umiejetnie ped} %* ledwie zahaczajac} {collect KOSCIANY 1 %1;#line gag}; 
+#action {%* {uderza niezwyklym|bierze mocny zamach|wykorzystuje straszliwy ped|bierze potezny zamach|wykorzystuje zrecznie ped|wykorzystuje umiejetnie ped} %* nieznacznie raniac} {collect KOSCIANY 2 %1;#line gag}; 
+#action {%* {uderza niezwyklym|bierze mocny zamach|wykorzystuje straszliwy ped|bierze potezny zamach|wykorzystuje zrecznie ped|wykorzystuje umiejetnie ped} %* dotkliwie raniac} {collect KOSCIANY 4 %1;#line gag}; 
+
+
+
+#nop MAGIKI - LEWAK - Z TRZECIEJ OSOBY;
+#action {%* obracajac w reku swym %* nieznaczne obrazeni} {collect LEWAK 2 %1;#line gag};
+#action {%* blyskawicznie wyrzuca przed siebie %* krwawiaca rane} {collect LEWAK 3 %1;#line gag};
+
 
 
 
