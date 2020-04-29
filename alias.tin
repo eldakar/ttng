@@ -144,3 +144,32 @@
   #delay {napraw_przewijanie} {/conf przewijanie manualne} {3};
   #delay {obejrzyj_magiki} {#grep posluzy} {2};
 } {1};
+
+#alias {/przejrzyj magiki2} {
+    #line ignore #showme {<138>##################### Szukam magikow ####################<088>};
+    #action {w znakomitym stanie} {#line gag};
+    #action {lekko podniszczon%w} {#line gag};
+    #action {w kiepskim stanie} {#line gag};
+    #action {w oplakanym stanie} {#line gag};
+    #action {w dobrym stanie} {#line gag};
+    #action {liczne walki wyryly na niej swoje pietno} {#line gag};
+    #action {liczne walki wyryly na nim swoje pietno} {#line gag};
+    #action {w bardzo zlym stanie} {#line gag};
+    #action {w zlym stanie} {#line gag};
+    #action {wymaga natychmiastowej konserwacji} {#line gag};
+    /conf przewijanie automatyczne;
+    przejrzyj przedmioty;
+    #delay {obejrzyjmagiki} {
+      #unaction {w znakomitym stanie} {#line gag};
+      #unaction {lekko podniszczon%w} {#line gag};
+      #unaction {w kiepskim stanie} {#line gag};
+      #unaction {w oplakanym stanie} {#line gag};
+      #unaction {w dobrym stanie} {#line gag};
+      #unaction {liczne walki wyryly na niej swoje pietno} {#line gag};
+      #unaction {liczne walki wyryly na nim swoje pietno} {#line gag};
+      #unaction {w bardzo zlym stanie} {#line gag};
+      #unaction {w zlym stanie} {#line gag};
+      #unaction {wymaga natychmiastowej konserwacji} {#line gag};
+      /conf przewijanie automatyczne;      
+    };
+};
