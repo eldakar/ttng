@@ -282,13 +282,13 @@
 {
 	#var bronstatus on;
 };
-#action {{Opuszczasz | ogarniajac wzrokiem cala okolice| opuszczasz | rozluzniasz uchwyt | do tej pory twe serce }}
+#action {{Opuszczasz | ogarniajac wzrokiem cala okolice| opuszczasz | rozluzniasz uchwyt | do tej pory twe serce }%*.}
 {
 	#line ignore #showme {<ffa>[bron]<088> %0};
 	#var bronstatus off;
 	#line gag;
 };
-#action {{wytraca ci|Uderzenie jest tak silne, ze bezwiednie puszczasz|Czujesz potezne szarpniecie|Bezwladnie opuszczasz}} {
+#action {{wytraca ci|Uderzenie jest tak silne, ze bezwiednie puszczasz|Czujesz potezne szarpniecie|Bezwladnie opuszczasz}%*} {
 	#line ignore #showme {<ffa>[bron]<088> %0};
 	#var bronstatus off;
 	#line gag;
