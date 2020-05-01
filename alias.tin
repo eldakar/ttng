@@ -195,3 +195,20 @@
       /conf przewijanie 0;      
     } {3};
 } {1}
+
+#alias {/wez$} {
+  #replace roomcontentsData {\.} {};
+  #replace roomcontentsData {{, | i }} {;};
+  #format {roomcontentsData} {%l} {$roomcontentsData};
+  #list roomcontentsList create {$roomcontentsData};
+  #var wezindex 1;
+    #line ignore {#sh {+---------------------------------------------------+}};
+  #foreach {*roomcontentsList[]} {_rcd} {
+    #format wezshow {| <ffa>%+4s <088>| %+40s |} {/wez $wezindex} {$roomcontentsList[$_rcd]};
+    #line ignore {#sh $wezshow};
+    #line substitute variables {#alias {/wez $wezindex} {wez $roomcontentsList[$_rcd]} {1}};
+    #math wezindex {$wezindex + 1};
+  };
+    #line ignore {#sh {+---------------------------------------------------+}};
+
+} {1};

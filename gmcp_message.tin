@@ -74,12 +74,6 @@
 			#nop /a rot;
 			#nop line sub variables {#delay {$voom} {#map at {$voom} {/d};} {600};};
 		};	
-		#case {"room.item"} {
-			#var outputtext {$GMCPMSGS[text]};
-			#replace {outputtext} {\\n} {};
-			#var roomitemsData {$outputtext};
-			#sh $outputtext;			
-		};
 		#case {"room.contents.object"} {
 			#var outputtext {$GMCPMSGS[text]};
 			#replace {outputtext} {\\n} {};
