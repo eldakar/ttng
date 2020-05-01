@@ -25,9 +25,9 @@
 		#class markups close;
 		#class markups write bundles/ConfigManager/Profiles/markups.tt;
 	};
-} {2};
+} {1};
 
-#alias {/a ext %*} {
+#alias {/e ext %*} {
 	#map get roomvnum markupsRoomVnum;
 	#map get roomsymbol _rs;
 	#map get roomterrain _rt;

@@ -155,38 +155,39 @@
 
 
 #function highlight_exits {
+    #map get roomexits _rex;
     #list ROOM_INFO[exits] size ris;
     #if {$ris > 1}  {
         #foreach {$ROOM_INFO[exits]} {i}
         {
             #switch {"$ROOM_INFO[exits][$i]"}
             {
-                #case {"polnoc"} {/a ext n;#map move n;/a ext s;#map move s};
-                #case {"polnocny-wschod"} {/a ext ne;#map move ne;/a ext sw;#map move sw};
-                #case {"polnocny-zachod"} {/a ext nw;#map move nw;/a ext se;#map move se};
-                #case {"poludnie"} {/a ext s;#map move s;/a ext n;#map move n};
-                #case {"poludniowy-wschod"} {/a ext se;#map move se;/a ext nw;#map move nw};
-                #case {"poludniowy-zachod"} {/a ext sw;#map move sw;/a ext ne;#map move ne};
-                #case {"wschod"} {/a ext e;#map move e;/a ext w;#map move w};
-                #case {"zachod"} {/a ext w;#map move w;/a ext e;#map move e};
-                #case {"dol"} {/a ext d;#map move d;/a ext u;#map move u};
-                #case {"gora"} {/a ext u;#map move u;/a ext d;#map move d};
+                #case {"polnoc"}             {/a ext n;#map at {$_rex[n]} {/e ext s}};
+                #case {"polnocny-wschod"}    {/a ext ne;#map at {$_rex[ne]} {/e ext sw}};
+                #case {"polnocny-zachod"}    {/a ext nw;#map at {$_rex[nw]} {/e ext se}};
+                #case {"poludnie"}           {/a ext s;#map at {$_rex[s]} {/e ext n}};
+                #case {"poludniowy-wschod"}  {/a ext se;#map at {$_rex[se]} {/e ext nw}};
+                #case {"poludniowy-zachod"}  {/a ext sw;#map at {$_rex[sw]} {/e ext ne}};
+                #case {"wschod"}             {/a ext e;#map at {$_rex[e]} {/e ext w}};
+                #case {"zachod"}             {/a ext w;#map at {$_rex[w]} {/e ext e}};
+                #case {"dol"}                {/a ext d;#map at {$_rex[d]} {/e ext u}};
+                #case {"gora"}               {/a ext u;#map at {$_rex[u]} {/e ext d}};
             };
         };
     };
     #elseif {$ris > 0}  {
         #switch {"$ROOM_INFO[exits][1]"}
         {
-                #case {"polnoc"} {/a ext n;#map move n;/a ext s;#map move s};
-                #case {"polnocny-wschod"} {/a ext ne;#map move ne;/a ext sw;#map move sw};
-                #case {"polnocny-zachod"} {/a ext nw;#map move nw;/a ext se;#map move se};
-                #case {"poludnie"} {/a ext s;#map move s;/a ext n;#map move n};
-                #case {"poludniowy-wschod"} {/a ext se;#map move se;/a ext nw;#map move nw};
-                #case {"poludniowy-zachod"} {/a ext sw;#map move sw;/a ext ne;#map move ne};
-                #case {"wschod"} {/a ext e;#map move e;/a ext w;#map move w};
-                #case {"zachod"} {/a ext w;#map move w;/a ext e;#map move e};
-                #case {"dol"} {/a ext d;#map move d;/a ext u;#map move u};
-                #case {"gora"} {/a ext u;#map move u;/a ext d;#map move d};
+                #case {"polnoc"}             {/a ext n;#map at {$_rex[n]} {/e ext s}};
+                #case {"polnocny-wschod"}    {/a ext ne;#map at {$_rex[ne]} {/e ext sw}};
+                #case {"polnocny-zachod"}    {/a ext nw;#map at {$_rex[nw]} {/e ext se}};
+                #case {"poludnie"}           {/a ext s;#map at {$_rex[s]} {/e ext n}};
+                #case {"poludniowy-wschod"}  {/a ext se;#map at {$_rex[se]} {/e ext nw}};
+                #case {"poludniowy-zachod"}  {/a ext sw;#map at {$_rex[sw]} {/e ext ne}};
+                #case {"wschod"}             {/a ext e;#map at {$_rex[e]} {/e ext w}};
+                #case {"zachod"}             {/a ext w;#map at {$_rex[w]} {/e ext e}};
+                #case {"dol"}                {/a ext d;#map at {$_rex[d]} {/e ext u}};
+                #case {"gora"}               {/a ext u;#map at {$_rex[u]} {/e ext d}};
         };
     };
 }
@@ -420,6 +421,7 @@
     #list roon size roonsize;
     #nop WYSWIETL SCIEZKE jesli szukamy pokoju;
     #if {$lockroom > 0} {#map find $lockroom};
+    #if {{$map_short} != {}} {#map set roomcolor <128>;} {#map set roomcolor <118>;};
 };
 
 #alias mapa_map_updated_vtmap {
