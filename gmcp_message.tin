@@ -70,7 +70,13 @@
 			#var outputtext {$GMCPMSGS[text]};
 			#replace {outputtext} {\\n} {};
 			#sh $outputtext;
-			#delay {wwalce} {#sh {Odsapnales po walce.};#unvar collector;qb otul sie plaszczem} {34};
+			#delay {wwalce} {
+				#sh {<afa>Odsapnales po walce.<088>};
+				#unvar collector;
+				#if {"pplaszcz" == "wlaczony"} {
+					qb otul sie plaszczem
+				};
+			} {34};
 			#nop /a rot;
 			#nop line sub variables {#delay {$voom} {#map at {$voom} {/d};} {600};};
 		};	

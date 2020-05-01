@@ -1,3 +1,7 @@
+#alias {plaszcz} {
+  #var pplaszcz $ConfigManager_Configs[plaszcz];
+};
+
 #alias _quickbind_ {
 	#echo {<118>Zaden quickbind nie zostal ustawiony!<088>};
 };

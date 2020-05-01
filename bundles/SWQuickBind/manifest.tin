@@ -18,6 +18,7 @@
 #var bundle_help {1};
 
 #list bundle_configs clear;
+	#list bundle_configs add {plaszcz};
 #nop ############################;
 #nop EVENT SLOTS ##########;
 #nop Every listed event slot has to be empty;
