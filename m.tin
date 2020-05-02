@@ -66,7 +66,8 @@
 
     #read markups.tin;
     #read kamienie.tin;
-
+    #read aliasy.tin;
+    
     #nop read bundles/SplitWingButtons/manifest.tin;
 
     #var r @bundleops_loadglobals{};

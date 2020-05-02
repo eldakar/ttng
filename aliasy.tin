@@ -1,0 +1,26 @@
+#class aliasy read bundles/ConfigManager/Profiles/aliasy.tt;
+
+#alias {/alias %w %*} {
+	#line sub variables {
+		#class aliasy read bundles/ConfigManager/Profiles/aliasy.tt;
+		#class aliasy open;
+		#var aliasdb[%1] {%2};		
+		#class aliasy close;
+		#class aliasy write bundles/ConfigManager/Profiles/aliasy.tt;
+	};
+	#line ignore #showme {Od teraz <afa>.%1<088> bedzie oznaczac: <168>%2<088>.};
+	#var rettt @aliasDB_load{};
+} {1};
+
+#alias {/alias$} {#alias {.%*}} {1};
+
+#function {aliasDB_load} {
+	#foreach {*aliasdb[]} {_adb} {
+		#var _commandlist {$aliasdb[$_adb]};
+	   	#replace _commandlist {,} {;};
+		#line sub {variables} {#alias {.${_adb}} {$_commandlist}};
+	};
+	#return 0;
+};
+
+#var retetete @aliasDB_load;
