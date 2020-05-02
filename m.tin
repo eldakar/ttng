@@ -22,6 +22,8 @@
     #read events/io.tin;
     #read events/screen.tin;
 
+    #read core/aliasy/manifest.tin;
+
     #read bundles/ConfigManager/manifest.tin;
     #read bundles/HelpManager/manifest.tin;
     #read bundles/SplitRefresh/manifest.tin;
@@ -66,7 +68,7 @@
 
     #read markups.tin;
     #read kamienie.tin;
-    #read aliasy.tin;
+
     
     #nop read bundles/SplitWingButtons/manifest.tin;
 

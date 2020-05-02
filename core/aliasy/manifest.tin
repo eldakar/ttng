@@ -1,0 +1,24 @@
+#nop ############################;
+#nop Bundle template v1;
+#nop ############################;
+
+#nop NAME ###########;
+#var bundle_name {aliasy};
+
+#nop IS DATA PRESENT #;
+#var bundle_data {0};
+
+#nop IS CONTENT PRESENT;
+#var bundle_content {1};
+
+#nop IS CONFIG PRSENT;
+#var bundle_config {0};
+
+#nop IS HELP PRESENT;
+#var bundle_help {1};
+
+#nop ############################;
+#nop Validate configuration;
+#nop ############################;
+#var bundle_ready @bundleops_validate{core};
+

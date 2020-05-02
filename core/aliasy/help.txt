@@ -1,0 +1,13 @@
+WARN 1. Dodawanie aliasow
+Kazdy z aliasow dodanych przez uzytkownika, moze zostac podpiety pod makro,
+lub wykonany z 'palca'.
+Aliasy uzytkownikow nalezy wykonywac, po kropce:
+TUTOR.MOJALIAS [enter]
+
+WARN 2. Komendy
+TUTOR/alias                     wyswietla liste dodanych aliasow
+TUTOR/alias nazwa rozwiniecie
+                           dodaje alias o nazwie <alias> z lista komend
+                           komendy MUSZA byc podzielone przecinkami,
+                           bez spacji.
+                           Komendy moga zawierac spacje.

@@ -162,32 +162,32 @@
         {
             #switch {"$ROOM_INFO[exits][$i]"}
             {
-                #case {"polnoc"}             {/a ext n;#map at {$_rex[n]} {/e ext s}};
-                #case {"polnocny-wschod"}    {/a ext ne;#map at {$_rex[ne]} {/e ext sw}};
-                #case {"polnocny-zachod"}    {/a ext nw;#map at {$_rex[nw]} {/e ext se}};
-                #case {"poludnie"}           {/a ext s;#map at {$_rex[s]} {/e ext n}};
-                #case {"poludniowy-wschod"}  {/a ext se;#map at {$_rex[se]} {/e ext nw}};
-                #case {"poludniowy-zachod"}  {/a ext sw;#map at {$_rex[sw]} {/e ext ne}};
-                #case {"wschod"}             {/a ext e;#map at {$_rex[e]} {/e ext w}};
-                #case {"zachod"}             {/a ext w;#map at {$_rex[w]} {/e ext e}};
-                #case {"dol"}                {/a ext d;#map at {$_rex[d]} {/e ext u}};
-                #case {"gora"}               {/a ext u;#map at {$_rex[u]} {/e ext d}};
+                #case {"polnoc"}             {/e ext n;#map at {$_rex[n]} {/e ext s}};
+                #case {"polnocny-wschod"}    {/e ext ne;#map at {$_rex[ne]} {/e ext sw}};
+                #case {"polnocny-zachod"}    {/e ext nw;#map at {$_rex[nw]} {/e ext se}};
+                #case {"poludnie"}           {/e ext s;#map at {$_rex[s]} {/e ext n}};
+                #case {"poludniowy-wschod"}  {/e ext se;#map at {$_rex[se]} {/e ext nw}};
+                #case {"poludniowy-zachod"}  {/e ext sw;#map at {$_rex[sw]} {/e ext ne}};
+                #case {"wschod"}             {/e ext e;#map at {$_rex[e]} {/e ext w}};
+                #case {"zachod"}             {/e ext w;#map at {$_rex[w]} {/e ext e}};
+                #case {"dol"}                {/e ext d;#map at {$_rex[d]} {/e ext u}};
+                #case {"gora"}               {/e ext u;#map at {$_rex[u]} {/e ext d}};
             };
         };
     };
     #elseif {$ris > 0}  {
         #switch {"$ROOM_INFO[exits][1]"}
         {
-                #case {"polnoc"}             {/a ext n;#map at {$_rex[n]} {/e ext s}};
-                #case {"polnocny-wschod"}    {/a ext ne;#map at {$_rex[ne]} {/e ext sw}};
-                #case {"polnocny-zachod"}    {/a ext nw;#map at {$_rex[nw]} {/e ext se}};
-                #case {"poludnie"}           {/a ext s;#map at {$_rex[s]} {/e ext n}};
-                #case {"poludniowy-wschod"}  {/a ext se;#map at {$_rex[se]} {/e ext nw}};
-                #case {"poludniowy-zachod"}  {/a ext sw;#map at {$_rex[sw]} {/e ext ne}};
-                #case {"wschod"}             {/a ext e;#map at {$_rex[e]} {/e ext w}};
-                #case {"zachod"}             {/a ext w;#map at {$_rex[w]} {/e ext e}};
-                #case {"dol"}                {/a ext d;#map at {$_rex[d]} {/e ext u}};
-                #case {"gora"}               {/a ext u;#map at {$_rex[u]} {/e ext d}};
+                #case {"polnoc"}             {/e ext n;#map at {$_rex[n]} {/e ext s}};
+                #case {"polnocny-wschod"}    {/e ext ne;#map at {$_rex[ne]} {/e ext sw}};
+                #case {"polnocny-zachod"}    {/e ext nw;#map at {$_rex[nw]} {/e ext se}};
+                #case {"poludnie"}           {/e ext s;#map at {$_rex[s]} {/e ext n}};
+                #case {"poludniowy-wschod"}  {/e ext se;#map at {$_rex[se]} {/e ext nw}};
+                #case {"poludniowy-zachod"}  {/e ext sw;#map at {$_rex[sw]} {/e ext ne}};
+                #case {"wschod"}             {/e ext e;#map at {$_rex[e]} {/e ext w}};
+                #case {"zachod"}             {/e ext w;#map at {$_rex[w]} {/e ext e}};
+                #case {"dol"}                {/e ext d;#map at {$_rex[d]} {/e ext u}};
+                #case {"gora"}               {/e ext u;#map at {$_rex[u]} {/e ext d}};
         };
     };
 }
