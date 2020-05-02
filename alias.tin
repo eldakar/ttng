@@ -27,15 +27,8 @@
 {
   #action {Nie masz niczego takiego.} {#line gag};
   wym;
-  naostrz bron;
-  naostrz druga bron;
-  napraw pierwsza zalozona zbroje;
-  napraw druga zalozona zbroje;
-  napraw trzecia zalozona zbroje;
-  napraw czwarta zalozona zbroje;
-  napraw piata zalozona zbroje;
-  napraw szosta zalozona zbroje;
-  napraw siodma zalozona zbroje;
+  naostrz wszystkie dobyte bronie;
+  napraw wszystkie zalozone zbroje;
   wlm;
   #delay {unhide} {#unaction {Nie masz niczego takiego.}} {1};
 }
@@ -199,7 +192,7 @@
 #alias {/wez$} {
   #replace roomcontentsData {\.} {};
   #replace roomcontentsData {{, | i }} {;};
-  #format {roomcontentsData} {%l} {$roomcontentsData};
+  #format {roomcontentsData} {%l} {$roomcontentsData};  
   #list roomcontentsList create {$roomcontentsData};
   #var wezindex 1;
     #line ignore {#sh {+---------------------------------------------------+}};

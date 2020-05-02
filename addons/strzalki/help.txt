@@ -1,0 +1,8 @@
+WARN 1. Konfiguracja
+TUTOR /conf sterowaniestrzalkami wlaczone | wylaczone
+
+Uaktywnia makra na ruch strzlkami. Nacisniecie dwoch klawiszy
+jednoczesnie (lub prawie jednoczesnie) wykonuje komendy diagonalne.
+Lewo + Prawo = DOL
+Gora + Dol   = GORA
+

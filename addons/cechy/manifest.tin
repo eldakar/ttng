@@ -3,7 +3,7 @@
 #nop ############################;
 
 #nop NAME ###########;
-#var bundle_name {LevelCalculator};
+#var bundle_name {cechy};
 
 #nop IS DATA PRESENT #;
 #var bundle_data {0};
@@ -41,5 +41,5 @@
 #nop ############################;
 #nop Validate configuration;
 #nop ############################;
-#var bundle_ready @bundleops_validate{bundles};
+#var bundle_ready @bundleops_validate{addons};
 

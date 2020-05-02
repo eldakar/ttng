@@ -1,5 +1,5 @@
 bundles/ConfigManager/Profiles/*
-bundles/EquipmentStatus/sprzet.class
-bundles/RaidTable/data.tin
+addons/stansprzetu/sprzet.class
+addons/raid/data.tin
 stats-*
 experimental/*

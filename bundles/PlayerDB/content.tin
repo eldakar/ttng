@@ -12,10 +12,10 @@
     #replace tmp {,} {;};
     #list connstrdb create {$tmp};
     #unvar tmp;
-    #system {sh bundles/PlayerDB/baza_update.sh $connstrdb[1] $connstrdb[2] $connstrdb[3] $connstrdb[4] > bundles/RaidTable/data.tin};	
+    #system {sh bundles/PlayerDB/baza_update.sh $connstrdb[1] $connstrdb[2] $connstrdb[3] $connstrdb[4] > addons/raid/data.tin};	
     #unvar postac;
-    #read {bundles/RaidTable/data.tin};
-    #class bazapostaci write bundles/RaidTable/data.tin;
+    #read {addons/raid/data.tin};
+    #class bazapostaci write addons/raid/data.tin;
     #echo {<138>PlayerDB: <128>Zaladowane.<088>};
 } {1};
 

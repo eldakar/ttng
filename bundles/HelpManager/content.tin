@@ -11,7 +11,7 @@
 
 #alias {/help %w} {
 	#line substitute {variables} {
-		man_read bundles/%1/help.txt;
+		man_read $bundles_types[%1]/%1/help.txt;
 	};
 } {1};
 

@@ -65,13 +65,13 @@
 
 #class {_stuff_sprzet} {close};
 
-#class {_stuff_sprzet} {write} {bundles/EquipmentStatus/sprzet.class};
+#class {_stuff_sprzet} {write} {addons/stansprzetu/sprzet.class};
 #class {_stuff_sprzet} {kill};
 
 #alias {/sprzet} {
 	#var {_stuff_curr} {0};
 
-	#class {_stuff_sprzet} {read} {bundles/EquipmentStatus/sprzet.class};
+	#class {_stuff_sprzet} {read} {addons/stansprzetu/sprzet.class};
 	ocen wszystkie dobyte bronie;
 	ocen wszystkie zalozone zbroje;
 	opcje opisywanie;

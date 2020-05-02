@@ -76,6 +76,7 @@
 		};
 
 		#list bundlemanager_bundles add {$bundle_name};
+		#var bundles_types[$bundle_name] {%1};
 		#var bundles_$bundle_name {1};
 		#nop echo {<128>Bundle Loaded: <168>$bundle_name<088>};
 		

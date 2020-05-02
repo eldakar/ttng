@@ -3,19 +3,22 @@
 #nop ############################;
 
 #nop NAME ###########;
-#var bundle_name {CommandHistory};
+#var bundle_name {raid};
 
 #nop IS DATA PRESENT #;
-#var bundle_data {0};
+#var bundle_data {1};
 
 #nop IS CONTENT PRESENT;
 #var bundle_content {1};
 
-#nop IS CONFIG PRSENT;
-#var bundle_config {0};
+#list bundle_configs clear;
+	#list bundle_configs add {RaidTableGuildEnemies};
+	#list bundle_configs add {RaidTableGuildFriends};
+	#list bundle_configs add {RaidTableGuild};
+	#list bundle_configs add {gildie};
 
 #nop IS HELP PRESENT;
-#var bundle_help {0};
+#var bundle_help {1};
 
 #nop ############################;
 #nop EVENT SLOTS ##########;
@@ -23,15 +26,18 @@
 #nop in order to load the bundle;
 #nop ############################;
 #list bundle_slots clear;
-#list bundle_slots add {event.send.output};
 
 #nop ############################;
 #nop BUNDLE DEPENDENCIES ###;
 #nop All dependencies have to be met;
 #nop ############################;
 #list bundle_deps clear;
-#list bundle_deps {SplitRefresh};
-	#list bundle_handler_split_request add {CommandHistoryPromptRefresh};
+
+#list event_handler_objects_nums add {RaidTable_GMCP_Objects_Nums};
+#list event_handler_objects_data add {RaidTable_GMCP_Objects_Data};
+
+#list bundle_deps add {ConfigManager};
+
 #nop ############################;
 #nop BUNDLE ALIASES ########;
 #nop Check if any alias already in use;
@@ -41,4 +47,5 @@
 #nop ############################;
 #nop Validate configuration;
 #nop ############################;
-#var bundle_ready @bundleops_validate{bundles};
+#var bundle_ready @bundleops_validate{addons};
+

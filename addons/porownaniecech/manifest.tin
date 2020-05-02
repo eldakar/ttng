@@ -3,7 +3,7 @@
 #nop ############################;
 
 #nop NAME ###########;
-#var bundle_name {Comparer};
+#var bundle_name {porownaniecech};
 
 #nop IS DATA PRESENT #;
 #var bundle_data {0};
@@ -15,7 +15,7 @@
 #var bundle_config {0};
 
 #nop IS HELP PRESENT;
-#var bundle_help {0};
+#var bundle_help {1};
 
 #nop ############################;
 #nop EVENT SLOTS ##########;
@@ -39,5 +39,5 @@
 #nop ############################;
 #nop Validate configuration;
 #nop ############################;
-#var bundle_ready @bundleops_validate{bundles};
+#var bundle_ready @bundleops_validate{addons};
 

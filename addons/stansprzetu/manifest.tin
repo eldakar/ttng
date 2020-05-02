@@ -1,4 +1,4 @@
-#var bundle_name {EquipmentStatus};
+#var bundle_name {stansprzetu};
 #var bundle_data {0};
 #var bundle_content {1};
 
@@ -14,4 +14,4 @@
 	#list bundle_deps add {gmcpDefaultColorManager};
 #list bundle_alias clear;
 
-#var bundle_ready @bundleops_validate{bundles};
+#var bundle_ready @bundleops_validate{addons};

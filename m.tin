@@ -28,29 +28,34 @@
     #read bundles/prompt/manifest.tin;    
     #read bundles/postac/manifest.tin;
     #read bundles/wskazywanie/manifest.tin;
-    #read bundles/ekwipunek/manifest.tin;
+
+    #read addons/ekwipunek/manifest.tin;
+    
+    #read addons/cechy/manifest.tin;
+    #read addons/raid/manifest.tin;
+    #read addons/strzalki/manifest.tin;
+
     #read bundles/TTMapFollow/manifest.tin;
     #read bundles/TTMapFreezer/manifest.tin;
     #read bundles/TTMapSigns/manifest.tin;
-    #read bundles/LevelCalculator/manifest.tin;
     #read bundles/gmcpDefaultColorManager/manifest.tin;
     #read bundles/TTMapUndo/manifest.tin;
     #read bundles/NumPad/manifest.tin;
     #read bundles/ItemQualitySimple/manifest.tin;
     #read bundles/ziola/manifest.tin;
-    #read bundles/RaidTable/manifest.tin;
+    
     #read bundles/mapeditor/manifest.tin;
     #read bundles/PlayerDB/manifest.tin;
-    #read bundles/EquipmentStatus/manifest.tin;
+    #read addons/stansprzetu/manifest.tin;
     #read bundles/LootManager/manifest.tin;
     #read bundles/postepy/manifest.tin;
     #read bundles/SplitWingMap/manifest.tin;
     #read bundles/SWQuickBind/manifest.tin;
     #read bundles/Highlights/manifest.tin;
-    #read bundles/Drakkary/manifest.tin;
     #read bundles/Vehicles/manifest.tin;
 
- 
+    #read addons/drakkary/manifest.tin;
+    
     #read bundles/system/manifest.tin;
 
     

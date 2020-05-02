@@ -1,0 +1,10 @@
+#var bundle_name {strzalki};
+#var bundle_data {0};
+#var bundle_content {1};
+#var bundle_help {1};
+#list bundle_configs clear;
+	#list bundle_configs add {sterowaniestrzalkami};
+	
+#list bundle_alias clear;
+
+#var bundle_ready @bundleops_validate{addons};
