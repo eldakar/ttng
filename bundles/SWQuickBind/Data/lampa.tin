@@ -42,9 +42,9 @@
 
 #action {Dopelniasz zapalona %*} {
 	#var lampastatus on;
-	Highlights_event <118>Lampa - Dopelniasz %1.<088>;
+	Highlights_event <128>Lampa - Dopelniasz %1.<088>;
 	#line gag;
-} {1};
+} {6};
 
 #alias {/lampa} {
 	#switch {"$lampastatus"} {
