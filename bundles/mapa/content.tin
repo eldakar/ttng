@@ -413,6 +413,7 @@
     #map get roomvnum voom;
     #map get roomarea rooa;
     #map get roomdata roon;
+    #map get roomexits reex;
     #map get roomdesc {map_short};
     #map get roomname {map_exits};
     #var map_short {$map_short};

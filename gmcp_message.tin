@@ -28,6 +28,7 @@
 		    };
 		};
 		#case {"room.short"} {
+			#var ilecial 0;
 			#var tmptext {$GMCPMSGS[text]};
 			#regex {$tmptext} {{.*}\\n$} {
 				#var GMCPMSGS[text] {&1};
@@ -86,19 +87,19 @@
 			#var roomcontentsData {$outputtext};
 			#sh $outputtext;			
 
-		  #replace roomcontentsData {\.} {};
-		  #replace roomcontentsData {{, | i }} {;};
-		  #format {roomcontentsData} {%l} {$roomcontentsData};  
-		  #list roomcontentsList create {$roomcontentsData};
-		  #var ilecial 0;
-		  #foreach {*roomcontentsList[]} {_rcd} {
-		  	#regex {$roomcontentsList[$_rcd]} {cialo} {
-		  		#math ilecial {$ilecial + 1};
+			#replace roomcontentsData {\.} {};
+			#replace roomcontentsData {{, | i }} {;};
+			#format {roomcontentsData} {%l} {$roomcontentsData};  
+			#list roomcontentsList create {$roomcontentsData};
+			#var ilecial 0;
+			#foreach {*roomcontentsList[]} {_rcd} {
+				#regex {$roomcontentsList[$_rcd]} {cialo} {
+			  		#math ilecial {$ilecial + 1};
+			  	};
+			};
+		  	#if {$ilecial > 0} {
+		  		#line ignore #showme {Widzisz <ffa>$ilecial cial<088>.};
 		  	};
-		  };
-		  #if {$ilecial > 0} {
-		  	#line ignore #showme {Widzisz <ffa>$ilecial cial<088>.};
-		  };
 		};
 		
 		#default {#sh $GMCPMSGS[text]};
