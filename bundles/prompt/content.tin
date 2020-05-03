@@ -395,7 +395,8 @@
     #screen get ROWS sr;
     #screen get SPLIT_BOT_BAR sb;
     #math topButtonsFrameBorder {$sr - $sb};
-    #if {%1 >= $topButtonsFrameBorder && %1 < $topButtonsFrameBorder+5 && %2 > 1 && %2 < $screencols} {
+    #nop var topButtonsFrameBorder 1;
+    #nop if {%1 >= $topButtonsFrameBorder && %1 < $topButtonsFrameBorder+5 && %2 > 1 && %2 < $screencols} {};
         #math currRow {%1 - ($topButtonsFrameBorder)};
         #math currCol {($screencols - %2 + 1) / 4};
 
@@ -427,7 +428,6 @@
                 $buttons[$currRow][$currCol][cmdon];
             }
         };
-    };
 };
 
 

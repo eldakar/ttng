@@ -1,10 +1,10 @@
-#action {Wraz z %1 jedziesz %2 na %3.} {#sh Wraz z %1 podazasz za %2 na %3.};
-#action {Wraz z %1 pomagacie %2 przeniesc duza zelazna klatke na %3} {#sh Wraz z %1 podazasz za %2 na %3};
+#nop logowanie bledow;
 #action {%*{Podazasz|podazasz} za %1} {
 	#var MAPPER_SYNC 0;
 	#line ignore #showme {<FFA><aaa>GUBIE MAPE:<088> <ffa>Na lokacji $voom %1<088>};
 	#line log {bundles/ConfigManager/Profiles/follow-errors} {podazanie:$voom %1};
 } {8};
+
 #action {%*{Podazasz|podazasz} za %1 na polnocny-zachod wdrapujac sie na zwalony pien i zeskakujac na druga strone.} {#var retfl @follow_where{nw}} {4};
 #action {%*{Podazasz|podazasz} za %1 po drabinie na dol.} {#var retfl @follow_where{drabina}} {4};
 #action {%*{Podazasz|podazasz} za %1 po drabinie na gore.} {#var retfl @follow_where{drabina}} {4};
@@ -99,13 +99,9 @@
 #action {%*{Podazasz|podazasz} za %1 w dol traktem.} {#var retfl @follow_where{d}};
 #action {%*{Podazasz|podazasz} za %1 droga w dol.} {#var retfl @follow_where{d}};
 #action {%*{Podazasz|podazasz} za %1 droga w gore.} {#var retfl @follow_where{u}};
-
 #action {%*{Podazasz|podazasz} za %1 do otworu.} {#map move rozpadlina;#map move otwor;};
-
 #action {%*{Podazasz|podazasz} za %1 na zewnatrz przechodzac przez szczeline} {#map move szczelina;#map move przejdz przez szczeline};
 #action {%*{Podazasz|podazasz} za %1 do srodka otworu.} {#map move rozpadlina;#map move otwor;};
-
-
 #action {%*{Podazasz|podazasz} za %1 w kierunku otworu.} {#var retfl @follow_where{otwor}};
 #action {%*{Podazasz|podazasz} za %1 na zewnatrz.} {#var retfl @follow_where{wyjscie}};
 #action {%*{Podazasz|podazasz} za %1 do srodka jaskini.} {#var retfl @follow_where{jaskinia}};
@@ -117,9 +113,7 @@
 #action {%*{Podazasz|podazasz} za %1 w gore, ku wyjsciu z twierdzy.} {#var retfl @follow_where{u}};
 #action {%*{Podazasz|podazasz} za %1 schodami, wspinajac sie na szczyt.} {#var retfl @follow_where{schody}};
 #action {%*{Podazasz|podazasz} za %1 na dno rozpadliny.} {#var retfl @follow_where{rozpadlina}};
-
 #action {%*{Podazasz|podazasz} za %1 do kurhanu.} {#var retfl @follow_where{kurhan}};
-
 #action {%*{Podazasz|podazasz} za %1 na druga strone z trudem przeciskajac sie przez otwor.} {#var retfl @follow_where{otwor}};
 #action {%*{Podazasz|podazasz} za %1 w strone rufy.} {#var retfl @follow_where{rufa}};
 #action {%*{Podazasz|podazasz} za %1 na rufe.} {#var retfl @follow_where{rufa}};
@@ -144,23 +138,13 @@
 #action {%*{Podazasz|podazasz} za %1 na poludnie uchylajac kraty do celi.} {#var retfl @follow_where{s}};
 #action {%*{Podazasz|podazasz} za %1 na poludnie uchylajac kraty do celi.} {#var retfl @follow_where{s}};
 #action {%*{Podazasz|podazasz} za %1 schodami ku szczytowi szybu.} {#var retfl @follow_where{u}};
-
 #action {%*{Podazasz|podazasz} za %1 do wnetrza straznicy.} {#var retfl @follow_where{schody}};
 #action {%*{Podazasz|podazasz} za %1 na zewnatrz straznicy.} {#var retfl @follow_where{schody}};
-
-
 #action {%*{Podazasz|podazasz} za %1 do baraku.} {#var retfl @follow_where{barak}};
 #action {%*{Podazasz|podazasz} za %1 przez otwor do jaskini.} {#var retfl @follow_where{otwor}};
 #action {%*{Podazasz|podazasz} za %1 przez otwor.} {#var retfl @follow_where{otwor}};
 #action {%*{Podazasz|podazasz} za %1 przez otwor na zewnatrz.} {#var retfl @follow_where{otwor}};
 #action {Podazasz za kims przez otwor do jaskini.} {#var retfl @follow_where{otwor}} {1};
-#action {Podazasz w kierunku krzakow i po chwili znajdujesz przesmyk, przez ktory mozna sie dostac pomiedzy poskrecane ze soba galezie.} 
-{
-    #if {$trytomove == 1} {
-        #var retfl @follow_where{krzaki};
-    };
-}
-
 #action {%*{Podazasz|podazasz} za %1 na polnoc, {brodzac w wodzie morskiej.|wychodzac nabrzeg.}} {#var retfl @follow_where{n}}
 #action {%*{Podazasz|podazasz} za %1 na poludnie, {brodzac w wodzie morskiej.|wychodzac nabrzeg.}} {#var retfl @follow_where{s}}
 #action {%*{Podazasz|podazasz} za %1 na wschod, {brodzac w wodzie morskiej.|wychodzac nabrzeg.}} {#var retfl @follow_where{e}}
@@ -169,8 +153,23 @@
 #action {%*{Podazasz|podazasz} za %1 na poludniowy-zachod, {brodzac w wodzie morskiej.|wychodzac nabrzeg.}} {#var retfl @follow_where{sw}}
 #action {%*{Podazasz|podazasz} za %1 na polnocny-wschod, {brodzac w wodzie morskiej.|wychodzac nabrzeg.}} {#var retfl @follow_where{ne}}
 #action {%*{Podazasz|podazasz} za %1 na poludniowy-wschod, {brodzac w wodzie morskiej.|wychodzac nabrzeg.}} {#var retfl @follow_where{se}}
-
 #action {%*{Podazasz|podazasz} za %1 na polnoc.} {#var retfl @follow_where{n}};
+#action {%*{Podazasz|podazasz} za %1 wyjsciem.} {#var retfl @follow_where{wyjscie}};
+
+#nop wozem;
+#action {Wraz z %1 jedziesz %2 na %3.} {#sh Wraz z %1 podazasz za %2 na %3.};
+#nop klatka;
+#action {Wraz z %1 pomagacie %2 przeniesc duza zelazna klatke na %3} {#sh Wraz z %1 podazasz za %2 na %3};
+
+#nop kreutz;
+#action {%*{Podazasz|podazasz} za %1 do karczmy.} {#var retfl @follow_where{n}};
+#nop krzaki ozyw;
+#action {Podazasz w kierunku krzakow i po chwili znajdujesz przesmyk, przez ktory mozna sie dostac pomiedzy poskrecane ze soba galezie.} 
+{
+    #if {$trytomove == 1} {
+        #var retfl @follow_where{krzaki};
+    };
+}
 
 #function follow_where {
 	#var directiontogo %1;
