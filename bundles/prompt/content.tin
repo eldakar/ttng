@@ -400,7 +400,9 @@
         #math currRow {%1 - ($topButtonsFrameBorder)};
         #math currCol {($screencols - %2 + 1) / 4};
 
-        #line ignore #sh {<028>Mouse> <128>Button Click [$currRow] [$currCol]};
+        #if {$mousepresseddebug} {
+        	#line ignore #sh {<028>Mouse> <128>Button Click [$currRow] [$currCol]};
+        };
         #if {"$buttons[$currRow][$currCol][type]" == "wskazywanie"} {
             #local tmpflagi $pwskazywanie;
             #replace tmpflagi {A} {};
