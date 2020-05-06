@@ -23,6 +23,11 @@
 	#untick lampa;
 };
 
+#action {Gasisz lampe} {
+	#var lampastatus off;
+	#untick lampa;
+};
+
 #action {Probujesz zapalic %* jest wyczerpana} {
 	#var lampastatus off;
 	#untick lampa;
