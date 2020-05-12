@@ -15,7 +15,7 @@
 #sub {dlugi skomplikowany klucz} {<138>%0<088> (<fac> Zywiolaki pod Tretogorem<088> )};
 #sub {gruby ciezki klucz} {<138>%0<088> (<fac> Kurhany w Lyrii<088> )};
 #sub {jadeitowa pieczec} {<138>%0<088> (<fac> Fort w Lyrii<088> )};
-#sub {niewielka zamoczona karteczka} {<138>%0<088> (<fac> Jaskinia zbojow na Baccali<088> )};
+#sub {niewielka zamoczona karteczka} {<138>%0<088> (<fac> Jaskinia zbojow w Baccali<088> )};
 #sub {pordzewialy archaiczny klucz} {<138>%0<088> (<fac> Ruiny Rinde<088> )};
 #sub {rozmiekczony zbutwialy pergamin} {<138>%0<088> (<fac> Zatopiony wrak w morzu na Baccali<088> )};
 #sub {starozytny elfi pergamin} {<138>%0<088> (<fac> Grobowiec w Brokillonie<088> )};
@@ -30,3 +30,4 @@
 #sub {krasnoludzka runiczna pieczec} {<138>%0<088> (<fac> pieczec Mahakam<088> )};
 #sub {dlugi grafitowy klucz} {<138>%0<088> (<fac> WIEZA GKS<088> )};
 #sub {skomplikowany klucz ze szklanym zbiorniczkiem} {<138>%0<088> (<fac> Portale<088> )};
+#sub {fragment koralowej plaskorzezby z rybim ogonem} {<138>%0<088> (<fac> Baltek na Skellige<088> )};

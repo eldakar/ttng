@@ -28,6 +28,10 @@
     };
 };
 
+#alias {roza} {
+    #var proza $ConfigManager_Configs[roza];    
+}
+
 #alias {trybmapy} {
     #switch {"$ConfigManager_Configs[trybmapy]"} {
         #case {"unicode"} {#map flag unicodegraphics on;};
@@ -295,7 +299,17 @@
             };
       };
     };
-}
+
+    #if {"$proza" == "widoczna"} {
+        #line ignore #sh { };
+        #line ignore #sh {   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u] <088>};
+        #line ignore #sh {  <138>$rozk2[w]$rozk2[w] $ptrybchodzeniasymbol <138>$rozk2[e]$rozk2[e]  <088>};
+        #line ignore #sh {  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d] <088>};
+        #line ignore #sh {<168>$roza_custom};
+    };
+};
+
+
 #nop #################################################################################;
 #nop EVENTY GMCP;
 #nop #################################################################################;

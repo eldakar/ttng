@@ -1,0 +1,42 @@
+#var bundle_name {makra};
+#var bundle_data {0};
+#var bundle_content {1};
+#var bundle_help {1};
+
+#list bundle_deps clear;
+	#list bundle_deps add {ConfigManager};
+
+
+#list bundle_configs clear;
+	#list bundle_macros add {F1};
+	#list bundle_macros add {F2};
+	#list bundle_macros add {F3};
+	#list bundle_macros add {F4};
+	#list bundle_macros add {F5};
+	#list bundle_macros add {F6};
+	#list bundle_macros add {F7};
+	#list bundle_macros add {F8};
+	#list bundle_macros add {F9};
+	#list bundle_macros add {F10};
+	#list bundle_macros add {F11};
+	#list bundle_macros add {F12};
+	#list bundle_macros add {NawiasLewy};
+	#list bundle_macros add {NawiasPrawy};
+	#list bundle_macros add {Tylda};
+	#list bundle_macros add {Tab};
+	#list bundle_macros add {eOo};
+	#list bundle_macros add {eOj};
+	#list bundle_macros add {eOn};
+	#list bundle_macros add {eOm};
+	#list bundle_macros add {eOk};
+	#list bundle_macros add {eOu};
+	#list bundle_macros add {eOp};
+	#list bundle_macros add {eOl};
+	#list bundle_macros add {paragraf};
+
+	
+#list bundle_slots clear;
+	#list bundle_slots add {macros};
+#list bundle_alias clear;
+
+#var bundle_ready @bundleops_validate{addons};

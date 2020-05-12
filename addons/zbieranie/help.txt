@@ -1,0 +1,4 @@
+WARN 1. Konfiguracje
+TUTOR 	/conf zbieranie <lista>
+		Lista zawiera nazwy przedmiotow lub typ przedmiotow w dopelniaczu.
+		kamienie,monety,helmy,pierscienie,klucze

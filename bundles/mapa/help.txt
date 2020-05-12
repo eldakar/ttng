@@ -9,6 +9,9 @@ TUTOR /conf startowa numer_pokoju
 TUTOR /conf trybmapy
        unicode - jeden wiersz oddziela od siebie pokoje
        ascii   - dwa wiersze oddzielaja od siebie pokoje
+TUTOR /conf roza
+       widoczna - wyswietla roze wiatrow w oknie glownym
+       niewidoczna
 WARN Aliasy
 TUTOR       _trybchodzenia_ - ALIAS SYSTEMOWY - zmienia tryb chodzenia       
        normalne    (znak W na rozy wiatrow)

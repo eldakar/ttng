@@ -228,7 +228,7 @@
     #unvar _evf;
     #unvar _evg;
 
-    #var global_bundle_slots_values[prompt][right] 1;
+    #var global_bundle_slots_values[prompt][right] 0;
     #unevent {VARIABLE UPDATED objectnumsRefreshed} {RaidBar_refresh};
     #map flag vtmap off;
     #line quiet SplitRefreshRequestRefresh;

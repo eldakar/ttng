@@ -244,7 +244,7 @@
 
 		#var r @policz2{};
 		#var twojpoziom {};
-		#format {line} {| %-36s | %+19s |} {$twojpoziomText[$level]} {${c_stan_niski}$level.$cechyleft<088>};
+		#format {line} {| %-36s | %+14s (%-3s)|} {$twojpoziomText[$level]} {${c_stan_niski}$level.$cechyleft<088>} {$pointstotal};
 		#echo $line;
 		#echo {+--------------------------------------+---------------------+};
 

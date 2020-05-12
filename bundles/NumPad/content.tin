@@ -72,25 +72,3 @@
 
 #macro {\e[1;2A} {#buffer up};		#nop shift-kursor-gora;
 #macro {\e[1;2B} {#buffer down};	#nop shift-kursor-dol;
-
-#alias {/walk} {
-	#macro {$KEY_PAD_S} {move_s}
-	#macro {$KEY_PAD_N} {move_n}
-	#macro {$KEY_PAD_W} {move_w}
-	#macro {$KEY_PAD_E} {move_e}
-	#macro {$KEY_PAD_NW} {move_nw}
-	#macro {$KEY_PAD_NE} {move_ne}
-	#macro {$KEY_PAD_SW} {move_sw}
-	#macro {$KEY_PAD_SE} {move_se}
-} {1};
-
-#alias {/stealth} {
-	 #macro {$KEY_PAD_S} {sneak_s}
-	 #macro {$KEY_PAD_N} {sneak_n}
-	 #macro {$KEY_PAD_W} {sneak_w}
-	 #macro {$KEY_PAD_E} {sneak_e}
-    #macro {$KEY_PAD_NW} {sneak_nw}
-	#macro {$KEY_PAD_NE} {sneak_ne}
-	#macro {$KEY_PAD_SW} {sneak_sw}
-	#macro {$KEY_PAD_SE} {sneak_se}	
-} {1};

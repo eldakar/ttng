@@ -1,13 +1,55 @@
 #alias {/por$} {
-	#CLASS {ComparerOps} READ bundles/Comparer/subclass.tin;
-	porownaj sile z celem ataku;
-	porownaj zrecznosc z celem ataku;
-	porownaj wytrzymalosc z celem ataku;
+	#var tmpechocmd $ConfigManager_Configs[echokomend];
+	/conf echokomend niewidoczne;
+	#var tmp_del 0;
+	#CLASS {ComparerOps} READ addons/porownaniecech/subclass.tin;
+	#foreach {*duch[]} {dydy} {
+		#if {"$duch[$dydy][desc]" != ""} {
+			#if {"$dydy" != "$CHAR_INFO[object_num]"} {
+				#line sub variables {#delay {$tmp_del} {/pornum $dydy}};
+				#math tmp_del {$tmp_del + 0.3};
+			};
+		};
+	};
+	#delay {$tmp_del} {/conf echokomend $tmpechocmd};
 } {1};
 
 #alias {/por %*} {
-	#CLASS {ComparerOps} READ bundles/Comparer/subclass.tin;
+	#CLASS {ComparerOps} READ addons/porownaniecech/subclass.tin;
 	porownaj sile z %1;
 	porownaj zrecznosc z %1;
 	porownaj wytrzymalosc z %1;
 } {1};
+
+#alias {/pornum %*} {
+	#var porId %1;
+	#CLASS {ComparerOps} READ addons/porownaniecech/subclass.tin;
+	porownaj sile z ob_%1;
+	porownaj zrecznosc z ob_%1;
+	porownaj wytrzymalosc z ob_%1;
+} {1};
+
+#alias ComparerShow {
+	#math compSum {$cmp_str + $cmp_dex + $cmp_vit};
+	#var targetpoints 0;
+	#if {$pointstotal > 0} {
+		#math compDiff {$compSum * 4};
+		#math targetpoints {$pointstotal - $compDiff};
+		#if {"$pvpdb[$duch[$porId][desc]][zawod]" != ""} {
+   #class pvp read bundles/ConfigManager/Profiles/pvp.data;
+   #class pvp open;      
+			#var pvpdb[$duch[$porId][desc]][poziom] {$targetpoints};
+   #class pvp close;
+   #class pvp write bundles/ConfigManager/Profiles/pvp.data;
+
+		};
+	};
+	#format {CompareResult} {|%-40s |%+2s|%+2s|%+2s||%+2s| %+3s |} {$duch[$porId][desc]} {$cmp_str} {$cmp_dex} {$cmp_vit} {$compSum} {$targetpoints};
+	#line ignore #showme {$CompareResult};
+	#nop show {$duch[$porId][desc] $cmp_str $cmp_dex $cmp_vit = $compSum  -> $targetpoints};
+	#delay {5} {
+		#class {ComparerOps} {kill};
+		#var porId 0;
+		#var porName {};
+	};
+};

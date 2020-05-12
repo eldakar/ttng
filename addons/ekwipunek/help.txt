@@ -7,23 +7,13 @@ TUTOR 	/conf sakiewka plecak*|sakiewka|szkatulka
 	plecak* oznacz ustawiony plecak
 
 WARN 2. Aliasy
-TUTOR 	wy
-		przejrzyj zawartosc zalozonego pojemnika
-TUTOR 	wy [przedmiot]
-		wez [przedmiot] z zalozonego pojemnika
-TUTOR 	wl [przedmiot]
-		wloz [przedmiot] do zalozonego pojemnika
-TUTOR 	wym
-		wez monety z zalozonego pojemnika na monety
-TUTOR 	wlm
-		wloz monety do zalozonego pojemnika na monety
-TUTOR 	dbb
-		dobadz broni z ustawionych pochew
-TUTOR 	obb
-		opusc bronie i schowaj do ustawionych pochew
-TUTOR 	/dos [przedmiot]
-		wloz [przedmiot] do skrzyni
-TUTOR 	/zes [przedmiot]
-		wez [przedmiot] ze skrzyni
-TUTOR 	/sprzet
-		ocena zuzycia zalozonych przedmiotow
+TUTOR 	wy                 przejrzyj zawartosc zalozonego pojemnika
+TUTOR 	wy [przedmiot]     wez [przedmiot] z zalozonego pojemnika
+TUTOR 	wl [przedmiot]     wloz [przedmiot] do zalozonego pojemnika
+TUTOR 	wym                wez monety z zalozonego pojemnika na monety
+TUTOR 	wlm                wloz monety do zalozonego pojemnika na monety
+TUTOR 	dbb                dobadz broni z ustawionych pochew
+TUTOR 	obb                opusc bronie i schowaj do ustawionych pochew
+TUTOR 	/dos [przedmiot]   wloz [przedmiot] do skrzyni
+TUTOR 	/zes [przedmiot]   wez [przedmiot] ze skrzyni
+TUTOR 	/sprzet            ocena zuzycia zalozonych przedmiotow

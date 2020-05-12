@@ -21,8 +21,11 @@
 			#line substitute {variables} {#line strip {#var current_room_exits {$GMCPMSGS[text]}}};
 #nop DEBUG;	#line substitute {variables} {#line strip {#var gmcp_exits {$GMCPMSGS[text]}}};
 			#if {$MAPPER_SYNC == 0} {findme_exits};
-		    rysuj_roze;
-		    rysuj_customs;
+
+			#if {"$ConfigManager_Configs[pasek]" == "medium"} {
+		    	rysuj_roze;
+		    	rysuj_customs;
+			};
 		    #if {$discovery == 1} {
 		    	/disc;
 		    };
@@ -73,7 +76,8 @@
 			#sh $outputtext;
 			#delay {wwalce} {
 				#sh {<afa>Odsapnales po walce.<088>};
-				#unvar collector;
+				#nop unvar collector;
+				collector_offload;
 				#if {"pplaszcz" == "wlaczony"} {
 					qb otul sie plaszczem
 				};
@@ -102,6 +106,10 @@
 		  	};
 		};
 		
-		#default {#sh $GMCPMSGS[text]};
+		#default {
+			#if {"$GMCPMSGS[text]" != ""} {
+				#sh $GMCPMSGS[text]
+			};
+		};
 	};		
 };

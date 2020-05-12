@@ -17,6 +17,7 @@
 	#list bundle_configs add {kolorowaniemapy};
 	#list bundle_configs add {startowa};
 	#list bundle_configs add {dynamicznamapa};
+	#list bundle_configs add {roza};
 
 #nop EVENTS;
 #list event_handler_room_time         add {mapa_room_time};

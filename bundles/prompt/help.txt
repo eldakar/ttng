@@ -1,9 +1,8 @@
 WARN Konfiguracje
-TUTOR 	/conf pasekdolny
-		stary - pasek standardowy
-		nowy  - hp, stamina, mana na caly ekran
 TUTOR 	/conf meldujprzy - bind na szeptanie stanu zmeczenia
-		0-10  - przyjmuje wartosci od 0 do 10
-
+		0-10             - przyjmuje wartosci od 0 do 10
+TUTOR   /conf pasek      - wybor paska dolnego
+        medium           - originalny pasek
+        mini             - pasek do wersji mobilnej
 WARN Aliasy
-TUTOR 	/zme - melduje zmeczenie
+TUTOR 	/zme             - melduje aktualny stan zmeczenia

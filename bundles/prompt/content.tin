@@ -1,4 +1,4 @@
-#var global_bundle_slots_values[prompt][bottom] {3};
+#var global_bundle_slots_values[prompt][bottom] {1};
 #var zmeczenie[0] {w pelni wypoczety};
 #var zmeczenie[1] {wypoczety};
 #var zmeczenie[2] {troche zmeczony};
@@ -10,11 +10,31 @@
 #var zmeczenie[8] {wycienczony};
 #var zmeczenie[9] {calkowicie wycienczony};
 
+#var state[fatigue] {0};
+#var state[hp] {0};
+#var state[mana] {0};
+
 #var bbs_fixer 0;
 
 #alias {meldujprzy} {
 	#var pmeldujprzy $ConfigManager_Configs[meldujprzy];
 };
+
+#alias {pasek} {
+	#if {"$ConfigManager_Configs[pasek]" == ""} {
+		/conf pasek medium
+	} {
+		#switch {"$ConfigManager_Configs[pasek]"} {
+			#case {"medium"} {
+				#alias BottomBar_Selected {BottomBarTinyFugue};
+			};
+			#case {"mini"} {
+				#alias BottomBar_Selected {BottomBarMini};
+			};
+		};
+	};
+	SplitRefreshRequestRefresh;
+}
 
 #alias {/zme} {
 	#if {"$duch[$avatarid][team]" == "true"} {
@@ -44,7 +64,7 @@
 			qb melduj_zmeczenie;
 		};
 	};
-	BottomBarTinyFugue;
+	BottomBar_Selected;
 };
 
 #nop #############################################################;
@@ -52,7 +72,7 @@
 #nop #############################################################;
 #var hiddenlevel {${c_stan_niski}off};
 #action {Chowasz sie najlepiej jak potrafisz} {
-	#var hiddenlevel {${c_stan_sredni} 0%};BottomBarTinyFugue;
+	#var hiddenlevel {${c_stan_sredni} 0%};BottomBar_Selected;
 	#delay {delayhidden1} {#var hiddenlevel {${c_stan_sredni}33%}} {5};
 	#delay {delayhidden2} {#var hiddenlevel {${c_stan_sredni}66%}} {10};
 	#delay {delayhidden3} {#var hiddenlevel {${c_stan_wysoki}on }} {15};
@@ -68,12 +88,12 @@
 #nop #############################################################;
 #var manewrlevel {5};
 #alias {manewr_start} {
-	#var manewrlevel {0};BottomBarTinyFugue;
-	#delay {manewrlevel5} {#var manewrlevel {5};BottomBarTinyFugue;} {5};
-	#delay {manewrlevel4} {#var manewrlevel {4};BottomBarTinyFugue;} {4};
-	#delay {manewrlevel3} {#var manewrlevel {3};BottomBarTinyFugue;} {3};
-	#delay {manewrlevel2} {#var manewrlevel {2};BottomBarTinyFugue;} {2};
-	#delay {manewrlevel1} {#var manewrlevel {1};BottomBarTinyFugue;} {1};
+	#var manewrlevel {0};BottomBar_Selected;
+	#delay {manewrlevel5} {#var manewrlevel {5};BottomBar_Selected;} {5};
+	#delay {manewrlevel4} {#var manewrlevel {4};BottomBar_Selected;} {4};
+	#delay {manewrlevel3} {#var manewrlevel {3};BottomBar_Selected;} {3};
+	#delay {manewrlevel2} {#var manewrlevel {2};BottomBar_Selected;} {2};
+	#delay {manewrlevel1} {#var manewrlevel {1};BottomBar_Selected;} {1};
 	
 };
 #nop #############################################################;
@@ -82,22 +102,22 @@
 #var rozkazlevel {15};
 #alias {rozkaz_start} {
 	#var rozkazlevel {0};
-	#delay {rozkazlevel15} {#var rozkazlevel {15};BottomBarTinyFugue;} {15};
-	#delay {rozkazlevel14} {#var rozkazlevel {14};BottomBarTinyFugue;} {14};
-	#delay {rozkazlevel13} {#var rozkazlevel {13};BottomBarTinyFugue;} {13};
-	#delay {rozkazlevel12} {#var rozkazlevel {12};BottomBarTinyFugue;} {12};	
-	#delay {rozkazlevel11} {#var rozkazlevel {11};BottomBarTinyFugue;} {11};
-	#delay {rozkazlevel10} {#var rozkazlevel {10};BottomBarTinyFugue;} {10};
-	#delay {rozkazlevel9} {#var rozkazlevel {9};BottomBarTinyFugue;} {9};
-	#delay {rozkazlevel8} {#var rozkazlevel {8};BottomBarTinyFugue;} {8};
-	#delay {rozkazlevel7} {#var rozkazlevel {7};BottomBarTinyFugue;} {7};
-	#delay {rozkazlevel6} {#var rozkazlevel {6};BottomBarTinyFugue;} {6};
-	#delay {rozkazlevel5} {#var rozkazlevel {5};BottomBarTinyFugue;} {5};
-	#delay {rozkazlevel4} {#var rozkazlevel {4};BottomBarTinyFugue;} {4};
-	#delay {rozkazlevel3} {#var rozkazlevel {3};BottomBarTinyFugue;} {3};
-	#delay {rozkazlevel2} {#var rozkazlevel {2};BottomBarTinyFugue;} {2};
-	#delay {rozkazlevel1} {#var rozkazlevel {1};BottomBarTinyFugue;} {1};
-	BottomBarTinyFugue;
+	#delay {rozkazlevel15} {#var rozkazlevel {15};BottomBar_Selected;} {15};
+	#delay {rozkazlevel14} {#var rozkazlevel {14};BottomBar_Selected;} {14};
+	#delay {rozkazlevel13} {#var rozkazlevel {13};BottomBar_Selected;} {13};
+	#delay {rozkazlevel12} {#var rozkazlevel {12};BottomBar_Selected;} {12};	
+	#delay {rozkazlevel11} {#var rozkazlevel {11};BottomBar_Selected;} {11};
+	#delay {rozkazlevel10} {#var rozkazlevel {10};BottomBar_Selected;} {10};
+	#delay {rozkazlevel9} {#var rozkazlevel {9};BottomBar_Selected;} {9};
+	#delay {rozkazlevel8} {#var rozkazlevel {8};BottomBar_Selected;} {8};
+	#delay {rozkazlevel7} {#var rozkazlevel {7};BottomBar_Selected;} {7};
+	#delay {rozkazlevel6} {#var rozkazlevel {6};BottomBar_Selected;} {6};
+	#delay {rozkazlevel5} {#var rozkazlevel {5};BottomBar_Selected;} {5};
+	#delay {rozkazlevel4} {#var rozkazlevel {4};BottomBar_Selected;} {4};
+	#delay {rozkazlevel3} {#var rozkazlevel {3};BottomBar_Selected;} {3};
+	#delay {rozkazlevel2} {#var rozkazlevel {2};BottomBar_Selected;} {2};
+	#delay {rozkazlevel1} {#var rozkazlevel {1};BottomBar_Selected;} {1};
+	BottomBar_Selected;
 };
 #nop #############################################################;
 #nop ############# BLOKOWANIE TWOJE        #######################;
@@ -105,12 +125,12 @@
 #var blockselflevel {0};
 #alias {blok_start} {
 	#var blockselflevel {0};
-	#delay {blockselflevel5} {#var blockselflevel {5};BottomBarTinyFugue;} {5};
-	#delay {blockselflevel4} {#var blockselflevel {4};BottomBarTinyFugue;} {4};
-	#delay {blockselflevel3} {#var blockselflevel {3};BottomBarTinyFugue;} {3};
-	#delay {blockselflevel2} {#var blockselflevel {2};BottomBarTinyFugue;} {2};
-	#delay {blockselflevel1} {#var blockselflevel {1};BottomBarTinyFugue;} {1};
-	BottomBarTinyFugue;
+	#delay {blockselflevel5} {#var blockselflevel {5};BottomBar_Selected;} {5};
+	#delay {blockselflevel4} {#var blockselflevel {4};BottomBar_Selected;} {4};
+	#delay {blockselflevel3} {#var blockselflevel {3};BottomBar_Selected;} {3};
+	#delay {blockselflevel2} {#var blockselflevel {2};BottomBar_Selected;} {2};
+	#delay {blockselflevel1} {#var blockselflevel {1};BottomBar_Selected;} {1};
+	BottomBar_Selected;
 };
 
 
@@ -313,11 +333,20 @@
 
 #var bbBGC {<G02>};
 #event {VARIABLE UPDATED bbBGC} {
-	BottomBarTinyFugue;	
+	BottomBar_Selected;	
 };
 #event {VARIABLE UPDATED charstate} {
-	BottomBarTinyFugue;	
+	BottomBar_Selected;	
 };
+
+#alias {BottomBar_Selected} {
+	#var global_bundle_slots_values[prompt][bottom] {1};
+};
+
+#alias {BottomBarMini} {
+	#var global_bundle_slots_values[prompt][bottom] {3};
+	#line ignore #sh {${bbBGC}HP:$state[hp]/6 MN:$state[mana]/8 ST:$state[fatigue]/9 | RO:$rozkazlevel/15 MA:$manewrlevel/5<088>} {-3} {2};
+}
 
 #alias {BottomBarTinyFugue} {
 	#var global_bundle_slots_values[prompt][bottom] {3};

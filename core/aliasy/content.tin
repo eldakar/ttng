@@ -1,13 +1,13 @@
 #class aliasy read bundles/ConfigManager/Profiles/aliasy.tt;
 
 #alias {/alias %w %*} {
-	#line sub variables {
+	#nopline sub variables {;
 		#class aliasy read bundles/ConfigManager/Profiles/aliasy.tt;
 		#class aliasy open;
 		#var aliasdb[%1] {%2};		
 		#class aliasy close;
 		#class aliasy write bundles/ConfigManager/Profiles/aliasy.tt;
-	};
+	#nop };
 	#line ignore #showme {Od teraz <afa>.%1<088> bedzie oznaczac: <168>%2<088>.};
 	#var rettt @aliasDB_load{};
 } {1};

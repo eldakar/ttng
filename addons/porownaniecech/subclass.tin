@@ -1,11 +1,3 @@
-#alias ComparerShow {
-	#sh {--- Porownanie cech ---};
-	#sh {Sila:         $cmp_str};
-	#sh {Zrecznosc:    $cmp_dex};
-	#sh {Wytrzymalosc: $cmp_vit};
-	#class {ComparerOps} {kill};
-};
-
 #action {Masz wrazenie, ze jest rownie dobrze zbudowany} {#var cmp_vit 0;ComparerShow#line gag};
 #action {Masz wrazenie, ze jest niewiele lepiej zbudowany} {#var cmp_vit -1;ComparerShow;#line gag};
 #action {Masz wrazenie, ze jest troche lepiej zbudowany} {#var cmp_vit -2;ComparerShow;#line gag};

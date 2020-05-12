@@ -1,0 +1,10 @@
+WARN Konfiguracja
+TUTOR /macro                     - wyswietla liste dostepnych klawiszy
+TUTOR /macro [klawisz] [wartosc] - ustawia [wartosc] pod [klawisz]
+
+[wartosc] - to lista komend, po przecinku. Mozna uzywac komend systemowych i wlasnych aliasow
+
+WARN Numeryk
+Niektore z klawiszy numeryczynych nie sa ustawione automatycznie. Nacisniecie takiego
+klawisza, odda na ekran kod (naprzyklad \eOm). Znajdujemy dany kod na liscie /macro,
+aby go podbindowac.

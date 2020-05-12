@@ -119,6 +119,8 @@
 
 } {1};
 
+
+
 #nop #function ShortToId {};
 #nop GetEnemyTarget;
 
@@ -129,7 +131,8 @@
    #local valueSent {%2};
    #local typeSent {%1};
 
-   #var collector[$senderID][short] {%3};
+   #nop var collector[$senderID][short] {%3};
+   #var collector[$senderID][short] $duch[$senderID][desc];
    #var collector[$receiverID][short] $duch[$receiverID][desc];
 
 	#if {"$collector[$senderID][sent][$typeSent]" == ""} {#var collector[$senderID][sent][$typeSent] {0};};
@@ -189,3 +192,58 @@
       };
    }
 } {0};
+
+
+#alias {collector_offload} {
+   #class pvp kill;
+   #class pvp read bundles/ConfigManager/Profiles/pvp.data;
+   #class pvp open;              
+
+   #foreach {*collector[]} {mytmpID} {
+
+          #var tmpsavedlist $collector[$mytmpID][sent];
+          #if {$tmpsavedlist[KG] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {KG}}
+          #if {$tmpsavedlist[OK] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {OK}}
+          #if {$tmpsavedlist[MC] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {MC}}
+          #if {$tmpsavedlist[SC] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {SC}}
+          #if {$tmpsavedlist[OHM] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {OHM}}
+          #if {$tmpsavedlist[GL] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {GL}}
+          #if {$tmpsavedlist[KS] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {KS}}
+          #if {$tmpsavedlist[WKS] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {WKS}}
+          #if {$tmpsavedlist[RA] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {RA}}
+          #if {$tmpsavedlist[CKN] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {CKN}}
+          #if {$tmpsavedlist[SGW] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {SGW}}
+          #if {$tmpsavedlist[OS] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {OS}}
+          #if {$tmpsavedlist[GP] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {GP}}
+
+   };
+   #unvar tmpsavedlist;
+
+   #class pvp close;
+   #class pvp write bundles/ConfigManager/Profiles/pvp.data;
+
+   #unvar collector;
+};
+
+#alias dupsijdpsa {
+            #switch {"$hittype"} {
+               #case {"KG"} {#var pvpdb[$collector[$collId][short]][zawod] {KG}};
+               #case {"OK"} {#var pvpdb[$collector[$collId][short]][zawod] {OK}};
+               #case {"MC"} {#var pvpdb[$collector[$collId][short]][zawod] {MC}};
+               #case {"SC"} {#var pvpdb[$collector[$collId][short]][zawod] {SC}};
+               #case {"OHM"} {#var pvpdb[$collector[$collId][short]][zawod] {OHM}};
+               #case {"GL"} {#var pvpdb[$collector[$collId][short]][zawod] {GL}};
+               #case {"KS"} {#var pvpdb[$collector[$collId][short]][zawod] {KS}};
+               #case {"WKS"} {#var pvpdb[$collector[$collId][short]][zawod] {WKS}};
+               #case {"RA"} {#var pvpdb[$collector[$collId][short]][zawod] {RA}};
+               #case {"CK"} {#var pvpdb[$collector[$collId][short]][zawod] {CK}};
+               #case {"SG"} {#var pvpdb[$collector[$collId][short]][zawod] {SG}};
+               #case {"OS"} {#var pvpdb[$collector[$collId][short]][zawod] {OS}};
+               #case {"GP"} {#var pvpdb[$collector[$collId][short]][zawod] {GP}};
+            };
+   #class pvp read bundles/ConfigManager/Profiles/pvp.data;
+   #class pvp open;              
+   #class pvp close;
+   #class pvp write bundles/ConfigManager/Profiles/pvp.data;            
+
+}

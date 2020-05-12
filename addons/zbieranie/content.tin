@@ -1,0 +1,64 @@
+#alias {zbieranie} {
+	#var tmploot {$ConfigManager_Configs[zbieranie]};
+    #replace tmploot {,} {;};
+    #list lootlist create {$tmploot};
+};
+
+#alias {_zbierzloop_}
+{
+  	#loop {1} {$liczba_zabitych} {liz} {
+	  	#foreach {*lootlist[]} {lol} {
+	  		wez $lootlist[$lol] z $liz\. ciala;
+	  	};
+	};
+
+    #nop parse {$pzbieranie} {zbierany_typ} {
+      #switch {"$zbierany_typ"} {
+        #case {"k"} {wez kamienie z $liz\. ciala;};
+        #case {"m"} {wez monety z $liz\. ciala;};
+        #case {"i"} {wez przedmioty z $liz\. ciala;};
+        #case {"d"} {khdorznij $liz\. cialo;obe fiolke};
+        #case {"h"} {hwodetnij ucho od $liz\. ciala;};
+      };
+    };
+
+  #var zbieranie_ready {false};
+};
+
+#action {%* umarl} {
+	qb _zbierz_;
+};
+
+#action {sie %1 {sztuk|sztuki}.} {
+  #var liczba_zabitych 0;
+  #switch {"%1"} {
+    #case {"jednej"} {#var liczba_zabitych {1}};
+    #case {"dwoch"} {#var liczba_zabitych {2}};
+    #case {"trzech"} {#var liczba_zabitych {3}};
+    #case {"czterech"} {#var liczba_zabitych {4}};
+    #case {"pieciu"} {#var liczba_zabitych {5}};
+    #case {"szesciu"} {#var liczba_zabitych {6}};
+    #case {"siedmiu"} {#var liczba_zabitych {7}};
+    #case {"osmiu"} {#var liczba_zabitych {8}};
+    #case {"dziewieciu"} {#var liczba_zabitych {9}};
+    #case {"dziesieciu"} {#var liczba_zabitych {10}};
+    #case {"jedenastu"} {#var liczba_zabitych {11}};    
+  };
+  #if {"$zbieranie_ready" == "true"} {
+    qb _zbierzloop_;
+  };
+}
+
+#alias {_zbierz_} {
+  policz ciala;
+  #var zbieranie_ready {true};
+}
+
+#alias {/ql} {
+	wez %0 z pierwszego ciala;
+	wez %0 z drugiego ciala;
+	wez %0 z trzeciego ciala;
+	wez %0 z czwartego ciala;
+	wez %0 z piatego ciala;
+	wez %0 z szostego ciala;
+} {1};

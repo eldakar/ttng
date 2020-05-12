@@ -10,11 +10,12 @@
 #list bundle_deps clear;
 	#list bundle_deps add {ConfigManager};
 		#list bundle_configs add {meldujprzy};
+		#list bundle_configs add {pasek};
 	#list bundle_deps add {SplitRefresh};
 	
 #list event_handler_char_state                           add {BottomBarSimple_char_state};
 #list event_handler_pressed_mouse_button_one             add {prompt_pressed_mouse_button_one}
-#list bundle_handler_split_request                       add {BottomBarTinyFugue};
+#list bundle_handler_split_request                       add {BottomBar_Selected};
 
 
 #list bundle_alias clear;

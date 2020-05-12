@@ -1,0 +1,70 @@
+#alias {zawod} {
+	#var pzawod $ConfigManager_Configs[zawod];
+};
+
+#alias {gildia} {
+	#var pgildia $ConfigManager_Configs[gildia];
+};
+
+#alias {mowa} {
+	#if {"$ConfigManager_Configs[mowa]" == "wlaczona"} {
+		#nop alias {'} {};
+	};
+}
+
+#alias {mowajak} {
+	#var pmowajak $ConfigManager_Configs[mowajak];
+};
+
+
+#alias {/um} {
+	#var gilcol[SC] {<088>};
+	#var gilcol[MC] {<088>};
+	#var gilcol[OH] {<088>};
+	#var gilcol[GL] {<088>};
+	#var gilcol[KS] {<088>};
+	#var gilcol[WK] {<088>};
+	#var gilcol[KG] {<088>};
+	#var gilcol[RA] {<088>};
+	#var gilcol[OK] {<088>};
+	#var gilcol[OS] {<088>};
+	#var gilcol[CK] {<088>};
+	#var gilcol[SG] {<088>};
+	#var gilcol[GP] {<088>};
+
+	#format guugu {%u} {$pzawod};
+	#var gilcol[$guugu] {<128>};
+
+	#line ignore #sh {                   ${gilcol[SC]}SC ${gilcol[MC]}MC ${gilcol[OH]}OH ${gilcol[GL]}GL ${gilcol[KS]}KS ${gilcol[WK]}WK ${gilcol[KG]}KG ${gilcol[RA]}RA ${gilcol[OK]}OK ${gilcol[OS]}OS ${gilcol[CK]}CK ${gilcol[SG]}SG ${gilcol[GP]}GP<088>};
+	#line ignore #sh {broń               ${gilcol[SC]}70 ${gilcol[MC]}74 ${gilcol[OH]}71 ${gilcol[GL]}75 ${gilcol[KS]}73 ${gilcol[WK]}74 ${gilcol[KG]}72 ${gilcol[RA]}72 ${gilcol[OK]}71 ${gilcol[OS]}65 ${gilcol[CK]}xx ${gilcol[SG]}60 ${gilcol[GP]}30<088>};
+	#line ignore #sh {uniki              ${gilcol[SC]}60 ${gilcol[MC]}45 ${gilcol[OH]}30 ${gilcol[GL]}42 ${gilcol[KS]}40 ${gilcol[WK]}50 ${gilcol[KG]}54 ${gilcol[RA]}70 ${gilcol[OK]}46 ${gilcol[OS]}55 ${gilcol[CK]}xx ${gilcol[SG]}34 ${gilcol[GP]}25<088>};
+	#line ignore #sh {walka dwiema       ${gilcol[SC]}50 ${gilcol[MC]}65 ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}xx ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}55 ${gilcol[OK]}xx ${gilcol[OS]}xx ${gilcol[CK]}xx ${gilcol[SG]}xx ${gilcol[GP]}19<088>};
+	#line ignore #sh {tarczownictwo      ${gilcol[SC]}xx ${gilcol[MC]}xx ${gilcol[OH]}75 ${gilcol[GL]}60 ${gilcol[KS]}71 ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}xx ${gilcol[OK]}xx ${gilcol[OS]}xx ${gilcol[CK]}xx ${gilcol[SG]}xx ${gilcol[GP]}25<088>};
+	#line ignore #sh {parowanie          ${gilcol[SC]}40 ${gilcol[MC]}45 ${gilcol[OH]}50 ${gilcol[GL]}41 ${gilcol[KS]}xx ${gilcol[WK]}71 ${gilcol[KG]}71 ${gilcol[RA]}xx ${gilcol[OK]}52 ${gilcol[OS]}xx ${gilcol[CK]}xx ${gilcol[SG]}45 ${gilcol[GP]}25<088>};
+	#line ignore #sh {zasłanianie        ${gilcol[SC]}45 ${gilcol[MC]}46 ${gilcol[OH]}44 ${gilcol[GL]}40 ${gilcol[KS]}60 ${gilcol[WK]}60 ${gilcol[KG]}41 ${gilcol[RA]}40 ${gilcol[OK]}41 ${gilcol[OS]}xx ${gilcol[CK]}xx ${gilcol[SG]}xx ${gilcol[GP]}20<088>};
+	#line ignore #sh {blokowanie wyjścia ${gilcol[SC]}38 ${gilcol[MC]}44 ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}41 ${gilcol[WK]}55 ${gilcol[KG]}xx ${gilcol[RA]}51 ${gilcol[OK]}45 ${gilcol[OS]}xx ${gilcol[CK]}xx ${gilcol[SG]}xx ${gilcol[GP]}20<088>};
+	#line ignore #sh {rozkazy            ${gilcol[SC]}30 ${gilcol[MC]}xx ${gilcol[OH]}57 ${gilcol[GL]}30 ${gilcol[KS]}41 ${gilcol[WK]}41 ${gilcol[KG]}57 ${gilcol[RA]}xx ${gilcol[OK]}22 ${gilcol[OS]}xx ${gilcol[CK]}xx ${gilcol[SG]}xx ${gilcol[GP]}15<088>};
+	#line ignore #sh {walka w szyku      ${gilcol[SC]}xx ${gilcol[MC]}35 ${gilcol[OH]}77 ${gilcol[GL]}35 ${gilcol[KS]}45 ${gilcol[WK]}57 ${gilcol[KG]}51 ${gilcol[RA]}xx ${gilcol[OK]}33 ${gilcol[OS]}xx ${gilcol[CK]}xx ${gilcol[SG]}xx ${gilcol[GP]}15<088>};
+	#line ignore #sh {walka bez broni    ${gilcol[SC]}xx ${gilcol[MC]}xx ${gilcol[OH]}60 ${gilcol[GL]}55 ${gilcol[KS]}55 ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}xx ${gilcol[OK]}61 ${gilcol[OS]}xx ${gilcol[CK]}xx ${gilcol[SG]}xx ${gilcol[GP]}17<088>};
+	#line ignore #sh {walka w ciemności  ${gilcol[SC]}xx ${gilcol[MC]}xx ${gilcol[OH]}60 ${gilcol[GL]}55 ${gilcol[KS]}55 ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}40 ${gilcol[OK]}xx ${gilcol[OS]}xx ${gilcol[CK]}xx ${gilcol[SG]}xx ${gilcol[GP]}20<088>};
+	#line ignore #sh {ukrywanie          ${gilcol[SC]}80 ${gilcol[MC]}xx ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}xx ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}70 ${gilcol[OK]}xx ${gilcol[OS]}80 ${gilcol[CK]}xx ${gilcol[SG]}xx ${gilcol[GP]}30<088>};
+	#line ignore #sh {skradanie          ${gilcol[SC]}80 ${gilcol[MC]}xx ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}xx ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}70 ${gilcol[OK]}xx ${gilcol[OS]}80 ${gilcol[CK]}xx ${gilcol[SG]}xx ${gilcol[GP]}30<088>};
+	#line ignore #sh {tropienie          ${gilcol[SC]}60 ${gilcol[MC]}50 ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}xx ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}xx ${gilcol[OK]}xx ${gilcol[OS]}75 ${gilcol[CK]}xx ${gilcol[SG]}xx ${gilcol[GP]}30<088>};
+	#line ignore #sh {zielarstwo         ${gilcol[SC]}xx ${gilcol[MC]}xx ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}xx ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}xx ${gilcol[OK]}xx ${gilcol[OS]}59 ${gilcol[CK]}55 ${gilcol[SG]}41 ${gilcol[GP]}18<088>};
+	#line ignore #sh {spostrzegawczosc   ${gilcol[SC]}70 ${gilcol[MC]}xx ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}xx ${gilcol[WK]}65 ${gilcol[KG]}xx ${gilcol[RA]}70 ${gilcol[OK]}xx ${gilcol[OS]}75 ${gilcol[CK]}60 ${gilcol[SG]}71 ${gilcol[GP]}50<088>};
+	#line ignore #sh {wyczucie kierunku  ${gilcol[SC]}60 ${gilcol[MC]}xx ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}45 ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}xx ${gilcol[OK]}xx ${gilcol[OS]}60 ${gilcol[CK]}xx ${gilcol[SG]}84 ${gilcol[GP]}30<088>};
+	#line ignore #sh {pływanie           ${gilcol[SC]}55 ${gilcol[MC]}xx ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}85 ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}xx ${gilcol[OK]}xx ${gilcol[OS]}55 ${gilcol[CK]}xx ${gilcol[SG]}71 ${gilcol[GP]}50<088>};
+	#line ignore #sh {wspinaczka         ${gilcol[SC]}60 ${gilcol[MC]}xx ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}60 ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}xx ${gilcol[OK]}xx ${gilcol[OS]}60 ${gilcol[CK]}xx ${gilcol[SG]}71 ${gilcol[GP]}50<088>};
+	#line ignore #sh {ocena przeciwnika  ${gilcol[SC]}xx ${gilcol[MC]}50 ${gilcol[OH]}65 ${gilcol[GL]}85 ${gilcol[KS]}60 ${gilcol[WK]}61 ${gilcol[KG]}61 ${gilcol[RA]}85 ${gilcol[OK]}55 ${gilcol[OS]}54 ${gilcol[CK]}50 ${gilcol[SG]}50 ${gilcol[GP]}30<088>};
+	#line ignore #sh {ocena obiektu      ${gilcol[SC]}xx ${gilcol[MC]}xx ${gilcol[OH]}50 ${gilcol[GL]}50 ${gilcol[KS]}50 ${gilcol[WK]}55 ${gilcol[KG]}50 ${gilcol[RA]}50 ${gilcol[OK]}35 ${gilcol[OS]}40 ${gilcol[CK]}85 ${gilcol[SG]}41 ${gilcol[GP]}30<088>};
+	#line ignore #sh {łowiectwo          ${gilcol[SC]}40 ${gilcol[MC]}xx ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}xx ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}xx ${gilcol[OK]}xx ${gilcol[OS]}77 ${gilcol[CK]}xx ${gilcol[SG]}41 ${gilcol[GP]}30<088>};
+	#line ignore #sh {opieka             ${gilcol[SC]}xx ${gilcol[MC]}xx ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}xx ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}xx ${gilcol[OK]}xx ${gilcol[OS]}74 ${gilcol[CK]}xx ${gilcol[SG]}44 ${gilcol[GP]}30<088>};
+	#line ignore #sh {wykrywanie pulapek ${gilcol[SC]}xx ${gilcol[MC]}xx ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}xx ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}xx ${gilcol[OK]}xx ${gilcol[OS]}55 ${gilcol[CK]}xx ${gilcol[SG]}55 ${gilcol[GP]}30<088>};
+	#line ignore #sh {otwieranie zamkow  ${gilcol[SC]}xx ${gilcol[MC]}xx ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}xx ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}50 ${gilcol[OK]}xx ${gilcol[OS]}xx ${gilcol[CK]}xx ${gilcol[SG]}xx ${gilcol[GP]}20<088>};
+	#line ignore #sh {znajomosc jezykow  ${gilcol[SC]}xx ${gilcol[MC]}xx ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}xx ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}xx ${gilcol[OK]}xx ${gilcol[OS]}xx ${gilcol[CK]}70 ${gilcol[SG]}85 ${gilcol[GP]}40<088>};
+	#line ignore #sh {targowanie sie     ${gilcol[SC]}xx ${gilcol[MC]}xx ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}xx ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}xx ${gilcol[OK]}xx ${gilcol[OS]}xx ${gilcol[CK]}55 ${gilcol[SG]}42 ${gilcol[GP]}30<088>};
+	#line ignore #sh {szacowanie         ${gilcol[SC]}xx ${gilcol[MC]}xx ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}xx ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}xx ${gilcol[OK]}xx ${gilcol[OS]}xx ${gilcol[CK]}80 ${gilcol[SG]}50 ${gilcol[GP]}30<088>};
+	#line ignore #sh {alchemia           ${gilcol[SC]}xx ${gilcol[MC]}xx ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}xx ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}xx ${gilcol[OK]}xx ${gilcol[OS]}xx ${gilcol[CK]}xx ${gilcol[SG]}xx ${gilcol[GP]}20<088>};
+	#line ignore #sh {akrobatyka         ${gilcol[SC]}xx ${gilcol[MC]}xx ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}xx ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}xx ${gilcol[OK]}xx ${gilcol[OS]}xx ${gilcol[CK]}xx ${gilcol[SG]}xx ${gilcol[GP]}20<088>};
+	#line ignore #sh {kieszonkostwo      ${gilcol[SC]}xx ${gilcol[MC]}xx ${gilcol[OH]}xx ${gilcol[GL]}xx ${gilcol[KS]}xx ${gilcol[WK]}xx ${gilcol[KG]}xx ${gilcol[RA]}xx ${gilcol[OK]}xx ${gilcol[OS]}xx ${gilcol[CK]}xx ${gilcol[SG]}xx ${gilcol[GP]}20<088>};
+} {1};

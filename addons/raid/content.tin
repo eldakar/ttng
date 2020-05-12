@@ -6,10 +6,14 @@
 };
 
 #nop USTAWIAMY TYPY PASKA ZALEZNIE OD SZEROKOSCI MAPY;
-#event {VARIABLE UPDATE global_bundle_slots_values} {
-    #if {$global_bundle_slots_values[prompt][right] > 40}  {#alias {tabela_odswiez} {_tabela_odswiez_1_};#alias {render_h2} {_render_h2_1_}};
-    #if {$global_bundle_slots_values[prompt][right] > 45}  {#alias {tabela_odswiez} {_tabela_odswiez_4_};#alias {render_h2} {_render_h2_4_}};
-};
+#alias {kondycje} {
+    #var pkondycje $ConfigManager_Configs[kondycje];
+    #switch {"$pkondycje"} {
+        #case {"mini"}   {#alias {tabela_odswiez} {_tabela_odswiez_0_};#alias {render_h2} {_render_h2_0_}};
+        #case {"medium"} {#alias {tabela_odswiez} {_tabela_odswiez_1_};#alias {render_h2} {_render_h2_1_}};
+        #case {"pelne"}  {#alias {tabela_odswiez} {_tabela_odswiez_4_};#alias {render_h2} {_render_h2_4_}};
+    };
+}
 
 #alias {zacheta} {
     #var pzacheta $ConfigManager_Configs[zacheta];
@@ -465,6 +469,128 @@
 };
 
 
+
+#alias {_tabela_odswiez_0_} {
+    #var maxLinesPerType {};
+    #list wrogi size {wros};
+    #list neut size {neus};
+    #list team size {teas};
+    #var negativecounter 1;
+    #screen get rows windowh;
+    #var iterator {0};
+    #foreach {*duch[]} {du} {      
+        #if {"$duch[$du][hp]" != ""} {
+
+            #math iterator {$iterator + 1};
+            #math indexvalue {64 + $iterator};
+            #if {$indexvalue > 122} {
+                #var indexvalue {88};  
+            };
+            #format indexchar {%a} {$indexvalue};
+            #var duch[$du][alias_value] {$indexchar};
+         
+            #line substitute {variables} {#alias k$indexchar {_zabij_ ob_$du}};
+            #line substitute {variables} {#alias zp$indexchar {zaslon przed ob_$du}};
+            #line substitute {variables} {#alias b$indexchar {zablokuj ob_$du}};
+            #line substitute {variables} {#alias p$indexchar {przelam obrone ob_$du}};
+            #line substitute {variables} {#alias z$indexchar {_zaslon_ $du}};
+            #line substitute {variables} {#alias wz${indexchar} {gzwycofaj sie za ob_$du;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+            #line substitute {variables} {#alias z${indexchar}2 {opcje grupa 2;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+            #line substitute {variables} {#alias z${indexchar}3 {opcje grupa 3;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+            #line substitute {variables} {#alias z${indexchar}4 {opcje grupa 4;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+            #line substitute {variables} {#alias O$indexchar {wskaz ob_$du jako cel obrony}};
+
+
+            #var tmpen {  };
+            #if {$duch[$du][enemies] < 1} {
+                #var tmpen { };
+            } {
+                #var tmpen {$duch[$du][enemies]};
+            };
+            #if {$duch[$du][enemies] > 9} {
+                #var tmpen {X};
+            };
+
+            #nop ROLE           BACKGROUND / FOREGRAND ;
+            #nop TEAM MEMBER       none    /    blue   ;
+            #nop TEAM LEADER       none    /   yellow  ;
+            #nop TEAM DEFTAR     darkblue  /   white   ;
+            #nop TEAM SUGGES       blue    /   white   ;
+
+            #if {"$duch[$du][team]" == "true" } {
+                #local colorFG {<048>};
+                #local colorBG {};
+                #local localHP {$healthbars3[$duch[$du][hp]]};
+
+                #if {"$duch[$du][defense_target]" == "true"} {
+                    #local colorFG {<178>};
+                    #local colorBG {<AAB>};
+                    #local localHP {$healthbarsp[$duch[$du][hp]]}; 
+                };
+                #if {"$duch[$du][team_leader]" == "true"} {
+                    #local colorFG {<148>};
+                    #format team_lead_lower {%l} {$duch[$du][desc]};
+                    #var team_lead_id {$du};
+                };
+                #if {"$duch[$du][bot]" == "SO1"} {
+                    #local colorBG {<AAF>};
+                    #local colorFG {<fff>};
+                    #local localHP {$healthbarsp[$duch[$du][hp]]}; 
+                };
+                #if {"$duch[$du][avatar]" == "true"} {
+                    #local colorFG {<158>};
+                };
+            } {
+                #local colorFG {<dda>};
+                #local colorBG {};
+                #local localHP {$healthbars3[$duch[$du][hp]]};
+
+                #if {"$duch[$du][enemy]" == "true"} {
+                    #local colorFG {<fac>};
+                };
+                #if {"$duch[$du][typ]" == "wrog"} {
+                    #local colorBG {<DAA>};
+                    #local colorFG {<fff>};
+                    #local localHP {$healthbarsp[$duch[$du][hp]]}; 
+                };
+                #if {"$duch[$du][typ]" == "boss"} {
+                    #local colorBG {<FCA>};
+                    #local colorFG {<aaa>};
+                    #local localHP {$healthbarsp[$duch[$du][hp]]}; 
+                };
+                #if {"$duch[$du][attack_target]" == "true"} {
+                    #local colorBG {<BAC>};
+                    #local colorFG {<fff>};
+                    #local localHP {$healthbarsp[$duch[$du][hp]]}; 
+                };
+                #if {"$duch[$du][bot]" == "SA1"} {
+                    #local colorBG {<FAA>};
+                    #local colorFG {<fff>};
+                    #local localHP {$healthbarsp[$duch[$du][hp]]}; 
+                };
+            };
+            #if {"$duch[$du][avatar]" == "true"} {
+                #local colorFG {<158>};
+            };
+
+            #regex {$duch[$du][desc]} {%w %w %w} {
+                #format MyShort {%.3s} {&3};
+            } {
+                #format MyShort {%.3s} {$duch[$du][desc]};
+            };
+
+            #if {"$tmphp" != ""} {
+                #var duch[$du][bar][orc] {<118>$tmpen<088> $duch[$du][alias_value] ${colorFG}${colorBG}$duch[$du][hp]/6${colorFG}${colorBG} $MyShort<088>};
+
+                #nop var duch[$du][bar][orc] {$tmpsug $duch[$du][alias_value]$healthbars3[$duch[$du][hp]] $tmpen$tmpled$tmpkol$tmpna_orc<088>};
+                #math {negativecounter} {$negativecounter + 1};
+            };
+        };
+    };
+};
+
+
+
 #alias {_tabela_odswiez_1_} {
     #var maxLinesPerType {};
     #list wrogi size {wros};
@@ -765,6 +891,111 @@
 
 
 #alias {render_h2} {_render_h2_4_}
+
+
+#alias {_render_h2_0_} {
+    #var raidbartable {};
+    #var a {%0};
+    #math tmplinecnt {0 - $global_bundle_slots_values[prompt][bottom]};
+    #nop loop {-6} {$tmplinecnt} {bubu} {#sh {                                                                                                       } {$bubu}};
+    #var r_curLineCnt {-6};
+    #var expectedlines 0;
+    #list team_offenders cle;
+    #list team_offenders cre;
+
+    #foreach {*duch[]} {du} {#var duch[$du][shown] {0}};
+    #list team siz ts;
+
+    #if {$ts < 1} {
+        #if {$duch[$avatarid][attack_num] > 0} {
+            #list team_offenders add {$duch[$avatarid][attack_num]};
+        } {
+            #var raidbartable {$raidbartable\n$duch[$avatarid][bar][orc]<088>};
+
+            #math r_curLineCnt {$r_curLineCnt - 1};
+            #var duch[$avatarid][shown] {1};
+            #math {expectedlines} {$expectedlines + 1};
+        };
+    }   {
+            #foreach {*team[]} {ti} {
+                #if {$duch[$team[$ti]][shown] < 1} {
+                    #if {$duch[$team[$ti]][attack_num] > 0} {
+                        #list team_offenders add $duch[$team[$ti]][attack_num];
+                    }   {
+                        #var raidbartable {$raidbartable\n$duch[$team[$ti]][bar][orc]<088>};
+
+                        #math r_curLineCnt {$r_curLineCnt - 1};
+                        #var duch[$team[$ti]][shown] {1};
+                        #math {expectedlines} {$expectedlines + 1};
+                    };
+                };
+            };
+        };
+#nop PRZECIWNICY DRUZYNY LUB AVATARA;
+    #foreach {*team_offenders[]} {to} {
+        #var tmpnavigator {1};
+        #foreach {*duch[]} {ti} {
+            #if {$duch[$ti][shown] < 1} {
+                #if {"$duch[$ti][attack_num]" == "$team_offenders[$to]"} {
+                    #if {$tmpnavigator == 1} {
+                        #var tmpnavigator 0;
+                        #var raidbartable {$raidbartable\n$duch[$ti][bar][orc]${c_stan_niski} ><088> $duch[$duch[$ti][attack_num]][bar][orc]<088>};
+                        #math r_curLineCnt {$r_curLineCnt - 1};
+                        #var duch[$team_offenders[$to]][shown] {1};
+                        #math {expectedlines} {$expectedlines + 1};
+                    }   {
+                        #math RaidBarCountUsedLines {$RaidBarCountUsedLines + 1};            
+                        #var raidbartable {$raidbartable\n$duch[$ti][bar][orc]${c_stan_niski}<088>};
+                        #math r_curLineCnt {$r_curLineCnt - 1};
+                        #math {expectedlines} {$expectedlines + 1};
+                    };
+                    #var duch[$ti][shown] {1};
+                };
+            };
+        };  
+    };
+#nop RESZTA WALCZACYCH WROGOW;
+    #foreach {*wrogi[]} {to} {
+        #if {$duch[$wrogi[$to]][shown] < 1} {
+            #var raidbartable {$raidbartable\n              $duch[$wrogi[$to]][bar][orc]<088>};
+            #math r_curLineCnt {$r_curLineCnt - 1};
+            #var duch[$wrogi[$to]][shown] {1};
+            #math {expectedlines} {$expectedlines + 1};
+        };
+    };
+#nop WROGOWIE niewalczacy;
+    #foreach {*wrogi[]} {wr} {
+        #if {$duch[$wrogi[$wr]][shown] < 1} {
+            #if {$duch[$wrogi[$wr]][attack_num] > 0} {
+                #nop;
+            } {
+                #var raidbartable {$raidbartable\n              $duch[$wrogi[$wr]][bar][orc]<088>};
+                #math r_curLineCnt {$r_curLineCnt - 1};
+                #var duch[$wrogi[$wr]][shown] {1};
+                #math {expectedlines} {$expectedlines + 1};
+            };
+        };
+    };
+#nop RESZTA wszystkiego gdzie shown == 0;
+    #foreach {*duch[]} {wr} {
+        #if {$duch[$wr][shown] < 1} {
+            #var raidbartable {$raidbartable\n              $duch[$wr][bar][orc]};
+
+            #math r_curLineCnt {$r_curLineCnt - 1};
+            #var duch[$wr][shown] {1};
+            #math {expectedlines} {$expectedlines + 1};
+        };
+    };
+
+    #regex {$raidbartable} {\\n%*} {
+            #var raidbartable {&1};
+    };
+
+    #math screencols2 {$screencols / 2 };
+    #nop draw violet tubed box $tmplinecnt-1 1 $screenrows-4 $screencols2 <088>$raidbartable;
+
+    #list duch size lds;
+};
 
 
 #alias {_render_h2_1_} {

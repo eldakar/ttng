@@ -1,18 +1,18 @@
 WARN 1. Konfiguracja Bazy postaci (PlayerDB)
-TUTOR /conf RaidTableGuildEnemies <lista gildii po przecinku, w formacie dwarfa>
-TUTOR /conf RaidTableGuildFriends <lista gildii po przecniku, w formacie dwarfa>
+TUTOR /conf RaidTableGuildEnemies     <lista gildii po przecinku, w formacie dwarfa>
+TUTOR /conf RaidTableGuildFriends     <lista gildii po przecniku, w formacie dwarfa>
+TUTOR /conf RaidTableGuild            nasza gildia
 	OK,MC,KGKS,LE,TW,KG,NA,AL,SC,itd...
-
+TUTOR /conf kondycje                  wybor rozmiaru kondycji
+                                      pelne      - ustawienie na szeroki ekran, widac wszystko
+                                      medium     - polowa rozmiaru pelnego
+                                      mini       - wersja pod telefon
 WARN 2. Aliasy - Kazda z postaci na obecnej lokacji dostaje wlasna literke do obslugi aliasow
-TUTOR 	k[litera] - wykonuje komende _zabij_ (CombatMacros)
-TUTOR 	zp[litera] - zaslon przed 
-TUTOR 	b[litera] - zablokuj
-TUTOR 	p[litera] - przelam
-TUTOR   z[litera] - zaslon - i zdejmij zaslone jesli tak ustawione (CombatMacros)
+TUTOR   k[litera]        - wykonuje komende _zabij_ (/help wskazywanie)
+TUTOR   zp[litera]       - zaslon przed 
+TUTOR   b[litera]        - zablokuj
+TUTOR   p[litera]        - przelam
+TUTOR   z[litera]        - zaslon - i zdejmij zaslone jesli tak ustawione (/help wskazywanie)
 TUTOR   z[litera][cyfra] - zaslon przed [cyfra] ilsocia wrogow
-TUTOR   wz[litera] - gzwycofaj sie za
-TUTOR   O[litera] - wskaz jako cel obrony
-
-WARN 3. Makra
-TUTOR 	F1 - cel ataku jesli nie prowadzimy/ sugerowany przeciwnik jesli prowadzimy
-TUTOR 	F2 - sugerowany cel obrony
+TUTOR   wz[litera]       - gzwycofaj sie za
+TUTOR   O[litera]        - wskaz jako cel obrony

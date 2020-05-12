@@ -64,6 +64,15 @@
 #sub {kruczoczarn%w mistern%w mie%w} {<118><caf>%0 <088>(<028>+hp<088>)};
 #sub {szar%w wygodn%w par%w but%w} {<118><caf>%0 <088>(<fca>bez sladow<088>)};
 
+#sub {mistern%w spizow%w pawez%w} {<118><caf>%0 <088>(<fca> ? <088>)};
+#sub {upiorn%w ciemn%w wloczni%w} {<118><caf>%0 <088>(<fca> ? <088>)};
+#sub {staro%w koscian%w berl%w} {<118><caf>%0 <088>(<fca> ? <088>)};
+
+#sub {szkarlatn%w ciernist%w piersc%w} {<118><caf>%0 <088>(<fca> Jezyk Druchii <088>)};
+
+#sub {osobliw%w szklan%w pierscien%w} {<118><caf>%0 <088>(<fca> ? <088>)};
+
+
 #sub {gorejac%w dlug%w talwar%w} {<118><caf>%0 <088>(<018>ogien<088>)};
 #sub {niezwyk%w koscian%w topor%w} {<118><caf>%0 <088>(<018>wpraw kamien<088>)};
 #sub {forem%w iskrzac%w mlot%w} {<118><caf>%0 <088>(<018>1h mlot<088>)};
