@@ -31,6 +31,9 @@
 			#case {"mini"} {
 				#alias BottomBar_Selected {BottomBarMini};
 			};
+			#case {"micro"} {
+				#alias BottomBar_Selected {BottomBarMicro};
+			}
 		};
 	};
 	SplitRefreshRequestRefresh;
@@ -352,6 +355,20 @@
 	#line ignore #sh {${bbBGC}HP:$state[hp]/6 MN:$state[mana]/8 ST:$state[fatigue]/9 | RO:$rozkazlevel/15 MA:$manewrlevel/5<088>} {-3} {2};
 }
 
+#var microhp[0] {<FAA><178>*<088>------};
+#var microhp[1] {<118>**<088>-----};
+#var microhp[2] {<138>***<088>----};
+#var microhp[3] {<138>****<088>---};
+#var microhp[4] {<128>*****<088>--};
+#var microhp[5] {<128>******<088>-};
+#var microhp[6] {<128>*******<088>};
+
+#alias {BottomBarMicro} {
+	#var global_bundle_slots_values[prompt][bottom] {1};
+	#format microbarline {%h} {  $microhp[$state[hp]]  ## MN:$state[mana]/8 ST:$state[fatigue]/9 ## RO:$rozkazlevel/15 MA:$manewrlevel/5<088>  };
+	#line ignore #sh {$microbarline'} {-2};
+};
+
 #alias {BottomBarTinyFugue} {
 	#var global_bundle_slots_values[prompt][bottom] {3};
 	#draw {$bbBGC} tile $screenrows-3 1 $screenrows-1 $screencols-1;
@@ -505,7 +522,7 @@
         #var buttons[1][8][label] {<AAB><fff>ZAS<088>};
         #var buttons[1][8][status] {on};
     } {
-        #var buttons[1][8][label] {ZAB};
+        #var buttons[1][8][label] {ZAS};
         #var buttons[1][8][status] {off};
     };
     #regex {$pzaslonaflagi} {w} {
