@@ -3,6 +3,7 @@ TUTOR 	/conf meldujprzy - bind na szeptanie stanu zmeczenia
 		0-10             - przyjmuje wartosci od 0 do 10
 TUTOR   /conf pasek      - wybor paska dolnego
         medium           - originalny pasek
-        mini             - pasek do wersji mobilnej
+        mini             - maly na 3 wiersze
+        micro            - maly na 1 wiersz
 WARN Aliasy
 TUTOR 	/zme             - melduje aktualny stan zmeczenia
