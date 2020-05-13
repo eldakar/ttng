@@ -283,7 +283,9 @@
 };
 #action {przestaje odcinac twoja droge ucieczki} {
 	#var blockselflevel 0;
-	rysuj_paski;
+	#if {"$ConfigManager_Configs[pasek]" == "medium"} {
+		rysuj_paski;
+	};
 };
 
 
@@ -319,7 +321,9 @@
 
 #action {Ciemne miejsce} {
 	#var rozk2 {{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
-	rysuj_roze;
+	#if {"$ConfigManager_Configs[pasek]"} {
+		rysuj_roze;
+	};
 };
 
 #nop #############################################################;
@@ -491,7 +495,9 @@
         #var buttons[0][5][label] {PRZ};
         #var buttons[0][5][status] {off};
     };    
-    rysuj_przyciski;
+    #if {"$ConfigManager_Configs[pasek]" == "medium"} {
+    	rysuj_przyciski;
+    };
 };
 
 #event {VARIABLE UPDATED pzaslonaflagi} {
@@ -516,7 +522,9 @@
         #var buttons[1][6][label] {ROZ};
         #var buttons[1][6][status] {off};
     };
-    rysuj_przyciski;
+    #if {"$ConfigManager_Configs[pasek]" == "medium"} {
+    	rysuj_przyciski;
+    };
 };
 
 #event {VARIABLE UPDATED bronstatus} {
@@ -527,7 +535,9 @@
         #var buttons[2][8][label] {BRO};
         #var buttons[2][8][status] {off};
     };
-    rysuj_przyciski;
+    #if {"$ConfigManager_Configs[pasek]" == "medium"} {
+    	rysuj_przyciski;
+    };
 };
 
 #event {VARIABLE UPDATED pzdjeciezaslon} {
@@ -538,7 +548,9 @@
         #var buttons[1][5][label] {ZDE};
         #var buttons[1][5][status] {off};
     };
-    rysuj_przyciski;
+    #if {"$ConfigManager_Configs[pasek]" == "medium"} {
+    	rysuj_przyciski;
+    };
 }
 
 #event {VARIABLE UPDATED ptrybchodzenia} {
@@ -547,5 +559,8 @@
 		#case {1} {#var ptrybchodzeniasymbol <138>P};
 		#case {2} {#var ptrybchodzeniasymbol <118>K};
 	};
-	rysuj_roze;
+	#if {"$ConfigManager_Configs[pasek]" == "medium"} {
+    	rysuj_roze;
+    };
+
 }
