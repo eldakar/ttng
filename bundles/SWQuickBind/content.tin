@@ -11,12 +11,12 @@
     #alias _quickbind_ {
       %0;
       #var qbvar {                                                                 };
-      BottomBarTinyFugue;
+      BottomBar_Selected;
     }
   };
   #format qbvar {%-64s %.64s} {%0};
   #var qbvar {${c_stan_sredni}$qbvar};
-  BottomBarTinyFugue;
+  BottomBar_Selected;
 
   #format {show_bind_} {%h} { %0 };
   #echo {${c_stan_sredni}$show_bind_};
@@ -29,7 +29,7 @@
     #alias _quickbind_ {
       %0;
       #var qbvar {                                                                 };
-      BottomBarTinyFugue;
+      BottomBar_Selected;
     }
   };
 };
@@ -39,12 +39,12 @@
     #alias _quickbind_ {
       %0;
       #var qbvar {                                                                 };
-      BottomBarTinyFugue;
+      BottomBar_Selected;
     }
   };
   #format qbvar {%-64s %.64s} {%0};
   #var qbvar {${c_stan_wysoki}$qbvar};
-  BottomBarTinyFugue;
+  BottomBar_Selected;
 
   #format {show_bind_} {%h} { %0 };
   #echo {${c_stan_wysoki}$show_bind_};
@@ -56,12 +56,12 @@
     #alias _quickbind_ {
       %0;
       #var qbvar {                                                                 };
-      BottomBarTinyFugue;
+      BottomBar_Selected;
     }
   };
   #format qbvar {%-64s %.64s} {%0};
   #var qbvar {${c_stan_sredni}$qbvar};
-  BottomBarTinyFugue;
+  BottomBar_Selected;
 }
 
 #alias {QB} {
@@ -87,10 +87,10 @@
     #alias _quickbind_ {
       %0;
       #var qbvar {                                                                 };
-      BottomBarTinyFugue;
+      BottomBar_Selected;
     }
   };
   #format qbvar {%-64s %.64s} {%0};
   #var qbvar {${c_stan_niski}$qbvar};
-  BottomBarTinyFugue;
+  BottomBar_Selected;
 }
