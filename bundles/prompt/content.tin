@@ -33,7 +33,7 @@
 			};
 			#case {"micro"} {
 				#alias BottomBar_Selected {BottomBarMicro};
-			}
+			};
 		};
 	};
 	SplitRefreshRequestRefresh;

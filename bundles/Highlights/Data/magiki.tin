@@ -48,10 +48,10 @@
 #sub {zdobion%w zlot%w pierscien%w} {<118><caf>%0 <088>(<fca>+40% wyczucie<088>)};
 #sub {bialoblekit%w smocz%w zbroj%w} {<118><caf>%0 <088>(<fca>+40% odp. fiz.<088>)};
 #sub {snieznobial%w luskow%w pancerz%w} {<118><caf>%0 <088>(<028>+<fca>odp.<088>)};
-#sub {egzotyczn%w jadeito%w palasz%w} {<118><caf>%0 <088>(<013>wpraw kamien<088>)};
-#sub {adamantytow%w mlot%w bojow%w} {<118><caf>%0 <088>(<013>poltorak<088>)};
-#sub {archaiczn%w zdobion%w topor%w} {<118><caf>%0 <088>(<013>na nieumarlych<088>)};
-#sub {asymetryczn%w wulkaniczn%w mlot%w} {<118><caf>%0 <088>(<013>wpraw kamien<088>)};
+#sub {egzotyczn%w jadeito%w palasz%w} {<118><caf>%0 <088>(<118>wpraw kamien<088>)};
+#sub {adamantytow%w mlot%w bojow%w} {<118><caf>%0 <088>(<118>poltorak<088>)};
+#sub {archaiczn%w zdobion%w topor%w} {<118><caf>%0 <088>(<118>na nieumarlych<088>)};
+#sub {asymetryczn%w wulkaniczn%w mlot%w} {<118><caf>%0 <088>(<118>wpraw kamien<088>)};
 #sub {azurow%w koscistobial%w amulet%w} {<118><caf>%0 <088>(<028>+hp <048>full mana<088>)};
 #sub {azurow%w polyskujac%w amulet%w z wielobarwnego koralu} {<118><caf>%0 <088>(<fca>wpraw kamien <028><fca>odp.<088>)};
 #sub {blekitno-srebrn%w herbow%w tarcz%w} {<118><caf>%0 <088>(<018>ogluch<088>)};
