@@ -107,9 +107,7 @@
 		};
 		
 		#default {
-			#if {"$GMCPMSGS[text]" != ""} {
-				#sh $GMCPMSGS[text]
-			};
+			#sh $GMCPMSGS[text];
 		};
 	};		
 };
