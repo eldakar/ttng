@@ -1,8 +1,24 @@
+#class koloryklucze open;
 #read bundles/Highlights/Data/klucze.tin
+#class koloryklucze close;
+#class kolorymagiki open;
 #read bundles/Highlights/Data/magiki.tin
+#class kolorymagiki close;
+#class koloryekwipunek open;
 #read bundles/Highlights/Data/ekwipunek.tin;
+#class koloryekwipunek close;
+#class koloryziola open;
 #read bundles/Highlights/Data/ziola.tin
+#class koloryziola close;
+#class koloryocena open;
 #read bundles/Highlights/Data/ocena.tin
+#class koloryocena close;
+#class koloryrozne open;
 #read bundles/Highlights/Data/rozne.tin
+#class koloryrozne close;
+#class kolorykamienie open;
 #read bundles/Highlights/Data/kamienie.tin
+#class kolorykamienie close;
+#class kolorywiedza open;
 #read bundles/Highlights/Data/wiedza.tin
+#class kolorywiedza close;

@@ -34,6 +34,9 @@
 			#case {"micro"} {
 				#alias BottomBar_Selected {BottomBarMicro};
 			};
+			#case {"keyboard"} {
+				#alias BottomBar_Selected {BottomKeyboard};
+			};
 		};
 	};
 	SplitRefreshRequestRefresh;
@@ -363,6 +366,27 @@
 #var microhp[5] {<128>******<088>-};
 #var microhp[6] {<128>*******<088>};
 
+
+#alias {BottomKeyboard} {
+	#var global_bundle_slots_values[prompt][bottom] {14};
+    #if {"$rozk2[nw]" != " "} {#var blockcolor[nw] <ABA>;} {#var blockcolor[nw] <G03>;};
+    #if {"$rozk2[ne]" == "/"} {#var blockcolor[ne] <ABA>;} {#var blockcolor[ne] <G03>;};
+    #if {"$rozk2[n]" == "|"} {#var blockcolor[n] <ABA>;} {#var blockcolor[n] <G03>;};
+    #if {"$rozk2[w]" == "-"} {#var blockcolor[w] <ABA>;} {#var blockcolor[w] <G03>;};
+    #if {"$rozk2[e]" == "-"} {#var blockcolor[e] <ABA>;} {#var blockcolor[e] <G03>;};
+    #if {"$rozk2[s]" != " "} {#var blockcolor[s] <ABA>;} {#var blockcolor[s] <G03>;};
+    #if {"$rozk2[se]" != "  "} {#var blockcolor[se] <ABA>;} {#var blockcolor[se] <G03>;};
+    #if {"$rozk2[sw]" != "  "} {#var blockcolor[sw] <ABA>;} {#var blockcolor[sw] <G03>;};
+    #if {"$rozk2[d]" != " "} {#var blockcolor[d] <ABA>;} {#var blockcolor[d] <G03>;};
+    #if {"$rozk2[u]" != " "} {#var blockcolor[u] <ABA>;} {#var blockcolor[u] <G03>;};
+    #if {"$rooa" != ""} {#var blockcolor[bind] <AAB><fff>} {#var blockcolor[bind] <G01><g01>};
+
+    #screen clear square $screenrows-13 1 $screenrows $screencols;
+
+    #draw <088><g08> rounded table $screenrows-13 1 $screenrows $screencols {<178>q;w;e;r;t;y;u;i;o;p;$blockcolor[nw]NW\n;$blockcolor[n]N\n;$blockcolor[ne]NE\n;$blockcolor[u]A\n} {;a;s;d;f;g;h;j;k;l;A;$blockcolor[w]W\n;$blockcolor[bind]LOK\n;$blockcolor[e]E\n;<FFA><aaa>BIND\n} {z;x;c;v;b;n;m;A;B;C;$blockcolor[sw]SW\n;$blockcolor[s]S\n;$blockcolor[se]SE\n;$blockcolor[d]V\n};
+    #format microbarline {%h} {  $microhp[$state[hp]]  ## MN:$state[mana]/8 ST:$state[fatigue]/9 ## RO:$rozkazlevel/15 MA:$manewrlevel/5<088>  };
+	#line ignore #sh {$microbarline'} {-15};
+}
 #alias {BottomBarMicro} {
 	#var global_bundle_slots_values[prompt][bottom] {1};
 	#format microbarline {%h} {  $microhp[$state[hp]]  ## MN:$state[mana]/8 ST:$state[fatigue]/9 ## RO:$rozkazlevel/15 MA:$manewrlevel/5<088>  };

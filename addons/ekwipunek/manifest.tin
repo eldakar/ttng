@@ -12,6 +12,9 @@
 #list bundle_slots clear;
 	#list bundle_slots add {equipment};
 
+#list event_handler_weapon_disappears add {ekwipunek_weapon_disappears};
+
+
 #list bundle_deps clear;
 	#list bundle_deps add {ConfigManager};
 

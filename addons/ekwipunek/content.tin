@@ -16,8 +16,16 @@
 
 #alias {przewijanie} {
 	#var jakieprzewijanie $ConfigManager_Configs[przewijanie];
+};
 
-}
+#alias {ekwipunek_weapon_disappears} {
+	#alias {/podmien_bron} {
+		wy bron;
+		dobadz jej;
+	} {1};
+	qm /podmien_bron;
+	#delay {120} {#unalias {/podmien_bron}};
+};
 
 #alias {dbb} {
 	#nop ####################################;

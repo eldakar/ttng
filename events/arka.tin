@@ -1,0 +1,7 @@
+#action {przez ciebie %* peka!}
+{
+    #foreach {*event_handler_weapon_disappears[]} {bhwd} {
+        $event_handler_weapon_disappears[$bhwd];
+    };
+} {1};
+#nop rozpada sie, rozpruwa sie;

@@ -21,6 +21,7 @@
     #read events/mouse.tin;
     #read events/io.tin;
     #read events/screen.tin;
+    #read events/arka.tin;
 
     #read core/aliasy/manifest.tin;
 

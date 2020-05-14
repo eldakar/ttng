@@ -119,7 +119,7 @@
 #alias {SplitWingMap_LabelBind_Reverse} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
         #nop draw green circled box $offsety+5 $offsetx+3 $offsety+7 $offseth-3 <128>BIND LOKACJA: %0;
-        #draw <AFA> circled box $offsety $offsetx $offsety+2 $offseth <AFA><aaa>BIND LOKACJA: %0;
+        #draw <AFA> circled ascii center box $offsety $offsetx+2 $offsety+2 $offseth-2 <AFA><aaa>BIND LOKACJA: %0;
     };
 };
 

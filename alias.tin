@@ -1,9 +1,10 @@
 #nop Jesli jakis alias uzywa kolorow, trzeba ten plik go zaladowac po profilu;
 
 #alias {~/%*$} {
-  #echo {> Slucham? Niepoprawna komenda: <faa>%0<088>};
+  #echo {> Slucham? Niepoprawna komenda: <faa>%0<088>. Wpisz / aby uzyskac liste aliasow systemowych.};
 } {1};
 
+#alias {^/$} {#alias {%*/%*};} {1};
 
 #alias pkup {wym;kup %0;wlm}
 #alias {wbanku} {przejrzyj depozyt} 
