@@ -266,7 +266,6 @@
     #draw <088><128> rounded table $offsetw-13 $offsetx $offsetw $offseth {$blockcolor[nw]NW\n;$blockcolor[n]N\n;$blockcolor[ne]NE\n;$blockcolor[u]A\n} {$blockcolor[w]W\n;$blockcolor[bind]LOK\n;$blockcolor[e]E\n;<FFA><aaa>BIND\n} {$blockcolor[sw]SW\n;$blockcolor[s]S\n;$blockcolor[se]SE\n;$blockcolor[d]V\n};
 };
 
-
 #alias raidmap_attacks {
     #draw <088><118> rounded table $offsetw-25 $offseth-5 $offsetw-13 $offseth {<FAA><fff>CEL\n} {<AAB><fff>OBR\n} {<ABA><fff>EXP\n};  
 }

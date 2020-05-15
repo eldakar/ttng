@@ -141,7 +141,14 @@
 #var twojpoziomText[12] {kto widzial i doswiadczyl wszystkiego}
 #var twojpoziomText[13] {osoba owiana legenda}
 
-
+#alias sprawdzaj {
+	#var a #draw ascii table 1 1 15 $responsivewidth;
+	#var a $a {Cecha;Poziom;Sum;Brakuje;Medytacja};
+	#loop {1} {4} {vb} {
+		#var a $a {a;a;a;a;a};
+	};
+	$a;
+}
 #action {{Twoje cechy|Obecnie do waznych}} {
 	#var p_str_left 0;
 	#var p_dex_left 0;
@@ -239,7 +246,6 @@
 		#format {line} {| %-15s | %+18s |%-2s| %+13s |%-1s} {Odwaga} {&2} {$p_bra} {$reverse_brakuje[$p_bra_left]} {$ustawionecechy[bra]}; #echo $line;
 	};
 
-
 		#echo {+-----------------+--------------------+--+---------------+--+};
 
 		#var r @policz2{};
@@ -264,7 +270,6 @@
 	#math {brak2_3} {$brak2_2 / 2};
 	#math {punkt} {$poziom2 + $brak1_2 + $brak2_3};
 	#return $punkt;	
-
 }
 
 #function {policz2}

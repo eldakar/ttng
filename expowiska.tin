@@ -2,6 +2,22 @@
 	#echo {<118>Nie wybrano zadnego expowiska!<088>};
 };
 
+#function _szukajexpa_ {
+	#foreach {*duch[]} {czytroll} {
+		#regex {$duch[$czytroll][desc]} {troll} {
+			#echo {<fca> * * * Wykrylem goblinoidy *** <088>};
+			expowisko goblinoidy;
+		};
+		#regex {$duch[$czytroll][desc]} {ork} {
+			#echo {<fca> * * * Wykrylem goblinoidy *** <088>};
+			expowisko goblinoidy;
+		};
+		#regex {$duch[$czytroll][desc]} {goblin} {
+			#echo {<fca> * * * Wykrylem goblinoidy *** <088>};
+			expowisko goblinoidy;
+		};
+	};
+}
 #alias {expowisko} {
 	#sh {${c_arkatt}> Ustawiam expowisko na: <138>%1};
 	#line sub variables {#alias {_expo_} {%1}};
@@ -33,12 +49,15 @@
 	zabij drugiego snotlinga;
 	_zabij_ przeciwnika;
 };
+#alias {orki_orcal} {goblinoidy};
 
-#alias {orki_orcal} {
+#alias {goblinoidy} {
 	zabij goblina;
 	zabij drugiego orka;
 	zabij orka;
 	zabij czarnego orka;
+	zabij hobgoblina;
+	zabij trolla;
 	_zabij_ przeciwnika;
 };
 #alias {orki_wsiowe} {

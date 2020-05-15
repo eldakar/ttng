@@ -71,33 +71,7 @@
 };
 
 
-#var gildie[CN] {n};
-#var gildie[CKN] {n};
-#var gildie[ES] {n};
-#var gildie[GL] {n};
-#var gildie[GP] {n};
-#var gildie[KG] {n};
-#var gildie[KGKS] {n};
-#var gildie[KM] {n};
-#var gildie[KS] {n};
-#var gildie[LE] {n};
-#var gildie[MC] {n};
-#var gildie[NA] {n}; #nop KG;
-#var gildie[NPC] {n};
-#var gildie[OHM] {n};
-#var gildie[OK] {n};
-#var gildie[OS] {n};
-#var gildie[PE] {n};
-#var gildie[RA] {n};
-#var gildie[SC] {n};
-#var gildie[SGW] {n};
-#var gildie[TW] {n}; #nop LE;
-#var gildie[VR] {n};
-#var gildie[WKS] {n};
-#var gildie[ZH] {n};
-#var gildie[ZS] {n};
-#var gildie[ZT] {n};
-#var gildie[BOSS] {b};
+
 
 #alias {RaidTable_GMCP_Objects_Nums} {
 	#var {obnu} {%0};
@@ -446,6 +420,14 @@
 
 
 #alias {_tabela_odswiez_0_} {
+    #local hpki[0] {<FAA><178>1/7<088>};
+    #local hpki[1] {<faa>2/7<088>};
+    #local hpki[2] {<fca>3/7<088>};
+    #local hpki[3] {<ffa>4/7<088>};
+    #local hpki[4] {<ffa>5/7<088>};
+    #local hpki[5] {<afa>6/7<088>};
+    #local hpki[6] {<afa>7/7<088>};
+
     #var maxLinesPerType {};
     #list wrogi size {wros};
     #list neut size {neus};
@@ -521,7 +503,8 @@
                 #local localHP {$healthbars3[$duch[$du][hp]]};
 
                 #if {"$duch[$du][enemy]" == "true"} {
-                    #local colorFG {<fac>};
+                    #local colorFG {<fff>};
+                    #local colorBG {<BAA>};
                 };
                 #if {"$duch[$du][typ]" == "wrog"} {
                     #local colorBG {<DAA>};
@@ -555,8 +538,7 @@
             };
 
             #if {"$tmphp" != ""} {
-                #var duch[$du][bar][orc] {<118>$tmpen<088> $duch[$du][alias_value] ${colorFG}${colorBG}$duch[$du][hp]/6${colorFG}${colorBG} $MyShort<088>};
-
+                #var duch[$du][bar][orc] {<118>$tmpen<088> $duch[$du][alias_value] $hpki[$duch[$du][hp]] ${colorFG}${colorBG}$MyShort<088>};
                 #nop var duch[$du][bar][orc] {$tmpsug $duch[$du][alias_value]$healthbars3[$duch[$du][hp]] $tmpen$tmpled$tmpkol$tmpna_orc<088>};
                 #math {negativecounter} {$negativecounter + 1};
             };
