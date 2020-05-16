@@ -39,6 +39,7 @@
 			};
 		};
 	};
+	BottomBar_Selected;
 	SplitRefreshRequestRefresh;
 }
 
