@@ -254,7 +254,9 @@
 #action {%* {uderza niezwyklym|bierze mocny zamach|wykorzystuje straszliwy ped|bierze potezny zamach|wykorzystuje zrecznie ped|wykorzystuje umiejetnie ped} %* nieznacznie raniac} {collect KOSCIANY 2 %1;#line gag}; 
 #action {%* {uderza niezwyklym|bierze mocny zamach|wykorzystuje straszliwy ped|bierze potezny zamach|wykorzystuje zrecznie ped|wykorzystuje umiejetnie ped} %* dotkliwie raniac} {collect KOSCIANY 4 %1;#line gag}; 
 
-
+#nop MAGIKI - BLEKITNOSRERBRNA TARCZA - Z PIERWSZEJ OSOBY;
+#action {Blekitno-srebrna trojkatna tarcza rozblyskuje nagle bardzo ostrym blekitnym swiatlem, skierowanym w strone %*!} {collect TARCZA_OSLEPIA 0 $AVATAR_NAME;#line gag}; 
+#action {Blekitno-srebrna trojkatna tarcza trzymana przez %1 rozblyskuje nagle bardzo ostrym blekitnym swiatlem, skierowanym w strone %*!} {collect TARCZA_OSLEPIA 0 unknown;#line gag}; 
 
 #nop MAGIKI - LEWAK - Z TRZECIEJ OSOBY;
 #action {%* obracajac w reku swym %* nieznaczne obrazeni} {collect LEWAK 2 %1;#line gag};

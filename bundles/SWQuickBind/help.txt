@@ -1,9 +1,2 @@
-WARN 1. Konfiguracje (dependency RaidTable)
-TUTOR 	/conf QuickBindMacroKey
-		Ustawienie klawisza do wykonywania dynamicznych bindow.
-		nkl - nawias kwadratowy lewy
-		nkr - nawias kwadratowy prawy
-		shifttylda
-		tylda
-		slash
-		backslash
+WARN 1. Konfiguracje
+TUTOR /conf plaszcz wlaczony

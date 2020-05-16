@@ -1,12 +1,32 @@
 #alias {/help$} {
-	#line ignore {
-		#sh {+--------------------------------------+};
-		#sh {| TTNG::POMOC::KATEGORIE               |};
-		#sh {+--------------------------------------+};
-	};
+	#screen get SPLIT_RIGHT_BAR right;
+   	#screen get cols cols;
+	#math responsivewidth {$screencols - $right};
+	#local helpColorIndex 0;
+	#local helptopics {<ffa>Kategorie pomocy: <088>};
 	#foreach {*bundlemanager_helps[]} {bh} {
-		#sh {<068>   $bundlemanager_helps[$bh] <088>};
+		#switch {$helpColorIndex} {
+			#case {0} {
+				#var helptopics {$helptopics <fca>$bundlemanager_helps[$bh]<088>};
+				#local helpColorIndex 1;
+			};
+			#case {1} {
+				#var helptopics {$helptopics <fac>$bundlemanager_helps[$bh]<088>};
+				#local helpColorIndex 2;
+			};
+			#case {2} {
+				#var helptopics {$helptopics <acf>$bundlemanager_helps[$bh]<088>};
+				#local helpColorIndex 0;				
+			};
+		};
+
 	};
+	#format helptopicslen {%L} {$helptopics};
+
+	#math targetWindowH {($helptopicslen / ($responsivewidth)) + 3};
+
+	#nop draw ascii scroll box 1 1 3 $responsivewidth {<ffa>Kategorie pomocy<088>};
+	#draw ascii scroll box 1 1 $targetWindowH $responsivewidth $helptopics;
 } {1};
 
 #alias {/help %w} {

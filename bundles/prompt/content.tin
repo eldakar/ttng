@@ -384,7 +384,7 @@
 
     #screen clear square $screenrows-13 1 $screenrows $screencols;
 
-    #draw <088><g08> rounded table $screenrows-13 1 $screenrows $screencols {<178>q;w;e;r;t;y;u;i;o;p;$blockcolor[nw]NW\n;$blockcolor[n]N\n;$blockcolor[ne]NE\n;$blockcolor[u]A\n} {;a;s;d;f;g;h;j;k;l;A;$blockcolor[w]W\n;$blockcolor[bind]LOK\n;$blockcolor[e]E\n;<FFA><aaa>BIND\n} {z;x;c;v;b;n;m;A;B;C;$blockcolor[sw]SW\n;$blockcolor[s]S\n;$blockcolor[se]SE\n;$blockcolor[d]V\n};
+    #draw <088><g08> rounded grid table $screenrows-8 1 $screenrows $screencols {<178>q;w;e;r;t;y;u;i;o;p;$blockcolor[nw]NW\n;$blockcolor[n]N\n;$blockcolor[ne]NE\n;$blockcolor[u]A\n} {;a;s;d;f;g;h;j;k;l;A;$blockcolor[w]W\n;$blockcolor[bind]LOK\n;$blockcolor[e]E\n;<FFA><aaa>BIND\n} {z;x;c;v;b;n;m;A;B;C;$blockcolor[sw]SW\n;$blockcolor[s]S\n;$blockcolor[se]SE\n;$blockcolor[d]V\n};
     #format microbarline {%h} {  $microhp[$state[hp]]  ## MN:$state[mana]/8 ST:$state[fatigue]/9 ## RO:$rozkazlevel/15 MA:$manewrlevel/5<088>  };
 	#line ignore #sh {$microbarline'} {-15};
 }

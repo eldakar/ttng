@@ -114,11 +114,11 @@
 	#if {"%1" == "bardzo niewiele"} {#return 4};
 }
 
-#var reverse_brakuje[0] {<faa>bardzo duzo<088>};
-#var reverse_brakuje[1] {<faa>duzo<088>};
-#var reverse_brakuje[2] {<ffa>troche<088>};
-#var reverse_brakuje[3] {<ffa>niewiele<088>};
-#var reverse_brakuje[4] {<afa>bardzo niewiele<088>};
+#var reverse_brakuje[0] {<faa>bardzo duzo};
+#var reverse_brakuje[1] {<faa>duzo};
+#var reverse_brakuje[2] {<ffa>troche};
+#var reverse_brakuje[3] {<ffa>niewiele};
+#var reverse_brakuje[4] {<afa>bardzo niewiele};
 
 #var zaliczasz[sile] {str};
 #var zaliczasz[zrecznosc] {dex};
@@ -142,14 +142,150 @@
 #var twojpoziomText[13] {osoba owiana legenda}
 
 #alias sprawdzaj {
-	#var a #draw ascii table 1 1 15 $responsivewidth;
-	#var a $a {Cecha;Poziom;Sum;Brakuje;Medytacja};
+	#var drawvar #draw ascii table 1 1 20 $responsivewidth;
+	#var drawvar $drawvar {Cecha;Poziom;Sum;Brakuje;Medytacja};
 	#loop {1} {4} {vb} {
-		#var a $a {a;a;a;a;a};
+		#var drawvar $drawvar{a;a;a;a;a};
 	};
 	$a;
 }
+
+
 #action {{Twoje cechy|Obecnie do waznych}} {
+	#var drawvar #draw <G02><g08> ascii grid table 2 2 17 $responsivewidth;
+	#var drawvar $drawvar {<fac>Cecha;<G02><fac>Poziom;Sum;Brakuje;Medytacja};
+    #screen get SPLIT_RIGHT_BAR right;
+   	#screen get cols cols;
+
+	#math responsivewidth {$screencols - $right};
+
+	#var p_str_left 0;
+	#var p_dex_left 0;
+	#var p_sta_left 0;
+	#var p_int_left 0;
+	#var p_bra_left 0;
+	#var p_str 0;
+	#var p_dex 0;
+	#var p_sta 0;
+	#var p_int 0;
+	#var p_bra 0;
+	#var doOdrobienia {0};
+	#var tmpOcena {$GMCPMSGS[text]};
+
+	#nop Sprawdzamy co medytowalismy;
+	#regex {$tmpOcena} {Obecnie do waznych cech zaliczasz %* oraz %*, do srednio waznych %*,} {
+		#var ustawionecechy[str] {- };
+		#var ustawionecechy[dex] {- };
+		#var ustawionecechy[sta] {- };
+		#var ustawionecechy[int] {- };
+		#var ustawionecechy[bra] {- };
+		
+		#var ustawionecechy[$zaliczasz[&1]] {<afa>++};
+		#var ustawionecechy[$zaliczasz[&2]] {<afa>++};
+		#var ustawionecechy[$zaliczasz[&3]] {<ffa>+ };
+	};
+
+	#nop Sprawdzamy czy sa punkty karne;
+	#regex {$tmpOcena} {Twoje cechy sa oslabione po ostatniej smierci. By je odbudowac potrzebujesz zdobyc jeszcze %*.} {
+		#echo {+------------------------------------------------------------+};
+		#format {doOdrobienia} {%+31s} {&1};
+		#echo {| Do odrobienia <faa>$doOdrobienia<088>|};
+	};
+		#echo {+-----------------+--------------------+--+---------------+--+};
+	#regex {$tmpOcena} {Twoja sila osiagnela nadludzki poziom} {
+		#var p_str @poziomsily{nadludzka};
+		#var p_str_left @brakuje{bardzo duzo};
+		#format {line} {| %-15s | %+18s |%-2s| %+13s |%-1s|} {Sila} {&1} {$p_str} {$reverse_brakuje[$p_str_left]} {$ustawionecechy[str]}; #echo $line;
+		#var drawvar $drawvar {<fff>Sila;nadludzka;$p_str;{<faa>bardzo duzo};$ustawionecechy[str]};
+	};
+	#regex {$tmpOcena} {Jestes %* i %* ci brakuje, zebys mogl wyzej ocenic swa sile} {
+		#var p_str @poziomsily{&1};
+		#var p_str_left @brakuje{&2};
+		#format {line} {| %-15s | %+18s |%-2s| %+13s |%-1s|} {Sila} {&1} {$p_str} {$reverse_brakuje[$p_str_left]} {$ustawionecechy[str]}; #echo $line;
+		#var drawvar $drawvar {<fff>Sila;{&1};$p_str;{$reverse_brakuje[$p_str_left]};$ustawionecechy[str]};
+	};	
+	#regex {$tmpOcena} {sile%*Jestes %* i %* ci brakuje, zebys mogl wyzej ocenic swa zrecznosc} {
+		#var p_dex @poziomzrecznosci{&2};
+		#var p_dex_left @brakuje{&3};
+		#format {line} {| %-15s | %+18s |%-2s| %+13s |%-1s|} {Zrecznosc} {&2} {$p_dex} {$reverse_brakuje[$p_dex_left]} {$ustawionecechy[dex]}; #echo $line;
+		#var drawvar $drawvar {<fff>Zrecznosc;{&2};$p_dex;{$reverse_brakuje[$p_dex_left]};$ustawionecechy[dex]};
+	};
+	#regex {$tmpOcena} {zrecznosc%*Jestes %* i %* ci brakuje, zebys mogl wyzej ocenic swa wytrzymalosc} {
+		#var p_sta @poziomwytrzymalosci{&2};
+		#var p_sta_left @brakuje{&3};
+		#format {line} {| %-15s | %+18s |%-2s| %+13s |%-1s|} {Wytrzymalosc} {&2} {$p_sta} {$reverse_brakuje[$p_sta_left]} {$ustawionecechy[sta]}; #echo $line;
+		#var drawvar $drawvar {<fff>Wytrzymalosc;{&2};$p_sta;{$reverse_brakuje[$p_sta_left]};$ustawionecechy[sta]};
+	};
+	#regex {$tmpOcena} {Twoja wytrzymalosc osiagnela nadludzki poziom} {
+		#var p_sta @poziomwytrzymalosci{nadludzka};
+		#var p_sta_left @brakuje{bardzo duzo};
+		#format {line} {| %-15s | %+18s |%-2s| %+13s |%-1s|} {Wytrzymalosc} {&2} {$p_sta} {$reverse_brakuje[$p_sta_left]} {$ustawionecechy[sta]}; #echo $line;
+		#var drawvar $drawvar {<fff>Wytrzymalosc;nadludzka;$p_sta;$reverse_brakuje[$p_sta_left];$ustawionecechy[sta]};
+	};
+
+	#regex {$tmpOcena} {wytrzymalosc%*Jestes %* i %* ci brakuje, zebys mogl wyzej ocenic swoj intelekt} {
+		#var p_int @poziominteligencji{&2};
+		#var p_int_left @brakuje{&3};
+		#format {line} {| %-15s | %+18s |%-2s| %+13s |%-1s|} {Intelekt} {&2} {$p_int} {$reverse_brakuje[$p_int_left]} {$ustawionecechy[int]}; #echo $line;
+		#var drawvar $drawvar {<fff>Intelekt;{&2};$p_int;{$reverse_brakuje[$p_int_left]};$ustawionecechy[int]};
+	};
+	#regex {$tmpOcena} {intelekt%*Jestes %* i %* ci brakuje, zebys mogl wyzej ocenic swa odwage} {
+		#var p_bra @poziomodwagi{&2};
+		#var p_bra_left @brakuje{&3};
+		#format {line} {| %-15s | %+18s |%-2s| %+13s |%-1s|} {Odwaga} {&2} {$p_bra} {$reverse_brakuje[$p_bra_left]} {$ustawionecechy[bra]}; #echo $line;
+		#var drawvar $drawvar {<fff>Odwaga;{&2};$p_bra;{$reverse_brakuje[$p_bra_left]};$ustawionecechy[bra]};
+	};
+
+	#regex {$tmpOcena} {Jestes %* i %* ci brakuje, zebys mogla wyzej ocenic swa sile} {
+		#var p_str @poziomsily{&1};
+		#var p_str_left @brakuje{&2};
+		#format {line} {| %-15s | %+18s |%-2s| %+13s |%-1s|} {Sila} {&1} {$p_str} {$reverse_brakuje[$p_str_left]} {$ustawionecechy[str]}; #echo $line;
+		#var drawvar $drawvar {Sila;{&1};$p_str;{$reverse_brakuje[$p_str_left]};$ustawionecechy[str]};
+	};
+	#regex {$tmpOcena} {sile%*Jestes %* i %* ci brakuje, zebys mogla wyzej ocenic swa zrecznosc} {
+		#var p_dex @poziomzrecznosci{&2};
+		#var p_dex_left @brakuje{&3};
+		#format {line} {| %-15s | %+18s |%-2s| %+13s |%-1s|} {Zrecznosc} {&2} {$p_dex} {$reverse_brakuje[$p_dex_left]} {$ustawionecechy[dex]}; #echo $line;
+		#var drawvar $drawvar {Zrecznosc;{&2};$p_dex;{$reverse_brakuje[$p_dex_left]};$ustawionecechy[dex]};
+	};
+	#regex {$tmpOcena} {zrecznosc%*Jestes %* i %* ci brakuje, zebys mogla wyzej ocenic swa wytrzymalosc} {
+		#var p_sta @poziomwytrzymalosci{&2};
+		#var p_sta_left @brakuje{&3};
+		#format {line} {| %-15s | %+18s |%-2s| %+13s |%-1s|} {Wytrzymalosc} {&2} {$p_sta} {$reverse_brakuje[$p_sta_left]} {$ustawionecechy[sta]}; #echo $line;
+		#var drawvar $drawvar {Wytrzymalosc;{&2};$p_sta;{$reverse_brakuje[$p_sta_left]};$ustawionecechy[sta]};
+	};
+	#regex {$tmpOcena} {wytrzymalosc%*Jestes %* i %* ci brakuje, zebys mogla wyzej ocenic swoj intelekt} {
+		#var p_int @poziominteligencji{&2};
+		#var p_int_left @brakuje{&3};
+		#format {line} {| %-15s | %+18s |%-2s| %+13s |%-1s} {Intelekt} {&2} {$p_int} {$reverse_brakuje[$p_int_left]} {$ustawionecechy[int]}; #echo $line;
+		#var drawvar $drawvar {Intelekt;{&2};$p_int;{$reverse_brakuje[$p_int_left]};$ustawionecechy[int]};
+	};
+	#regex {$tmpOcena} {intelekt%*Jestes %* i %* ci brakuje, zebys mogla wyzej ocenic swa odwage} {
+		#var p_bra @poziomodwagi{&2};
+		#var p_bra_left @brakuje{&3};
+		#format {line} {| %-15s | %+18s |%-2s| %+13s |%-1s} {Odwaga} {&2} {$p_bra} {$reverse_brakuje[$p_bra_left]} {$ustawionecechy[bra]}; #echo $line;
+		#var drawvar $drawvar {Odwaga;{&2};$p_bra;{$reverse_brakuje[$p_bra_left]};$ustawionecechy[bra]};
+	};
+
+		#echo {+-----------------+--------------------+--+---------------+--+};
+
+		#var r @policz2{};
+		#var twojpoziom {};
+		#format {line} {| %-36s | %+14s (%-3s)|} {$twojpoziomText[$level]} {${c_stan_niski}$level.$cechyleft<088>} {$pointstotal};
+		#echo $line;
+	
+		#echo {+--------------------------------------+---------------------+};
+
+		#nop var drawvar $drawvar {{<118>Do odrobienia};$doOdrobienia;Poziom;{$twojpoziomText[$level]};${c_stan_niski}$level.$cechyleft};
+	$drawvar;
+	#event {BUFFER UPDATE} {$drawvar};
+	#delay {2} {#unevent {BUFFER UPDATE};#buffer down};
+
+	#line gag;
+};
+
+
+#nop action {{Twoje cechy|Obecnie do waznych}} {
 	#var p_str_left 0;
 	#var p_dex_left 0;
 	#var p_sta_left 0;
