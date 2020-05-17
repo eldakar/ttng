@@ -427,8 +427,9 @@
     #local hpki[4] {<ffa>5/7<088>};
     #local hpki[5] {<afa>6/7<088>};
     #local hpki[6] {<afa>7/7<088>};
-
+    #local tmpLead { };
     #var maxLinesPerType {};
+
     #list wrogi size {wros};
     #list neut size {neus};
     #list team size {teas};
@@ -475,19 +476,18 @@
             #nop TEAM SUGGES       blue    /   white   ;
 
             #if {"$duch[$du][team]" == "true" } {
-                #local colorFG {<048>};
+                #local colorFG {<148>};
                 #local colorBG {};
+                #local isTarget { };
                 #local localHP {$healthbars3[$duch[$du][hp]]};
 
-                #if {"$duch[$du][defense_target]" == "true"} {
-                    #local colorFG {<178>};
-                    #local colorBG {<AAB>};
-                    #local localHP {$healthbarsp[$duch[$du][hp]]}; 
-                };
                 #if {"$duch[$du][team_leader]" == "true"} {
-                    #local colorFG {<148>};
+                    #local isTarget {<ffa>^<088>};
                     #format team_lead_lower {%l} {$duch[$du][desc]};
                     #var team_lead_id {$du};
+                };
+                #if {"$duch[$du][defense_target]" == "true"} {
+                    #local isTarget {<ABA><128>C<088>};
                 };
                 #if {"$duch[$du][bot]" == "SO1"} {
                     #local colorBG {<AAF>};
@@ -501,6 +501,7 @@
                 #local colorFG {<dda>};
                 #local colorBG {};
                 #local localHP {$healthbars3[$duch[$du][hp]]};
+                #loca isTarget { };
 
                 #if {"$duch[$du][enemy]" == "true"} {
                     #local colorFG {<fff>};
@@ -517,6 +518,7 @@
                     #local localHP {$healthbarsp[$duch[$du][hp]]}; 
                 };
                 #if {"$duch[$du][attack_target]" == "true"} {
+                    #local isTarget {<BAA><118>C<088>};
                     #local colorBG {<BAC>};
                     #local colorFG {<fff>};
                     #local localHP {$healthbarsp[$duch[$du][hp]]}; 
@@ -538,7 +540,7 @@
             };
 
             #if {"$tmphp" != ""} {
-                #var duch[$du][bar][orc] {<118>$tmpen<088> $duch[$du][alias_value] $hpki[$duch[$du][hp]] ${colorFG}${colorBG}$MyShort<088>};
+                #var duch[$du][bar][orc] {<118>$tmpen<088> $duch[$du][alias_value] $hpki[$duch[$du][hp]]$isTarget${colorFG}${colorBG}$MyShort<088>};
                 #nop var duch[$du][bar][orc] {$tmpsug $duch[$du][alias_value]$healthbars3[$duch[$du][hp]] $tmpen$tmpled$tmpkol$tmpna_orc<088>};
                 #math {negativecounter} {$negativecounter + 1};
             };
