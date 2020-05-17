@@ -14,23 +14,31 @@
 #high {(wymaga natychmiastowej konserwacji)} {<118>};
 
 #nop poziomy magicznego zuzycia;
-#sub {(posluzy bardzo dlugo, w znakomitym stanie)} {<028>posluzy bardzo dlugo 5/5 50h+<088>};
-#sub {(posluzy bardzo dlugo)} {<028>posluzy bardzo dlugo 5/5 50h+<088>};
-#sub {(posluzy dlugo, w znakomitym stanie)} {<028>posluzy dlugo 4/5 25h-40h<088>};
-#sub {(posluzy dlugo)} {<028>posluzy dlugo 4/5 25h-40h<088>};
-#sub {(posluzy troche, w znakomitym stanie)} {<038>posluzy troche 3/5 6h-25h<088>};
-#sub {(posluzy troche)} {<038>posluzy troche 3/5 6h-25h<088>};
-#sub {(posluzy krotko, w znakomitym stanie)} {<018>posluzy krotko 2/5 1h-6h<088>};
-#sub {(posluzy krotko)} {<018>posluzy troche 3/5 1h-6h<088>};
-#sub {(posluzy bardzo krotko, w znakomitym stanie)} {<018>posluzy bardzo krotko 1/5 0h-1h<088>};
-#sub {(posluzy bardzo krotko)} {<018>posluzy bardzo troche 1/5 0h-1h<088>};
+#sub {(posluzy naprawde dlugo, w znakomitym stanie)} {<028>posluzy bardzo dlugo - 8/8 8d+<088>};
+#sub {(posluzy naprawde dlugo)} {<028>posluzy bardzo dlugo - 8/8 8d+<088>};
+
+#sub {(posluzy bardzo dlugo, w znakomitym stanie)} {<028>posluzy bardzo dlugo - 7/8 5d+<088>};
+#sub {(posluzy bardzo dlugo)} {<028>posluzy bardzo dlugo - 7/8 5d+<088>};
+
+#sub {(posluzy dlugo, w znakomitym stanie)} {<028>posluzy dlugo - 6/8 3d+<088>};
+#sub {(posluzy dlugo)} {<028>posluzy dlugo - 6/8 3d+<088>};
+
+#sub {(posluzy raczej dlugo, w znakomitym stanie)} {<038>posluzy raczej dlugo - 5/8 2d+<088>};
+#sub {(posluzy raczej dlugo)} {<038>posluzy raczej dlugo - 5/8 2d+<088>};
+
+#sub {(posluzy troche, w znakomitym stanie)} {<038>posluzy troche - 4/8 1d+<088>};
+#sub {(posluzy troche)} {<038>posluzy troche - 4/8 1d+<088>};
+
+#sub {(posluzy raczej krotko, w znakomitym stanie)} {<018>posluzy raczej krotko - 3/8 6h+<088>};
+#sub {(posluzy raczej krotko)} {<018>posluzy raczej krotko - 3/8 6h+<088>};
+
+#sub {(posluzy krotko, w znakomitym stanie)} {<018>posluzy krotko - 2/8 1h+<088>};
+#sub {(posluzy krotko)} {<018>posluzy krotko - 2/8 1h+<088>};
+
+#sub {(posluzy bardzo krotko, w znakomitym stanie)} {<018>posluzy bardzo krotko - 1/8 <1h<088>};
+#sub {(posluzy bardzo krotko)} {<018>posluzy bardzo krotko - 1/8 <1h<088>};
 
 #high {(nie posluzy dluzej, w znakomitym stanie)} {<018>};
-
-#sub {   nawigacja:} {<129>KS <AAB><178>nawigacja:};
-#sub {     potezny cios:} { <118>FAN<088> <BAA><178>potezny cios:<088>};
-#sub {     walka dwiema bronmi:} { <118>FAN<088> <BAA><178>walka dwiema:<088>     };
-
 
 #sub {ledwo          } {<018>ledwo        10<088>};
 #sub {troche         } {<018>troche       20<088>};

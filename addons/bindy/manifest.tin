@@ -3,7 +3,7 @@
 #nop ############################;
 
 #nop NAME ###########;
-#var bundle_name {QuickBind};
+#var bundle_name {bindy};
 
 #nop IS DATA PRESENT #;
 #var bundle_data {1};
@@ -18,6 +18,7 @@
 #var bundle_help {1};
 
 #list bundle_configs clear;
+	#list bundle_configs add {plaszcz};
 #nop ############################;
 #nop EVENT SLOTS ##########;
 #nop Every listed event slot has to be empty;
@@ -44,5 +45,5 @@
 #nop ############################;
 #nop Validate configuration;
 #nop ############################;
-#var bundle_ready @bundleops_validate{bundles};
+#var bundle_ready @bundleops_validate{addons};
 

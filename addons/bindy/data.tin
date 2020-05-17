@@ -1,0 +1,7 @@
+#read addons/bindy/Data/ekwipunek.tin;
+#read addons/bindy/Data/lokacje.tin;
+#read addons/bindy/Data/magiki.tin;
+#read addons/bindy/Data/prowadzacy.tin;
+#read addons/bindy/Data/pulapki.tin;
+#read addons/bindy/Data/rozne.tin;
+#read addons/bindy/Data/lampa.tin;

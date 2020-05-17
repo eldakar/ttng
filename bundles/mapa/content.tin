@@ -4,6 +4,7 @@
 #map legend 48 <FAA>#<088>;
 
 #map read bundles/mapa/map.map;
+#map flag static on
 
 #map goto 1;
 #var MAPPER_SYNC 0;

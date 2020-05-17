@@ -3,7 +3,7 @@
    	#screen get cols cols;
 	#math responsivewidth {$screencols - $right};
 	#local helpColorIndex 0;
-	#local helptopics {<ffa>Kategorie pomocy: <088>};
+	#local helptopics {<ffa>Kategorie pomocy (/help kategoria): <088>};
 	#foreach {*bundlemanager_helps[]} {bh} {
 		#switch {$helpColorIndex} {
 			#case {0} {
