@@ -20,6 +20,15 @@
 	#var pmeldujprzy $ConfigManager_Configs[meldujprzy];
 };
 
+#alias {szerokoschpkow} {
+	#if {"$ConfigManager_Configs[szerokoschpkow]" == ""} {
+		#var pmaxbarsize auto;
+	} {
+		#var pmaxbarsize $ConfigManager_Configs[szerokoschpkow];
+	};
+	BottomBar_Selected;
+};
+
 #alias {pasek} {
 	#if {"$ConfigManager_Configs[pasek]" == ""} {
 		/conf pasek medium
@@ -434,7 +443,12 @@
 };
 #alias rysuj_paski {
 	#math remainingArea {$screencols - (16 + 10 + 12)};
-	#math maxBarSize {($remainingArea / 3) - 10};
+	#if {"$pmaxbarsize" == "auto"} {
+		#math maxBarSize {($remainingArea / 3) - 10};
+	} {
+		#var maxBarSize $pmaxbarsize;
+	};
+
 	#math realFatigue {9 - $state[fatigue]};
 	#sh {${bbBGC}HP: [@buildBar{$state[hp];6;$maxBarSize;ada}<088>${bbBGC}]  MA: [@buildBar{$manewrlevel;5;$maxBarSize;ccc}<088>${bbBGC}]<088>} {-4} {23};
 	#sh {${bbBGC}ST: [@buildBar{$realFatigue;9;$maxBarSize;ddd}<088>${bbBGC}]  RO: [@buildBar{$rozkazlevel;15;$maxBarSize;ccc}<088>${bbBGC}]<088>} {-3} {23};

@@ -11,6 +11,7 @@
 	#list bundle_deps add {ConfigManager};
 		#list bundle_configs add {meldujprzy};
 		#list bundle_configs add {pasek};
+		#list bundle_configs add {szerokoschpkow};
 	#list bundle_deps add {SplitRefresh};
 	
 #list event_handler_char_state                           add {BottomBarSimple_char_state};

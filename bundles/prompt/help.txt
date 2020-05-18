@@ -5,5 +5,9 @@ TUTOR   /conf pasek      - wybor paska dolnego
         medium           - originalny pasek
         mini             - maly na 3 wiersze
         micro            - maly na 1 wiersz
+TUTOR 	/conf szerokoschpkow auto | integer
+        ustawia szerokosc paskow hp,itp w pasku medium
+        auto - ustawia sam wg szerokosci ekranu
+
 WARN Aliasy
 TUTOR 	/zme             - melduje aktualny stan zmeczenia
