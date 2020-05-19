@@ -1,6 +1,6 @@
 #class aliasy read bundles/ConfigManager/Profiles/aliasy.tt;
 
-#alias {/alias %w %*} {
+#alias {/alias %S %*} {
 	#line sub variables {;
 		#class aliasy read bundles/ConfigManager/Profiles/aliasy.tt;
 		#class aliasy open;
