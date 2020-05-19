@@ -275,12 +275,7 @@
 		#echo $line;
 	
 		#echo {+--------------------------------------+---------------------+};
-
-		#nop var drawvar $drawvar {{<118>Do odrobienia};$doOdrobienia;Poziom;{$twojpoziomText[$level]};${c_stan_niski}$level.$cechyleft};
-	$drawvar;
-	#event {BUFFER UPDATE} {$drawvar};
-	#delay {2} {#unevent {BUFFER UPDATE};#buffer down};
-
+	
 	#line gag;
 };
 
