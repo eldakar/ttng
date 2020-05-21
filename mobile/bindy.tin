@@ -1,0 +1,12 @@
+/macro F1 _sugerowanywrog_
+/macro F5 _sugerowanaobrona_
+/macro F9 _expo_
+/macro F2 move_nw
+/macro F6 move_w
+/macro F10 move_sw
+/macro F3 move_n
+/macro F7 _quickbind_
+/macro F11 move_s
+/macro F4 move_ne
+/macro F8 move_e
+/macro F12 move_se
