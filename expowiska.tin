@@ -24,10 +24,15 @@
 };
 
 #alias {expowiska_lista} {
+	#echo pustkowia_chaosu;
+	#echo high_pass;
+	#echo snotlingi_nuln;
+	#echo goblinoidy;
 	#echo orki_orcal;
 	#echo orki_wsiowe;
 	#echo ryby_skellige;
 	#echo mekan;
+	#echo {haszuty - nalezy wcisnac _expo_ dwa razy};
 };
 
 #alias {pustkowia_chaosu} {
