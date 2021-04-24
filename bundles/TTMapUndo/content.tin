@@ -83,3 +83,6 @@
 #action {Probujesz sie ruszyc na %1, jednak pajecze sieci, w ktore sie w miedzy czasie zaplatal%+, uniemozliwiaja ci to.} {undo};
 
 #action {Zapierasz sie mocno nogami, probujac odsunac rzezbiony kredens. Po kilku chwilach dajesz jednak za wygrana} {undo};
+
+#action {Nie dasz rady otworzyc stalowej kraty, musisz sprobowac ja uniesc.} {qb unies krate;undo};
+
