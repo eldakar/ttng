@@ -363,9 +363,18 @@
 	#var global_bundle_slots_values[prompt][bottom] {1};
 };
 
+#var minihphack[0] [1];
+#var minihphack[1] [2];
+#var minihphack[2] [3];
+#var minihphack[3] [4];
+#var minihphack[4] [5];
+#var minihphack[5] [6];
+#var minihphack[6] [7];
+
+
 #alias {BottomBarMini} {
 	#var global_bundle_slots_values[prompt][bottom] {3};
-	#line ignore #sh {${bbBGC}HP:$state[hp]/6 MN:$state[mana]/8 ST:$state[fatigue]/9 | RO:$rozkazlevel/15 MA:$manewrlevel/5<088>} {-3} {2};
+	#line ignore #sh {${bbBGC}HP:$minihphack[$state[hp]]/7 MN:$state[mana]/8 ST:$state[fatigue]/9 | RO:$rozkazlevel/15 MA:$manewrlevel/5<088>} {-3} {2};
 }
 
 #var microhp[0] {<FAA><178>*<088>------};
