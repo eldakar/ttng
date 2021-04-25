@@ -85,7 +85,7 @@
 	};
 	#elseif {"$ppochwa" == "plecak"} {
 		wl dobyta bron;
-	}
+	};
 	#nop ####################################;
 	#nop DRUGA BRON;
 	#if {"$ppochwa2" == "tarcza"} {
