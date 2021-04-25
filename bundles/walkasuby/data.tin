@@ -84,13 +84,13 @@
 #action {Nie zwazaajac na nic %* rozpoczyna %* niemalze rozcina %*} {collect KG 6 %1;#line gag};
 
 #nop SPECE MC Z PIERWSZEJ OSOBY;
-#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* powaznie raniac} {collect MC 4 $AVATAR_NAME;#line gag};
-#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* lekko raniac} {collect MC 2 $AVATAR_NAME;#line gag};
-#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* raniac} {collect MC 2 $AVATAR_NAME;#line gag} {8};
-#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* bardzo ciezko raniac} {collect MC 5 $AVATAR_NAME;#line gag};
-#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* masakrujac} {collect MC 6 $AVATAR_NAME;#line gag};
-#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* raniac} {collect MC 3 $AVATAR_NAME;#line gag};
-#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji} %* ledwo muskajac} {collect MC 1 $AVATAR_NAME;#line gag};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji|Usmiechasz sie przebiegle wyczuwajac zblizajace sie zwyciestwo} %* powaznie raniac} {collect MC 4 $AVATAR_NAME;#line gag};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji|Usmiechasz sie przebiegle wyczuwajac zblizajace sie zwyciestwo} %* lekko raniac} {collect MC 2 $AVATAR_NAME;#line gag};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji|Usmiechasz sie przebiegle wyczuwajac zblizajace sie zwyciestwo} %* raniac} {collect MC 2 $AVATAR_NAME;#line gag} {8};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji|Usmiechasz sie przebiegle wyczuwajac zblizajace sie zwyciestwo} %* bardzo ciezko raniac} {collect MC 5 $AVATAR_NAME;#line gag};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji|Usmiechasz sie przebiegle wyczuwajac zblizajace sie zwyciestwo} %* masakrujac} {collect MC 6 $AVATAR_NAME;#line gag};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji|Usmiechasz sie przebiegle wyczuwajac zblizajace sie zwyciestwo} %* raniac} {collect MC 3 $AVATAR_NAME;#line gag};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji|Usmiechasz sie przebiegle wyczuwajac zblizajace sie zwyciestwo} %* ledwo muskajac} {collect MC 1 $AVATAR_NAME;#line gag};
 #nop SPECE MC Z TRZECIEJ OSOBY;
 #action {%* {wykrzywia twarz|krzywi wargi} %* rzuca sie do ataku. %* ledwo muskajac %*} {collect MC 1 %1;#line gag};
 #action {%* {wykrzywia twarz|krzywi wargi} %* rzuca sie do ataku. %* lekko raniac %*} {collect MC 2 %1;#line gag};
