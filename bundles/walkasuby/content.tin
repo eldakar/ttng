@@ -202,19 +202,19 @@
    #foreach {*collector[]} {mytmpID} {
 
           #var tmpsavedlist $collector[$mytmpID][sent];
-          #if {$tmpsavedlist[KG] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {KG}}
-          #if {$tmpsavedlist[OK] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {OK}}
-          #if {$tmpsavedlist[MC] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {MC}}
-          #if {$tmpsavedlist[SC] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {SC}}
-          #if {$tmpsavedlist[OHM] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {OHM}}
-          #if {$tmpsavedlist[GL] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {GL}}
-          #if {$tmpsavedlist[KS] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {KS}}
-          #if {$tmpsavedlist[WKS] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {WKS}}
-          #if {$tmpsavedlist[RA] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {RA}}
-          #if {$tmpsavedlist[CKN] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {CKN}}
-          #if {$tmpsavedlist[SGW] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {SGW}}
-          #if {$tmpsavedlist[OS] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {OS}}
-          #if {$tmpsavedlist[GP] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {GP}}
+          #if {$tmpsavedlist[KG] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {KG}};
+          #if {$tmpsavedlist[OK] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {OK}};
+          #if {$tmpsavedlist[MC] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {MC}};
+          #if {$tmpsavedlist[SC] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {SC}};
+          #if {$tmpsavedlist[OHM] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {OHM}};
+          #if {$tmpsavedlist[GL] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {GL}};
+          #if {$tmpsavedlist[KS] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {KS}};
+          #if {$tmpsavedlist[WKS] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {WKS}};
+          #if {$tmpsavedlist[RA] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {RA}};
+          #if {$tmpsavedlist[CKN] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {CKN}};
+          #if {$tmpsavedlist[SGW] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {SGW}};
+          #if {$tmpsavedlist[OS] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {OS}};
+          #if {$tmpsavedlist[GP] > 0} {#var pvpdb[$collector[$mytmpID][short]][zawod] {GP}};
 
    };
    #unvar tmpsavedlist;
