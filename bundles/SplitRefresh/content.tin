@@ -21,6 +21,6 @@
 	#nop var hline {};
 	#nop var hline2 {};
 	#nop loop {1} {$screencols} {mee} {#var hline {$hline-}};
-	#nop math {meeee} {#screencols - $global_bundle_slots_values[prompt][right]}
+	#nop math {meeee} {#screencols - $global_bundle_slots_values[prompt][right]};
 	#nop loop {1} {$meeee} {mee} {#var hline2 {$hline2-}};
 };
