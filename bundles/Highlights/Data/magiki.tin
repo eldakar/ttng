@@ -63,6 +63,7 @@
 #sub {jasniejac%w zdobion%w jatagan%w}{<118><caf>%0 <088>(<138>swiatlo<088>)};
 #sub {kruczoczarn%w mistern%w mie%w} {<118><caf>%0 <088>(<028>+hp<088>)};
 #sub {szar%w wygodn%w par%w but%w} {<118><caf>%0 <088>(<fca>bez sladow<088>)};
+#sub {srebrnozlot%w pask%w pancerz%w} {<118><caf>%0 <088>(<fca>+dex<088> <fca>unk<088>)};
 
 #sub {mistern%w spizow%w pawez%w} {<118><caf>%0 <088>(<fca> ? <088>)};
 #sub {upiorn%w ciemn%w wloczni%w} {<118><caf>%0 <088>(<fca> ? <088>)};
