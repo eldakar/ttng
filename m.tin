@@ -60,7 +60,7 @@
     #read bundles/Highlights/manifest.tin;
     #read bundles/Vehicles/manifest.tin;
 
-    #read addons/drakkary/manifest.tin;
+    #read addons/Drakkary/manifest.tin;
     
     #read bundles/system/manifest.tin;
 
