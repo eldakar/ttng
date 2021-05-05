@@ -155,6 +155,20 @@
 #action {%*{Podazasz|podazasz} za %1 na poludniowy-wschod, {brodzac w wodzie morskiej.|wychodzac nabrzeg.}} {#var retfl @follow_where{se}}
 #action {%*{Podazasz|podazasz} za %1 na polnoc.} {#var retfl @follow_where{n}};
 #action {%*{Podazasz|podazasz} za %1 wyjsciem.} {#var retfl @follow_where{wyjscie}};
+#action {%*{Podazasz|podazasz} za %1 do kanalow.} {#var retfl @follow_where{d}};
+#action {%*{Podazasz|podazasz} za %1 na poludnie, zanurzajac sie w szlamie.} {#var retfl @follow_where{s}};
+#action {%*{Podazasz|podazasz} za %1 na polnoc, zanurzajac sie w szlamie.} {#var retfl @follow_where{n}};
+#action {%*{Podazasz|podazasz} za %1 na dol, zsuwajac sie po wystepach skalnych.} {#var retfl @follow_where{d}};
+#action {%*{Podazasz|podazasz} za %1 na zachod brodzac w smieciach.} {#var retfl @follow_where{w}};
+#action {%*{Podazasz|podazasz} za %1 na wschod brodzac w smieciach.} {#var retfl @follow_where{e}};
+#action {%*{Podazasz|podazasz} za %1 na polnocny-zachod brodzac po kostki w mule.} {#var retfl @follow_where{nw}};
+#action {%*{Podazasz|podazasz} za %1 na zachod brodzac po kostki w mule.} {#var retfl @follow_where{w}};
+#action {%*{Podazasz|podazasz} za %1 na korytarz.} {#var retfl @follow_where{wyjscie}};
+#action {%*{Podazasz|podazasz} za %1 do browaru.} {#var retfl @follow_where{se}};
+
+#action {%*{Podazasz|podazasz} za %1 na poludniowy-wschod wdrapujac sie na zwalony pien i zeskakujac na druga strone.} {#var retfl @follow_where{se}};
+#action {%*{Podazasz|podazasz} za %1 na dol, pomiedzy obsydianowe sople.} {#var retfl @follow_where{d}};
+#action {%*{Podazasz|podazasz} za %1 na zachod, schodzac na plaze.} {#var retfl @follow_where{w}};
 
 #nop wozem;
 #action {Wraz z %1 jedziesz %2 na %3.} {#sh Wraz z %1 podazasz za %2 na %3.};
