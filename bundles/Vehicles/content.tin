@@ -84,7 +84,7 @@
 #action {Marynasze sprawnie cumuja} {
 			qb STATEK_OUT;
 };
-#action {Drzenie przebiega poklad, gdy okret przybija do brzegu przystani. Marynarze sprawnie cumuja go i wysuwaja na brzeg trap.}
+#action {Drzenie przebiega poklad, gdy okret przybija do brzegu przystani. Marynarze sprawnie cumuja go i wysuwaja na brzeg trap.} {
 			qb STATEK_OUT;
 };
 #action {%*{^Tratwa.$}}

@@ -11,5 +11,5 @@
 #alias {kratka} {zsun sie do studni;przeplyn pod kratka};
 #alias {blok_i_dzwignia} {wcisnij blok;pociagnij dzwignie};
 
-
+#action {Rozlozony oboz wojskowy.} {qb oboz};
 #nop DO NAPRAWY;
