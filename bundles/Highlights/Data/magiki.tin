@@ -64,6 +64,7 @@
 #sub {kruczoczarn%w mistern%w mie%w} {<118><caf>%0 <088>(<028>+hp<088>)};
 #sub {szar%w wygodn%w par%w but%w} {<118><caf>%0 <088>(<fca>bez sladow<088>)};
 #sub {srebrnozlot%w pask%w pancerz%w} {<118><caf>%0 <088>(<fca>+dex<088> <fca>unk<088>)};
+#sub {lsniac%w krysztalow%w wisior%w} {<118><caf>%0 <088>(<ffa>swiatlo<088>)};
 
 #sub {mistern%w spizow%w pawez%w} {<118><caf>%0 <088>(<fca> ? <088>)};
 #sub {upiorn%w ciemn%w wloczni%w} {<118><caf>%0 <088>(<fca> ? <088>)};
@@ -88,7 +89,6 @@
 #sub {lodow%w lsniac%w sztylet%w} {<118><caf>%0<088>};
 #sub {lodow%w dlug%w maczug%w} {<118><caf>%0<088>};
 #sub {lsniac%w plomienist%w tarcz%w} {<118><caf>%0<088>};
-#sub {lsniac%w krysztalow%w wisior%w} {<118><caf>%0<088>};
 #sub {masywn%w amulet%w z czarnym opalem} {<118><caf>%0<088>};
 #sub {mistern%w obosieczn%w topor%w} {<118><caf>%0<088>};
 #sub {mithrylow%w mahakamsk%w kolczug%w} {<118><caf>%0<088>};
