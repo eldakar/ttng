@@ -9,7 +9,7 @@ mkdir ~/.termux
 touch ~/.termux/termux.properties
 
 cd ttng
-sh mobile/add*
+sh mobile/test.sh
 
 echo !!!! ZRESTARTUJ TERMUX !!!!
 
