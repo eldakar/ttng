@@ -1,7 +1,12 @@
 #sh {<128>Laduje kierunki pod termux.<088>};
+/conf SplitWingMapWidth 30
+/conf RaidSize 10
+/conf atakflagi Az
+/conf kondycje mini
+/conf zbieranie monety,kamienie
 /macro F1 _sugerowanywrog_
 /macro F5 _sugerowanaobrona_
-/macro F9 _expo_
+/macro F9 _lokacyjny_
 /macro F2 move_nw
 /macro F6 move_w
 /macro F10 move_sw
