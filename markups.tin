@@ -74,7 +74,7 @@
 			#line ignore #sh {<178>Highlighter: <028>Usunalem.};
 		} {
 			#line ignore #sh {<178>Highlighter: <038>Pokoj nie byl podswietlony!};
-		}
+		};
 		
 		#class markups close;
 		#class markups write bundles/ConfigManager/Profiles/markups.tt;
@@ -145,7 +145,7 @@
 		#line ignore #showme {<138>Podswietlanie: <088>Dodaje stan apokalipsy. Zaladowane jest: <128>$msize<088> pokojow.};
 		#var apka $tmpvalue;
 		#unvar msize;	
-	}
+	};
 	#class markups close;
 	#class markups write bundles/ConfigManager/Profiles/markups.tt;
 };

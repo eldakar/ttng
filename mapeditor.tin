@@ -1,0 +1,109 @@
+#event {PROGRAM START} {
+    #script mylogin {whoami};
+    #var cport %0;
+
+    #if {$cport > 0} {
+        #port init brain ${cport}1;
+    } {
+        #port init brain 4051
+    };
+    #nop ses rpg arkadia.rpg.pl {23};
+
+    #port init rpg 4052;
+
+    #read bundles/bundle_ops.tin;
+    #nop mape trzeba zaladowac przed zaladowaniem eventow;
+    #read bundles/mapa/manifest.tin;
+ 
+    #read events/map.tin;
+    #read events/gmcp.char.tin;
+    #read events/gmcp.object.tin;
+    #read events/gmcp.room.tin;
+    #read events/mouse.tin;
+    #read events/io.tin;
+    #read events/screen.tin;
+    #read events/arka.tin;
+
+    #read core/aliasy/manifest.tin;
+
+    #read bundles/ConfigManager/manifest.tin;
+    #read bundles/HelpManager/manifest.tin;
+    #read bundles/SplitRefresh/manifest.tin;
+    #read bundles/prompt/manifest.tin;    
+    
+    #read bundles/wskazywanie/manifest.tin;
+
+    #read addons/postac/manifest.tin;
+    #read addons/ekwipunek/manifest.tin;
+    #read addons/cechy/manifest.tin;
+    #read addons/raid/manifest.tin;
+    #read addons/strzalki/manifest.tin;
+    #read addons/makra/manifest.tin;
+    #read addons/zbieranie/manifest.tin;
+    #read addons/porownaniecech/manifest.tin;
+
+    #read bundles/TTMapFollow/manifest.tin;
+    #read bundles/TTMapFreezer/manifest.tin;
+    #read bundles/TTMapSigns/manifest.tin;
+    #read bundles/gmcpDefaultColorManager/manifest.tin;
+    #read bundles/TTMapUndo/manifest.tin;
+    #read bundles/NumPad/manifest.tin;
+    #read bundles/ItemQualitySimple/manifest.tin;
+    #read bundles/ziola/manifest.tin;
+    
+    #read bundles/mapeditor/manifest.tin;
+    #read bundles/PlayerDB/manifest.tin;
+    #read addons/stansprzetu/manifest.tin;
+    
+    #read bundles/postepy/manifest.tin;
+    #read bundles/SplitWingMap/manifest.tin;
+    #read addons/bindy/manifest.tin;
+    #read bundles/Highlights/manifest.tin;
+    #read bundles/Vehicles/manifest.tin;
+
+    #read addons/Drakkary/manifest.tin;
+    
+    #read bundles/system/manifest.tin;
+
+    
+    
+    #read bundles/walkasuby/manifest.tin;
+    #read bundles/chat/manifest.tin;
+
+    #read markups.tin;
+    #read kamienie.tin;
+
+    
+    #nop read bundles/SplitWingButtons/manifest.tin;
+
+    #var r @bundleops_loadglobals{};
+
+    #nop TODO;
+    #read expowiska.tin;
+    #read gmcp_message.tin;	#nop GMCP;
+    #read alias.tin;		#nop Aliasy do obslugi glownych funkcji;
+    #read tropienie.tin;
+
+    #config {debug telnet} {off};	#nop debug;
+    #config {COMMAND ECHO} {off};	#nop wyswietlanie komend;
+    #config {mouse} {on};		#nop obsluga myszy;
+   
+    #var mychar[name] {mapper}; 
+    ConfigManager_gmcp_char_info $mychar;
+    MacroManager_gmcp_char_info $mychar;
+   
+    #var _rb1 {F1 <088>---<088>  F2 <128>PCZ<088>  F3 <afa>BAN<088>  F4 <fca>KAR<088>  F5 <afa>KUZ<088> F6 <ddf>WOD<088>};
+    #var _rb2 {F7 <ffa>zie<088>  F8 <ffa>skl<088>  F9 <fac>swi<088> F10};
+
+    #var raidbartable {$_rb1\n$_rb2};
+    #event {SEND OUTPUT} {/help mapeditor};
+};
+
+#event {SESSION CONNECTED} {
+    #event {IAC WILL GMCP} {
+        #send {\xFF\xFD\xC9\};
+        #send {\xFF\xFA\xC9core.supports.set [ "Core", "Objects", "Room", "Char", "Messages", "Mail", "Gmcp_msgs"]\xFF\xF0\};
+    };
+};
+
+
