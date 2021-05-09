@@ -169,11 +169,20 @@
 #action {%*{Podazasz|podazasz} za %1 na poludniowy-wschod wdrapujac sie na zwalony pien i zeskakujac na druga strone.} {#var retfl @follow_where{se}};
 #action {%*{Podazasz|podazasz} za %1 na dol, pomiedzy obsydianowe sople.} {#var retfl @follow_where{d}};
 #action {%*{Podazasz|podazasz} za %1 na zachod, schodzac na plaze.} {#var retfl @follow_where{w}};
+#action {%*{Podazasz|podazasz} za %1 do sklepu.} {#var retfl @follow_where{n}};
 
 #action {%*{Podazasz|podazasz} za %1 do obozu.} {#map goto 29070};
 #action {%*{Podazasz|podazasz} za %1 do sredniego namiotu.} {#var retfl @follow_where{se}};
 #action {%*{Podazasz|podazasz} za %1 do najmniejszego namiotu.} {#var retfl @follow_where{sw}};
 #action {%*{Podazasz|podazasz} za %1 do najwiekszego namiotu.} {#var retfl @follow_where{n}};
+
+#action {%*{Podazasz|podazasz} za %1 miedzy belki stodoly} {
+	#if {"$voom" == "28658"} {
+		#map goto 28659;
+	} {
+		#map goto 28658;
+	};
+};
 
 #nop wozem;
 #action {Wraz z %1 jedziesz %2 na %3.} {#sh Wraz z %1 podazasz za %2 na %3.};

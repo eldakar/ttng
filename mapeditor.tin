@@ -96,7 +96,7 @@
     #var _rb2 {F7 <ffa>zie<088>  F8 <ffa>skl<088>  F9 <fac>swi<088> F10};
 
     #var raidbartable {$_rb1\n$_rb2};
-    #event {SEND OUTPUT} {/help mapeditor};
+    #event {SEND OUTPUT} {/help mapeditor;/keypad_walk};
 };
 
 #event {SESSION CONNECTED} {

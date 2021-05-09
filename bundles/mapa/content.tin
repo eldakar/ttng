@@ -101,6 +101,37 @@
     };
 };
 
+#alias {/keypad_draw} {
+	#alias {move_n} {/map dig n;/keypad_walk};
+	#alias {move_s} {/map dig s;/keypad_walk};
+	#alias {move_e} {/map dig e;/keypad_walk};
+	#alias {move_w} {/map dig w;/keypad_walk};
+	#alias {move_u} {/map dig u;/keypad_walk};
+	#alias {move_d} {/map dig d;/keypad_walk};
+	#alias {move_ne} {/map dig ne;/keypad_walk};
+	#alias {move_nw} {/map dig nw;/keypad_walk};
+	#alias {move_sw} {/map dig sw;/keypad_walk};
+	#alias {move_se} {/map dig se;/keypad_walk};
+	#map color symbols <daa>;
+	#map color exits <daa>;
+	#line ignore #sh {<ffa>RYSUJESZ.<088>};
+} {1};
+
+#alias {/keypad_walk} {
+	#map color symbols <088>;
+	#map color exits <088>;
+            #alias {move_n}  {#send n;#var trytomove 1;#var movedir {polnoc}};
+            #alias {move_s}  {#send s;#var trytomove 1;#var movedir {poludnie}};
+            #alias {move_e}  {#send e;#var trytomove 1;#var movedir {wschod}};
+            #alias {move_w}  {#send w;#var trytomove 1;#var movedir {zachod}};
+            #alias {move_d}  {#send d;#var trytomove 1;#var movedir {dol}};
+            #alias {move_u}  {#send u;#var trytomove 1;#var movedir {gora}};
+            #alias {move_ne} {#send ne;#var trytomove 1;#var movedir {polnocny-wschod}};
+            #alias {move_nw} {#send nw;#var trytomove 1;#var movedir {polnocny-zachod}};
+            #alias {move_sw} {#send sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
+            #alias {move_se} {#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};
+	#line ignore #sh {<afa>CHODZISZ.<088>};
+} {1};
 
 #alias {/rysuj} {#line ignore #show {Zaczynam rysowac};#var highlightMode 1} {1};
 #alias {/nierysuj} {#line ignore #sh {Przestaje rysowac};#var highlightMode 0} {1};

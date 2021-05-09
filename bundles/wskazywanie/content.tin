@@ -24,9 +24,10 @@
 {
 	#parse {$pwskazywanie} {wskazanie_typ} {
       #switch {"$wskazanie_typ"} {
-        #case {"d"} khpiesn;                      #nop druchii;
+        #case {"d"} khpiesn;                      #nop druchii khaine;
         #case {"u"} drwskaz %0;                   #nop upiorny pancerz;
         #case {"z"} zabijcmd %0;                  #nop komenda zabij;
+        #case {"g"} gpprzeklnij %0;               #nop druchii przeklnij;
         #case {"w"} {
           #if {"$duch[$CHAR_INFO[object_num]][team_leader]" == "true"} {
                     wskaz %0 jako cel ataku;      #nop wskazywanie;
