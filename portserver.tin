@@ -67,3 +67,5 @@
     #read portserverfunctions.tin;
     load_dynamics;
 };
+
+#daemon detach
