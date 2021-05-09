@@ -23,6 +23,7 @@
 #list userList clear;
 #unvar userDetails;
 
+
 #nop KORSARSKIE DRAKKARY;
 #var drakkary[krakken][id] {23583};
 #var drakkary[krakken][ka] {eldakar};
