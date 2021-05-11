@@ -105,9 +105,12 @@
 
 #alias {/destroy} {
 	#foreach {*m[]} {_m} {
-		#if {"$m[$_m][type]" == "%1"} {
-			#map at {$_m} {/d};
+		#map at {$_m} {
+			#if {"$m[$_m][type]" == "ext"} {
+				#map exit $m[$_m][direction] color;
+			};
 		};
+		#map at {$_m} {/d};		
 	};
 } {1};
 

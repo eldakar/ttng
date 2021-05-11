@@ -11,8 +11,8 @@
 #map leg 197 {\\};
 #map leg 198 {/};
 #map leg 200 {/};
-#map leg 218 {<};  
-#map leg 217 {>};
+#map leg 218 {\u2190};  
+#map leg 217 {\u2192};
 #map leg 215 {|};
 #map leg 219 {-};   
 
