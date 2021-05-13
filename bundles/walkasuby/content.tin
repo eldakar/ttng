@@ -141,8 +141,8 @@
 	#if {"$collector[$receiverID][received][damage]" == ""} {#var collector[$receiverID][received][damage] {0};};
 
    #var hitcolor <fff>;
-   #if {"%3" == "$AVATAR_NAME"} {#var hitcolor <ddf>} {#var hitcolor <fdd>};
-   #nop if {"%2" == "$AVATAR_NAME"} {#var hitcolor <fdd>};
+   #if {"%3" == "$AVATAR_NAME"} {#var hitcolor <cfa>} {#var hitcolor <fdd>};
+   #if {"$receiverID" == "$CHAR_INFO[object_num]"} {#var hitcolor <faa>};
 
 	#math tmp_sent {$collector[$senderID][sent][$typeSent] + 1};
 	#math tmp_rcvd {$collector[$receiverID][received][$typeSent] + 1};
@@ -173,14 +173,15 @@
 
    #if {"$pwalkapvp" == "wlaczona"} {
       #switch {"$typeSent"} {
-         #case {"dod"} {#if {$gaglevel < 1} {#format pvpdisplay {<bcf>%-8s %-2s <088>%-35s -> %-35s} {$typeSent} {$valueSent} {$collector[$senderID][short]} {$collector[$receiverID][short]}}};
-         #case {"mis"} {#if {$gaglevel < 1} {#format pvpdisplay {<bcf>%-8s %-2s <088>%-35s -> %-35s} {$typeSent} {$valueSent} {$collector[$senderID][short]} {$collector[$receiverID][short]}}};
-         #case {"par"} {#if {$gaglevel < 1} {#format pvpdisplay {<bcf>%-8s %-2s <088>%-35s -> %-35s} {$typeSent} {$valueSent} {$collector[$senderID][short]} {$collector[$receiverID][short]}}};
-         #case {"hit"} {#if {$gaglevel < 2} {#format pvpdisplay {${hitcolor}%-8s %-2s <088>%-35s -> %-35s} {$typeSent} {$valueSent} {$collector[$senderID][short]} {$collector[$receiverID][short]}}};
-         #case {"magic"} {#if {$gaglevel < 2} {#format pvpdisplay {<138>%-8s %-2s <088>%-35s -> %-35s} {$typeSent} {$valueSent} {$collector[$senderID][short]} {$collector[$receiverID][short]}}};
-         #default {#format pvpdisplay {<cfa>%-8s %-2s <088>%-35s -> %-35s} {$typeSent} {$valueSent} {$collector[$senderID][short]} {$collector[$receiverID][short]}};
+         #case {"dod"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] <088>$collector[$senderID][short] <bcf>chybia <088>$collector[$receiverID][short]}}}};
+         #case {"mis"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] <088>$collector[$senderID][short] <bcf>chybia <088>$collector[$receiverID][short]}}}};
+         #case {"par"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] <088>$collector[$senderID][short] <bcf>chybia <088>$collector[$receiverID][short]}}}};
+
+         #case {"hit"} {#if {$gaglevel < 2} {#line ignore {#showme {${hitcolor}[$valueSent/6] <088>$collector[$senderID][short] ${hitcolor}trafia <088>$collector[$receiverID][short]}}}};
+         #case {"magic"} {#if {$gaglevel < 2} {#line ignore {#showme {<138>[$typeSent $valueSent/6] <088>$collector[$senderID][short] <138>trafia <088>$collector[$receiverID][short]}}}};
+
+         #default {#line ignore {#showme {${hitcolor}[$typeSent $valueSent/6] <088>$collector[$senderID][short] ${hitcolor}trafia <088>$collector[$receiverID][short]}}};
       };  
-      #line ignore {#sh $pvpdisplay};
    } {
       #switch {"$typeSent"} {
          #case {"dod"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] $outputtext}};};};
