@@ -132,7 +132,7 @@
 #action {%*{Podazasz|podazasz} za %1 schodami na dol.} {#var retfl @follow_where{schody}};
 #action {%*{Podazasz|podazasz} za %1 schodami do gory.} {#var retfl @follow_where{schody}}
 #action {%*{Podazasz|podazasz} za %1 na dol po spiralnych schodach.} {#var retfl @follow_where{d}};
-#action {%*{Podazasz|podazasz} za %1 na gore po spiralnych schodach.} {#var retfl @follow_where{u}};;
+#action {%*{Podazasz|podazasz} za %1 na gore po spiralnych schodach.} {#var retfl @follow_where{u}};
 #action {%*{Podazasz|podazasz} za %1 do wnetrza straznicy.} {#var retfl @follow_where{straznica}};
 #action {%*{Podazasz|podazasz} za %1 na gore po drabinie.} {#var retfl @follow_where{u}};
 #action {%*{Podazasz|podazasz} za %1 na dol po drabinie.} {#var retfl @follow_where{d}};
