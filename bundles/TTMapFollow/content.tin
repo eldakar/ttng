@@ -99,6 +99,7 @@
 #action {%*{Podazasz|podazasz} za %1 w dol traktem.} {#var retfl @follow_where{d}};
 #action {%*{Podazasz|podazasz} za %1 droga w dol.} {#var retfl @follow_where{d}};
 #action {%*{Podazasz|podazasz} za %1 droga w gore.} {#var retfl @follow_where{u}};
+#action {%*{Podazasz|podazasz} za %1 w gore po schodach.} {#var retfl @follow_where{u}};
 #action {%*{Podazasz|podazasz} za %1 do otworu.} {#map move rozpadlina;#map move otwor;};
 #action {%*{Podazasz|podazasz} za %1 na zewnatrz przechodzac przez szczeline} {#map move szczelina;#map move przejdz przez szczeline};
 #action {%*{Podazasz|podazasz} za %1 do srodka otworu.} {#map move rozpadlina;#map move otwor;};
@@ -129,7 +130,9 @@
 #action {%*{Podazasz|podazasz} za %1 na schody.} {#var retfl @follow_where{schody}};
 #action {%*{Podazasz|podazasz} za %1 po schodach na dol.} {#var retfl @follow_where{d};#var retfl @follow_where{schody}};
 #action {%*{Podazasz|podazasz} za %1 schodami na dol.} {#var retfl @follow_where{schody}};
-#action {%*{Podazasz|podazasz} za %1 schodami do gory.} {#var retfl @follow_where{schody}};
+#action {%*{Podazasz|podazasz} za %1 schodami do gory.} {#var retfl @follow_where{schody}}
+#action {%*{Podazasz|podazasz} za %1 na dol po spiralnych schodach.} {#var retfl @follow_where{d}};
+#action {%*{Podazasz|podazasz} za %1 na gore po spiralnych schodach.} {#var retfl @follow_where{u}};;
 #action {%*{Podazasz|podazasz} za %1 do wnetrza straznicy.} {#var retfl @follow_where{straznica}};
 #action {%*{Podazasz|podazasz} za %1 na gore po drabinie.} {#var retfl @follow_where{u}};
 #action {%*{Podazasz|podazasz} za %1 na dol po drabinie.} {#var retfl @follow_where{d}};
@@ -165,22 +168,24 @@
 #action {%*{Podazasz|podazasz} za %1 na zachod brodzac po kostki w mule.} {#var retfl @follow_where{w}};
 #action {%*{Podazasz|podazasz} za %1 na korytarz.} {#var retfl @follow_where{wyjscie}};
 #action {%*{Podazasz|podazasz} za %1 do browaru.} {#var retfl @follow_where{se}};
-
 #action {%*{Podazasz|podazasz} za %1 na poludniowy-wschod wdrapujac sie na zwalony pien i zeskakujac na druga strone.} {#var retfl @follow_where{se}};
 #action {%*{Podazasz|podazasz} za %1 na dol, pomiedzy obsydianowe sople.} {#var retfl @follow_where{d}};
 #action {%*{Podazasz|podazasz} za %1 na zachod, schodzac na plaze.} {#var retfl @follow_where{w}};
 #action {%*{Podazasz|podazasz} za %1 do sklepu.} {#var retfl @follow_where{n}};
-
 #action {%*{Podazasz|podazasz} za %1 do obozu.} {#map goto 29070};
 #action {%*{Podazasz|podazasz} za %1 do sredniego namiotu.} {#var retfl @follow_where{se}};
 #action {%*{Podazasz|podazasz} za %1 do najmniejszego namiotu.} {#var retfl @follow_where{sw}};
 #action {%*{Podazasz|podazasz} za %1 do najwiekszego namiotu.} {#var retfl @follow_where{n}};
+#action {%*{Podazasz|podazasz} za %1 do karczmy.} {#var retfl @follow_where{n}};
 
-#action {%*{Podazasz|podazasz} za %1 miedzy belki stodoly} {
+#action {%*{Podazasz|podazasz} za %1 wglab zalanego chodnika, zanurzajac sie pod wode.} {#var retfl @follow_where{s}};
+#action {%*{Podazasz|podazasz} za %1 na zewnatrz chaty.} {#var retfl @follow_where{wyjscie}};
+
+#action {%*{Podazasz|podazasz} za %1 miedzy belki stodoly.} {
 	#if {"$voom" == "28658"} {
-		#map goto 28659;
+		#var retfl @follow_where{nw};
 	} {
-		#map goto 28658;
+		#var retfl @follow_where{se};
 	};
 };
 
@@ -189,9 +194,6 @@
 #nop klatka;
 #action {Wraz z %1 pomagacie %2 przeniesc duza zelazna klatke na %3} {#sh Wraz z %1 podazasz za %2 na %3};
 
-#nop kreutz;
-#action {%*{Podazasz|podazasz} za %1 do karczmy.} {#var retfl @follow_where{n}};
-#nop krzaki ozyw;
 #action {Podazasz w kierunku krzakow i po chwili znajdujesz przesmyk, przez ktory mozna sie dostac pomiedzy poskrecane ze soba galezie.} 
 {
     #if {$trytomove == 1} {

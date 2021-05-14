@@ -5,3 +5,15 @@
     };
 } {1};
 #nop rozpada sie, rozpruwa sie;
+
+#unaction {%* zaprasza cie do swojej druzyny.$};
+#unaction {%* przekazuje ci {prowadzenie druzyny|dowodzenie nad swoja druzyna}.$};
+#unaction {Przekazujesz prowadzenie druzyny %1.$};
+#unaction {^Gubisz gdzies za soba %1.$};
+#unaction {%1 porzuca twoja druzyne.$};
+#unaction {%1 zmusza %2 do opuszczenia druzyny.$};
+#unaction {Zmuszasz %1 do opuszczenia druzyny.$};
+#unaction {^%* zmusza cie do opuszczenia druzyny.$};
+#unaction {^Porzucasz druzyne, ktorej przewodzil{|es|as}.$};
+#unaction {^%* rozwiazuje druzyne.$};
+#unaction {^%* dolacza do twojej druzyny.};
