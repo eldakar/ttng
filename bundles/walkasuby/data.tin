@@ -35,7 +35,7 @@
 
 #nop CHYBIONE;
 #action {%* nie udaje sie trafic %*} {collect mis 0 %1;#line gag};
-#action {Probujesz trafic %*, lecz %*} {collect mis 0 $AVATAR_NAME;#line gag};
+#action {Probujesz trafic %*, {lecz|jednak} %*} {collect mis 0 $AVATAR_NAME;#line gag};
 #action {Niespodziewanie skrecasz tulow %* jakims cudem nie dosiega %*} {collect mis 0 $AVATAR_NAME;#line gag};
 
 #nop BRON;
@@ -98,7 +98,24 @@
 #action {%* {wykrzywia twarz|krzywi wargi} %* rzuca sie do ataku. %* powaznie raniac %*} {collect MC 4 %1;#line gag};
 #action {%* {wykrzywia twarz|krzywi wargi} %* rzuca sie do ataku. %* bardzo ciezko raniac %*} {collect MC 5 %1;#line gag};
 #action {%* {wykrzywia twarz|krzywi wargi} %* rzuca sie do ataku. %* masakrujac %*} {collect MC 6 %1;#line gag};
+#action {%* usmiecha sie przebiegle %* rzuca sie do ataku. %* ledwo muskajac %*} {collect MC 1 %1;#line gag};
+#action {%* usmiecha sie przebiegle %* lekko raniac %*} {collect MC 2 %1;#line gag};
+#action {%* usmiecha sie przebiegle %* raniac %*} {collect MC 3 %1;#line gag} {8};
+#action {%* usmiecha sie przebiegle %* powaznie raniac %*} {collect MC 4 %1;#line gag};
+#action {%* usmiecha sie przebiegle %* bardzo ciezko raniac %*} {collect MC 5 %1;#line gag};
+#action {%* usmiecha sie przebiegle %* masakrujac %*} {collect MC 6 %1;#line gag};
+
+#action {%* wykonuje szybki, szalony %* rzuca sie do ataku. %* ledwo muskajac %*} {collect MC 1 %1;#line gag};
+#action {%* wykonuje szybki, szalony %* lekko raniac %*} {collect MC 2 %1;#line gag};
+#action {%* wykonuje szybki, szalony %* raniac %*} {collect MC 3 %1;#line gag} {8};
+#action {%* wykonuje szybki, szalony %* powaznie raniac %*} {collect MC 4 %1;#line gag};
+#action {%* wykonuje szybki, szalony %* bardzo ciezko raniac %*} {collect MC 5 %1;#line gag};
+#action {%* wykonuje szybki, szalony %* masakrujac %*} {collect MC 6 %1;#line gag};
+
+
 #action {%* staje pewnie %* uderzenie %*} {collect MC 7 %1;#line gag};
+#action {%* markuje %* zakanczajac tym walke} {collect MC 7 %1;#line gag};
+
 
 #nop SPECE WKS Z PIERWSZEJ OSOBY;
 #action {Szybkim niczym mysl ruchem %* wytracasz %*} {collect WYTRACASZ 0 $AVATAR_NAME;#line gag};
@@ -205,12 +222,11 @@
 #action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana masakrujesz %*} {collect JATAGAN 6 $AVATAR_NAME;#line gag};
 
 #nop MAGIKI - SZCZERBA - 1 OSOBA;
-#action {{Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* zadajac %* nieznaczne obrazenia} {collect SZCZERBA 1 $AVATAR_NAME;#line gag};
-#action {{Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* lekko %* raniac} {collect SZCZERBA 2 $AVATAR_NAME;#line gag};
-#nop action {{Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* lekko %* raniac} {collect SZCZERBA 1 $AVATAR_NAME;#line gag};
-#nop action {{Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* lekko %* raniac} {collect SZCZERBA 1 $AVATAR_NAME;#line gag};
-#action {{Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* potwornie} {collect SZCZERBA 5 $AVATAR_NAME;#line gag};
-#action {{Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* masakrujesz} {collect SZCZERBA 6 $AVATAR_NAME;#line gag};
+#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* zadajac %* nieznaczne obrazenia} {collect SZCZERBA 1 $AVATAR_NAME;#line gag};
+#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* kaleczac %* przy} {collect SZCZERBA 2 $AVATAR_NAME;#line gag};
+#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* lekko %* raniac} {collect SZCZERBA 3 $AVATAR_NAME;#line gag};
+#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* potwornie} {collect SZCZERBA 5 $AVATAR_NAME;#line gag};
+#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* masakrujesz} {collect SZCZERBA 6 $AVATAR_NAME;#line gag};
 
 #nop MAGIKI - SIHILL - 1 OSOBA;
 #action {Niezbyt czysto trafiasz %* waskim kunsztownym sihillem} {collect SIHILL 1 $AVATAR_NAME;#line gag};
@@ -270,7 +286,9 @@
 #action {%* obracajac w reku swym %* nieznaczne obrazeni} {collect LEWAK 2 %1;#line gag};
 #action {%* blyskawicznie wyrzuca przed siebie %* krwawiaca rane} {collect LEWAK 3 %1;#line gag};
 
-
+#nop MAGIKI - ARLEKIN - Z TRZECIEJ OSOBY;
+#action {{W dzikim, nieokielznanym tancu|Poruszajac sie niczym duch,} %* {rusza|podbiega} %* ledwo musnac %*} {collect ARLEKIN 1 %2;#line gag};
+#action {{W dzikim, nieokielznanym tancu|Poruszajac sie niczym duch,} %* {rusza|podbiega} %* lekko zaciac %*} {collect ARLEKIN 2 %2;#line gag};
 
 
 #nop PANIC;  #action {w panice umyka} {#sh $tmpvalue2;#line gag};
