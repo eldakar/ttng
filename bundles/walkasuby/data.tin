@@ -290,6 +290,14 @@
 #action {{W dzikim, nieokielznanym tancu|Poruszajac sie niczym duch,} %* {rusza|podbiega} %* ledwo musnac %*} {collect ARLEKIN 1 %2;#line gag};
 #action {{W dzikim, nieokielznanym tancu|Poruszajac sie niczym duch,} %* {rusza|podbiega} %* lekko zaciac %*} {collect ARLEKIN 2 %2;#line gag};
 
+#nop MAGIKI - ARLEKIN - Z PIERWSZEJ OSOBY;
+#action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* ledwo musnac %*} {collect ARLEKIN 1 $AVATAR_NAME;#line gag};
+#action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* lekko zaciac %*} {collect ARLEKIN 2 $AVATAR_NAME;#line gag};
+#action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* tak mocno %*} {collect ARLEKIN 3 $AVATAR_NAME;#line gag};
+#action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* pozostawiajac krwawiaca %*} {collect ARLEKIN 4 $AVATAR_NAME;#line gag};
+#action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* ciezko rani %*} {collect ARLEKIN 5 $AVATAR_NAME;#line gag};
+#action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* pozostawiajac rozlegla %*} {collect ARLEKIN 6 $AVATAR_NAME;#line gag};
+#action {Markujesz kilka uderzen swymi smuklymi mieczami} {collect ARLEKIN 7 $AVATAR_NAME;#line gag};
 
 #nop PANIC;  #action {w panice umyka} {#sh $tmpvalue2;#line gag};
 #nop PANIC;  #action {uciekl ci.} {#sh $tmpvalue2;#line gag};
