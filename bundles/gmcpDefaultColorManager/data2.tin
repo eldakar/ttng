@@ -135,25 +135,6 @@
 
 #high {broni uzyto srebra} {<178>};
 
-#nop gildie;
-#unaction {%*Noszony%*pierscien%*Kupcow%*.$} {#sh %0 (<118><fff> CN <088>);#line gag};
-#unaction {{Jego|Jej} nieustepliwe niczym skelliganskie sztormy spojrzenie i twarz wysmagana lodowatymi wichrami swiadcza o tym, ze masz %*.$} {#sh %0 (<118><faa> KS <088>);#line gag};
-#unaction {%*Klamre %* pasa zdobi %*.$} { };
-#unaction {%*noszony przez zaciezna piechote z Ochotniczego Hufca Mahakamu%*.$} {#sh %0 (<118><fff> OHM <088>);#line gag};
-#unaction {%*na ktorym wyryto otoczony czerwonymi rautami emblemat%*.$} { };
-#unaction {%* herb%* Rodziny Alderazzi%*.$} {#sh %0 (<118><fff> RA <088>);#line gag};
-#unaction {%*ze znakiem czarnego gryfa%*.$} {#sh %0 (<118><afa> KG <088>);#line gag};
-#unaction {Nosi wiewiorczy ogon%*.$} {#sh %0 (<118><ffa> SC <088>);#line gag};
-#unaction {%*biala tunika zakonna symbolizuje%*.$} {#sh %0 (<118><afa> ZS <088>);#line gag};
-#unaction {%*nosi piekna {zlota|srebrna|miedziana} obrecz {|wysadzana krwawymi rubinami|wysadzana kosztownymi kamieniami}.$} {#sh %0 (<118><faa> OK <088>);#line gag};
-#unaction {Nosi %* kubraczek, tradycyjny stroj Elfow z Gor Sinych.$} {#sh %0 (<118><fff> ES <088>);#line gag};
-#unaction {%*zamek ze znakiem Stowarzyszenia Gnomich Wynalazcow%*.$} {#sh %0 (<118><afa> SGW <088>);#line gag};
-#unaction {%*szyi, na skorzanym rzemieniu wisi%*.$} { };
-#unaction {%*Wzor i kolor kiltu swiadcza o przynaleznosci do Krasnoludow z Gor Kranca Swiata%*.$} {#sh %0 (<118><afa> KGKS <088>);#line gag};
-#unaction {%* pocieta jest %* wojownik.$} {#sh %0 (<118><afa> VR <088>);#line gag};
-#unaction {%* charakterystyczna dla mieszkancow Zajazdu %*.$} {#sh %0 (<118><fff> PE <088>);#line gag};
-#unaction {Od stop do glow zakut%* jest w stalowe plyty %* wygrawerowano symbole %*.$} {#sh %0 (<118><faa> MC <088>);#line gag};
-
 #nop jakies tam itemsy;
 #sub {polyskujacy zdobiony sztylet} {polyskujacy zdobiony sztylet (spaczony)};
 #high {(spaczony)} {$c_stan_sredni}

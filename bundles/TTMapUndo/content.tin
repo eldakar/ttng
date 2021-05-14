@@ -78,6 +78,7 @@
 #action {zeslizgujesz} {undo};
 #action {Przejscie blokuje obalony pien.} {undo};
 #action {Podchodzisz do drzwi tej chatki, lecz sa one zamkniete i nie mozesz ich otworzyc.} {undo};
+#action {Musisz najpierw zarzucic na belke jakas line lub sznur.} {undo};
 
 #action {Probujesz sie ruszyc na %1, jednak pajecze sieci, w ktore sie w miedzyczasie zaplatal%+, uniemozliwiaja ci to.} {undo};
 #action {Probujesz sie ruszyc na %1, jednak pajecze sieci, w ktore sie w miedzy czasie zaplatal%+, uniemozliwiaja ci to.} {undo};
