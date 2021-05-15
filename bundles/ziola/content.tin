@@ -112,7 +112,7 @@
 #var ziola[NieznanyPCK] {0};
 
 
-
+#var ziolan[Rosiczka] {bialokwitnaca drobna roslinka};
 #var ziolan[Deliona] {zolty jasny kwiat};
 #var ziolan[Mieta] {okraglawy aromatyczny lisc};
 #var ziolan[Babka] {rozetkowaty lancetowaty lisc};
@@ -325,6 +325,7 @@
   #var ziola[Bylica] {0};
   #var ziola[Kasztanowiec] {0};
   #var ziola[Przelot] {0};
+  #var ziola[Przelot_] {0};
   #var ziola[Bielun] {0};
   #var ziola[Deren] {0};
   #var ziola[Komosa] {0};
@@ -440,6 +441,7 @@
 #var zioladb[Bylica][ilosc] {0};
 #var zioladb[Kasztanowiec][ilosc] {0};
 #var zioladb[Przelot][ilosc] {0};
+#var zioladb[Przelot_][ilosc] {0};
 #var zioladb[Bielun][ilosc] {0};
 #var zioladb[Deren][ilosc] {0};
 #var zioladb[Komosa][ilosc] {0};
@@ -550,6 +552,7 @@
 #if {"$sortujemy" == "true"} {
   #var szawartosc {%1};
   #replace szawartosc {{ i |, }} {;};
+  #replace szawartosc {bialokwitna%w drobn%w roslin%w} {Rosiczka};
   #replace szawartosc {zolt%w jasn%w kwiat%w} {Deliona};
   #replace szawartosc {okraglaw%w aromatyczn%w lisc%w} {Mieta};
   #replace szawartosc {rozetkowat%w lancetowat%w lisc%w} {Babka};
@@ -705,6 +708,87 @@
   };
 };
 }
+
+#alias {/lecz} {
+    otworz pierwszy przytroczony woreczek;
+    otworz drugi przytroczony woreczek;
+    otworz trzeci przytroczony woreczek;
+    otworz czwarty przytroczony woreczek;
+    opusc wszystkie bronie;
+
+    #foreach {*zioladb[]} {ziolkonazwa} {
+        #format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][kn]};
+        #if {$sposoblen > 1} {
+            #if {$zioladb[$ziolkonazwa][ilosc] > 0} {
+                wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
+                
+                wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
+                
+                wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
+                
+                wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+
+                $zioladb[$ziolkonazwa][sposob][kn] $zioladb[$ziolkonazwa][odmiana];
+                $zioladb[$ziolkonazwa][sposob][kn] $zioladb[$ziolkonazwa][odmiana];
+                $zioladb[$ziolkonazwa][sposob][kn] $zioladb[$ziolkonazwa][odmiana];
+
+                wloz ziola do pierwszego przytroczonego woreczka;
+                wloz ziola do drugiego przytroczonego woreczka;
+                wloz ziola do trzeciego przytroczonego woreczka;
+                wloz ziola do czwartego przytroczonego woreczka;
+            };
+        };
+    };
+
+    zamknij pierwszy przytroczony woreczek;
+    zamknij drugi przytroczony woreczek;
+    zamknij trzeci przytroczony woreczek;
+    zamknij czwarty przytroczony woreczek;    
+    dobadz wszystkich broni;
+} {1};
+
+#alias {/sap} {
+    otworz pierwszy przytroczony woreczek;
+    otworz drugi przytroczony woreczek;
+    otworz trzeci przytroczony woreczek;
+    otworz czwarty przytroczony woreczek;
+    opusc wszystkie bronie;
+
+    #foreach {*zioladb[]} {ziolkonazwa} {
+        #format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][zm]};
+        #if {$sposoblen > 1} {
+            #if {$zioladb[$ziolkonazwa][ilosc] > 0} {
+                wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+
+                $zioladb[$ziolkonazwa][sposob][zm] $zioladb[$ziolkonazwa][odmiana];
+                $zioladb[$ziolkonazwa][sposob][zm] $zioladb[$ziolkonazwa][odmiana];
+                $zioladb[$ziolkonazwa][sposob][zm] $zioladb[$ziolkonazwa][odmiana];
+
+                wloz ziola do pierwszego przytroczonego woreczka;
+                wloz ziola do drugiego przytroczonego woreczka;
+                wloz ziola do trzeciego przytroczonego woreczka;
+                wloz ziola do czwartego przytroczonego woreczka;
+            };
+        };
+    };
+
+    zamknij pierwszy przytroczony woreczek;
+    zamknij drugi przytroczony woreczek;
+    zamknij trzeci przytroczony woreczek;
+    zamknij czwarty przytroczony woreczek;    
+    dobadz wszystkich broni;
+} {1};
 
 
 #alias {lecznicze}
@@ -1052,14 +1136,17 @@ zamknij czwarty przytroczony woreczek;
   otworz drugi przytroczony woreczek;
   otworz trzeci przytroczony woreczek;
   otworz czwarty przytroczony woreczek;
+  otworz piaty przytroczony woreczek;
   wloz ziola do pierwszego przytroczonego woreczka;
   wloz ziola do drugiego przytroczonego woreczka;
   wloz ziola do trzeciego przytroczonego woreczka;
   wloz ziola do czwartego przytroczonego woreczka;
+  wloz ziola do piatego przytroczonego woreczka;
   zamknij pierwszy przytroczony woreczek;
   zamknij drugi przytroczony woreczek;
   zamknij trzeci przytroczony woreczek;
   zamknij czwarty przytroczony woreczek;
+  zamknij piaty przytroczony woreczek;
 }
 
 #alias {ziola}
@@ -1256,39 +1343,39 @@ zamknij czwarty przytroczony woreczek;
   dobadz broni;
 }
 
-#unalias {kup wszystkie ziola} {
-  #delay {0.3} {kup 10 zoltych jasnych kwiatow};
-  #delay {0.3} {kup 10 okraglawych aromatycznych lisci};
-  #delay {0.3} {kup 10 rozetkowatych lancetowatych lisci};
-  #delay {0.3} {kup 10 jasnofioletowych delikatnych kwiatow};
-  #delay {0.3} {kup 10 bialych malych kwiatow};
-  #delay {0.3} {kup 10 fioletowych lejkowatych kwiatow};
-  #delay {0.3} {kup 10 jasnopomaranczowych kwiatow};
-  #delay {0.3} {kup 10 strzalkowatych aromatycznych lisci};
-  #delay {0.3} {kup 10 fioletowych zwartych kwiatostanow};
-  #delay {0.3} {kup 10 zaostrzonych podluznych lisci};
-  #delay {0.3} {kup 10 malych czerwonych kwiatow};
-  #delay {0.3} {kup 10 owlosionych aromatycznych lisci};
-  #delay {0.3} {kup 10 zlocistopomaranczowych duzych kwiatow};
-  #delay {0.3} {kup 10 zoltoszarych niepozornych korzeni};
-  #delay {0.3} {kup 10 miedzianych sluzowatych grzybow};
-  #delay {0.3} {kup 10 mazistych bulwiastych grzybow};
-  #delay {0.3} {kup 10 dlugich lodyg};
-  #delay {0.3} {kup 10 eliptycznych zaostrzonych lisci};
-  #delay {0.3} {kup 10 kremowych owlosionych kwiatow};
-  #delay {0.3} {kup 10 duzych bialych kwiatow};
-  #delay {0.3} {kup 10 lsniacych czerwonych owocow};
-  #delay {0.3} {kup 10 macznistoowlosionych szarawych roslin};
-  #delay {0.3} {kup 10 brazowych okraglych nasion};
-  #delay {0.3} {kup 10 rozgowatych zoltozielonych galazek};
-  #delay {0.3} {kup 10 jasnozielonych nieowlosionych lodyg};
-  #delay {0.3} {kup 10 wonnych dzwonkowatych kwiatow};
-  #delay {0.3} {kup 10 sztywnych smuklych lodyg};
-  #delay {0.3} {kup 10 szarawaych pogietych klaczy};
-  #delay {0.3} {kup 10 wzniesionych ukwieconych lodyg};
-  #delay {0.3} {kup 10 wysokich zoltych kwiatow};
-  #delay {0.3} {kup 10 bialokwitnacych drobnych roslinek};
-};
+#alias {/skup_ziola} {
+  kup piec zoltych jasnych kwiatow;
+  kup piec okraglawych aromatycznych lisci;
+  kup piec rozetkowatych lancetowatych lisci;
+  kup piec jasnofioletowych delikatnych kwiatow;
+  kup piec bialych malych kwiatow;
+  kup piec fioletowych lejkowatych kwiatow;
+  kup piec jasnopomaranczowych kwiatow;
+  kup piec strzalkowatych aromatycznych lisci;
+  kup piec fioletowych zwartych kwiatostanow;
+  kup piec zaostrzonych podluznych lisci;
+  kup piec malych czerwonych kwiatow;
+  kup piec owlosionych aromatycznych lisci;
+  kup piec zlocistopomaranczowych duzych kwiatow;
+  kup piec zoltoszarych niepozornych korzeni;
+  kup piec miedzianych sluzowatych grzybow;
+  kup piec mazistych bulwiastych grzybow;
+  kup piec dlugich lodyg;
+  kup piec eliptycznych zaostrzonych lisci;
+  kup piec kremowych owlosionych kwiatow;
+  kup piec duzych bialych kwiatow;
+  kup piec lsniacych czerwonych owocow;
+  kup piec macznistoowlosionych szarawych roslin;
+  kup piec brazowych okraglych nasion;
+  kup piec rozgowatych zoltozielonych galazek;
+  kup piec jasnozielonych nieowlosionych lodyg;
+  kup piec wonnych dzwonkowatych kwiatow;
+  kup piec sztywnych smuklych lodyg;
+  kup piec szarawaych pogietych klaczy;
+  kup piec wzniesionych ukwieconych lodyg;
+  kup piec wysokich zoltych kwiatow;
+  kup piec bialokwitnacych drobnych roslinek;
+} {1};
 
 #var zioladb[Rosiczka][ilosc] {0};
 #var zioladb[Deliona][ilosc] {0};
@@ -1479,8 +1566,8 @@ zamknij czwarty przytroczony woreczek;
 #var zioladb[Kasztanowiec][sposob][zm] {zjedz};
 #var zioladb[Przelot][sposob][zm] {sproszkuj};
 #var zioladb[Przelot_][sposob][o] {przezuj};
-#var zioladb[Bielun][sposob] {};
-#var zioladb[Deren][sposob] {};
+#var zioladb[Bielun][sposob][s] {powachaj};
+#var zioladb[Deren][sposob][s] {zjedz};
 #var zioladb[Komosa][sposob][s] {zjedz};
 #var zioladb[Komosa][sposob][zm] {przezuj};
 #var zioladb[Wrotycz][sposob] {};
@@ -1491,9 +1578,9 @@ zamknij czwarty przytroczony woreczek;
 #var zioladb[Kola][sposob][zm] {rozgryz};
 #var zioladb[Kola][sposob][gl] {rozgryz};
 #var zioladb[Przesl][sposob][wt] {przezuj};
-#var zioladb[Lulecznica][sposob] {};
+#var zioladb[Lulecznica][sposob][zm] {przezuj};
 #var zioladb[Konwalia][sposob] {};
-#var zioladb[Lak][sposob] {};
+#var zioladb[Lak][sposob][zm] {przezuj};
 #var zioladb[Rumianek][sposob][o] {powachaj};
 #var zioladb[Rumianek][sposob][gl] {zjedz};
 #var zioladb[Chaber][sposob][o] {zjedz};
@@ -1649,7 +1736,7 @@ zamknij czwarty przytroczony woreczek;
 #var zioladb[Janowiec][dzialanie] {};
 #var zioladb[Lubczyk][dzialanie] {};
 
-#var zioladb[Rosiczka][odmiana] {bialokwiatnaca drobna roslinke};
+#var zioladb[Rosiczka][odmiana] {bialokwitnaca drobna roslinke};
 #var zioladb[Deliona][odmiana] {zolty jasny kwiat};
 #var zioladb[NieznanyPCK][odmiana] {piekny czerwony kwiat};
 #var zioladb[Mieta][odmiana] {okraglawy aromatyczny lisc};
