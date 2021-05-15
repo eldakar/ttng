@@ -255,10 +255,18 @@
 #list worekD_zawartosc_ilosc {clear}
 #list worekD_zawartosc {clear}
 
+#var worekE_nazwa {brak}
+#var worekE_pojemnosc {0}
+#var worekE_razem {0}
+#list worekE_zawartosc_nazwa {clear}
+#list worekE_zawartosc_ilosc {clear}
+#list worekE_zawartosc {clear}
+
 #alias {_woreczeka_} {#var currentworek A;zajrzyj do pierwszego przytroczonego woreczka;}
 #alias {_woreczekb_} {zajrzyj do drugiego przytroczonego woreczka;}
 #alias {_woreczekc_} {zajrzyj do trzeciego przytroczonego woreczka;}
 #alias {_woreczekd_} {zajrzyj do czwartego przytroczonego woreczka;}
+#alias {_woreczeke_} {zajrzyj do piatego przytroczonego woreczka;}
 
 #alias {worki} {
   #var sortujemy {true};
@@ -496,6 +504,7 @@
   _woreczekb_;
   _woreczekc_;
   _woreczekd_;
+  _woreczeke_;
 }
 
 
@@ -704,6 +713,12 @@
     };
   };
   #elseif {"$currentworek" == "D"} {
+    #var currentworek {E};
+    #if {$ilosc_workow == 4} {
+        #var sortujemy {false};
+    };
+  };  
+  #elseif {"$currentworek" == "D"} {
       #var sortujemy {false};
   };
 };
@@ -714,6 +729,7 @@
     otworz drugi przytroczony woreczek;
     otworz trzeci przytroczony woreczek;
     otworz czwarty przytroczony woreczek;
+    otworz piaty przytroczony woreczek;
     opusc wszystkie bronie;
 
     #foreach {*zioladb[]} {ziolkonazwa} {
@@ -736,6 +752,10 @@
                 wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
 
+                wez $zioladb[$ziolkonazwa][odmiana] z piatego przytroczonego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z piatego przytroczonego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z piatego przytroczonego woreczka;
+
                 $zioladb[$ziolkonazwa][sposob][kn] $zioladb[$ziolkonazwa][odmiana];
                 $zioladb[$ziolkonazwa][sposob][kn] $zioladb[$ziolkonazwa][odmiana];
                 $zioladb[$ziolkonazwa][sposob][kn] $zioladb[$ziolkonazwa][odmiana];
@@ -744,6 +764,7 @@
                 wloz ziola do drugiego przytroczonego woreczka;
                 wloz ziola do trzeciego przytroczonego woreczka;
                 wloz ziola do czwartego przytroczonego woreczka;
+                wloz ziola do piatego przytroczonego woreczka;
             };
         };
     };
@@ -752,6 +773,7 @@
     zamknij drugi przytroczony woreczek;
     zamknij trzeci przytroczony woreczek;
     zamknij czwarty przytroczony woreczek;    
+    zamknij piaty przytroczony woreczek;     
     dobadz wszystkich broni;
 } {1};
 
@@ -760,6 +782,8 @@
     otworz drugi przytroczony woreczek;
     otworz trzeci przytroczony woreczek;
     otworz czwarty przytroczony woreczek;
+    otworz piaty przytroczony woreczek;
+
     opusc wszystkie bronie;
 
     #foreach {*zioladb[]} {ziolkonazwa} {
@@ -770,6 +794,7 @@
                 wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z piatego przytroczonego woreczka;
 
                 $zioladb[$ziolkonazwa][sposob][zm] $zioladb[$ziolkonazwa][odmiana];
                 $zioladb[$ziolkonazwa][sposob][zm] $zioladb[$ziolkonazwa][odmiana];
@@ -779,6 +804,7 @@
                 wloz ziola do drugiego przytroczonego woreczka;
                 wloz ziola do trzeciego przytroczonego woreczka;
                 wloz ziola do czwartego przytroczonego woreczka;
+                wloz ziola do piatego przytroczonego woreczka;
             };
         };
     };
@@ -787,6 +813,8 @@
     zamknij drugi przytroczony woreczek;
     zamknij trzeci przytroczony woreczek;
     zamknij czwarty przytroczony woreczek;    
+    zamknij piaty przytroczony woreczek;    
+    
     dobadz wszystkich broni;
 } {1};
 
@@ -816,21 +844,25 @@
                         otworz drugi przytroczony woreczek;
                         otworz trzeci przytroczony woreczek;
                         otworz czwarty przytroczony woreczek;
+                        otworz piaty przytroczony woreczek;
                         wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
                         wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
                         wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
                         wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z piatego przytroczonego woreczka;
                         opusc bron;
                         $zioladb[$ziolkonazwa][sposob][kn] $zioladb[$ziolkonazwa][odmiana];
                         dobadz broni;
-wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do piatego przytroczonego woreczka;
                         zamknij pierwszy przytroczony woreczek;
                         zamknij drugi przytroczony woreczek;
                         zamknij trzeci przytroczony woreczek;
                         zamknij czwarty przytroczony woreczek;
+                        zamknij piaty przytroczony woreczek;
                     };
                 };
                 #math {ziolka_licznik} {$ziolka_licznik + 1};
@@ -855,22 +887,67 @@ wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
                         otworz drugi przytroczony woreczek;
                         otworz trzeci przytroczony woreczek;
                         otworz czwarty przytroczony woreczek;
+                        otworz piaty przytroczony woreczek;
                         wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
                         wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
                         wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
                         wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z piatego przytroczonego woreczka;
                         opusc bron;
                         $zioladb[$ziolkonazwa][sposob][zm] $zioladb[$ziolkonazwa][odmiana];
                         dobadz broni;
-wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
-
+                        wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do piatego przytroczonego woreczka;
                         zamknij pierwszy przytroczony woreczek;
                         zamknij drugi przytroczony woreczek;
                         zamknij trzeci przytroczony woreczek;
                         zamknij czwarty przytroczony woreczek;
+                        zamknij piaty przytroczony woreczek;
+                    };
+                };
+                #math {ziolka_licznik} {$ziolka_licznik + 1};
+                #math {ziolka_prompt_index} {$ziolka_prompt_index + 1};
+            };
+        };
+    };
+
+    #foreach {*zioladb[]} {ziolkonazwa} {
+        #format {_ziolko_opis} {%-15s} {$ziolkonazwa};#format {_ziolko_opis} {%.10s} {$_ziolko_opis};
+        #format {_ziolko_ilos} {%+2s} {$zioladb[$ziolkonazwa][ilosc]};
+
+        #format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][zr]};
+        #if {$sposoblen > 1} {
+            #format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][zr]};
+            #if {$zioladb[$ziolkonazwa][ilosc] > 0} {
+                #var prompt_objects_herbs[$ziolka_prompt_index] {<118><G00><118><fca>z$ziolka_licznik <ccc>(<afa>$_ziolko_ilos<ccc>) $_ziolko_opis<088> - $ziolan[$ziolkonazwa]};
+                #line substitute {variables} {
+                    #alias z$ziolka_licznik {
+                        otworz pierwszy przytroczony woreczek;
+                        otworz drugi przytroczony woreczek;
+                        otworz trzeci przytroczony woreczek;
+                        otworz czwarty przytroczony woreczek;
+                        otworz piaty przytroczony woreczek;
+                        wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z piatego przytroczonego woreczka;
+                        opusc bron;
+                        $zioladb[$ziolkonazwa][sposob][zr] $zioladb[$ziolkonazwa][odmiana];
+                        dobadz broni;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do piatego przytroczonego woreczka;
+                        zamknij pierwszy przytroczony woreczek;
+                        zamknij drugi przytroczony woreczek;
+                        zamknij trzeci przytroczony woreczek;
+                        zamknij czwarty przytroczony woreczek;
+                        zamknij piaty przytroczony woreczek;
                     };
                 };
                 #math {ziolka_licznik} {$ziolka_licznik + 1};
@@ -894,22 +971,25 @@ wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
                         otworz drugi przytroczony woreczek;
                         otworz trzeci przytroczony woreczek;
                         otworz czwarty przytroczony woreczek;
+                        otworz piaty przytroczony woreczek;
                         wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
                         wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
                         wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
                         wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z piatego przytroczonego woreczka;
                         opusc bron;
                         $zioladb[$ziolkonazwa][sposob][wt] $zioladb[$ziolkonazwa][odmiana];
                         dobadz broni;
-wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
-
+                        wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do piatego przytroczonego woreczka;
                         zamknij pierwszy przytroczony woreczek;
                         zamknij drugi przytroczony woreczek;
                         zamknij trzeci przytroczony woreczek;
                         zamknij czwarty przytroczony woreczek;
+                        zamknij piaty przytroczony woreczek;
                     };
                 };
                 #math {ziolka_licznik} {$ziolka_licznik + 1};
@@ -932,26 +1012,29 @@ wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
                         otworz drugi przytroczony woreczek;
                         otworz trzeci przytroczony woreczek;
                         otworz czwarty przytroczony woreczek;
+                        otworz piaty przytroczony woreczek;
                         wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
                         wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
                         wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
                         wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z piatego przytroczonego woreczka;
                         opusc bron;
                         $zioladb[$ziolkonazwa][sposob][s] $zioladb[$ziolkonazwa][odmiana];
                         dobadz broni;
-wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
-
+                        wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do piatego przytroczonego woreczka;
                         zamknij pierwszy przytroczony woreczek;
                         zamknij drugi przytroczony woreczek;
                         zamknij trzeci przytroczony woreczek;
                         zamknij czwarty przytroczony woreczek;
+                        zamknij piaty przytroczony woreczek;
                     };
                 };
                 #math {ziolka_licznik} {$ziolka_licznik + 1};
-#math {ziolka_prompt_index} {$ziolka_prompt_index + 1};
+                #math {ziolka_prompt_index} {$ziolka_prompt_index + 1};
             };
         };
     };
@@ -963,29 +1046,32 @@ wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
 #if {$sposoblen > 1} {
 #format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][odw]};
 #if {$zioladb[$ziolkonazwa][ilosc] > 0} {
-#var prompt_objects_herbs[$ziolka_prompt_index] {<118><G00><118><aff>z$ziolka_licznik <ccc>(<afa>$_ziolko_ilos<ccc>) $_ziolko_opis<088> - $ziolan[$ziolkonazwa]};
+#var prompt_objects_herbs[$ziolka_prompt_index] {<118><G00><118><caf>z$ziolka_licznik <ccc>(<afa>$_ziolko_ilos<ccc>) $_ziolko_opis<088> - $ziolan[$ziolkonazwa]};
 #line substitute {variables} {
 #alias z$ziolka_licznik {
-otworz pierwszy przytroczony woreczek;
-otworz drugi przytroczony woreczek;
-otworz trzeci przytroczony woreczek;
-otworz czwarty przytroczony woreczek;
-wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
-wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
-wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
-wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
-opusc bron;
-$zioladb[$ziolkonazwa][sposob][odw] $zioladb[$ziolkonazwa][odmiana];
-dobadz broni;
-wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
-
-zamknij pierwszy przytroczony woreczek;
-zamknij drugi przytroczony woreczek;
-zamknij trzeci przytroczony woreczek;
-zamknij czwarty przytroczony woreczek;
+                        otworz pierwszy przytroczony woreczek;
+                        otworz drugi przytroczony woreczek;
+                        otworz trzeci przytroczony woreczek;
+                        otworz czwarty przytroczony woreczek;
+                        otworz piaty przytroczony woreczek;
+                        wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z piatego przytroczonego woreczka;
+                        opusc bron;
+                        $zioladb[$ziolkonazwa][sposob][odw] $zioladb[$ziolkonazwa][odmiana];
+                        dobadz broni;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do piatego przytroczonego woreczka;
+                        zamknij pierwszy przytroczony woreczek;
+                        zamknij drugi przytroczony woreczek;
+                        zamknij trzeci przytroczony woreczek;
+                        zamknij czwarty przytroczony woreczek;
+                        zamknij piaty przytroczony woreczek;
 };
 };
 #math {ziolka_licznik} {$ziolka_licznik + 1};
@@ -1005,26 +1091,29 @@ zamknij czwarty przytroczony woreczek;
 #var prompt_objects_herbs[$ziolka_prompt_index] {<118><G00><118><aaf>z$ziolka_licznik <ccc>(<afa>$_ziolko_ilos<ccc>) $_ziolko_opis<088> - $ziolan[$ziolkonazwa]};
 #line substitute {variables} {
 #alias z$ziolka_licznik {
-otworz pierwszy przytroczony woreczek;
-otworz drugi przytroczony woreczek;
-otworz trzeci przytroczony woreczek;
-otworz czwarty przytroczony woreczek;
-wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
-wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
-wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
-wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
-opusc bron;
-$zioladb[$ziolkonazwa][sposob][mn] $zioladb[$ziolkonazwa][odmiana];
-dobadz broni;
-wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
-
-zamknij pierwszy przytroczony woreczek;
-zamknij drugi przytroczony woreczek;
-zamknij trzeci przytroczony woreczek;
-zamknij czwarty przytroczony woreczek;
+                        otworz pierwszy przytroczony woreczek;
+                        otworz drugi przytroczony woreczek;
+                        otworz trzeci przytroczony woreczek;
+                        otworz czwarty przytroczony woreczek;
+                        otworz piaty przytroczony woreczek;
+                        wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z piatego przytroczonego woreczka;
+                        opusc bron;
+                        $zioladb[$ziolkonazwa][sposob][mn] $zioladb[$ziolkonazwa][odmiana];
+                        dobadz broni;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do piatego przytroczonego woreczka;
+                        zamknij pierwszy przytroczony woreczek;
+                        zamknij drugi przytroczony woreczek;
+                        zamknij trzeci przytroczony woreczek;
+                        zamknij czwarty przytroczony woreczek;
+                        zamknij piaty przytroczony woreczek;
 };
 };
 #math {ziolka_licznik} {$ziolka_licznik + 1};
@@ -1044,26 +1133,29 @@ zamknij czwarty przytroczony woreczek;
 #var prompt_objects_herbs[$ziolka_prompt_index] {<118><G00><118><ffa>z$ziolka_licznik <ccc>(<afa>$_ziolko_ilos<ccc>) $_ziolko_opis<088> - $ziolan[$ziolkonazwa]};
 #line substitute {variables} {
 #alias z$ziolka_licznik {
-otworz pierwszy przytroczony woreczek;
-otworz drugi przytroczony woreczek;
-otworz trzeci przytroczony woreczek;
-otworz czwarty przytroczony woreczek;
-wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
-wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
-wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
-wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
-opusc bron;
-$zioladb[$ziolkonazwa][sposob][gl] $zioladb[$ziolkonazwa][odmiana];
-dobadz broni;
-wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
-
-zamknij pierwszy przytroczony woreczek;
-zamknij drugi przytroczony woreczek;
-zamknij trzeci przytroczony woreczek;
-zamknij czwarty przytroczony woreczek;
+                        otworz pierwszy przytroczony woreczek;
+                        otworz drugi przytroczony woreczek;
+                        otworz trzeci przytroczony woreczek;
+                        otworz czwarty przytroczony woreczek;
+                        otworz piaty przytroczony woreczek;
+                        wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z piatego przytroczonego woreczka;
+                        opusc bron;
+                        $zioladb[$ziolkonazwa][sposob][gl] $zioladb[$ziolkonazwa][odmiana];
+                        dobadz broni;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do piatego przytroczonego woreczka;
+                        zamknij pierwszy przytroczony woreczek;
+                        zamknij drugi przytroczony woreczek;
+                        zamknij trzeci przytroczony woreczek;
+                        zamknij czwarty przytroczony woreczek;
+                        zamknij piaty przytroczony woreczek;
 };
 };
 #math {ziolka_licznik} {$ziolka_licznik + 1};
@@ -1084,26 +1176,29 @@ zamknij czwarty przytroczony woreczek;
 #var prompt_objects_herbs[$ziolka_prompt_index] {<118><G00><118><faa>z$ziolka_licznik <ccc>(<afa>$_ziolko_ilos<ccc>) $_ziolko_opis<088> - $ziolan[$ziolkonazwa]};
 #line substitute {variables} {
 #alias z$ziolka_licznik {
-otworz pierwszy przytroczony woreczek;
-otworz drugi przytroczony woreczek;
-otworz trzeci przytroczony woreczek;
-otworz czwarty przytroczony woreczek;
-wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
-wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
-wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
-wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
-opusc bron;
-$zioladb[$ziolkonazwa][sposob][o] $zioladb[$ziolkonazwa][odmiana];
-dobadz broni;
-wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
-wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
-
-zamknij pierwszy przytroczony woreczek;
-zamknij drugi przytroczony woreczek;
-zamknij trzeci przytroczony woreczek;
-zamknij czwarty przytroczony woreczek;
+                        otworz pierwszy przytroczony woreczek;
+                        otworz drugi przytroczony woreczek;
+                        otworz trzeci przytroczony woreczek;
+                        otworz czwarty przytroczony woreczek;
+                        otworz piaty przytroczony woreczek;
+                        wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
+                        wez $zioladb[$ziolkonazwa][odmiana] z piatego przytroczonego woreczka;
+                        opusc bron;
+                        $zioladb[$ziolkonazwa][sposob][o] $zioladb[$ziolkonazwa][odmiana];
+                        dobadz broni;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do pierwszego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do drugiego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do trzeciego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do czwartego przytroczonego woreczka;
+                        wloz $zioladb[$ziolkonazwa][odmiana] do piatego przytroczonego woreczka;
+                        zamknij pierwszy przytroczony woreczek;
+                        zamknij drugi przytroczony woreczek;
+                        zamknij trzeci przytroczony woreczek;
+                        zamknij czwarty przytroczony woreczek;
+                        zamknij piaty przytroczony woreczek;
 };
 };
 #math {ziolka_licznik} {$ziolka_licznik + 1};
@@ -1120,14 +1215,17 @@ zamknij czwarty przytroczony woreczek;
   otworz drugi przytroczony woreczek;
   otworz trzeci przytroczony woreczek;
   otworz czwarty przytroczony woreczek;
+  otworz piaty przytroczony woreczek;
   wez %0 z pierwszego przytroczonego woreczka;
   wez %0 z drugiego przytroczonego woreczka;
   wez %0 z trzeciego przytroczonego woreczka;
   wez %0 z czwartego przytroczonego woreczka;
+  wez %0 z piatego przytroczonego woreczka;
   zamknij pierwszy przytroczony woreczek;
   zamknij drugi przytroczony woreczek;
   zamknij trzeci przytroczony woreczek;
   zamknij czwarty przytroczony woreczek;
+  zamknij piaty przytroczony woreczek;
 }
 
 #alias {wlziola}
@@ -1344,6 +1442,7 @@ zamknij czwarty przytroczony woreczek;
 }
 
 #alias {/skup_ziola} {
+  wym;
   kup piec zoltych jasnych kwiatow;
   kup piec okraglawych aromatycznych lisci;
   kup piec rozetkowatych lancetowatych lisci;
@@ -1375,6 +1474,8 @@ zamknij czwarty przytroczony woreczek;
   kup piec wzniesionych ukwieconych lodyg;
   kup piec wysokich zoltych kwiatow;
   kup piec bialokwitnacych drobnych roslinek;
+  wlm;
+  wlziola;
 } {1};
 
 #var zioladb[Rosiczka][ilosc] {0};
@@ -1566,7 +1667,7 @@ zamknij czwarty przytroczony woreczek;
 #var zioladb[Kasztanowiec][sposob][zm] {zjedz};
 #var zioladb[Przelot][sposob][zm] {sproszkuj};
 #var zioladb[Przelot_][sposob][o] {przezuj};
-#var zioladb[Bielun][sposob][s] {powachaj};
+#var zioladb[Bielun][sposob][zr] {powachaj};
 #var zioladb[Deren][sposob][s] {zjedz};
 #var zioladb[Komosa][sposob][s] {zjedz};
 #var zioladb[Komosa][sposob][zm] {przezuj};
