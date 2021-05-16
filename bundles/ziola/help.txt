@@ -9,8 +9,6 @@ TUTOR 	z[numer]
 TUTOR 	wlziola
 		Komenda wklada ziola do przytroczonych woreczkow
 
-TUTOR 	dziur    - wez 1 dziurawiec
+TUTOR 	/lecz    - wez po 3 sztuki leczniczych ziol
+TUTOR 	/sap     - wez po sztuce ziol na zmeczenie, procz deliony 
 TUTOR 	delion   - wez 1 deliona	
-TUTOR 	mandra   - wez 1 mandragora
-TUTOR 	przelot  - wez 1 przelot
-TUTOR 	przelot3 - wez 33 przeloty	
