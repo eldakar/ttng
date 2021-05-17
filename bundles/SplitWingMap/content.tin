@@ -125,7 +125,7 @@
 
 #alias {SplitWingMap_Warning} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw red tubed box $offsety+9 $offsetx+3 $offsety+11 $offseth-3 <118>%0<088>;
+        #draw red tubed box $offsety+1 $offsetx+3 $offsety+3 $offseth-3 <118>%0<088>;
     };
 };
 
