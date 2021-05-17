@@ -3426,6 +3426,14 @@
     {
         {gildia} {NPC}
     }
+    {Elfkasc_} 
+    {
+        {gildia} {SC}
+    }
+    {Elfsc_} 
+    {
+        {gildia} {SC}
+    }
     {Elgradon_} 
     {
         {gildia} {KG}
@@ -13574,6 +13582,10 @@
     {
         {gildia} {NPC}
     }
+    {Zaria_} 
+    {
+        {gildia} {SC}
+    }
     {Zatras_} 
     {
         {gildia} {NPC}
@@ -13652,7 +13664,7 @@
     }
     {Zetu_} 
     {
-        {gildia} {KS}
+        {gildia} {SC}
     }
     {Zh_} 
     {
@@ -15160,7 +15172,7 @@
     }
     {brodaty_zlosliwy_krasnolud_} 
     {
-        {gildia} {KS}
+        {gildia} {SC}
         {imie} {Zetu}
     }
     {brudny_czerwononosy_gnom_} 
@@ -24823,6 +24835,11 @@
         {gildia} {SC}
         {imie} {KtosSC}
     }
+    {porywcza_zlotooka_elfka_} 
+    {
+        {gildia} {SC}
+        {imie} {Elfkasc}
+    }
     {porywczy_ciemnooki_elf_} 
     {
         {gildia} {SC}
@@ -29866,7 +29883,7 @@
     {wysoki_zielonooki_elf_} 
     {
         {gildia} {ES}
-        {imie} {Isill}
+        {imie} {Elfsc}
     }
     {wysoki_zielonooki_mezczyzna_} 
     {
