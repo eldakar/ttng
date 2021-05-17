@@ -206,3 +206,34 @@
     #line ignore {#sh {+---------------------------------------------------+}};
 
 } {1};
+
+#alias {/resetuj_kolory} {
+  kolor tekstu wylaczony;
+  kolor celu ataku 218;
+  kolor przeciwnika 218;
+  kolor wrogow 248;
+  kolor celu obrony 248;
+  kolor druzyny 189;
+  kolor znanych wylaczony;
+  kolor zoltodziobow 15;
+  kolor pozostalych 144;
+  kolor niskiego poziomu stanu 208;
+  kolor sredniego poziomu stanu 11;
+  kolor wysokiego poziomu stanu 156;
+  kolor mowy 123;
+  kolor szeptu 153;
+  kolor krzyku 123;
+  kolor emocji do mnie 225;
+  kolor krotkiego opisu dniem 229;
+  kolor krotkiego opisu noca 147;
+  kolor opis wyjsc z lokacji 49;
+  kolor opisow walki 239;
+  kolor braku otrzymanych obrazen 243;
+  kolor niskich otrzymanych obrazen 243;
+  kolor srednich otrzymanych obrazen 243;
+  kolor wysokich otrzymanych obrazen 139;
+  kolor braku zadanych obrazen 243;
+  kolor niskich zadanych obrazen 243;
+  kolor srednich zadanych obrazen 243;
+  kolor wysokich zadanych obrazen 243;
+} {1};
