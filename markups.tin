@@ -165,10 +165,7 @@
 		#line ignore #sh {<118>Buduje baze...};
 		#foreach {*m[]} {_m} {
 			#if {"$m[$_m][type]" == "mob"} {
-				#var trolldistance {0};
-				#map find {$_m};
-				#path get length trolldistance;
-				#var trolle[$_m] $trolldistance;
+				#var trolle[$_m] {0};
 			};
 		};
 		#list trolle size trollSize;
