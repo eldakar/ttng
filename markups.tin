@@ -153,4 +153,45 @@
 	#class markups write bundles/ConfigManager/Profiles/markups.tt;
 };
 
+
+#alias {/troll} {
+	#var _closestValue 10000;
+	#var _closestId 0;
+
+	#path end;
+	#list trolle size trollSize;
+	#line ignore #sh {<118>Trolli na liscie: <128>$trollSize<088>};
+	#if {$trollSize < 1} {
+		#line ignore #sh {<118>Buduje baze...};
+		#foreach {*m[]} {_m} {
+			#if {"$m[$_m][type]" == "mob"} {
+				#var trolldistance {0};
+				#map find {$_m};
+				#path get length trolldistance;
+				#var trolle[$_m] $trolldistance;
+			};
+		};
+		#list trolle size trollSize;
+		#line ignore #sh {<118>Trolli na liscie: <128>$trollSize<088>};
+		#line ignore #sh {<FAA><178>Kolejne wykonanie komendy uruchomi wyszukanie.<088>};
+	} {
+		#var _closestValue 10000;
+		#var _closestId 0;
+		#foreach {*trolle[]} {_t} {
+			#map find {$_t};
+			#path get length trolldistance;
+			#if {$trolldistance < $_closestValue} {
+				#var _closestId $_t;
+				#var _closestValue $trolldistance;
+			};
+		};
+		#if {$_closestId > 0} {
+			#line ignore #sh {<138>Najkrotszy dystans to <128> $_closestValue krokow <138> do pokoju <118> $_closestId<088>};
+			#map run {$_t} {0.5};
+			#nop map find {$_closestId};
+			#unvar trolle[$_closestId];
+		};
+	}
+} {1};
+
 /show

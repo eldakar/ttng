@@ -1,0 +1,168 @@
+#CLASS {markups} OPEN
+
+#VARIABLE {apka} {95}
+#VARIABLE {m}
+{
+    {4319} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustka}
+        {type} {mob}
+    }
+    {4414} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {wzgorze}
+        {type} {mob}
+    }
+    {4419} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {wzgorze}
+        {type} {mob}
+    }
+    {4563} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {4595} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {4605} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {4842} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {4959} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {4961} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {5222} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {rzeka}
+        {type} {mob}
+    }
+    {5233} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {rzeka}
+        {type} {mob}
+    }
+    {5296} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {5369} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5372} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5406} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {6109} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {21727} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustka}
+        {type} {mob}
+    }
+    {21750} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {rzeka}
+        {type} {mob}
+    }
+    {21766} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {21805} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {21814} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {21897} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+}
+#VARIABLE {markupsymbols}
+{
+    {ext} {<138> @ <088>}
+    {mob} {<FFA><aaa>MOB<088>}
+    {rot} {<faa>;~;<088>}
+}
+
+#CLASS {markups} CLOSE
