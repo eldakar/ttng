@@ -187,7 +187,7 @@
 		};
 		#if {$_closestId > 0} {
 			#line ignore #sh {<138>Najkrotszy dystans to <128> $_closestValue krokow <138> do pokoju <118> $_closestId<088>};
-			#map run {$_t} {0.5};
+			#map run {$_closestId} {0.5};
 			#nop map find {$_closestId};
 			#unvar trolle[$_closestId];
 		};
