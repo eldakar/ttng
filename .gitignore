@@ -1,4 +1,9 @@
-bundles/ConfigManager/Profiles/*
+bundles/ConfigManager/Profiles/Logs*
+bundles/ConfigManager/Profiles/aliasy.tt
+bundles/ConfigManager/Profiles/*-macros
+bundles/ConfigManager/Profiles/follow-errors
+bundles/ConfigManager/Profiles/pvp.data
+
 addons/stansprzetu/sprzet.class
 stats-*
 experimental/*

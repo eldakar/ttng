@@ -24,6 +24,13 @@
         {terrain} {wzgorze}
         {type} {mob}
     }
+    {4448} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {rzeka}
+        {type} {mob}
+    }
     {4563} 
     {
         {rendered} {1}
@@ -52,6 +59,20 @@
         {terrain} {}
         {type} {mob}
     }
+    {4852} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {4938} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {mur}
+        {type} {mob}
+    }
     {4959} 
     {
         {rendered} {1}
@@ -64,6 +85,48 @@
         {rendered} {1}
         {symbol} { O }
         {terrain} {pustynia}
+        {type} {mob}
+    }
+    {4992} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5033} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5089} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5107} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5147} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5149} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
         {type} {mob}
     }
     {5222} 
@@ -85,6 +148,13 @@
         {rendered} {1}
         {symbol} { O }
         {terrain} {pustynia}
+        {type} {mob}
+    }
+    {5366} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
         {type} {mob}
     }
     {5369} 
@@ -129,6 +199,13 @@
         {terrain} {rzeka}
         {type} {mob}
     }
+    {21764} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
     {21766} 
     {
         {rendered} {1}
@@ -148,6 +225,20 @@
         {rendered} {1}
         {symbol} { O }
         {terrain} {}
+        {type} {mob}
+    }
+    {21823} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {21827} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
         {type} {mob}
     }
     {21897} 

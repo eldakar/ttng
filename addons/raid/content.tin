@@ -217,20 +217,20 @@
             			};
                     };
                 };
-        };
+            };
             
-	    #var duch[$dudu][rownr] {$localcnt};
-            #var rowmap[$rcnt] {$dudu};
-            #math {localcnt} {$localcnt + 1};
+    	    #var duch[$dudu][rownr] {$localcnt};
+                #var rowmap[$rcnt] {$dudu};
+                #math {localcnt} {$localcnt + 1};
 
-	    };
+    	    };
 
 	
-	    #if {"$duch[$dudu][enemy]" == "true"} {
-	        #math wrogi_index {$wrogi_index + 1};
-		#list wrogi {insert} {$wrogi_index} {$dudu};
+	        #if {"$duch[$dudu][enemy]" == "true"} {
+	           #math wrogi_index {$wrogi_index + 1};
+		       #list wrogi {insert} {$wrogi_index} {$dudu};
             };
-	    #if {"$duch[$dudu][team]" == "false"} {
+	        #if {"$duch[$dudu][team]" == "false"} {
                 #if {"$duch[$dudu][enemy]" == "false"} {
                 	#math neut_index {$neut_index + 1};
                 	#list neut {insert} {$neut_index} {$dudu};
@@ -241,7 +241,7 @@
                 #list team {insert} {$team_index} {$dudu};
             };
 
-};
+        };
 
 
     }; #nop foreach duch;
