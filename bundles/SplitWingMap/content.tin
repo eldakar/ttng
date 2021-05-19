@@ -23,7 +23,7 @@
         #event {VARIABLE UPDATED objectnumsRefreshed} {RaidBar_refresh};    #nop RAIDTABLE HOOK;
     };
     SplitWingMap_Offset;
-    RaidBar_refresh;
+ #nop    RaidBar_refresh;
     #nop Dependency: SplitRefresh;
     SplitRefreshRequestRefresh;
 };
