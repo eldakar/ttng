@@ -1,3 +1,5 @@
+#var raidbartable {};
+
 #alias SplitWingMap_Offset {
     #math offsety 1;
     #screen get cols screencols;
@@ -5,6 +7,9 @@
     #math offsetx {$screencols - $global_bundle_slots_values[prompt][right] + 2};
     #math offseth {$screencols};
     #math offsetw {$praidsize};
+    #math raidoffsety {$global_bundle_slots_values[prompt][top] + $praidsize + 1};
+    #math raidoffsetw {$screenrows - $global_bundle_slots_values[prompt][bottom]-1};
+    #math raidoffsetx {$screencols - $global_bundle_slots_values[prompt][right] + 1};    
     #map offset $offsety $offsetx $offsetw $offseth;
 };
 
@@ -34,11 +39,9 @@
 }
 
 #alias {RaidBar_refresh} {
-    #math raidoffsety {$global_bundle_slots_values[prompt][top] + $praidsize + 1};
-    #math raidoffsetw {$screenrows - $global_bundle_slots_values[prompt][bottom]-1};
-    #draw <g06> box $raidoffsety $offsetx $raidoffsetw $offseth <088>$raidbartable; #nop ORG;
-    #nop draw blanked box 1 $offsetx $praidsize $offseth <088>$raidbartable;   #nop ALFA;
-    #nop draw blanked box 1 $offsetx $expectedlines+2 $offseth <088>$raidbartable;   #nop BETA;
+    #if {$praidsize > 0 && "$raidbartable" != ""} {
+        #draw jeweled box $raidoffsety $raidoffsetx $raidoffsetw $screencols <088>$raidbartable; #nop ORG;
+    };
 }
 
 #alias {SplitWingMap_refresh} {
