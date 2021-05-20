@@ -5428,7 +5428,7 @@
     }
     {Haes_} 
     {
-        {gildia} {KS}
+        {gildia} {SC}
     }
     {Hafas_} 
     {
@@ -18231,6 +18231,11 @@
         {gildia} {GP}
         {imie} {Eyra}
     }
+    {harda_ciemnooka_elfka_} 
+    {
+        {gildia} {SC}
+        {imie} {Elfkasc}
+    }
     {harda_piersiasta_kobieta_} 
     {
         {gildia} {GP}
@@ -21635,7 +21640,7 @@
     }
     {mlody_wylenialy_ogr_} 
     {
-        {gildia} {KS}
+        {gildia} {SC}
         {imie} {Haes}
     }
     {mlody_zamyslony_mezczyzna_} 

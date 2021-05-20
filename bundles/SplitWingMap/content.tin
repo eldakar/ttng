@@ -1,10 +1,15 @@
+#var raidbartable {};
+
 #alias SplitWingMap_Offset {
-    #math offsety {$global_bundle_slots_values[prompt][top] + $praidsize + 1};
+    #math offsety 1;
     #screen get cols screencols;
     #screen get rows screenrows;
     #math offsetx {$screencols - $global_bundle_slots_values[prompt][right] + 2};
     #math offseth {$screencols};
-    #math offsetw {$screenrows - $global_bundle_slots_values[prompt][bottom]-1};
+    #math offsetw {$praidsize};
+    #math raidoffsety {$global_bundle_slots_values[prompt][top] + $praidsize + 1};
+    #math raidoffsetw {$screenrows - $global_bundle_slots_values[prompt][bottom]-1};
+    #math raidoffsetx {$screencols - $global_bundle_slots_values[prompt][right] + 1};    
     #map offset $offsety $offsetx $offsetw $offseth;
 };
 
@@ -18,25 +23,25 @@
         #event {VARIABLE UPDATED objectnumsRefreshed} {RaidBar_refresh};    #nop RAIDTABLE HOOK;
     };
     SplitWingMap_Offset;
-    RaidBar_refresh;
+ #nop    RaidBar_refresh;
     #nop Dependency: SplitRefresh;
     SplitRefreshRequestRefresh;
 };
 
 #alias {RaidSize} {
     #if {$ConfigManager_Configs[RaidSize] > 0} {
-        #var praidsize $ConfigManager_Configs[RaidSize];
+        #var praidsize {$screenrows - $global_bundle_slots_values[prompt][bottom] - $ConfigManager_Configs[RaidSize]};
     } {
-        #var praidsize 5;
+        #math praidsize {$screenrows - $global_bundle_slots_values[prompt][bottom] - 5};
     };
     SplitWingMap_Offset;
     RaidBar_refresh;
 }
 
 #alias {RaidBar_refresh} {
-    #draw circled box 1 $offsetx-1 $praidsize $offseth <088>$raidbartable; #nop ORG;
-    #nop draw blanked box 1 $offsetx $praidsize $offseth <088>$raidbartable;   #nop ALFA;
-    #nop draw blanked box 1 $offsetx $expectedlines+2 $offseth <088>$raidbartable;   #nop BETA;
+    #if {$praidsize > 0 && "$raidbartable" != ""} {
+        #draw jeweled box $raidoffsety $raidoffsetx $raidoffsetw $screencols <088>$raidbartable; #nop ORG;
+    };
 }
 
 #alias {SplitWingMap_refresh} {
@@ -250,7 +255,7 @@
 }
 
 
-#alias raidmap_roza {
+#nop alias raidmap_roza {
     #if {"$rozk2[nw]" != " "} {#var blockcolor[nw] <ABA>;} {#var blockcolor[nw] <G03>;};
     #if {"$rozk2[ne]" == "/"} {#var blockcolor[ne] <ABA>;} {#var blockcolor[ne] <G03>;};
     #if {"$rozk2[n]" == "|"} {#var blockcolor[n] <ABA>;} {#var blockcolor[n] <G03>;};

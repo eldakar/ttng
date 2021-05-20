@@ -11,6 +11,7 @@
 	#if {"%1" == "potezny"} {#return 30};
 	#if {"%1" == "mocarny"} {#return 35};	
 	#if {"%1" == "epicko silny"} {#return 40};
+	#if {"%1" == "nadludzki"} {#return 45};
 	#if {"%1" == "slabiutka"} {#return 0};
 	#if {"%1" == "watla"} {#return 5};
 	#if {"%1" == "slaba"} {#return 10};
@@ -33,6 +34,7 @@
 	#if {"%1" == "gibki"} {#return 30};
 	#if {"%1" == "akrobatyczny"} {#return 35};	
 	#if {"%1" == "epicko zreczny"} {#return 40};
+	#if {"%1" == "nadludzki"} {#return 45};
 	#if {"%1" == "epicko zreczna"} {#return 40};
 	#if {"%1" == "nieskoordynowana"} {#return 0};
 	#if {"%1" == "niezreczna"} {#return 5};
@@ -55,7 +57,8 @@
 	#if {"%1" == "epicko wytrzymala"} {#return 40};
 	#if {"%1" == "twardy"} {#return 25};
 	#if {"%1" == "muskularny"} {#return 30};
-	#if {"%1" == "atletyczny"} {#return 35};	
+	#if {"%1" == "atletyczny"} {#return 35};
+	#if {"%1" == "nadludzki"} {#return 45};	
 	#if {"%1" == "cherlawa"} {#return 0};
 	#if {"%1" == "rachityczna"} {#return 5};
 	#if {"%1" == "mizerna"} {#return 10};
@@ -210,6 +213,13 @@
 		#format {line} {| %-15s | %+18s |%-2s| %+13s |%-1s|} {Zrecznosc} {&2} {$p_dex} {$reverse_brakuje[$p_dex_left]} {$ustawionecechy[dex]}; #echo $line;
 		#var drawvar $drawvar {<fff>Zrecznosc;{&2};$p_dex;{$reverse_brakuje[$p_dex_left]};$ustawionecechy[dex]};
 	};
+	#regex {$tmpOcena} {Twoja zrecznosc osiagnela nadludzki poziom} {
+		#var p_dex @poziomzrecznosci{nadludzka};
+		#var p_dex_left @brakuje{bardzo duzo};
+		#format {line} {| %-15s | %+18s |%-2s| %+13s |%-1s|} {Zrecznosc} {&2} {$p_dex} {$reverse_brakuje[$p_dex_left]} {$ustawionecechy[dex]}; #echo $line;
+		#var drawvar $drawvar {<fff>Zrecznosc;nadludzka;$p_dex;$reverse_brakuje[$p_dex_left];$ustawionecechy[dex]};
+	};
+
 	#regex {$tmpOcena} {zrecznosc%*Jestes %* i %* ci brakuje, zebys mogl wyzej ocenic swa wytrzymalosc} {
 		#var p_sta @poziomwytrzymalosci{&2};
 		#var p_sta_left @brakuje{&3};

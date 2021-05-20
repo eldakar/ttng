@@ -1338,7 +1338,7 @@
 #var zioladb[Dziurawiec][odmiana] {czterokanciasta rozgaleziona lodyge};
 #var zioladb[Naparstnica][odmiana] {srebrzystoszary owlosiony lisc};
 #var zioladb[Nostrzyk][odmiana] {smukla zielona lodyge};
-#var zioladb[Bylica_Pospolita[odmiana] {kanciasta rozgaleziona lodyge};
+#var zioladb[Bylica_Pospolita][odmiana] {kanciasta rozgaleziona lodyge};
 #var zioladb[Kasztanowiec][odmiana] {kosmatoowlosiony kwiatostan};
 #var zioladb[Przelot][odmiana] {kremowy owlosiony kwiat};
 #var zioladb[Przelot_][odmiana] {kremowy owlosiony ususzony kwiat};
