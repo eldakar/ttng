@@ -53,6 +53,7 @@
 #action {Wchodzisz do rzeki i przez chwile zmagasz sie z jej nurtem. Widzac jednak,} {undo};
 #action {Chyba za kiepsko plywasz, by nawet probowac.} {undo};
 #action {Musisz najpierw oplacic walke na arenie.} {undo};
+#action {Drabina w tej chwili jest zajmowana przez kogos innego} {undo};
 #action {Musisz ustawic sie w kolejce i poczekac na audiencje.} {undo};
 #action {Nie jestes pewny swojej umiejetnosci plywania w tej brudnej rzece...} {undo};
 #action {mowi do ciebie: Nikt z bronia nie wejdzie na teren Uniwersytetu.} {undo};
