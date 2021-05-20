@@ -76,14 +76,11 @@
 			#sh $outputtext;
 			#delay {wwalce} {
 				#sh {<afa>Odsapnales po walce.<088>};
-				#nop unvar collector;
-				collector_offload;
 				#if {"pplaszcz" == "wlaczony"} {
-					qb otul sie plaszczem
+					qb otul sie plaszczem;
 				};
+				collector_offload;
 			} {34};
-			#nop /a rot;
-			#nop line sub variables {#delay {$voom} {#map at {$voom} {/d};} {600};};
 		};	
 		#case {"room.contents.object"} {
 			#var outputtext {$GMCPMSGS[text]};

@@ -66,6 +66,7 @@
   #line sub variables {
     #alias _quickbind_ {
       %0;
+      SplitWingMap_Offset;
     }
   };
   #format {show_bind_} {%h} { %0 };

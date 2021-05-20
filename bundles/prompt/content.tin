@@ -29,6 +29,14 @@
 	BottomBar_Selected;
 };
 
+#alias {probymanewrow} {
+	#if {"$ConfigManager_Configs[probymanewrow]" == "niewidoczne"} {
+		#var pprobymanewrow 0;
+	} {
+		#var pprobymanewrow 1;
+	};	
+}
+
 #alias {pasek} {
 	#if {"$ConfigManager_Configs[pasek]" == ""} {
 		/conf pasek medium
@@ -174,7 +182,7 @@
 	#line gag;
 };
 #action {Probujesz zaslonic %* przed ciosami %*, jednak nie jestes w stanie tego uczynic.} {
-	#line ignore #sh {<bad>[NIE ZASLANIASZ] %0<088>};
+		#line ignore #sh {<bad>[NIE ZASLANIASZ] %0<088>};
 	manewr_start;
 	#line gag;
 };
@@ -192,7 +200,9 @@
 };
 
 #action {%* probuje zaslonic %* przed ciosami %*, jednak nie jest w stanie tego uczynic.} {
-	#line ignore #sh {<bad>[NIE ZASLANIA] %0<088>};
+	#if {$pprobymanewrow == 1} {	
+		#line ignore #sh {<bad>[NIE ZASLANIA] %0<088>};
+	};
 	#line gag;
 } {1};
 
@@ -257,7 +267,9 @@
 
 
 #action {%* rzuca sie na %* bezskutecznie %*} {
-	#line ignore #sh {<bad>[NIE PRZELAMAL] %0<088>};
+	#if {$pprobymanewrow == 1} {	
+		#line ignore #sh {<bad>[NIE PRZELAMAL] %0<088>};
+	};
 	#line gag;
 };
 

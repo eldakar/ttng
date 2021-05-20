@@ -141,6 +141,6 @@
 	#high {%w %w worecz%w} {<068>} {8};
 	#high {%w %w lamp%w} {<038>} {8};
 	#high {nieduz%w fiolk%w} {<faa>};
-	#high {%w %w plaszcz%w} {<g07>} {8}
+	#unhigh {%w %w plaszcz%w} {<g07>} {8}
 	#high {%w %w lewak%w} {<038>};
 	#high {%w %w kolczug%w} {<028>};

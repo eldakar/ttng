@@ -53,6 +53,9 @@
 #alias {startowa} {
     #map goto $ConfigManager_Configs[startowa];
 };
+#nop event {SESSION DISCONNECTED} {
+
+};
 
 #var ptrybchodzenia 0;
 #alias {_trybchodzenia_} {

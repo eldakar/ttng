@@ -65,6 +65,7 @@
 #sub {szar%w wygodn%w par%w but%w} {<118><caf>%0 <088>(<fca>bez sladow<088>)};
 #sub {srebrnozlot%w pask%w pancerz%w} {<118><caf>%0 <088>(<fca>+dex<088> <fca>unk<088>)};
 #sub {lsniac%w krysztalow%w wisior%w} {<118><caf>%0 <088>(<ffa>swiatlo<088>)};
+#sub {zielon%w luskowat%w plasz%w} {<118><caf>%0 <088>(<fca>unk<088>)};
 
 #sub {mistern%w spizow%w pawez%w} {<118><caf>%0 <088>(<fca> ? <088>)};
 #sub {upiorn%w ciemn%w wloczni%w} {<118><caf>%0 <088>(<fca> ? <088>)};
@@ -124,4 +125,4 @@
 #sub {zdobion%w jasniejac%w mlot%w bojow%w} {<118><caf>%0<088>};
 #sub {zdobion%w dlugi%w lewak%w} {<118><caf>%0<088>};
 #sub {zdobion%w jasniejac%w mlot%w bojow%w} {<118><caf>%0<088>};
-#sub {zielon%w luskowat%w plasz%w} {<118><caf>%0<088>};
+
