@@ -6,6 +6,7 @@
 	#nop sub {Na plecach} {<cfc>NA PLECACH<088>};
 	#nop high {Ponad {jego|jej} %*.} {$c_ponad};
 #nop SPRZET DOBREJ JAKOSCI;
+	#sub {. .} {};
 
 		#sub {zlowr%w stalow%w drann%w} {<028>%0 <088>( <038>Obstawa Wiedzm<088> )}; 
 		#sub {wask%w szkarlat%w miecz%w} {<028>%0 <088>( <038>Wiedzmy Druchii<088> )}; 
@@ -142,5 +143,5 @@
 	#high {%w %w lamp%w} {<038>} {8};
 	#high {nieduz%w fiolk%w} {<faa>};
 	#unhigh {%w %w plaszcz%w} {<g07>} {8}
-	#high {%w %w lewak%w} {<038>};
+	#unhigh {%w %w lewak%w} {<038>};
 	#high {%w %w kolczug%w} {<028>};

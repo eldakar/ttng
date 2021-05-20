@@ -52,7 +52,13 @@
 };
 #alias {startowa} {
     #map goto $ConfigManager_Configs[startowa];
+    #var MAPPER_SYNC 1;
 };
+
+#action {^Opuszczasz realny swiat.$} {
+    /conf startowa {};
+} {1};
+
 #event {SESSION DISCONNECTED} {
     /conf startowa $voom;
 };
