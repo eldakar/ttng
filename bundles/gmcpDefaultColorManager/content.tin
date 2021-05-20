@@ -1,9 +1,9 @@
 #alias {kolorgildii} {
     #var pkolorgildii $ConfigManager_Configs[kolorgildii];
     #if {"$pkolorgildii" == ""} {
-    	#var pcolorgildii {caf};
+    	#var pkolorgildii {caf};
     };
-    #var c_char_h_mode[g] {<$pcolorgildii>};
+    #line sub variables {#var c_char_h_mode[g] {<$pkolorgildii>}};
 };
 
 #nop event {IAC SB GMCP char.colors IAC SE} {

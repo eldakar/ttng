@@ -53,8 +53,8 @@
 #alias {startowa} {
     #map goto $ConfigManager_Configs[startowa];
 };
-#nop event {SESSION DISCONNECTED} {
-
+#event {SESSION DISCONNECTED} {
+    /conf startowa $voom;
 };
 
 #var ptrybchodzenia 0;
