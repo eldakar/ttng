@@ -1,5 +1,5 @@
 #nop NA SOBIE;
-	#nop sub {Trzymasz} {<faa>TRZYMASZ<088>};
+	#sub {Trzymasz %*.} {Trzymasz <cca>%1<088>.};
 	#nop sub {Trzyma } {<faa>TRZYMA <088>};
 	#nop sub {Masz na sobie} {<118><fca>MASZ NA SOBIE<088>};
 	#nop sub {Ma na sobie} {<118><fca>MA NA SOBIE<088>};
@@ -8,9 +8,9 @@
 #nop SPRZET DOBREJ JAKOSCI;
 	#sub {. .} {};
 
-		#sub {zlowr%w stalow%w drann%w} {<028>%0 <088>( <038>Obstawa Wiedzm<088> )}; 
-		#sub {wask%w szkarlat%w miecz%w} {<028>%0 <088>( <038>Wiedzmy Druchii<088> )}; 
-		#sub {posep%w miecz%w katowsk%w} {<028>%0 <088>( <038>Wyspa Druchii<088> )}; 
+	#sub {zlowr%w stalow%w drann%w} {<028>%0 <088>( <038>Obstawa Wiedzm<088> )}; 
+	#sub {wask%w szkarlat%w miecz%w} {<028>%0 <088>( <038>Wiedzmy Druchii<088> )}; 
+	#sub {posep%w miecz%w katowsk%w} {<028>%0 <088>( <038>Wyspa Druchii<088> )}; 
 
 #nop SREBRNE;
 	#high {masywn%w posrebrzan%w flamberg%w} {<178>};
