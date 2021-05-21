@@ -37,6 +37,7 @@
 #sub {koscian%w kilof%w} {<118><caf>%0<088>};
 #sub {kruczoczarn%w dlugi%w plasz%w} {<118><caf>%0<088>};
 #sub {krysztalow%w dwureczn%w korba%w} {<118><caf>%0<088>};
+#sub {krysztalow%w swietli%w korba%w} {<118><caf>%0<088>};
 #sub {kunsztown%w lekki%w pancerz} {<118><caf>%0<088>};
 #sub {kunsztown%w mithrylow%w topor%w bojow%w} {<118><caf>%0<088>};
 #sub {czarn%w zdobion%w helm%w} {<118><caf>%0<088>};
@@ -65,9 +66,13 @@
 #sub {szar%w wygodn%w par%w but%w} {<118><caf>%0 <088>(<fca>bez sladow<088>)};
 #sub {srebrnozlot%w pask%w pancerz%w} {<118><caf>%0 <088>(<fca>+dex<088> <fca>unk<088>)};
 #sub {lsniac%w krysztalow%w wisior%w} {<118><caf>%0 <088>(<ffa>swiatlo<088>)};
-#sub {zielon%w luskowat%w plasz%w} {<118><caf>%0 <088>(<fca>unk<088>)};
+#sub {zielon%w luskowat%w plasz%w} {<118><caf>%0 <088>(<fca>+unk<088>)};
+#sub {owadzio%w braz%w he%w} {<118><caf>%0 <088>(<fca>+spost<088>)};
+#sub {blekitno-srebr%w trojkat%w tarc%w} {<118><caf>%0 <088>(<018>oslepia<088>)};
 
-#sub {mistern%w spizow%w pawez%w} {<118><caf>%0 <088>(<fca> ? <088>)};
+#sub {ciernist%w kobaltow%w halabar%w} {<118><caf>%0<088>}; 
+
+#sub {mistern%w spizow%w pawez%w} {<118><caf>%0 <088>(<fca> szyk <088>)};
 #sub {upiorn%w ciemn%w wloczni%w} {<118><caf>%0 <088>(<fca> ? <088>)};
 #sub {staro%w koscian%w berl%w} {<118><caf>%0 <088>(<fca> ? <088>)};
 

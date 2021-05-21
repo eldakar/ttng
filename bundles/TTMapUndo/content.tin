@@ -43,6 +43,7 @@
 #action {Kierujesz sie w strone krzakow porastajacych zachodnia czesc kotliny, lecz bezradnie zatrzymujesz sie przed zwarta sciana kolcow i galezi. Nie znajdujesz sposobu, jak wejsc w chaszcze.} {undo} {1};
 #action {Probujesz wdrapac sie na omszaly pien zagradzajacy droge, lecz na sliskiej korze osuwa ci sie noga i spadasz z powrotem na sciezke.} {undo};
 #action {%* stoi ci na drodze.} {undo};
+#action {Ogromne stwory przysiadaja przed brama, blokujac do niej dostepu.} {undo};
 #action {Chcesz wpasc do rozpadliny? Taka decyzje musisz potwierdzic.} {undo};
 #action {Ruszasz razno na %1, lecz po kilku krokach grzezniesz w krzakach.} {undo};
 #action {Zbyt szybko probujesz ruszyc dalej, momentalnie tracac rownowage na waskim przejsciu} {undo};
