@@ -12,7 +12,8 @@
 #var bundle_content {1};
 
 #nop IS CONFIG PRSENT;
-#var bundle_config {0};
+#list bundle_configs clear;
+	#list bundle_configs add {kolorgildii};
 
 #nop IS HELP PRESENT;
 #var bundle_help {0};

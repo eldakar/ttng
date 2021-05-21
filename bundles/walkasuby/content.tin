@@ -7,6 +7,46 @@
 
 #alias {walkapvp} {
    #var pwalkapvp $ConfigManager_Configs[walkapvp];
+
+   #if {"$pwalkapvp" == "wlaczona"} {
+      #alias walka_show_hit {
+         #switch {"$typeSent"} {
+            #case {"dod"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] <088>$collector[$senderID][short] <bcf>chybia <088>$collector[$receiverID][short]}}}};
+            #case {"mis"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] <088>$collector[$senderID][short] <bcf>chybia <088>$collector[$receiverID][short]}}}};
+            #case {"par"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] <088>$collector[$senderID][short] <bcf>chybia <088>$collector[$receiverID][short]}}}};
+
+            #case {"hit"} {#if {$gaglevel < 2} {#line ignore {#showme {${hitcolor}[$valueSent/6] <088>$collector[$senderID][short] ${hitcolor}trafia <088>$collector[$receiverID][short]}}}};
+            #case {"magic"} {#if {$gaglevel < 2} {#line ignore {#showme {<138>[$typeSent $valueSent/6] <088>$collector[$senderID][short] <138>trafia <088>$collector[$receiverID][short]}}}};
+
+            #default {#line ignore {#showme {${hitcolor}[$typeSent $valueSent/6] <088>$collector[$senderID][short] ${hitcolor}trafia <088>$collector[$receiverID][short]}}};
+         };  
+      };
+   };
+
+   #elseif {"$pwalkapvp" == "zawijana"} {
+      #alias walka_show_hit {
+         #switch {"$typeSent"} {
+            #case {"dod"} {#if {$gaglevel < 1} {#line ignore {#echo {%.${offsetx}s} {<bcf>[$typeSent] $outputtext}};};};
+            #case {"mis"} {#if {$gaglevel < 1} {#line ignore {#echo {%.${offsetx}s} {<bcf>[$typeSent] $outputtext}};};};
+            #case {"par"} {#if {$gaglevel < 1} {#line ignore {#echo {%.${offsetx}s} {<bcf>[$typeSent] $outputtext}};};};
+            #case {"hit"} {#if {$gaglevel < 2} {#line ignore {#echo {%.${offsetx}s} {${hitcolor}[$valueSent/6]<088> $outputtext}};};};
+            #case {"magic"} {#if {$gaglevel < 2} {#line ignore {#echo {%.${offsetx}s} {<138>[$typeSent $valueSent/6]<088> $outputtext}};};};
+            #default {#line ignore {#echo {%.${offsetx}s} {<cfa>[$typeSent $valueSent/6]<088> $outputtext}};};
+         };
+      };
+   };   
+   #else {
+      #alias walka_show_hit {
+         #switch {"$typeSent"} {
+            #case {"dod"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] $outputtext}};};};
+            #case {"mis"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] $outputtext}};};};
+            #case {"par"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] $outputtext}};};};
+            #case {"hit"} {#if {$gaglevel < 2} {#line ignore {#showme {${hitcolor}[$valueSent/6]<088> $outputtext}};};};
+            #case {"magic"} {#if {$gaglevel < 2} {#line ignore {#showme {<138>[$typeSent $valueSent/6]<088> $outputtext}};};};
+            #default {#line ignore {#showme {<cfa>[$typeSent $valueSent/6]<088> $outputtext}};};
+         };
+      };
+   };
 };
 
 #alias {/walka} {
@@ -171,27 +211,7 @@
    #replace {outputtext} {lekko rani cie} {<fca>lekko rani cie<088>};
    #replace {outputtext} {rani cie} {<fca>rani cie<088>};
 
-   #if {"$pwalkapvp" == "wlaczona"} {
-      #switch {"$typeSent"} {
-         #case {"dod"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] <088>$collector[$senderID][short] <bcf>chybia <088>$collector[$receiverID][short]}}}};
-         #case {"mis"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] <088>$collector[$senderID][short] <bcf>chybia <088>$collector[$receiverID][short]}}}};
-         #case {"par"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] <088>$collector[$senderID][short] <bcf>chybia <088>$collector[$receiverID][short]}}}};
-
-         #case {"hit"} {#if {$gaglevel < 2} {#line ignore {#showme {${hitcolor}[$valueSent/6] <088>$collector[$senderID][short] ${hitcolor}trafia <088>$collector[$receiverID][short]}}}};
-         #case {"magic"} {#if {$gaglevel < 2} {#line ignore {#showme {<138>[$typeSent $valueSent/6] <088>$collector[$senderID][short] <138>trafia <088>$collector[$receiverID][short]}}}};
-
-         #default {#line ignore {#showme {${hitcolor}[$typeSent $valueSent/6] <088>$collector[$senderID][short] ${hitcolor}trafia <088>$collector[$receiverID][short]}}};
-      };  
-   } {
-      #switch {"$typeSent"} {
-         #case {"dod"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] $outputtext}};};};
-         #case {"mis"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] $outputtext}};};};
-         #case {"par"} {#if {$gaglevel < 1} {#line ignore {#showme {<bcf>[$typeSent] $outputtext}};};};
-         #case {"hit"} {#if {$gaglevel < 2} {#line ignore {#showme {${hitcolor}[$valueSent/6]<088> $outputtext}};};};
-         #case {"magic"} {#if {$gaglevel < 2} {#line ignore {#showme {<138>[$typeSent $valueSent/6]<088> $outputtext}};};};
-         #default {#line ignore {#showme {<cfa>[$typeSent $valueSent/6]<088> $outputtext}};};
-      };
-   }
+   walka_show_hit;
 } {0};
 
 
@@ -248,3 +268,6 @@
    #class pvp write bundles/ConfigManager/Profiles/pvp.data;            
 
 }
+
+#alias showTEST {#sh $localvariable};
+#alias TEST {#local localvariable DUPA;showTEST};

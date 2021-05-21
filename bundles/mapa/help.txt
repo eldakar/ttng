@@ -12,6 +12,9 @@ TUTOR /conf trybmapy
 TUTOR /conf roza
        widoczna - wyswietla roze wiatrow w oknie glownym
        niewidoczna
+TUTOR /conf dziennamapie
+       wlaczony - kolor mapy zmienia sie zaleznie od dnia i nocy
+       wylaczony - mapa ma jeden kolor (jest tez szybsza)
 WARN Aliasy
 TUTOR       _trybchodzenia_ - ALIAS SYSTEMOWY - zmienia tryb chodzenia       
        normalne    (znak W na rozy wiatrow)

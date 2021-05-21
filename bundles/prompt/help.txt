@@ -1,13 +1,16 @@
 WARN Konfiguracje
-TUTOR 	/conf meldujprzy - bind na szeptanie stanu zmeczenia
-		0-10             - przyjmuje wartosci od 0 do 10
-TUTOR   /conf pasek      - wybor paska dolnego
-        medium           - originalny pasek
-        mini             - maly na 3 wiersze
-        micro            - maly na 1 wiersz
+TUTOR 	/conf meldujprzy     - bind na szeptanie stanu zmeczenia
+		0-10                 - przyjmuje wartosci od 0 do 10
+TUTOR	/conf probymanewrow  - wyswietlaj proby przelaman i zaslon
+		widoczne
+		niewidoczne
+TUTOR	/conf pasek          - wybor paska dolnego
+		medium               - originalny pasek
+		mini                 - maly na 3 wiersze
+		micro                - maly na 1 wiersz
 TUTOR 	/conf szerokoschpkow auto | integer
-        ustawia szerokosc paskow hp,itp w pasku medium
-        auto - ustawia sam wg szerokosci ekranu
+		ustawia szerokosc paskow hp,itp w pasku medium
+		auto - ustawia sam wg szerokosci ekranu
 
 WARN Aliasy
 TUTOR 	/zme             - melduje aktualny stan zmeczenia

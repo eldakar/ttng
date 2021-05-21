@@ -33,6 +33,34 @@
     #var proza $ConfigManager_Configs[roza];    
 }
 
+#alias {dziennamapie} {
+    #if {"$ConfigManager_Configs[dziennamapie]" == "wlaczony"} {
+        #alias mapa_room_time
+        {
+            #var roomtime {%0};
+            #foreach {*roomtime[]} {s} {
+                #list {ROOM_TIME} {find} {$s} {v}; 
+                #if {$v > 0} {
+                    #list {ROOM_TIME}{set}{$s}{$roomtime[$s]}
+                } {
+                    #var {ROOM_TIME[$s]} {$roomtime[$s]};
+                }
+            };
+            #if {"$ROOM_TIME[daylight]" == "true"} {
+                #map color symbols <cfc>;
+                #map color exits <bcb>;
+            } {
+                #map color symbols <ccf>;
+                #map color exits <bbc>;
+            };
+        };
+    } {
+        #alias mapa_room_time {#var roomtime {%0}};
+        #map color exits {<088>};
+        #map color symbols {<088>};
+    };
+}
+
 #alias {trybmapy} {
     #switch {"$ConfigManager_Configs[trybmapy]"} {
         #case {"unicode"} {#map flag unicodegraphics on;};
@@ -50,8 +78,24 @@
         }
     }
 };
+
+#action {Trwa ladowanie danych} {
+    #var pierwszelogowanie 1;
+};
+
 #alias {startowa} {
-    #map goto $ConfigManager_Configs[startowa];
+    #if {"$pierwszelogowanie" != "1"} {
+        #map goto $ConfigManager_Configs[startowa];
+        #var MAPPER_SYNC 1;
+    };
+};
+
+#action {^Opuszczasz realny swiat.$} {
+    /conf startowa {};
+} {1};
+
+#event {SESSION DISCONNECTED} {
+    /conf startowa $voom;
 };
 
 #var ptrybchodzenia 0;
@@ -159,25 +203,6 @@
 #alias {e} {move_e};
 
 
-#alias mapa_room_time
-{
-    #var roomtime {%0};
-    #foreach {*roomtime[]} {s} {
-        #list {ROOM_TIME} {find} {$s} {v}; 
-        #if {$v > 0} {
-            #list {ROOM_TIME}{set}{$s}{$roomtime[$s]}
-        } {
-            #var {ROOM_TIME[$s]} {$roomtime[$s]};
-        }
-    };
-    #if {"$ROOM_TIME[daylight]" == "true"} {
-        #map color symbols <cfc>;
-        #map color exits <bcb>;
-    } {
-        #map color symbols <ccf>;
-        #map color exits <bbc>;
-    };
-}
 
 #alias {/resetujKolory} {
     #if {"$ROOM_TIME[daylight]" == "true"} {
