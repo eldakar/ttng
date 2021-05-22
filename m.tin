@@ -76,7 +76,7 @@
     #config {COMMAND ECHO} {off};	#nop wyswietlanie komend;
     #config {mouse} {on};		#nop obsluga myszy;
     
-    #event {SEND OUTPUT} {#sh {WYSYLAM: <118>%%0<088>}};
+    #nop event {SEND OUTPUT} {#sh {WYSYLAM: <118>%%0<088>}};
 };
 
 #event {SESSION CONNECTED} {

@@ -11,6 +11,7 @@ TUTOR	/conf pasek          - wybor paska dolnego
 TUTOR 	/conf szerokoschpkow auto | integer
 		ustawia szerokosc paskow hp,itp w pasku medium
 		auto - ustawia sam wg szerokosci ekranu
-
+TUTOR	/conf kolorzaslonwrogow kolor
+		ustawia kolor wiadomosci zaslon wrogow
 WARN Aliasy
 TUTOR 	/zme             - melduje aktualny stan zmeczenia

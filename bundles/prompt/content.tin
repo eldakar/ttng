@@ -60,6 +60,15 @@
 	SplitRefreshRequestRefresh;
 }
 
+#alias kolorzaslonwrogow {
+	#if {"$ConfigManager_Configs[kolorzaslonwrogow]" == ""} {
+		#var pkolorzaslonwrogow fac;
+	} {
+		#var pkolorzaslonwrogow $ConfigManager_Configs[kolorzaslonwrogow];
+	};
+	#line sub variables {#var colcovers {<$pkolorzaslonwrogow>}};
+};
+
 #alias {/zme} {
 	#if {"$duch[$avatarid][team]" == "true"} {
 		szepnij ob_$team_lead_id $zmeczenie[$charstate[fatigue]];
@@ -245,22 +254,23 @@
 };
 
 #action {%* rzuca sie na %* przebijajac sie przez %*} {
-	#format ktozaslonil {%l} {%1};
+	#var ktozaslonil {%1};
 	#var pokazalem 0;
 	#foreach {*duch[]} {ktoto} {
 		#if {"$ktozaslonil" == "$duch[$ktoto][desc]"} {
 			#if {"$duch[$ktoto][team]" == "true"} {
-				#line ignore #sh {<fac>[  PRZELAMAL - POPRAW CEL  ] %0<088>};
+				#line ignore #sh { };
+				Highlights_event <118> $ktozaslonil PRZELAMAL - POPRAW CEL <088>;
+				#line ignore #sh { };
 				#var pokazalem 1;
 			} {
-				#nop line ignore #sh {<FAA><178>[ZASLONA] %0<088>};
 				#line ignore #sh {<fac>[PRZELAMAL] %0<088>};
 				#var pokazalem 1;
 			};
 		};
 	};
 	#if {$pokazalem != 1} {
-				#line ignore #sh {<fac>[PRZELAMAL] %0<088>};
+		#line ignore #sh {<fac>[PRZELAMAL] %0<088>};
 	};
 	#line gag;
 }
@@ -275,7 +285,12 @@
 
 
 #action {%* zrecznie zaslania %*} {
-	#format ktozaslonil {%l} {%1};
+	#regexp {%1} {%w %w %w} {
+		#format ktozaslonil {%l} {%1};
+	} {
+		#var ktozaslonil {%1};
+	};
+
 	#var pokazalem 0;
 	#foreach {*duch[]} {ktoto} {
 		#if {"$ktozaslonil" == "$duch[$ktoto][desc]"} {
@@ -283,8 +298,7 @@
 				#line ignore #sh {<acf>[  ZASLANIA  ] %0<088>};
 				#var pokazalem 1;
 			} {
-				#nop line ignore #sh {<FAA><178>[ZASLONA] %0<088>};
-				#line ignore #sh {<fac>[  ZASLANIA - PRZELAM  ] %0<088>};
+				#line ignore #sh {${colcovers}[  ZASLANIA - PRZELAM  ] %0<088>};
 				#var pokazalem 1;
 			};
 		};
