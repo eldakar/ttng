@@ -104,3 +104,10 @@
 #function {bundleops_loadglobals} {
 	#split $global_bundle_slots_values[prompt][top] $global_bundle_slots_values[prompt][bottom] $global_bundle_slots_values[prompt][left] $global_bundle_slots_values[prompt][right];
 }
+
+#function {bundleops_unload} {
+	#var bundleindex 0;
+	#list bundlemanager_bundles find {%1} bundleindex;
+	#list bundlemanager_bundles del $bundleindex;
+	#class {%1} kill;
+};

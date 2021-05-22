@@ -6736,7 +6736,7 @@
     }
     {Kapitan_} 
     {
-        {gildia} {NPC}
+        {gildia} {BOSS}
     }
     {Kapral_} 
     {
@@ -29766,7 +29766,7 @@
     }
     {wysoki_niebieskooki_mezczyzna_} 
     {
-        {gildia} {NPC}
+        {gildia} {BOSS}
         {imie} {Kapitan}
     }
     {wysoki_odwazny_krasnolud_} 

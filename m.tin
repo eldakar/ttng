@@ -24,14 +24,11 @@
     #read events/arka.tin;
 
     #read core/aliasy/manifest.tin;
-
     #read bundles/ConfigManager/manifest.tin;
     #read bundles/HelpManager/manifest.tin;
     #read bundles/SplitRefresh/manifest.tin;
     #read bundles/prompt/manifest.tin;    
-    
     #read bundles/wskazywanie/manifest.tin;
-
     #read addons/postac/manifest.tin;
     #read addons/ekwipunek/manifest.tin;
     #read addons/cechy/manifest.tin;
@@ -40,7 +37,6 @@
     #read addons/makra/manifest.tin;
     #read addons/zbieranie/manifest.tin;
     #read addons/porownaniecech/manifest.tin;
-
     #read bundles/TTMapFollow/manifest.tin;
     #read bundles/TTMapFreezer/manifest.tin;
     #read bundles/TTMapSigns/manifest.tin;
@@ -49,30 +45,23 @@
     #read bundles/NumPad/manifest.tin;
     #read bundles/ItemQualitySimple/manifest.tin;
     #read bundles/ziola/manifest.tin;
-    
     #read bundles/mapeditor/manifest.tin;
     #read bundles/PlayerDB/manifest.tin;
     #read addons/stansprzetu/manifest.tin;
-    
     #read bundles/postepy/manifest.tin;
     #read bundles/SplitWingMap/manifest.tin;
     #read addons/bindy/manifest.tin;
     #read bundles/Highlights/manifest.tin;
     #read bundles/Vehicles/manifest.tin;
-
     #read addons/Drakkary/manifest.tin;
-    
     #read bundles/system/manifest.tin;
-
-    
-    
+    #read bundles/Calendar/manifest.tin;
     #read bundles/walkasuby/manifest.tin;
     #read bundles/chat/manifest.tin;
 
     #read markups.tin;
     #read kamienie.tin;
 
-    
     #nop read bundles/SplitWingButtons/manifest.tin;
 
     #var r @bundleops_loadglobals{};
@@ -87,7 +76,7 @@
     #config {COMMAND ECHO} {off};	#nop wyswietlanie komend;
     #config {mouse} {on};		#nop obsluga myszy;
     
-    #nop event {SEND OUTPUT} {#sh {WYSYLAM: <118>%%0<088>}};
+    #event {SEND OUTPUT} {#sh {WYSYLAM: <118>%%0<088>}};
 };
 
 #event {SESSION CONNECTED} {

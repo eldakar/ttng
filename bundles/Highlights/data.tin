@@ -1,9 +1,6 @@
 #class koloryklucze open;
 #read bundles/Highlights/Data/klucze.tin
 #class koloryklucze close;
-#class kolorymagiki open;
-#read bundles/Highlights/Data/magiki.tin
-#class kolorymagiki close;
 #class koloryekwipunek open;
 #read bundles/Highlights/Data/ekwipunek.tin;
 #class koloryekwipunek close;
