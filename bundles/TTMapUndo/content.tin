@@ -67,7 +67,6 @@
 	#if {"$movedir" == "gora"} {undo;};
 };
 #action {Rezygnujesz ze wspinaczki i wracasz na gore.} {undo};
-
 #action {Probujesz sie wcisnac do otworu, jednakze ktos najwyrazniej jest juz w srodku, a jest tam zbyt wasko by zmiescily sie tam dwie osoby na raz.} {undo};
 #action {By plynac musisz miec wolne rece.} {undo};
 #action {Probujesz to zrobic, jednak twe cialo odmawia ci posluszenstwa!} {undo};
@@ -81,11 +80,9 @@
 #action {Przejscie blokuje obalony pien.} {undo};
 #action {Podchodzisz do drzwi tej chatki, lecz sa one zamkniete i nie mozesz ich otworzyc.} {undo};
 #action {Musisz najpierw zarzucic na belke jakas line lub sznur.} {undo};
-
 #action {Probujesz sie ruszyc na %1, jednak pajecze sieci, w ktore sie w miedzyczasie zaplatal%+, uniemozliwiaja ci to.} {undo};
 #action {Probujesz sie ruszyc na %1, jednak pajecze sieci, w ktore sie w miedzy czasie zaplatal%+, uniemozliwiaja ci to.} {undo};
-
 #action {Zapierasz sie mocno nogami, probujac odsunac rzezbiony kredens. Po kilku chwilach dajesz jednak za wygrana} {undo};
 
 #action {Nie dasz rady otworzyc stalowej kraty, musisz sprobowac ja uniesc.} {qb unies krate;undo};
-
+#action {Woda wydaje ci sie tak zimna, ze jednak decydujesz} {qb wejdz do wody;undo};
