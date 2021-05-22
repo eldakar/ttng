@@ -1111,37 +1111,20 @@
 
 #alias {skup_ziola} {
   wym;
-  kup piec zoltych jasnych kwiatow;
-  kup piec okraglawych aromatycznych lisci;
-  kup piec rozetkowatych lancetowatych lisci;
-  kup piec jasnofioletowych delikatnych kwiatow;
-  kup piec bialych malych kwiatow;
-  kup piec fioletowych lejkowatych kwiatow;
-  kup piec jasnopomaranczowych kwiatow;
-  kup piec strzalkowatych aromatycznych lisci;
-  kup piec fioletowych zwartych kwiatostanow;
-  kup piec zaostrzonych podluznych lisci;
-  kup piec malych czerwonych kwiatow;
-  kup piec owlosionych aromatycznych lisci;
-  kup piec zlocistopomaranczowych duzych kwiatow;
-  kup piec zoltoszarych niepozornych korzeni;
-  kup piec miedzianych sluzowatych grzybow;
-  kup piec mazistych bulwiastych grzybow;
-  kup piec dlugich lodyg;
-  kup piec eliptycznych zaostrzonych lisci;
-  kup piec kremowych owlosionych kwiatow;
-  kup piec duzych bialych kwiatow;
-  kup piec lsniacych czerwonych owocow;
-  kup piec macznistoowlosionych szarawych roslin;
-  kup piec brazowych okraglych nasion;
-  kup piec rozgowatych zoltozielonych galazek;
-  kup piec jasnozielonych nieowlosionych lodyg;
-  kup piec wonnych dzwonkowatych kwiatow;
-  kup piec sztywnych smuklych lodyg;
-  kup piec szarawaych pogietych klaczy;
-  kup piec wzniesionych ukwieconych lodyg;
-  kup piec wysokich zoltych kwiatow;
-  kup piec bialokwitnacych drobnych roslinek;
+  kup dziesiec smuklych zielonych lodyg;
+  kup dziesiec wonnych dzwonkowatych kwiatkow;
+  kup dziesiec zoltych jaskrawych kwiatow;
+  kup dziesiec kanciastych rozgalezionych lodyg;
+  kup dziesiec czarnych blyszczacych fasolek;
+  kup dziesiec srebrzystoszarych owlosionych lisci;
+  kup dziesiec owlosionych aromatycznych lisci;
+  kup dziesiec kosmatoowlosionych kwiatostanow;
+  kup dziesiec rozgowatych zoltozielonych galazek;
+  kup dziesiec sztywnych smuklych lodyg;
+
+  kup dziesiec szarawych pogietych klaczy;
+  kup dziesiec wzniesionych ukwieconych lodyg;
+
   wlm;
   wlziola;
 };
