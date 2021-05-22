@@ -65,6 +65,13 @@
 	zabij trolla;
 	_zabij_ przeciwnika;
 };
+
+#alias {wsiowy_szaman} {
+	zabij trolla;
+	zabij czarnego orka;
+	_zabij_ przeciwnika;
+};
+
 #alias {orki_wsiowe} {
 	zabij goblina;
 	zabij drugiego orka;
