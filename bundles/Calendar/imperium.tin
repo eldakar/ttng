@@ -123,13 +123,6 @@
 #var kalendarz_miesiace[Monstille][wroku] {366}
 #var kalendarz_miesiace[Vorhexen][wroku] {367}
 
-#var kalendarz_poradnia[rano] {0};
-#var kalendarz_poradnia[nad ranem] {0};
-#var kalendarz_poradnia[wieczorem] {12};
-#var kalendarz_poradnia[po poludniu] {12};
-#var kalendarz_poradnia[w nocy] {0};
-#var kalendarz_poradnia[poznym wieczorem] {12};
-
 #var kalendarz_poraroku[Wiosna][wschod] {6};
 #var kalendarz_poraroku[Wiosna][zachod] {19};
 #var kalendarz_poraroku[Lato][wschod] {4};
@@ -158,10 +151,81 @@
 #var kalendarz_miesiace[Monstille][pora] {Zima};
 #var kalendarz_miesiace[Vorhexen][pora] {Zima};
 
+#var kalendarz_nowie[1] {14}
+#var kalendarz_nowie[2] {39}
+#var kalendarz_nowie[3] {64}
+#var kalendarz_nowie[4] {88}
+#var kalendarz_nowie[5] {113}
+#var kalendarz_nowie[6] {138}
+#var kalendarz_nowie[7] {163}
+#var kalendarz_nowie[8] {188}
+#var kalendarz_nowie[9] {213}
+#var kalendarz_nowie[10] {238}
+#var kalendarz_nowie[11] {263}
+#var kalendarz_nowie[12] {289}
+#var kalendarz_nowie[13] {313}
+#var kalendarz_nowie[14] {338}
+#var kalendarz_nowie[15] {363}
+#var kalendarz_nowie[16] {388}
+
+#var kalendarz_nowie_zachod[1] {19}
+#var kalendarz_nowie_zachod[2] {19}
+#var kalendarz_nowie_zachod[3] {19}
+#var kalendarz_nowie_zachod[4] {19}
+#var kalendarz_nowie_zachod[5] {22}
+#var kalendarz_nowie_zachod[6] {22}
+#var kalendarz_nowie_zachod[7] {22}
+#var kalendarz_nowie_zachod[8] {22}
+#var kalendarz_nowie_zachod[9] {19}
+#var kalendarz_nowie_zachod[10] {19}
+#var kalendarz_nowie_zachod[11] {19}
+#var kalendarz_nowie_zachod[12] {19}
+#var kalendarz_nowie_zachod[13] {16}
+#var kalendarz_nowie_zachod[14] {16}
+#var kalendarz_nowie_zachod[15] {16}
+#var kalendarz_nowie_zachod[16] {16}
+
+
+#alias {klepsydra_render_now} {
+    #var now_startowa 0;
+    #foreach {*kalendarz_nowie[]} {kn} {
+        #if {$dzien_roku <= $kalendarz_nowie[$kn]} {
+            #var zachod_w_nowiu $kalendarz_nowie_zachod[$kn];
+            #math {now_za_dni} {$kalendarz_nowie[$kn] - $dzien_roku};   #nop odejmuje aktualny dzien w roku od kolejnej pelni;
+            #math {RLminuty} {$czas_godzina * 2};                                   #nop kazda godzina arki to dwie minuty RL;
+            #math {RLzachod} {$zachod_w_nowiu * 2};                                 #nop ilosc RL minut od polnocy do zachodu slonca w czasie pelni;
+            #math {now_za_RLminut} {($now_za_dni * 48) - $RLminuty + $RLzachod};  #nop kazdy dzien to 48 RL minut, odejmuje aktualna godzine;
+                                                                                        #nop i dodaje czas do zachodu slonca;
+            #math {now_za_RLgodzin} {$now_za_RLminut / 60};                       #nop wyciagam godzine z minut;
+            #math {now_za_RLresztam} {$now_za_RLminut - ($now_za_RLgodzin * 60)};  #nop wyciagam reszte RL minut z godzin;
+
+            #var nowstr {Now za <cfc>$now_za_RLgodzin godzin i $now_za_RLresztam minut<088>.};
+            #format {nowdisplay_} {%-45s} {$nowstr};
+            #format {nowdisplay} {%.45s} {$nowdisplay_};
+            #nop format time %T;
+            #nop math time $time + $now_za_RLgodzin:$now_za_RLresztam;
+            #nop echo %t {{<format>}{$time}};   
+            #if {$now_za_RLgodzin < 49} {
+                #line ignore #showme $nowdisplay;
+            };
+        };
+    };
+};
+
+
+#var kalendarz_poradnia[rano] {0};
+#var kalendarz_poradnia[nad ranem] {0};
+#var kalendarz_poradnia[wieczorem] {12};
+#var kalendarz_poradnia[po poludniu] {12};
+#var kalendarz_poradnia[w nocy] {0};
+#var kalendarz_poradnia[poznym wieczorem] {12};
+
+
 
 
 #action {Jest w przyblizeniu %1 {w poludnie|rano|nad ranem|wieczorem|po poludniu|w nocy|poznym wieczorem}, %* w %w, %5 dzien miesiaca %6 wedlug Kalendarza Imperialnego.}
 {
+    #var kalendarz_miesiac %6;
 #if {"%2" == "w nocy"} {
 #if {$kalendarz_godziny[%1] > 6} {
 #math czas_godzina {$kalendarz_godziny[%1] + 12};
@@ -171,7 +235,7 @@
 } {
 #math czas_godzina {$kalendarz_godziny[%1] + $kalendarz_poradnia[%2]};
 };
-#math dzien_miesiaca {$kalendarz_dni[%4]};
+#math dzien_miesiaca {$kalendarz_dni[%5]};
 #math dzien_roku {$kalendarz_dni[%5] + $kalendarz_miesiace[%6][wroku]};
 #var dniwmiesiacu {$kalendarz_miesiace[%6][dni]};
 #var numermiesiaca {$kalendarz_miesiace[%6][index]};
@@ -196,11 +260,13 @@
 #var wschod_slonca $kalendarz_poraroku[$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]][wschod];
 #var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]][zachod];
 } {120};
-klepsydra_render
+klepsydra_render;
+klepsydra_render_now;
 }
 
 #action {Jest w przyblizeniu %1 {w poludnie|rano|nad ranem|wieczorem|po poludniu|w nocy|poznym wieczorem} w %w, %4 dzien miesiaca %5 wedlug Kalendarza Imperialnego.}
 {
+    #var kalendarz_miesiac %5;
     #if {"%2" == "w nocy"} {
         #if {$kalendarz_godziny[%1] > 6} {
         	#math czas_godzina {$kalendarz_godziny[%1] + 12};
@@ -235,7 +301,8 @@ klepsydra_render
         #var wschod_slonca $kalendarz_poraroku[$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]][wschod];
         #var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]][zachod];
     } {120};
-    klepsydra_render
+    klepsydra_render;
+    klepsydra_render_now;
 }
 
 

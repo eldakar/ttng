@@ -338,6 +338,7 @@
         #var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace_imperium[$kalendarz_miesiace_imperium[$numermiesiaca][nazwa]][pora]][zachod];
     } {120};
     klepsydra_render;
+    klepsydra_render_pelnia;
 }
 
 
@@ -436,6 +437,7 @@
         #var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace_imperium[$kalendarz_miesiace_imperium[$numermiesiaca][nazwa]][pora]][zachod];
     } {120};
     klepsydra_render;
+    klepsydra_render_pelnia;
 }
 
 #action {Jest w przyblizeniu %1 {w poludnie|rano|nad ranem|wieczorem|po poludniu|w nocy|poznym wieczorem}, %3 dzien pory %4 wedlug rachuby czasu Starszego Ludu.}
@@ -533,6 +535,7 @@
         #var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace_ishtar[$kalendarz_miesiace_ishtar[$numermiesiaca][nazwa]][pora]][zachod];
     } {120};
     klepsydra_render;
+    klepsydra_render_pelnia;
 } {1};
 
 #alias {klepsydra_render}
@@ -572,11 +575,12 @@
     calendar_clock_reset;
     calendar_render_hours;
     
-    klepsydra_render_day;
-    klepsydra_render_pelnia;
+    #nop klepsydra_render_day;
+    #nop klepsydra_render_pelnia;
 }
 
 #alias {klepsydra_render_day} {
+    #line ignore #echo {%-10s %-5s %-5s} {Godzina: $jasnosc_kolor$czas_godzina_prmp:00} {Pora dnia: $jasnosc_kolor$poradnia} {};
     #line ignore #showme {$logo1 Pora Dnia    : $jasnosc_kolor$poradnia  };
     #line ignore #showme {$logo2 Miesiac      : $kalendarz_miesiac };
 #if {"$kalendarz_region" == "Ishtar"} {    
@@ -637,12 +641,10 @@
 #math {pelnia_za_RLgodzin} {$pelnia_za_RLminut / 60};                       #nop wyciagam godzine z minut;
 #math {pelnia_za_RLresztam} {$pelnia_za_RLminut - ($pelnia_za_RLgodzin * 60)};  #nop wyciagam reszte RL minut z godzin;
 
-            #var pelniastr {<AAB><138>Pelnia za $pelnia_za_RLgodzin godzin i $pelnia_za_RLresztam minut};
+            #var pelniastr {Pelnia za <cfc>$pelnia_za_RLgodzin godzin i $pelnia_za_RLresztam minut<088>.};
             #format {pelniadisplay_} {%-45s} {$pelniastr};
             #format {pelniadisplay} {%.45s} {$pelniadisplay_};
-            #format time %T;
-            #math time $time + $pelnia_za_RLgodzin:$pelnia_za_RLresztam;
-            #nop echo %t {{<format>}{$time}};   
+
             #if {$pelnia_za_RLgodzin < 49} {
                 #line ignore #showme $pelniadisplay;
             };

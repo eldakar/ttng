@@ -2640,6 +2640,10 @@
     {
         {gildia} {KGKS}
     }
+    {Darkuid_} 
+    {
+        {gildia} {MC}
+    }
     {Darmon_} 
     {
         {gildia} {NPC}
@@ -9757,6 +9761,10 @@
     {Promaxus_} 
     {
         {gildia} {NPC}
+    }
+    {Prorok_} 
+    {
+        {gildia} {BOSS}
     }
     {Ptahen_} 
     {
@@ -27846,6 +27854,11 @@
     {
         {gildia} {NPC}
         {imie} {Hanoc}
+    }
+    {stary_zgarbiony_skaven_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Prorok}
     }
     {stary_zgorzknialy_mezczyzna_} 
     {
