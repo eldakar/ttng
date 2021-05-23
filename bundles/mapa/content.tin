@@ -8,6 +8,8 @@
 
 #map goto 1;
 #var MAPPER_SYNC 0;
+#var rooa {};
+
 #map leg 197 {\\};
 #map leg 198 {/};
 #map leg 200 {/};
@@ -82,9 +84,13 @@
 #action {Trwa ladowanie danych} {
     #var pierwszelogowanie 1;
 };
+#action {Aby zalogowac sie} {
+    #var pierwszelogowanie 1;  
+};
 
 #alias {startowa} {
     #if {"$pierwszelogowanie" != "1"} {
+        #var rooa {};
         #map goto $ConfigManager_Configs[startowa];
         #var MAPPER_SYNC 1;
     };
@@ -96,6 +102,7 @@
 
 #event {SESSION DISCONNECTED} {
     /conf startowa $voom;
+    #end;
 };
 
 #var ptrybchodzenia 0;
