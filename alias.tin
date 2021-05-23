@@ -12,6 +12,7 @@
 #alias {-kap} {sciagnij kaptur};
 #alias {pij} {napij sie do syta};
 #alias {rygluj_wieze} {zamknij drzwi;zarygluj drzwi};
+#alias {odrygluj_wieze} {odrygluj drzwi;otworz drzwi};
 
 #alias {_przelamanie_} {
 	przestan kryc sie za zaslona;

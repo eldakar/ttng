@@ -13,7 +13,7 @@
 			#replace {GMCPMSGS[text]} {\\n} {};
 			#sh {$GMCPMSGS[text]};
 		};
-		#case {"notification.mail"} {Highlights_post $GMCPMSGS[text]};
+		#case {"notification.mail"} {Highlights_post $GMCPMSGS[text];poczta_start};
 		#case {"notification.knowledge"} {Highlights_knowledge $GMCPMSGS[text]};
 		#case {"room.exits"} {
 			#replace {GMCPMSGS[text]} {\\n} {};			
