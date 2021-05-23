@@ -1,9 +1,21 @@
-## ttng config cheat sheet
+# ttng config cheat sheet
 
 
-### Markdown
+## Walka
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### /conf CombatGag
+- 0 - wyswietlaj cala walke
+- 1 - wyciszaj dodge, miss & parry
+- 2 - wyciszaj dodge, miss, parry & hit
+
+### /conf walkapvp
+- wlaczona - uproszczenie walki do minimum
+- wylaczona - standardowa walka z prefixami \[1/6\]
+- zawijana - standardowa walka obcinana przy koncu linii (nie zawijana)
+
+### /conf kolorzaslonwrogow *kolor*
+- ustawia kolor, w jakim wyswietlaja sie udane zaslony wrogow druzyny
+
 
 ```markdown
 Syntax highlighted code block
