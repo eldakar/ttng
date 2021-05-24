@@ -84,9 +84,6 @@
 #action {Trwa ladowanie danych} {
     #var pierwszelogowanie 1;
 };
-#action {Aby zalogowac sie} {
-    #var pierwszelogowanie 1;  
-};
 
 #alias {startowa} {
     #if {"$pierwszelogowanie" != "1"} {

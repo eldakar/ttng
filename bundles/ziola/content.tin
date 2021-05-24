@@ -160,37 +160,38 @@
 #alias {_woreczekd_} {zajrzyj do czwartego przytroczonego woreczka;}
 #alias {_woreczeke_} {zajrzyj do piatego przytroczonego woreczka;}
 
+
 #alias {worki} {
   #var sortujemy {true};
 
   #foreach {*zioladb[]} {ziolkonazwa} {
     #var zioladb[$ziolkonazwa][ilosc] {0};
   };
-  _woreczeka_;
-  _woreczekb_;
-  _woreczekc_;
-  _woreczekd_;
-  _woreczeke_;
+  #var currentworek A;
+  zajrzyj do pierwszego woreczka;
+  zajrzyj do drugiego woreczka;
+  zajrzyj do trzeciego woreczka;
+  zajrzyj do czwartego woreczka;
+  zajrzyj do piatego woreczka;
+  zajrzyj do szostego woreczka;
+  zajrzyj do siodmego woreczka;
+  zajrzyj do osmego woreczka;
+  zajrzyj do dziewiatego woreczka;
+  zajrzyj do dziesiatego woreczka;
 }
 
 
 #action {Rozwiazujesz na chwile rzemyk, sprawdzajac zawartosc swojego %1. W srodku dostrzegasz %69.} {
-  #if {"$sortujemy" == "true"} {
     #var ret @sortuj_worek{%69};
-  };
 }
 #action {Rozwiazujesz na chwile rzemyk, sprawdzajac zawartosc swojego %1. W jego srodku nic jednak nie ma.} {
-  #if {"$sortujemy" == "true"} {
     #var ret @sortuj_worek{zero niczego};
-  };
 }
 #action {Uwaznie ogladasz zawartosc %1. W jego srodku nic jednak nie ma.} {
   #var ret @sortuj_worek{zero niczego};
-  #nop if {"$sortujemy" == "true"} {#line gag;};
 }
 #action {Uwaznie ogladasz zawartosc %1. W srodku dostrzegasz %69.} {
   #var ret @sortuj_worek{%69};
-  #nop if {"$sortujemy" == "true"} {#line gag;};
 }
 
 #unaction {Zajrzyj do czego?} {}

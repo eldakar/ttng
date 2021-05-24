@@ -201,7 +201,8 @@
 
 #alias raidmap_map_double_clicked_mouse_button_one {
     #map center;
-    #map run {%1} {0.25};
+    #nop map run {%1} {0.25};
+    #map goto {%1};
     #var pathinprogress 1;
 };
 
@@ -274,3 +275,20 @@
 #alias raidmap_attacks {
     #draw <088><118> rounded table $offsetw-25 $offseth-5 $offsetw-13 $offseth {<FAA><fff>CEL\n} {<AAB><fff>OBR\n} {<ABA><fff>EXP\n};  
 }
+
+#alias raidmap_poczta_on {
+    #draw <088><118> rounded box $offsety $screencols-7 $offsety+2 $offseth {<FAA><fff>POCZTA};
+};
+
+#alias raidmap_poczta_off {
+    #draw blanked box $offsety $screencols-7 $offsety+2 $offseth {};
+};
+
+#alias poczta_start {
+    #ticker poczta {raidmap_poczta_on;#delay {1} {raidmap_poczta_off}} {2};
+};
+
+#alias {/p} {
+    #unticker poczta;
+    raidmap_poczta_off;
+} {1};
