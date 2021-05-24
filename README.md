@@ -16,6 +16,19 @@
 ### /conf kolorzaslonwrogow *kolor*
 - ustawia kolor, w jakim wyswietlaja sie udane zaslony wrogow druzyny
 
+### /conf atakkomenda zabij
+- ustawia komende do zabijania
+
+### /conf probymanewrow
+- widoczne - wydac nieudane proby zaslon i przelaman wrogow
+- niewidoczne - ukrywa je
+
+## Okno kondycji
+
+### /conf pasek
+- mini
+
+
 
 ```markdown
 Syntax highlighted code block
