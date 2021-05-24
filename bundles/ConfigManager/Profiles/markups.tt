@@ -66,6 +66,13 @@
         {terrain} {}
         {type} {mob}
     }
+    {4901} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
     {4938} 
     {
         {rendered} {1}

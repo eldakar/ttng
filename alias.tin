@@ -230,11 +230,11 @@
   kolor opis wyjsc z lokacji 49;
   kolor opisow walki 239;
   kolor braku otrzymanych obrazen 243;
-  kolor niskich otrzymanych obrazen 243;
-  kolor srednich otrzymanych obrazen 243;
+  kolor niskich otrzymanych obrazen 139;
+  kolor srednich otrzymanych obrazen 139;
   kolor wysokich otrzymanych obrazen 139;
   kolor braku zadanych obrazen 243;
-  kolor niskich zadanych obrazen 243;
-  kolor srednich zadanych obrazen 243;
-  kolor wysokich zadanych obrazen 243;
+  kolor niskich zadanych obrazen 102;
+  kolor srednich zadanych obrazen 102;
+  kolor wysokich zadanych obrazen 102;
 } {1};
