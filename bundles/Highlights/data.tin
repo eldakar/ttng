@@ -19,3 +19,6 @@
 #class kolorywiedza open;
 #read bundles/Highlights/Data/wiedza.tin
 #class kolorywiedza close;
+#class kolorynpc open;
+#read bundles/Highlights/Data/npc.tin
+#class kolorynpc close;

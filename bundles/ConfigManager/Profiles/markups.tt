@@ -10,11 +10,116 @@
         {terrain} {mur}
         {type} {mob}
     }
+    {4342} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {mur}
+        {type} {mob}
+    }
+    {4343} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustka}
+        {type} {mob}
+    }
+    {4349} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustka}
+        {type} {mob}
+    }
+    {4362} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustka}
+        {type} {mob}
+    }
+    {4363} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustka}
+        {type} {mob}
+    }
+    {4375} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {4403} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {wzgorze}
+        {type} {mob}
+    }
+    {4427} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {wzgorze}
+        {type} {mob}
+    }
+    {4430} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustka}
+        {type} {mob}
+    }
+    {4581} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {4588} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
     {4601} 
     {
         {rendered} {1}
         {symbol} { O }
         {terrain} {pustynia}
+        {type} {mob}
+    }
+    {4628} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {4797} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {4802} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {4821} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
         {type} {mob}
     }
     {4908} 
@@ -38,6 +143,27 @@
         {terrain} {}
         {type} {mob}
     }
+    {4977} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {4983} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5023} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
     {5052} 
     {
         {rendered} {1}
@@ -45,7 +171,42 @@
         {terrain} {}
         {type} {mob}
     }
+    {5098} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {5147} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5171} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5234} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {rzeka}
+        {type} {mob}
+    }
     {5364} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5368} 
     {
         {rendered} {1}
         {symbol} { O }
@@ -64,6 +225,13 @@
         {rendered} {1}
         {symbol} { O }
         {terrain} {pustynia}
+        {type} {mob}
+    }
+    {21906} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
         {type} {mob}
     }
 }
