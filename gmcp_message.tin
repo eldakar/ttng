@@ -76,7 +76,7 @@
 			#sh $outputtext;
 			#delay {wwalce} {
 				#sh {<afa>Odsapnales po walce.<088>};
-				#if {"pplaszcz" == "wlaczony"} {
+				#if {"$pplaszcz" == "wlaczony"} {
 					qb otul sie plaszczem;
 				};
 				collector_offload;
