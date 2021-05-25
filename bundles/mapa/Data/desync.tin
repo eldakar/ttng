@@ -7,3 +7,4 @@
 #action {Ostroznie wchodzisz w mgle wypelniajaca %* portal.} {#var MAPPER_SYNC {0};}
 #action {Wsiadasz do %*} {#var MAPPER_SYNC 0};
 #action {Ruszasz %* do obozu.} {#var MAPPER_SYNC 0};
+#action {Bierzesz rozbieg i probujesz przeskoczyc osuwisko, jednak zle wymierzasz odleglosc i z impetem spadasz w dol!} {#var MAPPER_SYNC 0};

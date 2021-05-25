@@ -81,23 +81,24 @@
     }
 };
 
-#action {Trwa ladowanie danych} {
+#nop action {Trwa ladowanie danych} {
     #var pierwszelogowanie 1;
 };
 
 #alias {startowa} {
-    #if {"$pierwszelogowanie" != "1"} {
+    #nop {};
+    #nop if {"$pierwszelogowanie" != "1"} {
         #var rooa {};
         #map goto $ConfigManager_Configs[startowa];
         #var MAPPER_SYNC 1;
     };
 };
 
-#action {^Opuszczasz realny swiat.$} {
+#nop action {^Opuszczasz realny swiat.$} {
     /conf startowa {};
 } {1};
 
-#event {SESSION DISCONNECTED} {
+#nop event {SESSION DISCONNECTED} {
     /conf startowa $voom;
     #end;
 };
