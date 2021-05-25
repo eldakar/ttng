@@ -238,3 +238,43 @@
   kolor srednich zadanych obrazen 102;
   kolor wysokich zadanych obrazen 102;
 } {1};
+
+#al {showcolors}
+{
+  #showme {  <aaa>aaa<aaa>  <aab>aab<aaa>  <aac>aac<aaa>  <aad>aad<aaa>  <aae>aae<aaa>  <aaf>aaf<aaa>  <g00>g00<aaa>    <AAA>AAA<AAA>  <AAB>AAB<AAA>  <AAC>AAC<AAA>  <AAD>AAD<AAA>  <AAE>AAE<AAA>  <AAF>AAF<AAA>  <G01>G01};
+  #showme {  <aba>aba<aaa>  <abb>abb<aaa>  <abc>abc<aaa>  <abd>abd<aaa>  <abe>abe<aaa>  <abf>abf<aaa>  <g01>g01<aaa>    <ABA>ABA<AAA>  <ABB>ABB<AAA>  <ABC>ABC<AAA>  <ABD>ABD<AAA>  <ABE>ABE<AAA>  <ABF>ABF<AAA>  <G02>G02};
+  #showme {  <aca>aca<aaa>  <acb>acb<aaa>  <acc>acc<aaa>  <acd>acd<aaa>  <ace>ace<aaa>  <acf>acf<aaa>  <g02>g02<aaa>    <ACA>ACA<AAA>  <ACB>ACB<AAA>  <ACC>ACC<AAA>  <ACD>ACD<AAA>  <ACE>ACE<AAA>  <ACF>ACF<AAA>  <G03>G03};
+  #showme {  <ada>ada<aaa>  <adb>adb<aaa>  <adc>adc<aaa>  <add>add<aaa>  <ade>ade<aaa>  <adf>adf<aaa>  <g03>g03<aaa>    <ADA>ADA<AAA>  <ADB>ADB<AAA>  <ADC>ADC<AAA>  <ADD>ADD<AAA>  <ADE>ADE<AAA>  <ADF>ADF<AAA>  <G04>G04};
+  #showme {  <aea>aea<aaa>  <aeb>aeb<aaa>  <aec>aec<aaa>  <aed>aed<aaa>  <aee>aee<aaa>  <aef>aef<aaa>  <g04>g04<aaa>    <AEA>AEA<AAA>  <AEB>AEB<AAA>  <AEC>AEC<AAA>  <AED>AED<AAA>  <AEE>AEE<AAA>  <AEF>AEF<AAA>  <G05>G05};
+  #showme {  <afa>afa<aaa>  <afb>afb<aaa>  <afc>afc<aaa>  <afd>afd<aaa>  <afe>afe<aaa>  <aff>aff<aaa>  <g05>g05<aaa>    <AFA>AFA<AAA>  <AFB>AFB<AAA>  <AFC>AFC<AAA>  <AFD>AFD<AAA>  <AFE>AFE<AAA>  <AFF>AFF<AAA>  <G06>G06};
+  #showme {  <baa>baa<aaa>  <bab>bab<aaa>  <bac>bac<aaa>  <bad>bad<aaa>  <bae>bae<aaa>  <baf>baf<aaa>  <g06>g06<aaa>    <BAA>BAA<AAA>  <BAB>BAB<AAA>  <BAC>BAC<AAA>  <BAD>BAD<AAA>  <BAE>BAE<AAA>  <BAF>BAF<AAA>  <G07>G07};
+  #showme {  <bba>bba<aaa>  <bbb>bbb<aaa>  <bbc>bbc<aaa>  <bbd>bbd<aaa>  <bbe>bbe<aaa>  <bbf>bbf<aaa>  <g07>g07<aaa>    <BBA>BBA<AAA>  <BBB>BBB<AAA>  <BBC>BBC<AAA>  <BBD>BBD<AAA>  <BBE>BBE<AAA>  <BBF>BBF<AAA>  <G08>G08};
+  #showme {  <bca>bca<aaa>  <bcb>bcb<aaa>  <bcc>bcc<aaa>  <bcd>bcd<aaa>  <bce>bce<aaa>  <bcf>bcf<aaa>  <g08>g08<aaa>    <BCA>BCA<AAA>  <BCB>BCB<AAA>  <BCC>BCC<AAA>  <BCD>BCD<AAA>  <BCE>BCE<AAA>  <BCF>BCF<AAA>  <G09>G09};
+  #showme {  <bda>bda<aaa>  <bdb>bdb<aaa>  <bdc>bdc<aaa>  <bdd>bdd<aaa>  <bde>bde<aaa>  <bdf>bdf<aaa>  <g09>g09<aaa>    <BDA>BDA<AAA>  <BDB>BDB<AAA>  <BDC>BDC<AAA>  <BDD>BDD<AAA>  <BDE>BDE<AAA>  <BDF>BDF<AAA>  <G10>G10};
+  #showme {  <bea>bea<aaa>  <beb>beb<aaa>  <bec>bec<aaa>  <bed>bed<aaa>  <bee>bee<aaa>  <bef>bef<aaa>  <g10>g10<aaa>    <BEA>BEA<AAA>  <BEB>BEB<AAA>  <BEC>BEC<AAA>  <BED>BED<AAA>  <BEE>BEE<AAA>  <BEF>BEF<AAA>  <G11>G11};
+  #showme {  <bfa>bfa<aaa>  <bfb>bfb<aaa>  <bfc>bfc<aaa>  <bfd>bfd<aaa>  <bfe>bfe<aaa>  <bff>bff<aaa>  <g11>g11<aaa>    <BFA>BFA<AAA>  <BFB>BFB<AAA>  <BFC>BFC<AAA>  <BFD>BFD<AAA>  <BFE>BFE<AAA>  <BFF>BFF<AAA>  <G12>G12};
+  #showme {  <caa>caa<aaa>  <cab>cab<aaa>  <cac>cac<aaa>  <cad>cad<aaa>  <cae>cae<aaa>  <caf>caf<aaa>  <g12>g12<aaa>    <CAA>CAA<AAA>  <CAB>CAB<AAA>  <CAC>CAC<AAA>  <CAD>CAD<AAA>  <CAE>CAE<AAA>  <CAF>CAF<AAA>  <G13>G13};
+  #showme {  <cba>cba<aaa>  <cbb>cbb<aaa>  <cbc>cbc<aaa>  <cbd>cbd<aaa>  <cbe>cbe<aaa>  <cbf>cbf<aaa>  <g13>g13<aaa>    <CBA>CBA<AAA>  <CBB>CBB<AAA>  <CBC>CBC<AAA>  <CBD>CBD<AAA>  <CBE>CBE<AAA>  <CBF>CBF<AAA>  <G14>G14};
+  #showme {  <cca>cca<aaa>  <ccb>ccb<aaa>  <ccc>ccc<aaa>  <ccd>ccd<aaa>  <cce>cce<aaa>  <ccf>ccf<aaa>  <g14>g14<aaa>    <CCA>CCA<AAA>  <CCB>CCB<AAA>  <CCC>CCC<AAA>  <CCD>CCD<AAA>  <CCE>CCE<AAA>  <CCF>CCF<AAA>  <G15>G15};
+  #showme {  <cda>cda<aaa>  <cdb>cdb<aaa>  <cdc>cdc<aaa>  <cdd>cdd<aaa>  <cde>cde<aaa>  <cdf>cdf<aaa>  <g15>g15<aaa>    <CDA>CDA<AAA>  <CDB>CDB<AAA>  <CDC>CDC<AAA>  <CDD>CDD<AAA>  <CDE>CDE<AAA>  <CDF>CDF<AAA>  <G16>G16};
+  #showme {  <cea>cea<aaa>  <ceb>ceb<aaa>  <cec>cec<aaa>  <ced>ced<aaa>  <cee>cee<aaa>  <cef>cef<aaa>  <g16>g16<aaa>    <CEA>CEA<AAA>  <CEB>CEB<AAA>  <CEC>CEC<AAA>  <CED>CED<AAA>  <CEE>CEE<AAA>  <CEF>CEF<AAA>  <G17>G17};
+  #showme {  <cfa>cfa<aaa>  <cfb>cfb<aaa>  <cfc>cfc<aaa>  <cfd>cfd<aaa>  <cfe>cfe<aaa>  <cff>cff<aaa>  <g17>g17<aaa>    <CFA>CFA<AAA>  <CFB>CFB<AAA>  <CFC>CFC<AAA>  <CFD>CFD<AAA>  <CFE>CFE<AAA>  <CFF>CFF<AAA>  <G18>G18};
+  #showme {  <daa>daa<aaa>  <dab>dab<aaa>  <dac>dac<aaa>  <dad>dad<aaa>  <dae>dae<aaa>  <daf>daf<aaa>  <g18>g18<aaa>    <DAA>DAA<AAA>  <DAB>DAB<AAA>  <DAC>DAC<AAA>  <DAD>DAD<AAA>  <DAE>DAE<AAA>  <DAF>DAF<AAA>  <G19>G19};
+  #showme {  <dba>dba<aaa>  <dbb>dbb<aaa>  <dbc>dbc<aaa>  <dbd>dbd<aaa>  <dbe>dbe<aaa>  <dbf>dbf<aaa>  <g19>g19<aaa>    <DBA>DBA<AAA>  <DBB>DBB<AAA>  <DBC>DBC<AAA>  <DBD>DBD<AAA>  <DBE>DBE<AAA>  <DBF>DBF<AAA>  <G20>G20};
+  #showme {  <dca>dca<aaa>  <dcb>dcb<aaa>  <dcc>dcc<aaa>  <dcd>dcd<aaa>  <dce>dce<aaa>  <dcf>dcf<aaa>  <g20>g20<aaa>    <DCA>DCA<AAA>  <DCB>DCB<AAA>  <DCC>DCC<AAA>  <DCD>DCD<AAA>  <DCE>DCE<AAA>  <DCF>DCF<AAA>  <G21>G21};
+  #showme {  <dda>dda<aaa>  <ddb>ddb<aaa>  <ddc>ddc<aaa>  <ddd>ddd<aaa>  <dde>dde<aaa>  <ddf>ddf<aaa>  <g21>g20<aaa>    <DDA>DDA<AAA>  <DDB>DDB<AAA>  <DDC>DDC<AAA>  <DDD>DDD<AAA>  <DDE>DDE<AAA>  <DDF>DDF<AAA>  <G22>G22};
+  #showme {  <dea>dea<aaa>  <deb>deb<aaa>  <dec>dec<aaa>  <ded>ded<aaa>  <dee>dee<aaa>  <def>def<aaa>  <g22>g22<aaa>    <DEA>DEA<AAA>  <DEB>DEB<AAA>  <DEC>DEC<AAA>  <DED>DED<AAA>  <DEE>DEE<AAA>  <DEF>DEF<AAA>  <G23>G23};
+  #showme {  <dfa>dfa<aaa>  <dfb>dfb<aaa>  <dfc>dfc<aaa>  <dfd>dfd<aaa>  <dfe>dfe<aaa>  <dff>dff<aaa>  <g23>g23<aaa>    <DFA>DFA<AAA>  <DFB>DFB<AAA>  <DFC>DFC<AAA>  <DFD>DFD<AAA>  <DFE>DFE<AAA>  <DFF>DFF};
+  #showme {  <eaa>eaa<aaa>  <eab>eab<aaa>  <eac>eac<aaa>  <ead>ead<aaa>  <eae>eae<aaa>  <eaf>eaf<aaa>  <g00>   <aaa>    <EAA>EAA<AAA>  <EAB>EAB<AAA>  <EAC>EAC<AAA>  <EAD>EAD<AAA>  <EAE>EAE<AAA>  <EAF>EAF};
+  #showme {  <eba>eba<aaa>  <ebb>ebb<aaa>  <ebc>ebc<aaa>  <ebd>ebd<aaa>  <ebe>ebe<aaa>  <ebf>ebf<aaa>  <g00>   <aaa>    <EBA>EBA<AAA>  <EBB>EBB<AAA>  <EBC>EBC<AAA>  <EBD>EBD<AAA>  <EBE>EBE<AAA>  <EBF>EBF};
+  #showme {  <eca>eca<aaa>  <ecb>ecb<aaa>  <ecc>ecc<aaa>  <ecd>ecd<aaa>  <ece>ece<aaa>  <ecf>ecf<aaa>  <g00>   <aaa>    <ECA>ECA<AAA>  <ECB>ECB<AAA>  <ECC>ECC<AAA>  <ECD>ECD<AAA>  <ECE>ECE<AAA>  <ECF>ECF};
+  #showme {  <eda>eda<aaa>  <edb>edb<aaa>  <edc>edc<aaa>  <edd>edd<aaa>  <ede>ede<aaa>  <edf>edf<aaa>  <g00>   <aaa>    <EDA>EDA<AAA>  <EDB>EDB<AAA>  <EDC>EDC<AAA>  <EDD>EDD<AAA>  <EDE>EDE<AAA>  <EDF>EDF};
+  #showme {  <eea>eea<aaa>  <eeb>eeb<aaa>  <eec>eec<aaa>  <eed>eed<aaa>  <eee>eee<aaa>  <eef>eef<aaa>  <g00>   <aaa>    <EEA>EEA<AAA>  <EEB>EEB<AAA>  <EEC>EEC<AAA>  <EED>EED<AAA>  <EEE>EEE<AAA>  <EEF>EEF};
+  #showme {  <efa>efa<aaa>  <efb>efb<aaa>  <efc>efc<aaa>  <efd>efd<aaa>  <efe>efe<aaa>  <eff>eff<aaa>  <g00>   <aaa>    <EFA>EFA<AAA>  <EFB>EFB<AAA>  <EFC>EFC<AAA>  <EFD>EFD<AAA>  <EFE>EFE<AAA>  <EFF>EFF};
+  #showme {  <faa>faa<aaa>  <fab>fab<aaa>  <fac>fac<aaa>  <fad>fad<aaa>  <fae>fae<aaa>  <faf>faf<aaa>  <g00>   <aaa>    <FAA>FAA<AAA>  <FAB>FAB<AAA>  <FAC>FAC<AAA>  <FAD>FAD<AAA>  <FAE>FAE<AAA>  <FAF>FAF};
+  #showme {  <fba>fba<aaa>  <fbb>fbb<aaa>  <fbc>fbc<aaa>  <fbd>fbd<aaa>  <fbe>fbe<aaa>  <fbf>fbf<aaa>  <g00>   <aaa>    <FBA>FBA<AAA>  <FBB>FBB<AAA>  <FBC>FBC<AAA>  <FBD>FBD<AAA>  <FBE>FBE<AAA>  <FBF>FBF};
+  #showme {  <fca>fca<aaa>  <fcb>fcb<aaa>  <fcc>fcc<aaa>  <fcd>fcd<aaa>  <fce>fce<aaa>  <fcf>fcf<aaa>  <g00>   <aaa>    <FCA>FCA<AAA>  <FCB>FCB<AAA>  <FCC>FCC<AAA>  <FCD>FCD<AAA>  <FCE>FCE<AAA>  <FCF>FCF};
+  #showme {  <fda>fda<aaa>  <fdb>fdb<aaa>  <fdc>fdc<aaa>  <fdd>fdd<aaa>  <fde>fde<aaa>  <fdf>fdf<aaa>  <g00>   <aaa>    <FDA>FDA<AAA>  <FDB>FDB<AAA>  <FDC>FDC<AAA>  <FDD>FDD<AAA>  <FDE>FDE<AAA>  <FDF>FDF};
+  #showme {  <fea>fea<aaa>  <feb>feb<aaa>  <fec>fec<aaa>  <fed>fed<aaa>  <fee>fee<aaa>  <fef>fef<aaa>  <g00>   <aaa>    <FEA>FEA<AAA>  <FEB>FEB<AAA>  <FEC>FEC<AAA>  <FED>FED<AAA>  <FEE>FEE<AAA>  <FEF>FEF};
+  #showme {  <ffa>ffa<aaa>  <ffb>ffb<aaa>  <ffc>ffc<aaa>  <ffd>ffd<aaa>  <ffe>ffe<aaa>  <fff>fff<aaa>  <g00>   <aaa>    <FFA>FFA<AAA>  <FFB>FFB<AAA>  <FFC>FFC<AAA>  <FFD>FFD<AAA>  <FFE>FFE<AAA>  <FFF>FFF}
+}
