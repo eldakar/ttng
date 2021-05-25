@@ -3,7 +3,7 @@ bundles/ConfigManager/Profiles/aliasy.tt
 bundles/ConfigManager/Profiles/*-macros
 bundles/ConfigManager/Profiles/follow-errors
 bundles/ConfigManager/Profiles/pvp.data
-
+tun.tin
 addons/stansprzetu/sprzet.class
 stats-*
 experimental/*
