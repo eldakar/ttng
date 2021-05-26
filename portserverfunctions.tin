@@ -60,7 +60,32 @@
 #action {<PORT> MEXIT %d %w %*} {
     #map goto %1;
     #map exit %2 command {%3};
-#nop NEW;  #map exit %2 color <faa>;
+
+    #switch {"%3"} {
+        #case {"sp"} {#var mode {trap}};
+        #case {"spojrz"} {#var mode {trap}};
+        #case {"wyjscie"} {#var mode {instant}};
+        #case {"przeskocz wyrwe"} {#var mode {instant}};
+        #case {"wejdz na gore"} {#var mode {overtime}};
+        #case {"przejdz po drzewie"} {#var mode {overtime}};
+        #case {"wejdz na partner"} {#var mode {overtime}};
+        #case {"wespnij sie na gore"} {#var mode {overtime}};
+        #case {"wespnij sie na mur"} {#var mode {overtime}};                
+        #case {"przeplyn na wysepke"} {#var mode {overtime}};
+        #case {"przeplyn na plaze"} {#var mode {overtime}};
+        #case {"przeplyn na polnoc"} {#var mode {overtime}};
+        #case {"przeplyn na poludnie"} {#var mode {overtime}};
+        #case {"przeplyn rzeke"} {#var mode {overtime}};
+        #case {"przeplyn pod kratka"} {#var mode {overtime}};
+        #case {"zejdz na dol"} {#var mode {overtime}};
+        #default {#var mode {instant}};
+    };
+    #switch {"$mode"} {
+        #case {"instant"} {#map exit %2 color <bfb>};
+        #case {"trap"} {#map exit %2 color <faa>};
+        #case {"overtime"} {#map exit %2 color <bbf>};
+    };
+
     #map move %2;
     #map get roomvnum tmproomvnum;
     #map undo;
@@ -267,6 +292,23 @@
     broadcast SPECIAL %1 %2;
     mapsave;
 };
+#action {<PORT> INSTANT %d %w} {
+    #map at {%1} {#map exit %2 color <bfb>};
+    broadcast INSTANT %1 %2;
+    mapsave;
+};
+#action {<PORT> OVERTIME %d %w} {
+    #map at {%1} {#map exit %2 color <bbf>};
+    broadcast OVERTIME %1 %2;
+    mapsave;
+};
+#action {<PORT> TRAP %d %w} {
+    #map at {%1} {#map exit %2 color <faa>};
+    broadcast TRAP %1 %2;
+    mapsave;
+};
+
+
 #nop ####################################;
 #nop DODAJ SYMBOL I KOLOR;
 #nop ####################################;

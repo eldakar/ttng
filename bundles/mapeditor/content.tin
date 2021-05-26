@@ -219,6 +219,32 @@
     };
 };
 
+#brain #action {<PORT> INSTANT %d %w} {
+    #line sub {variables} {
+        #rpg #map at {%1} {
+            #map exit %2 color <bfb>;
+        };
+    };
+};
+
+#brain #action {<PORT> OVERTIME %d %w} {
+    #line sub {variables} {
+        #rpg #map at {%1} {
+            #map exit %2 color <bbf>;
+        };
+    };
+};
+
+#brain #action {<PORT> TRAP %d %w} {
+    #line sub {variables} {
+        #rpg #map at {%1} {
+            #map exit %2 color <faa>;
+        };
+    };
+};
+
+
+
 #brain #action {<PORT> LONG %d %w} {
     #line sub {variables} {
         #rpg #map at {%1} {
@@ -248,7 +274,32 @@
     #line substitute {variables} {
         #rpg #map at {%1} {
             #map exit %2 command {%4};
-            #map exit %2 color <faa>;
+
+            #switch {"%4"} {
+                #case {"sp"} {#var mode {trap}};
+                #case {"spojrz"} {#var mode {trap}};
+                #case {"wyjscie"} {#var mode {instant}};
+                #case {"przeskocz wyrwe"} {#var mode {instant}};
+                #case {"wejdz na gore"} {#var mode {overtime}};
+                #case {"przejdz po drzewie"} {#var mode {overtime}};
+                #case {"wejdz na partner"} {#var mode {overtime}};
+                #case {"wespnij sie na gore"} {#var mode {overtime}};
+                #case {"wespnij sie na mur"} {#var mode {overtime}};                
+                #case {"przeplyn na wysepke"} {#var mode {overtime}};
+                #case {"przeplyn na plaze"} {#var mode {overtime}};
+                #case {"przeplyn na polnoc"} {#var mode {overtime}};
+                #case {"przeplyn na poludnie"} {#var mode {overtime}};
+                #case {"przeplyn rzeke"} {#var mode {overtime}};
+                #case {"przeplyn pod kratka"} {#var mode {overtime}};
+                #case {"zejdz na dol"} {#var mode {overtime}};
+                #default {#var mode {instant}};
+            };
+            #switch {"$mode"} {
+                #case {"instant"} {#map exit %2 color <bfb>};
+                #case {"trap"} {#map exit %2 color <faa>};
+                #case {"overtime"} {#map exit %2 color <bbf>};
+            };
+
             #map link {%4} %3;
         };
     };
@@ -377,6 +428,27 @@
     #if {$PONGED == 2} {
     #map get roomvnum v;
     #line sub {variables} {#brain {#port send $brainId {SPECIAL $v %1}};};
+    } {show_ponged_error2};
+} {1};
+
+#alias {/map ins %w} {
+    #if {$PONGED == 2} {
+    #map get roomvnum v;
+    #line sub {variables} {#brain {#port send $brainId {INSTANT $v %1}};};
+    } {show_ponged_error2};
+} {1};
+
+#alias {/map tra %w} {
+    #if {$PONGED == 2} {
+    #map get roomvnum v;
+    #line sub {variables} {#brain {#port send $brainId {TRAP $v %1}};};
+    } {show_ponged_error2};
+} {1};
+
+#alias {/map ove %w} {
+    #if {$PONGED == 2} {
+    #map get roomvnum v;
+    #line sub {variables} {#brain {#port send $brainId {OVERTIME $v %1}};};
     } {show_ponged_error2};
 } {1};
 
