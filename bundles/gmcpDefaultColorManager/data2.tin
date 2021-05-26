@@ -9,19 +9,23 @@
     #format {nicklower} {%l} {%1};
 
     #foreach {*duch[]} {didi} {
-	#if {"%1" == "$duch[$didi][desc]"} {
-        #line sub variables {
-    		#alias {dolacz_do_niego} {
-    			porzuc druzyne;
-    			dolacz do ob_$didi;
-    		};
-        };
-		qb dolacz_do_niego;
-	};
+    	#if {"%1" == "$duch[$didi][desc]"} {
+            #line sub variables {
+        		#alias {dolacz_do_niego} {
+        			porzuc druzyne;
+        			dolacz do ob_$didi;
+        		};
+            };
+    		qb dolacz_do_niego;
+    	};
     };
     #line gag;
 }
 
+#action {Nie jestes w zadnej druzynie}
+{
+    /teamleaderon;
+}
 
 #action {%* przekazuje ci {prowadzenie druzyny|dowodzenie nad swoja druzyna}.$}
 {
@@ -30,7 +34,8 @@
     #echo {$c_stan_sredni  o   Prowadzisz druzyne! };
     #sh {$c_stan_sredni /V\\  %1 przekazal};
     #echo {<088>      ------------------------------- };
-    #echo { };    
+    #echo { };
+    /teamleaderon;
     #line gag;
 }
 
@@ -41,7 +46,8 @@
     #echo {$c_stan_sredni  o   Przekazales prowadzenie! };
     #sh {$c_stan_sredni /V\\   %1 prowadzi};
     #echo {<088>      ------------------------------- };
-    #echo { };    
+    #echo { };
+    /teamleaderoff;
     #line gag;
 }
 #action {^Gubisz gdzies za soba %1.$}
@@ -52,6 +58,7 @@
     #echo {<088>      ------------------------------- };
     #echo { };
     #bell;
+    /teamleaderon;
     #line gag;
 }
 
@@ -61,7 +68,7 @@
     #echo {<088>      ------------------------------- };
     #sh {$c_stan_niski ###  <088>%1 porzuca druzyne! };
     #echo {<088>      ------------------------------- };
-    #echo { };    
+    #echo { }; 
     #line gag;
 }
 
@@ -83,7 +90,8 @@
     #sh {$c_stan_sredni  o   <088>Zmuszasz %1  };
     #sh {$c_stan_sredni /V\\  <088>do opuszczenia druzyny };
     #echo {<088>      ------------------------------- };
-    #echo { };    
+    #echo { };
+    /teamleaderon;
     #line gag;
 }
 
@@ -94,7 +102,8 @@
     #sh {$c_stan_niski  o   <088>%1 zmusza cie };
     #sh {$c_stan_niski /V\\  <088>do opuszczenia druzyny };
     #echo {<088>      ------------------------------- };
-    #echo { };    
+    #echo { };
+    /teamleaderon;
     #line gag;
 }
 
@@ -105,6 +114,7 @@
     #sh {$c_stan_niski  X   ROZWIAZUJESZ DRUZYNE };
     #echo {<088>      ------------------------------- };
     #echo { };    
+    /teamleaderon;
     #line gag;
 }
 
@@ -114,7 +124,8 @@
     #echo {<088>      ------------------------------- };
     #sh {$c_stan_niski  #   %1 ROZWIAZUJE DRUZYNE };
     #echo {<088>      ------------------------------- };
-    #echo { };    
+    #echo { };
+    /teamleaderon;
     #line gag;
 }
 
@@ -124,7 +135,18 @@
     #echo {$c_stan_wysoki  #   <088>------------------------------- };
     #sh {$c_stan_wysoki ###  %1 dolacza do druzyny };
     #echo {$c_stan_wysoki  #   <088>------------------------------- };
-    #echo { };    
+    #echo { };
+    #line gag;
+}
+
+#action {^Dolaczasz do druzyny%*}
+{
+    #echo { };
+    #echo {$c_stan_wysoki  #   <088>------------------------------- };
+    #sh {$c_stan_wysoki ###  Dolaczasz do druzyny };
+    #echo {$c_stan_wysoki  #   <088>------------------------------- };
+    #echo { };
+    /teamleaderoff;
     #line gag;
 }
 
@@ -137,4 +159,3 @@
 
 #nop jakies tam itemsy;
 #sub {polyskujacy zdobiony sztylet} {polyskujacy zdobiony sztylet (spaczony)};
-#high {(spaczony)} {$c_stan_sredni}

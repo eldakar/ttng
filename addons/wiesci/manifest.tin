@@ -1,0 +1,8 @@
+#var bundle_name {wiesci};
+#var bundle_data {0};
+#var bundle_content {1};
+#var bundle_help {1};
+#list bundle_configs clear;
+#list bundle_alias clear;
+
+#var bundle_ready @bundleops_validate{addons};

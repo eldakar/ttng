@@ -1,0 +1,8 @@
+26/05/21
+1. Dodalem funkcja /wiesci, pozwalajaca przegladac dodane rzeczy (zobaczymy jak dlugo bedzie uzyteczna)
+2. Usunalem odnajdywanie mapy po zerwaniu, wroci niedlugo
+3. Dodalem gps na nieumarlych zt, kilka trigow na spadanie i przeskoki
+4. Poprawilem orcal, nadal brakuje paru wejsc i polowy przepasci - dodane przepascie sa zablokowane: pokoj w danym kierunku prowadzi sam do siebie, wykonuje komende spojrz
+5. Dodalem komende /gdzie, pozwalajaca podejzec wyjscie specjalne w danym kierunku (beta)
+6. Dodalem triggery _expo_ na wiekszosci obozow ZC
+7. Dodalem skrypt, ktory wyladowywuje/zaladowywuje do pamieci triggery odpowiedzialne za podazanie za prowadzacym. Jesli jestem w druzynie i jej nie prowadze, zaladowane sa skrypty na przesuwanie kulki i na bindy zwiazane z wejsciami specjalnymi - po zerwaniu/zalogowaniu polecam wpisac druzyna, skrypty beda szybciej chodzic

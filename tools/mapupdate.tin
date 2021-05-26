@@ -1,0 +1,108 @@
+#map read bundles/mapa/map.map
+
+#line ignore #sh {<faa>purging...<088>};
+#loop {1} {50000} {loo} {
+	#map at {$loo} {
+		#map get roomexits rx;
+		#foreach {*rx[]} {_rx_} {
+			#map exit $_rx_ color;
+		};
+	};
+};
+
+#line ignore #sh {<faa>c<afa>o<aaf>l<ffa>o<aff>r<faa>i<afa>n<aaf>g<ffa>.<aff>.<fca>.<088>};
+#loop {1} {50000} {loo} {
+	#map at {$loo} {
+		#map get roomexits rx;
+		#foreach {*rx[]} {_rx_} {
+			#var mode {null};
+			#switch {"$_rx_"} {
+				#case {"n"} {#var mode {null}};
+				#case {"s"} {#var mode {null}};
+				#case {"w"} {#var mode {null}};
+				#case {"e"} {#var mode {null}};
+				#case {"ne"} {#var mode {null}};
+				#case {"nw"} {#var mode {null}};
+				#case {"sw"} {#var mode {null}};
+				#case {"se"} {#var mode {null}};
+				#case {"d"} {#var mode {null}};
+				#case {"u"} {#var mode {null}};
+				#case {"sp"} {#var mode {trap}};
+				#case {"spojrz"} {#var mode {trap}};
+				#case {"wyjscie"} {#var mode {instant}};
+				#case {"przeskocz wyrwe"} {#var mode {instant}};
+				#case {"wejdz na gore"} {#var mode {overtime}};
+				#case {"przejdz po drzewie"} {#var mode {overtime}};
+				#case {"wejdz na partner"} {#var mode {overtime}};
+				#case {"wespnij sie na gore"} {#var mode {overtime}};
+				#case {"wespnij sie na mur"} {#var mode {overtime}};				
+				#case {"przeplyn na wysepke"} {#var mode {overtime}};
+				#case {"przeplyn na plaze"} {#var mode {overtime}};
+				#case {"przeplyn na polnoc"} {#var mode {overtime}};
+				#case {"przeplyn na poludnie"} {#var mode {overtime}};
+				#case {"przeplyn rzeke"} {#var mode {overtime}};
+				#case {"przeplyn pod kratka"} {#var mode {overtime}};
+				#case {"zejdz na dol"} {#var mode {overtime}};
+				#default {#var mode {instant}};
+			};
+			#if {"$mode" == "overtime"} {
+				#foreach {*rx[]} {_rxx_} {
+					#if {"$rx[$_rxx_]" == "$rx[$_rx_]"} {
+						#map exit $_rxx_ color <bbf>;
+					};
+				};
+			};
+			#if {"$mode" == "instant"} {
+				#foreach {*rx[]} {_rxx_} {
+					#if {"$rx[$_rxx_]" == "$rx[$_rx_]"} {
+						#map exit $_rxx_ color <bfb>;
+					};
+				};
+			};
+			#if {"$mode" == "trap"} {
+				#foreach {*rx[]} {_rxx_} {
+					#if {"$rx[$_rxx_]" == "$rx[$_rx_]"} {
+						#map exit $_rxx_ color <faa>;
+					};
+				};
+			};
+			#nop if {"$mode" == "null"} {
+				#foreach {*rx[]} {_rxx_} {
+					#var foundexit 0;
+					#nop sh {$rx[$_rxx_] & $rx[$_rx_]};
+					#if {"$rx[$_rxx_]" == "$rx[$_rx_]" && "$_rxx_" != "$_rx_"} {
+						#nop sh { >>>>     $_rx_};
+						#switch {"$_rxx_"} {
+							#case {"n"} {#map exit $_rx_ color;};
+							#case {"s"} {#map exit $_rx_ color;};
+							#case {"w"} {#map exit $_rx_ color;};
+							#case {"e"} {#map exit $_rx_ color;};
+							#case {"ne"} {#map exit $_rx_ color;};
+							#case {"nw"} {#map exit $_rx_ color;};
+							#case {"sw"} {#map exit $_rx_ color;};
+							#case {"se"} {#map exit $_rx_ color;};
+							#case {"d"} {#map exit $_rx_ color;};
+							#case {"u"} {#map exit $_rx_ color;};
+						};
+					};
+
+				};
+			};		
+		};
+	};
+};
+
+
+#line ignore #sh {<afa>higlighting hidden exits...<088>};
+#loop {1} {50000} {loo} {
+	#map at {$loo} {
+		#map get roomexits rx;
+		#foreach {*rx[]} {_rx_} {
+			#map exit $_rx_ save exitdata;
+			#if {$exitdata[flags] & 1} {#map exit $_rx_ color <ffa>};
+		};
+	};
+};
+
+
+#line ignore #sh {<afa>done! :)<088>};

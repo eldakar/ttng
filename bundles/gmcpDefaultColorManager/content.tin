@@ -18,5 +18,12 @@
 	};
 };
 
+#alias {/teamleaderon} {
+    #var wyladowany @bundleops_unload{podazanie};
+} {1};
+#alias {/teamleaderoff} {
+	#read bundles/podazanie/manifest.tin
+} {1};
+
 #read bundles/gmcpDefaultColorManager/data.tin;
 #read bundles/gmcpDefaultColorManager/data2.tin;

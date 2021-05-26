@@ -37,7 +37,7 @@
     #read addons/makra/manifest.tin;
     #read addons/zbieranie/manifest.tin;
     #read addons/porownaniecech/manifest.tin;
-    #read bundles/TTMapFollow/manifest.tin;
+    #read bundles/podazanie/manifest.tin;
     #read bundles/TTMapFreezer/manifest.tin;
     #read bundles/TTMapSigns/manifest.tin;
     #read bundles/gmcpDefaultColorManager/manifest.tin;
@@ -58,6 +58,7 @@
     #read bundles/Calendar/manifest.tin;
     #read bundles/walkasuby/manifest.tin;
     #read bundles/chat/manifest.tin;
+    #read addons/wiesci/manifest.tin;
 
     #read markups.tin;
     #read kamienie.tin;

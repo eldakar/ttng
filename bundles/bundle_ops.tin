@@ -78,7 +78,7 @@
 		#list bundlemanager_bundles add {$bundle_name};
 		#var bundles_types[$bundle_name] {%1};
 		#var bundles_$bundle_name {1};
-		#nop echo {<128>Bundle Loaded: <168>$bundle_name<088>};
+		#line ignore #sh {<128>Laduje skrypty: <168>$bundle_name<088>};
 		
 		#if {$bundle_help > 0} {
 			#list bundlemanager_helps add {$bundle_name};
@@ -106,6 +106,7 @@
 }
 
 #function {bundleops_unload} {
+	#line ignore #sh {<128>Usuwam skrypty: <168>%1<088>};
 	#var bundleindex 0;
 	#list bundlemanager_bundles find {%1} bundleindex;
 	#list bundlemanager_bundles del $bundleindex;

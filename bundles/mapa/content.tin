@@ -371,6 +371,7 @@
     };
 };
 
+#alias /gdzie {#map get roomexits grem;#var grem;#unvar grem;} {1};
 
 #nop #################################################################################;
 #nop EVENTY GMCP;
@@ -399,6 +400,7 @@
     #if {$ROOM_INFO[map][x] > 0} {        
         #var current_room_short_desc {$ROOM_INFO[map][name] $ROOM_INFO[map][x] $ROOM_INFO[map][y]};
     };
+
 };
 
 

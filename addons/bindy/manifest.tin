@@ -25,7 +25,6 @@
 #nop in order to load the bundle;
 #nop ############################;
 #list bundle_slots clear;
-#list bundle_slots add {quickbind};
 
 #nop ############################;
 #nop BUNDLE DEPENDENCIES ###;
