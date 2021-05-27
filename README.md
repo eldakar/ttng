@@ -1,6 +1,6 @@
 # ttng config cheat sheet
 
-## Okna
+## Okna i Mapka
 
 ### /conf pasek
 - micro - pasek pokazuje tylko HP, zmeczenie i Mana - dostosowane do szerokosci ekranu
@@ -22,6 +22,10 @@
 ### /conf SplitWingMapWidth *wartosc*
 - szerokosc mapy, mozna zmienic przeciagajac myszka lewa ramke mapy
 
+### /conf roza
+- widoczna - roza wiatrow w okienku arki
+- niewidoczna
+- 
 
 ## Postac
 
@@ -42,6 +46,10 @@
 - wlaczone - w katalogu bundles/ConfigManager/Profiles/Logs/ (katalog musi istniec!)
 - wylaczone
 
+### /conf powtorzenter
+- wlaczony - ponowne nacisniecie entera wykona poprzednia komende - nie widac w pasku!!
+- wylaczony
+
 ### /conf plaszcz
 - wlaczony - po odsapnieciu od walki, binduje plaszcz
 - wylaczony
@@ -57,7 +65,17 @@
 ### /conf sakiewka *typsakiewki*
 - plecak - ustawienie sakiewki -plecak-, uzyje wartosci z /conf plecak
 - sakiewka
-- 
+
+### /conf pochwa *typpochwy*
+- uprzaz - po ustawieniu, mozna uzywac komend dobycia
+- pochwa
+- temblak
+
+### /conf pochwa2 *typpochwy*
+- druga bron...
+
+### /conf zbieranie **lista**
+- monety,kamienie,trofea,klucze - lista przedmiotow ktore chcemy zbierac, po przecinku, bez spacji
 
 ## Walka
 
