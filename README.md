@@ -25,7 +25,39 @@
 
 ## Postac
 
+### /conf echokomend 
+- widoczne
+- niewidoczne
 
+### /conf gildia
+- mc - z malej litery
+
+### /conf zawod
+- mc - z malej litery, po ustawieniu, beda uzywane komendy do dobywania, opuszczania broni/tarczy
+
+### /conf globalnypostep *wartosc*
+- zapamietuje nieznaki automatycznie, mozna ustawic tutaj startowa wartosc
+
+### /conf logowanie
+- wlaczone - w katalogu bundles/ConfigManager/Profiles/Logs/ (katalog musi istniec!)
+- wylaczone
+
+### /conf plaszcz
+- wlaczony - po odsapnieciu od walki, binduje plaszcz
+- wylaczony
+
+### /conf meldujprzy *wartosc*
+- 0 do 9 - melduj zmeczenie prowadzacemu przy tej wartosci
+
+### /conf plecak *typplecaka*
+- plecak - ustawienie plecaka umozliwia uzywanie aliasow
+- torba
+- etc
+
+### /conf sakiewka *typsakiewki*
+- plecak - ustawienie sakiewki -plecak-, uzyje wartosci z /conf plecak
+- sakiewka
+- 
 
 ## Walka
 
