@@ -16,3 +16,6 @@ TUTOR /map ove e - pokoloruje wyjscie na e na niebiesko (czasowe/wspinaczka)
 TUTOR /map tra e - pokoloruje wyjscie na e na czerwono (pulapka)
 TUTOR /map ins e - pokoloruje wyjscie na e na zielono (przeskok)
 2. Opisane wszystkie GPSy w skarbcu Nieumarlych ZT
+
+** 27/05/21 - rozne **
+1. Pokolorowalem mutanta w kreutz
