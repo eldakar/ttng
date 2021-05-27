@@ -1,5 +1,119 @@
 # ttng config cheat sheet
 
+## Okna i Mapka
+
+### /conf pasek
+- micro - pasek pokazuje tylko HP, zmeczenie i Mana - dostosowane do szerokosci ekranu
+- mini - pasek dolny pokazuje tylko numeryczne wartosci (wersja pod telefon)
+- medium - pasek desktopowy, z przyciskami
+
+### /conf kondycje
+- pelne - ustawienie na szeroki ekran, widac cale opisy wrogow, cel ataku wrogow, bindy
+- medium - polowa rozmiaru pelnego okna, imiona sa obcinane
+- mini - wersja pod telefon
+
+### /conf szerokoschpkow
+- auto - szerokosc kondycji, many, itp zalezna od szerokosci ekranu
+- wartosc - ustawia statyczna wartosc 1 numer = 1 znak 
+
+### /conf RaidSize *wartosc*
+- wysokosc okienka kondycji, warto zrobic kilka aliasow na rozne wysokosci
+
+### /conf SplitWingMapWidth *wartosc*
+- szerokosc mapy, mozna zmienic przeciagajac myszka lewa ramke mapy
+
+### /conf roza
+- widoczna - roza wiatrow w okienku arki
+- niewidoczna
+
+### /conf dynamicznamapa
+- wlaczona - (BETA) - sprawdza czy jestesmy na terenie zmapowanym, jesli nie, rysuje
+- wylaczona - jesli nie wiesz lub nie chcesz wiedziec 
+
+### /conf trybmapy
+- ascii - szerokosc wyjsc miedzy lokacjami wynosi 2 znaki
+- unicode - szerokosc wyjsc miedzy lokacjami wynosi 1 znak - lepsze na mniejsze ekrany
+
+### /conf kolorowaniemapy
+- wlaczone - rysuje ozdobienia mapy wedlug wartosci _terrain_
+- wylaczone - mapka jest duzo szybsza bez ozdobnikow
+
+### /conf dziennamapie
+- wlaczony - kolory lokacji roznia sie w dzien i w nocy
+- wylaczony
+
+## Postac
+
+### /conf echokomend 
+- widoczne
+- niewidoczne
+
+### /conf gildia
+- mc - z malej litery
+
+### /conf zawod
+- mc - z malej litery, po ustawieniu, beda uzywane komendy do dobywania, opuszczania broni/tarczy
+
+### /conf globalnypostep *wartosc*
+- zapamietuje nieznaki automatycznie, mozna ustawic tutaj startowa wartosc
+
+### /conf logowanie
+- wlaczone - w katalogu bundles/ConfigManager/Profiles/Logs/ (katalog musi istniec!)
+- wylaczone
+
+### /conf powtorzenter
+- wlaczony - ponowne nacisniecie entera wykona poprzednia komende - nie widac w pasku!!
+- wylaczony
+
+### /conf plaszcz
+- wlaczony - po odsapnieciu od walki, binduje plaszcz
+- wylaczony
+
+### /conf meldujprzy *wartosc*
+- 0 do 9 - melduj zmeczenie prowadzacemu przy tej wartosci
+
+### /conf plecak *typplecaka*
+- plecak - ustawienie plecaka umozliwia uzywanie aliasow
+- torba
+- etc
+
+### /conf sakiewka *typsakiewki*
+- plecak - ustawienie sakiewki -plecak-, uzyje wartosci z /conf plecak
+- sakiewka
+
+### /conf pochwa *typpochwy*
+- uprzaz - po ustawieniu, mozna uzywac komend dobycia
+- pochwa
+- temblak
+
+### /conf pochwa2 *typpochwy*
+- druga bron...
+
+### /conf zbieranie **lista**
+- monety,kamienie,trofea,klucze - lista przedmiotow ktore chcemy zbierac, po przecinku, bez spacji
+
+### /conf kolormagikow *kolor*
+- ustawia kolor, w jakim wyswietlaja sie magiczne przedmioty (wpisz showcolors zeby sprawdzic dostepne kody)
+
+## Baza Postaci
+
+### KGKS,LE,TW,G,NA,AL,SC,VR,GL,ZS,KM,OSPS,OS,SGW,MC
+
+### /conf RaidTableGuild *gildia*
+- ustawia przynaleznosc do gildii
+
+### /conf kolorgildii *kolor*
+- ustawia kolor, w jakim wyswietla sie nasza gildia (wpisz showcolors zeby sprawdzic dostepne kody)
+
+### /conf gildie
+- widoczne - rozwija imie postaci do Imie (GILDIA)
+- niewidoczne
+
+### /conf RaidTableGuildEnemies *lista gildii, po przecinku, bez spacji*
+- ustawia wrogie gildie, beda one bindowac sie pod aliasami
+
+### /conf RaidTableGuildFriends *lista gildii, po przecinku, bez spacji*
+- ustawia przyjazne gildie
 
 ## Walka
 
@@ -20,40 +134,6 @@
 - ustawia komende do zabijania
 
 ### /conf probymanewrow
-- widoczne - wydac nieudane proby zaslon i przelaman wrogow
-- niewidoczne - ukrywa je
+- widoczne - widac nieudane proby zaslon i przelaman wrogow (wpisz showcolors zeby sprawdzic dostepne kody)
+- niewidoczne - ukrywa
 
-## Okno kondycji
-
-### /conf pasek
-- mini
-
-
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/eldakar/ttng/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
