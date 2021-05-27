@@ -25,7 +25,22 @@
 ### /conf roza
 - widoczna - roza wiatrow w okienku arki
 - niewidoczna
-- 
+
+### /conf dynamicznamapa
+- wlaczona - (BETA) - sprawdza czy jestesmy na terenie zmapowanym, jesli nie, rysuje
+- wylaczona - jesli nie wiesz lub nie chcesz wiedziec 
+
+### /conf trybmapy
+- ascii - szerokosc wyjsc miedzy lokacjami wynosi 2 znaki
+- unicode - szerokosc wyjsc miedzy lokacjami wynosi 1 znak - lepsze na mniejsze ekrany
+
+### /conf kolorowaniemapy
+- wlaczone - rysuje ozdobienia mapy wedlug wartosci _terrain_
+- wylaczone - mapka jest duzo szybsza bez ozdobnikow
+
+### /conf dziennamapie
+- wlaczony - kolory lokacji roznia sie w dzien i w nocy
+- wylaczony
 
 ## Postac
 
@@ -77,6 +92,29 @@
 ### /conf zbieranie **lista**
 - monety,kamienie,trofea,klucze - lista przedmiotow ktore chcemy zbierac, po przecinku, bez spacji
 
+### /conf kolormagikow *kolor*
+- ustawia kolor, w jakim wyswietlaja sie magiczne przedmioty (wpisz showcolors zeby sprawdzic dostepne kody)
+
+## Baza Postaci
+
+### KGKS,LE,TW,G,NA,AL,SC,VR,GL,ZS,KM,OSPS,OS,SGW,MC
+
+### /conf RaidTableGuild *gildia*
+- ustawia przynaleznosc do gildii
+
+### /conf kolorgildii *kolor*
+- ustawia kolor, w jakim wyswietla sie nasza gildia (wpisz showcolors zeby sprawdzic dostepne kody)
+
+### /conf gildie
+- widoczne - rozwija imie postaci do Imie (GILDIA)
+- niewidoczne
+
+### /conf RaidTableGuildEnemies *lista gildii, po przecinku, bez spacji*
+- ustawia wrogie gildie, beda one bindowac sie pod aliasami
+
+### /conf RaidTableGuildFriends *lista gildii, po przecinku, bez spacji*
+- ustawia przyjazne gildie
+
 ## Walka
 
 ### /conf CombatGag
@@ -96,11 +134,6 @@
 - ustawia komende do zabijania
 
 ### /conf probymanewrow
-- widoczne - widac nieudane proby zaslon i przelaman wrogow
+- widoczne - widac nieudane proby zaslon i przelaman wrogow (wpisz showcolors zeby sprawdzic dostepne kody)
 - niewidoczne - ukrywa
-
-
-
-
-
 
