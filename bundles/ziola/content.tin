@@ -461,11 +461,13 @@
 } {1};
 
 #alias {/sap} {
-    otworz pierwszy przytroczony woreczek;
-    otworz drugi przytroczony woreczek;
-    otworz trzeci przytroczony woreczek;
-    otworz czwarty przytroczony woreczek;
-    otworz piaty przytroczony woreczek;
+    otworz pierwszy woreczek;
+    otworz drugi woreczek;
+    otworz trzeci woreczek;
+    otworz czwarty woreczek;
+    otworz piaty woreczek;
+    otworz szosty woreczek;
+    otworz siodmy woreczek;
 
     opusc wszystkie bronie;
 
@@ -473,31 +475,54 @@
         #format sposoblen {%L} {$zioladb[$ziolkonazwa][sposob][zm]};
         #if {$sposoblen > 1 && "$ziolkonazwa" != "Deliona"} {
             #if {$zioladb[$ziolkonazwa][ilosc] > 0} {
-                wez $zioladb[$ziolkonazwa][odmiana] z pierwszego przytroczonego woreczka;
-                wez $zioladb[$ziolkonazwa][odmiana] z drugiego przytroczonego woreczka;
-                wez $zioladb[$ziolkonazwa][odmiana] z trzeciego przytroczonego woreczka;
-                wez $zioladb[$ziolkonazwa][odmiana] z czwartego przytroczonego woreczka;
-                wez $zioladb[$ziolkonazwa][odmiana] z piatego przytroczonego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z pierwszego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z pierwszego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z pierwszego woreczka;
+                
+                wez $zioladb[$ziolkonazwa][odmiana] z drugiego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z drugiego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z drugiego woreczka;
+                
+                wez $zioladb[$ziolkonazwa][odmiana] z trzeciego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z trzeciego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z trzeciego woreczka;
+                
+                wez $zioladb[$ziolkonazwa][odmiana] z czwartego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z czwartego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z czwartego woreczka;
+
+                wez $zioladb[$ziolkonazwa][odmiana] z piatego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z piatego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z piatego woreczka;
+
+                wez $zioladb[$ziolkonazwa][odmiana] z szostego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z szostego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z szostego woreczka;
+
+                wez $zioladb[$ziolkonazwa][odmiana] z siodmego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z siodmego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z siodmego woreczka;
 
                 $zioladb[$ziolkonazwa][sposob][zm] $zioladb[$ziolkonazwa][odmiana];
-                $zioladb[$ziolkonazwa][sposob][zm] $zioladb[$ziolkonazwa][odmiana];
-                $zioladb[$ziolkonazwa][sposob][zm] $zioladb[$ziolkonazwa][odmiana];
 
-                wloz ziola do pierwszego przytroczonego woreczka;
-                wloz ziola do drugiego przytroczonego woreczka;
-                wloz ziola do trzeciego przytroczonego woreczka;
-                wloz ziola do czwartego przytroczonego woreczka;
-                wloz ziola do piatego przytroczonego woreczka;
+                wloz ziola do pierwszego woreczka;
+                wloz ziola do drugiego woreczka;
+                wloz ziola do trzeciego woreczka;
+                wloz ziola do czwartego woreczka;
+                wloz ziola do piatego woreczka;
+                wloz ziola do szostego woreczka;
+                wloz ziola do siodmego woreczka;
             };
         };
     };
 
-    zamknij pierwszy przytroczony woreczek;
-    zamknij drugi przytroczony woreczek;
-    zamknij trzeci przytroczony woreczek;
-    zamknij czwarty przytroczony woreczek;    
-    zamknij piaty przytroczony woreczek;    
-    
+    zamknij pierwszy woreczek;
+    zamknij drugi woreczek;
+    zamknij trzeci woreczek;
+    zamknij czwarty woreczek;    
+    zamknij piaty woreczek;     
+    zamknij szosty woreczek;    
+    zamknij siodmy woreczek; 
     dobadz wszystkich broni;
 } {1};
 

@@ -371,7 +371,36 @@
     };
 };
 
-#alias /gdzie {#map get roomexits grem;#var grem;#unvar grem;} {1};
+#nop alias /gdzie {#map get roomexits grem;#var grem;#unvar grem;} {1};
+
+#alias /gdzie {
+    #line ignore #showme {<dfd>Wyjscia niestandardowe:<088>};
+    #map get roomexits rx;
+    #foreach {*rx[]} {_rx_} {
+        #switch {"$_rx_"} {
+            #case {"n"} {#var mode {null}};
+            #case {"s"} {#var mode {null}};
+            #case {"w"} {#var mode {null}};
+            #case {"e"} {#var mode {null}};
+            #case {"ne"} {#var mode {null}};
+            #case {"nw"} {#var mode {null}};
+            #case {"sw"} {#var mode {null}};
+            #case {"se"} {#var mode {null}};
+            #case {"d"} {#var mode {null}};
+            #case {"u"} {#var mode {null}};
+            #default {#var mode {custom}};
+        };
+        #if {"$mode" == "custom"} {
+            #foreach {*rx[]} {_rxx_} {
+                #if {"$rx[$_rxx_]" == "$rx[$_rx_]"} {
+                    #line ignore #echo {<bfb>%-9s <088>: <ffc>%-30s<088>} {$_rxx_} {$_rx_};
+                };
+            };
+        };
+    };
+} {1};
+
+
 
 #nop #################################################################################;
 #nop EVENTY GMCP;

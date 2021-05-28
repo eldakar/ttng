@@ -33,6 +33,7 @@
 #action {Szukasz wszedzie, ale nie znajdujesz zadnych ziol.} {frozen_unset};
 #action {Znajdujesz %*.} {frozen_unset};
 #action {Znalazles %*.} {frozen_unset;}
+#action {Po odsunieciu opornych pedow bluszczu na polnocnej scianie ukazuje ci sie} {frozen_unset;}
 
 #action {Wyrywasz %* z ciala %*} {frozen_unset};
 #action {Wycinasz %* z ciala %*} {frozen_unset};
