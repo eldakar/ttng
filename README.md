@@ -42,6 +42,10 @@
 - wlaczony - kolory lokacji roznia sie w dzien i w nocy
 - wylaczony
 
+### /conf myszka
+- wlaczona - myszki mozna uzywac do rozsuwania mapy, klikania i przyciskow
+- wylaczona - myszki mozna uzywac tylko do kopiowania tekstu
+
 ## Postac
 
 ### /conf echokomend 
