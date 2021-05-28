@@ -620,7 +620,7 @@
     }
     {Angar_} 
     {
-        {gildia} {NPC}
+        {gildia} {BOSS}
     }
     {Angari_} 
     {
@@ -8397,6 +8397,10 @@
     {
         {gildia} {NPC}
     }
+    {Mezczyzna_} 
+    {
+        {gildia} {ZS}
+    }
     {Mhonar_} 
     {
         {gildia} {RA}
@@ -8789,6 +8793,10 @@
     {Mustafa_} 
     {
         {gildia} {NPC}
+    }
+    {Mutant_} 
+    {
+        {gildia} {BOSS}
     }
     {Mutanttest_} 
     {
@@ -9769,6 +9777,10 @@
     {Ptahen_} 
     {
         {gildia} {SGW}
+    }
+    {Ptak_} 
+    {
+        {gildia} {BOSS}
     }
     {Pulp_} 
     {
@@ -11327,6 +11339,10 @@
     {Syrius_} 
     {
         {gildia} {GP}
+    }
+    {Szaman_} 
+    {
+        {gildia} {BOSS}
     }
     {Szawdyn_} 
     {
@@ -21701,6 +21717,11 @@
         {gildia} {NPC}
         {imie} {Krepus}
     }
+    {modar_masywny_lysy_} 
+    {
+        {gildia} {ZS}
+        {imie} {Mezczyzna}
+    }
     {modrooka_mloda_halflinka_} 
     {
         {gildia} {SC}
@@ -22984,6 +23005,11 @@
     {
         {gildia} {GP}
         {imie} {Shik}
+    }
+    {niski_zabandazowany_mutant_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Mutant}
     }
     {niski_zakatarzony_gnom_} 
     {
@@ -25135,7 +25161,7 @@
     }
     {potezny_lysy_mezczyzna_} 
     {
-        {gildia} {NPC}
+        {gildia} {BOSS}
         {imie} {Angar}
     }
     {potezny_opancerzony_golem_} 
@@ -29069,6 +29095,11 @@
         {gildia} {MC}
         {imie} {Nen}
     }
+    {wiekowy_masywny_ork_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Szaman}
+    }
     {wiekowy_metnooki_gnom_} 
     {
         {gildia} {OHM}
@@ -31026,6 +31057,11 @@
     {
         {gildia} {GP}
         {imie} {Marron}
+    }
+    {zlowrogi_ptakopodobny_mezczyzna_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Ptak}
     }
     {zmanierowana_elegancka_kobieta_} 
     {

@@ -48,6 +48,11 @@
 	_zabij_ przeciwnika;
 };
 
+#alias {smoczy_ogr} {
+	zabij ogra;
+	zabij orka;
+	_zabij_ przeciwnika;
+}
 
 #alias {snotlingi_nuln} {
 	zabij snotlinga;

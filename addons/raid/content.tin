@@ -154,6 +154,10 @@
                         #var duch[$dudu][enemy] {true};
                     };
                 };
+                #if {"$postac[$test][gildia]" == "BOSS"} {
+                        #var duch[$dudu][typ] {boss};
+                        #var duch[$dudu][enemy] {true};                    
+                };
             };
 #nop 16-03-2020;
 
@@ -723,7 +727,7 @@
             #if {"$duch[$du][enemy]" == "true"} {#var tmpkol {<caf>}};
             #if {"$duch[$du][team]" == "true"} {#var tmpkol {<acf>}};
             #if {"$duch[$du][typ]" == "wrog"} {#var tmpkol {<G01><118>}};
-            #if {"$duch[$du][typ]" == "boss"} {#var tmpkol {<fca>}};
+            #if {"$duch[$du][typ]" == "boss"} {#var tmpkol {<CAF><178>}};
 
             #if {"$duch[$du][attack_target]" == "true"} {#var tmpcel {CEL};#var tmpkol {<faa>}};
             #if {"$duch[$du][defense_target]" == "true"} {#var tmpcel {COB};#var tmpkol {<AAB><178>}};
