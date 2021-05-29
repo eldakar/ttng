@@ -36,6 +36,8 @@ TUTOR /conf myszka wlaczona|wylaczona
 > Dodany skrot do tego helpa pod **/wiesci**
 > Poprawiony konczacy spec KS
 > Dodany trigger zbierania z ciala po zabicu zombie
+> Kalibracja nowiu, niedlugo powinien juz smigac...
+> Dodane opisy zbroi ciezka/srednia/lekka przy ocenie
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW

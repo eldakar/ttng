@@ -13,6 +13,10 @@
 #high {(w zlym stanie)} {<018>};
 #high {(wymaga natychmiastowej konserwacji)} {<118>};
 
+#high {ciezka zbroje} {<118>};
+#high {srednia zbroje} {<138>};
+#high {lekka zbroje} {<128>};
+
 #nop poziomy magicznego zuzycia;
 #sub {(posluzy naprawde dlugo, w znakomitym stanie)} {<028>posluzy bardzo dlugo - 8/8 8d+<088>};
 #sub {(posluzy naprawde dlugo)} {<028>posluzy bardzo dlugo - 8/8 8d+<088>};
