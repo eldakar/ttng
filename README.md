@@ -121,6 +121,10 @@
 
 ## Walka
 
+### /conf dzwiekataku
+- wlaczony - dzwiek systemowy gdy jestesmy atakowani
+- wylaczony
+
 ### /conf CombatGag
 - 0 - wyswietlaj cala walke
 - 1 - wyciszaj dodge, miss & parry
