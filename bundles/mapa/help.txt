@@ -15,6 +15,9 @@ TUTOR /conf roza
 TUTOR /conf dziennamapie
        wlaczony - kolor mapy zmienia sie zaleznie od dnia i nocy
        wylaczony - mapa ma jeden kolor (jest tez szybsza)
+TUTOR /conf myszka
+       wlaczona - obsluga myszki na mapie + przyciski
+       wylaczona - myszka zaznacza tekst
 WARN Aliasy
 TUTOR       _trybchodzenia_ - ALIAS SYSTEMOWY - zmienia tryb chodzenia       
        normalne    (znak W na rozy wiatrow)

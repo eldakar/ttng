@@ -344,6 +344,7 @@
 #var bronstatus off;
 #action {{Juz dzierzysz|Gwaltownym ruchem wyszarpujesz|Dobywasz|Wiedziony naglym instynktem siegasz|Pelnym pewnosci siebie ruchem dobywasz| twego pewnego chwytu, | zaciskasz dlon |Trzymasz|dobywajac}}
 {
+	SplitWingMap_Offset;
 	#var bronstatus on;
 };
 #action {{Opuszczasz | ogarniajac wzrokiem cala okolice| opuszczasz | rozluzniasz uchwyt | do tej pory twe serce }%*.}

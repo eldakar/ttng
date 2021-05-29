@@ -13,32 +13,37 @@
 #high {(w zlym stanie)} {<018>};
 #high {(wymaga natychmiastowej konserwacji)} {<118>};
 
+#high {ciezka zbroje} {<118>};
+#high {srednia zbroje} {<138>};
+#high {lekka zbroje} {<128>};
+
 #nop poziomy magicznego zuzycia;
 #sub {(posluzy naprawde dlugo, w znakomitym stanie)} {<028>posluzy bardzo dlugo - 8/8 8d+<088>};
 #sub {(posluzy naprawde dlugo)} {<028>posluzy bardzo dlugo - 8/8 8d+<088>};
-
 #sub {(posluzy bardzo dlugo, w znakomitym stanie)} {<028>posluzy bardzo dlugo - 7/8 5d+<088>};
 #sub {(posluzy bardzo dlugo)} {<028>posluzy bardzo dlugo - 7/8 5d+<088>};
-
 #sub {(posluzy dlugo, w znakomitym stanie)} {<028>posluzy dlugo - 6/8 3d+<088>};
 #sub {(posluzy dlugo)} {<028>posluzy dlugo - 6/8 3d+<088>};
-
 #sub {(posluzy raczej dlugo, w znakomitym stanie)} {<038>posluzy raczej dlugo - 5/8 2d+<088>};
 #sub {(posluzy raczej dlugo)} {<038>posluzy raczej dlugo - 5/8 2d+<088>};
-
 #sub {(posluzy troche, w znakomitym stanie)} {<038>posluzy troche - 4/8 1d+<088>};
 #sub {(posluzy troche)} {<038>posluzy troche - 4/8 1d+<088>};
-
 #sub {(posluzy raczej krotko, w znakomitym stanie)} {<018>posluzy raczej krotko - 3/8 6h+<088>};
 #sub {(posluzy raczej krotko)} {<018>posluzy raczej krotko - 3/8 6h+<088>};
-
 #sub {(posluzy krotko, w znakomitym stanie)} {<018>posluzy krotko - 2/8 1h+<088>};
 #sub {(posluzy krotko)} {<018>posluzy krotko - 2/8 1h+<088>};
-
 #sub {(posluzy bardzo krotko, w znakomitym stanie)} {<018>posluzy bardzo krotko - 1/8 <1h<088>};
 #sub {(posluzy bardzo krotko)} {<018>posluzy bardzo krotko - 1/8 <1h<088>};
-
 #high {(nie posluzy dluzej, w znakomitym stanie)} {<018>};
+
+#sub {Wyglada na to, ze %* jeszcze naprawde dlugo sluzyc.} {<028>%0 - 8/8 8d+<088>};
+#sub {Wyglada na to, ze %* jeszcze bardzo dlugo sluzyc.} {<028>%0 - 7/8 5d+<088>};
+#sub {Wyglada na to, ze %* jeszcze dlugo sluzyc.} {<028>%0 - 6/8 3d+<088>};
+#sub {Wyglada na to, ze %* raczej dlugo sluzyc.} {<038>%0 - 5/8 2d+<088>};
+#sub {Wyglada na to, ze %* troche sluzyc.} {<038>%0 - 4/8 1d+<088>};
+#sub {Wyglada na to, ze %* raczej krotko sluzyc.} {<018>%0 - 3/8 6h+<088>};
+#sub {Wyglada na to, ze %* jeszcze krotko sluzyc.} {<018>%0 - 2/8 1h+<088>};
+#sub {Wyglada na to, ze %* bardzo krotko sluzyc.} {<018>%0 - 1/8 <1h<088>};
 
 #sub {ledwo          } {<018>ledwo        10<088>};
 #sub {troche         } {<018>troche       20<088>};

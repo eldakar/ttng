@@ -1,2 +1,4 @@
 #var wiesci_version {1};
 #var wiesci_date {25-05-21};
+
+#alias {/wiesci} {/help wiesci} {1};

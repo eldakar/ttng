@@ -1,32 +1,45 @@
 
 ** 26/05/21 - zmiany w mapie **
-1. Od teraz nowe rzeczy w skryptach beda uaktualniane z poziomu gry
+> Od teraz nowe rzeczy w skryptach beda uaktualniane z poziomu gry
 TUTOR /help wiesci
-2. Usunalem odnajdywanie mapy po zerwaniu, wroci niedlugo
-3. Dodalem gps na nieumarlych zt, kilka trigow na spadanie i przeskoki
-4. Poprawilem orcal, nadal brakuje paru wejsc i polowy przepasci - dodane przepascie sa zablokowane: pokoj w danym kierunku prowadzi sam do siebie, wykonuje komende spojrz
-5. Nowa komenda pozwalajaca podejzec wyjscie specjalne w danym kierunku (beta)
+> Usunalem odnajdywanie mapy po zerwaniu, wroci niedlugo
+> Dodalem gps na nieumarlych zt, kilka trigow na spadanie i przeskoki
+> Poprawilem orcal, nadal brakuje paru wejsc i polowy przepasci - dodane przepascie sa zablokowane: pokoj w danym kierunku prowadzi sam do siebie, wykonuje komende spojrz
+> Nowa komenda pozwalajaca podejzec wyjscie specjalne w danym kierunku (beta)
 TUTOR /gdzie
-6. Dodalem triggery _expo_ na wiekszosci obozow ZC
-7. Dodalem skrypt, ktory wyladowywuje/zaladowywuje do pamieci triggery odpowiedzialne za podazanie za prowadzacym. Jesli jestem w druzynie i jej nie prowadze, zaladowane sa skrypty na przesuwanie kulki i na bindy zwiazane z wejsciami specjalnymi - po zerwaniu/zalogowaniu polecam wpisac druzyna, skrypty beda szybciej chodzic
+> Dodalem triggery _expo_ na wiekszosci obozow ZC
+> Dodalem skrypt, ktory wyladowywuje/zaladowywuje do pamieci triggery odpowiedzialne za podazanie za prowadzacym. Jesli jestem w druzynie i jej nie prowadze, zaladowane sa skrypty na przesuwanie kulki i na bindy zwiazane z wejsciami specjalnymi - po zerwaniu/zalogowaniu polecam wpisac druzyna, skrypty beda szybciej chodzic
 
 ** 26/05/21 - ciag dalszy zmian w mapie **
-1. Dodane trzy nowe komendy do kolorowania wyjsc na mapie
+> Dodane trzy nowe komendy do kolorowania wyjsc na mapie
 TUTOR /map ove e - pokoloruje wyjscie na e na niebiesko (czasowe/wspinaczka)
 TUTOR /map tra e - pokoloruje wyjscie na e na czerwono (pulapka)
 TUTOR /map ins e - pokoloruje wyjscie na e na zielono (przeskok)
-2. Opisane wszystkie GPSy w skarbcu Nieumarlych ZT
+> Opisane wszystkie GPSy w skarbcu Nieumarlych ZT
 
 ** 27/05/21 - rozne **
-1. Pokolorowalem mutanta w kreutz
-2. Opisane wiecej GPSow na trollach GKS
-3. Dodalem help do modulu prompt
+> Pokolorowalem mutanta w kreutz
+> Opisane wiecej GPSow na trollach GKS
+> Dodalem help do modulu prompt
 
 ** 28/05/21 - rozne **
-1. Poprawiony koniec przeszukiwania muru
-2. Poprawione wyswietlanie HP w pasku mini
+> Poprawiony koniec przeszukiwania muru
+> Poprawione wyswietlanie HP w pasku mini
+> Dodany conf do wlaczania/wylaczania myszki - przydatne np do kopiowania tekstu, mozna sobie wyciagnac do makra...
+TUTOR /conf myszka wlaczona|wylaczona
+> Dobywanie broni z palca ukrywa przypomnienie o dobyciu na mapce
+> Naprawilem otulanie plaszczem po ochlonieciu od walki
+> Dodane expowisko na wsiowych :)
+> Dodane bindy lokacyjne na szamana wsiowego i na smoczego ogra w Wezendorf
+> Poprawione wyswietlanie kluczodajek w oknie kondycji 'pelnej'
+> Dodane opisywanie przetrwania magikow przy ich ocenie
+> Dodany skrot do tego helpa pod **/wiesci**
+> Poprawiony konczacy spec KS
+> Dodany trigger zbierania z ciala po zabicu zombie
+> Kalibracja nowiu, niedlugo powinien juz smigac...
+> Dodane opisy zbroi ciezka/srednia/lekka przy ocenie
 
-Przydatne linki:
+** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng
 MANUALS - https://eldakar.github.io/ttng/

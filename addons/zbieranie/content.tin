@@ -15,8 +15,13 @@
 
 #action {%* umarl} {
   #math {ilecial} {$ilecial + 1};
-	qb _zbierz_;
+  qb _zbierz_;
 };
+
+#action {Sila utrzymujaca %* opuszcza} {
+  #math {ilecial} {$ilecial + 1};
+  qb _zbierz_;	
+}
 
 #alias {/ql} {
 	wez %0 z pierwszego ciala;

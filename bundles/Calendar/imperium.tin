@@ -151,22 +151,22 @@
 #var kalendarz_miesiace[Monstille][pora] {Zima};
 #var kalendarz_miesiace[Vorhexen][pora] {Zima};
 
-#var kalendarz_nowie[1] {14}
-#var kalendarz_nowie[2] {39}
-#var kalendarz_nowie[3] {64}
-#var kalendarz_nowie[4] {88}
-#var kalendarz_nowie[5] {113}
-#var kalendarz_nowie[6] {138}
-#var kalendarz_nowie[7] {163}
-#var kalendarz_nowie[8] {189}
-#var kalendarz_nowie[9] {213}
-#var kalendarz_nowie[10] {238}
-#var kalendarz_nowie[11] {263}
-#var kalendarz_nowie[12] {289}
-#var kalendarz_nowie[13] {313}
-#var kalendarz_nowie[14] {338}
-#var kalendarz_nowie[15] {363}
-#var kalendarz_nowie[16] {389}
+#var kalendarz_nowie[1] {14};  #nop nachexen 13;
+#var kalendarz_nowie[2] {39};  #nop jahrdrung 6;
+#var kalendarz_nowie[3] {65};  #nop OK jahrdrung 31;
+#var kalendarz_nowie[4] {88};  #nop pflugzeit 22;
+#var kalendarz_nowie[5] {113}; #nop sigmarzeit 14;
+#var kalendarz_nowie[6] {138}; #nop sommerzeit 6;
+#var kalendarz_nowie[7] {163}; #nop sommerzeit 31;
+#var kalendarz_nowie[8] {189}; #nop vorgeheim 22;
+#var kalendarz_nowie[9] {213}; #nop nachgeheim 13;
+#var kalendarz_nowie[10] {238};#nop erntezeit 6;
+#var kalendarz_nowie[11] {263};#nop erntezeit 31;
+#var kalendarz_nowie[12] {289};#nop brauzedit 22;
+#var kalendarz_nowie[13] {313};#nop kaldezeit 14;
+#var kalendarz_nowie[14] {338};#nop ulriczeit 6;
+#var kalendarz_nowie[15] {363};#nop ulriczeit 31;
+#var kalendarz_nowie[16] {389};#nop vorhexen 22;
 
 #var kalendarz_nowie_zachod[1] {19}
 #var kalendarz_nowie_zachod[2] {19}

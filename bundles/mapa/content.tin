@@ -31,9 +31,17 @@
     };
 };
 
+#alias {myszka} {
+    #if {"$ConfigManager_Configs[myszka]" =="wylaczona" } {
+        #config {MOUSE} {off};
+    } {
+        #config {MOUSE} {on};
+    };
+};
+
 #alias {roza} {
     #var proza $ConfigManager_Configs[roza];    
-}
+};
 
 #alias {dziennamapie} {
     #if {"$ConfigManager_Configs[dziennamapie]" == "wlaczony"} {
