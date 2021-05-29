@@ -26,6 +26,17 @@
 	}
 }
 
+#alias {dzwiekataku} {
+	#if {"$ConfigManager_Configs[dzwiekataku]" == "wlaczony"} {
+		#action {%0 atakuje cie!} {#bell};
+	} {
+		#unaction {%0 atakuje cie!};
+	}
+};
+
+
+
+
 #alias {system_send_output_echokomend} 
 {
 	#var sendoutput %0;

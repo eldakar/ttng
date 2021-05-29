@@ -55,6 +55,8 @@ TUTOR /conf myszka wlaczona|wylaczona
 >> Dodane nowe wyjscie przez okno
 > Poprawilem wyswietlanie pokojow w trybie unicode - czasami void roomy mialy symbol
 > Dodane ogluszanie hakiem ogra z kotla
+> Dodana opcja dzwieku, gdy zostajemy zaatakowani
+TUTOR /conf dzwiekataku wlaczony | wylaczony
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
