@@ -54,6 +54,7 @@ TUTOR /conf myszka wlaczona|wylaczona
 >> Dodany pokoj ze skarbem
 >> Dodane nowe wyjscie przez okno
 > Poprawilem wyswietlanie pokojow w trybie unicode - czasami void roomy mialy symbol
+> Dodane ogluszanie hakiem ogra z kotla
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
