@@ -38,6 +38,12 @@
     };
 } {1};
 
+#brain #action {<PORT> MCREATENEW %1 %2} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {#map dig %2 new};
+    };
+} {1};
+
 #brain #action {<PORT> DEL %1 %2} {
     #line substitute {variables} {
         #rpg #map at {%1} {#map del %2};
@@ -409,6 +415,14 @@
     #line substitute {variables} {#brain {#port send $brainId {MCREATE $v %1}}};
     } {show_ponged_error2};
 } {1};
+
+#alias {/map dignew %w} {
+    #if {$PONGED == 2} {
+    #map get roomvnum v;
+    #line substitute {variables} {#brain {#port send $brainId {MCREATENEW $v %1}}};
+    } {show_ponged_error2};
+} {1};
+
 
 #alias {/map del %w} {
     #if {$PONGED == 2} {

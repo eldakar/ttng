@@ -50,6 +50,13 @@
     mapsave;
 };
 
+#action {<PORT> MCREATENEW %d %w} {
+    #map at {%1} {#map dig %2 new};
+    broadcast MCREATENEW %1 %2;
+    mapsave;
+};
+
+
 #action {<PORT> DEL %d %w} {
     #map goto %1;
     #map at {%1} {#map del %2};

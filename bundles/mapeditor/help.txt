@@ -13,7 +13,8 @@ Ogolne:
 TUTOR /reconnect                       - odnawia polaczenie
 TUTOR /map clear                       - usuwa notki, komendy, eventy, kolory
 Rysowanie i edytacji nowych wyjsc:
-TUTOR /map dig <kierunek>              - stworz pokoj na <kierunek>
+TUTOR /map dig <kierunek>              - stworz pokoj na <kierunek>, lub lacze istniejacy
+TUTOR /map dignew <kierunek>           - stworz pokoj na <kierunek>, wymuszaj NOWY
 TUTOR /map del <kierunek>              - usun pokoj znajdujacy sie na <kierunek>
 TUTOR /map wyj <kierunek> <wyjscie>    - uzywaj <wyjscie> przy przejsciu na <kierunek>
 TUTOR /map hide <kierunek>             - ukryj pokoj w danym kierunku

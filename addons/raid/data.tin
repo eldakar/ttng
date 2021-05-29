@@ -572,7 +572,7 @@
     }
     {Anatolij_} 
     {
-        {gildia} {KS}
+        {gildia} {BOSS}
     }
     {Ancelmus_} 
     {
@@ -9932,7 +9932,7 @@
     }
     {Raknen_} 
     {
-        {gildia} {GP}
+        {gildia} {BOSS}
     }
     {Rakoth_} 
     {
@@ -18416,7 +18416,7 @@
     }
     {hardy_zarosniety_mezczyzna_} 
     {
-        {gildia} {KS}
+        {gildia} {BOSS}
         {imie} {Anatolij}
     }
     {hardy_zielonooki_krasnolud_} 
@@ -25016,7 +25016,7 @@
     }
     {porywczy_szczerbaty_mezczyzna_} 
     {
-        {gildia} {KS}
+        {gildia} {BOSS}
         {imie} {Anatolij}
     }
     {porywczy_umiesniony_mezczyzna_} 
@@ -25211,7 +25211,7 @@
     }
     {potezny_zarosniety_mezczyzna_} 
     {
-        {gildia} {GP}
+        {gildia} {BOSS}
         {imie} {Raknen}
     }
     {powazna_dojrzala_mutantka_} 

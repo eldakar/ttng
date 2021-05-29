@@ -39,6 +39,15 @@ TUTOR /conf myszka wlaczona|wylaczona
 > Kalibracja nowiu, niedlugo powinien juz smigac...
 > Dodane opisy zbroi ciezka/srednia/lekka przy ocenie
 
+** 29/05/21 - rozne **
+> Raknen, Anatolij - oznaczeni jako bossowie
+> Dodane freezery na podnoszenie krat kazdego typu
+> Dodana komenda **/wroc**, ktora przenosi na ostatnia lokacje po zerwaniu
+> Zmienilem priorytet kolorowania w oknie kondycji
+>> Flaga cel ataku nie bedzie nadpisywac kolorow wroga gildii ani bossa
+>> Eksperymentalnie ta zmiana dotyczy tylko pelnych kondycji
+> Dodalem komende **/map dignew kierunek** ktora tworzy ZAWSZE NOWY pokoj w danym kierunku
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng

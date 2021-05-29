@@ -89,27 +89,19 @@
     }
 };
 
-#nop action {Trwa ladowanie danych} {
-    #var pierwszelogowanie 1;
-};
-
 #alias {startowa} {
     #nop {};
-    #nop if {"$pierwszelogowanie" != "1"} {
-        #var rooa {};
-        #map goto $ConfigManager_Configs[startowa];
-        #var MAPPER_SYNC 1;
-    };
 };
 
-#nop action {^Opuszczasz realny swiat.$} {
-    /conf startowa {};
-} {1};
-
-#nop event {SESSION DISCONNECTED} {
+#event {SESSION DISCONNECTED} {
     /conf startowa $voom;
     #end;
 };
+
+#alias {/wroc} {
+    #map goto $ConfigManager_Configs[startowa];
+    #var MAPPER_SYNC 1;
+} {1};
 
 #var ptrybchodzenia 0;
 #alias {_trybchodzenia_} {

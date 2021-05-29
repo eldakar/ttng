@@ -14,13 +14,13 @@
 #action {Skryt{a|y} za %* zaczynasz plynac na} {frozen_set};
 #action {Nie udalo ci sie znalezc niczego interesujacego.} {frozen_unset};
 
-#action {Zapierasz sie nogami o grunt i probujesz uniesc stalowa krate.} {frozen_set};
+#action {Zapierasz sie nogami o grunt i probujesz uniesc %*.} {frozen_set};
 
 #action {^Siadasz %*} {frozen_set};
 #action {Wstajesz %*} {frozen_unset};
 
 #action {Przestajesz probowac uniesc krate.} {frozen_unset};
-#action {Udaje ci sie uniesc stalowa krate, otwierajac przejscie.} {frozen_unset};
+#action {Udaje ci sie uniesc %*, otwierajac przejscie.} {frozen_unset};
 #action {Wynurzasz sie z wody.} {frozen_unset};
 #action {Klekasz szukajac sladow.} {frozen_set;qr przestan;}
 #action {Przestajesz szukac sladow.} {frozen_unset};
