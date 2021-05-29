@@ -604,7 +604,7 @@
     }
     {Andreus_} 
     {
-        {gildia} {GP}
+        {gildia} {BOSS}
     }
     {Andriel_} 
     {
@@ -9392,7 +9392,7 @@
     }
     {Opluj_} 
     {
-        {gildia} {NPC}
+        {gildia} {BOSS}
     }
     {Opos_} 
     {
@@ -21951,6 +21951,11 @@
         {gildia} {NPC}
         {imie} {Opluj}
     }
+    {muskularny_okrutny_hobgoblin_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Opluj}
+    }
     {muskularny_opalony_krasnolud_} 
     {
         {gildia} {OHM}
@@ -27805,6 +27810,11 @@
     {
         {gildia} {NPC}
         {imie} {Meropem}
+    }
+    {stary_potezny_ork_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Szaman}
     }
     {stary_przygarbiony_gnom_} 
     {
