@@ -57,6 +57,9 @@ TUTOR /conf myszka wlaczona|wylaczona
 > Dodane ogluszanie hakiem ogra z kotla
 > Dodana opcja dzwieku, gdy zostajemy zaatakowani
 TUTOR /conf dzwiekataku wlaczony | wylaczony
+> Blekitnokrwisci
+>> Dodane blokery
+>> Kolorowanie bossow
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW

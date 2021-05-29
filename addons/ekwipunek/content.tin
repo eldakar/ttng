@@ -167,7 +167,7 @@
 #alias {/zes} {
 	otworz skrzynie;
 	wez %0 ze skrzyni;
-	zakmnij skrzynie;
+	zamknij skrzynie;
 } {1};
 
 

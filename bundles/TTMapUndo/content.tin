@@ -87,3 +87,4 @@
 #action {Nie dasz rady otworzyc stalowej kraty, musisz sprobowac ja uniesc.} {qb unies krate;undo};
 #action {Woda wydaje ci sie tak zimna, ze jednak decydujesz} {qb wejdz do wody;undo};
 
+#action {Drabina jest zbyt nisko, by ja wykorzystac do zejscia} {undo};

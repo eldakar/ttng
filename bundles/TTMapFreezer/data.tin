@@ -10,6 +10,9 @@
 #action {Zaczynasz szukac %*} {frozen_set};
 #action {Klekasz na ziemi przy ciele %*} {frozen_set};
 
+#action {Chwytasz koncowe szczeble drabiny i zaczynasz powoli schodzic na dol} {frozen_set};
+#action {Zaczynasz wspinac sie %*} {frozen_set};
+
 #action {Zaczynasz wioslowac.} {frozen_set};
 #action {Skryt{a|y} za %* zaczynasz plynac na} {frozen_set};
 #action {Nie udalo ci sie znalezc niczego interesujacego.} {frozen_unset};
@@ -19,6 +22,7 @@
 #action {^Siadasz %*} {frozen_set};
 #action {Wstajesz %*} {frozen_unset};
 
+#action {Po dokladnym przeszukaniu ciala} {frozen_unset};
 #action {Przestajesz probowac uniesc krate.} {frozen_unset};
 #action {Udaje ci sie uniesc %*, otwierajac przejscie.} {frozen_unset};
 #action {Wynurzasz sie z wody.} {frozen_unset};
@@ -38,3 +42,5 @@
 #action {Wyrywasz %* z ciala %*} {frozen_unset};
 #action {Wycinasz %* z ciala %*} {frozen_unset};
 #action {Nie jestes w stanie %* niczego takiego z ciala} {frozen_unset};
+
+#action {Ostatnimi ciezkimi podciagnieciami konczysz swoja podroz} {frozen_unset};

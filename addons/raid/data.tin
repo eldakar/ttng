@@ -3283,7 +3283,7 @@
     }
     {Edalbert_} 
     {
-        {gildia} {NPC}
+        {gildia} {BOSS}
     }
     {Eday_} 
     {
@@ -20449,7 +20449,7 @@
     }
     {majestatyczny_masywny_mezczyzna_} 
     {
-        {gildia} {NPC}
+        {gildia} {BOSS}
         {imie} {Edalbert}
     }
     {mala_jasnowlosa_dziewczynka_} 
