@@ -1,2 +1,3 @@
 #nop {};
-#sub {Zlowrogi ptakopodobny mezczyzna wykrzykuje skrzekliwe slowa inkantacji!} {<FAA><178>\n%0\n};
+#sub {Zlowrogi ptakopodobny mezczyzna wykrzykuje skrzekliwe slowa inkantacji!} {<FAA><178>\n\n%0\n};
+#sub {%* silnym ciosem %* oglusza cie.} {<FAA><178>\n\n%0\n};
