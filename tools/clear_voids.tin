@@ -1,0 +1,11 @@
+#map read bundles/mapa/map.map
+
+#line ignore #sh {<afa>purging voids...<088>};
+#loop {1} {50000} {loo} {
+	#map at {$loo} {
+		#map get roomflag shit;
+		#if {$shit & 8} {#map set roomsymbol;};
+	};
+};
+
+#line ignore #sh {<afa>done! :)<088>};

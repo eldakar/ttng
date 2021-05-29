@@ -156,7 +156,6 @@
                 };
                 #if {"$postac[$test][gildia]" == "BOSS"} {
                         #var duch[$dudu][typ] {boss};
-                        #var duch[$dudu][enemy] {false}; 
                 };
             };
 #nop 16-03-2020;

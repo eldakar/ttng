@@ -47,6 +47,13 @@ TUTOR /conf myszka wlaczona|wylaczona
 >> Flaga cel ataku nie bedzie nadpisywac kolorow wroga gildii ani bossa
 >> Eksperymentalnie ta zmiana dotyczy tylko pelnych kondycji
 > Dodalem komende **/map dignew kierunek** ktora tworzy ZAWSZE NOWY pokoj w danym kierunku
+> Dodalem kanaly pod Nuln razem z labiryntem
+> Dodalem kanaly pod Novigradem, wlacznie z portalem (mudlet?!)
+> Kasztel:
+>> Dodana drabina dol/gora
+>> Dodany pokoj ze skarbem
+>> Dodane nowe wyjscie przez okno
+> Poprawilem wyswietlanie pokojow w trybie unicode - czasami void roomy mialy symbol
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
