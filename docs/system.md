@@ -67,9 +67,24 @@ Uwaga - to ustawienie uzywane jest do placenia za transport, kupowania w sklepac
 
 `/nierysuj` - nie eksploruj
 
-`/s slowo` - wyszukuje notki na mapie, jesli odnajdzie jedna, ustawia sciezke
+`/s slowo` - wyszukuje notki na mapie, jesli odnajdzie jedna, ustawia sciezke. 
+
+Tworza sie takze aliasy, do przejscia do danej notki. Przydatne dla pocztyliona.
 
 `/reconnect` - ponown polaczenie z mapperem
+
+## Mapa - edycja
+
+`/event komenda` - dodaje komende `_lokacyjna_` w danym pokoju
+
+`/command komenda` - dodaje komende, ktora wykona sie po wejsciu na pokoj (naprzyklad expowisko)
+
+`/n zdanie` - dodaje notke w danym pokoju, notke mozna wyszukac komenda `/s`
+
+`/n F1|F2|F3 zdanie` - tworzy alias lokacyjny, ktory mozna wykonac wpisujac 1,2 lub 3 
+
+`/map clear` - czysci pokoj z eventow, komend i notek kazdego typu
+
 
 ## Stan
 
