@@ -567,10 +567,11 @@
         #if {"$duch[$du][hp]" != ""} {
 
             #math iterator {$iterator + 1};
-            #math indexvalue {64 + $iterator};
+            #math indexvalue {96 + $iterator};
             #if {$indexvalue > 122} {
                 #var indexvalue {88};  
             };
+            
             #format indexchar {%a} {$indexvalue};
             #var duch[$du][alias_value] {$indexchar};
          
