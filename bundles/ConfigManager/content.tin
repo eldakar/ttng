@@ -2,33 +2,6 @@
 #var ConfigManager_Configs[dummy] {0};
 #class ConfigManagerProfile close;
 
-#alias {migruj_makra} {
-	/macro F1 $ConfigManager_Configs[MacF1];
-	/macro F2 $ConfigManager_Configs[MacF2];
-	/macro F3 $ConfigManager_Configs[MacF3];
-	/macro F4 $ConfigManager_Configs[MacF4];
-	/macro F5 $ConfigManager_Configs[MacF5];
-	/macro F6 $ConfigManager_Configs[MacF6];
-	/macro F7 $ConfigManager_Configs[MacF7];
-	/macro F8 $ConfigManager_Configs[MacF8];
-	/macro F9 $ConfigManager_Configs[MacF19];
-	/macro F10 $ConfigManager_Configs[MacF10];
-	/macro F11 $ConfigManager_Configs[MacF11];
-	/macro F12 $ConfigManager_Configs[MacF12];
-	/macro NawiasLewy $ConfigManager_Configs[MacNawiasLewy];
-	/macro NawiasPrawy $ConfigManager_Configs[MacNawiasPrawy];
-	/macro Tylda $ConfigManager_Configs[MacTylda];
-	/macro Tab $ConfigManager_Configs[MacTab];
-	/macro eOo $ConfigManager_Configs[Mac_eOo];
-	/macro eOj $ConfigManager_Configs[Mac_eOj];
-	/macro eOn $ConfigManager_Configs[Mac_eOn];
-	/macro eOm $ConfigManager_Configs[Mac_eOm];
-	/macro eOk $ConfigManager_Configs[Mac_eOk];
-	/macro eOu $ConfigManager_Configs[Mac_eOu];
-	/macro eOp $ConfigManager_Configs[Mac_eOp];
-	/macro eOl $ConfigManager_Configs[Mac_eOl];
-} {1};
-
 #alias {ConfigManager_gmcp_char_info} {
 	#var CHAR_INFO {%0};
 	#var AVATAR_NAME {$CHAR_INFO[name]};
@@ -99,6 +72,37 @@
 	};
 };
 
+#alias {ColorManager_gmcp_char_info} {
+	#var CHAR_INFO {%0};
+	#var AVATAR_NAME {$CHAR_INFO[name]};
+	#var avatarid $CHAR_INFO[id];
+	#line substitute {variables} {
+		#class ColorManagerProfile read bundles/ConfigManager/Profiles/$AVATAR_NAME-colors;
+		#class ColorManagerProfile size profile_size;
+		#nop if {$profile_size < 1} {
+			#echo {<138>MacroManager: <168>No configuration found for <138>$AVATAR_NAME<088>};
+		} {
+			#echo {<138>ColorManager: <128>Configuration found for <138>$AVATAR_NAME!<088>};
+			#echo {<138>ColorManager: <128>Loading...<088>};
+		};
+	};
+	#if {$profile_size > 0} {
+		#foreach {*bundlemanager_colors[]} {cmc} {
+			#if {"$bundlemanager_colors[cmc]" != "dummy"} {$bundlemanager_colors[$cmc]};
+		};
+	};
+
+	#list bundlemanager_colors size bmc_size;
+	
+	#if {$bmc_size > 0} {
+		#echo {<148>ColorManager: <FAA><178>$AVATAR_NAME<088> <148>($bmc_size color settings loaded.)<088>};
+	} {
+		#echo {<148>ColorManager: <128>Creating profile: <FAA><178>$AVATAR_NAME<088>};
+	};
+};
+
+
+
 #alias {/conf %S %*} {
 	#var confid 0;
 	#foreach {*bundlemanager_configs[]} {bc} {
@@ -155,6 +159,34 @@
 	};
 } {1};
 
+
+#alias {/color %S %*} {
+	#var colorid 0;
+	#foreach {*bundlemanager_colors[]} {bc} {
+		#if {"$bundlemanager_colors[$bc]" == "%1"} {
+			#class ColorManagerProfile open;
+			#var ColorManager_Colors[%1] {%2};
+			#class ColorManagerProfile close;
+			#class ColorManagerProfile write bundles/ConfigManager/Profiles/$AVATAR_NAME-colors;
+			#var colorid 1;
+		};
+	};
+	#if {$colorid < 1} {
+		#echo {<138>ColorManageer: <118>Color not available.<088>};
+	} {
+		#nop echo {<138>ConfigManager: <128>%1 <088>= <118>%2<088>};
+		%1;
+	};
+} {1};
+
+#alias {/color$} {
+	#echo {<138>ColorManager: <158>Available colors:<088>};
+	#foreach {*bundlemanager_colors[]} {bc} {
+		#format {colorlist} {<068>%+15s <168>%-30s} {$bundlemanager_colors[$bc]} {$ColorManager_Colors[$bundlemanager_colors[$bc]]};
+		#line ignore #sh $colorlist;
+		#nop echo {<068>   $bundlemanager_macros[$bc] <118>$MacroManager_Macros[$bundlemanager_macros[$bc]]<088>};
+	};
+} {1};
 
 #var guild_lay[Korsarze ze Skellige] {KS};
 

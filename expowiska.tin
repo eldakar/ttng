@@ -24,15 +24,15 @@
 };
 
 #alias {expowiska_lista} {
-	#echo pustkowia_chaosu;
-	#echo high_pass;
-	#echo snotlingi_nuln;
-	#echo goblinoidy;
-	#echo orki_orcal;
-	#echo orki_wsiowe;
-	#echo ryby_skellige;
-	#echo mekan;
-	#echo {haszuty - nalezy wcisnac _expo_ dwa razy};
+	#line ignore #sh pustkowia_chaosu;
+	#line ignore #sh high_pass;
+	#line ignore #sh snotlingi_nuln;
+	#line ignore #sh goblinoidy;
+	#line ignore #sh orki_orcal;
+	#line ignore #sh orki_wsiowe;
+	#line ignore #sh ryby_skellige;
+	#line ignore #sh mekan;
+	#line ignore #sh haszuty;
 };
 
 #alias {pustkowia_chaosu} {
@@ -165,4 +165,13 @@
 	#alias {haszuty} {_obozy_krasnala};
 }
 
-#alias {haszuty} {_obozy_krasnala};
+#alias {haszuty} {
+	zabij hobgoblina;
+	zabij krasnoluda chaosu;
+	zabij dostojnego krasnoluda chaosu;
+	zabij powaznego krasnoluda chaosu;
+	zabij wladczego krasnoluda chaosu;
+	zabij dumnego krasnoluda chaosu;
+	zabij bykocentaura;
+	_zabij_ przeciwnika;
+};

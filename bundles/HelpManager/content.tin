@@ -36,7 +36,10 @@
 } {1};
 
 #alias {man_read} {
-	#high {/conf} {<cca>};
+	#high {/conf} {<ffc>};
+	#high {/alias} {<ffc>};
+	#high {/macro} {<ffc>};
+	#high {/color} {<ffc>};
 	#high {**%***} {<afa>};
 	#action {TUTOR%*} {#sh <add>%%1;#line gag};
 	#action {WARN%*} {#sh <caa>%%1;#line gag};
@@ -44,6 +47,10 @@
 	#echo {<138>HelpManager: <158>%0<088>};
 	#scan {txt} {%1};
 	#unhigh {/conf};
+	#unhigh {/alias};
+	#unhigh {/macro};
+	#unhigh {/color};
+
 	#unhigh {**%***};
 	#unaction {TUTOR%*};
 	#unaction {WARN%*};
