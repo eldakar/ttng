@@ -102,7 +102,7 @@
 
 ## Baza Postaci
 
-### KGKS,LE,TW,G,NA,AL,SC,VR,GL,ZS,KM,OSPS,OS,SGW,MC
+### KGKS,LE,TW,KG,NA,AL,SC,VR,GL,ZS,KM,OSPS,OS,SGW,MC
 
 ### /conf RaidTableGuild *gildia*
 - ustawia przynaleznosc do gildii
