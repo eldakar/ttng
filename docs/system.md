@@ -65,6 +65,8 @@ Uwaga - to ustawienie uzywane jest do placenia za transport, kupowania w sklepac
 
 `delion` - komenda na jeden delion
 
+`skup_ziola` - kupuje wybrane ziola w sklepie - obecnie ustawione na sztywno do kupowania ziol na zmeczenie...
+
 ## Mapa
 
 `/f` - probuje odnalesc na mapie, uzywajac dostepnych metod...
@@ -98,6 +100,10 @@ Tworza sie takze aliasy, do przejscia do danej notki. Przydatne dla pocztyliona.
 `/d` - usuwa MOB w aktualnym pokoju
 
 `/destroy` - usuwa wszystkie MOBy na mapie
+
+`/hide` - schowaj wszystkie MOBy
+
+`/show` - pokaz wszystkie MOBy
 
 ## Mapa - Polaczenie ze zdalnym gniazdem
 
@@ -222,6 +228,10 @@ Tworza sie takze aliasy, do przejscia do danej notki. Przydatne dla pocztyliona.
 
 `/por` - porownuje cechy z obecnymi na lokacji postaciami. Uprzednie wykonanie komendy `cechy` sprobuje okreslic poziom postaci podczas porownania
 
+`/p` - wygas migajaca ikonke poczty
 
+`kamieni` - podliczenie wartosci kamieni
 
+`expowisko_lista` - wyswietla liste expowisk
 
+`expowisko nazwa` - ustawia expowisko (macro `_expo_`)
