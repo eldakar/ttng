@@ -1,4 +1,8 @@
-# ttng config cheat sheet
+# Konfiguracja
+
+## Ogolne
+
+### /conf - wyswietla liste dostepnych konfiguracji
 
 ## Okna i Mapka
 
@@ -96,12 +100,9 @@
 ### /conf zbieranie **lista**
 - monety,kamienie,trofea,klucze - lista przedmiotow ktore chcemy zbierac, po przecinku, bez spacji
 
-### /conf kolormagikow *kolor*
-- ustawia kolor, w jakim wyswietlaja sie magiczne przedmioty (wpisz showcolors zeby sprawdzic dostepne kody)
-
 ## Baza Postaci
 
-### KGKS,LE,TW,G,NA,AL,SC,VR,GL,ZS,KM,OSPS,OS,SGW,MC
+### KGKS,LE,TW,KG,NA,AL,SC,VR,GL,ZS,KM,OSPS,OS,SGW,MC
 
 ### /conf RaidTableGuild *gildia*
 - ustawia przynaleznosc do gildii
