@@ -32,6 +32,8 @@
 
 #list event_handler_char_info add {ConfigManager_gmcp_char_info};
 #list event_handler_char_info add {MacroManager_gmcp_char_info};
+#list event_handler_char_info add {ColorManager_gmcp_char_info};
+
 
 #nop ############################;
 #nop BUNDLE ALIASES ########;

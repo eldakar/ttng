@@ -6,16 +6,19 @@
 #unvar bundlemanager_bundles;
 #unvar bundlemanager_configs;
 #unvar bundlemanager_macros;
+#unvar bundlemanager_colors;
 #unvar bundlemanager_helps;
 
 #list bundlemanager_slots clear;
 #list bundlemanager_bundles clear;
 #list bundlemanager_configs clear;
 #list bundlemanager_macros clear;
+#list bundlemanager_colors clear;
 #list bundlemanager_helps clear;
 #list bundle_slots clear;
 #list bundle_configs clear;
 #list bundle_macros clear;
+#list bundle_colors clear;
 #list bundle_deps clear;
 
 #var global_bundle_slots_values[prompt][top] {0};
@@ -54,6 +57,13 @@
 		};
 	};
 
+	#foreach {*bundle_colors[]} {bc} {
+		#list {bundlemanager_colors} find {$bundle_colors[$bc]} {vbmc};
+		#if {$vbmc > 0} {
+			#echo {<118>Bundle Error: <168>$bundle_name <118>Color scheme already in use: $bundle_colors[$bs]<088>};
+			#var ret 1;
+		};
+	};
 
 	#foreach {*bundle_deps[]} {bd} {
 		#list {bundlemanager_bundles} find {$bundle_deps[$bd]} {vbmb};
@@ -74,6 +84,9 @@
 		#foreach {*bundle_macros[]} {bc} {
 			#list bundlemanager_macros add {$bundle_macros[$bc]};
 		};
+		#foreach {*bundle_colors[]} {bc} {
+			#list bundlemanager_colors add {$bundle_colors[$bc]};
+		};		
 
 		#list bundlemanager_bundles add {$bundle_name};
 		#var bundles_types[$bundle_name] {%1};
@@ -96,6 +109,7 @@
 	};
 	#list bundle_configs clear;
 	#list bundle_macros clear;
+	#list bundle_colors clear;
 	#list bundle_slots clear;
 	#list bundle_deps clear;
 	#return $ret;

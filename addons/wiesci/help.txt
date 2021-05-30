@@ -55,6 +55,24 @@ TUTOR /conf myszka wlaczona|wylaczona
 >> Dodane nowe wyjscie przez okno
 > Poprawilem wyswietlanie pokojow w trybie unicode - czasami void roomy mialy symbol
 > Dodane ogluszanie hakiem ogra z kotla
+> Dodana opcja dzwieku, gdy zostajemy zaatakowani
+TUTOR /conf dzwiekataku wlaczony | wylaczony
+> Blekitnokrwisci
+>> Dodane blokery
+>> Kolorowanie bossow
+
+** 30/05/21 - Nowy typ konfiga **
+> Wyostrzylem kolorowanie komend w /wiesci
+> Oddzielilem kolory od /conf do nowej komendy **/color**
+> Przenioslem /conf kolormagikow do /color magiki
+TUTOR /color magiki wylaczony | kodkoloru
+> Dodany kolor wyrozniajacy mobki na expowiskach
+TUTOR /color mobyexpo wylaczony | kodkoloru
+> Dodany kolor wyrozniajacy partkow w obozas na ZC
+TUTOR /color partyzanci wylaczony | kodkoloru
+> Poprawilem komende _expo_ na haszutach, wystarczy klikac raz
+> Dodana opcja wlaczania/wylaczania kolorowania ziol
+TUTOR /color ziola wylaczony | wlaczony
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW

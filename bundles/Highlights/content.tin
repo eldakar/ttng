@@ -45,6 +45,87 @@
 	#class kolorymagiki close;
 };
 
+#alias magiki {
+	#switch {"$ColorManager_Colors[magiki]"} {
+		#case {"wylaczony"} {
+			#class colors_magiki size col_ms;
+			#if {$col_ms > 1} {#class colors_magiki kill};
+		};
+		#case {""} {
+			#var pkolormagikow caf;
+			#var ColorManager_Colors[magiki] caf;
+			#line sub variables {#var colmags {<$pkolormagikow>}};
+			#class colors_magiki open;
+			#read bundles/Highlights/Data/magiki.tin;
+			#class colors_magiki close;			
+		};
+		#default {
+			#var pkolormagikow $ColorManager_Colors[magiki];
+			#line sub variables {#var colmags {<$pkolormagikow>}};
+			#class colors_magiki open;
+			#read bundles/Highlights/Data/magiki.tin;
+			#class colors_magiki close;			
+		}
+	};
+};
+
+#alias mobyexpo {
+	#switch {"$ColorManager_Colors[mobyexpo]"} {
+		#case {"wylaczony"} {
+			#class colors_mobyexpo size col_ms;
+			#if {$col_ms > 1} {#class colors_mobyexpo kill};
+		};
+		#case {""} {
+			#var ColorManager_Colors[mobyexpo] wylaczony;			
+			#class colors_mobyexpo size col_ms;
+			#if {$col_ms > 1} {#class colors_mobyexpo kill};		
+		};
+		#default {
+			#var pkolormobyexpo $ColorManager_Colors[mobyexpo];
+			#line sub variables {#var colexpo {<$pkolormobyexpo>}};
+			#class colors_mobyexpo open;
+			#read bundles/Highlights/Data/mobyexpo.tin;
+			#class colors_mobyexpo close;			
+		}
+	};
+};
+
+
+#alias partyzanci {
+	#switch {"$ColorManager_Colors[partyzanci]"} {
+		#case {"wylaczony"} {
+			#class colors_partyzanci size col_ms;
+			#if {$col_ms > 1} {#class colors_partyzanci kill};
+		};
+		#case {""} {
+			#var ColorManager_Colors[partyzanci] wylaczony;
+			#class colors_partyzanci size col_ms;
+			#if {$col_ms > 1} {#class colors_partyzanci kill};
+		};
+		#default {
+			#var pkolorpartyzanci $ColorManager_Colors[partyzanci];
+			#line sub variables {#var colpar {<$pkolorpartyzanci>}};
+			#class colors_partyzanci open;
+			#read bundles/Highlights/Data/partyzanci.tin;
+			#class colors_partyzanci close;			
+		}
+	};
+};
+
+#alias ziola {
+	#switch {"$ColorManager_Colors[ziola]"} {
+		#case {"wylaczony"} {
+			#class colors_ziola size col_ms;
+			#if {$col_ms > 1} {#class colors_ziola kill};
+		};
+		#default {
+			#class colors_ziola open;
+			#read bundles/Highlights/Data/ziola.tin;
+			#class colors_ziola close;			
+		};
+	};
+};
+
 #nop CONTENT ####################################;
 #nop ############################################;
 #action {Nagle kamienie na rekojesci miecza zaczynaja iskrzyc purpurowym swiatlem, zas jego ostrze pokrywa pajeczyna mieniacych sie na czerwono, pulsujacych zylek. Zdaja sie one plynac lekko po czarnej stali, z kazdym ruchem blask od nich bijacy staje sie coraz bardziej intensywny by w koncu wystrzelic miriada jaskrawoczerwonych, swietlistych okruchow. Czujesz przyjemne mrowienie gdy jakas magiczna sila przenika przez twoje cialo.}

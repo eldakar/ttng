@@ -17,6 +17,7 @@
 #list bundle_configs add {logowanie};
 #list bundle_configs add {echokomend};
 #list bundle_configs add {powtorzenter};
+#list bundle_configs add {dzwiekataku};
 
 #nop ############################;
 #nop BUNDLE DEPENDENCIES ###;
