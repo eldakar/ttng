@@ -1,3 +1,3 @@
 # TTNG HELP
 
-## Konfiguracja [conf.md]
+## [Konfiguracja /conf](conf.md)
