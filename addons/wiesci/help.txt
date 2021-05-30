@@ -73,6 +73,11 @@ TUTOR /color partyzanci wylaczony | kodkoloru
 > Poprawilem komende _expo_ na haszutach, wystarczy klikac raz
 > Dodana opcja wlaczania/wylaczania kolorowania ziol
 TUTOR /color ziola wylaczony | wlaczony
+> Dodalem bindy lokacyjne i podswietlenia na mapie na kluczodajkach:
+>> Chorazy
+>> Xavier
+>> Ptak
+>> Wicht
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
