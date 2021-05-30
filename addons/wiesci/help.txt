@@ -61,7 +61,7 @@ TUTOR /conf dzwiekataku wlaczony | wylaczony
 >> Dodane blokery
 >> Kolorowanie bossow
 
-** 30/05/21 - Nowy typ konfiga
+** 30/05/21 - Nowy typ konfiga **
 > Wyostrzylem kolorowanie komend w /wiesci
 > Oddzielilem kolory od /conf do nowej komendy **/color**
 > Przenioslem /conf kolormagikow do /color magiki
