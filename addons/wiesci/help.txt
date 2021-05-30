@@ -71,6 +71,8 @@ TUTOR /color mobyexpo wylaczony | kodkoloru
 > Dodany kolor wyrozniajacy partkow w obozas na ZC
 TUTOR /color partyzanci wylaczony | kodkoloru
 > Poprawilem komende _expo_ na haszutach, wystarczy klikac raz
+> Dodana opcja wlaczania/wylaczania kolorowania ziol
+TUTOR /color ziola wylaczony | wlaczony
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW

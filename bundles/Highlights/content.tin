@@ -112,6 +112,19 @@
 	};
 };
 
+#alias ziola {
+	#switch {"$ColorManager_Colors[ziola]"} {
+		#case {"wylaczony"} {
+			#class colors_ziola size col_ms;
+			#if {$col_ms > 1} {#class colors_ziola kill};
+		};
+		#default {
+			#class colors_ziola open;
+			#read bundles/Highlights/Data/ziola.tin;
+			#class colors_ziola close;			
+		};
+	};
+};
 
 #nop CONTENT ####################################;
 #nop ############################################;

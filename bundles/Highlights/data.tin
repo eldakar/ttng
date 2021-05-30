@@ -4,9 +4,6 @@
 #class koloryekwipunek open;
 #read bundles/Highlights/Data/ekwipunek.tin;
 #class koloryekwipunek close;
-#class koloryziola open;
-#read bundles/Highlights/Data/ziola.tin
-#class koloryziola close;
 #class koloryocena open;
 #read bundles/Highlights/Data/ocena.tin
 #class koloryocena close;

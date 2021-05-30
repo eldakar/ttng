@@ -15,6 +15,7 @@
 	#list bundle_colors add {magiki};
 	#list bundle_colors add {mobyexpo};
 	#list bundle_colors add {partyzanci};
+	#list bundle_colors add {ziola};
 
 #list bundle_alias clear;
 
