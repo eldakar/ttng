@@ -1,4 +1,8 @@
-# ttng config cheat sheet
+# Konfiguracja
+
+## Ogolne
+
+### /conf - wyswietla liste dostepnych konfiguracji
 
 ## Okna i Mapka
 
@@ -95,9 +99,6 @@
 
 ### /conf zbieranie **lista**
 - monety,kamienie,trofea,klucze - lista przedmiotow ktore chcemy zbierac, po przecinku, bez spacji
-
-### /conf kolormagikow *kolor*
-- ustawia kolor, w jakim wyswietlaja sie magiczne przedmioty (wpisz showcolors zeby sprawdzic dostepne kody)
 
 ## Baza Postaci
 
