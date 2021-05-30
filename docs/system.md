@@ -20,6 +20,7 @@ Uwaga - to ustawienie uzywane jest do placenia za transport, kupowania w sklepac
 ## Inne, zwiazane z pojemnikami
 
 `/dos nazwa` - wloz przedmiot do skrzyni
+
 `/zes nazwa` - wez przedmiot ze skrzyni
 
 ## Ekwipunek - komendy powiazane z `/conf pochwa` `/conf pochwa2`
@@ -48,7 +49,24 @@ Uwaga - to ustawienie uzywane jest do placenia za transport, kupowania w sklepac
 
 `delion` - komenda na jeden delion
 
+## Mapa
+
+`/f` - probuje odnalesc na mapie, uzywajac dostepnych metod...
+
+`pidz` - arkadyjski lazik, korzysta z mapy!!
+
+`/run kierunek czas` - idzie w danym kierunku z zadana predkoscia, az do krzyzowki
+
+`/go` - wyswietla liste predefiniowanych sciezek
 
 
 
-`/zme` - melduje aktualny stan zmeczenia
+## Stan
+
+`/kw` - kondycja wszystkich, taka jak ustawiona w `/conf kondycje`
+
+`/zme` - melduje aktualny stan zmeczenia prowadzacemu
+
+`/kills` - wyswietla postepy z sesji i globalny
+
+
