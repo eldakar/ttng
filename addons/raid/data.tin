@@ -13110,6 +13110,10 @@
     {
         {gildia} {RA}
     }
+    {Wicht_} 
+    {
+        {gildia} {BOSS}
+    }
     {Wielebny_} 
     {
         {gildia} {NPC}
@@ -13276,7 +13280,7 @@
     }
     {Xavier_} 
     {
-        {gildia} {NPC}
+        {gildia} {BOSS}
     }
     {Xavud_} 
     {
@@ -18043,7 +18047,7 @@
     }
     {grozny_charyzmatyczny_mezczyzna_} 
     {
-        {gildia} {NPC}
+        {gildia} {BOSS}
         {imie} {Xavier}
     }
     {grozny_ciemnoskory_polelf_} 
@@ -31196,7 +31200,7 @@
     {zwalisty_plomiennooki_wicht_} 
     {
         {gildia} {BOSS}
-        {imie} {Boss}
+        {imie} {Wicht}
     }
     {zwalisty_porywczy_mezczyzna_} 
     {

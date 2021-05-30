@@ -920,7 +920,7 @@
   zamknij piaty przytroczony woreczek;
 }
 
-#alias {ziola}
+#alias {/ziola}
 {
   lecznicze;
   #var pahc {1};
@@ -933,7 +933,7 @@
     };
     #math {pahc} {$pahc + 1};
   };
-};
+} {1}
 
 
 #alias {dziur} {
