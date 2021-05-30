@@ -121,6 +121,9 @@ Tworza sie takze aliasy, do przejscia do danej notki. Przydatne dla pocztyliona.
 
 `/map dan kierunek` - pokoloruje wyjscie w danym kierunku na czerwono, jednostronnie
 
+`/map symbol *symbol* *kodkoloru*` - podmieni symbol aktualnego pokoju na *symbol* - musi byc 3 literowy, w kolorze *kodkoloru*
+
+
 ## Stan
 
 `/kw` - kondycja wszystkich, taka jak ustawiona w `/conf kondycje`
@@ -128,5 +131,33 @@ Tworza sie takze aliasy, do przejscia do danej notki. Przydatne dla pocztyliona.
 `/zme` - melduje aktualny stan zmeczenia prowadzacemu
 
 `/kills` - wyswietla postepy z sesji i globalny
+
+## Walka
+
+### Ponizsze komendy dotycza listy druzyny i wrogow, ktora rysuje sie w okienku _raidu_
+
+`k[litera]` - wykonanie komendy _zabij_ - uzywa flag wskazywania i `/conf atakkomenda`
+
+`zp[litera]` - zaslon przed - uzywa flag zaslaniania
+
+`b[litera]` - zablokuj
+
+`p[litera]` - przelam
+
+`z[litera]` - zaslon - uzywa flag zaslaniania
+
+`z[litera][1-4]` - zaslon przed 1-4 - uzywa flag zaslaniania
+
+`wz[litera]` - wycofaj za 
+
+`O[litera]` - wskaz jako cel obrony
+
+### Pozostale komendy walki
+
+`/walka` - w czasie i 30 sekund po zakonczeniu walki, wyswietla statystyki druzyny
+
+`zapamietani` - laduje do pamieci podswietlanie zapamietanych postaci
+
+`przedstawieni` - laduje do pamieci podswietlanie przedstawionych postaci
 
 
