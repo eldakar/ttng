@@ -1,5 +1,19 @@
 # Aliasy systemowe
 
+## System
+
+`/wiesci` - wyswietla ostatnie zmiany w skryptach
+
+`/help` - dynamiczna lista pomocy do zaladowanych modulow
+
+`/conf` - podglad i ustawienia konfiguracji
+
+`/alias` - podglad i dodawanie aliasow wlasnych
+
+`/color` - podglad i edycja kolorowania
+
+`/macro` - podglad i edycja makr (skrotow klawiszowych
+
 ## Plecak - komendy na zalozonym pojemniku, ustawionym w  `/conf plecak`
 `wy` - przejrzyj zawartosc
 
@@ -22,6 +36,8 @@ Uwaga - to ustawienie uzywane jest do placenia za transport, kupowania w sklepac
 `/dos nazwa` - wloz przedmiot do skrzyni
 
 `/zes nazwa` - wez przedmiot ze skrzyni
+
+`/ql nazwa` - wez przedmiot z widocznych cial
 
 ## Ekwipunek - komendy powiazane z `/conf pochwa` `/conf pochwa2`
 
@@ -53,6 +69,10 @@ Uwaga - to ustawienie uzywane jest do placenia za transport, kupowania w sklepac
 
 `/f` - probuje odnalesc na mapie, uzywajac dostepnych metod...
 
+`/gdzie` - wyswietla liste wyjsc niestandardowych z aktualnej lokacji
+
+`/wroc` - ustawia mape na ostatnia lokacje przed zerwaniem polaczenia
+
 `pidz` - arkadyjski lazik, korzysta z mapy!!
 
 `/run kierunek czas` - idzie w danym kierunku z zadana predkoscia, az do krzyzowki
@@ -71,7 +91,19 @@ Uwaga - to ustawienie uzywane jest do placenia za transport, kupowania w sklepac
 
 Tworza sie takze aliasy, do przejscia do danej notki. Przydatne dla pocztyliona.
 
+## Mapa - Dodawanie i usuwanie mobow - w chwili obecnej jest to czesc repozytorium i uzywanie tych komend bedzie podowalo konflikt przy `git pull`
+
+`/a mob` - dodaje MOB w aktualnym pokoju
+
+`/d` - usuwa MOB w aktualnym pokoju
+
+`/destroy` - usuwa wszystkie MOBy na mapie
+
+## Mapa - Polaczenie ze zdalnym gniazdem
+
 `/reconnect` - ponown polaczenie z mapperem
+
+`/reload` - przeladowanie mapy i skryptow po stronie serwera
 
 ## Mapa - Edycja - Komendy i notatki
 
@@ -159,5 +191,37 @@ Tworza sie takze aliasy, do przejscia do danej notki. Przydatne dla pocztyliona.
 `zapamietani` - laduje do pamieci podswietlanie zapamietanych postaci
 
 `przedstawieni` - laduje do pamieci podswietlanie przedstawionych postaci
+
+## Chat
+
+`/c` - wyswietla liste rozmow wraz z ich czasem, w oknie RPG
+
+`/chat` - ! POPSUTY ! - wyswietla ostatnie kilka rozmow w oknie mapy
+
+## Baza postaci
+
+`/baza` - opis komend
+
+`/baza_dodaj gildia imie` - dodaje wpis do bazy, bez opisu
+
+`/baza_dodaj gildia opis` - dodaje wpis do bazy, bez imienia - opis musi skladac sie z trzech slow
+
+`/baza_dodaj gildia opis imie` - dodaje wpis do bazy - opis musi skladac sie z trzech slow
+
+`/baza_update imie gildia` - ustawia nowa gildie dla danego imienia
+
+`/baza_update opis gildia` - ustawia nowa gildie dla danego opisu - opis musi skladac sie z trzech slow
+
+`/baza_imie opis imie` - ustawia nowe imie dla danego opisu - opis musi skladac sie z trzech slow
+
+`/baza_update` - uaktualnia baze - obecnie ta komenda jest zarezerwowana dla mnie - wykonanie jest spowoduje konflikt przy `git pull`
+
+## Rozne
+
+`/um` - wyswietla tabele maksymalnych umiejetnosci zawodow, podswietla zawod bazujac na `/conf zawod`
+
+`/por` - porownuje cechy z obecnymi na lokacji postaciami. Uprzednie wykonanie komendy `cechy` sprobuje okreslic poziom postaci podczas porownania
+
+
 
 
