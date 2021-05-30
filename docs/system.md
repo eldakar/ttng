@@ -73,7 +73,7 @@ Tworza sie takze aliasy, do przejscia do danej notki. Przydatne dla pocztyliona.
 
 `/reconnect` - ponown polaczenie z mapperem
 
-## Mapa - edycja
+## Mapa - Edycja - Komendy i notatki
 
 `/event komenda` - dodaje komende `_lokacyjna_` w danym pokoju
 
@@ -85,6 +85,41 @@ Tworza sie takze aliasy, do przejscia do danej notki. Przydatne dla pocztyliona.
 
 `/map clear` - czysci pokoj z eventow, komend i notek kazdego typu
 
+## Mapa - Edycja - Rysowanie
+
+`/map dig kierunek` - dodaje lub laczy pokoje w danym kierunku
+
+`/map dignew kierunek` - dodaje pokoj w danym kierunku, zawsze nowy (nie polaczy jesli znajduje sie tam juz pokoj)
+
+`/map del kierunek` - usunie pokoj w danym kierunku
+
+`/map long kierunek` - przedluzy polaczenie w danym kierunku
+
+`/map short kierunek` - skroci polaczenie w danym kierunku
+
+`/map wyj kierunek wyjscie specjalne` - doda wyjscie specjalne w danym kierunku, mozna uzywac spacji, nie uzywac nawiasow!
+
+`/map hide kierunek` - ukrywa mape w danym kierunku
+
+`/map unhide kierunek` - odkrywa mape w danym kierunku
+
+`/map link kierunek nrpokoju` - dodaje wyjscie do pokoju w danym kierunku, jednostronne
+
+`/map linkb kierunek nrpokoju` - dodaje wyjccie do pokoju w danym kierunku, obustronne
+
+`/map unlink kierunek` - usuwa wyjscie do danego pokoju, jednostronnie
+
+`/map unlinkb kierunek` - usuwa wyjscie do danego pokoju, dwustronnie
+
+`/map void` - oznacza AKTUALNY pokoj jako void, czyli taki, ktory bedzie omijany przy poruszaniu sie - przydatne przy rysowaniu labiryntow
+
+`/map spe kierunek` - pokoloruje wyjscie w danym kierunku na czerwono, jednostronnie
+
+`/map ins kierunek` - pokoloruje wyjscie w danym kierunku na zielono, jednostronnie
+
+`/map ove kierunek` - pokoloruje wyjscie w danym kierunku na niebiesko, jednostronnie
+
+`/map dan kierunek` - pokoloruje wyjscie w danym kierunku na czerwono, jednostronnie
 
 ## Stan
 
