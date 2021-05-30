@@ -2,6 +2,6 @@
 
 ## Ekwipunek
 
-### `wy` - przejrzyj zawartosc zalozonego pojemnika (ustawionego w `/conf plecak`)
+`wy` - przejrzyj zawartosc zalozonego pojemnika (ustawionego w `/conf plecak`)
 
-### /zme - melduje aktualny stan zmeczenia
+`/zme` - melduje aktualny stan zmeczenia
