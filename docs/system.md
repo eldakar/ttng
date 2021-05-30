@@ -59,7 +59,17 @@ Uwaga - to ustawienie uzywane jest do placenia za transport, kupowania w sklepac
 
 `/go` - wyswietla liste predefiniowanych sciezek
 
+`/idz` - wykonuje krok do przodu, przy aktywowanej sciezce
 
+`/lc` - dezaktywuje sciezke
+
+`/rysuj` - eksploracja wyjsc, w miejscach typu lasek hobgoblinow
+
+`/nierysuj` - nie eksploruj
+
+`/s slowo` - wyszukuje notki na mapie, jesli odnajdzie jedna, ustawia sciezke
+
+`/reconnect` - ponown polaczenie z mapperem
 
 ## Stan
 
