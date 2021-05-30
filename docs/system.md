@@ -230,7 +230,7 @@ Tworza sie takze aliasy, do przejscia do danej notki. Przydatne dla pocztyliona.
 
 `/p` - wygas migajaca ikonke poczty
 
-`kamieni` - podliczenie wartosci kamieni
+`kamienie` - podliczenie wartosci kamieni
 
 `expowisko_lista` - wyswietla liste expowisk
 
