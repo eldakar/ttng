@@ -156,9 +156,9 @@
 #unaction {%* zgrabnym ruchem unika ciosu %* gleboko rozrywajac %*} {collect KS 4 %1;#line gag};
 
 
-#action {Nie %* walisz %* na odlew %*, tlukac %*.} {collect OK 1 $AVATAR_NAME;#line gag};
+#action {Nie %* walisz %* na odlew %*, kaleczac %*.} {collect OK 1 $AVATAR_NAME;#line gag};
 #action {Nie %* walisz %* na odlew %*, obijajac %*.} {collect OK 2 $AVATAR_NAME;#line gag};
-#action {Nie %* walisz %* na odlew %*, kaleczac %*.} {collect OK 3 $AVATAR_NAME;#line gag};
+#action {Nie %* walisz %* na odlew %*, tlukac %*.} {collect OK 3 $AVATAR_NAME;#line gag};
 #action {Nie %* walisz %* na odlew %*, gruchoczac %*.} {collect OK 4 $AVATAR_NAME;#line gag};
 #action {Nie %* walisz %* na odlew %*, druzgoczac %*.} {collect OK 5 $AVATAR_NAME;#line gag};
 #action {Nie %* walisz %* na odlew %*, miazdzac %*.} {collect OK 6 $AVATAR_NAME;#line gag};
@@ -172,9 +172,9 @@
 #nop SPECE OK Z PIERWSZEJ OSOBY;
 #nop action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} z calej sily walisz %* jednak bron} {collect OK 0 $AVATAR_NAME;#line gag} {1};
 #nop action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} z calej sily walisz %* probuje walnac} {collect OK 0 $AVATAR_NAME;#line gag} {1};
-#nop action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} z calej sily walisz %* tlukac} {collect OK 1 $AVATAR_NAME;#line gag} {1};
+#nop action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} z calej sily walisz %* kaleczac} {collect OK 1 $AVATAR_NAME;#line gag} {1};
 #nop action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} z calej sily walisz %* obijajac} {collect OK 2 $AVATAR_NAME;#line gag} {1};
-#nop action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} z calej sily walisz %* kaleczac} {collect OK 3 $AVATAR_NAME;#line gag} {1};
+#nop action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} z calej sily walisz %* tlukac} {collect OK 3 $AVATAR_NAME;#line gag} {1};
 #nop action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} z calej sily walisz %* gruchoczac} {collect OK 4 $AVATAR_NAME;#line gag} {1};
 #nop action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} z calej sily walisz %* druzgoczac} {collect OK 5 $AVATAR_NAME;#line gag} {1};
 #action {Twarz %* wykrzywia grymas wysilku} {collect OK 7 %1;#line gag};
@@ -182,9 +182,9 @@
 #nop SPECE OK Z TRZECIEJ OSOBY;
 #action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* z calej sily wali %* jednak bron} {collect OK 0 %2;#line gag};
 #action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* z calej sily wali %* probuje walnac} {collect OK 0 %2;#line gag};
-#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* z calej sily wali %* tlukac} {collect OK 1 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* z calej sily wali %* kaleczac} {collect OK 1 %2;#line gag};
 #action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* z calej sily wali %* obijajac} {collect OK 2 %2;#line gag};
-#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* z calej sily wali %* kaleczac} {collect OK 3 %2;#line gag};
+#action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* z calej sily wali %* tlukac} {collect OK 3 %2;#line gag};
 #action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* z calej sily wali %* gruchoczac} {collect OK 4 %2;#line gag};
 #action {{Nie tracac czasu na zbedne manewry|Nie przebierajac w srodkach|Nie zastanawiajac sie dlugo|Nie silac sie na wirtuozerie} %* z calej sily wali %* druzgoczac} {collect OK 5 %2;#line gag};
 
