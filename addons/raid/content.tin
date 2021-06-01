@@ -1305,7 +1305,7 @@
         #if {$duch[$avatarid][attack_num] > 0} {
             #list team_offenders add {$duch[$avatarid][attack_num]};
         } {
-            #var raidbartable {$raidbartable\n $duch[$avatarid][bar][orc]<088>};
+            #var raidbartable {$raidbartable\n$duch[$avatarid][bar][orc]<088>};
 
             #math r_curLineCnt {$r_curLineCnt - 1};
             #var duch[$avatarid][shown] {1};
@@ -1317,7 +1317,7 @@
                     #if {$duch[$team[$ti]][attack_num] > 0} {
                         #list team_offenders add $duch[$team[$ti]][attack_num];
                     }   {
-                        #var raidbartable {$raidbartable\n $duch[$team[$ti]][bar][orc]<088>};
+                        #var raidbartable {$raidbartable\n$duch[$team[$ti]][bar][orc]<088>};
 
                         #math r_curLineCnt {$r_curLineCnt - 1};
                         #var duch[$team[$ti]][shown] {1};
@@ -1334,13 +1334,13 @@
                 #if {"$duch[$ti][attack_num]" == "$team_offenders[$to]"} {
                     #if {$tmpnavigator == 1} {
                         #var tmpnavigator 0;
-                        #var raidbartable {$raidbartable\n $duch[$ti][bar][orc]${c_stan_niski}  ><088> $duch[$duch[$ti][attack_num]][bar][orc]<088>};
+                        #var raidbartable {$raidbartable\n$duch[$ti][bar][orc]${c_stan_niski} ><088> $duch[$duch[$ti][attack_num]][bar][orc]<088>};
                         #math r_curLineCnt {$r_curLineCnt - 1};
                         #var duch[$team_offenders[$to]][shown] {1};
                         #math {expectedlines} {$expectedlines + 1};
                     }   {
                         #math RaidBarCountUsedLines {$RaidBarCountUsedLines + 1};            
-                        #var raidbartable {$raidbartable\n $duch[$ti][bar][orc]${c_stan_niski}-'<088>};
+                        #var raidbartable {$raidbartable\n$duch[$ti][bar][orc]${c_stan_niski}-'<088>};
                         #math r_curLineCnt {$r_curLineCnt - 1};
                         #math {expectedlines} {$expectedlines + 1};
                     };
@@ -1352,7 +1352,7 @@
 #nop RESZTA WALCZACYCH WROGOW;
     #foreach {*wrogi[]} {to} {
         #if {$duch[$wrogi[$to]][shown] < 1} {
-            #var raidbartable {$raidbartable\n $duch[$wrogi[$to]][bar][orc]<088> <118>><088> $duch[$duch[$wrogi[$to]][attack_num]][desc]};
+            #var raidbartable {$raidbartable\n$duch[$wrogi[$to]][bar][orc]<088> <118>><088> $duch[$duch[$wrogi[$to]][attack_num]][desc]};
 
             #math r_curLineCnt {$r_curLineCnt - 1};
             #var duch[$wrogi[$to]][shown] {1};
@@ -1365,7 +1365,7 @@
             #if {$duch[$wrogi[$wr]][attack_num] > 0} {
                 #nop;
             } {
-                #var raidbartable {$raidbartable\n $duch[$wrogi[$wr]][bar][orc]<088>};
+                #var raidbartable {$raidbartable\n$duch[$wrogi[$wr]][bar][orc]<088>};
                 #math r_curLineCnt {$r_curLineCnt - 1};
                 #var duch[$wrogi[$wr]][shown] {1};
                 #math {expectedlines} {$expectedlines + 1};
@@ -1375,7 +1375,7 @@
 #nop RESZTA wszystkiego gdzie shown == 0;
     #foreach {*duch[]} {wr} {
         #if {$duch[$wr][shown] < 1} {
-            #var raidbartable {$raidbartable\n $duch[$wr][bar][orc]};
+            #var raidbartable {$raidbartable\n$duch[$wr][bar][orc]};
 
             #math r_curLineCnt {$r_curLineCnt - 1};
             #var duch[$wr][shown] {1};
