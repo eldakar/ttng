@@ -161,3 +161,4 @@
 #action {%1 zaczyna wspinac sie na polke} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wespnij sie na polke}};
 #action {%1 podaza w strone portalu} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm portal}};
 #action {%1 cofa sie pare krokow, bierze gleboki oddech, rozpedza sie i zaslaniajac soie ramieniem twarz przeskakuje przez ogien.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przeskocz przez ogien}};
+#action {%1 wciska sie w skalne pekniecie w jednej ze scian.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie przez szczeline}};
