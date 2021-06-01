@@ -162,9 +162,9 @@
 #action {Nie %* walisz %* na odlew %*, gruchoczac %*.} {collect OK 4 $AVATAR_NAME;#line gag};
 #action {Nie %* walisz %* na odlew %*, druzgoczac %*.} {collect OK 5 $AVATAR_NAME;#line gag};
 #action {Nie %* walisz %* na odlew %*, miazdzac %*.} {collect OK 6 $AVATAR_NAME;#line gag};
-#action {Nie %* walisz %* na odlew %*, tlukac %*. Nieprzyjemne} {collect OK_OGLUCH 1 $AVATAR_NAME;#line gag} {1};
+#action {Nie %* walisz %* na odlew %*, kaleczac %*. Nieprzyjemne} {collect OK_OGLUCH 1 $AVATAR_NAME;#line gag} {1};
 #action {Nie %* walisz %* na odlew %*, obijajac %*. Nieprzyjemne} {collect OK_OGLUCH 2 $AVATAR_NAME;#line gag} {1};
-#action {Nie %* walisz %* na odlew %*, kaleczac %*. Nieprzyjemne} {collect OK_OGLUCH 3 $AVATAR_NAME;#line gag} {1};
+#action {Nie %* walisz %* na odlew %*, tlukac %*. Nieprzyjemne} {collect OK_OGLUCH 3 $AVATAR_NAME;#line gag} {1};
 #action {Nie %* walisz %* na odlew %*, gruchoczac %*. Nieprzyjemne} {collect OK_OGLUCH 4 $AVATAR_NAME;#line gag} {1};
 #action {Nie %* walisz %* na odlew %*, druzgoczac %*. Nieprzyjemne} {collect OK_OGLUCH 5 $AVATAR_NAME;#line gag} {1};
 #action {Nie %* walisz %* na odlew %*, miazdzac %*. Nieprzyjemne} {collect OK_OGLUCH 6 $AVATAR_NAME;#line gag} {1};
