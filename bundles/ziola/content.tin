@@ -366,6 +366,9 @@
     otworz piaty woreczek;
     otworz szosty woreczek;
     otworz siodmy woreczek;
+    otworz osmy woreczek;
+    otworz dziewiaty woreczek;
+    otworz dziesiaty woreczek;
     opusc wszystkie bronie;
 
     #foreach {*zioladb[]} {ziolkonazwa} {
@@ -400,6 +403,18 @@
                 wez $zioladb[$ziolkonazwa][odmiana] z siodmego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z siodmego woreczka;
 
+                wez $zioladb[$ziolkonazwa][odmiana] z osmego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z osmego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z osmego woreczka;
+
+                wez $zioladb[$ziolkonazwa][odmiana] z dziewiatego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z dziewiatego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z dziewiatego woreczka;
+
+                wez $zioladb[$ziolkonazwa][odmiana] z dziesiatego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z dziesiatego woreczka;
+                wez $zioladb[$ziolkonazwa][odmiana] z dziesiatego woreczka;
+
                 $zioladb[$ziolkonazwa][sposob][kn] $zioladb[$ziolkonazwa][odmiana];
                 $zioladb[$ziolkonazwa][sposob][kn] $zioladb[$ziolkonazwa][odmiana];
                 $zioladb[$ziolkonazwa][sposob][kn] $zioladb[$ziolkonazwa][odmiana];
@@ -411,6 +426,9 @@
                 wloz ziola do piatego woreczka;
                 wloz ziola do szostego woreczka;
                 wloz ziola do siodmego woreczka;
+                wloz ziola do osmego woreczka;
+                wloz ziola do dziewiatego woreczka;
+                wloz ziola do dziesiatego woreczka;
             };
         };
     };
@@ -421,7 +439,10 @@
     zamknij czwarty woreczek;    
     zamknij piaty woreczek;     
     zamknij szosty woreczek;    
-    zamknij siodmy woreczek;  
+    zamknij siodmy woreczek; 
+    zamknij osmy woreczek; 
+    zamknij dziewiaty woreczek; 
+    zamknij dziesiaty woreczek; 
     dobadz wszystkich broni;
 } {1};
 

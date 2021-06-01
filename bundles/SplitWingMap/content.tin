@@ -38,6 +38,22 @@
     RaidBar_refresh;
 }
 
+#alias {doubleclick} {
+    #switch {"$MacroManager_Macros[doubleclick]"} {
+        #case {"walk"} {#alias raidmap_map_double_clicked_mouse_button_one {raidmap_map_double_clicked_mouse_button_one_walk}};
+        #case {"run"} {#alias raidmap_map_double_clicked_mouse_button_one {raidmap_map_double_clicked_mouse_button_one_run}};
+        #case {"path"} {#alias raidmap_map_double_clicked_mouse_button_one {raidmap_map_double_clicked_mouse_button_one_path}};
+        #case {"ball"} {#alias raidmap_map_double_clicked_mouse_button_one {raidmap_map_double_clicked_mouse_button_one_ball}};
+        #default {
+            #alias raidmap_map_double_clicked_mouse_button {raidmap_map_double_clicked_mouse_button_one_ball};
+            #var MacroManager_Macros[doubleclick] {ball};
+        };
+    };
+};
+
+
+
+
 #alias {RaidBar_refresh} {
     #if {$praidsize > 0 && "$raidbartable" != ""} {
         #draw jeweled box $raidoffsety $raidoffsetx $raidoffsetw $screencols <088>$raidbartable; #nop ORG;
@@ -205,6 +221,29 @@
     #map goto {%1};
     #var pathinprogress 1;
 };
+
+#alias raidmap_map_double_clicked_mouse_button_one_run {
+    #map center;
+    #map run {%1} {0.25};
+    #var pathinprogress 1;
+};
+
+#alias raidmap_map_double_clicked_mouse_button_one_walk {
+    #map center;
+    #map run {%1} {1.50};
+    #var pathinprogress 1;
+};
+
+
+#alias raidmap_map_double_clicked_mouse_button_one_ball {
+    #map center;
+    #map goto {%1};
+};
+
+#alias raidmap_map_double_clicked_mouse_button_one_path {
+    #map find {%1};
+};
+
 
 #alias raidmap_hide {
     #var hidden_raidmap_size $global_bundle_slots_values[prompt][right];    
