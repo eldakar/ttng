@@ -156,7 +156,7 @@
 #var kalendarz_nowie[3] {65};  #nop OK jahrdrung 31;
 #var kalendarz_nowie[4] {89};  #nop OK pflugzeit 22;
 #var kalendarz_nowie[5] {113}; #nop sigmarzeit 14;
-#var kalendarz_nowie[6] {138}; #nop sommerzeit 6;
+#var kalendarz_nowie[6] {139}; #nop sommerzeit 6;
 #var kalendarz_nowie[7] {163}; #nop sommerzeit 31;
 #var kalendarz_nowie[8] {189}; #nop OK vorgeheim 22;
 #var kalendarz_nowie[9] {213}; #nop nachgeheim 13;

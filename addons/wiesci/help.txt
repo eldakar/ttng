@@ -73,6 +73,24 @@ TUTOR /color partyzanci wylaczony | kodkoloru
 > Poprawilem komende _expo_ na haszutach, wystarczy klikac raz
 > Dodana opcja wlaczania/wylaczania kolorowania ziol
 TUTOR /color ziola wylaczony | wlaczony
+> Dodalem bindy lokacyjne i podswietlenia na mapie na kluczodajkach:
+>> Chorazy
+>> Xavier
+>> Ptak
+>> Wicht
+> Musialem zmienic komende na ziola - od teraz uzywamy **/ziola** !!!
+
+** 01/06/21 - Rozne**
+> Zmienilem sposob, w jaki podswietlaja sie wrogowie gildii. Dodalem nawias..
+> Nowe makro na ustawienie, co robi podwojne klikniecie na mapce
+TUTOR /macro doubleclick path|walk|run|ball
+	path - ustawia lazik do danej lokacji, wykonujemy komenda /idz
+	walk - idzie z predkoscia 1.5s
+	run - idzie z predkoscia 0.25s
+	ball - przesuwa kulke
+> Nowy tryb wyswietlania kondycji, na mniejsze ekrany - szerokosc mapy 68 znakow
+TUTOR /conf kondycje polpelne
+
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW

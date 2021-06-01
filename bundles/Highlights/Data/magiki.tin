@@ -74,6 +74,8 @@
 
 #sub {mistern%w spizow%w pawez%w} {${colmags}%0 <088>(<fca> szyk <088>)};
 #sub {upiorn%w ciemn%w wloczni%w} {${colmags}%0 <088>(<fca> ? <088>)};
+#sub {upiorn%w ciemn%w mlot%w} {${colmags}%0<088>};
+
 #sub {staro%w koscian%w berl%w} {${colmags}%0 <088>(<fca> ? <088>)};
 
 #sub {szkarlatn%w ciernist%w piersc%w} {${colmags}%0 <088>(<fca> Jezyk Druchii <088>)};

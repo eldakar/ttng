@@ -13,6 +13,7 @@
     #switch {"$pkondycje"} {
         #case {"mini"}   {#alias {tabela_odswiez} {_tabela_odswiez_0_};#alias {render_h2} {_render_h2_0_}};
         #case {"medium"} {#alias {tabela_odswiez} {_tabela_odswiez_1_};#alias {render_h2} {_render_h2_1_}};
+        #case {"polpelne"}  {#alias {tabela_odswiez} {_tabela_odswiez_3_};#alias {render_h2} {_render_h2_3_}};        
         #case {"pelne"}  {#alias {tabela_odswiez} {_tabela_odswiez_4_};#alias {render_h2} {_render_h2_4_}};
     };
 }
@@ -201,10 +202,10 @@
                                     #sub {$dudu2} {$dudu2 - $postac[$test][imie]($postac[$test][gildia])};
             #nop POKOLORUJ;         #high {$duch[$dudu][desc]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
                                 } {
-             #nop OPISY;            #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] - $postac[$test][imie]};
-                                    #sub {$dudu2} {$dudu2 - $postac[$test][imie]};
+             #nop OPISY;            #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] ($postac[$test][imie])};
+                                    #sub {$dudu2} {$dudu2 ($postac[$test][imie])};
             #nop POKOLORUJ;         #high {$duch[$dudu][desc]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
-                                    #nop high {$postac[$test][imie]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
+                                    #high {$postac[$test][imie]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
                                 };
              #nop POKOLORUJ;    #high {$dudu2} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};                     
             				};
@@ -669,6 +670,117 @@
                 #var duch[$du][bar][orc] {<118>$tmpen<088> $duch[$du][alias_value] ${colorFG}${colorBG}$localHP${colorFG}${colorBG} $MyShort<088>};
 
                 #nop var duch[$du][bar][orc] {$tmpsug $duch[$du][alias_value]$healthbars3[$duch[$du][hp]] $tmpen$tmpled$tmpkol$tmpna_orc<088>};
+                #math {negativecounter} {$negativecounter + 1};
+            };
+        };
+    };
+};
+
+
+#alias {_tabela_odswiez_3_} {
+    #var maxLinesPerType {};
+    #list wrogi size {wros};
+    #list neut size {neus};
+    #list team size {teas};
+    #var negativecounter 1;
+    #screen get rows windowh;
+    #var iterator {0};
+    #foreach {*duch[]} {du} {      
+        #if {"$duch[$du][hp]" != ""} {
+
+            #math iterator {$iterator + 1};
+            #math indexvalue {96 + $iterator};
+            #if {$indexvalue > 122} {
+                #var indexvalue {88};  
+            };
+            #format indexchar {%a} {$indexvalue};
+            #var duch[$du][alias_value] {$indexchar};
+         
+            #line substitute {variables} {#alias k$indexchar {_zabij_ ob_$du}};
+            #line substitute {variables} {#alias zp$indexchar {zaslon przed ob_$du}};
+            #line substitute {variables} {#alias b$indexchar {zablokuj ob_$du}};
+            #line substitute {variables} {#alias p$indexchar {przelam obrone ob_$du}};
+            #line substitute {variables} {#alias z$indexchar {_zaslon_ $du}};
+            #line substitute {variables} {#alias wz${indexchar} {gzwycofaj sie za ob_$du;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+            #line substitute {variables} {#alias z${indexchar}2 {opcje grupa 2;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+            #line substitute {variables} {#alias z${indexchar}3 {opcje grupa 3;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+            #line substitute {variables} {#alias z${indexchar}4 {opcje grupa 4;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
+            #line substitute {variables} {#alias O$indexchar {wskaz ob_$du jako cel obrony}};
+
+            #var tmphp $healthbars2[$duch[$du][hp]];
+            #math tmphp2 {$duch[$du][hp] + 1};
+            #var tmpcel {   };
+            #var tmpava {  };
+            #var tmpsug {  };
+            #var tmpkol {<088>};
+            #var tmpled { };
+            #var tmptar {};
+
+            #var tmpen {  };
+            #if {$duch[$du][enemies] < 1} {
+                #var tmpen {  };
+            };
+            #else {
+                #format tmpen {%+2s} {<118>$duch[$du][enemies]<088>};
+                #var tmpen {$tmpen};
+            };
+
+            #if {"$duch[$du][enemy]" == "true"} {#var tmpkol {<caf>}};
+            #if {"$duch[$du][team]" == "true"} {#var tmpkol {<acf>}};
+
+            #if {"$duch[$du][attack_target]" == "true"} {#var tmpcel {CEL};#var tmpkol {<faa>}};
+            #if {"$duch[$du][defense_target]" == "true"} {#var tmpcel {COB};#var tmpkol {<AAB><178>}};
+            #if {"$duch[$du][avatar_target]" == "true"} {#var tmpava {<FAA>  <088>}};
+
+            #if {"$duch[$du][typ]" == "wrog"} {#var tmpkol {<G01><118>}};
+            #if {"$duch[$du][typ]" == "boss"} {#var tmpkol {<CAF><178>}};
+
+
+            #if {"$duch[$du][team_leader]" == "true"} {
+              #var tmpled {<138>^<088>};
+              #format team_lead_lower {%l} {$duch[$du][desc]};
+              #var team_lead_id {$du};
+            };
+            
+            #if {"$duch[$du][team]" == "true"} {
+                #format tmpna_orc {%-12s} {$duch[$du][desc]};
+                #format tmpna_orc {%.12s} {$tmpna_orc};
+            } {
+                #format {tmpna_orc} {%r} {$duch[$du][desc]};
+                #format {tmpna_orc} {%.12s} {$tmpna_orc};
+                #format {tmpna_orc} {%r} {$tmpna_orc};
+                #format {tmpna_orc} {%-12s} {$tmpna_orc};
+            };
+            #if {"$duch[$du][avatar]" == "true"} {#var tmpna_orc {<158>$tmpna_orc<088>};};
+
+            #if {"$duch[$du][bot]" == "SA1"} {#var tmpsug {<FAA><178>F1<088>}};
+            #if {"$duch[$du][bot]" == "SA2"} {#var tmpsug {A2}};
+            #if {"$duch[$du][bot]" == "SO1"} {#var tmpsug {O1}};
+            #if {"$duch[$du][bot]" == "SO2"} {#var tmpsug {O2}};
+
+            #if {"$duch[$du][bot]" == "SO1"} {
+                #if {"$duch[$du][avatar]" == "true"} {
+                    #var tmpsug {<FAA><178>!!<088>};
+                    #nop    var tmpsug {<FAA><178>!!<088>};
+                } {
+                    #var tmpsug {<AAF><178>F2<088>};                
+                };
+            };
+
+            #if {"$duch[$duch[$du][attack_num]][attack_target]" == "true"} {
+                #var tmptarcolor {<128>};
+            } {
+                #var tmptarcolor {<118>};
+            };
+
+            #if {$duch[$du][attack_num] > 0} {
+                #format tmptar {%-10s} {$duch[$duch[$du][attack_num]][desc]};
+                #format tmptar {%.10s} {$tmptar};
+                #var tmptar {|$attacktargethp| $tmptarcolor$tmptar<088>};
+            };
+            #if {"$tmphp" != ""} {
+                #nop var duch[$du][bar][orc] {$duch[$du][alias_value] $tmpsug<088>$tmpava$tmpen [$tmphp]$tmpled$tmpkol$tmpna_orc<088> };
+                #var duch[$du][bar][orc] {$tmpsug [$healthbars2[$duch[$du][hp]]] $duch[$du][alias_value]<088> $tmpen$tmpled$tmpkol$tmpna_orc<088>};
                 #math {negativecounter} {$negativecounter + 1};
             };
         };
@@ -1158,6 +1270,112 @@
     #foreach {*duch[]} {wr} {
         #if {$duch[$wr][shown] < 1} {
             #var raidbartable {$raidbartable\n $duch[$wr][bar][orc]};
+
+            #math r_curLineCnt {$r_curLineCnt - 1};
+            #var duch[$wr][shown] {1};
+            #math {expectedlines} {$expectedlines + 1};
+        };
+    };
+
+    #regex {$raidbartable} {\\n%*} {
+            #var raidbartable {&1};
+    };
+
+    #math screencols2 {$screencols / 2 };
+    #nop draw violet tubed box $tmplinecnt-1 1 $screenrows-4 $screencols2 <088>$raidbartable;
+
+    #list duch size lds;
+};
+
+
+#alias {_render_h2_3_} {
+    #var raidbartable {};
+    #var a {%0};
+    #math tmplinecnt {0 - $global_bundle_slots_values[prompt][bottom]};
+    #nop loop {-6} {$tmplinecnt} {bubu} {#sh {                                                                                                       } {$bubu}};
+    #var r_curLineCnt {-6};
+    #var expectedlines 0;
+    #list team_offenders cle;
+    #list team_offenders cre;
+
+    #foreach {*duch[]} {du} {#var duch[$du][shown] {0}};
+    #list team siz ts;
+
+    #if {$ts < 1} {
+        #if {$duch[$avatarid][attack_num] > 0} {
+            #list team_offenders add {$duch[$avatarid][attack_num]};
+        } {
+            #var raidbartable {$raidbartable\n$duch[$avatarid][bar][orc]<088>};
+
+            #math r_curLineCnt {$r_curLineCnt - 1};
+            #var duch[$avatarid][shown] {1};
+            #math {expectedlines} {$expectedlines + 1};
+        };
+    }   {
+            #foreach {*team[]} {ti} {
+                #if {$duch[$team[$ti]][shown] < 1} {
+                    #if {$duch[$team[$ti]][attack_num] > 0} {
+                        #list team_offenders add $duch[$team[$ti]][attack_num];
+                    }   {
+                        #var raidbartable {$raidbartable\n$duch[$team[$ti]][bar][orc]<088>};
+
+                        #math r_curLineCnt {$r_curLineCnt - 1};
+                        #var duch[$team[$ti]][shown] {1};
+                        #math {expectedlines} {$expectedlines + 1};
+                    };
+                };
+            };
+        };
+#nop PRZECIWNICY DRUZYNY LUB AVATARA;
+    #foreach {*team_offenders[]} {to} {
+        #var tmpnavigator {1};
+        #foreach {*duch[]} {ti} {
+            #if {$duch[$ti][shown] < 1} {
+                #if {"$duch[$ti][attack_num]" == "$team_offenders[$to]"} {
+                    #if {$tmpnavigator == 1} {
+                        #var tmpnavigator 0;
+                        #var raidbartable {$raidbartable\n$duch[$ti][bar][orc]${c_stan_niski} ><088> $duch[$duch[$ti][attack_num]][bar][orc]<088>};
+                        #math r_curLineCnt {$r_curLineCnt - 1};
+                        #var duch[$team_offenders[$to]][shown] {1};
+                        #math {expectedlines} {$expectedlines + 1};
+                    }   {
+                        #math RaidBarCountUsedLines {$RaidBarCountUsedLines + 1};            
+                        #var raidbartable {$raidbartable\n$duch[$ti][bar][orc]${c_stan_niski}-'<088>};
+                        #math r_curLineCnt {$r_curLineCnt - 1};
+                        #math {expectedlines} {$expectedlines + 1};
+                    };
+                    #var duch[$ti][shown] {1};
+                };
+            };
+        };  
+    };
+#nop RESZTA WALCZACYCH WROGOW;
+    #foreach {*wrogi[]} {to} {
+        #if {$duch[$wrogi[$to]][shown] < 1} {
+            #var raidbartable {$raidbartable\n$duch[$wrogi[$to]][bar][orc]<088> <118>><088> $duch[$duch[$wrogi[$to]][attack_num]][desc]};
+
+            #math r_curLineCnt {$r_curLineCnt - 1};
+            #var duch[$wrogi[$to]][shown] {1};
+            #math {expectedlines} {$expectedlines + 1};
+        };
+    };
+#nop WROGOWIE niewalczacy;
+    #foreach {*wrogi[]} {wr} {
+        #if {$duch[$wrogi[$wr]][shown] < 1} {
+            #if {$duch[$wrogi[$wr]][attack_num] > 0} {
+                #nop;
+            } {
+                #var raidbartable {$raidbartable\n$duch[$wrogi[$wr]][bar][orc]<088>};
+                #math r_curLineCnt {$r_curLineCnt - 1};
+                #var duch[$wrogi[$wr]][shown] {1};
+                #math {expectedlines} {$expectedlines + 1};
+            };
+        };
+    };
+#nop RESZTA wszystkiego gdzie shown == 0;
+    #foreach {*duch[]} {wr} {
+        #if {$duch[$wr][shown] < 1} {
+            #var raidbartable {$raidbartable\n$duch[$wr][bar][orc]};
 
             #math r_curLineCnt {$r_curLineCnt - 1};
             #var duch[$wr][shown] {1};
