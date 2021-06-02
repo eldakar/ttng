@@ -7322,6 +7322,10 @@
     {
         {gildia} {SC}
     }
+    {Kultysta_} 
+    {
+        {gildia} {BOSS}
+    }
     {Kuonirath_} 
     {
         {gildia} {GP}
@@ -25192,6 +25196,11 @@
     {
         {gildia} {NPC}
         {imie} {Harp}
+    }
+    {potezny_siwowlosy_mezczyzna_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Kultysta}
     }
     {potezny_sumiastowasy_mezczyzna_} 
     {
