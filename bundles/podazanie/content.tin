@@ -178,6 +178,8 @@
 #action {%*{Podazasz|podazasz} za %1 do najwiekszego namiotu.} {#var retfl @follow_where{n}};
 #action {%*{Podazasz|podazasz} za %1 do karczmy.} {#var retfl @follow_where{n}};
 
+#action {%*{Podazasz|podazasz} za %1 na linowy most.} {#var retfl @follow_where{most}};
+
 #action {%*{Podazasz|podazasz} za %1 wglab zalanego chodnika, zanurzajac sie pod wode.} {#var retfl @follow_where{s}};
 #action {%*{Podazasz|podazasz} za %1 na zewnatrz chaty.} {#var retfl @follow_where{wyjscie}};
 

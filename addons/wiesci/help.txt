@@ -80,7 +80,7 @@ TUTOR /color ziola wylaczony | wlaczony
 >> Wicht
 > Musialem zmienic komende na ziola - od teraz uzywamy **/ziola** !!!
 
-** 01/06/21 - Rozne**
+** 01/06/21 - Rozne **
 > Zmienilem sposob, w jaki podswietlaja sie wrogowie gildii. Dodalem nawias..
 > Nowe makro na ustawienie, co robi podwojne klikniecie na mapce
 TUTOR /macro doubleclick path|walk|run|ball
@@ -91,6 +91,11 @@ TUTOR /macro doubleclick path|walk|run|ball
 > Nowy tryb wyswietlania kondycji, na mniejsze ekrany - szerokosc mapy 68 znakow
 TUTOR /conf kondycje polpelne
 
+** 02/06/21 - Mapka **
+> Dodalem specjalne wyjscie z averheim
+> Dodalem gps na wschodniej stronie GKS
+> Dodalem podazanie przez most linowy w GKS
+> Poprawilem ciosy OK
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
