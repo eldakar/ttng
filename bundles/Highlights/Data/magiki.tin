@@ -95,6 +95,8 @@
 #sub {szmaragdowozielon%w mistern%w plaszcz} {${colmags}%0 <088>(<028>+hp<088>)};
 #sub {zdobion%w dlugi%w lewak%w} {${colmags}%0 <088>(<fca>+unk +par<088>)};
 
+#sub {okragl%w migotliw%w puklerz%w} {${colmags}%0<088>};
+
 #sub {lodow%w lsniac%w sztylet%w} {${colmags}%0<088>};
 #sub {lodow%w dlug%w maczug%w} {${colmags}%0<088>};
 #sub {lsniac%w plomienist%w tarcz%w} {${colmags}%0<088>};
