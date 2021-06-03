@@ -25,7 +25,7 @@
     #var clockhourpane {<178>$czas_godzina_prmp:00<088>};
 	calendar_clock_reset;
 	calendar_render_hours;
-	BottomBarTinyFugue;
+	BottomBar_Selected;
 }
 #alias {calendar_clock_reset} {
 	#var clockrender[char][12] {( )};

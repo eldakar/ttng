@@ -97,6 +97,10 @@ TUTOR /conf kondycje polpelne
 > Dodalem podazanie przez most linowy w GKS
 > Poprawilem ciosy OK
 
+** 03/06/21 - Rozne **
+> Dodalem puklerz do listy magikow
+> Pasek manewru koloruje sie na zielono gdy jest pelny
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng

@@ -486,7 +486,7 @@
 	};
 
 	#math realFatigue {9 - $state[fatigue]};
-	#sh {${bbBGC}HP: [@buildBar{$state[hp];6;$maxBarSize;ada}<088>${bbBGC}]  MA: [@buildBar{$manewrlevel;5;$maxBarSize;ccc}<088>${bbBGC}]<088>} {-4} {23};
+	#sh {${bbBGC}HP: [@buildBar{$state[hp];6;$maxBarSize;ada}<088>${bbBGC}]  MA: [@buildBarGreen{$manewrlevel;5;$maxBarSize;bbb}<088>${bbBGC}]<088>} {-4} {23};
 	#sh {${bbBGC}ST: [@buildBar{$realFatigue;9;$maxBarSize;ddd}<088>${bbBGC}]  RO: [@buildBar{$rozkazlevel;15;$maxBarSize;ccc}<088>${bbBGC}]<088>} {-3} {23};
 	#sh {${bbBGC}MA: [@buildBar{$state[mana];8;$maxBarSize;aad}<088>${bbBGC}]  BL: [@buildBar{$blockselflevel;5;$maxBarSize;faa}<088>${bbBGC}]<088>} {-2} {23};
 };
@@ -515,6 +515,28 @@
 
 	#return {<%4>$outputbar<088>};
 };
+
+#function buildBarGreen {
+	#local outputbar {};
+
+	#if {%1 > 0} {
+		#local curst {%1};
+		#math stslot {%3 / %2}; 
+		#math stmodu {%3 % %2};
+		#math stlen {($curst * $stslot) + $stmodu};
+		#loop {1} {$stlen-1} {stl} {#local outputbar {$outputbar#};};
+		#loop {$stlen} {%3} {stl}  {#local outputbar {$outputbar };};
+	} {
+		#loop {0} {%3-1} {stl} {#local outputbar {$outputbar };};
+	};
+	#if {%1 == %2} {
+		#local outputbar {};
+		#loop {1} {%3} {stl} {#local outputbar {<ada>$outputbar#};};
+	};
+
+	#return {<%4>$outputbar<088>};
+};
+
 
 #alias prompt_pressed_mouse_button_one {
     #screen get ROWS sr;
