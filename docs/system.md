@@ -119,7 +119,7 @@ Tworza sie takze aliasy, do przejscia do danej notki. Przydatne dla pocztyliona.
 
 `/n zdanie` - dodaje notke w danym pokoju, notke mozna wyszukac komenda `/s`
 
-`/n F1|F2|F3 zdanie` - tworzy alias lokacyjny, ktory mozna wykonac wpisujac 1,2 lub 3 
+`/nc F1|F2|F3 zdanie` - tworzy alias lokacyjny, ktory mozna wykonac wpisujac 1,2 lub 3 
 
 `/map clear` - czysci pokoj z eventow, komend i notek kazdego typu
 
