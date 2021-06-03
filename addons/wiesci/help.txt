@@ -100,6 +100,17 @@ TUTOR /conf kondycje polpelne
 ** 03/06/21 - Rozne **
 > Dodalem puklerz do listy magikow
 > Pasek manewru koloruje sie na zielono gdy jest pelny
+> Nowy konfig pozwalajacy na logowanie sesji w formacie HTML
+TUTOR /conf logujhtml wlacz|wylacz
+> Meldowanie zmeczenia nie bedzie sie pojawiac przy prowadzeniu druzyny
+> Sugerowana obrona i cel nie beda wykonywac wskazan i rozkazow jesli nie prowadzimy
+> Naprawiony przycisk LAM-pa na pasku, klikanie zapala+dopelnia lub gasi
+> Dodany przycisk ENT-er na pasku, po wlaczeniu, nacisniecie entera powtarza ostatnia komende
+> Dodane podswietlanie bestigorow
+TUTOR /color bestigory wlacz|wylacz
+> Pierwsza wersja liczenia minut expa dostepna jest pod komenda
+TUTOR #var expo
+> Kolejna kalibracja NOWiu - jeszcze pare dni i bedzie uzyteczny...
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW

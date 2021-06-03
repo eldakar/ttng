@@ -29,12 +29,12 @@
         #case {"z"} zabijcmd %0;                  #nop komenda zabij;
         #case {"g"} gpprzeklnij %0;               #nop druchii przeklnij;
         #case {"w"} {
-          #if {"$duch[$CHAR_INFO[object_num]][team_leader]" == "true"} {
+          #if {"$duch[$CHAR_INFO[$avatarid]][team_leader]" == "true"} {
                     wskaz %0 jako cel ataku;      #nop wskazywanie;
           };
         };
         #case {"r"} {
-          #if {"$duch[$CHAR_INFO[object_num]][team_leader]" == "true"} {
+          #if {"$duch[$CHAR_INFO[$avatarid]][team_leader]" == "true"} {
                     rozkaz druzynie zabic %0;     #nop rozkaz;
           };
         };
@@ -50,12 +50,12 @@
     #parse {$pzaslonaflagi} {zaslanianie_typ} {
         #switch {"$zaslanianie_typ"} {
           #case {"w"} {
-            #if {"$duch[$CHAR_INFO[object_num]][team_leader]" == "true"} {
+            #if {"$duch[$CHAR_INFO[$avatarid]][team_leader]" == "true"} {
                       wskaz siebie jako cel obrony;
             };
           };
           #case {"r"} {
-            #if {"$duch[$CHAR_INFO[object_num]][team_leader]" == "true"} {
+            #if {"$duch[$CHAR_INFO[$avatarid]][team_leader]" == "true"} {
                       rozkaz druzynie zaslonic cie;
             };
           };
@@ -65,12 +65,12 @@
     #parse {$pzaslonaflagi} {zaslanianie_typ} {
         #switch {"$zaslanianie_typ"} {
           #case {"w"} {
-            #if {"$duch[$CHAR_INFO[object_num]][team_leader]" == "true"} {
+            #if {"$duch[$CHAR_INFO[$avatarid]][team_leader]" == "true"} {
                       wskaz ob_%0 jako cel obrony;
             };
           };
           #case {"r"} {
-            #if {"$duch[$CHAR_INFO[object_num]][team_leader]" == "true"} {
+            #if {"$duch[$CHAR_INFO[$avatarid]][team_leader]" == "true"} {
                       rozkaz druzynie zaslonic ob_%0;     #nop rozkaz;
             };
           };

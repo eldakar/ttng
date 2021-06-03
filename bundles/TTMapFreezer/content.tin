@@ -5,6 +5,21 @@
     #var semifrozen_status {0};
 };
 
+#alias {frozenpath_set} {
+    #var frozenpath_status {1};
+    #alias {move_n}  {#path stop};
+    #alias {move_s}  {#path stop};
+    #alias {move_e}  {#path stop};
+    #alias {move_w}  {#path stop};
+    #alias {move_d}  {#path stop};
+    #alias {move_u}  {#path stop};
+    #alias {move_ne} {#path stop};
+    #alias {move_nw} {#path stop};
+    #alias {move_sw} {#path stop};
+    #alias {move_se} {#path stop};
+    #var bbBGC {<CCA>};
+};
+
 #alias {frozen_set} {
     #var frozen_status {1};
     #alias {move_n} {#echo {Nie mozesz teraz sie ruszyc.}};

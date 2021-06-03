@@ -3,6 +3,8 @@ TUTOR /conf echokomend               - widoczne | niewidoczne
         Wyswietla komendy wyslane do muda.
 TUTOR /conf logowanie                - wlaczone | wylaczone
        	Logi zapisywane sa do Profiles/Logs
+TUTOR /conf logujhtml                - wlacz | wylacz
+        Logi zapisywane w formacie HTML
 TUTOR /conf powtorzenter             - wlaczony | wylaczony
         Nacisniecie entera powtarza poprzednia komende
         UWAGA - poprzednia komenda nie bedzie widoczna w pasku

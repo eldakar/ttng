@@ -112,6 +112,17 @@
 	#echo {_killstats_add starting postep %1};
 
 	#format {_p_c_stamp_} {%t} {%H:%M};
+	#format {_p_c_mins_} {%t} {%M};
+	#format {_p_c_hors_} {%t} {%H};
+	#math _p_c_minutes_ {$_p_c_hors_ *  60 + $_p_c_mins_};
+
+	#if {"$current_postep" == "0"} {
+		#var expo[$current_postep][epoc] {$_p_c_minutes_};
+	} {
+		#math _p_c_epoc_ {$_p_c_minutes_ - $expo[$current_postep-1][epoc]};
+		#var expo[$current_postep][epoc] {$_p_c_epoc_};
+	};
+
 	#var expo[$current_postep][czas] {$_p_c_stamp_};
 	#var expo[$current_postep][ownkills] {0};
 	#var expo[$current_postep][theirkills] {0};

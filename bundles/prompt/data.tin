@@ -36,16 +36,32 @@
 #var buttons[1][6][type] {zaslanianie};
 #var buttons[1][6][value] {r};
 
-#nop bronstatus;
-#var buttons[2][8][label] {BRO};
-#var buttons[2][8][status] {off};
-#var buttons[2][8][type] {switch};
-#var buttons[2][8][cmdoff] {obb};
-#var buttons[2][8][cmdon] {dbb};
 #nop pzdjeciezaslon;
 #var buttons[1][5][label] {ZDE};
 #var buttons[1][5][status] {off};
 #var buttons[1][5][type] {switch};
 #var buttons[1][5][cmdoff] {/conf zdejmowanie wylaczone};
 #var buttons[1][5][cmdon] {/conf zdejmowanie auto};
+
+#nop bronstatus;
+#var buttons[2][8][label] {BRO};
+#var buttons[2][8][status] {off};
+#var buttons[2][8][type] {switch};
+#var buttons[2][8][cmdoff] {obb};
+#var buttons[2][8][cmdon] {dbb};
+
+#nop lampa;
+#var buttons[2][7][label] {LAM};
+#var buttons[2][7][status] {off};
+#var buttons[2][7][type] {switch};
+#var buttons[2][7][cmdoff] {zgas lampe};
+#var buttons[2][7][cmdon] {nap};
+
+
+#nop repeat enter;
+#var buttons[2][5][label] {ENT};
+#var buttons[2][5][status] {off};
+#var buttons[2][5][type] {switch};
+#var buttons[2][5][cmdoff] {/conf powtorzenter wylaczony};
+#var buttons[2][5][cmdon] {/conf powtorzenter wlaczony};
 
