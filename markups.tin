@@ -35,18 +35,15 @@
 		#class markups read bundles/ConfigManager/Profiles/markups.tt;
 		#class markups open;
 
-		#if {$m[$markupsRoomVnum][rendered] > 0} {
-			#nop line ignore #sh {<178>Highlighter: <038>Juz podswietlam ten pokoj!};
-		} {
-			#var m[$markupsRoomVnum][rendered] {1};
-			#var m[$markupsRoomVnum][type] {ext};
-			#var m[$markupsRoomVnum][direction] {%1};
-			#var m[$markupsRoomVnum][symbol] {$_rs};
-			#var m[$markupsRoomVnum][terrain] {$_rt};
-			#map set roomsymbol {<138> @ <088>};
-			#map exit %1 color <138>;
-			#line ignore #sh {<178>Highlighter: <028>Dodalem ext %1};
-		};
+		#var m[$markupsRoomVnum][rendered] {1};
+		#var m[$markupsRoomVnum][type] {ext};
+		#var m[$markupsRoomVnum][direction] {%1};
+		#var m[$markupsRoomVnum][symbol] {$_rs};
+		#var m[$markupsRoomVnum][terrain] {$_rt};
+		#map set roomsymbol {<138> @ <088>};
+		#map exit %1 color <138>;
+		#nop line ignore #sh {<178>Highlighter: <028>Dodalem ext %1};
+
 		#class markups close;
 		#class markups write bundles/ConfigManager/Profiles/markups.tt;
 	};
@@ -94,8 +91,21 @@
 			#map at {$_m} {
 				#var m[$_m][rendered] {1};
 				#map set roomsymbol $markupsymbols[$m[$_m][type]];
-				#if {"$m[$_m][type]" == "ext"} {
+			};
+			#if {"$m[$_m][type]" == "ext"} {
+				#map at {$_m} {
 					#map exit $m[$_m][direction] color <138>;
+					#map get roomexits _rex;
+				};
+				#switch {"$m[$_m][direction]"} {
+					#case {"n"} {#map at {$_rex[n]} {/e ext s}};
+					#case {"s"} {#map at {$_rex[s]} {/e ext n}};
+					#case {"w"} {#map at {$_rex[w]} {/e ext e}};
+					#case {"e"} {#map at {$_rex[e]} {/e ext w}};
+					#case {"ne"} {#map at {$_rex[ne]} {/e ext sw}};
+					#case {"nw"} {#map at {$_rex[nw]} {/e ext se}};
+					#case {"sw"} {#map at {$_rex[sw]} {/e ext ne}};
+					#case {"se"} {#map at {$_rex[se]} {/e ext nw}};
 				};
 			};
 		};	
