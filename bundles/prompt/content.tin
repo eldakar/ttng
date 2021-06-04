@@ -88,7 +88,7 @@
 		}
 	};
 	#if {$charstate[fatigue] >= $pmeldujprzy} {
-		#if {"$duch[$avatarid][team]" == "true"} {
+		#if {"$duch[$avatarid][team]" == "true" && "$duch[$avatarid][team_leader]" == "false"} {
 			#line sub variables {
 				#alias melduj_zmeczenie {
 					szepnij ob_$team_lead_id $zmeczenie[$charstate[fatigue]];

@@ -2,9 +2,11 @@
 	#var global_bundle_slots_values[prompt][top] 10;
 	SplitRefreshRequestRefresh;
 	#draw box 1 1 $global_bundle_slots_values[prompt][top] $screencols-$global_bundle_slots_values[prompt][right]+1 {TEST};
+	#buffer down;
 };
 
 #alias fold {
 	#var global_bundle_slots_values[prompt][top] 0;
 	SplitRefreshRequestRefresh;
+	#buffer down;
 }
