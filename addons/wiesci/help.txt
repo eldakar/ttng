@@ -112,6 +112,12 @@ TUTOR /color bestigory wlacz|wylacz
 TUTOR #var expo
 > Kolejna kalibracja NOWiu - jeszcze pare dni i bedzie uzyteczny...
 
+** 04/06/21 - Okienka **
+> Dodalem mozliwosc przegladania bufora - alt + strzalka w gore i dol
+>> Gora - wyswietla kolejne linie historii
+>> Dol - zamyka okno
+> Poprawilem renderowanie mapki przy logowaniu, nie powinna juz plywac...
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng
