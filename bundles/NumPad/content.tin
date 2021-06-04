@@ -72,3 +72,6 @@
 
 #macro {\e[1;2A} {#buffer up};		#nop shift-kursor-gora;
 #macro {\e[1;2B} {#buffer down};	#nop shift-kursor-dol;
+
+#macro {\e[1;3A} {unfold};
+#macro {\e[1;3B} {fold};

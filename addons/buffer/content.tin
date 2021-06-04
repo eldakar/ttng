@@ -1,0 +1,48 @@
+#alias unfold {
+	#math bufferscreensize {$screenrows / 3};
+	#if {"$buffer_status" == "visible"} {
+		#local oldbuffposition $buffposition;
+		#math buffposition {$buffposition - $bufferscreensize};
+		#if {$buffposition <= 0} {#var buffposition 1};
+		#buff get buffrangevalue $buffposition $oldbuffposition;
+		#var tmpbuffervalue {};
+		#foreach {*buffrangevalue[]} {brv} {
+			#var tmpbuffervalue {$tmpbuffervalue$buffrangevalue[$brv]\n};
+		};
+		#draw box 1 1 $global_bundle_slots_values[prompt][top] $screencols-$global_bundle_slots_values[prompt][right]+1 {$tmpbuffervalue};
+	} {
+		#var buffer_status {visible};
+		#buff info save buffinfo;
+		#math buffposition {$buffinfo[USED] - $bufferscreensize};
+		#if {$buffposition <= 0} {#var buffposition 1};
+		#buff get buffrangevalue $buffposition $buffinfo[USED];
+		#var tmpbuffervalue {};
+		#foreach {*buffrangevalue[]} {brv} {
+			#var tmpbuffervalue {$tmpbuffervalue$buffrangevalue[$brv]\n};
+		};
+
+		#var global_bundle_slots_values[prompt][top] $bufferscreensize;
+		SplitRefreshRequestRefresh;
+		#draw box 1 1 $global_bundle_slots_values[prompt][top] $screencols-$global_bundle_slots_values[prompt][right]+1 {$tmpbuffervalue};
+		#showme { --- DZIELE EKRAN --- Dlugosc buffera: $buffinfo[USED] --- };
+		RaidSize;
+	};
+};
+
+#alias uf {
+	#var global_bundle_slots_values[prompt][top] %1;
+};
+
+
+#alias fold {
+	#if {"$buffer_status" == "visible"} {
+		#var buffer_status {hidden};
+		#var global_bundle_slots_values[prompt][top] 0;
+		SplitRefreshRequestRefresh;
+		RaidSize;
+	};
+}
+
+#alias bt {
+	#draw boxed BUFFER 1 1 $global_bundle_slots_values[prompt][top] $screencols-$global_bundle_slots_values[prompt][right]+1 {};
+}

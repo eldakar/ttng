@@ -70,7 +70,7 @@
 };
 
 #alias {/zme} {
-	#if {"$duch[$avatarid][team]" == "true"} {
+	#if {"$duch[$avatarid][team]" == "true" && "$duch[$avatarid][team_leader]" == "false"} {
 		szepnij ob_$team_lead_id $zmeczenie[$charstate[fatigue]];
 	} {
 		#line ignore #sh {Nie jestes w zadnej druzynie.};
@@ -88,7 +88,7 @@
 		}
 	};
 	#if {$charstate[fatigue] >= $pmeldujprzy} {
-		#if {"$duch[$avatarid][team]" == "true"} {
+		#if {"$duch[$avatarid][team]" == "true" && "$duch[$avatarid][team_leader]" == "false"} {
 			#line sub variables {
 				#alias melduj_zmeczenie {
 					szepnij ob_$team_lead_id $zmeczenie[$charstate[fatigue]];
@@ -468,10 +468,10 @@
 };
 
 #alias rysuj_przyciski {
-	#math {pozycjaprzyciskow} {$screencols - 42};
-	#line ignore #sh {${bbBGC}Atak    <088>$buttons[0][8][label]${bbBGC} <088>$buttons[0][7][label]${bbBGC} <088>$buttons[0][6][label]${bbBGC} <088>$buttons[0][5][label]${bbBGC}<088>} {-4} {$pozycjaprzyciskow};
-	#line ignore #sh {${bbBGC}Zaslona <088>$buttons[1][8][label]${bbBGC} <088>$buttons[1][7][label]${bbBGC} <088>$buttons[1][6][label]${bbBGC} <088>$buttons[1][5][label]${bbBGC}<088>} {-3} {$pozycjaprzyciskow};
-	#line ignore #sh {${bbBGC}Reszta  <088>$buttons[2][8][label]${bbBGC} <088>LAM${bbBGC} <088>PLA${bbBGC}    <088>} {-2} {$pozycjaprzyciskow};	
+	#math {pozycjaprzyciskow} {$screencols - 46};
+	#line ignore #sh {TST${bbBGC} Atak    <088>$buttons[0][8][label]${bbBGC} <088>$buttons[0][7][label]${bbBGC} <088>$buttons[0][6][label]${bbBGC} <088>$buttons[0][5][label]${bbBGC}<088>} {-4} {$pozycjaprzyciskow};
+	#line ignore #sh {TST${bbBGC} Zaslona <088>$buttons[1][8][label]${bbBGC} <088>$buttons[1][7][label]${bbBGC} <088>$buttons[1][6][label]${bbBGC} <088>$buttons[1][5][label]${bbBGC}<088>} {-3} {$pozycjaprzyciskow};
+	#line ignore #sh {TST${bbBGC} Reszta  <088>$buttons[2][8][label]${bbBGC} <088>$buttons[2][7][label]${bbBGC} <088>PLA${bbBGC} <088>$buttons[2][5][label]${bbBGC}<088>} {-2} {$pozycjaprzyciskow};	
 };
 
 #alias rysuj_customs {
@@ -677,4 +677,30 @@
     	rysuj_roze;
     };
 
+}
+
+#event {VARIABLE UPDATED lampastatus} {
+	#if {"$lampastatus" == "on"} {
+        #var buttons[2][7][label] {<FFA><aaa>LAM<088>};
+        #var buttons[2][7][status] {on};
+	} {
+        #var buttons[2][7][label] {LAM};
+        #var buttons[2][7][status] {off};
+	};
+    #if {"$ConfigManager_Configs[pasek]" == "medium"} {
+    	rysuj_przyciski;
+    };	
+}
+
+#event {VARIABLE UPDATED ppowtorzenter} {
+    #if {"$ppowtorzenter" == "on"} {
+        #var buttons[2][5][label] {<CFF><aaa>ENT<088>};
+        #var buttons[2][5][status] {on};
+    } {
+        #var buttons[2][5][label] {ENT};
+        #var buttons[2][5][status] {off};
+    };
+    #if {"$ConfigManager_Configs[pasek]" == "medium"} {
+    	rysuj_przyciski;
+    };
 }

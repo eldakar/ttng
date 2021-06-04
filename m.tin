@@ -59,6 +59,7 @@
     #read bundles/walkasuby/manifest.tin;
     #read bundles/chat/manifest.tin;
     #read addons/wiesci/manifest.tin;
+    #read addons/buffer/content.tin;
 
     #read markups.tin;
     #read kamienie.tin;

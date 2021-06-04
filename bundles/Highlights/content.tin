@@ -126,6 +126,20 @@
 	};
 };
 
+#alias bestigory {
+	#switch {"$ColorManager_Colors[bestigory]"} {
+		#case {"wylacz"} {
+			#class colors_bestigory size col_ms;
+			#if {$col_ms > 1} {#class colors_bestigory kill};
+		};
+		#default {
+			#class colors_bestigory open;
+			#read bundles/Highlights/Data/bestigory.tin;
+			#class colors_bestigory close;			
+		};
+	};
+};
+
 #nop CONTENT ####################################;
 #nop ############################################;
 #action {Nagle kamienie na rekojesci miecza zaczynaja iskrzyc purpurowym swiatlem, zas jego ostrze pokrywa pajeczyna mieniacych sie na czerwono, pulsujacych zylek. Zdaja sie one plynac lekko po czarnej stali, z kazdym ruchem blask od nich bijacy staje sie coraz bardziej intensywny by w koncu wystrzelic miriada jaskrawoczerwonych, swietlistych okruchow. Czujesz przyjemne mrowienie gdy jakas magiczna sila przenika przez twoje cialo.}

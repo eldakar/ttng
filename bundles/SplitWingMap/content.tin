@@ -6,7 +6,10 @@
     #screen get rows screenrows;
     #math offsetx {$screencols - $global_bundle_slots_values[prompt][right] + 2};
     #math offseth {$screencols};
-    #math offsetw {$praidsize};
+
+    #math offsetw {$screenrows - $global_bundle_slots_values[prompt][bottom] - $ConfigManager_Configs[RaidSize]};
+    #nop math offsetw {$praidsize};
+
     #math raidoffsety {$global_bundle_slots_values[prompt][top] + $praidsize + 1};
     #math raidoffsetw {$screenrows - $global_bundle_slots_values[prompt][bottom]-1};
     #math raidoffsetx {$screencols - $global_bundle_slots_values[prompt][right] + 1};    
@@ -30,12 +33,12 @@
 
 #alias {RaidSize} {
     #if {$ConfigManager_Configs[RaidSize] > 0} {
-        #var praidsize {$screenrows - $global_bundle_slots_values[prompt][bottom] - $ConfigManager_Configs[RaidSize]};
+        #var praidsize {$screenrows - $global_bundle_slots_values[prompt][bottom] - $global_bundle_slots_values[prompt][top] - $ConfigManager_Configs[RaidSize]};
     } {
-        #math praidsize {$screenrows - $global_bundle_slots_values[prompt][bottom] - 5};
+        #math praidsize {$screenrows - $global_bundle_slots_values[prompt][bottom] - $global_bundle_slots_values[prompt][top] - 5};
     };
-    SplitWingMap_Offset;
     RaidBar_refresh;
+    SplitWingMap_Offset;
 }
 
 #alias {doubleclick} {
@@ -67,8 +70,8 @@
         #var ConfigManager_Configs[SplitWingMapWidth] {10};
         #var global_bundle_slots_values[prompt][right] {10};
     };
+    RaidBar_refresh;    
     SplitWingMap_Offset;
-    RaidBar_refresh;
 };
 
 #alias {SplitWingMap_Popup} {

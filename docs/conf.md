@@ -69,6 +69,10 @@
 - wlaczone - w katalogu bundles/ConfigManager/Profiles/Logs/ (katalog musi istniec!)
 - wylaczone
 
+### /conf logujhtml
+- wlacz - logowanie w HTMLu (trzeba sobie dodac naglowki, afair)
+- wylacz
+
 ### /conf powtorzenter
 - wlaczony - ponowne nacisniecie entera wykona poprzednia komende - nie widac w pasku!!
 - wylaczony

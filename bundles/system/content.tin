@@ -6,14 +6,23 @@
 	};
 };
 
-#alias {powtorzenter} {
-	#if {"$ConfigManager_Configs[powtorzenter]" == "wlaczony"} {
-		#config {REPEAT ENTER} {on};
+#alias {logujhtml} {
+	#if {"$ConfigManager_Configs[logujhtml]" == "wlacz"} {
+		#config {LOG MODE} {html};
 	} {
-		#config {REPEAT ENTER} {off};
+		#config {LOG MODE} {plain};
 	}
 };
 
+#alias {powtorzenter} {
+	#if {"$ConfigManager_Configs[powtorzenter]" == "wlaczony"} {
+		#var ppowtorzenter on;
+		#config {REPEAT ENTER} {on};
+	} {
+		#var ppowtorzenter off;
+		#config {REPEAT ENTER} {off};
+	}
+};
 
 #alias {echokomend} {
 	#if {"$ConfigManager_Configs[echokomend]" == "widoczne"} {
