@@ -120,12 +120,9 @@
 }
 
 #function {bundleops_unload} {
+	#line ignore #sh {<128>Usuwam skrypty: <168>%1<088>};
 	#var bundleindex 0;
 	#list bundlemanager_bundles find {%1} bundleindex;
-	#if {$bundleindex > 0} {
-		#line ignore #sh {<128>Usuwam skrypty: <168>%1<088>};
-		#list bundlemanager_bundles del $bundleindex;
-		#class {%1} kill;
-	};
-	#unvar bundleindex;
+	#list bundlemanager_bundles del $bundleindex;
+	#class {%1} kill;
 };
