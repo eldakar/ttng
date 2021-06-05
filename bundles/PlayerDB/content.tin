@@ -1,3 +1,5 @@
+#read addons/raid/boss.tin;
+
 #alias {PlayerDBAddress} {
     #var tmp {$ConfigManager_Configs[PlayerDBAddress]};
     #replace tmp {,} {;};
@@ -16,6 +18,7 @@
     #unvar postac;
     #read {addons/raid/data.tin};
     #class bazapostaci write addons/raid/data.tin;
+    #class bossy write addons/raid/boss.tin;
     #echo {<138>PlayerDB: <128>Zaladowane.<088>};
 } {1};
 

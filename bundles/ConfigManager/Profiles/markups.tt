@@ -135,7 +135,7 @@
     }
     {4642} 
     {
-        {direction} {e}
+        {direction} {nw}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -143,7 +143,7 @@
     }
     {4643} 
     {
-        {direction} {ne}
+        {direction} {nw}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -159,7 +159,7 @@
     }
     {4645} 
     {
-        {direction} {se}
+        {direction} {n}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -199,7 +199,7 @@
     }
     {4650} 
     {
-        {direction} {ne}
+        {direction} {se}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -215,9 +215,9 @@
     }
     {4652} 
     {
-        {direction} {e}
+        {direction} {s}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
@@ -231,7 +231,7 @@
     }
     {4655} 
     {
-        {direction} {e}
+        {direction} {w}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -247,9 +247,9 @@
     }
     {4657} 
     {
-        {direction} {se}
+        {direction} {nw}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {las}
         {type} {ext}
     }
@@ -279,7 +279,7 @@
     }
     {4664} 
     {
-        {direction} {n}
+        {direction} {w}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -287,7 +287,7 @@
     }
     {4665} 
     {
-        {direction} {nw}
+        {direction} {e}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -295,7 +295,7 @@
     }
     {4666} 
     {
-        {direction} {n}
+        {direction} {se}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {las}
@@ -524,17 +524,17 @@
     }
     {28473} 
     {
-        {direction} {nw}
+        {direction} {se}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
     {28474} 
     {
-        {direction} {nw}
+        {direction} {se}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
@@ -564,15 +564,15 @@
     }
     {28478} 
     {
-        {direction} {n}
+        {direction} {se}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
     {28479} 
     {
-        {direction} {n}
+        {direction} {sw}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -588,9 +588,9 @@
     }
     {28481} 
     {
-        {direction} {w}
+        {direction} {se}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
@@ -620,7 +620,7 @@
     }
     {28485} 
     {
-        {direction} {w}
+        {direction} {sw}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -644,7 +644,7 @@
     }
     {28488} 
     {
-        {direction} {e}
+        {direction} {s}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -652,7 +652,7 @@
     }
     {28489} 
     {
-        {direction} {w}
+        {direction} {sw}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -676,9 +676,9 @@
     }
     {28492} 
     {
-        {direction} {nw}
+        {direction} {ne}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
@@ -724,7 +724,7 @@
     }
     {28498} 
     {
-        {direction} {sw}
+        {direction} {ne}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -748,7 +748,7 @@
     }
     {28501} 
     {
-        {direction} {s}
+        {direction} {nw}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -756,7 +756,7 @@
     }
     {28502} 
     {
-        {direction} {se}
+        {direction} {sw}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -764,7 +764,7 @@
     }
     {28503} 
     {
-        {direction} {se}
+        {direction} {sw}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -780,7 +780,7 @@
     }
     {28505} 
     {
-        {direction} {se}
+        {direction} {sw}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -796,23 +796,23 @@
     }
     {28507} 
     {
-        {direction} {se}
+        {direction} {nw}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
     {28508} 
     {
-        {direction} {e}
+        {direction} {nw}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
     {28509} 
     {
-        {direction} {s}
+        {direction} {n}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -820,9 +820,9 @@
     }
     {28510} 
     {
-        {direction} {sw}
+        {direction} {ne}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
@@ -868,15 +868,15 @@
     }
     {28516} 
     {
-        {direction} {se}
+        {direction} {e}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
     {28517} 
     {
-        {direction} {sw}
+        {direction} {se}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -884,9 +884,9 @@
     }
     {28518} 
     {
-        {direction} {ne}
+        {direction} {nw}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
@@ -916,7 +916,7 @@
     }
     {28522} 
     {
-        {direction} {w}
+        {direction} {e}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -934,7 +934,7 @@
     {
         {direction} {w}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
@@ -948,7 +948,7 @@
     }
     {28526} 
     {
-        {direction} {sw}
+        {direction} {e}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -956,7 +956,7 @@
     }
     {28527} 
     {
-        {direction} {ne}
+        {direction} {n}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -964,9 +964,9 @@
     }
     {28528} 
     {
-        {direction} {se}
+        {direction} {nw}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
@@ -980,9 +980,9 @@
     }
     {28530} 
     {
-        {direction} {sw}
+        {direction} {se}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
@@ -1004,9 +1004,9 @@
     }
     {28533} 
     {
-        {direction} {n}
+        {direction} {se}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
