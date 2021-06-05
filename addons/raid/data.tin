@@ -8770,6 +8770,10 @@
     {
         {gildia} {GP}
     }
+    {MumiaMutant_} 
+    {
+        {gildia} {BOSS}
+    }
     {Mungrim_} 
     {
         {gildia} {KGKS}
@@ -8797,10 +8801,6 @@
     {Mustafa_} 
     {
         {gildia} {NPC}
-    }
-    {Mutant_} 
-    {
-        {gildia} {BOSS}
     }
     {Mutanttest_} 
     {
@@ -23022,7 +23022,7 @@
     {niski_zabandazowany_mutant_} 
     {
         {gildia} {BOSS}
-        {imie} {Mutant}
+        {imie} {MumiaMutant}
     }
     {niski_zakatarzony_gnom_} 
     {

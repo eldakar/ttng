@@ -13,9 +13,87 @@
 	};
 };
 
-#action {%* umarl} {
-  #math {ilecial} {$ilecial + 1};
-  qb _zbierz_;
+#action {Bierzesz %*{klucz|kluczyk|pergamin|fetysz|karteczke|gwiazde|pieczec}%* z ciala %*} {
+	#regex {%0} {%* bierze %* z ciala} {
+		#var cowzial {&2};
+	};
+	#format kluczstamp {%t} {%Y-%h-%d %H:%M};
+	#format kluczepoc {%T};
+	
+	#foreach {*klucze[]} {klu} {
+		#if {$kluczepoc - $klucze[$klu][epoc] < 60 && $voom == $klucze[$klu][gdzie]} {
+	   		#class klucze read bundles/ConfigManager/Profiles/klucze.tin;
+			#class klucze open;
+			#var klucze[$klu][klucz] {$cowzial};
+	   		#class klucze close;
+			#class klucze write bundles/ConfigManager/Profiles/klucze.tin;
+			#echo {%-18s %-5s %-30s %-20s} {<148>$klu} {<128>$klucze[$klu][gdzie]} {<fac>$klucze[$klu][kogo] $klucze[$klu][imie]} {<138>$klucze[$klu][klucz]};
+		};
+	};
+};
+
+
+#action {%* bierze %*{klucz|kluczyk|pergamin|fetysz|karteczke|gwiazde|pieczec}%* z ciala %*} {
+	#regex {%0} {%* bierze %* z ciala} {
+		#var cowzial {&2};
+	};
+	#format kluczstamp {%t} {%Y-%h-%d %H:%M};
+	#format kluczepoc {%T};
+	
+	#foreach {*klucze[]} {klu} {
+		#if {$kluczepoc - $klucze[$klu][epoc] < 60 && $voom == $klucze[$klu][gdzie]} {
+	   		#class klucze read bundles/ConfigManager/Profiles/klucze.tin;
+			#class klucze open;
+			#var klucze[$klu][klucz] {$cowzial};
+	   		#class klucze close;
+			#class klucze write bundles/ConfigManager/Profiles/klucze.tin;
+			#echo {%-18s %-5s %-30s %-20s} {<148>$klu} {<128>$klucze[$klu][gdzie]} {<fac>$klucze[$klu][kogo] $klucze[$klu][imie]} {<138>$klucze[$klu][klucz]};
+		};
+	};
+};
+
+#alias {/klucze} {
+	#class klucze read bundles/ConfigManager/Profiles/klucze.tin;
+	#class klucze close;
+
+	#line ignore #showme {<dfd>Historia klucznikow:<088>};
+	#foreach {*klucze[]} {klu} {
+		#echo {%-18s %-5s %-30s %-20s} {<148>$klu} {<128>$klucze[$klu][gdzie]} {<fac>$klucze[$klu][kogo] $klucze[$klu][imie]} {<138>$klucze[$klu][klucz]};
+	};
+} {1};
+
+#action {%* {umarl|umarla}.} {
+	#var cowzial {};
+	#local umarly {%1};
+	#regex {$umarly} { } {
+	    #replace umarly { } {_};
+	    #format {umarly} {%l} {$umarly};
+	};
+    #local umarly {${umarly}_};
+	#local imie {$postac[$umarly][imie]};
+
+   	#if {"$postac[$umarly][gildia]" == "BOSS"} {   		
+   		#format kluczstamp {%t} {%Y-%h-%d %H:%M};
+  	 	#format kluczepoc {%T};
+
+   		#class klucze read bundles/ConfigManager/Profiles/klucze.tin;
+   		#class klucze open;
+	   		#var klucze[$kluczstamp][epoc] {$kluczepoc};
+	   		#var klucze[$kluczstamp][gdzie] {$voom};
+	   		#var klucze[$kluczstamp][kogo] {%1};
+	   		#var klucze[$kluczstamp][imie] {$imie};
+	   		#var klucze[$kluczstamp][klucz] {<118>brak<088>};
+   		#class klucze close;
+		#class klucze write bundles/ConfigManager/Profiles/klucze.tin;
+
+   		#line ignore #showme {<158>%1 UMARL ---- MOZE MIEC KLUCZ.};
+   		#math {ilecial} {$ilecial + 1};
+		qb _zbierz_;
+		#line gag;
+    } {
+		#math {ilecial} {$ilecial + 1};
+		qb _zbierz_;
+    };
 };
 
 #action {Sila utrzymujaca %* opuszcza} {

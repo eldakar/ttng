@@ -118,6 +118,11 @@ TUTOR #var expo
 >> Dol - zamyka okno
 > Poprawilem renderowanie mapki przy logowaniu, nie powinna juz plywac...
 
+** 05/06/21 - Labirynty i klucznicy **
+> Od teraz bede co apke rysowal przejscia lokacji, ktore sie co apke zmieniaja
+>> Dodalem eksperymentalnie Tundre na ZC, wiem ze nie jest to ultra czytelne, bedzie niedlugo!
+> Dodalem kolorowanie BOSSow na sztywno, a nie tylko przy ich spotkaniu
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng

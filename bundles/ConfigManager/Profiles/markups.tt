@@ -101,6 +101,222 @@
         {terrain} {pustynia}
         {type} {mob}
     }
+    {4636} 
+    {
+        {direction} {n}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4637} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {4638} 
+    {
+        {direction} {ne}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {sciezka}
+        {type} {ext}
+    }
+    {4641} 
+    {
+        {direction} {ne}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4642} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4643} 
+    {
+        {direction} {sw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4644} 
+    {
+        {direction} {n}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4645} 
+    {
+        {direction} {n}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4646} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {4647} 
+    {
+        {direction} {e}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {las}
+        {type} {ext}
+    }
+    {4648} 
+    {
+        {direction} {ne}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {las}
+        {type} {ext}
+    }
+    {4649} 
+    {
+        {direction} {s}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {4650} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4651} 
+    {
+        {direction} {n}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4652} 
+    {
+        {direction} {s}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {4654} 
+    {
+        {direction} {e}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4655} 
+    {
+        {direction} {w}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4656} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4657} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {las}
+        {type} {ext}
+    }
+    {4658} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4661} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4662} 
+    {
+        {direction} {e}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4664} 
+    {
+        {direction} {w}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4665} 
+    {
+        {direction} {e}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4666} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {las}
+        {type} {ext}
+    }
+    {4667} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4749} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
     {4797} 
     {
         {rendered} {1}
@@ -233,6 +449,574 @@
         {symbol} { O }
         {terrain} {}
         {type} {mob}
+    }
+    {28464} 
+    {
+        {direction} {e}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28465} 
+    {
+        {direction} {w}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28466} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28467} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28468} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28469} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28470} 
+    {
+        {direction} {n}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28471} 
+    {
+        {direction} {w}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28472} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28473} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28474} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28475} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28476} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28477} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28478} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28479} 
+    {
+        {direction} {sw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28480} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28481} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28482} 
+    {
+        {direction} {ne}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28483} 
+    {
+        {direction} {w}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28484} 
+    {
+        {direction} {s}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28485} 
+    {
+        {direction} {sw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28486} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28487} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28488} 
+    {
+        {direction} {s}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28489} 
+    {
+        {direction} {sw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28490} 
+    {
+        {direction} {ne}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28491} 
+    {
+        {direction} {sw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28492} 
+    {
+        {direction} {ne}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28493} 
+    {
+        {direction} {ne}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28494} 
+    {
+        {direction} {sw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28495} 
+    {
+        {direction} {w}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28496} 
+    {
+        {direction} {s}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28497} 
+    {
+        {direction} {s}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28498} 
+    {
+        {direction} {ne}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28499} 
+    {
+        {direction} {s}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28500} 
+    {
+        {direction} {sw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28501} 
+    {
+        {direction} {n}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28502} 
+    {
+        {direction} {sw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28503} 
+    {
+        {direction} {sw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28504} 
+    {
+        {direction} {ne}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28505} 
+    {
+        {direction} {sw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28506} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28507} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28508} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28509} 
+    {
+        {direction} {n}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28510} 
+    {
+        {direction} {ne}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28511} 
+    {
+        {direction} {s}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28512} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28513} 
+    {
+        {direction} {ne}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28514} 
+    {
+        {direction} {ne}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28515} 
+    {
+        {direction} {w}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28516} 
+    {
+        {direction} {e}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28517} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28518} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28519} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28520} 
+    {
+        {direction} {n}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28521} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28522} 
+    {
+        {direction} {e}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28523} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28524} 
+    {
+        {direction} {w}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28525} 
+    {
+        {direction} {w}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28526} 
+    {
+        {direction} {e}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28527} 
+    {
+        {direction} {n}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28528} 
+    {
+        {direction} {nw}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28529} 
+    {
+        {direction} {w}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28530} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {28531} 
+    {
+        {direction} {s}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28532} 
+    {
+        {direction} {n}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {28533} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {29520} 
+    {
+        {direction} {sw}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
     }
 }
 #VARIABLE {markupsymbols}

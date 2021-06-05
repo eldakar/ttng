@@ -1,0 +1,86 @@
+#CLASS {bossy} OPEN
+
+#HIGHLIGHT {%ibarwny zamaskowany arlekin} {<CAF>} {5}
+#HIGHLIGHT {%ibystry zakapturzony skaven} {<CAF>} {5}
+#HIGHLIGHT {%iczarnowlosy wyniosly mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%iczujny energiczny mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%idlugowlosy urodziwy mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%idlugowlosym urodziwym mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%iduzy smierdzacy snotling} {<CAF>} {5}
+#HIGHLIGHT {%igargantuiczny plomiennooki smoczy ogr} {<CAF>} {5}
+#HIGHLIGHT {%igrozny charyzmatyczny mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%ihardy zarosniety mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%ijednoreki energiczny mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%ikrzykliwy energiczny mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%imajestatyczny masywny mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%imigdalowooka wiotka polelfka} {<CAF>} {5}
+#HIGHLIGHT {%imuskularny czerwononosy goblin} {<CAF>} {5}
+#HIGHLIGHT {%imuskularny czerwonowlosy hobgoblin} {<CAF>} {5}
+#HIGHLIGHT {%imuskularny okrutny hobgoblin} {<CAF>} {5}
+#HIGHLIGHT {%inerwowy mlody mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%iniewysoki groteskowy mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%iniski przygarbizony mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%iniski zabandazowany mutant} {<CAF>} {5}
+#HIGHLIGHT {%iogromny agresywny troglodyta} {<CAF>} {5}
+#HIGHLIGHT {%iogromny wyniosly goblin} {<CAF>} {5}
+#HIGHLIGHT {%iokrutny czarny ork} {<CAF>} {5}
+#HIGHLIGHT {%iolbrzymi agresywny zwierzoczlek} {<CAF>} {5}
+#HIGHLIGHT {%iolbrzymi siwobrody krasnolud} {<CAF>} {5}
+#HIGHLIGHT {%iopalony energiczny mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%iopierzona skrzydlata bestia} {<CAF>} {5}
+#HIGHLIGHT {%ipokrzywiony sedziwy skaven} {<CAF>} {5}
+#HIGHLIGHT {%ipokrzywiony stary skaven} {<CAF>} {5}
+#HIGHLIGHT {%ipokrzywiony wiekowy skaven} {<CAF>} {5}
+#HIGHLIGHT {%iponury czujny mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%iporywczy szczerbaty mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%ipostawny czerwonowlosy hobgoblin} {<CAF>} {5}
+#HIGHLIGHT {%ipostawny muskularny mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%ipostawny nocny goblin} {<CAF>} {5}
+#HIGHLIGHT {%ipotezny lysy mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%ipotezny opancerzony golem} {<CAF>} {5}
+#HIGHLIGHT {%ipotezny opanowany mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%ipotezny siwowlosy mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%ipotezny wysoki fimir} {<CAF>} {5}
+#HIGHLIGHT {%ipotezny zarosniety mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%iprzerazajacy siwowlosy ozywieniec} {<CAF>} {5}
+#HIGHLIGHT {%iprzerosniety zoltawy snotling} {<CAF>} {5}
+#HIGHLIGHT {%iprzyczajony zarosniety mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%irudy pucolowaty mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%isedziwy pokrzywiony skaven} {<CAF>} {5}
+#HIGHLIGHT {%isedziwy szalony skaven} {<CAF>} {5}
+#HIGHLIGHT {%isedziwy zgarbiony skaven} {<CAF>} {5}
+#HIGHLIGHT {%isiwobrody nerwowy krasnolud} {<CAF>} {5}
+#HIGHLIGHT {%isniady wystrojony mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%istary pokrzywiony skaven} {<CAF>} {5}
+#HIGHLIGHT {%istary potezny ork} {<CAF>} {5}
+#HIGHLIGHT {%istary szalony skaven} {<CAF>} {5}
+#HIGHLIGHT {%istary zgarbiony skaven} {<CAF>} {5}
+#HIGHLIGHT {%iszalony sedziwy skaven} {<CAF>} {5}
+#HIGHLIGHT {%iszalony stary skaven} {<CAF>} {5}
+#HIGHLIGHT {%iszalony wiekowy skaven} {<CAF>} {5}
+#HIGHLIGHT {%iszmaragdowooka wychudzona kobieta} {<CAF>} {5}
+#HIGHLIGHT {%iszpetny siwy troll} {<CAF>} {5}
+#HIGHLIGHT {%iwasaty szczerbaty mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%iwiekowy masywny ork} {<CAF>} {5}
+#HIGHLIGHT {%iwiekowy pokrzywiony skaven} {<CAF>} {5}
+#HIGHLIGHT {%iwiekowy szalony skaven} {<CAF>} {5}
+#HIGHLIGHT {%iwiekowy tajemniczy ork} {<CAF>} {5}
+#HIGHLIGHT {%iwiekowy zgarbiony skaven} {<CAF>} {5}
+#HIGHLIGHT {%iwielki stary troll} {<CAF>} {5}
+#HIGHLIGHT {%iwszawy jednooki mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%iwysoki bezwzgledny czarny ork} {<CAF>} {5}
+#HIGHLIGHT {%iwysoki czerwonowlosy hobgoblin} {<CAF>} {5}
+#HIGHLIGHT {%iwysoki niebieskooki mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%iwysoki zarosniety mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%izamyslony usmiechniety mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%izdeformowany rogaty smok chaosu} {<CAF>} {5}
+#HIGHLIGHT {%izgarbiony sedziwy skaven} {<CAF>} {5}
+#HIGHLIGHT {%izgarbiony stary skaven} {<CAF>} {5}
+#HIGHLIGHT {%izgarbiony wiekowy skaven} {<CAF>} {5}
+#HIGHLIGHT {%izielonooki krotkowlosy mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%izlowrogi ptakopodobny mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%izwalisty plomiennooki wicht} {<CAF>} {5}
+#HIGHLIGHT {%izylasty patykowaty mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%izylasty zimnooki mezczyzna} {<CAF>} {5}
+
+#CLASS {bossy} CLOSE

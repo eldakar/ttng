@@ -215,6 +215,7 @@
 
 #var kalendarz_poradnia[rano] {0};
 #var kalendarz_poradnia[nad ranem] {0};
+#var kalendarz_poradnia[w poludnie] {0};
 #var kalendarz_poradnia[wieczorem] {12};
 #var kalendarz_poradnia[po poludniu] {12};
 #var kalendarz_poradnia[w nocy] {0};
@@ -226,40 +227,40 @@
 #action {Jest w przyblizeniu %1 {w poludnie|rano|nad ranem|wieczorem|po poludniu|w nocy|poznym wieczorem}, %* w %w, %5 dzien miesiaca %6 wedlug Kalendarza Imperialnego.}
 {
     #var kalendarz_miesiac %6;
-#if {"%2" == "w nocy"} {
-#if {$kalendarz_godziny[%1] > 6} {
-#math czas_godzina {$kalendarz_godziny[%1] + 12};
-} {
-#math czas_godzina {$kalendarz_godziny[%1] + $kalendarz_poradnia[%2]};
-}
-} {
-#math czas_godzina {$kalendarz_godziny[%1] + $kalendarz_poradnia[%2]};
-};
-#math dzien_miesiaca {$kalendarz_dni[%5]};
-#math dzien_roku {$kalendarz_dni[%5] + $kalendarz_miesiace[%6][wroku]};
-#var dniwmiesiacu {$kalendarz_miesiace[%6][dni]};
-#var numermiesiaca {$kalendarz_miesiace[%6][index]};
-#var wschod_slonca $kalendarz_poraroku[$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]][wschod];
-#var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]][zachod];
-#ticker {klepsydra} {
-#math {czas_godzina} {$czas_godzina + 1};
-#if {$czas_godzina > 24} {
-#var czas_godzina 1;
-#math {dzien_miesiaca} {$dzien_miesiaca + 1};
-#if {$dzien_miesiaca > $dniwmiesiacu} {
-#var dzien_miesiaca 1;
-#if {$numermiesiaca < 18} {
-#math numermiesiaca {$numermiesiaca + 1};
-#var dniwmiesiacu $kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][dni];
-} {
-#math numermiesiaca 1;
-#var dniwmiesiacu 1;
-};
-};
-};
-#var wschod_slonca $kalendarz_poraroku[$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]][wschod];
-#var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]][zachod];
-} {120};
+    #if {"%2" == "w nocy"} {
+        #if {$kalendarz_godziny[%1] > 6} {
+            #math czas_godzina {$kalendarz_godziny[%1] + 12};
+        } {
+            #math czas_godzina {$kalendarz_godziny[%1] + $kalendarz_poradnia[%2]};
+        }
+    } {
+        #math czas_godzina {$kalendarz_godziny[%1] + $kalendarz_poradnia[%2]};
+    };
+    #math dzien_miesiaca {$kalendarz_dni[%5]};
+    #math dzien_roku {$kalendarz_dni[%5] + $kalendarz_miesiace[%6][wroku]};
+    #var dniwmiesiacu {$kalendarz_miesiace[%6][dni]};
+    #var numermiesiaca {$kalendarz_miesiace[%6][index]};
+    #var wschod_slonca $kalendarz_poraroku[$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]][wschod];
+    #var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]][zachod];
+    #ticker {klepsydra} {
+        #math {czas_godzina} {$czas_godzina + 1};
+        #if {$czas_godzina > 24} {
+            #var czas_godzina 1;
+            #math {dzien_miesiaca} {$dzien_miesiaca + 1};
+            #if {$dzien_miesiaca > $dniwmiesiacu} {
+                #var dzien_miesiaca 1;
+                #if {$numermiesiaca < 18} {
+                    #math numermiesiaca {$numermiesiaca + 1};
+                    #var dniwmiesiacu $kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][dni];
+                } {
+                    #math numermiesiaca 1;
+                    #var dniwmiesiacu 1;
+                };
+            };
+        };
+        #var wschod_slonca $kalendarz_poraroku[$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]][wschod];
+        #var zachod_slonca $kalendarz_poraroku[$kalendarz_miesiace[$kalendarz_miesiace[$numermiesiaca][nazwa]][pora]][zachod];
+    } {120};
 klepsydra_render;
 klepsydra_render_now;
 }
