@@ -156,7 +156,7 @@
                     };
                 };
                 #if {"$postac[$test][gildia]" == "BOSS"} {
-                        #var duch[$dudu][typ] {boss};
+                    #var duch[$dudu][typ] {boss};
                 };
             };
 #nop 16-03-2020;
@@ -207,7 +207,7 @@
             #nop POKOLORUJ;         #high {$duch[$dudu][desc]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
                                     #high {$postac[$test][imie]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
                                 };
-             #nop POKOLORUJ;    #high {$dudu2} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};                     
+             #nop POKOLORUJ;    #high {$dudu2} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
             				};
             			};
             			#if {"$tmpimietype" == "2"} {
@@ -219,7 +219,7 @@
                                 } {
              #nop POKOLORUJ;        #high {$duch[$dudu][desc]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};                         
                                 };
-            				};
+            				};                          
             			};
                     };
                 };

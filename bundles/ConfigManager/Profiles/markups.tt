@@ -121,7 +121,7 @@
     {
         {direction} {ne}
         {rendered} {1}
-        {symbol} { O }
+        {symbol} {<138> @ <088>}
         {terrain} {sciezka}
         {type} {ext}
     }
@@ -143,7 +143,7 @@
     }
     {4643} 
     {
-        {direction} {nw}
+        {direction} {sw}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -169,7 +169,7 @@
     {
         {direction} {se}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
@@ -193,7 +193,7 @@
     {
         {direction} {s}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
@@ -454,7 +454,7 @@
     {
         {direction} {e}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
@@ -462,7 +462,7 @@
     {
         {direction} {w}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
@@ -748,9 +748,9 @@
     }
     {28501} 
     {
-        {direction} {nw}
+        {direction} {n}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
@@ -774,7 +774,7 @@
     {
         {direction} {ne}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }

@@ -28,6 +28,9 @@
 #HIGHLIGHT {%iolbrzymi siwobrody krasnolud} {<CAF>} {5}
 #HIGHLIGHT {%iopalony energiczny mezczyzna} {<CAF>} {5}
 #HIGHLIGHT {%iopierzona skrzydlata bestia} {<CAF>} {5}
+#HIGHLIGHT {%ipokrzywiony sedziwy skaven} {<CAF>} {5}
+#HIGHLIGHT {%ipokrzywiony stary skaven} {<CAF>} {5}
+#HIGHLIGHT {%ipokrzywiony wiekowy skaven} {<CAF>} {5}
 #HIGHLIGHT {%iponury czujny mezczyzna} {<CAF>} {5}
 #HIGHLIGHT {%iporywczy szczerbaty mezczyzna} {<CAF>} {5}
 #HIGHLIGHT {%ipostawny czerwonowlosy hobgoblin} {<CAF>} {5}
@@ -43,14 +46,26 @@
 #HIGHLIGHT {%iprzerosniety zoltawy snotling} {<CAF>} {5}
 #HIGHLIGHT {%iprzyczajony zarosniety mezczyzna} {<CAF>} {5}
 #HIGHLIGHT {%irudy pucolowaty mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%isedziwy pokrzywiony skaven} {<CAF>} {5}
+#HIGHLIGHT {%isedziwy szalony skaven} {<CAF>} {5}
+#HIGHLIGHT {%isedziwy zgarbiony skaven} {<CAF>} {5}
 #HIGHLIGHT {%isiwobrody nerwowy krasnolud} {<CAF>} {5}
+#HIGHLIGHT {%isniady wystrojony mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%istary pokrzywiony skaven} {<CAF>} {5}
 #HIGHLIGHT {%istary potezny ork} {<CAF>} {5}
+#HIGHLIGHT {%istary szalony skaven} {<CAF>} {5}
 #HIGHLIGHT {%istary zgarbiony skaven} {<CAF>} {5}
+#HIGHLIGHT {%iszalony sedziwy skaven} {<CAF>} {5}
+#HIGHLIGHT {%iszalony stary skaven} {<CAF>} {5}
+#HIGHLIGHT {%iszalony wiekowy skaven} {<CAF>} {5}
 #HIGHLIGHT {%iszmaragdowooka wychudzona kobieta} {<CAF>} {5}
 #HIGHLIGHT {%iszpetny siwy troll} {<CAF>} {5}
 #HIGHLIGHT {%iwasaty szczerbaty mezczyzna} {<CAF>} {5}
 #HIGHLIGHT {%iwiekowy masywny ork} {<CAF>} {5}
+#HIGHLIGHT {%iwiekowy pokrzywiony skaven} {<CAF>} {5}
+#HIGHLIGHT {%iwiekowy szalony skaven} {<CAF>} {5}
 #HIGHLIGHT {%iwiekowy tajemniczy ork} {<CAF>} {5}
+#HIGHLIGHT {%iwiekowy zgarbiony skaven} {<CAF>} {5}
 #HIGHLIGHT {%iwielki stary troll} {<CAF>} {5}
 #HIGHLIGHT {%iwszawy jednooki mezczyzna} {<CAF>} {5}
 #HIGHLIGHT {%iwysoki bezwzgledny czarny ork} {<CAF>} {5}
@@ -59,48 +74,13 @@
 #HIGHLIGHT {%iwysoki zarosniety mezczyzna} {<CAF>} {5}
 #HIGHLIGHT {%izamyslony usmiechniety mezczyzna} {<CAF>} {5}
 #HIGHLIGHT {%izdeformowany rogaty smok chaosu} {<CAF>} {5}
+#HIGHLIGHT {%izgarbiony sedziwy skaven} {<CAF>} {5}
+#HIGHLIGHT {%izgarbiony stary skaven} {<CAF>} {5}
+#HIGHLIGHT {%izgarbiony wiekowy skaven} {<CAF>} {5}
 #HIGHLIGHT {%izielonooki krotkowlosy mezczyzna} {<CAF>} {5}
 #HIGHLIGHT {%izlowrogi ptakopodobny mezczyzna} {<CAF>} {5}
 #HIGHLIGHT {%izwalisty plomiennooki wicht} {<CAF>} {5}
 #HIGHLIGHT {%izylasty patykowaty mezczyzna} {<CAF>} {5}
 #HIGHLIGHT {%izylasty zimnooki mezczyzna} {<CAF>} {5}
-#HIGHLIGHT {Aimeric} {<CAF>} {5}
-#HIGHLIGHT {Anatolij} {<CAF>} {5}
-#HIGHLIGHT {Andreus} {<CAF>} {5}
-#HIGHLIGHT {Aribert} {<CAF>} {5}
-#HIGHLIGHT {Bandakrzywegoszef} {<CAF>} {5}
-#HIGHLIGHT {Boss} {<CAF>} {5}
-#HIGHLIGHT {Buldo} {<CAF>} {5}
-#HIGHLIGHT {Damaris} {<CAF>} {5}
-#HIGHLIGHT {Domenico} {<CAF>} {5}
-#HIGHLIGHT {Donengar} {<CAF>} {5}
-#HIGHLIGHT {Edalbert} {<CAF>} {5}
-#HIGHLIGHT {Gebhard} {<CAF>} {5}
-#HIGHLIGHT {Giuseppe} {<CAF>} {5}
-#HIGHLIGHT {Harwig} {<CAF>} {5}
-#HIGHLIGHT {Hradhiril} {<CAF>} {5}
-#HIGHLIGHT {Kapitan} {<CAF>} {5}
-#HIGHLIGHT {Kitum} {<CAF>} {5}
-#HIGHLIGHT {Kultysta} {<CAF>} {5}
-#HIGHLIGHT {Luigi} {<CAF>} {5}
-#HIGHLIGHT {Magiczka} {<CAF>} {5}
-#HIGHLIGHT {MumiaMutant} {<CAF>} {5}
-#HIGHLIGHT {Mutant} {<CAF>} {5}
-#HIGHLIGHT {Nilda} {<CAF>} {5}
-#HIGHLIGHT {Opluj} {<CAF>} {5}
-#HIGHLIGHT {Preysogg} {<CAF>} {5}
-#HIGHLIGHT {Prorok} {<CAF>} {5}
-#HIGHLIGHT {Ptak} {<CAF>} {5}
-#HIGHLIGHT {Raknen} {<CAF>} {5}
-#HIGHLIGHT {Rodrykh} {<CAF>} {5}
-#HIGHLIGHT {Skitzskrot} {<CAF>} {5}
-#HIGHLIGHT {Skrasnik} {<CAF>} {5}
-#HIGHLIGHT {Szaman} {<CAF>} {5}
-#HIGHLIGHT {Talbo} {<CAF>} {5}
-#HIGHLIGHT {Thibert} {<CAF>} {5}
-#HIGHLIGHT {Vorster} {<CAF>} {5}
-#HIGHLIGHT {Wicht} {<CAF>} {5}
-#HIGHLIGHT {Willafried} {<CAF>} {5}
-#HIGHLIGHT {Xavier} {<CAF>} {5}
 
 #CLASS {bossy} CLOSE

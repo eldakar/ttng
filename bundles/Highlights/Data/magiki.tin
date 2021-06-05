@@ -100,7 +100,7 @@
 #sub {lodow%w lsniac%w sztylet%w} {${colmags}%0<088>};
 #sub {lodow%w dlug%w maczug%w} {${colmags}%0<088>};
 #sub {lsniac%w plomienist%w tarcz%w} {${colmags}%0<088>};
-#sub {masywn%w amulet%w z czarnym opalem} {${colmags}%0<088>};
+#sub {masywn%w amulet%w z czarnym opalem} {${colmags}%0 <088>(<fca>+roz<088>)};
 #sub {mistern%w obosieczn%w topor%w} {${colmags}%0<088>};
 #sub {mithrylow%w mahakamsk%w kolczug%w} {${colmags}%0<088>};
 #sub {niebieskaw%w zdobion%w bulaw%w} {${colmags}%0<088>};
