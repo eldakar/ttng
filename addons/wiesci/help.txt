@@ -125,6 +125,12 @@ TUTOR #var expo
 > Dodalem zapisywanie zgonow klucznikow i czasy wyciagania kluczy. Nowa komenda:
 TUTOR /klucze - wyswietla czasy zabitych npc i wyciagnietych z nich kluczy
 
+** 06/06/21 - Mapka i wyswietlanie **
+> Ekran powinien mniej *migac*, pousuwalem odswiezanie paska w paru niepotrzebnych miejscach
+> Dodalem ocene broni i zbroi wyswietlana na mapce - niedlugo bedzie to konfig
+> Dodalem ocene przeciwnkow wyswietlana na mapce, z dodatkowymi informacjami typu zawod - konfig?
+> Dodalem pelna obsluge rysowania labiryntow - funkcje zawarte sa na mapie ZC - mozna poczytac sobie notki na pokoju... polecam sprawdzic :)
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng
