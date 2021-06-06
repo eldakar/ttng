@@ -1,4 +1,6 @@
 #alias {/por$} {
+	#map update;
+	#var linetouse 1;
 	#var tmpechocmd $ConfigManager_Configs[echokomend];
 	/conf echokomend niewidoczne;
 	#var tmp_del 0;
@@ -13,6 +15,8 @@
 	};
 	#delay {$tmp_del} {/conf echokomend $tmpechocmd};
 } {1};
+
+
 
 #alias {/por %*} {
 	#CLASS {ComparerOps} READ addons/porownaniecech/subclass.tin;
@@ -44,8 +48,11 @@
 
 		};
 	};
-	#format {CompareResult} {|%-40s |%+2s|%+2s|%+2s||%+2s| %+3s |} {$duch[$porId][desc]} {$cmp_str} {$cmp_dex} {$cmp_vit} {$compSum} {$targetpoints};
-	#line ignore #showme {$CompareResult};
+	#nop format {CompareResult} {|%-20s |%+2s|%+2s|%+2s||%+2s| %+3s |} {$duch[$porId][desc]} {$cmp_str} {$cmp_dex} {$cmp_vit} {$compSum} {$targetpoints};
+
+	#format {CompareResult} {| %-20s | %-2s %-2s %.2s %.2s %+3s %-3s} {$duch[$porId][bar][orc]} {$cmp_str} {$cmp_dex} {$cmp_vit} {$compSum} {$targetpoints} {$pvpdb[$duch[$porId][desc]][zawod]};
+	#line ignore #showme {$CompareResult} {$offsetw+1-$linetouse} $offsetx-1;
+	#math linetouse {$linetouse+1};
 	#nop show {$duch[$porId][desc] $cmp_str $cmp_dex $cmp_vit = $compSum  -> $targetpoints};
 	#delay {5} {
 		#class {ComparerOps} {kill};

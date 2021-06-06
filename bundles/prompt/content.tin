@@ -39,25 +39,33 @@
 
 #alias {pasek} {
 	#if {"$ConfigManager_Configs[pasek]" == ""} {
-		/conf pasek medium
+		/conf pasek medium;
 	} {
 		#switch {"$ConfigManager_Configs[pasek]"} {
 			#case {"medium"} {
 				#alias BottomBar_Selected {BottomBarTinyFugue};
+				#var global_bundle_slots_values[prompt][bottom] {3};
 			};
 			#case {"mini"} {
 				#alias BottomBar_Selected {BottomBarMini};
+				#var global_bundle_slots_values[prompt][bottom] {3};
 			};
 			#case {"micro"} {
 				#alias BottomBar_Selected {BottomBarMicro};
+				#var global_bundle_slots_values[prompt][bottom] {1};
 			};
 			#case {"keyboard"} {
 				#alias BottomBar_Selected {BottomKeyboard};
+				#var global_bundle_slots_values[prompt][bottom] {14};
 			};
 		};
 	};
-	BottomBar_Selected;
 	SplitRefreshRequestRefresh;
+	#if {"$ConfigManager_Configs[pasek]" == "medium"} {
+		#draw {$bbBGC} tile $screenrows-3 1 $screenrows-1 $screencols-1;
+	};
+
+	BottomBar_Selected;
 }
 
 #alias kolorzaslonwrogow {
@@ -127,7 +135,6 @@
 	#delay {manewrlevel3} {#var manewrlevel {3};BottomBar_Selected;} {3};
 	#delay {manewrlevel2} {#var manewrlevel {2};BottomBar_Selected;} {2};
 	#delay {manewrlevel1} {#var manewrlevel {1};BottomBar_Selected;} {1};
-	
 };
 #nop #############################################################;
 #nop ############# ROZKAZY                 #######################;
@@ -342,20 +349,24 @@
 #nop ############# WEAPONS                 #######################;
 #nop #############################################################;
 #var bronstatus off;
-#action {{Juz dzierzysz|Gwaltownym ruchem wyszarpujesz|Dobywasz|Wiedziony naglym instynktem siegasz|Pelnym pewnosci siebie ruchem dobywasz| twego pewnego chwytu, | zaciskasz dlon |Trzymasz|dobywajac}}
+#action {{Juz dzierzysz|Trzymasz}}
+{
+	#if {"$bronstatus" == "off"} {#var bronstatus on};
+};
+#action {{Gwaltownym ruchem wyszarpujesz|Dobywasz|Wiedziony naglym instynktem siegasz|Pelnym pewnosci siebie ruchem dobywasz| twego pewnego chwytu, | zaciskasz dlon |dobywajac}}
 {
 	SplitWingMap_Offset;
-	#var bronstatus on;
+	#if {"$bronstatus" == "off"} {#var bronstatus on};
 };
 #action {{Opuszczasz | ogarniajac wzrokiem cala okolice| opuszczasz | rozluzniasz uchwyt | do tej pory twe serce }%*.}
 {
 	#line ignore #showme {<ffa>[bron]<088> %0};
-	#var bronstatus off;
+	#if {"$bronstatus" == "on"} {#var bronstatus off};
 	#line gag;
 };
 #action {{wytraca ci|Uderzenie jest tak silne, ze bezwiednie puszczasz|Czujesz potezne szarpniecie|Bezwladnie opuszczasz}%*} {
 	#line ignore #showme {<ffa>[bron]<088> %0};
-	#var bronstatus off;
+	#if {"$bronstatus" == "on"} {#var bronstatus off};
 	#line gag;
 };
 #action {Opuszczasz obszar} {
@@ -364,7 +375,7 @@
 
 #action {Ciemne miejsce} {
 	#var rozk2 {{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
-	#if {"$ConfigManager_Configs[pasek]"} {
+	#if {"$ConfigManager_Configs[pasek]" == "medium"} {
 		rysuj_roze;
 	};
 };
@@ -378,11 +389,11 @@
 #var qbvar {                                                                 };
 
 
-#var bbBGC {<G02>};
+#var bbBGC {<G00>};
 #event {VARIABLE UPDATED bbBGC} {
 	BottomBar_Selected;	
 };
-#event {VARIABLE UPDATED charstate} {
+#unevent {VARIABLE UPDATED charstate} {
 	BottomBar_Selected;	
 };
 
@@ -400,7 +411,6 @@
 
 
 #alias {BottomBarMini} {
-	#var global_bundle_slots_values[prompt][bottom] {3};
 	#line ignore #sh {HP:$minihphack[$state[hp]]/7 MN:$state[mana]/8 ST:$state[fatigue]/9 | RO:$rozkazlevel/15 MA:$manewrlevel/5<088>} {-3} {2};
 }
 
@@ -414,7 +424,6 @@
 
 
 #alias {BottomKeyboard} {
-	#var global_bundle_slots_values[prompt][bottom] {14};
     #if {"$rozk2[nw]" != " "} {#var blockcolor[nw] <ABA>;} {#var blockcolor[nw] <G03>;};
     #if {"$rozk2[ne]" == "/"} {#var blockcolor[ne] <ABA>;} {#var blockcolor[ne] <G03>;};
     #if {"$rozk2[n]" == "|"} {#var blockcolor[n] <ABA>;} {#var blockcolor[n] <G03>;};
@@ -434,14 +443,13 @@
 	#line ignore #sh {$microbarline'} {-15};
 }
 #alias {BottomBarMicro} {
-	#var global_bundle_slots_values[prompt][bottom] {1};
 	#format microbarline {%h} {  $microhp[$state[hp]]  ## MN:$state[mana]/8 ST:$state[fatigue]/9 ## RO:$rozkazlevel/15 MA:$manewrlevel/5<088>  };
 	#line ignore #sh {$microbarline'} {-2};
 };
 
 #alias {BottomBarTinyFugue} {
-	#var global_bundle_slots_values[prompt][bottom] {3};
-	#draw {$bbBGC} tile $screenrows-3 1 $screenrows-1 $screencols-1;
+
+#nop draw {$bbBGC} tile $screenrows-3 1 $screenrows-1 $screencols-1;
 	#nop RYSUJEMY ROZE PO LEWEJ;
 	rysuj_roze; 
 	#nop RYSUJEMY PASEK FORMY;
@@ -468,10 +476,10 @@
 };
 
 #alias rysuj_przyciski {
-	#math {pozycjaprzyciskow} {$screencols - 46};
-	#line ignore #sh {TST${bbBGC} Atak    <088>$buttons[0][8][label]${bbBGC} <088>$buttons[0][7][label]${bbBGC} <088>$buttons[0][6][label]${bbBGC} <088>$buttons[0][5][label]${bbBGC}<088>} {-4} {$pozycjaprzyciskow};
-	#line ignore #sh {TST${bbBGC} Zaslona <088>$buttons[1][8][label]${bbBGC} <088>$buttons[1][7][label]${bbBGC} <088>$buttons[1][6][label]${bbBGC} <088>$buttons[1][5][label]${bbBGC}<088>} {-3} {$pozycjaprzyciskow};
-	#line ignore #sh {TST${bbBGC} Reszta  <088>$buttons[2][8][label]${bbBGC} <088>$buttons[2][7][label]${bbBGC} <088>PLA${bbBGC} <088>$buttons[2][5][label]${bbBGC}<088>} {-2} {$pozycjaprzyciskow};	
+	#math {pozycjaprzyciskow} {$screencols - 47};
+	#line ignore #sh {[TST${bbBGC} Atak    <088>$buttons[0][8][label]${bbBGC} <088>$buttons[0][7][label]${bbBGC} <088>$buttons[0][6][label]${bbBGC} <088>$buttons[0][5][label]${bbBGC}<088>} {-4} {$pozycjaprzyciskow};
+	#line ignore #sh {[TST${bbBGC} Zaslona <088>$buttons[1][8][label]${bbBGC} <088>$buttons[1][7][label]${bbBGC} <088>$buttons[1][6][label]${bbBGC} <088>$buttons[1][5][label]${bbBGC}<088>} {-3} {$pozycjaprzyciskow};
+	#line ignore #sh {[TST${bbBGC} Reszta  <088>$buttons[2][8][label]${bbBGC} <088>$buttons[2][7][label]${bbBGC} <088>PLA${bbBGC} <088>$buttons[2][5][label]${bbBGC}<088>} {-2} {$pozycjaprzyciskow};	
 };
 
 #alias rysuj_customs {
@@ -645,12 +653,15 @@
     #if {"$bronstatus" == "on"} {
         #var buttons[2][8][label] {<FAA><fff>BRO<088>};
         #var buttons[2][8][status] {on};
+        #if {"$ConfigManager_Configs[pasek]" == "medium"} {
+	    	rysuj_przyciski;
+    	};
     } {
         #var buttons[2][8][label] {BRO};
         #var buttons[2][8][status] {off};
-    };
-    #if {"$ConfigManager_Configs[pasek]" == "medium"} {
-    	rysuj_przyciski;
+        #if {"$ConfigManager_Configs[pasek]" == "medium"} {
+	    	rysuj_przyciski;
+    	};        
     };
 };
 

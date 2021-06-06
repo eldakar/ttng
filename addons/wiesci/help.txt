@@ -122,6 +122,8 @@ TUTOR #var expo
 > Od teraz bede co apke rysowal przejscia lokacji, ktore sie co apke zmieniaja
 >> Dodalem eksperymentalnie Tundre na ZC, wiem ze nie jest to ultra czytelne, bedzie niedlugo!
 > Dodalem kolorowanie BOSSow na sztywno, a nie tylko przy ich spotkaniu
+> Dodalem zapisywanie zgonow klucznikow i czasy wyciagania kluczy. Nowa komenda:
+TUTOR /klucze - wyswietla czasy zabitych npc i wyciagnietych z nich kluczy
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW

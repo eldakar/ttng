@@ -209,15 +209,16 @@
 
 
 
-#alias {/resetujKolory} {
-    #if {"$ROOM_TIME[daylight]" == "true"} {
-        #map color symbols <cfc>;
-        #map color exits <bcb>;
-    } {
-        #map color symbols <ccf>;
-        #map color exits <bbc>;
-    };
+#alias {/noc} {
+        #map color symbols <bbb>;
+        #map color exits <aaa>;
 } {1};
+
+#alias {/dzien} {
+    #map color symbols <088>;
+    #map color exits <088>;    
+} {1};
+
 
 
 #function highlight_exits {

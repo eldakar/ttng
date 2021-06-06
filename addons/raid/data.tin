@@ -2184,6 +2184,10 @@
     {
         {gildia} {MC}
     }
+    {Cecilio_} 
+    {
+        {gildia} {BOSS}
+    }
     {Cedil_} 
     {
         {gildia} {GP}
@@ -24602,6 +24606,21 @@
         {gildia} {NPC}
         {imie} {Nanetta}
     }
+    {pokrzywiony_sedziwy_skaven_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Prorok}
+    }
+    {pokrzywiony_stary_skaven_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Prorok}
+    }
+    {pokrzywiony_wiekowy_skaven_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Prorok}
+    }
     {pokrzywiony_zarosniety_mezczyzna_} 
     {
         {gildia} {GP}
@@ -26461,10 +26480,25 @@
         {gildia} {NPC}
         {imie} {Mavadil}
     }
+    {sedziwy_pokrzywiony_skaven_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Prorok}
+    }
     {sedziwy_srebrzystobrody_krasnolud_} 
     {
         {gildia} {NPC}
         {imie} {Brouver}
+    }
+    {sedziwy_szalony_skaven_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Prorok}
+    }
+    {sedziwy_zgarbiony_skaven_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Prorok}
     }
     {silny_masywny_krasnolud_} 
     {
@@ -27246,6 +27280,11 @@
         {gildia} {NPC}
         {imie} {Tark}
     }
+    {sniady_wystrojony_mezczyzna_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Cecilio}
+    }
     {snieznobrody_czerwononosy_gnom_} 
     {
         {gildia} {SGW}
@@ -27809,6 +27848,11 @@
         {gildia} {GP}
         {imie} {Andreas}
     }
+    {stary_pokrzywiony_skaven_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Prorok}
+    }
     {stary_ponury_elf_} 
     {
         {gildia} {ES}
@@ -27873,6 +27917,11 @@
     {
         {gildia} {WKS}
         {imie} {Dorien}
+    }
+    {stary_szalony_skaven_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Prorok}
     }
     {stary_szarooki_elf_} 
     {
@@ -27998,6 +28047,21 @@
     {
         {gildia} {NPC}
         {imie} {Hafas}
+    }
+    {szalony_sedziwy_skaven_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Prorok}
+    }
+    {szalony_stary_skaven_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Prorok}
+    }
+    {szalony_wiekowy_skaven_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Prorok}
     }
     {szarawy_grozny_ogr_} 
     {
@@ -29153,6 +29217,11 @@
         {gildia} {LE}
         {imie} {Aldaron}
     }
+    {wiekowy_pokrzywiony_skaven_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Prorok}
+    }
     {wiekowy_pomarszczony_gnom_} 
     {
         {gildia} {GP}
@@ -29183,6 +29252,11 @@
         {gildia} {GL}
         {imie} {Alaven}
     }
+    {wiekowy_szalony_skaven_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Prorok}
+    }
     {wiekowy_szarooki_elf_} 
     {
         {gildia} {NPC}
@@ -29197,6 +29271,11 @@
     {
         {gildia} {RA}
         {imie} {Nimmr}
+    }
+    {wiekowy_zgarbiony_skaven_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Prorok}
     }
     {wiekowy_zgrzybialy_gnom_} 
     {
@@ -30456,10 +30535,25 @@
         {gildia} {NPC}
         {imie} {Gandro}
     }
+    {zgarbiony_sedziwy_skaven_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Prorok}
+    }
     {zgarbiony_siwobrody_mezczyzna_} 
     {
         {gildia} {NPC}
         {imie} {Richolf}
+    }
+    {zgarbiony_stary_skaven_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Prorok}
+    }
+    {zgarbiony_wiekowy_skaven_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Prorok}
     }
     {zgarbiony_zarosniety_starzec_} 
     {

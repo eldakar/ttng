@@ -73,6 +73,30 @@
         {terrain} {pustka}
         {type} {mob}
     }
+    {4433} 
+    {
+        {direction} {n}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {4435} 
+    {
+        {direction} {s}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {wzgorze}
+        {type} {ext}
+    }
+    {4439} 
+    {
+        {direction} {n}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {korytarz}
+        {type} {ext}
+    }
     {4581} 
     {
         {rendered} {1}
@@ -101,11 +125,19 @@
         {terrain} {pustynia}
         {type} {mob}
     }
-    {4636} 
+    {4635} 
     {
-        {direction} {n}
+        {direction} {nw}
         {rendered} {1}
         {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4636} 
+    {
+        {direction} {s}
+        {rendered} {1}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
@@ -113,7 +145,7 @@
     {
         {direction} {nw}
         {rendered} {1}
-        {symbol} { O }
+        {symbol} {<138> @ <088>}
         {terrain} {}
         {type} {ext}
     }
@@ -127,15 +159,15 @@
     }
     {4641} 
     {
-        {direction} {ne}
+        {direction} {se}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
     {4642} 
     {
-        {direction} {nw}
+        {direction} {ne}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -151,7 +183,7 @@
     }
     {4644} 
     {
-        {direction} {n}
+        {direction} {w}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -159,7 +191,7 @@
     }
     {4645} 
     {
-        {direction} {n}
+        {direction} {e}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -167,15 +199,15 @@
     }
     {4646} 
     {
-        {direction} {se}
+        {direction} {ne}
         {rendered} {1}
-        {symbol} { O }
+        {symbol} {<138> @ <088>}
         {terrain} {}
         {type} {ext}
     }
     {4647} 
     {
-        {direction} {e}
+        {direction} {nw}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {las}
@@ -183,7 +215,7 @@
     }
     {4648} 
     {
-        {direction} {ne}
+        {direction} {e}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {las}
@@ -191,37 +223,13 @@
     }
     {4649} 
     {
-        {direction} {s}
+        {direction} {nw}
         {rendered} {1}
-        {symbol} { O }
+        {symbol} {<138> @ <088>}
         {terrain} {}
         {type} {ext}
     }
     {4650} 
-    {
-        {direction} {se}
-        {rendered} {1}
-        {symbol} {<138> @ <088>}
-        {terrain} {}
-        {type} {ext}
-    }
-    {4651} 
-    {
-        {direction} {n}
-        {rendered} {1}
-        {symbol} {<138> @ <088>}
-        {terrain} {}
-        {type} {ext}
-    }
-    {4652} 
-    {
-        {direction} {s}
-        {rendered} {1}
-        {symbol} { O }
-        {terrain} {}
-        {type} {ext}
-    }
-    {4654} 
     {
         {direction} {e}
         {rendered} {1}
@@ -229,9 +237,33 @@
         {terrain} {}
         {type} {ext}
     }
+    {4651} 
+    {
+        {direction} {ne}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {4652} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {4654} 
+    {
+        {direction} {se}
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
     {4655} 
     {
-        {direction} {w}
+        {direction} {e}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -249,7 +281,7 @@
     {
         {direction} {nw}
         {rendered} {1}
-        {symbol} { O }
+        {symbol} {<138> @ <088>}
         {terrain} {las}
         {type} {ext}
     }
@@ -263,7 +295,7 @@
     }
     {4661} 
     {
-        {direction} {se}
+        {direction} {n}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -271,7 +303,7 @@
     }
     {4662} 
     {
-        {direction} {e}
+        {direction} {s}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -279,7 +311,7 @@
     }
     {4664} 
     {
-        {direction} {w}
+        {direction} {s}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -287,7 +319,7 @@
     }
     {4665} 
     {
-        {direction} {e}
+        {direction} {s}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -295,7 +327,7 @@
     }
     {4666} 
     {
-        {direction} {se}
+        {direction} {nw}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {las}
@@ -303,7 +335,7 @@
     }
     {4667} 
     {
-        {direction} {nw}
+        {direction} {e}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -311,7 +343,7 @@
     }
     {4749} 
     {
-        {direction} {nw}
+        {direction} {w}
         {rendered} {1}
         {symbol} { O }
         {terrain} {}
@@ -452,23 +484,23 @@
     }
     {28464} 
     {
-        {direction} {e}
+        {direction} {se}
         {rendered} {1}
-        {symbol} { O }
+        {symbol} {<138> @ <088>}
         {terrain} {}
         {type} {ext}
     }
     {28465} 
     {
-        {direction} {w}
+        {direction} {nw}
         {rendered} {1}
-        {symbol} { O }
+        {symbol} {<138> @ <088>}
         {terrain} {}
         {type} {ext}
     }
     {28466} 
     {
-        {direction} {nw}
+        {direction} {n}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -476,7 +508,7 @@
     }
     {28467} 
     {
-        {direction} {nw}
+        {direction} {ne}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -484,7 +516,7 @@
     }
     {28468} 
     {
-        {direction} {nw}
+        {direction} {n}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -500,15 +532,15 @@
     }
     {28470} 
     {
-        {direction} {n}
+        {direction} {ne}
         {rendered} {1}
-        {symbol} { O }
+        {symbol} {<138> @ <088>}
         {terrain} {}
         {type} {ext}
     }
     {28471} 
     {
-        {direction} {w}
+        {direction} {sw}
         {rendered} {1}
         {symbol} { O }
         {terrain} {}
@@ -516,7 +548,7 @@
     }
     {28472} 
     {
-        {direction} {nw}
+        {direction} {n}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -526,19 +558,11 @@
     {
         {direction} {se}
         {rendered} {1}
-        {symbol} { O }
+        {symbol} {<138> @ <088>}
         {terrain} {}
         {type} {ext}
     }
     {28474} 
-    {
-        {direction} {se}
-        {rendered} {1}
-        {symbol} { O }
-        {terrain} {}
-        {type} {ext}
-    }
-    {28475} 
     {
         {direction} {nw}
         {rendered} {1}
@@ -546,9 +570,17 @@
         {terrain} {}
         {type} {ext}
     }
+    {28475} 
+    {
+        {direction} {s}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
     {28476} 
     {
-        {direction} {nw}
+        {direction} {n}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -556,7 +588,7 @@
     }
     {28477} 
     {
-        {direction} {nw}
+        {direction} {s}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -564,7 +596,7 @@
     }
     {28478} 
     {
-        {direction} {se}
+        {direction} {s}
         {rendered} {1}
         {symbol} { O }
         {terrain} {}
@@ -572,7 +604,7 @@
     }
     {28479} 
     {
-        {direction} {sw}
+        {direction} {n}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -580,15 +612,15 @@
     }
     {28480} 
     {
-        {direction} {nw}
+        {direction} {s}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
     {28481} 
     {
-        {direction} {se}
+        {direction} {s}
         {rendered} {1}
         {symbol} { O }
         {terrain} {}
@@ -596,9 +628,9 @@
     }
     {28482} 
     {
-        {direction} {ne}
+        {direction} {se}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
@@ -644,7 +676,7 @@
     }
     {28488} 
     {
-        {direction} {s}
+        {direction} {se}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -652,9 +684,9 @@
     }
     {28489} 
     {
-        {direction} {sw}
+        {direction} {se}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
@@ -684,7 +716,7 @@
     }
     {28493} 
     {
-        {direction} {ne}
+        {direction} {sw}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -692,7 +724,7 @@
     }
     {28494} 
     {
-        {direction} {sw}
+        {direction} {s}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -700,7 +732,7 @@
     }
     {28495} 
     {
-        {direction} {w}
+        {direction} {sw}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -708,9 +740,9 @@
     }
     {28496} 
     {
-        {direction} {s}
+        {direction} {ne}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
@@ -732,7 +764,7 @@
     }
     {28499} 
     {
-        {direction} {s}
+        {direction} {w}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -740,7 +772,7 @@
     }
     {28500} 
     {
-        {direction} {sw}
+        {direction} {n}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -748,15 +780,15 @@
     }
     {28501} 
     {
-        {direction} {n}
+        {direction} {nw}
         {rendered} {1}
-        {symbol} { O }
+        {symbol} {<138> @ <088>}
         {terrain} {}
         {type} {ext}
     }
     {28502} 
     {
-        {direction} {sw}
+        {direction} {se}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -772,9 +804,9 @@
     }
     {28504} 
     {
-        {direction} {ne}
+        {direction} {e}
         {rendered} {1}
-        {symbol} { O }
+        {symbol} {<138> @ <088>}
         {terrain} {}
         {type} {ext}
     }
@@ -788,7 +820,7 @@
     }
     {28506} 
     {
-        {direction} {se}
+        {direction} {sw}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -796,9 +828,9 @@
     }
     {28507} 
     {
-        {direction} {nw}
+        {direction} {e}
         {rendered} {1}
-        {symbol} { O }
+        {symbol} {<138> @ <088>}
         {terrain} {}
         {type} {ext}
     }
@@ -806,13 +838,13 @@
     {
         {direction} {nw}
         {rendered} {1}
-        {symbol} { O }
+        {symbol} {<138> @ <088>}
         {terrain} {}
         {type} {ext}
     }
     {28509} 
     {
-        {direction} {n}
+        {direction} {s}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -820,9 +852,9 @@
     }
     {28510} 
     {
-        {direction} {ne}
+        {direction} {sw}
         {rendered} {1}
-        {symbol} { O }
+        {symbol} {<138> @ <088>}
         {terrain} {}
         {type} {ext}
     }
@@ -870,13 +902,13 @@
     {
         {direction} {e}
         {rendered} {1}
-        {symbol} { O }
+        {symbol} {<138> @ <088>}
         {terrain} {}
         {type} {ext}
     }
     {28517} 
     {
-        {direction} {se}
+        {direction} {ne}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -884,15 +916,15 @@
     }
     {28518} 
     {
-        {direction} {nw}
+        {direction} {s}
         {rendered} {1}
-        {symbol} { O }
+        {symbol} {<138> @ <088>}
         {terrain} {}
         {type} {ext}
     }
     {28519} 
     {
-        {direction} {se}
+        {direction} {e}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -900,7 +932,7 @@
     }
     {28520} 
     {
-        {direction} {n}
+        {direction} {nw}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -908,7 +940,7 @@
     }
     {28521} 
     {
-        {direction} {nw}
+        {direction} {se}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -924,7 +956,7 @@
     }
     {28523} 
     {
-        {direction} {se}
+        {direction} {ne}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -932,7 +964,7 @@
     }
     {28524} 
     {
-        {direction} {w}
+        {direction} {se}
         {rendered} {1}
         {symbol} { O }
         {terrain} {}
@@ -948,7 +980,7 @@
     }
     {28526} 
     {
-        {direction} {e}
+        {direction} {ne}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
@@ -956,31 +988,31 @@
     }
     {28527} 
     {
-        {direction} {n}
-        {rendered} {1}
-        {symbol} {<138> @ <088>}
-        {terrain} {}
-        {type} {ext}
-    }
-    {28528} 
-    {
         {direction} {nw}
         {rendered} {1}
         {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
-    {28529} 
+    {28528} 
     {
-        {direction} {w}
+        {direction} {ne}
         {rendered} {1}
         {symbol} {<138> @ <088>}
         {terrain} {}
         {type} {ext}
     }
+    {28529} 
+    {
+        {direction} {s}
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
     {28530} 
     {
-        {direction} {se}
+        {direction} {sw}
         {rendered} {1}
         {symbol} { O }
         {terrain} {}
@@ -988,23 +1020,23 @@
     }
     {28531} 
     {
-        {direction} {s}
+        {direction} {sw}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
     {28532} 
     {
-        {direction} {n}
+        {direction} {sw}
         {rendered} {1}
-        {symbol} {<138> @ <088>}
+        {symbol} { O }
         {terrain} {}
         {type} {ext}
     }
     {28533} 
     {
-        {direction} {se}
+        {direction} {n}
         {rendered} {1}
         {symbol} { O }
         {terrain} {}
