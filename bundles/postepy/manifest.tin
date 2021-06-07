@@ -4,6 +4,7 @@
 
 #list bundle_configs clear;
 	#list bundle_configs add {globalnypostep};
+	#list bundle_configs add {celpostepow};
 #nop IS HELP PRESENT;
 #var bundle_help {1};
 

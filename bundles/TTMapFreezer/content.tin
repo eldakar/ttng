@@ -47,6 +47,6 @@
     #alias {move_nw} {#send nw;#var trytomove 1;#var movedir {polnocny-zachod}};
     #alias {move_sw} {#send sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
     #alias {move_se} {#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};
-    #var bbBGC {<G02>};
+    #var bbBGC {<088>};
 };
 

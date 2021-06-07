@@ -128,8 +128,23 @@ TUTOR /klucze - wyswietla czasy zabitych npc i wyciagnietych z nich kluczy
 ** 06/06/21 - Mapka i wyswietlanie **
 > Ekran powinien mniej *migac*, pousuwalem odswiezanie paska w paru niepotrzebnych miejscach
 > Dodalem ocene broni i zbroi wyswietlana na mapce - niedlugo bedzie to konfig
+>> 07/06 - Poprawilem wyswietlanie oceny broni na mniejszych ekranach
 > Dodalem ocene przeciwnkow wyswietlana na mapce, z dodatkowymi informacjami typu zawod - konfig?
-> Dodalem pelna obsluge rysowania labiryntow - funkcje zawarte sa na mapie ZC - mozna poczytac sobie notki na pokoju... polecam sprawdzic :)
+> Dodalem pelna obsluge rysowania labiryntow - funkcje zawarte sa na mapie ZC - mozna poczytac sobie notki na pokoju...
+> Dodalem nowa komedne pozwala wybrac paski HP i reszty w prompcie, przy ustawionym pasku medium
+TUTOR /conf stylpaskow standard | graph
+TUTOR Nowe: Pasek expa i pasek postepu - pastep postepu liczy % zabitych
+TUTOR       do liczby mobow potrzebnych na poprzedni postep
+> Dodalem nowy pasek postepu dla /conf stylpaskow graph
+TUTOR /conf celpostepow - ustawia jaki jest nasz cel, domyslnie 1200 postepow czyli
+            mniejwiecej ile potrzebne do widzial
+            Ustawienie celpostepow i globalny postep, wyswietli % do celu
+> Wylaczylem resetowanie statystyk pod komenda **/walka** po wyjsciu z walki
+> Dodalem Bullwe i Saurgla do gildii BOSS
+> Dodalem kilka sciezek lazika na Ziemiach Czaszki
+> Zmienilem sposob wyswietlania okna scrolla. Zamiast ramki jest podzial na gora/dol
+> Dodalem testowa komende, ktora pozwala wyswietlac czat na gorze ekranu **unfoldchat** i **fold**
+> Zmienilem sposob wyswietlania aliasow numerycznych przypisanych do lokacji
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW

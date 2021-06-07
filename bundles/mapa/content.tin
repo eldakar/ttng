@@ -545,21 +545,21 @@
                 #case {"command"} {
                     #switch {"$roon[$roonvec][macrokey]"} {
                         #case {"F1"} {
-                            #local outputstr {$outputstr\n<118> *** <128> LOK1 <118> *** <138> $roon[$roonvec][message] <088>};
+                            #local outputstr {$outputstr\n<168>1 <088>- <138> $roon[$roonvec][message] <088>};
                             #var tmpF1value {$roon[$roonvec][message]};
                             #replace tmpF1value {,} {;};
                             #alias LOK1 {$tmpF1value;};
                             #alias 1 {$tmpF1value;};                            
                         };
                         #case {"F2"} {
-                            #local outputstr {$outputstr\n<118> *** <128> LOK2 <118> *** <138> $roon[$roonvec][message] <088>};
+                            #local outputstr {$outputstr\n<168>2 <088>- <138> $roon[$roonvec][message] <088>};
                             #var tmpF2value {$roon[$roonvec][message]};
                             #replace tmpF2value {,} {;};
                             #alias LOK2 {$tmpF2value;};                            
                             #alias 2 {$tmpF2value;};                            
                         };
                         #case {"F3"} {
-                            #local outputstr {$outputstr\n<118> *** <128> LOK3 <118> *** <138> $roon[$roonvec][message] <088>};
+                            #local outputstr {$outputstr\n<168>3 <088>- <138> $roon[$roonvec][message] <088>};
                             #var tmpF3value {$roon[$roonvec][message]};
                             #replace tmpF3value {,} {;};
                             #alias LOK3 {$tmpF3value;};                            
@@ -567,7 +567,7 @@
                             #alias {3 %w} {$tmpF3value %1};
                         };
                         #default {
-                            #local outputstr {$outputstr\n<118> ***  ??  *** <138> $roon[$roonvec][message] <088>};
+                            #local outputstr {$outputstr\n<168>1 <088>- <138> $roon[$roonvec][message] <088>};
                         };
                     };
                 };

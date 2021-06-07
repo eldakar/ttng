@@ -16,8 +16,18 @@
 
 #var bbs_fixer 0;
 
+#read tools/graph.tin;
+
 #alias {meldujprzy} {
 	#var pmeldujprzy $ConfigManager_Configs[meldujprzy];
+};
+
+#alias {stylpaskow} {
+	#if {"$ConfigManager_Configs[stylpaskow]" == "graph"} {
+		#alias rysuj_paski rysuj_paski_graph;
+	} {
+		#alias rysuj_paski rysuj_paski_standard;
+	};	
 };
 
 #alias {szerokoschpkow} {
@@ -204,12 +214,12 @@
 };
 #action {Nie jestes jeszcze gotow do wykonania kolejnego manewru.} {
 	#var bbBGC {<FAA>};
-	#delay {manewrDelay} {#var bbBGC {<G02>}} {0.1};
+	#delay {manewrDelay} {#var bbBGC {<088>}} {0.1};
 	#line gag;
 };
 #action {Nie jestes jeszcze gotowa do wykonania kolejnego manewru.} {
 	#var bbBGC {<FAA>};
-	#delay {manewrDelay} {#var bbBGC {<G02>}} {0.1};#line gag;
+	#delay {manewrDelay} {#var bbBGC {<088>}} {0.1};#line gag;
 };
 #action {Nie zaslaniasz nikogo.} {
 	#line gag;
@@ -389,7 +399,7 @@
 #var qbvar {                                                                 };
 
 
-#var bbBGC {<G00>};
+#var bbBGC {<088>};
 #event {VARIABLE UPDATED bbBGC} {
 	BottomBar_Selected;	
 };
@@ -485,7 +495,10 @@
 #alias rysuj_customs {
 	#draw {<088>$bbBGC} tile $screenrows-3 12 $screenrows-1 22 $bbBGC<ffa>$roza_custom;
 };
-#alias rysuj_paski {
+
+#alias rysuj_paski {#nop {};};
+
+#alias rysuj_paski_standard {
 	#math remainingArea {$screencols - (16 + 10 + 12)};
 	#if {"$pmaxbarsize" == "auto"} {
 		#math maxBarSize {($remainingArea / 3) - 10};
@@ -497,6 +510,32 @@
 	#sh {${bbBGC}HP: [@buildBar{$state[hp];6;$maxBarSize;ada}<088>${bbBGC}]  MA: [@buildBarGreen{$manewrlevel;5;$maxBarSize;bbb}<088>${bbBGC}]<088>} {-4} {23};
 	#sh {${bbBGC}ST: [@buildBar{$realFatigue;9;$maxBarSize;ddd}<088>${bbBGC}]  RO: [@buildBar{$rozkazlevel;15;$maxBarSize;ccc}<088>${bbBGC}]<088>} {-3} {23};
 	#sh {${bbBGC}MA: [@buildBar{$state[mana];8;$maxBarSize;aad}<088>${bbBGC}]  BL: [@buildBar{$blockselflevel;5;$maxBarSize;faa}<088>${bbBGC}]<088>} {-2} {23};
+};
+
+#alias rysuj_paski_graph {
+	#math realFatigue {9 - $state[fatigue]};
+	#sh {${bbBGC}HP: [@graph{$state[hp];6}${bbBGC}]  FO: [@graph{$state[form];3}${bbBGC}]  GL: [@graph{$state[stuffed];3}${bbBGC}]  XP: [@graph{$state[improve];15}${bbBGC}]<088>  MA: [@graph{$manewrlevel;4}${bbBGC}]<088>} {-4} {23};
+	#sh {${bbBGC}ST: [@graph{$realFatigue;9}${bbBGC}]  OB: [@graph{$state[encumbrance];5}${bbBGC}]  PR: [@graph{$state[soaked];3}${bbBGC}]  PO: [@graph{$kill_count;$postep_needed}${bbBGC}]<088>  RO: [@graph{$rozkazlevel;14}${bbBGC}]<088>} {-3} {23};
+	#sh {${bbBGC}MA: [@graph{$state[mana];8}${bbBGC}]  PA: [@graph{$state[panic];5}${bbBGC}]  UP: [@graph{$state[intox];10}${bbBGC}]  GL: [@graph{$ConfigManager_Configs[globalnypostep];$ConfigManager_Configs[celpostepow]}${bbBGC}]<088>  BL: [@graph{$blockselflevel;5}${bbBGC}]<088>} {-2} {23};
+};
+
+#nop 1. current state;
+#nop 2. max state;
+#nop 3. max width;
+#function getGraphValue {
+	#if {%1 > 0} {
+		#local curst {%1};
+		#math stslot {%3 / %2}; 
+		#math stmodu {%3 % %2};
+		#math stlen {($curst * $stslot) + $stmodu};
+	} {
+		#math stlen 0;
+	};
+	#if {%1 == %2} {
+		#math stlen %3;
+	};
+
+	#return {$stlen};
 };
 
 #nop 1. current state;
@@ -587,6 +626,21 @@
         };
 };
 
+#nop POSTEP; #event {VARIABLE UPDATED ConfigManager_Configs[celpostepow]} {
+	#if {"$ConfigManager_Configs[stylpaskow]" == "graph"} {
+    	rysuj_paski;
+    };	
+}
+#nop PROMPT; #event {VARIABLE UPDATED postep_needed} {
+	#if {"$ConfigManager_Configs[stylpaskow]" == "graph"} {
+    	rysuj_paski;
+    };
+};
+#nop PROMPT; #event {VARIABLE UPDATED kill_count} {
+	#if {"$ConfigManager_Configs[stylpaskow]" == "graph"} {
+    	rysuj_paski;
+    };	
+}
 
 #event {VARIABLE UPDATED pwskazywanie} {
     #regex {$pwskazywanie} {z} {

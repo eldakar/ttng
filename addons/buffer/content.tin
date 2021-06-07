@@ -9,7 +9,7 @@
 		#foreach {*buffrangevalue[]} {brv} {
 			#var tmpbuffervalue {$tmpbuffervalue$buffrangevalue[$brv]\n};
 		};
-		#draw box 1 1 $global_bundle_slots_values[prompt][top] $screencols-$global_bundle_slots_values[prompt][right]+1 {$tmpbuffervalue};
+		#draw tile 1 1 $global_bundle_slots_values[prompt][top] $screencols-$global_bundle_slots_values[prompt][right]+1 {$tmpbuffervalue$HBar};
 	} {
 		#var buffer_status {visible};
 		#buff info save buffinfo;
@@ -23,7 +23,7 @@
 
 		#var global_bundle_slots_values[prompt][top] $bufferscreensize;
 		SplitRefreshRequestRefresh;
-		#draw box 1 1 $global_bundle_slots_values[prompt][top] $screencols-$global_bundle_slots_values[prompt][right]+1 {$tmpbuffervalue};
+		#draw tile 1 1 $global_bundle_slots_values[prompt][top] $screencols-$global_bundle_slots_values[prompt][right]+1 {$tmpbuffervalue$HBar};
 		#showme { --- DZIELE EKRAN --- Dlugosc buffera: $buffinfo[USED] --- };
 		RaidSize;
 	};
@@ -35,11 +35,12 @@
 
 
 #alias fold {
-	#if {"$buffer_status" == "visible"} {
+	#if {"$buffer_status" == "visible" || "$buffer_status" == "chat"} {
 		#var buffer_status {hidden};
 		#var global_bundle_slots_values[prompt][top] 0;
 		SplitRefreshRequestRefresh;
 		RaidSize;
+		SplitWingMapWidth;
 	};
 }
 

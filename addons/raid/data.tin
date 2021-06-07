@@ -1978,7 +1978,7 @@
     }
     {Bullwa_} 
     {
-        {gildia} {NPC}
+        {gildia} {BOSS}
     }
     {Buluar_} 
     {
@@ -10692,7 +10692,7 @@
     }
     {Saurgl_} 
     {
-        {gildia} {NPC}
+        {gildia} {BOSS}
     }
     {Savinien_} 
     {
@@ -18125,7 +18125,7 @@
     }
     {gruba_rozczochrana_snotlinka_} 
     {
-        {gildia} {NPC}
+        {gildia} {BOSS}
         {imie} {Bullwa}
     }
     {gruba_rozkrzyczana_kobieta_} 

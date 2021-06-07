@@ -76,7 +76,7 @@
 
 #alias {SplitWingMap_Popup} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw violet circled box $offsety+24 $offsetx+3 $offsetw-5 $offseth-3 <088>%0;
+        #draw violet circled box $offsetw-15 $offsetx+3 $offsetw-7 $offseth-3 <088>%0;
     };
 };
 
@@ -92,31 +92,31 @@
 
 #alias {SplitWingMap_Journal_1} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw green circled box $offsetw-2 $offsetx $offsetw $offseth <088>%0;
+        #draw tile $offsetw-2 $offsetx $offsetw $offseth <088>%0;
     };
 };
 
 #alias {SplitWingMap_Journal_2} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw green circled box $offsetw-3 $offsetx $offsetw $offseth <088>%0;
+        #draw tile $offsetw-3 $offsetx $offsetw $offseth <088>%0;
     };
 };
 
 #alias {SplitWingMap_Journal_3} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw green circled box $offsetw-4 $offsetx $offsetw $offseth <088>%0;
+        #draw tile $offsetw-4 $offsetx $offsetw $offseth <088>%0;
     };
 };
 
 #alias {SplitWingMap_Journal_4} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw green circled box $offsetw-5 $offsetx $offsetw $offseth <088>%0;
+        #draw tile $offsetw-5 $offsetx $offsetw $offseth <088>%0;
     };
 };
 
 #alias {SplitWingMap_Journal_5} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw green circled box $offsetw-6 $offsetx $offsetw $offseth <088>%0;
+        #draw tile $offsetw-6 $offsetx $offsetw $offseth <088>%0;
     };
 };
 

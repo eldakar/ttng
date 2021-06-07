@@ -7,7 +7,7 @@
 		#case {"comm"} {
 			#replace {GMCPMSGS[text]} {\\n} {};
 			#sh {$GMCPMSGS[text]};
-			topchat_add_static $GMCPMSGS[text];
+			#line sub variables #line strip {topchat_add_static $GMCPMSGS[text];};
 		};
 		#case {"emotes"} {
 			#replace {GMCPMSGS[text]} {\\n} {};
@@ -79,7 +79,6 @@
 				#if {"$pplaszcz" == "wlaczony"} {
 					qb otul sie plaszczem;
 				};
-				collector_offload;
 			} {34};
 		};	
 		#case {"room.contents.object"} {

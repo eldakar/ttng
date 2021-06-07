@@ -19,6 +19,14 @@
 	#nop nothing to do;
 };
 
+#alias {celpostepow} {
+	#if {"$ConfigManager_Configs[celpostepow]" == ""} {
+		#var ConfigManager_Configs[celpostepow] 1200;
+	};
+	#nop nothing to do;
+};
+
+
 #function {poziomy_postepow}{
 	#var postepy {minimalne};
 	#switch {%1} {
@@ -133,9 +141,16 @@
 
 #alias {_killstats_add} {
 	#var current_postep %1;
+
+	#if {$current_postep == 0} {
+		#nop 06-Jun-21 Prompt default value;
+		#var postep_needed {10};
+	} {
+		#math poprzedni_postep {$current_postep - 1};
+		#var postep_needed $expo[$poprzedni_postep][totalkills];
+	};
 	#nop #echo {_killstats_add called with %1};
 	#if {&{$expo[$current_postep][czas]} == 0} {
-
 		#if {$pierwszy_postep == 0}{
 			#var pierwszy_postep {1};
 			_killstats_load_cache %1;

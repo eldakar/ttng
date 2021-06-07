@@ -4,6 +4,8 @@ bundles/ConfigManager/Profiles/*-macros
 bundles/ConfigManager/Profiles/follow-errors
 bundles/ConfigManager/Profiles/pvp.data
 bundles/ConfigManager/Profiles/klucze.tin
+tools/discord.sh
+tools/discord.chat
 tun.tin
 addons/stansprzetu/sprzet.class
 stats-*

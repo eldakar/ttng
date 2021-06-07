@@ -13,7 +13,25 @@
     #loop {0} {50} {bcvc} {
         #var topchaty {$topchaty\n$topchat[$bcvc]};
     };
+    #if {"$buffer_status" == "chat"} {
+        unfoldchat;
+    };
 }
+
+#alias unfoldchat {
+    #math bufferscreensize {$screenrows / 6};
+    #if {"$buffer_status" == "chat"} {
+        #draw tile 1 1 $global_bundle_slots_values[prompt][top] $screencols-$global_bundle_slots_values[prompt][right]+1 {$topchaty<088>\n$HBar<088>};
+    } {
+        #var buffer_status {chat};
+        #var global_bundle_slots_values[prompt][top] $bufferscreensize;
+        SplitRefreshRequestRefresh;
+        #draw tile 1 1 $global_bundle_slots_values[prompt][top] $screencols-$global_bundle_slots_values[prompt][right]+1 {$topchaty<088>\n$HBar<088>};
+        #showme { --- DZIELE EKRAN --- CHAT --- };
+        RaidSize;
+    };
+};
+
 
 #alias {/c} {
     #line ignore #sh {$topchaty};
