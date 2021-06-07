@@ -9,12 +9,18 @@
 #action {%* bardzo ciezko rani %* trafiajac %*} {collect hit 5 %1;#line gag} {3};
 #action {%* masakruje %* trafiajac %*} {collect hit 6 %1;#line gag} {3};
 
-#action {Ledwo muskasz %*} {collect hit 1 $AVATAR_NAME;#line gag};
-#action {Lekko ranisz %*} {collect hit 2 $AVATAR_NAME;#line gag};
-#action {Ranisz %*} {collect hit 3 $AVATAR_NAME;#line gag};
-#action {Powaznie ranisz %*} {collect hit 4 $AVATAR_NAME;#line gag};
-#action {Bardzo ciezko ranisz %*} {collect hit 5 $AVATAR_NAME;#line gag};
-#action {Masakrujesz %*} {collect hit 6 $AVATAR_NAME;#line gag};
+#action {Ledwo muskasz %*} {collect hit 1 $AVATAR_NAME;#line gag} {6};
+#action {Lekko ranisz %*} {collect hit 2 $AVATAR_NAME;#line gag} {6};
+#action {Ranisz %*} {collect hit 3 $AVATAR_NAME;#line gag} {6};
+#action {Powaznie ranisz %*} {collect hit 4 $AVATAR_NAME;#line gag} {6};
+#action {Bardzo ciezko ranisz %*} {collect hit 5 $AVATAR_NAME;#line gag} {6};
+#action {Masakrujesz %*} {collect hit 6 $AVATAR_NAME;#line gag} {6};
+
+#nop WALKA BEZ BRONI;
+#action {Robisz zamach {lewa|lewym|prawa|prawym} {piescia|kolanem|stopa}, %*} {#line ignore #showme {<fcc>[bron] <bcf>[mis] <088>%0};#line gag} {1};
+#action {Ledwo muskasz %* {lewa|lewym|prawa|prawym} {piescia|kolanem|stopa}, %*} {#line ignore #showme {<fcc>[bron] <cfa>[1/6] <088>%0};#line gag} {1};
+#action {Lekko ranisz %* {lewa|lewym|prawa|prawym} {piescia|kolanem|stopa}, %*}  {#line ignore #showme {<fcc>[bron] <cfa>[2/6] <088>%0};#line gag} {1};
+
 
 #nop INNE CIOSY;
 #action {Nagle %* wykonuje %* ledwo muska %*} {collect hit 1 %1;#line gag} {1};
