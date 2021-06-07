@@ -18,6 +18,9 @@
 
 #read tools/graph.tin;
 
+#alias rysuj_forme {#nop {};};
+#alias rysuj_paski {#nop {};};
+
 #alias {meldujprzy} {
 	#var pmeldujprzy $ConfigManager_Configs[meldujprzy];
 };
@@ -28,7 +31,25 @@
 	} {
 		#alias rysuj_paski rysuj_paski_standard;
 	};
-	pasek;	
+	#if {"$ConfigManager_Configs[pasek]" == "medium"} {
+		#draw <AAA> tile $screenrows-3 1 $screenrows-1 $screencols-1;
+		BottomBar_Selected;
+	};
+};
+
+#alias {naroznikpaska} {
+	#if {"$ConfigManager_Configs[naroznikpaska]" == "fps"} {
+		#ticker fpsticker {
+			#line quiet #line capture fpstest #line bench {#sh dupa};
+			#regex {$fpstest[2]} {%* %d USEC.} {
+				#math fpsTestResultValue {2000 - &2};
+			};
+		} {1};
+		#alias rysuj_forme rysuj_forme_fps;
+	} {
+		#untick fpsticker;
+		#alias rysuj_forme rysuj_forme_standard;
+	};
 };
 
 #alias {szerokoschpkow} {
@@ -37,7 +58,10 @@
 	} {
 		#var pmaxbarsize $ConfigManager_Configs[szerokoschpkow];
 	};
-	BottomBar_Selected;
+	#if {"$ConfigManager_Configs[pasek]" == "medium" && "$ConfigManager_Configs[stylpaskow]" == "standard"} {
+		#draw <AAA> tile $screenrows-3 1 $screenrows-1 $screencols-1;
+		BottomBar_Selected;
+	};
 };
 
 #alias {probymanewrow} {
@@ -71,12 +95,11 @@
 			};
 		};
 	};
-	SplitRefreshRequestRefresh;
 	#if {"$ConfigManager_Configs[pasek]" == "medium"} {
 		#draw {$bbBGC} tile $screenrows-3 1 $screenrows-1 $screencols-1;
 	};
 
-	BottomBar_Selected;
+	SplitRefreshRequestRefresh;
 }
 
 #alias kolorzaslonwrogow {
@@ -116,7 +139,7 @@
 			qb melduj_zmeczenie;
 		};
 	};
-	BottomBar_Selected;
+	rysuj_paski;
 };
 
 #nop #############################################################;
@@ -461,8 +484,6 @@
 };
 
 #alias {BottomBarTinyFugue} {
-
-#nop draw {$bbBGC} tile $screenrows-3 1 $screenrows-1 $screencols-1;
 	#nop RYSUJEMY ROZE PO LEWEJ;
 	rysuj_roze; 
 	#nop RYSUJEMY PASEK FORMY;
@@ -475,12 +496,21 @@
 	rysuj_przyciski;
 };
 
-#alias rysuj_forme {
+#alias rysuj_forme_standard {
+	#unticker fpstick;
 	#math {pozycjapaskaformy} {$screencols - 16};
 	#line ignore #sh {${bbBGC}Forma : $state[form] Glod: $state[stuffed]<088>} {-4} {$pozycjapaskaformy};
 	#line ignore #sh {${bbBGC}Panika: $state[panic] Prag: $state[soaked]<088>} {-3} {$pozycjapaskaformy};
 	#line ignore #sh {${bbBGC}Ciezar: $state[encumbrance] Pija: $state[intox]<088>} {-2} {$pozycjapaskaformy};
-}
+};
+
+#alias rysuj_forme_fps {
+	#math {pozycjapaskaformy} {$screencols - 16};
+	#line ignore #sh {${bbBGC}FPS   :          <088>} {-4} {$pozycjapaskaformy};
+	#line ignore #sh {${bbBGC}Panika: $state[panic] Prag: $state[soaked]<088>} {-3} {$pozycjapaskaformy};
+	#line ignore #sh {${bbBGC}Ciezar: $state[encumbrance] Pija: $state[intox]<088>} {-2} {$pozycjapaskaformy};
+};
+
 #var ptrybchodzeniasymbol {<128>W};
 #alias rysuj_roze {
 	#line ignore #sh {$bbBGC   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u] <088>} {-4} {1};
@@ -489,17 +519,17 @@
 };
 
 #alias rysuj_przyciski {
-	#math {pozycjaprzyciskow} {$screencols - 47};
-	#line ignore #sh {[TST${bbBGC} Atak    <088>$buttons[0][8][label]${bbBGC} <088>$buttons[0][7][label]${bbBGC} <088>$buttons[0][6][label]${bbBGC} <088>$buttons[0][5][label]${bbBGC}<088>} {-4} {$pozycjaprzyciskow};
-	#line ignore #sh {[TST${bbBGC} Zaslona <088>$buttons[1][8][label]${bbBGC} <088>$buttons[1][7][label]${bbBGC} <088>$buttons[1][6][label]${bbBGC} <088>$buttons[1][5][label]${bbBGC}<088>} {-3} {$pozycjaprzyciskow};
-	#line ignore #sh {[TST${bbBGC} Reszta  <088>$buttons[2][8][label]${bbBGC} <088>$buttons[2][7][label]${bbBGC} <088>PLA${bbBGC} <088>$buttons[2][5][label]${bbBGC}<088>} {-2} {$pozycjaprzyciskow};	
+	#math {pozycjaprzyciskow} {$screencols - 37};
+	#line ignore #sh {${bbBGC}AT <088>$buttons[0][8][label]${bbBGC} <088>$buttons[0][7][label]${bbBGC} <088>$buttons[0][6][label]${bbBGC} <088>$buttons[0][5][label]${bbBGC}<088>} {-4} {$pozycjaprzyciskow};
+	#line ignore #sh {${bbBGC}ZA <088>$buttons[1][8][label]${bbBGC} <088>$buttons[1][7][label]${bbBGC} <088>$buttons[1][6][label]${bbBGC} <088>$buttons[1][5][label]${bbBGC}<088>} {-3} {$pozycjaprzyciskow};
+	#line ignore #sh {${bbBGC}OT <088>$buttons[2][8][label]${bbBGC} <088>$buttons[2][7][label]${bbBGC} <088>PLA${bbBGC} <088>$buttons[2][5][label]${bbBGC}<088>} {-2} {$pozycjaprzyciskow};	
 };
 
 #alias rysuj_customs {
 	#draw {<088>$bbBGC} tile $screenrows-3 12 $screenrows-1 22 $bbBGC<ffa>$roza_custom;
 };
 
-#alias rysuj_paski {#nop {};};
+
 
 #alias rysuj_paski_standard {
 	#math remainingArea {$screencols - (16 + 10 + 12)};
@@ -517,9 +547,9 @@
 
 #alias rysuj_paski_graph {
 	#math realFatigue {9 - $state[fatigue]};
-	#sh {${bbBGC}HP: [@graph{$state[hp];6}${bbBGC}]  FO: [@graph{$state[form];3}${bbBGC}]  GL: [@graph{$state[stuffed];3}${bbBGC}]  XP: [@graph{$state[improve];15}${bbBGC}]<088>  MA: [@graph{$manewrlevel;4}${bbBGC}]<088>} {-4} {23};
-	#sh {${bbBGC}ST: [@graph{$realFatigue;9}${bbBGC}]  OB: [@graph{$state[encumbrance];5}${bbBGC}]  PR: [@graph{$state[soaked];3}${bbBGC}]  PO: [@graph{$kill_count;$postep_needed}${bbBGC}]<088>  RO: [@graph{$rozkazlevel;14}${bbBGC}]<088>} {-3} {23};
-	#sh {${bbBGC}MA: [@graph{$state[mana];8}${bbBGC}]  PA: [@graph{$state[panic];5}${bbBGC}]  UP: [@graph{$state[intox];10}${bbBGC}]  GL: [@graph{$ConfigManager_Configs[globalnypostep];$ConfigManager_Configs[celpostepow]}${bbBGC}]<088>  BL: [@graph{$blockselflevel;5}${bbBGC}]<088>} {-2} {23};
+	#sh {${bbBGC}HP [@graph{$state[hp];6}${bbBGC}]  FO [@graph{$state[form];3}${bbBGC}]  GL [@graph{$state[stuffed];3}${bbBGC}]  XP [@graph{$state[improve];15}${bbBGC}]<088>  MA [@graph{$manewrlevel;4}${bbBGC}]<088>} {-4} {23};
+	#sh {${bbBGC}ST [@graph{$realFatigue;9}${bbBGC}]  OB [@graph{$state[encumbrance];5}${bbBGC}]  PR [@graph{$state[soaked];3}${bbBGC}]  PO [@graph{$kill_count;$postep_needed}${bbBGC}]<088>  RO [@graph{$rozkazlevel;14}${bbBGC}]<088>} {-3} {23};
+	#sh {${bbBGC}MA [@graph{$state[mana];8}${bbBGC}]  PA [@graph{$state[panic];5}${bbBGC}]  UP [@graph{$state[intox];10}${bbBGC}]  GL [@graph{$ConfigManager_Configs[globalnypostep];$ConfigManager_Configs[celpostepow]}${bbBGC}]<088>  BL [@graph{$blockselflevel;5}${bbBGC}]<088>} {-2} {23};
 };
 
 #nop 1. current state;
