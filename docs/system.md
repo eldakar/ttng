@@ -51,7 +51,7 @@ Uwaga - to ustawienie uzywane jest do placenia za transport, kupowania w sklepac
 
 `worki` - przeglada zawartosc dziesieciu woreczkow
 
-`ziola` - buduje baze ziol
+`/ziola` - buduje baze ziol
 
 `z[numer]` - dynamiczny alias na uzycie jednego z ziol, zbudowanych komenda `ziola`
 
@@ -235,3 +235,5 @@ Tworza sie takze aliasy, do przejscia do danej notki. Przydatne dla pocztyliona.
 `expowisko_lista` - wyswietla liste expowisk
 
 `expowisko nazwa` - ustawia expowisko (macro `_expo_`)
+
+`/klucze` - wyswietla liste wyciagnietych kluczy

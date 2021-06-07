@@ -11,14 +11,18 @@
 - mini - pasek dolny pokazuje tylko numeryczne wartosci (wersja pod telefon)
 - medium - pasek desktopowy, z przyciskami
 
+### /conf stylpaskow - komenda zmienia wyswietlanie paskow stanu w *PASKU medium*
+- standard - domyslne, uzywaja #
+- graph - bardziej scisniete, z uzyciem grafow
+
+### /conf szerokoschpkow - komenda zmienia szerokosc paskow stanu w *stylupaskow STANDARD*
+- auto - szerokosc kondycji, many, itp zalezna od szerokosci ekranu
+- wartosc - ustawia statyczna wartosc 1 numer = 1 znak 
+
 ### /conf kondycje
 - pelne - ustawienie na szeroki ekran, widac cale opisy wrogow, cel ataku wrogow, bindy
 - medium - polowa rozmiaru pelnego okna, imiona sa obcinane
 - mini - wersja pod telefon
-
-### /conf szerokoschpkow
-- auto - szerokosc kondycji, many, itp zalezna od szerokosci ekranu
-- wartosc - ustawia statyczna wartosc 1 numer = 1 znak 
 
 ### /conf RaidSize *wartosc*
 - wysokosc okienka kondycji, warto zrobic kilka aliasow na rozne wysokosci
@@ -64,6 +68,9 @@
 
 ### /conf globalnypostep *wartosc*
 - zapamietuje nieznaki automatycznie, mozna ustawic tutaj startowa wartosc
+
+### /conf celpostepow *wartosc*
+- ustawia wartosc dla celu postepow, ktora uzywana jest do wyswiwetlenia progresu
 
 ### /conf logowanie
 - wlaczone - w katalogu bundles/ConfigManager/Profiles/Logs/ (katalog musi istniec!)
