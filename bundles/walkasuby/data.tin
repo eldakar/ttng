@@ -41,6 +41,11 @@
 #nop BRON;
 #action {Uderzenie jest tak silne %* opuszcza %*} {collect OPUSZCZA 0 unknown;#line gag};
 
+#nop WALKA BEZ BRONI;
+#sub {Robisz zamach {lewa piescia|prawa piescia} %*} {<fcc>[bron] <bcf>[mis] <088>%0};
+#sub {Ledwo muskasz {lewa piescia|prawa piescia} %*} {<fcc>[bron] <cfa>[1/6] <088>%0};
+#sub {Lekko ranisz {lewa piescia|prawa piescia} %*} {<fcc>[bron] <cfa>[2/6] <088>%0};
+
 #nop SPECE GOBLINOIDY;
 #action {W slepiach %* kaleczy %*} {collect GOB 1 unknown;#line gag};
 #action {W slepiach %* rozkrwawia %*} {collect GOB 3 unknown;#line gag};
