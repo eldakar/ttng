@@ -66,3 +66,13 @@
 #alias {/kiel} {/l 13047 Bialy Kiel} {1};
 #alias {/duch} {/l 23583 Duch Hemdalla} {1};
 #alias {/zmora} {/l 23588 Zmora Nilfgaardu} {1};
+
+#nop MC;
+
+#alias {/serce} {/l 27910 Serce Swiatyni Mrocznych Bogow} {1};
+#alias {/szczelina} {/l 4653 Szczelinia w Dolinie} {1};
+#alias {/dolina} {/l 4653 Szczelinia w Dolinie} {1};
+#alias {/haskie1} {/l 5157 Najblizszy Oboz Haszutow} {1};
+#alias {/haskie2} {/l 27813 Centralny Oboz Haszutow} {1};
+#alias {/haskie3} {/l 27813 Poludniowy Oboz Haszutow} {1};
+#alias {/haskie3} {/l 27813 Polnocno-Wschodni Oboz Haszutow} {1};
