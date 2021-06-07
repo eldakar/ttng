@@ -455,9 +455,9 @@
 }
 #alias {BottomBarMicro} {
 		#math realFatigue {9 - $state[fatigue]};
-	#sh {${bbBGC}H:[@graph{$state[hp];6}${bbBGC}]F:[@graph{$state[form];3}${bbBGC}]G:[@graph{$state[stuffed];3}${bbBGC}]X:[@graph{$state[improve];15}${bbBGC}]<088>M:[@graph{$manewrlevel;4}${bbBGC}]<088>} {-4};
-	#sh {${bbBGC}S:[@graph{$realFatigue;9}${bbBGC}]O:[@graph{$state[encumbrance];5}${bbBGC}]P:[@graph{$state[soaked];3}${bbBGC}]P:[@graph{$kill_count;$postep_needed}${bbBGC}]<088>R:[@graph{$rozkazlevel;14}${bbBGC}]<088>} {-3};
-	#sh {${bbBGC}M:[@graph{$state[mana];8}${bbBGC}]P:[@graph{$state[panic];5}${bbBGC}]U:[@graph{$state[intox];10}${bbBGC}]G:[@graph{$ConfigManager_Configs[globalnypostep];$ConfigManager_Configs[celpostepow]}${bbBGC}]<088>B:[@graph{$blockselflevel;5}${bbBGC}]<088>} {-2};
+	#sh {${bbBGC}H[@graph{$state[hp];6}${bbBGC}]F[@graph{$state[form];3}${bbBGC}]G[@graph{$state[stuffed];3}${bbBGC}]X[@graph{$state[improve];15}${bbBGC}]<088>M[@graph{$manewrlevel;4}${bbBGC}]<088>} {-4};
+	#sh {${bbBGC}S[@graph{$realFatigue;9}${bbBGC}]O[@graph{$state[encumbrance];5}${bbBGC}]P[@graph{$state[soaked];3}${bbBGC}]P[@graph{$kill_count;$postep_needed}${bbBGC}]<088>R[@graph{$rozkazlevel;14}${bbBGC}]<088>} {-3};
+	#sh {${bbBGC}M[@graph{$state[mana];8}${bbBGC}]P[@graph{$state[panic];5}${bbBGC}]U[@graph{$state[intox];10}${bbBGC}]G[@graph{$ConfigManager_Configs[globalnypostep];$ConfigManager_Configs[celpostepow]}${bbBGC}]<088>B[@graph{$blockselflevel;5}${bbBGC}]<088>} {-2};
 };
 
 #alias {BottomBarTinyFugue} {
