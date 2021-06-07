@@ -136,15 +136,18 @@ TUTOR /conf stylpaskow standard | graph
 TUTOR Nowe: Pasek expa i pasek postepu - pastep postepu liczy % zabitych
 TUTOR       do liczby mobow potrzebnych na poprzedni postep
 > Dodalem nowy pasek postepu dla /conf stylpaskow graph
-TUTOR /conf celpostepow - ustawia jaki jest nasz cel, domyslnie 1200 postepow czyli
-            mniejwiecej ile potrzebne do widzial
-            Ustawienie celpostepow i globalny postep, wyswietli % do celu
+TUTOR /conf celpostepow - ustawia jaki jest nasz cel, domyslnie 1200 postepow,
+TUTOR       czyli z grubsza ile potrzebne do widzial
+TUTOR       Ustawienie celpostepow i globalny postep, wyswietli % do celu
 > Wylaczylem resetowanie statystyk pod komenda **/walka** po wyjsciu z walki
 > Dodalem Bullwe i Saurgla do gildii BOSS
 > Dodalem kilka sciezek lazika na Ziemiach Czaszki
 > Zmienilem sposob wyswietlania okna scrolla. Zamiast ramki jest podzial na gora/dol
 > Dodalem testowa komende, ktora pozwala wyswietlac czat na gorze ekranu **unfoldchat** i **fold**
 > Zmienilem sposob wyswietlania aliasow numerycznych przypisanych do lokacji
+
+** 07/06/21 - Paski ciag dalszy **
+> Od teraz /conf pasek micro pelni role nowego paska mini...
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
