@@ -630,17 +630,17 @@
 };
 
 #nop POSTEP; #event {VARIABLE UPDATED ConfigManager_Configs[celpostepow]} {
-	#if {"$ConfigManager_Configs[stylpaskow]" == "graph"} {
+	#if {"$ConfigManager_Configs[stylpaskow]" == "graph" || $ConfigManager_Configs[pasek]" == "micro"} {
     	rysuj_paski;
     };	
 }
 #nop PROMPT; #event {VARIABLE UPDATED postep_needed} {
-	#if {"$ConfigManager_Configs[stylpaskow]" == "graph"} {
+	#if {"$ConfigManager_Configs[stylpaskow]" == "graph" || $ConfigManager_Configs[pasek]" == "micro"} {
     	rysuj_paski;
     };
 };
 #nop PROMPT; #event {VARIABLE UPDATED kill_count} {
-	#if {"$ConfigManager_Configs[stylpaskow]" == "graph"} {
+	#if {"$ConfigManager_Configs[stylpaskow]" == "graph" || $ConfigManager_Configs[pasek]" == "micro"} {
     	rysuj_paski;
     };	
 }
