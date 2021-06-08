@@ -166,7 +166,7 @@
 #var kalendarz_nowie[13] {313};#nop kaldezeit 14;
 #var kalendarz_nowie[14] {338};#nop ulriczeit 6;
 #var kalendarz_nowie[15] {364};#nop OK ulriczeit 31;
-#var kalendarz_nowie[16] {389};#nop vorhexen 22;
+#var kalendarz_nowie[16] {389};#nop OK vorhexen 22;
 
 #var kalendarz_nowie_zachod[1] {19}
 #var kalendarz_nowie_zachod[2] {19}

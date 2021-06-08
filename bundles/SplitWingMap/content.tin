@@ -6,7 +6,7 @@
     #screen get rows screenrows;
     #math offsetx {$screencols - $global_bundle_slots_values[prompt][right] + 1}; #nop +2;
     #math offseth {$screencols};
-    #math offsetw {$screenrows - $global_bundle_slots_values[prompt][bottom] - $ConfigManager_Configs[RaidSize]};
+    #math offsetw {$screenrows - $global_bundle_slots_values[prompt][bottom] - $ConfigManager_Configs[RaidSize] - 1};
     #math raidoffsety {$praidsize + 1};
     #math raidoffsetw {$screenrows - $global_bundle_slots_values[prompt][bottom]-1};
     #math raidoffsetx {$screencols - $global_bundle_slots_values[prompt][right]}; #nop + 1;
@@ -54,6 +54,7 @@
 #alias {RaidBar_refresh} {
     #if {$praidsize > 0 && "$raidbartable" != "" && $raidoffsetw > 0 && $splitwingmapwidthused == 1} {
         #draw tile $raidoffsety $raidoffsetx+1 $raidoffsetw $screencols <088>$raidbartable; #nop ORG;
+        #sh {<118>X<088>} {$raidoffsetw} {$raidoffsetx+1};
     };
 }
 

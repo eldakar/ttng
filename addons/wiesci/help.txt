@@ -149,6 +149,12 @@ TUTOR       Ustawienie celpostepow i globalny postep, wyswietli % do celu
 ** 07/06/21 - Paski ciag dalszy **
 > Od teraz /conf pasek micro pelni role nowego paska mini...
 
+** 08/06/21 - Ramki **
+> Ogolne przyspieszenie dzialania skryptow, wyswietlania ramek
+> Poprawilem wyswietlanie okienka z czatem
+> Dodalem kilka wariantow podazania za prowadzacym w Mahakamie
+> Popsulem /por w oknie mapy
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng
