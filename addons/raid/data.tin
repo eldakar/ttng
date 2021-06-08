@@ -853,7 +853,7 @@
     }
     {Arond_} 
     {
-        {gildia} {NPC}
+        {gildia} {BOSS}
     }
     {Arrander_} 
     {
@@ -27995,7 +27995,7 @@
     }
     {stary_zwalisty_mezczyzna_} 
     {
-        {gildia} {NPC}
+        {gildia} {BOSS}
         {imie} {Arond}
     }
     {surowy_szpakowaty_mezczyzna_} 

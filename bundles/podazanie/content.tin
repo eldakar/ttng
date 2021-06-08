@@ -177,11 +177,20 @@
 #action {%*{Podazasz|podazasz} za %1 do najmniejszego namiotu.} {#var retfl @follow_where{sw}};
 #action {%*{Podazasz|podazasz} za %1 do najwiekszego namiotu.} {#var retfl @follow_where{n}};
 #action {%*{Podazasz|podazasz} za %1 do karczmy.} {#var retfl @follow_where{n}};
-
 #action {%*{Podazasz|podazasz} za %1 na linowy most.} {#var retfl @follow_where{most}};
-
 #action {%*{Podazasz|podazasz} za %1 wglab zalanego chodnika, zanurzajac sie pod wode.} {#var retfl @follow_where{s}};
 #action {%*{Podazasz|podazasz} za %1 na zewnatrz chaty.} {#var retfl @follow_where{wyjscie}};
+#action {%*{Podazasz|podazasz} za %1 sciezka w dol.} {#var retfl @follow_where{d}};
+#action {%*{Podazasz|podazasz} za %1 sciezka do gory.} {#var retfl @follow_where{u}};
+#action {%*{Podazasz|podazasz} za %1 grania w dol.} {#var retfl @follow_where{d}};
+#action {%*{Podazasz|podazasz} za %1 grania do gory.} {#var retfl @follow_where{u}};
+#action {%*{Podazasz|podazasz} za %1 do gory.} {#var retfl @follow_where{u}};
+
+#nop SPRAWDZIC ###################################################;
+#action {%*{Podazasz|podazasz} za %1 do pieczary.} {#var retfl @follow_where{pieczara}};
+#action {%*{Podazasz|podazasz} za %1 na dno przepasci.} {#var retfl @follow_where{d}};
+
+#nop OSKRYPTOWANE ################################################;
 
 #action {%*{Podazasz|podazasz} za %1 miedzy belki stodoly.} {
 	#if {"$voom" == "28658"} {
@@ -190,6 +199,7 @@
 		#var retfl @follow_where{se};
 	};
 };
+
 
 #nop wozem;
 #action {Wraz z %1 jedziesz %2 na %3.} {#sh Wraz z %1 podazasz za %2 na %3.};

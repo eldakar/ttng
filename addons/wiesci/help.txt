@@ -154,6 +154,7 @@ TUTOR       Ustawienie celpostepow i globalny postep, wyswietli % do celu
 > Poprawilem wyswietlanie okienka z czatem
 > Dodalem kilka wariantow podazania za prowadzacym w Mahakamie
 > Popsulem /por w oknie mapy
+> Aby rozszerzyc okno MAPY nalezy chwycic za czerwony X !!
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
