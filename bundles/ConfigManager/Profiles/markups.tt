@@ -38,6 +38,13 @@
         {terrain} {pustynia}
         {type} {mob}
     }
+    {4746} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
     {4788} 
     {
         {rendered} {1}

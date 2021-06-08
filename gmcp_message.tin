@@ -17,7 +17,7 @@
 				};
 			} {
 				#regex {$commtext} {Mowisz%*:} {
-					#line sub variables #line strip {topchat_add_static Mowisz: &2};
+					topchat_add_static <158>$commtext;
 				};
 			};
 
