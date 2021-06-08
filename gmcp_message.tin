@@ -8,11 +8,11 @@
 			#replace {GMCPMSGS[text]} {\\n} {};
 
 			#line sub variables #line strip {#var commtext $GMCPMSGS[text];};
-			#regex {$commtext} {%w {dudni|nuci|mowi|mruczy}%*: %*} {
+			#regex {$commtext} {%w {syczy|krzyczy|mowi|mruczy|syczy|dudni|burczy|bzyczy|spiewa|nuci|bulgocze|brzeczy|marudzi|szepcze|skrzypi}%*: %*} {
 				#foreach {*duch[]} {dydydy} {
 					#var shitTODOvar {$duch[$dydydy][desc]_};
 					#if {"$duch[$dydydy][desc]" == "&1" && "$postac[$shitTODOvar][gildia]" != "" && "$postac[$shitTODOvar][gildia]" != "NPC"} {
-						#line sub variables #line strip {topchat_add_static &1: &4;};
+						topchat_add_static <cfc>(mowa) &1: &4;
 					};
 				};
 			} {
