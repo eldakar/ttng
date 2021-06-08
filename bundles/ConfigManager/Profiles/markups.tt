@@ -24,6 +24,13 @@
         {terrain} {rzeka}
         {type} {mob}
     }
+    {4569} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
     {4600} 
     {
         {rendered} {1}
