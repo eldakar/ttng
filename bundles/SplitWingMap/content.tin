@@ -11,7 +11,6 @@
     #math raidoffsetw {$screenrows - $global_bundle_slots_values[prompt][bottom]-1};
     #math raidoffsetx {$screencols - $global_bundle_slots_values[prompt][right]}; #nop + 1;
     #map offset $offsety $offsetx $offsetw $offseth;
-    #nop sh {<118>X<088>} {$raidoffsetw} {$raidoffsetx+1};
 };
 
 #alias {SplitWingMapWidth} {
@@ -55,7 +54,7 @@
 #alias {RaidBar_refresh} {
     #if {$praidsize > 0 && "$raidbartable" != "" && $raidoffsetw > 0 && $splitwingmapwidthused == 1} {
         #draw tile $raidoffsety $raidoffsetx+1 $raidoffsetw $screencols <088>$raidbartable; #nop ORG;
-        #sh {<118>X<088>} {$raidoffsetw} {$raidoffsety};
+        #sh {<118>X<088>} {$raidoffsetw} {$raidoffsetx+1};
     };
 }
 
