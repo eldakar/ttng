@@ -47,8 +47,8 @@
 		} {1};
 		#alias rysuj_forme rysuj_forme_fps;
 	} {
-		#untick fpsticker;
 		#alias rysuj_forme rysuj_forme_standard;
+		#untick fpsticker;
 	};
 };
 
@@ -72,7 +72,7 @@
 	};	
 }
 
-#alias {pasek} {
+#nop CONFIG; #alias {pasek} {
 	#if {"$ConfigManager_Configs[pasek]" == ""} {
 		/conf pasek medium;
 	} {
@@ -98,8 +98,7 @@
 	#if {"$ConfigManager_Configs[pasek]" == "medium"} {
 		#draw {$bbBGC} tile $screenrows-3 1 $screenrows-1 $screencols-1;
 	};
-
-	SplitRefreshRequestRefresh;
+	SplitRefreshRequestRefresh; 
 }
 
 #alias kolorzaslonwrogow {
@@ -119,42 +118,42 @@
 	};
 } {1};
 
-#alias {BottomBarSimple_char_state} {
-	#var charstate {%0};
-	#foreach {*charstate[]} {s} {
-		#list {state} {find} {$s} {v}; 
-		#if {$v > 0} {
-			#list {state}{set}{$s}{$charstate[$s]}
-		} {
-			#var {state[$s]} {$charstate[$s]};
-		}
-	};
-	#if {$charstate[fatigue] >= $pmeldujprzy} {
-		#if {"$duch[$avatarid][team]" == "true" && "$duch[$avatarid][team_leader]" == "false"} {
-			#line sub variables {
-				#alias melduj_zmeczenie {
-					szepnij ob_$team_lead_id $zmeczenie[$charstate[fatigue]];
+#nop EVENT;	#alias {BottomBarSimple_char_state} {
+				#var charstate {%0};
+				#foreach {*charstate[]} {s} {
+					#list {state} {find} {$s} {v}; 
+					#if {$v > 0} {
+						#list {state}{set}{$s}{$charstate[$s]}
+					} {
+						#var {state[$s]} {$charstate[$s]};
+					}
 				};
+				#if {$charstate[fatigue] >= $pmeldujprzy} {
+					#if {"$duch[$avatarid][team]" == "true" && "$duch[$avatarid][team_leader]" == "false"} {
+						#line sub variables {
+							#alias melduj_zmeczenie {
+								szepnij ob_$team_lead_id $zmeczenie[$charstate[fatigue]];
+							};
+						};
+						qb melduj_zmeczenie;
+					};
+				};
+				rysuj_paski;
 			};
-			qb melduj_zmeczenie;
-		};
-	};
-	rysuj_paski;
-};
 
 #nop #############################################################;
 #nop ############# UKRYWANIE               #######################;
 #nop #############################################################;
-#var hiddenlevel {${c_stan_niski}off};
+#var hiddenlevel {0};
 #action {Chowasz sie najlepiej jak potrafisz} {
-	#var hiddenlevel {${c_stan_sredni} 0%};BottomBar_Selected;
-	#delay {delayhidden1} {#var hiddenlevel {${c_stan_sredni}33%}} {5};
-	#delay {delayhidden2} {#var hiddenlevel {${c_stan_sredni}66%}} {10};
-	#delay {delayhidden3} {#var hiddenlevel {${c_stan_wysoki}on }} {15};
+	#var hiddenlevel {1};
+	#delay {delayhidden1} {#var hiddenlevel {2}} {5};
+	#delay {delayhidden2} {#var hiddenlevel {3}} {10};
+	#delay {delayhidden3} {#var hiddenlevel {4}} {15};
 };
 #action {Nie jestes juz schowany} {
 	#undelay {delahidden%*};
-	#var hiddenlevel {${c_stan_niski}off};
+	#var hiddenlevel {0};
 };
 
 
@@ -163,48 +162,46 @@
 #nop #############################################################;
 #var manewrlevel {5};
 #alias {manewr_start} {
-	#var manewrlevel {0};BottomBar_Selected;
-	#delay {manewrlevel5} {#var manewrlevel {5};BottomBar_Selected;} {5};
-	#delay {manewrlevel4} {#var manewrlevel {4};BottomBar_Selected;} {4};
-	#delay {manewrlevel3} {#var manewrlevel {3};BottomBar_Selected;} {3};
-	#delay {manewrlevel2} {#var manewrlevel {2};BottomBar_Selected;} {2};
-	#delay {manewrlevel1} {#var manewrlevel {1};BottomBar_Selected;} {1};
+	#var manewrlevel {0};rysuj_paski;
+	#delay {manewrlevel5} {#var manewrlevel {5};rysuj_paski;} {5};
+	#delay {manewrlevel4} {#var manewrlevel {4};rysuj_paski;} {4};
+	#delay {manewrlevel3} {#var manewrlevel {3};rysuj_paski;} {3};
+	#delay {manewrlevel2} {#var manewrlevel {2};rysuj_paski;} {2};
+	#delay {manewrlevel1} {#var manewrlevel {1};rysuj_paski;} {1};
 };
 #nop #############################################################;
 #nop ############# ROZKAZY                 #######################;
 #nop #############################################################;
 #var rozkazlevel {15};
 #alias {rozkaz_start} {
-	#var rozkazlevel {0};
-	#delay {rozkazlevel15} {#var rozkazlevel {15};BottomBar_Selected;} {15};
-	#delay {rozkazlevel14} {#var rozkazlevel {14};BottomBar_Selected;} {14};
-	#delay {rozkazlevel13} {#var rozkazlevel {13};BottomBar_Selected;} {13};
-	#delay {rozkazlevel12} {#var rozkazlevel {12};BottomBar_Selected;} {12};	
-	#delay {rozkazlevel11} {#var rozkazlevel {11};BottomBar_Selected;} {11};
-	#delay {rozkazlevel10} {#var rozkazlevel {10};BottomBar_Selected;} {10};
-	#delay {rozkazlevel9} {#var rozkazlevel {9};BottomBar_Selected;} {9};
-	#delay {rozkazlevel8} {#var rozkazlevel {8};BottomBar_Selected;} {8};
-	#delay {rozkazlevel7} {#var rozkazlevel {7};BottomBar_Selected;} {7};
-	#delay {rozkazlevel6} {#var rozkazlevel {6};BottomBar_Selected;} {6};
-	#delay {rozkazlevel5} {#var rozkazlevel {5};BottomBar_Selected;} {5};
-	#delay {rozkazlevel4} {#var rozkazlevel {4};BottomBar_Selected;} {4};
-	#delay {rozkazlevel3} {#var rozkazlevel {3};BottomBar_Selected;} {3};
-	#delay {rozkazlevel2} {#var rozkazlevel {2};BottomBar_Selected;} {2};
-	#delay {rozkazlevel1} {#var rozkazlevel {1};BottomBar_Selected;} {1};
-	BottomBar_Selected;
+	#var rozkazlevel {0};rysuj_paski;
+	#delay {rozkazlevel15} {#var rozkazlevel {15};rysuj_paski;} {15};
+	#delay {rozkazlevel14} {#var rozkazlevel {14};rysuj_paski;} {14};
+	#delay {rozkazlevel13} {#var rozkazlevel {13};rysuj_paski;} {13};
+	#delay {rozkazlevel12} {#var rozkazlevel {12};rysuj_paski;} {12};	
+	#delay {rozkazlevel11} {#var rozkazlevel {11};rysuj_paski;} {11};
+	#delay {rozkazlevel10} {#var rozkazlevel {10};rysuj_paski;} {10};
+	#delay {rozkazlevel9} {#var rozkazlevel {9};rysuj_paski;} {9};
+	#delay {rozkazlevel8} {#var rozkazlevel {8};rysuj_paski;} {8};
+	#delay {rozkazlevel7} {#var rozkazlevel {7};rysuj_paski;} {7};
+	#delay {rozkazlevel6} {#var rozkazlevel {6};rysuj_paski;} {6};
+	#delay {rozkazlevel5} {#var rozkazlevel {5};rysuj_paski;} {5};
+	#delay {rozkazlevel4} {#var rozkazlevel {4};rysuj_paski;} {4};
+	#delay {rozkazlevel3} {#var rozkazlevel {3};rysuj_paski;} {3};
+	#delay {rozkazlevel2} {#var rozkazlevel {2};rysuj_paski;} {2};
+	#delay {rozkazlevel1} {#var rozkazlevel {1};rysuj_paski;} {1};
 };
 #nop #############################################################;
 #nop ############# BLOKOWANIE TWOJE        #######################;
 #nop #############################################################;
 #var blockselflevel {0};
 #alias {blok_start} {
-	#var blockselflevel {0};
-	#delay {blockselflevel5} {#var blockselflevel {5};BottomBar_Selected;} {5};
-	#delay {blockselflevel4} {#var blockselflevel {4};BottomBar_Selected;} {4};
-	#delay {blockselflevel3} {#var blockselflevel {3};BottomBar_Selected;} {3};
-	#delay {blockselflevel2} {#var blockselflevel {2};BottomBar_Selected;} {2};
-	#delay {blockselflevel1} {#var blockselflevel {1};BottomBar_Selected;} {1};
-	BottomBar_Selected;
+	#var blockselflevel {0};rysuj_paski;
+	#delay {blockselflevel5} {#var blockselflevel {5};rysuj_paski;} {5};
+	#delay {blockselflevel4} {#var blockselflevel {4};rysuj_paski;} {4};
+	#delay {blockselflevel3} {#var blockselflevel {3};rysuj_paski;} {3};
+	#delay {blockselflevel2} {#var blockselflevel {2};rysuj_paski;} {2};
+	#delay {blockselflevel1} {#var blockselflevel {1};rysuj_paski;} {1};
 };
 
 
@@ -378,7 +375,6 @@
 #nop action {{Powoli osuwasz sie na ziemie|Potem robi sie ciemno|Sila uderzania zamroczyla cie|czujesz, ze tracisz przytomnosc|Nagle czujesz jak na glowe spada ci ciezki sznur|Nagle czujesz, ze tracisz kontrole nad swym cialem| wali cie na odlew %* chwiejesz|ze swiat przed twoimi oczami niknie|Przymroczony tym uderzeniem czujesz jak nogi|Swiat przed twoimi oczami ciemnieje. Czujesz, ze tracisz wzrok!}} {};
 #nop action {{Powoli dochodzisz do siebie|Czujesz jak slabosc po zadanym ciosie w glowe mija|Udaje ci sie uwolnic z sieci|Powoli odzyskujesz swobode ruchow}} {};
 
-
 #nop #############################################################;
 #nop ############# WEAPONS                 #######################;
 #nop #############################################################;
@@ -389,8 +385,8 @@
 };
 #action {{Gwaltownym ruchem wyszarpujesz|Dobywasz|Wiedziony naglym instynktem siegasz|Pelnym pewnosci siebie ruchem dobywasz| twego pewnego chwytu, | zaciskasz dlon |dobywajac}}
 {
-	SplitWingMap_Offset;
 	#if {"$bronstatus" == "off"} {#var bronstatus on};
+	#map update;
 };
 #action {{Opuszczasz | ogarniajac wzrokiem cala okolice| opuszczasz | rozluzniasz uchwyt | do tej pory twe serce }%*.}
 {
@@ -425,9 +421,6 @@
 
 #var bbBGC {<088>};
 #event {VARIABLE UPDATED bbBGC} {
-	BottomBar_Selected;	
-};
-#unevent {VARIABLE UPDATED charstate} {
 	BottomBar_Selected;	
 };
 
@@ -477,7 +470,7 @@
 	#line ignore #sh {$microbarline'} {-15};
 }
 #alias {BottomBarMicro} {
-		#math realFatigue {9 - $state[fatigue]};
+	#math realFatigue {9 - $state[fatigue]};
 	#sh {${bbBGC}H[@graph{$state[hp];6}${bbBGC}]F[@graph{$state[form];3}${bbBGC}]G[@graph{$state[stuffed];3}${bbBGC}]X[@graph{$state[improve];15}${bbBGC}]<088>M[@graph{$manewrlevel;4}${bbBGC}]<088>} {-4};
 	#sh {${bbBGC}S[@graph{$realFatigue;9}${bbBGC}]O[@graph{$state[encumbrance];5}${bbBGC}]P[@graph{$state[soaked];3}${bbBGC}]P[@graph{$kill_count;$postep_needed}${bbBGC}]<088>R[@graph{$rozkazlevel;14}${bbBGC}]<088>} {-3};
 	#sh {${bbBGC}M[@graph{$state[mana];8}${bbBGC}]P[@graph{$state[panic];5}${bbBGC}]U[@graph{$state[intox];10}${bbBGC}]G[@graph{$ConfigManager_Configs[globalnypostep];$ConfigManager_Configs[celpostepow]}${bbBGC}]<088>B[@graph{$blockselflevel;5}${bbBGC}]<088>} {-2};

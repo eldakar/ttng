@@ -4,20 +4,18 @@
     #math offsety 1;
     #screen get cols screencols;
     #screen get rows screenrows;
-    #math offsetx {$screencols - $global_bundle_slots_values[prompt][right] + 2};
+    #math offsetx {$screencols - $global_bundle_slots_values[prompt][right] + 1}; #nop +2;
     #math offseth {$screencols};
-
     #math offsetw {$screenrows - $global_bundle_slots_values[prompt][bottom] - $ConfigManager_Configs[RaidSize]};
-    #nop math offsetw {$praidsize};
-
-    #math raidoffsety {$global_bundle_slots_values[prompt][top] + $praidsize + 1};
+    #math raidoffsety {$praidsize + 1};
     #math raidoffsetw {$screenrows - $global_bundle_slots_values[prompt][bottom]-1};
-    #math raidoffsetx {$screencols - $global_bundle_slots_values[prompt][right] + 1};    
+    #math raidoffsetx {$screencols - $global_bundle_slots_values[prompt][right]}; #nop + 1;
     #map offset $offsety $offsetx $offsetw $offseth;
 };
 
 #alias {SplitWingMapWidth} {
     #var global_bundle_slots_values[prompt][right] $ConfigManager_Configs[SplitWingMapWidth];
+    #var splitwingmapwidthused 1;
     #if {$ConfigManager_Configs[SplitWingMapWidth] < 1} {
         #map flag vtmap off;
         #unevent {VARIABLE UPDATED objectnumsRefreshed} {RaidBar_refresh};  #nop RAIDTABLE HOOK;
@@ -25,20 +23,19 @@
         #map flag vtmap on;
         #event {VARIABLE UPDATED objectnumsRefreshed} {RaidBar_refresh};    #nop RAIDTABLE HOOK;
     };
-    SplitWingMap_Offset;
- #nop    RaidBar_refresh;
-    #nop Dependency: SplitRefresh;
     SplitRefreshRequestRefresh;
 };
 
 #alias {RaidSize} {
     #if {$ConfigManager_Configs[RaidSize] > 0} {
-        #var praidsize {$screenrows - $global_bundle_slots_values[prompt][bottom] - $global_bundle_slots_values[prompt][top] - $ConfigManager_Configs[RaidSize]};
+        #var praidsize {$screenrows - $global_bundle_slots_values[prompt][bottom] - $ConfigManager_Configs[RaidSize]};
     } {
-        #math praidsize {$screenrows - $global_bundle_slots_values[prompt][bottom] - $global_bundle_slots_values[prompt][top] - 5};
+        #math praidsize {$screenrows - $global_bundle_slots_values[prompt][bottom] - 5};
     };
-    RaidBar_refresh;
-    SplitWingMap_Offset;
+    #math raidoffsety {$praidsize + 1};
+
+    #nop CZY MUSI TU?  RaidBar_refresh;
+    SplitWingMap_refresh;
 }
 
 #alias {doubleclick} {
@@ -54,24 +51,22 @@
     };
 };
 
-
-
-
 #alias {RaidBar_refresh} {
-    #if {$praidsize > 0 && "$raidbartable" != ""} {
-        #draw jeweled box $raidoffsety $raidoffsetx $raidoffsetw $screencols <088>$raidbartable; #nop ORG;
+    #if {$praidsize > 0 && "$raidbartable" != "" && $raidoffsetw > 0 && $splitwingmapwidthused == 1} {
+        #draw tile $raidoffsety $raidoffsetx+1 $raidoffsetw $screencols <088>$raidbartable; #nop ORG;
     };
 }
 
 #alias {SplitWingMap_refresh} {
-    #math global_bundle_slots_values[prompt][right] {$ConfigManager_Configs[SplitWingMapWidth] + 0};
-
-    #if {$global_bundle_slots_values[prompt][right] < 1} {
-        #var ConfigManager_Configs[SplitWingMapWidth] {10};
-        #var global_bundle_slots_values[prompt][right] {10};
+    #if {$ConfigManager_Configs[SplitWingMapWidth] > 0} {
+        #math global_bundle_slots_values[prompt][right] {$ConfigManager_Configs[SplitWingMapWidth] + 0};
+        #if {$global_bundle_slots_values[prompt][right] < 1} {
+            #var ConfigManager_Configs[SplitWingMapWidth] {10};
+            #var global_bundle_slots_values[prompt][right] {10};
+        };
+        SplitWingMap_Offset;
+        RaidBar_refresh;
     };
-    RaidBar_refresh;    
-    SplitWingMap_Offset;
 };
 
 #alias {SplitWingMap_Popup} {
@@ -172,7 +167,7 @@
        #var rightdrag 1
     };
     #if {$curright < $right} {
-        #if {$curbott > $top && $o_x > $global_bundle_slots_values[prompt][top]} {
+        #if {$curbott > $top && $o_x > 0} {
             #var mapcenter 1;
         };
     };
@@ -220,7 +215,6 @@
 
 #alias raidmap_map_double_clicked_mouse_button_one {
     #map center;
-    #nop map run {%1} {0.25};
     #map goto {%1};
     #var pathinprogress 1;
 };
@@ -245,73 +239,6 @@
 
 #alias raidmap_map_double_clicked_mouse_button_one_path {
     #map find {%1};
-};
-
-
-#alias raidmap_hide {
-    #var hidden_raidmap_size $global_bundle_slots_values[prompt][right];    
-    #list bundle_handler_split_request                       find SplitWingMap_refresh _eva;
-    #list bundle_handler_split_request                       delete $_eva;
-    #list event_handler_pressed_mouse_button_one             find raidmap_pressed_mouse_button_one _evb;
-    #list event_handler_pressed_mouse_button_one             delete $_evb;
-    #list event_handler_released_mouse_button_one            find raidmap_released_mouse_button_one _evc;
-    #list event_handler_released_mouse_button_one            delete $_evc;
-    #list event_handler_moved_mouse_button_one               find raidmap_moved_mouse_button_one _evd;
-    #list event_handler_moved_mouse_button_one               delete $_evd;
-    #list event_handler_scrolled_mouse_wheel_up              find raidmap_scrolled_mouse_wheel_up _eve;
-    #list event_handler_scrolled_mouse_wheel_up              delete $_eve;
-    #list event_handler_scrolled_mouse_wheel_down            find raidmap_scrolled_mouse_wheel_down _evf;
-    #list event_handler_scrolled_mouse_wheel_down            delete $_evf;
-    #list event_handler_map_double_clicked_mouse_button_one  find raidmap_map_double_clicked_mouse_button_one _evg;
-    #list event_handler_map_double_clicked_mouse_button_one  delete $_evg;
-
-    #list event_handler_map_updated_vtmap                    find mapa_map_updated_vtmap _evh;
-    #list event_handler_map_updated_vtmap                    delete $_evh;
-
-    #unvar _eva;
-    #unvar _evb;
-    #unvar _evc;
-    #unvar _evd;
-    #unvar _eve;
-    #unvar _evf;
-    #unvar _evg;
-
-    #var global_bundle_slots_values[prompt][right] 0;
-    #unevent {VARIABLE UPDATED objectnumsRefreshed} {RaidBar_refresh};
-    #map flag vtmap off;
-    #line quiet SplitRefreshRequestRefresh;
-};
-
-#alias raidmap_show {
-    #list bundle_handler_split_request                       add {SplitWingMap_refresh};
-    #list event_handler_pressed_mouse_button_one             add {raidmap_pressed_mouse_button_one};
-    #list event_handler_released_mouse_button_one            add {raidmap_released_mouse_button_one};
-    #list event_handler_moved_mouse_button_one               add {raidmap_moved_mouse_button_one};
-    #list event_handler_scrolled_mouse_wheel_up              add {raidmap_scrolled_mouse_wheel_up};
-    #list event_handler_scrolled_mouse_wheel_down            add {raidmap_scrolled_mouse_wheel_down};
-    #list event_handler_map_double_clicked_mouse_button_one  add {raidmap_map_double_clicked_mouse_button_one};
-    
-    #list event_handler_map_updated_vtmap add {mapa_map_updated_vtmap};
-    #event {VARIABLE UPDATED objectnumsRefreshed} {RaidBar_refresh};    #nop RAIDTABLE HOOK;
-    #map flag vtmap on;
-    /conf SplitWingMapWidth $hidden_raidmap_size;
-}
-
-
-#nop alias raidmap_roza {
-    #if {"$rozk2[nw]" != " "} {#var blockcolor[nw] <ABA>;} {#var blockcolor[nw] <G03>;};
-    #if {"$rozk2[ne]" == "/"} {#var blockcolor[ne] <ABA>;} {#var blockcolor[ne] <G03>;};
-    #if {"$rozk2[n]" == "|"} {#var blockcolor[n] <ABA>;} {#var blockcolor[n] <G03>;};
-    #if {"$rozk2[w]" == "-"} {#var blockcolor[w] <ABA>;} {#var blockcolor[w] <G03>;};
-    #if {"$rozk2[e]" == "-"} {#var blockcolor[e] <ABA>;} {#var blockcolor[e] <G03>;};
-    #if {"$rozk2[s]" != " "} {#var blockcolor[s] <ABA>;} {#var blockcolor[s] <G03>;};
-    #if {"$rozk2[se]" != "  "} {#var blockcolor[se] <ABA>;} {#var blockcolor[se] <G03>;};
-    #if {"$rozk2[sw]" != "  "} {#var blockcolor[sw] <ABA>;} {#var blockcolor[sw] <G03>;};
-    #if {"$rozk2[d]" != " "} {#var blockcolor[d] <ABA>;} {#var blockcolor[d] <G03>;};
-    #if {"$rozk2[u]" != " "} {#var blockcolor[u] <ABA>;} {#var blockcolor[u] <G03>;};
-    #if {"$rooa" != ""} {#var blockcolor[bind] <AAB><fff>} {#var blockcolor[bind] <G01><g01>};
-
-    #draw <088><128> rounded table $offsetw-13 $offsetx $offsetw $offseth {$blockcolor[nw]NW\n;$blockcolor[n]N\n;$blockcolor[ne]NE\n;$blockcolor[u]A\n} {$blockcolor[w]W\n;$blockcolor[bind]LOK\n;$blockcolor[e]E\n;<FFA><aaa>BIND\n} {$blockcolor[sw]SW\n;$blockcolor[s]S\n;$blockcolor[se]SE\n;$blockcolor[d]V\n};
 };
 
 #alias raidmap_attacks {

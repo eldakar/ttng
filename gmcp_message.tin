@@ -6,8 +6,22 @@
 	#switch {"$GMCPMSGS[type]"} {
 		#case {"comm"} {
 			#replace {GMCPMSGS[text]} {\\n} {};
+
+			#line sub variables #line strip {#var commtext $GMCPMSGS[text];};
+			#regex {$commtext} {%w {dudni|nuci|mowi|mruczy}%*: %*} {
+				#foreach {*duch[]} {dydydy} {
+					#var shitTODOvar {$duch[$dydydy][desc]_};
+					#if {"$duch[$dydydy][desc]" == "&1" && "$postac[$shitTODOvar][gildia]" != "" && "$postac[$shitTODOvar][gildia]" != "NPC"} {
+						#line sub variables #line strip {topchat_add_static &1: &4;};
+					};
+				};
+			} {
+				#regex {$commtext} {Mowisz%*:} {
+					#line sub variables #line strip {topchat_add_static Mowisz: &2};
+				};
+			};
+
 			#sh {$GMCPMSGS[text]};
-			#line sub variables #line strip {topchat_add_static $GMCPMSGS[text];};
 		};
 		#case {"emotes"} {
 			#replace {GMCPMSGS[text]} {\\n} {};

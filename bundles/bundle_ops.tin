@@ -11,7 +11,7 @@
 
 #list bundlemanager_slots clear;
 #list bundlemanager_bundles clear;
-#list bundlemanager_configs clear;
+#list bundlemanager_configs clear0
 #list bundlemanager_macros clear;
 #list bundlemanager_colors clear;
 #list bundlemanager_helps clear;

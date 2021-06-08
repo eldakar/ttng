@@ -66,7 +66,7 @@
   #line sub variables {
     #alias _quickbind_ {
       %0;
-      SplitWingMap_Offset;
+      #map update;
     }
   };
   #format {show_bind_} {%h} { %0 };
@@ -85,5 +85,4 @@
   };
   #format qbvar {%-64s %.64s} {%0};
   #var qbvar {${c_stan_niski}$qbvar};
-  BottomBar_Selected;
 }

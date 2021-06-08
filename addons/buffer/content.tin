@@ -24,8 +24,7 @@
 		#var global_bundle_slots_values[prompt][top] $bufferscreensize;
 		SplitRefreshRequestRefresh;
 		#draw tile 1 1 $global_bundle_slots_values[prompt][top] $screencols-$global_bundle_slots_values[prompt][right]+1 {$tmpbuffervalue$HBar};
-		#showme { --- DZIELE EKRAN --- Dlugosc buffera: $buffinfo[USED] --- };
-		RaidSize;
+		#nop showme { --- DZIELE EKRAN --- Dlugosc buffera: $buffinfo[USED] --- };
 	};
 };
 
@@ -39,8 +38,6 @@
 		#var buffer_status {hidden};
 		#var global_bundle_slots_values[prompt][top] 0;
 		SplitRefreshRequestRefresh;
-		RaidSize;
-		SplitWingMapWidth;
 	};
 }
 

@@ -8,13 +8,12 @@
 	#screen get SPLIT_BOT_BAR top;
     #screen get SPLIT_RIGHT_BAR right;
    	#screen get cols cols;
-
 	#math responsivewidth {$screencols - $right};
-
-#line quiet	#split $global_bundle_slots_values[prompt][top] $global_bundle_slots_values[prompt][bottom] $global_bundle_slots_values[prompt][left] $global_bundle_slots_values[prompt][right];
+	#line quiet	#split $global_bundle_slots_values[prompt][top] $global_bundle_slots_values[prompt][bottom] $global_bundle_slots_values[prompt][left] $global_bundle_slots_values[prompt][right];
 	#foreach {*bundle_handler_split_request[]} {bhon} {
     	$bundle_handler_split_request[$bhon] %0;
 	};
+	
 	#buffer down;
 	#sh {} {-1} {1};
 };

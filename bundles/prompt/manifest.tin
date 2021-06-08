@@ -11,10 +11,12 @@
 	#list bundle_deps add {ConfigManager};
 		#list bundle_configs add {meldujprzy};
 		#list bundle_configs add {pasek};
+			#list bundle_configs add {stylpaskow};
+			#list bundle_configs add {naroznikpaska};
 		#list bundle_configs add {szerokoschpkow};
 		#list bundle_configs add {probymanewrow};
 		#list bundle_configs add {kolorzaslonwrogow};
-		#list bundle_configs add {stylpaskow};
+
 	#list bundle_deps add {SplitRefresh};
 	
 #list event_handler_char_state                           add {BottomBarSimple_char_state};
