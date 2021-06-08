@@ -155,6 +155,10 @@ TUTOR       Ustawienie celpostepow i globalny postep, wyswietli % do celu
 > Dodalem kilka wariantow podazania za prowadzacym w Mahakamie
 > Popsulem /por w oknie mapy
 > Aby rozszerzyc okno MAPY nalezy chwycic za czerwony X !!
+> Nowa komenda pozwalajaca zmienic prawy dolny rok paska medium
+TUTOR /conf naroznikpaska standard|fps
+TUTOR       fps - wyswietla FPS, PING i tryb Mappera
+TUTOR       standard - forma, upicie, etc
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW

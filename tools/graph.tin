@@ -5,6 +5,7 @@
 {
 	#regex {%1} {%d} {
 		#math per {100.0*%1/%2};
+		#if {$per > 999} {#var per 999};
 		#format {per} {%d} {$per};
 		#format {graphvalues} {%-5s%+5s} {%1/%2} {$per%%};
 		#nop regex {$graphvalues} {%.%.%.%.%.%.%.%.%.%.} {

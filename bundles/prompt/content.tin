@@ -37,20 +37,39 @@
 	};
 };
 
-#alias {naroznikpaska} {
-	#if {"$ConfigManager_Configs[naroznikpaska]" == "fps"} {
-		#ticker fpsticker {
-			#line quiet #line capture fpstest #line bench {#sh dupa};
-			#regex {$fpstest[2]} {%* %d USEC.} {
-				#math fpsTestResultValue {2000 - &2};
+#nop ###########################################################;
+#nop Naroznik: wartosc fps lub standard                         ;
+#nop ###########################################################;
+#nop CONF;	#alias {naroznikpaska} {
+				#if {"$ConfigManager_Configs[naroznikpaska]" == "fps"} {
+					#ticker fpsticker {
+						#line quiet #line capture fpstest #line bench {#sh dupa};
+						#regex {$fpstest[2]} {%* %d USEC.} {
+							#math fpsTestResultValue {2000 - &2};
+						};
+					} {1};
+					#alias rysuj_forme rysuj_forme_fps;
+				} {
+					#alias rysuj_forme rysuj_forme_standard;
+					#untick fpsticker;
+				};
 			};
-		} {1};
-		#alias rysuj_forme rysuj_forme_fps;
-	} {
-		#alias rysuj_forme rysuj_forme_standard;
-		#untick fpsticker;
-	};
-};
+			#event {VARIABLE UPDATED fpsTestResultValue} {
+				rysuj_forme_fps;
+			};
+
+			#event {VARIABLE UPDATED PONGED} {
+				#switch {"$PONGED"} {
+					#case {"1"} {#var mapPongedValue {<CDA><aaa> readonly }};
+					#case {"2"} {#var mapPongedValue {<AFA><aaa>  online  }};
+					#default {#var mapPongedValue    {<088> off-line }};
+				};
+				rysuj_forme;
+			};
+
+#nop ###########################################################;
+#nop ###########################################################;
+
 
 #alias {szerokoschpkow} {
 	#if {"$ConfigManager_Configs[szerokoschpkow]" == ""} {
@@ -72,34 +91,34 @@
 	};	
 }
 
-#nop CONFIG; #alias {pasek} {
-	#if {"$ConfigManager_Configs[pasek]" == ""} {
-		/conf pasek medium;
-	} {
-		#switch {"$ConfigManager_Configs[pasek]"} {
-			#case {"medium"} {
-				#alias BottomBar_Selected {BottomBarTinyFugue};
-				#var global_bundle_slots_values[prompt][bottom] {3};
-			};
-			#case {"mini"} {
-				#alias BottomBar_Selected {BottomBarMini};
-				#var global_bundle_slots_values[prompt][bottom] {3};
-			};
-			#case {"micro"} {
-				#alias BottomBar_Selected {BottomBarMicro};
-				#var global_bundle_slots_values[prompt][bottom] {3};
-			};
-			#case {"keyboard"} {
-				#alias BottomBar_Selected {BottomKeyboard};
-				#var global_bundle_slots_values[prompt][bottom] {14};
-			};
-		};
-	};
-	#if {"$ConfigManager_Configs[pasek]" == "medium"} {
-		#draw {$bbBGC} tile $screenrows-3 1 $screenrows-1 $screencols-1;
-	};
-	SplitRefreshRequestRefresh; 
-}
+#nop CONF;	#alias {pasek} {
+				#if {"$ConfigManager_Configs[pasek]" == ""} {
+					/conf pasek medium;
+				} {
+					#switch {"$ConfigManager_Configs[pasek]"} {
+						#case {"medium"} {
+							#alias BottomBar_Selected {BottomBarTinyFugue};
+							#var global_bundle_slots_values[prompt][bottom] {3};
+						};
+						#case {"mini"} {
+							#alias BottomBar_Selected {BottomBarMini};
+							#var global_bundle_slots_values[prompt][bottom] {3};
+						};
+						#case {"micro"} {
+							#alias BottomBar_Selected {BottomBarMicro};
+							#var global_bundle_slots_values[prompt][bottom] {3};
+						};
+						#case {"keyboard"} {
+							#alias BottomBar_Selected {BottomKeyboard};
+							#var global_bundle_slots_values[prompt][bottom] {14};
+						};
+					};
+				};
+				#if {"$ConfigManager_Configs[pasek]" == "medium"} {
+					#draw {$bbBGC} tile $screenrows-3 1 $screenrows-1 $screencols-1;
+				};
+				SplitRefreshRequestRefresh; 
+			}
 
 #alias kolorzaslonwrogow {
 	#if {"$ConfigManager_Configs[kolorzaslonwrogow]" == ""} {
@@ -499,9 +518,9 @@
 
 #alias rysuj_forme_fps {
 	#math {pozycjapaskaformy} {$screencols - 16};
-	#line ignore #sh {${bbBGC}FPS   :          <088>} {-4} {$pozycjapaskaformy};
-	#line ignore #sh {${bbBGC}Panika: $state[panic] Prag: $state[soaked]<088>} {-3} {$pozycjapaskaformy};
-	#line ignore #sh {${bbBGC}Ciezar: $state[encumbrance] Pija: $state[intox]<088>} {-2} {$pozycjapaskaformy};
+	#line ignore #sh {${bbBGC}FPS [@graph{$fpsTestResultValue;2000}]<088>} {-4} {$pozycjapaskaformy};
+	#line ignore #sh {${bbBGC}LAG             <088>} {-3} {$pozycjapaskaformy};
+	#line ignore #sh {${bbBGC}MAP [$mapPongedValue<088>]} {-2} {$pozycjapaskaformy};
 };
 
 #var ptrybchodzeniasymbol {<128>W};
