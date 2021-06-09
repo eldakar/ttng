@@ -212,7 +212,7 @@
 #nop #############################################################;
 #var manewrlevel {5};
 #alias {manewr_start} {
-	#var manewrlevel {0};rysuj_paski;
+	#var manewrlevel {0};BottomBar_Selected;
 	#delay {manewrlevel5} {#var manewrlevel {5};BottomBar_Selected;} {5};
 	#delay {manewrlevel4} {#var manewrlevel {4};BottomBar_Selected;} {4};
 	#delay {manewrlevel3} {#var manewrlevel {3};BottomBar_Selected;} {3};

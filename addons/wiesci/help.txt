@@ -165,6 +165,7 @@ TUTOR       standard - forma, upicie, etc
 TUTOR /conf czatwpasku wlacz|wylacz
 > Naprawione wczorajsze bugi...
 > Dodany bloker na bagnach przy Uber
+> Kalibracja Nowiu - mamy 70% gotowe
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
