@@ -311,6 +311,23 @@
 #action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* pozostawiajac rozlegla %*} {collect ARLEKIN 6 $AVATAR_NAME;#line gag};
 #action {Markujesz kilka uderzen swymi smuklymi mieczami} {collect ARLEKIN 7 $AVATAR_NAME;#line gag};
 
+#nop MAGIKI - KRUCZEK - Z PIERWSZEJ OSOBY;
+#action {Zwracasz ostrze %* rozcinajac skore %*} {collect KRUK 1 $AVATAR_NAME;#line gag};
+#action {Zwracasz ostrze %* pozostawiajac niewielka rane %*} {collect KRUK 2 $AVATAR_NAME;#line gag};
+#action {Unosisz %* lekko do gory i wykonujesz efektowne ciecie. %* pozostawiajac tam paskudna%*.} {collect KRUK 3 $AVATAR_NAME;#line gag};
+#action {Wykonujesz obszerny zamach %* tkanki.} {collect KRUK 4 $AVATAR_NAME;#line gag};
+#action {Wykonujesz zamaszyste ciecie %* swiatlem.} {collect KRUK 7 $AVATAR_NAME;#line gag};
+
+#nop MAGIKI - LEWAK - Z PIERWSZEJ OSOBY;
+#action {Wprawnie przyjmujesz cios %* na szeroki jelec swego %*.} {collect par 0 $AVATAR_NAME;#line gag};
+#action {Skladasz wprawnie zastawe, by sparowac %*.} {collect par 0 $AVATAR_NAME;#line gag};
+#action {Szlachetna stal dzierzonego przez ciebie %*.} {collect par 0 $AVATAR_NAME;#line gag};
+#action {Blyskawicznie skladajac zastawe parujesz cios %*.} {collect par 0 $AVATAR_NAME;#line gag};
+#nop Wykorzystujac dogodny moment wyprowadzasz celne ciecie zdobionym dlugim lewakiem %*, powaznie raniac/lekko muskajac;
+
+
+
+
 #nop PANIC;  #action {w panice umyka} {#sh $tmpvalue2;#line gag};
 #nop PANIC;  #action {uciekl ci.} {#sh $tmpvalue2;#line gag};
 

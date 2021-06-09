@@ -2,7 +2,7 @@
 #var topchaty {};
 #var CHATUSERTABLE {};
 #alias topchat_add_static { 
-    #format {_p_c_stamp_} {%t} {%H%M%S};
+    #format {_p_c_stamp_} {%t} {%H:%M};
     #loop {0} {49} {bcvc} {
         #math bcvppc {$bcvc + 1};
         #var topchat[$bcvc] {$topchat[$bcvppc]};

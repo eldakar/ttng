@@ -40,7 +40,7 @@
 
 #action {Powoli pojazd zaczyna tracic predkosc, by po chwili zatrzymac sie.}
 {
-		qb DYLIZANS_OUT;
+		qm DYLIZANS_OUT;
 		#if {"$woznicawola" != ""} {
 			#line ignore #sh {<128>### <118> $woznicawola <088>};
 		};
@@ -48,7 +48,7 @@
 }
 #action {Monotonne kolysanie ustaje w koncu i woz zatrzymuje sie.}
 {
-		qb DYLIZANS_OUT;
+		qm DYLIZANS_OUT;
 		#if {"$woznicawola" != ""} {
 			#line ignore #sh {<128>### <118> $woznicawola <088>};
 		};
@@ -56,122 +56,122 @@
 }
 #action {{.*} dylizans powoli zatrzymuje sie.}
 {
-		qb DYLIZANS_IN;
+		qm DYLIZANS_IN;
 }
 #action {{.*} powoz powoli zatrzymuje sie.}
 {
-		qb POWOZ_IN;
+		qm POWOZ_IN;
 }
 #action {Otwarty stojacy powoz.}
 {
-		qb POWOZ_IN;
+		qm POWOZ_IN;
 }
 
 #nop STATKI;
 
 #action {%*{rypa|ratwa|rom|knara|feluka|drakkar|uzar|skeid} przybija do brzegu.} {
-			qb STATEK_IN;
+			qm STATEK_IN;
 };
 #action {%*{Wszyscy na poklad!%*|przybija wielki trojmasztowy galeon.}} {
-			qb STATEK_IN;
+			qm STATEK_IN;
 };
 #action {Doplynelismy%*Mozna} {
-			qb STATEK_OUT;
+			qm STATEK_OUT;
 };
 #action {Doplynelismy%*w calej swej} {
-			qb STATEK_OUT;
+			qm STATEK_OUT;
 };
 #action {Marynasze sprawnie cumuja} {
-			qb STATEK_OUT;
+			qm STATEK_OUT;
 };
 #action {Drzenie przebiega poklad, gdy okret przybija do brzegu przystani. Marynarze sprawnie cumuja go i wysuwaja na brzeg trap.} {
-			qb STATEK_OUT;
+			qm STATEK_OUT;
 };
 #action {%*{^Tratwa.$}}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {^Plaskodenny skeid.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {^Rzeczna tratwa.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {^{[a-zA-Z]+} {[a-z]+} prom{[^a-z]}$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {^Prom.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {^Barka.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {^{[A-Za-z]+} {statek|knara}.$}
 {
-	qb STATEK_IN;	
+	qm STATEK_IN;	
 };
 #action {^{[a-zA-Z]+} {[a-z]+} statek.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {Tajemniczy okret.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {Wielki trojmasztowy galeon.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {Wielka galera.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {Stara niewielka szkuta.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {Smukly drakkar.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {Szeroka knara.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {Mala feluka.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {Stara szkuta.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {Stara niewielka szkuta.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {Stary buzar.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {Smukly bryg.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {Smukly majestatyczny bryg.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {Nieduzy barkas.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
 #action {Nieduza rzeczna barka.$}
 {
-	qb STATEK_IN;
+	qm STATEK_IN;
 };
