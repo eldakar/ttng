@@ -18,24 +18,52 @@
 
 #read tools/graph.tin;
 
-#alias rysuj_forme {#nop {};};
-#alias rysuj_paski {#nop {};};
 
-#alias {meldujprzy} {
-	#var pmeldujprzy $ConfigManager_Configs[meldujprzy];
-};
 
-#alias {stylpaskow} {
-	#if {"$ConfigManager_Configs[stylpaskow]" == "graph"} {
-		#alias rysuj_paski rysuj_paski_graph;
-	} {
-		#alias rysuj_paski rysuj_paski_standard;
-	};
-	#if {"$ConfigManager_Configs[pasek]" == "medium"} {
-		#draw <AAA> tile $screenrows-3 1 $screenrows-1 $screencols-1;
-		BottomBar_Selected;
-	};
-};
+
+
+#nop CONF;	#alias {meldujprzy} {
+				#var pmeldujprzy $ConfigManager_Configs[meldujprzy];
+			};
+
+#nop CONF;	#alias {stylpaskow} {
+				#if {"$ConfigManager_Configs[stylpaskow]" == "graph"} {
+					#alias rysuj_paski rysuj_paski_graph;
+				} {
+					#alias rysuj_paski rysuj_paski_standard;
+				};
+				#if {"$ConfigManager_Configs[pasek]" == "medium"} {
+					#draw <AAA> tile $screenrows-3 1 $screenrows-1 $screencols-1;
+					BottomBar_Selected;
+				};
+			}; #alias rysuj_paski {#nop {};};
+
+#nop CONF;	#alias {czatwpasku} {
+				#if {"$ConfigManager_Configs[czatwpasku]" == "wlacz"} {
+					#alias rysuj_czat rysuj_czat_wlacz;
+				} {
+					#alias rysuj_czat {#nop {};};
+				};
+				#if {"$ConfigManager_Configs[pasek]" == "medium"} {
+					#draw <AAA> tile $screenrows-3 1 $screenrows-1 $screencols-1;
+					BottomBar_Selected;
+				};
+			}; #alias rysuj_czat {#nop {};};
+
+			#alias rysuj_czat_wlacz {
+				#if {"$ConfigManager_Configs[czatwpasku]" == "wlacz" && "$ConfigManager_Configs[pasek]" == "medium"} {
+					#if {"$ConfigManager_Configs[stylpaskow]" == "graph"} {
+						#var dlugosc_paskow 83;	
+					} {
+						#math dlugosc_paskow {$maxBarSize * 2 + 15};
+					};
+					#draw tile $screenrows-3 24+$dlugosc_paskow $screenrows-1 $screencols-39 $topchat[48]\n$topchat[49]\n$topchat[50];
+					#nop topchat[$bcvc];
+				};
+			};
+
+			#event {VARIABLE UPDATED chat_updated} {rysuj_czat;};
+
 
 #nop ###########################################################;
 #nop Naroznik: wartosc fps lub standard                         ;
@@ -53,7 +81,7 @@
 					#alias rysuj_forme rysuj_forme_standard;
 					#untick fpsticker;
 				};
-			};
+			}; #alias rysuj_forme {#nop {};};
 			#event {VARIABLE UPDATED fpsTestResultValue} {
 				rysuj_forme_fps;
 			};
@@ -498,14 +526,17 @@
 #alias {BottomBarTinyFugue} {
 	#nop RYSUJEMY ROZE PO LEWEJ;
 	rysuj_roze; 
-	#nop RYSUJEMY PASEK FORMY;
-	rysuj_forme;
 	#nop RYSUJEMY CUSTOM EXITS;
 	rysuj_customs;
 	#nop RYSUJEMY PASKI GLOWNE;
 	rysuj_paski;
+	#nop RYSUJEMY CZAT;
+	rysuj_czat;
 	#nop RYSUJEMY PRZYCISKI WALKI;
 	rysuj_przyciski;
+	#nop RYSUJEMY PASEK FORMY;
+	rysuj_forme;
+
 };
 
 #alias rysuj_forme_standard {
@@ -540,7 +571,6 @@
 #alias rysuj_customs {
 	#draw {<088>$bbBGC} tile $screenrows-3 12 $screenrows-1 22 $bbBGC<ffa>$roza_custom;
 };
-
 
 
 #alias rysuj_paski_standard {

@@ -16,6 +16,7 @@
     #if {"$buffer_status" == "chat"} {
         unfoldchat;
     };
+    #var chat_updated {1};
 }
 
 #alias unfoldchat {

@@ -13,6 +13,7 @@
 		#list bundle_configs add {pasek};
 			#list bundle_configs add {stylpaskow};
 			#list bundle_configs add {naroznikpaska};
+			#list bundle_configs add {czatwpasku};
 		#list bundle_configs add {szerokoschpkow};
 		#list bundle_configs add {probymanewrow};
 		#list bundle_configs add {kolorzaslonwrogow};
