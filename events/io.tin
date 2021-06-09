@@ -7,11 +7,3 @@
         $event_handler_send_output[$ehso] %0;
     };
 };
-
-#nop event {BUFFER UPDATE}
-{
-	#foreach {*event_handler_buffer_update[]} {ehbu} {
-        $event_handler_buffer_update[$ehbu];
-    };
-};
-

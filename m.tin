@@ -18,6 +18,7 @@
     #read events/gmcp.char.tin;
     #read events/gmcp.object.tin;
     #read events/gmcp.room.tin;
+    #read events/gmcp.ping.tin;
     #read events/mouse.tin;
     #read events/io.tin;
     #read events/screen.tin;

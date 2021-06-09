@@ -12,12 +12,12 @@
 				#foreach {*duch[]} {dydydy} {
 					#var shitTODOvar {$duch[$dydydy][desc]_};
 					#if {"$duch[$dydydy][desc]" == "&1" && "$postac[$shitTODOvar][gildia]" != "" && "$postac[$shitTODOvar][gildia]" != "NPC"} {
-						topchat_add_static <cfc>(mowa) &1: &4;
+						topchat_add_static <cfc>&1: &4;
 					};
 				};
 			} {
-				#regex {$commtext} {Mowisz%*:} {
-					topchat_add_static <158>$commtext;
+				#regex {$commtext} {Mowisz%*: %*} {
+					topchat_add_static <158>&2;
 				};
 			};
 

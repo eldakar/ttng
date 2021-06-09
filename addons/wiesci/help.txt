@@ -160,6 +160,12 @@ TUTOR /conf naroznikpaska standard|fps
 TUTOR       fps - wyswietla FPS, PING i tryb Mappera
 TUTOR       standard - forma, upicie, etc
 
+** 09/06/21 - Paski **
+> Nowa komenda pozwalajaca wyswietlac czat na pasku medium
+TUTOR /conf czatwpasku wlacz|wylacz
+> Naprawione wczorajsze bugi...
+> Dodany bloker na bagnach przy Uber
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng
