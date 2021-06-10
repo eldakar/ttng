@@ -57,12 +57,7 @@
 #nop DEBUG;	#line substitute {variables} {#line strip {
 				#var gmcp_short {$outputtext};
 			}};
-			#if {$bind_found > 0} {
-				SplitWingMap_LabelBind $bind_run;
-			};
 			#sh {$outputtext};
-			#nop BIND OR COMMAND;
-		    #if {"$rooa" != ""} {$rooa};
 
 			#line strip {#var temp_short {$outputtext}};
 			#line substitute {variables} {

@@ -68,6 +68,7 @@
     #sh {$lokbutton[1]};
     #sh {$lokbutton[2] <168> %0<088>};
     #sh {$lokbutton[3]};
+    SplitWingMap_LabelBind %0;
     #alias _lokacyjny_ {%0};
 };
 

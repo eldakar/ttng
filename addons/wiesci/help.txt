@@ -167,6 +167,15 @@ TUTOR /conf czatwpasku wlacz|wylacz
 > Dodany bloker na bagnach przy Uber
 > Kalibracja Nowiu - mamy 70% gotowe
 
+** 10/06/21 - Kondycja **
+> Nowa komenda, pozwala ustawic alert na zmianie kondycji
+TUTOR /conf alertkondycja 0-6 (gdzie 0 to ledwo zywy)
+> Mozna tez zmienic opis jaki bedzie sie pojawial przy tym alercie
+TUTOR /conf alertkondycjatekst OPIS
+> Zmienilem wyswietlanie bindow lokacyjnych i czesciowo bindow QB na mapie
+> Kalibracja Nowiu - 75% gotowe
+
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng
