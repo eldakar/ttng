@@ -15,11 +15,28 @@
 #var state[mana] {0};
 
 #var bbs_fixer 0;
+#var PONGED 0;
 
 #read tools/graph.tin;
 
 #nop CONF;	#alias {meldujprzy} {
 				#var pmeldujprzy $ConfigManager_Configs[meldujprzy];
+			};
+
+#nop CONF;	#alias {alertkondycja} {
+				#if {"$ConfigManager_Configs[alertkondycja]" == ""} {
+					#var palertkondycja 2;
+				} {
+					#var palertkondycja $ConfigManager_Configs[alertkondycja];
+				};
+			};
+
+#nop CONF;	#alias {alertkondycjatekst} {
+				#if {"$ConfigManager_Configs[alertkondycjatekst]" == ""} {
+					#var palertkondycjatekst {Spadla kondycja - nie masz ustawionego klawisza};
+				} {
+					#var palertkondycjatekst $ConfigManager_Configs[alertkondycjatekst];
+				};
 			};
 
 #nop CONF;	#alias {stylpaskow} {
@@ -187,6 +204,12 @@
 						};
 						qb melduj_zmeczenie;
 					};
+				};
+				#if {$charstate[hp] <= $palertkondycja} {
+				    #line quiet #line capture lokbutton #draw <faa> scroll box 1 1 3 12 {<FAA><178> KONDYCJA <088>};
+				    #line ignore #sh {$lokbutton[1]};
+				    #line ignore #sh {$lokbutton[2] <118> $palertkondycjatekst<088>};
+				    #line ignore #sh {$lokbutton[3]};
 				};
 				BottomBar_Selected;
 			};

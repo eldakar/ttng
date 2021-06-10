@@ -4823,6 +4823,10 @@
     {
         {gildia} {OHM}
     }
+    {Golem_} 
+    {
+        {gildia} {BOSS}
+    }
     {Gomard_} 
     {
         {gildia} {GP}
@@ -11231,6 +11235,11 @@
     {Starkad_} 
     {
         {gildia} {NPC}
+    }
+    {Starozytny_golem_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Golem}
     }
     {Stefan_} 
     {
@@ -25070,6 +25079,11 @@
     {
         {gildia} {WKS}
         {imie} {Ivil}
+    }
+    {posepkny_okrutny_rycerz_chaosu_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Saurgl}
     }
     {postawny_brodaty_krasnolud_} 
     {

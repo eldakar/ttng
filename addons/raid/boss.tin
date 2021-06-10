@@ -1,5 +1,6 @@
 #CLASS {bossy} OPEN
 
+#HIGHLIGHT {%iStarozytny golem} {<CAF>} {5}
 #HIGHLIGHT {%ibarwny zamaskowany arlekin} {<CAF>} {5}
 #HIGHLIGHT {%ibystry zakapturzony skaven} {<CAF>} {5}
 #HIGHLIGHT {%iczarnowlosy wyniosly mezczyzna} {<CAF>} {5}
@@ -34,6 +35,7 @@
 #HIGHLIGHT {%ipokrzywiony wiekowy skaven} {<CAF>} {5}
 #HIGHLIGHT {%iponury czujny mezczyzna} {<CAF>} {5}
 #HIGHLIGHT {%iporywczy szczerbaty mezczyzna} {<CAF>} {5}
+#HIGHLIGHT {%iposepkny okrutny rycerz chaosu} {<CAF>} {5}
 #HIGHLIGHT {%ipostawny czerwonowlosy hobgoblin} {<CAF>} {5}
 #HIGHLIGHT {%ipostawny muskularny mezczyzna} {<CAF>} {5}
 #HIGHLIGHT {%ipostawny nocny goblin} {<CAF>} {5}
