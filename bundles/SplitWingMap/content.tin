@@ -80,31 +80,31 @@
 
 #alias {SplitWingMap_Journal_1} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw tile $offsetw-2 $offsetx $offsetw $offseth <088>%0;
+        #draw tile $offsety $offsetx $offsety $offseth <088>%0;
     };
 };
 
 #alias {SplitWingMap_Journal_2} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw tile $offsetw-3 $offsetx $offsetw $offseth <088>%0;
+        #draw tile $offsety $offsetx $offsety+1 $offseth <088>%0;
     };
 };
 
 #alias {SplitWingMap_Journal_3} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw tile $offsetw-4 $offsetx $offsetw $offseth <088>%0;
+        #draw tile $offsety $offsetx $offsety+2 $offseth <088>%0;
     };
 };
 
 #alias {SplitWingMap_Journal_4} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw tile $offsetw-5 $offsetx $offsetw $offseth <088>%0;
+        #draw tile $offsety $offsetx $offsety+3 $offseth <088>%0;
     };
 };
 
 #alias {SplitWingMap_Journal_5} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw tile $offsetw-6 $offsetx $offsetw $offseth <088>%0;
+        #draw tile $offsety $offsetx $offsety+4 $offseth <088>%0;
     };
 };
 
@@ -133,15 +133,15 @@
 
 #alias {SplitWingMap_LabelBind} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-            #draw <aaf> rounded box $offsety $offsetx+1 $offsety+2 $offsetx+13 {<AAF><178> LOKACYJNY <088>};
-            #sh {<168> %0<088>} {$offsety+1} {$offsetx+14};
+            #draw <aaf> rounded box $offsetw-3 $offsetx $offsetw-1 $offsetx+12 {<AAF><178> LOKACYJNY <088>};
+            #sh {<168> %0<088>} {$offsetw-2} {$offsetx+13};
     };
 };
 
 #alias {SplitWingMap_Warning} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-            #draw <faa> rounded box $offsety+4 $offsetx+1 $offsety+6 $offsetx+13 {<FAA><178> QUICKBIND <088>};
-            #sh {<118> %0<088>} {$offsety+5} {$offsetx+14};
+            #draw <faa> rounded box $offsetw-6 $offsetx $offsetw-4 $offsetx+12 {<FAA><178> QUICKBIND <088>};
+            #sh {<118> %0<088>} {$offsetw-5} {$offsetx+13};
     };
 };
 

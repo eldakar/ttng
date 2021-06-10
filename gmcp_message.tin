@@ -19,6 +19,9 @@
 				#regex {$commtext} {Mowisz%*: %*} {
 					topchat_add_static <158>&2;
 				};
+				#regex {$commtext} {Szepczesz%*: %*} {
+					topchat_add_static <058>&2;
+				};
 			};
 
 			#sh {$GMCPMSGS[text]};
