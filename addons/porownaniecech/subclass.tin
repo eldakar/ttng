@@ -1,4 +1,4 @@
-#action {Masz wrazenie, ze jest rownie dobrze zbudowany} {#var cmp_vit 0;ComparerShow#line gag};
+#action {Masz wrazenie, ze jest rownie dobrze zbudowany} {#var cmp_vit 0;ComparerShow;#line gag};
 #action {Masz wrazenie, ze jest niewiele lepiej zbudowany} {#var cmp_vit -1;ComparerShow;#line gag};
 #action {Masz wrazenie, ze jest troche lepiej zbudowany} {#var cmp_vit -2;ComparerShow;#line gag};
 #action {Masz wrazenie, ze jest lepiej zbudowany} {#var cmp_vit -3;ComparerShow;#line gag};
@@ -75,7 +75,7 @@
 
 
 
-#action {Masz wrazenie, ze jest rownie dobrze zbudowana} {#var cmp_vit 0;ComparerShow#line gag};
+#action {Masz wrazenie, ze jest rownie dobrze zbudowana} {#var cmp_vit 0;ComparerShow;#line gag};
 #action {Masz wrazenie, ze jest niewiele lepiej zbudowana} {#var cmp_vit -1;ComparerShow;#line gag};
 #action {Masz wrazenie, ze jest troche lepiej zbudowana} {#var cmp_vit -2;ComparerShow;#line gag};
 #action {Masz wrazenie, ze jest lepiej zbudowana} {#var cmp_vit -3;ComparerShow;#line gag};
