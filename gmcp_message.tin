@@ -12,12 +12,15 @@
 				#foreach {*duch[]} {dydydy} {
 					#var shitTODOvar {$duch[$dydydy][desc]_};
 					#if {"$duch[$dydydy][desc]" == "&1" && "$postac[$shitTODOvar][gildia]" != "" && "$postac[$shitTODOvar][gildia]" != "NPC"} {
-						topchat_add_static <cfc>(mowa) &1: &4;
+						topchat_add_static <cfc>&1: &4;
 					};
 				};
 			} {
-				#regex {$commtext} {Mowisz%*:} {
-					topchat_add_static <158>$commtext;
+				#regex {$commtext} {Mowisz%*: %*} {
+					topchat_add_static <158>&2;
+				};
+				#regex {$commtext} {Szepczesz%*: %*} {
+					topchat_add_static <058>&2;
 				};
 			};
 
@@ -57,12 +60,7 @@
 #nop DEBUG;	#line substitute {variables} {#line strip {
 				#var gmcp_short {$outputtext};
 			}};
-			#if {$bind_found > 0} {
-				SplitWingMap_LabelBind $bind_run;
-			};
 			#sh {$outputtext};
-			#nop BIND OR COMMAND;
-		    #if {"$rooa" != ""} {$rooa};
 
 			#line strip {#var temp_short {$outputtext}};
 			#line substitute {variables} {

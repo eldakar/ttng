@@ -1,0 +1,24 @@
+#var _ping_ 0;
+#var _pinging_ 0;
+#alias {/ping} {
+	#if {$_pinging_ == 0} {
+		#if {"$ConfigManager_Configs[echokomend]" == "widoczne"} {
+			#unevent {SEND OUTPUT};
+			#line quiet #send {\xFF\xFA\xC9core.ping\xFF\xF0\};
+			#read events/io.tin;
+		} {
+			#line quiet #send {\xFF\xFA\xC9core.ping\xFF\xF0\};
+		}
+		#format _pingepock_ {%T};
+	};
+} {1};
+
+#event {IAC SB GMCP core.ping IAC SE} {
+	#format _pongepock_ {%T};
+	#math {_ping_} {$_pongepock_ - $_pingepock_};
+	#if {$_ping_ > 0} {
+		#format {_p_c_stamp_} {%t} {%H:%M:%S};
+		#line log {bundles/ConfigManager/Profiles/lag-errors} {$_p_c_stamp_ $_ping_};
+	};
+	#var _pinging_ 0;
+};

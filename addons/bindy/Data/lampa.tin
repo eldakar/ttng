@@ -5,7 +5,7 @@
 	zapal lampe;
 };
 
-#action {Zapalasz} {
+#action {Zapalasz %*lampe.} {
 	#var lampastatus on;
 	#ticker lampa {
 		Highlights_event <138>Lampa - Alias: <028>nap<088><138> - Napelnij lampe!<088>;
@@ -18,12 +18,12 @@
 	Highlights_event <138>Lampa - Alias: <028>nap<088><138> -  Napelnij i zapal lampe!<088>;
 };
 
-#action {Gasisz %* lampe} {
+#action {Gasisz %* {lampe|swiece}} {
 	#var lampastatus off;
 	#untick lampa;
 };
 
-#action {Gasisz lampe} {
+#action {Gasisz {lampe|swiece}} {
 	#var lampastatus off;
 	#untick lampa;
 };

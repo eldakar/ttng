@@ -15,42 +15,109 @@
 #var state[mana] {0};
 
 #var bbs_fixer 0;
+#var PONGED 0;
 
 #read tools/graph.tin;
 
-#alias rysuj_forme {#nop {};};
-#alias rysuj_paski {#nop {};};
-
-#alias {meldujprzy} {
-	#var pmeldujprzy $ConfigManager_Configs[meldujprzy];
-};
-
-#alias {stylpaskow} {
-	#if {"$ConfigManager_Configs[stylpaskow]" == "graph"} {
-		#alias rysuj_paski rysuj_paski_graph;
-	} {
-		#alias rysuj_paski rysuj_paski_standard;
-	};
-	#if {"$ConfigManager_Configs[pasek]" == "medium"} {
-		#draw <AAA> tile $screenrows-3 1 $screenrows-1 $screencols-1;
-		BottomBar_Selected;
-	};
-};
-
-#alias {naroznikpaska} {
-	#if {"$ConfigManager_Configs[naroznikpaska]" == "fps"} {
-		#ticker fpsticker {
-			#line quiet #line capture fpstest #line bench {#sh dupa};
-			#regex {$fpstest[2]} {%* %d USEC.} {
-				#math fpsTestResultValue {2000 - &2};
+#nop CONF;	#alias {meldujprzy} {
+				#var pmeldujprzy $ConfigManager_Configs[meldujprzy];
 			};
-		} {1};
-		#alias rysuj_forme rysuj_forme_fps;
-	} {
-		#alias rysuj_forme rysuj_forme_standard;
-		#untick fpsticker;
-	};
-};
+
+#nop CONF;	#alias {alertkondycja} {
+				#if {"$ConfigManager_Configs[alertkondycja]" == ""} {
+					#var palertkondycja 2;
+				} {
+					#var palertkondycja $ConfigManager_Configs[alertkondycja];
+				};
+			};
+
+#nop CONF;	#alias {alertkondycjatekst} {
+				#if {"$ConfigManager_Configs[alertkondycjatekst]" == ""} {
+					#var palertkondycjatekst {Spadla kondycja - nie masz ustawionego klawisza};
+				} {
+					#var palertkondycjatekst $ConfigManager_Configs[alertkondycjatekst];
+				};
+			};
+
+#nop CONF;	#alias {stylpaskow} {
+				#if {"$ConfigManager_Configs[stylpaskow]" == "graph"} {
+					#alias rysuj_paski rysuj_paski_graph;
+				} {
+					#alias rysuj_paski rysuj_paski_standard;
+				};
+				#if {"$ConfigManager_Configs[pasek]" == "medium"} {
+					#draw <AAA> tile $screenrows-3 1 $screenrows-1 $screencols-1;
+					BottomBar_Selected;
+				};
+			}; #alias rysuj_paski {#nop {};};
+
+#nop CONF;	#alias {czatwpasku} {
+				#if {"$ConfigManager_Configs[czatwpasku]" == "wlacz"} {
+					#alias rysuj_czat rysuj_czat_wlacz;
+				} {
+					#alias rysuj_czat {#nop {};};
+				};
+				#if {"$ConfigManager_Configs[pasek]" == "medium"} {
+					#draw <AAA> tile $screenrows-3 1 $screenrows-1 $screencols-1;
+					BottomBar_Selected;
+				};
+			}; #alias rysuj_czat {#nop {};};
+
+			#alias rysuj_czat_wlacz {
+				#if {"$ConfigManager_Configs[czatwpasku]" == "wlacz" && "$ConfigManager_Configs[pasek]" == "medium"} {
+					#if {"$ConfigManager_Configs[stylpaskow]" == "graph"} {
+						#var dlugosc_paskow 83;	
+					} {
+						#math dlugosc_paskow {$maxBarSize * 2 + 15};
+					};
+					#draw tile $screenrows-3 24+$dlugosc_paskow $screenrows-1 $screencols-39 $topchat[48]\n$topchat[49]\n$topchat[50];
+					#nop topchat[$bcvc];
+				};
+			};
+
+			#event {VARIABLE UPDATED chat_updated} {BottomBar_Selected;};
+
+
+#nop ###########################################################;
+#nop Naroznik: wartosc fps lub standard                         ;
+#nop ###########################################################;
+#nop CONF;	#alias {naroznikpaska} {
+				#if {"$ConfigManager_Configs[naroznikpaska]" == "fps"} {
+					#ticker fpsticker {
+						#line quiet #line capture fpstest #line bench {#sh dupa};
+						#regex {$fpstest[2]} {%* %d USEC.} {
+							#math fpsTestResultValue {2000 - &2};
+						};
+					} {10};
+					#ticker pingticker {
+						#line quiet /ping;
+					} {2};
+					#alias rysuj_forme rysuj_forme_fps;
+				} {
+					#alias rysuj_forme rysuj_forme_standard;
+					#untick pingticker;
+					#untick fpsticker;
+				};
+			}; #alias rysuj_forme {#nop {};};
+			#event {VARIABLE UPDATED fpsTestResultValue} {
+				BottomBar_Selected;
+			};
+			#event {VARIABLE UPDATED _ping_} {
+				BottomBar_Selected;
+			};
+
+			#event {VARIABLE UPDATED PONGED} {
+				#switch {"$PONGED"} {
+					#case {"1"} {#var mapPongedValue {<CDA><aaa> readonly }};
+					#case {"2"} {#var mapPongedValue {<AFA><aaa>  online  }};
+					#default {#var mapPongedValue    {<088> off-line }};
+				};
+				BottomBar_Selected;
+			};
+
+#nop ###########################################################;
+#nop ###########################################################;
+
 
 #alias {szerokoschpkow} {
 	#if {"$ConfigManager_Configs[szerokoschpkow]" == ""} {
@@ -72,34 +139,34 @@
 	};	
 }
 
-#nop CONFIG; #alias {pasek} {
-	#if {"$ConfigManager_Configs[pasek]" == ""} {
-		/conf pasek medium;
-	} {
-		#switch {"$ConfigManager_Configs[pasek]"} {
-			#case {"medium"} {
-				#alias BottomBar_Selected {BottomBarTinyFugue};
-				#var global_bundle_slots_values[prompt][bottom] {3};
-			};
-			#case {"mini"} {
-				#alias BottomBar_Selected {BottomBarMini};
-				#var global_bundle_slots_values[prompt][bottom] {3};
-			};
-			#case {"micro"} {
-				#alias BottomBar_Selected {BottomBarMicro};
-				#var global_bundle_slots_values[prompt][bottom] {3};
-			};
-			#case {"keyboard"} {
-				#alias BottomBar_Selected {BottomKeyboard};
-				#var global_bundle_slots_values[prompt][bottom] {14};
-			};
-		};
-	};
-	#if {"$ConfigManager_Configs[pasek]" == "medium"} {
-		#draw {$bbBGC} tile $screenrows-3 1 $screenrows-1 $screencols-1;
-	};
-	SplitRefreshRequestRefresh; 
-}
+#nop CONF;	#alias {pasek} {
+				#if {"$ConfigManager_Configs[pasek]" == ""} {
+					/conf pasek medium;
+				} {
+					#switch {"$ConfigManager_Configs[pasek]"} {
+						#case {"medium"} {
+							#alias BottomBar_Selected {BottomBarTinyFugue};
+							#var global_bundle_slots_values[prompt][bottom] {3};
+						};
+						#case {"mini"} {
+							#alias BottomBar_Selected {BottomBarMini};
+							#var global_bundle_slots_values[prompt][bottom] {3};
+						};
+						#case {"micro"} {
+							#alias BottomBar_Selected {BottomBarMicro};
+							#var global_bundle_slots_values[prompt][bottom] {3};
+						};
+						#case {"keyboard"} {
+							#alias BottomBar_Selected {BottomKeyboard};
+							#var global_bundle_slots_values[prompt][bottom] {14};
+						};
+					};
+				};
+				#if {"$ConfigManager_Configs[pasek]" == "medium"} {
+					#draw {$bbBGC} tile $screenrows-3 1 $screenrows-1 $screencols-1;
+				};
+				SplitRefreshRequestRefresh; 
+			}
 
 #alias kolorzaslonwrogow {
 	#if {"$ConfigManager_Configs[kolorzaslonwrogow]" == ""} {
@@ -138,7 +205,13 @@
 						qb melduj_zmeczenie;
 					};
 				};
-				rysuj_paski;
+				#if {$charstate[hp] <= $palertkondycja} {
+				    #line quiet #line capture lokbutton #draw <faa> scroll box 1 1 3 12 {<FAA><178> KONDYCJA <088>};
+				    #line ignore #sh {$lokbutton[1]};
+				    #line ignore #sh {$lokbutton[2] <118> $palertkondycjatekst<088>};
+				    #line ignore #sh {$lokbutton[3]};
+				};
+				BottomBar_Selected;
 			};
 
 #nop #############################################################;
@@ -162,46 +235,46 @@
 #nop #############################################################;
 #var manewrlevel {5};
 #alias {manewr_start} {
-	#var manewrlevel {0};rysuj_paski;
-	#delay {manewrlevel5} {#var manewrlevel {5};rysuj_paski;} {5};
-	#delay {manewrlevel4} {#var manewrlevel {4};rysuj_paski;} {4};
-	#delay {manewrlevel3} {#var manewrlevel {3};rysuj_paski;} {3};
-	#delay {manewrlevel2} {#var manewrlevel {2};rysuj_paski;} {2};
-	#delay {manewrlevel1} {#var manewrlevel {1};rysuj_paski;} {1};
+	#var manewrlevel {0};BottomBar_Selected;
+	#delay {manewrlevel5} {#var manewrlevel {5};BottomBar_Selected;} {5};
+	#delay {manewrlevel4} {#var manewrlevel {4};BottomBar_Selected;} {4};
+	#delay {manewrlevel3} {#var manewrlevel {3};BottomBar_Selected;} {3};
+	#delay {manewrlevel2} {#var manewrlevel {2};BottomBar_Selected;} {2};
+	#delay {manewrlevel1} {#var manewrlevel {1};BottomBar_Selected;} {1};
 };
 #nop #############################################################;
 #nop ############# ROZKAZY                 #######################;
 #nop #############################################################;
 #var rozkazlevel {15};
 #alias {rozkaz_start} {
-	#var rozkazlevel {0};rysuj_paski;
-	#delay {rozkazlevel15} {#var rozkazlevel {15};rysuj_paski;} {15};
-	#delay {rozkazlevel14} {#var rozkazlevel {14};rysuj_paski;} {14};
-	#delay {rozkazlevel13} {#var rozkazlevel {13};rysuj_paski;} {13};
-	#delay {rozkazlevel12} {#var rozkazlevel {12};rysuj_paski;} {12};	
-	#delay {rozkazlevel11} {#var rozkazlevel {11};rysuj_paski;} {11};
-	#delay {rozkazlevel10} {#var rozkazlevel {10};rysuj_paski;} {10};
-	#delay {rozkazlevel9} {#var rozkazlevel {9};rysuj_paski;} {9};
-	#delay {rozkazlevel8} {#var rozkazlevel {8};rysuj_paski;} {8};
-	#delay {rozkazlevel7} {#var rozkazlevel {7};rysuj_paski;} {7};
-	#delay {rozkazlevel6} {#var rozkazlevel {6};rysuj_paski;} {6};
-	#delay {rozkazlevel5} {#var rozkazlevel {5};rysuj_paski;} {5};
-	#delay {rozkazlevel4} {#var rozkazlevel {4};rysuj_paski;} {4};
-	#delay {rozkazlevel3} {#var rozkazlevel {3};rysuj_paski;} {3};
-	#delay {rozkazlevel2} {#var rozkazlevel {2};rysuj_paski;} {2};
-	#delay {rozkazlevel1} {#var rozkazlevel {1};rysuj_paski;} {1};
+	#var rozkazlevel {0};BottomBar_Selected;
+	#delay {rozkazlevel15} {#var rozkazlevel {15};BottomBar_Selected;} {15};
+	#delay {rozkazlevel14} {#var rozkazlevel {14};BottomBar_Selected;} {14};
+	#delay {rozkazlevel13} {#var rozkazlevel {13};BottomBar_Selected;} {13};
+	#delay {rozkazlevel12} {#var rozkazlevel {12};BottomBar_Selected;} {12};	
+	#delay {rozkazlevel11} {#var rozkazlevel {11};BottomBar_Selected;} {11};
+	#delay {rozkazlevel10} {#var rozkazlevel {10};BottomBar_Selected;} {10};
+	#delay {rozkazlevel9} {#var rozkazlevel {9};BottomBar_Selected;} {9};
+	#delay {rozkazlevel8} {#var rozkazlevel {8};BottomBar_Selected;} {8};
+	#delay {rozkazlevel7} {#var rozkazlevel {7};BottomBar_Selected;} {7};
+	#delay {rozkazlevel6} {#var rozkazlevel {6};BottomBar_Selected;} {6};
+	#delay {rozkazlevel5} {#var rozkazlevel {5};BottomBar_Selected;} {5};
+	#delay {rozkazlevel4} {#var rozkazlevel {4};BottomBar_Selected;} {4};
+	#delay {rozkazlevel3} {#var rozkazlevel {3};BottomBar_Selected;} {3};
+	#delay {rozkazlevel2} {#var rozkazlevel {2};BottomBar_Selected;} {2};
+	#delay {rozkazlevel1} {#var rozkazlevel {1};BottomBar_Selected;} {1};
 };
 #nop #############################################################;
 #nop ############# BLOKOWANIE TWOJE        #######################;
 #nop #############################################################;
 #var blockselflevel {0};
 #alias {blok_start} {
-	#var blockselflevel {0};rysuj_paski;
-	#delay {blockselflevel5} {#var blockselflevel {5};rysuj_paski;} {5};
-	#delay {blockselflevel4} {#var blockselflevel {4};rysuj_paski;} {4};
-	#delay {blockselflevel3} {#var blockselflevel {3};rysuj_paski;} {3};
-	#delay {blockselflevel2} {#var blockselflevel {2};rysuj_paski;} {2};
-	#delay {blockselflevel1} {#var blockselflevel {1};rysuj_paski;} {1};
+	#var blockselflevel {0};BottomBar_Selected;
+	#delay {blockselflevel5} {#var blockselflevel {5};BottomBar_Selected;} {5};
+	#delay {blockselflevel4} {#var blockselflevel {4};BottomBar_Selected;} {4};
+	#delay {blockselflevel3} {#var blockselflevel {3};BottomBar_Selected;} {3};
+	#delay {blockselflevel2} {#var blockselflevel {2};BottomBar_Selected;} {2};
+	#delay {blockselflevel1} {#var blockselflevel {1};BottomBar_Selected;} {1};
 };
 
 
@@ -363,9 +436,7 @@
 };
 #action {przestaje odcinac twoja droge ucieczki} {
 	#var blockselflevel 0;
-	#if {"$ConfigManager_Configs[pasek]" == "medium"} {
-		rysuj_paski;
-	};
+	BottomBar_Selected;
 };
 
 
@@ -405,9 +476,7 @@
 
 #action {Ciemne miejsce} {
 	#var rozk2 {{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
-	#if {"$ConfigManager_Configs[pasek]" == "medium"} {
-		rysuj_roze;
-	};
+	BottomBar_Selected;
 };
 
 #nop #############################################################;
@@ -479,14 +548,17 @@
 #alias {BottomBarTinyFugue} {
 	#nop RYSUJEMY ROZE PO LEWEJ;
 	rysuj_roze; 
-	#nop RYSUJEMY PASEK FORMY;
-	rysuj_forme;
 	#nop RYSUJEMY CUSTOM EXITS;
 	rysuj_customs;
 	#nop RYSUJEMY PASKI GLOWNE;
 	rysuj_paski;
+	#nop RYSUJEMY CZAT;
+	rysuj_czat;
 	#nop RYSUJEMY PRZYCISKI WALKI;
 	rysuj_przyciski;
+	#nop RYSUJEMY PASEK FORMY;
+	rysuj_forme;
+
 };
 
 #alias rysuj_forme_standard {
@@ -499,9 +571,9 @@
 
 #alias rysuj_forme_fps {
 	#math {pozycjapaskaformy} {$screencols - 16};
-	#line ignore #sh {${bbBGC}FPS   :          <088>} {-4} {$pozycjapaskaformy};
-	#line ignore #sh {${bbBGC}Panika: $state[panic] Prag: $state[soaked]<088>} {-3} {$pozycjapaskaformy};
-	#line ignore #sh {${bbBGC}Ciezar: $state[encumbrance] Pija: $state[intox]<088>} {-2} {$pozycjapaskaformy};
+	#line ignore #sh {${bbBGC}FPS [@graph{$fpsTestResultValue;2000}]<088>} {-4} {$pozycjapaskaformy};
+	#line ignore #sh {${bbBGC}LAG $_ping_ <088>} {-3} {$pozycjapaskaformy};
+	#line ignore #sh {${bbBGC}MAP [$mapPongedValue<088>]} {-2} {$pozycjapaskaformy};
 };
 
 #var ptrybchodzeniasymbol {<128>W};
@@ -521,7 +593,6 @@
 #alias rysuj_customs {
 	#draw {<088>$bbBGC} tile $screenrows-3 12 $screenrows-1 22 $bbBGC<ffa>$roza_custom;
 };
-
 
 
 #alias rysuj_paski_standard {

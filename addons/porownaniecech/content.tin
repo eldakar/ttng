@@ -51,7 +51,8 @@
 	#nop format {CompareResult} {|%-20s |%+2s|%+2s|%+2s||%+2s| %+3s |} {$duch[$porId][desc]} {$cmp_str} {$cmp_dex} {$cmp_vit} {$compSum} {$targetpoints};
 
 	#format {CompareResult} {  %-20s | %-2s %-2s %.2s %.2s %+3s %-3s} {$duch[$porId][bar][orc]} {$cmp_str} {$cmp_dex} {$cmp_vit} {$compSum} {$targetpoints} {$pvpdb[$duch[$porId][desc]][zawod]};
-	#line ignore #showme {$CompareResult} {$offsetw+1-$linetouse} $offsetx-1;
+	#nop line ignore #showme {$CompareResult} {$offsetw+1-$linetouse} $offsetx-1;
+	#line ignore #showme {$CompareResult};
 	#math linetouse {$linetouse+1};
 	#nop show {$duch[$porId][desc] $cmp_str $cmp_dex $cmp_vit = $compSum  -> $targetpoints};
 	#delay {5} {

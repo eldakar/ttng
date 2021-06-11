@@ -120,7 +120,7 @@
 #var reverse_brakuje[0] {<faa>bardzo duzo<088>};
 #var reverse_brakuje[1] {<faa>duzo<088>};
 #var reverse_brakuje[2] {<ffa>troche<088>};
-#var reverse_brakuje[3] {<ffa>niewiele<088>};
+#var reverse_brakuje[3] {<afa>niewiele<088>};
 #var reverse_brakuje[4] {<afa>bardzo niewiele<088>};
 
 #var zaliczasz[sile] {str};

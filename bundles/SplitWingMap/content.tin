@@ -70,85 +70,80 @@
     };
 };
 
+#nop UZYWANY TYLKO PRZY OCENIE SPRZETU ??;
 #alias {SplitWingMap_Popup} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
         #draw violet circled box $offsetw-15 $offsetx+3 $offsetw-7 $offseth-3 <088>%0;
     };
 };
 
-#alias {SplitWingMap_Journal} {
-    #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-            #nop                   Y          X        Y + H        X + W            ;      
-            #nop draw jeweled box $offsety+34 $offsetx+3 $offsetw-5 $offseth-3 <088>%0;
-            #math maxheight { ($offsetw - 5 - $offsety) / 3 };
-            #math bot_row {$offsetw - ($offsetw / 5)};
-            #draw bottom tile $bot_row $offsetx $offsetw $offseth-3 <088>%0;
-    };
-};
 
 #alias {SplitWingMap_Journal_1} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw tile $offsetw-2 $offsetx $offsetw $offseth <088>%0;
+        #draw tile $offsety $offsetx $offsety $offseth <088>%0;
     };
 };
 
 #alias {SplitWingMap_Journal_2} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw tile $offsetw-3 $offsetx $offsetw $offseth <088>%0;
+        #draw tile $offsety $offsetx $offsety+1 $offseth <088>%0;
     };
 };
 
 #alias {SplitWingMap_Journal_3} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw tile $offsetw-4 $offsetx $offsetw $offseth <088>%0;
+        #draw tile $offsety $offsetx $offsety+2 $offseth <088>%0;
     };
 };
 
 #alias {SplitWingMap_Journal_4} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw tile $offsetw-5 $offsetx $offsetw $offseth <088>%0;
+        #draw tile $offsety $offsetx $offsety+3 $offseth <088>%0;
     };
 };
 
 #alias {SplitWingMap_Journal_5} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw tile $offsetw-6 $offsetx $offsetw $offseth <088>%0;
+        #draw tile $offsety $offsetx $offsety+4 $offseth <088>%0;
     };
 };
 
 
-#alias {SplitWingMap_Board} {
-    #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw jeweled box $offsety+10 $offsetx+3 $offsetw-5 $offseth-3 <088>%0;
-    };
-};
+#nop NIEUZYWANE;    #unalias {SplitWingMap_Board} {
+                        #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
+                            #draw jeweled box $offsety+10 $offsetx+3 $offsetw-5 $offseth-3 <088>%0;
+                        };
+                    };
 
-#alias {SplitWingMap_LabelMap} {
-    #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw circled box $offsety+2 $offsetx+3 $offsety+4 $offseth-3 <088>%0<088>;
-    };
-};
+#nop NIEUZYWANE;    #unalias {SplitWingMap_LabelMap} {
+                        #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
+                            #draw circled box $offsety+2 $offsetx+3 $offsety+4 $offseth-3 <088>%0<088>;
+                        };
+                    };
+
+#nop NIEUZYWANY;    #unalias {SplitWingMap_Journal} {
+                        #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
+                                #nop                   Y          X        Y + H        X + W            ;      
+                                #nop draw jeweled box $offsety+34 $offsetx+3 $offsetw-5 $offseth-3 <088>%0;
+                                #math maxheight { ($offsetw - 5 - $offsety) / 3 };
+                                #math bot_row {$offsetw - ($offsetw / 5)};
+                                #draw bottom tile $bot_row $offsetx $offsetw $offseth-3 <088>%0;
+                        };
+                    };
 
 #alias {SplitWingMap_LabelBind} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #nop draw green circled box $offsety+5 $offsetx+3 $offsety+7 $offseth-3 <128>BIND LOKACJA: %0;
-        #draw green circled box $offsety $offsetx $offsety+2 $offseth <128>BIND LOKACJA: %0;
-    };
-};
-
-#alias {SplitWingMap_LabelBind_Reverse} {
-    #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #nop draw green circled box $offsety+5 $offsetx+3 $offsety+7 $offseth-3 <128>BIND LOKACJA: %0;
-        #draw <AFA> circled ascii center box $offsety $offsetx+2 $offsety+2 $offseth-2 <AFA><aaa>BIND LOKACJA: %0;
+            #draw <aaf> rounded box $offsetw-3 $offsetx $offsetw-1 $offsetx+12 {<AAF><178> LOKACYJNY <088>};
+            #sh {<168> %0<088>} {$offsetw-2} {$offsetx+13};
     };
 };
 
 #alias {SplitWingMap_Warning} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-        #draw red tubed box $offsety+1 $offsetx+3 $offsety+3 $offseth-3 <118>%0<088>;
+            #draw <faa> rounded box $offsetw-6 $offsetx $offsetw-4 $offsetx+12 {<FAA><178> QUICKBIND <088>};
+            #sh {<118> %0<088>} {$offsetw-5} {$offsetx+13};
     };
 };
-
 
 
 #var topdrag 0

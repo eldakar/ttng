@@ -113,7 +113,7 @@
 
 
 
-   #foreach {*collector[]} {collId} {
+   #nop foreach {*collector[]} {collId} {
       #if {@IsIdTeam{$collId} < 1 && $collId != $CHAR_INFO[object_num] && $collId > 0 && @StrLen{$collector[$collId][short]} > 0} {
 #nop SENT ITEMS;
          #var total_zadane 0;

@@ -162,3 +162,5 @@
 	#class markups close;
 	#class markups write bundles/ConfigManager/Profiles/markups.tt;
 };
+
+/show

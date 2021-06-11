@@ -10,6 +10,13 @@
         {terrain} {pustka}
         {type} {mob}
     }
+    {4446} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {rzeka}
+        {type} {mob}
+    }
     {4461} 
     {
         {rendered} {1}

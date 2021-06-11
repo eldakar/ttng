@@ -6,6 +6,7 @@
 #action {%1 chwyta za line skryta posrod pnacz bluszczu i razno zaczyna wspinac sie po niej na szczyt urwiska.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz po linie}};
 #action {%1 podchodzi do cedru na skraju urwiska, chwyta za przywiazana do jego pnia line i zaczyna schodzic na dol.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zejdz po linie}};
 #action {%1 wspina sie na drzewo} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wespnij sie na drzewo}};
+#action {%1 zaczyna wspinac sie po scianie} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz na gore}};
 #action {%1 podchodzi pod bluszczowa zaslone. Rozglada sie chwile, po czym rozwiera } {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przedrzyj sie przez bluszcz}};
 #action {%1 wciska sie za najwiekszy krzak jalowca.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz za najwiekszy krzak}};
 #action {%1 podaza przez furtke} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przejdz przez furtke}};

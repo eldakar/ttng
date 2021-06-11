@@ -10,9 +10,13 @@
 #list bundle_deps clear;
 	#list bundle_deps add {ConfigManager};
 		#list bundle_configs add {meldujprzy};
+		#list bundle_configs add {alertkondycja};
+		#list bundle_configs add {alertkondycjatekst};
+		
 		#list bundle_configs add {pasek};
 			#list bundle_configs add {stylpaskow};
 			#list bundle_configs add {naroznikpaska};
+			#list bundle_configs add {czatwpasku};
 		#list bundle_configs add {szerokoschpkow};
 		#list bundle_configs add {probymanewrow};
 		#list bundle_configs add {kolorzaslonwrogow};

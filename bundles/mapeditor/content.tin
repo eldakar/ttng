@@ -13,6 +13,7 @@
 #alias {/mapka} {/help TTMapEditor} {1};
 
 #alias {TTMapEditorAddress} {
+    #var PONGED 0;
     #var tmp {$ConfigManager_Configs[TTMapEditorAddress]};
     #replace tmp {,} {;};
     #list connstr create {$tmp};
