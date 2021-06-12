@@ -176,6 +176,11 @@ TUTOR /conf alertkondycjatekst OPIS
 > Kalibracja Nowiu - 75% gotowe
 > Wyswietlanie notek na gorze a przyciskow na dole...
 
+** 12/06/21 - Rozne **
+> Przerysowalem i oskryptowalem Ruiny Rinde - dodalem tez kolejnosc bicia wichtow i demonow
+> Poprawilem zawijanie wierszy na przyciskach bindow na mapie, gdy rozmiar mapy jest maly
+> Dodalem nowa opcje pozwalajaca wyswietlac/ukryc bindy na mapce
+TUTOR /conf bindynamapie wlacz|wylacz
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW

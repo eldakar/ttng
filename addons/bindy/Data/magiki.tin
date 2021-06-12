@@ -3,3 +3,9 @@
 {
 	qb przekrec stylisko
 }
+
+#action {Na samym srodku posadzki znajduje sie obramowana blyszczacym, krwistoczerwonej barwy kamieniem, studnia. Saczy sie z niej demoniczne, czerwone swiatlo, rzucajace ulotne blyski na sciany komnaty i zdobiace je plaskorzezby.} 
+{
+	#map link d 29531;
+	#map exit d command {wejdz do studni};
+}

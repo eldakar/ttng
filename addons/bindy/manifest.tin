@@ -19,6 +19,7 @@
 
 #list bundle_configs clear;
 	#list bundle_configs add {plaszcz};
+	#list bundle_configs add {bindynamapie}; 
 #nop ############################;
 #nop EVENT SLOTS ##########;
 #nop Every listed event slot has to be empty;

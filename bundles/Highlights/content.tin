@@ -14,8 +14,9 @@
 };
 
 #alias Highlights_magic {
+	#format {_p_c_stamp_} {%t} {%H:%M:%S};
 	#line ignore #sh {<118><caf>$HBar};
-	#line ignore #sh {${c_noob}Magia:<088> %0};
+	#line ignore #sh {${c_noob}Magia ($_p_c_stamp_):<088> %0};
 	#line ignore #sh {<118><caf>$HBar};	
 };
 

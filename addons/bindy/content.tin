@@ -2,6 +2,10 @@
   #var pplaszcz $ConfigManager_Configs[plaszcz];
 };
 
+#alias {bindynamapie} {
+  #var pbindynamapie $ConfigManager_Configs[bindynamapie];
+};
+
 #alias _quickbind_ {
 	#echo {<118>Zaden quickbind nie zostal ustawiony!<088>};
 };
@@ -68,7 +72,9 @@
     #sh {$lokbutton[1]};
     #sh {$lokbutton[2] <168> %0<088>};
     #sh {$lokbutton[3]};
-    SplitWingMap_LabelBind %0;
+    #if {"$pbindynamapie" == "wlacz"} {
+      SplitWingMap_LabelBind %0;
+    };
     #alias _lokacyjny_ {%0};
 };
 
@@ -83,7 +89,9 @@
   #format qbvar {%-64s %.64s} {%0};
   #bell;
   #echo {${c_stan_niski}$show_bind_};
-  SplitWingMap_Warning %0;
+  #if {"$pbindynamapie" == "wlacz"} {
+    SplitWingMap_Warning %0;
+  };
 };
 
 #alias {qbk} {
