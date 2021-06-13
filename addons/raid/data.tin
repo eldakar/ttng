@@ -4103,6 +4103,10 @@
     {
         {gildia} {NPC}
     }
+    {Flecistka_} 
+    {
+        {gildia} {BOSS}
+    }
     {Fleylz_} 
     {
         {gildia} {OHM}
@@ -19214,6 +19218,11 @@
     {
         {gildia} {NPC}
         {imie} {Thomen}
+    }
+    {kolorowowlosa_rozesmiana_elfka_} 
+    {
+        {gildia} {BOSS}
+        {imie} {Flecistka}
     }
     {korpulentna_rozczochrana_krasnoludka_} 
     {
