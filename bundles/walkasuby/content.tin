@@ -1,3 +1,5 @@
+#class pvp read bundles/ConfigManager/Profiles/pvp.data;
+
 #alias {CombatGag} {
    #var gaglevel $ConfigManager_Configs[CombatGag];
    #if {"$gaglevel" == ""} {
@@ -242,8 +244,6 @@
 
    #class pvp close;
    #class pvp write bundles/ConfigManager/Profiles/pvp.data;
-
-   #unvar collector;
 };
 
 #alias dupsijdpsa {

@@ -91,6 +91,7 @@
 				#if {"$pplaszcz" == "wlaczony"} {
 					qb otul sie plaszczem;
 				};
+				collector_offload;
 			} {34};
 		};	
 		#case {"room.contents.object"} {

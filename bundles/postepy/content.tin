@@ -176,7 +176,7 @@
   	#echo {$line};
   };
   #echo {+-----------------+------------+-----------+};
-  #math niebotow {$ConfigManager_Configs[globalnypostep] / 16};
+  #math niebotow {$ConfigManager_Configs[globalnypostep] / 15};
   #format {line} {| Globalny:  %+4s | Niebotow           %+3s |} {$ConfigManager_Configs[globalnypostep]} {$niebotow};
   #echo {$line};
   #echo {+------------------------------------------+};

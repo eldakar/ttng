@@ -8,7 +8,7 @@
 			#read events/io.tin;
 		} {
 			#line quiet #send {\xFF\xFA\xC9core.ping\xFF\xF0\};
-		}
+		};
 		#format _pingepock_ {%T};
 	};
 } {1};

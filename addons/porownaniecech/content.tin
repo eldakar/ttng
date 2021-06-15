@@ -1,9 +1,45 @@
+#function cechydisplay {
+	#switch {%1} {
+		#case {-1} {#return {<118>-  <088>}};
+		#case {-2} {#return {<118>-- <088>}};
+		#case {-3} {#return {<118>---<088>}};
+		#case {1} {#return {<128>+  <088>}};
+		#case {2} {#return {<128>++ <088>}};
+		#case {3} {#return {<128>+++<088>}};
+		#case {0} {#return {<088> = <088>}};
+		#default {
+			#if {%1 < 0} {
+				#return {<118>%1 <088>};
+			} {
+				#return {<128> %1 <088>};
+			};
+		};
+	};
+};
+
+#var cechydisplay[-3] {<118>---<088>};
+#var cechydisplay[-2] {<118>-- <088>};
+#var cechydisplay[-1] {<118>-  <088>};
+#var cechydisplay[0] {<088>   <088>};
+#var cechydisplay[1] {<128>+  <088>};
+#var cechydisplay[2] {<128>++<088>};
+#var cechydisplay[3] {<128>+++<088>};
+#var porownaniehp[0] {#      };
+#var porownaniehp[1] {##     };
+#var porownaniehp[2] {###    };
+#var porownaniehp[3] {####   };
+#var porownaniehp[4] {#####  };
+#var porownaniehp[5] {###### };
+#var porownaniehp[6] {#######};
+
+
 #alias {/por$} {
-	#map update;
-	#var linetouse 1;
 	#var tmpechocmd $ConfigManager_Configs[echokomend];
 	/conf echokomend niewidoczne;
 	#var tmp_del 0;
+	#nop list duch size duchsize;
+	#var comparedCount 1;
+	#var comparisonString {+En+-HP----+-Za--+-Imie---------------+Sil+Zre+Wyt+Sum+RAZ+<118>SCO<088>+\n};
 	#CLASS {ComparerOps} READ addons/porownaniecech/subclass.tin;
 	#foreach {*duch[]} {dydy} {
 		#if {"$duch[$dydy][desc]" != ""} {
@@ -48,16 +84,22 @@
 
 		};
 	};
-	#nop format {CompareResult} {|%-20s |%+2s|%+2s|%+2s||%+2s| %+3s |} {$duch[$porId][desc]} {$cmp_str} {$cmp_dex} {$cmp_vit} {$compSum} {$targetpoints};
 
-	#format {CompareResult} {  %-20s | %-2s %-2s %.2s %.2s %+3s %-3s} {$duch[$porId][bar][orc]} {$cmp_str} {$cmp_dex} {$cmp_vit} {$compSum} {$targetpoints} {$pvpdb[$duch[$porId][desc]][zawod]};
-	#nop line ignore #showme {$CompareResult} {$offsetw+1-$linetouse} $offsetx-1;
-	#line ignore #showme {$CompareResult};
-	#math linetouse {$linetouse+1};
-	#nop show {$duch[$porId][desc] $cmp_str $cmp_dex $cmp_vit = $compSum  -> $targetpoints};
-	#delay {5} {
+	#format porownaniename {%-20s} {$duch[$porId][desc]};
+	#format porownaniename {%.20s} {$porownaniename};
+#format {CompareResult} {|%-2s|%-7s| %-3s |%.20s|%-3s|%-3s|%-3s|%-3s|%+3s|%+3s|} {$duch[$porId][enemies]} {$porownaniehp[$duch[$porId][hp]]} {$duch[$porId][zawod]} {$porownaniename} {@cechydisplay{$cmp_str}} {@cechydisplay{$cmp_dex}} {@cechydisplay{$cmp_vit}} {@cechydisplay{$compSum}} {$targetpoints} {$duch[$porId][rating]};
+	#nop format {CompareResult} {  %-20s | %-2s %-2s %.2s %.2s %+3s %-3s} {$duch[$porId][bar][orc]} {$cmp_str} {$cmp_dex} {$cmp_vit} {$compSum} {$targetpoints} {$pvpdb[$duch[$porId][desc]][zawod]};
+
+	#var comparisonString {$comparisonString$CompareResult\n};
+	#math comparedCount {$comparedCount+1};
+	#if {$comparedCount == $duchsize} {
 		#class {ComparerOps} {kill};
 		#var porId 0;
 		#var porName {};
+		#line ignore #showme {$comparisonString+--+-------+-----+--------------------+---+---+---+---+---+---+};
 	};
 };
+
+#alias TEST {
+	#showme {$cechydisplay[%1]};
+}
