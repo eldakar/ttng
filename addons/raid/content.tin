@@ -1,126 +1,161 @@
+#nop ALIASY SYSTEMOWE DEFAULTS;
 #alias _sugerowanywrog_ {#echo {<118>Nie ma jeszcze wroga!<088>}};
 #alias _sugerowanaobrona_ {#echo {<118>Nie ma nikogo do obrony!<088>}};
 
 #alias {/kw} {#line ignore #showme {$raidbartable}} {1};
 
-#alias {gildie} {
-    #nop;
-};
+#nop CONF;  #alias {gildie} {
+                #nop;
+            };
 
-#nop USTAWIAMY TYPY PASKA ZALEZNIE OD SZEROKOSCI MAPY;
-#alias {kondycje} {
-    #var pkondycje $ConfigManager_Configs[kondycje];
-    #switch {"$pkondycje"} {
-        #case {"mini"}   {#alias {tabela_odswiez} {_tabela_odswiez_0_};#alias {render_h2} {_render_h2_0_}};
-        #case {"medium"} {#alias {tabela_odswiez} {_tabela_odswiez_1_};#alias {render_h2} {_render_h2_1_}};
-        #case {"polpelne"}  {#alias {tabela_odswiez} {_tabela_odswiez_3_};#alias {render_h2} {_render_h2_3_}};        
-        #case {"pelne"}  {#alias {tabela_odswiez} {_tabela_odswiez_4_};#alias {render_h2} {_render_h2_4_}};
+#nop CONF;  #alias {kondycje} {
+                #var pkondycje $ConfigManager_Configs[kondycje];
+                #switch {"$pkondycje"} {
+                    #case {"mini"}   {#alias {tabela_odswiez} {_tabela_odswiez_0_};#alias {render_h2} {_render_h2_0_}};
+                    #case {"medium"} {#alias {tabela_odswiez} {_tabela_odswiez_1_};#alias {render_h2} {_render_h2_1_}};
+                    #case {"polpelne"}  {#alias {tabela_odswiez} {_tabela_odswiez_3_};#alias {render_h2} {_render_h2_3_}};        
+                    #case {"pelne"}  {#alias {tabela_odswiez} {_tabela_odswiez_4_};#alias {render_h2} {_render_h2_4_}};
+                };
+            }
+
+#nop SUPER ALFA;
+#nop CONF;  #alias {zacheta} {
+                #var pzacheta $ConfigManager_Configs[zacheta];
+
+                #if {"$pzacheta" == "widoczna"} {
+                    _zacheta_pokaz_;
+                    #list event_handler_buffer_update add _zacheta_pokaz_;
+                } {
+                    #list event_handler_buffer_update find _zacheta_pokaz_ _ehbuf;
+                    #if {$_ehbuf} {
+                        #list event_handler_buffer_update delete $_ehbuf;
+                    };
+                };
+            }
+
+            #alias {_zacheta_pokaz_} {
+                #if {"$ConfigManager_Configs[powtorzenter]" == "wlaczony"} {
+                    #var lastcmd $sendoutput;
+                    #format lastcmdLen {%L} {$lastcmd};
+                    #if {$lastcmdLen > 0} {
+                        #sh {$duch[$CHAR_INFO[object_num]][bar][orc] <138>> <088>} {$screenrows} {1};
+                    };
+                } {
+                    #sh {$duch[$CHAR_INFO[object_num]][bar][orc] <128>> <088>} {$screenrows} {1};
+                };
+            };
+
+
+
+#nop CONF;  #alias {RaidTableGuildEnemies} {
+                #local tmp {$ConfigManager_Configs[RaidTableGuildEnemies]};
+                #replace tmp {,} {;};
+                #list wrogowieDB create {$tmp};
+                #foreach {*wrogowieDB[]} {wdb} {
+                    #var gildie[$wrogowieDB[$wdb]] {w}; 
+                };
+            };
+
+#nop CONF;  #alias {RaidTableGuildFriends} {
+                #local tmp {$ConfigManager_Configs[RaidTableGuildFriends]};
+                #replace tmp {,} {;};
+                #list przyjacieleDB create {$tmp};
+                #foreach {*przyjacieleDB[]} {pdb} {
+                    #var gildie[$przyjacieleDB[$pdb]] {p}; 
+                };
+            };
+
+#nop CONF;  #alias {RaidTableGuild} {
+                #local tmp {$ConfigManager_Configs[RaidTableGuild]};
+                #replace tmp {,} {;};
+                #list guildDB create {$tmp};
+                #foreach {*guildDB[]} {pdb} {
+                    #var gildie[$guildDB[$pdb]] {g}; 
+                };
+            };
+
+#nop EVENT; #alias {RaidTable_GMCP_Objects_Nums} {
+            	#var {obnu} {%0};
+            	#foreach {*duch[]} {bubu} {
+            		#list {obnu} find {$bubu} {vfob};
+            		#if {"$vfob" == "0"} {
+            			#unvar {duch[$bubu]};
+                        #unvar {duch[$bubu][bot]};
+                        #unvar {duch[$bubu][enemys]};
+                        #unvar {duch[$bubu][shown]};
+                     	}; 
+                	};
+                assign_type;
+                szukaj_wroga;
+                szukaj_team;
+                tabela_odswiez;
+                render_h2;
+                #var objectnumsRefreshed {1};
+            }
+
+#nop EVENT; #alias {RaidTable_GMCP_Objects_Data} {
+                #var {duch} {$duch} {%0};
+                assign_type;
+                szukaj_wroga;
+                szukaj_team;
+                tabela_odswiez;
+                render_h2;
+                #var objectnumsRefreshed {1};
+            }
+
+#nop Ranking celow ataku;
+#nop 1. Sprawdzamy kto jest wrogiem gildii;
+#nop 2. Pobieramy z bazy jego poziom;
+#nop    Domyslny poziom (jesli brak) to wielce+6 = 172;
+#nop !! Poziom postaci to jego wyjsciowe punkty w rankingu !!;
+#nop 3. Odejmujemy punkty zawodu od poziomu wg ponizszej tabeli;
+#nop    Brak zawodu w bazie == GP;
+#nop 4. Odejmujemy punkty brakujacego zycia, wg tabeli;
+#nop 5. Odejmujemy punkty za kazdego wroga na plecach;
+#nop    Ilosc punktow za kazdego wroga jest mnozona przez 2;
+
+#nop Przyklad #1 Postac Widzial (178) WKS (-30) W dobrym stanie (-6) = 142;
+#nop Przyklad #2 Postac Legenda (190) MC (-20) Ciezko ranny (-30) = 140;
+#nop CEL to postac o punktacji = 140;
+
+#function getRating {
+    #if {"$duch[%1][poziom]" == ""} {
+        #var duch[%1][poziom] {170};
     };
+    #math calculatedRating {$duch[%1][poziom] - $rankingzawodow[$duch[%1][zawod]] - $rankinghpkow[$duch[%1][hp]] - ($duch[%1][enemies] * 2)};
+    #return $calculatedRating;
 }
 
-#alias {zacheta} {
-    #var pzacheta $ConfigManager_Configs[zacheta];
+#var rankinghpkow[0] {50};
+#var rankinghpkow[1] {30};
+#var rankinghpkow[2] {24};
+#var rankinghpkow[3] {18};
+#var rankinghpkow[4] {12};
+#var rankinghpkow[5] {6};
+#var rankinghpkow[6] {0};
 
-    #if {"$pzacheta" == "widoczna"} {
-        _zacheta_pokaz_;
-        #list event_handler_buffer_update add _zacheta_pokaz_;
-    } {
-        #list event_handler_buffer_update find _zacheta_pokaz_ _ehbuf;
-        #if {$_ehbuf} {
-            #list event_handler_buffer_update delete $_ehbuf;
-        };
-    };
-}
-
-#alias {_zacheta_pokaz_} {
-    #if {"$ConfigManager_Configs[powtorzenter]" == "wlaczony"} {
-        #var lastcmd $sendoutput;
-        #format lastcmdLen {%L} {$lastcmd};
-        #if {$lastcmdLen > 0} {
-            #sh {$duch[$CHAR_INFO[object_num]][bar][orc] <138>> <088>} {$screenrows} {1};
-        };
-    } {
-        #sh {$duch[$CHAR_INFO[object_num]][bar][orc] <128>> <088>} {$screenrows} {1};
-    };
-};
-
-
-
-#alias {RaidTableGuildEnemies} {
-    #local tmp {$ConfigManager_Configs[RaidTableGuildEnemies]};
-    #replace tmp {,} {;};
-    #list wrogowieDB create {$tmp};
-    #foreach {*wrogowieDB[]} {wdb} {
-        #var gildie[$wrogowieDB[$wdb]] {w}; 
-    };
-};
-
-#alias {RaidTableGuildFriends} {
-    #local tmp {$ConfigManager_Configs[RaidTableGuildFriends]};
-    #replace tmp {,} {;};
-    #list przyjacieleDB create {$tmp};
-    #foreach {*przyjacieleDB[]} {pdb} {
-        #var gildie[$przyjacieleDB[$pdb]] {p}; 
-    };
-};
-
-#alias {RaidTableGuild} {
-    #local tmp {$ConfigManager_Configs[RaidTableGuild]};
-    #replace tmp {,} {;};
-    #list guildDB create {$tmp};
-    #foreach {*guildDB[]} {pdb} {
-        #var gildie[$guildDB[$pdb]] {g}; 
-    };
-};
-
-
-
-
-#alias {RaidTable_GMCP_Objects_Nums} {
-	#var {obnu} {%0};
-	#foreach {*duch[]} {bubu} {
-		#list {obnu} find {$bubu} {vfob};
-		#if {"$vfob" == "0"} {
-			#unvar {duch[$bubu]};
-            #unvar {duch[$bubu][bot]};
-            #unvar {duch[$bubu][enemys]};
-            #unvar {duch[$bubu][rownr]};
-            #unvar {duch[$bubu][shown]};
-         	}; 
-    	};
-    assign_type;
-    szukaj_wroga;
-    szukaj_team;
-    tabela_odswiez;
-    render_h2;
-    #var objectnumsRefreshed {1};
-}
-
-#alias {RaidTable_GMCP_Objects_Data}
-{
-    #var {duch} {$duch} {%0};
-    assign_type;
-    szukaj_wroga;
-    szukaj_team;
-    tabela_odswiez;
-    render_h2;
-    #var objectnumsRefreshed {1};
-}
-
+#var rankingzawodow[WKS] {30};
+#var rankingzawodow[OK] {25};
+#var rankingzawodow[MC] {20};
+#var rankingzawodow[SC] {15};
+#var rankingzawodow[RA] {10};
+#var rankingzawodow[KG] {5};
+#var rankingzawodow[GP] {0};
+#var rankingzawodow[KS] {-5};
+#var rankingzawodow[GL] {-10};
+#var rankingzawodow[OHM] {-15};
 
 
 #nop ###################################################################;
 #nop dla kazdej postaci w tablicy przypozadkuj dany typ;
 #alias {assign_type} {
+    #var duchsize {0};
     #list wrogi {clear};
     #var wrogi_index 0;
      #var neut_index 0;
     #list neut {clear};
         #var team_index 0;
     #list team {clear};
-
-    #screen get rows screenrows;
-    #var localcnt {1};
 
     #foreach {*duch[]} {dudu} {
        #var duch[$dudu][enemies] {0};
@@ -131,9 +166,20 @@
         #format {duchtrue} {%L} {$duch[$dudu][living]};
         #if {$duchtrue > 2} {
 
+            #math duchsize {$duchsize + 1};
          	#var duch[$dudu][bot] {};
             #var duch[$dudu][shown] {0};
- 
+
+            #if {"$pvpdb[$duch[$dudu][desc]][zawod]" != ""} {
+                #var duch[$dudu][zawod] $pvpdb[$duch[$dudu][desc]][zawod];
+            } {
+                #var duch[$dudu][zawod] {GP};
+            };
+
+            #if {"$pvpdb[$duch[$dudu][desc]][poziom]" != ""} {
+                #var duch[$dudu][poziom] $pvpdb[$duch[$dudu][desc]][poziom];
+            };
+
             #if {$duch[$dudu][attack_num] > 0} {
    	         #math duch[$duch[$dudu][attack_num]][enemies] {$duch[$duch[$dudu][attack_num]][enemies] + 1};
             };
@@ -142,6 +188,8 @@
                 #var avatarid {$dudu};
                 #var duch[$dudu][desc] {$AVATAR_NAME};
             } {
+
+            #var duch[$dudu][rating] @getRating{$dudu};
 
             #var test {$duch[$dudu][desc]};
             #replace test { } {_};
@@ -224,10 +272,6 @@
                     };
                 };
             };
-            
-    	    #var duch[$dudu][rownr] {$localcnt};
-                #var rowmap[$rcnt] {$dudu};
-                #math {localcnt} {$localcnt + 1};
 
     	    };
 
@@ -266,6 +310,25 @@
     };
     #return 0;
 };
+
+#function IsPlayer {
+    #regex {%0} {%w %w %W} {
+        #format tmpShort {%l} {%0};
+        #replace tmpShort { } {_};
+    } {
+        #regex {%0} {%w} {
+            #var tmpShort {%0};
+        };
+    };
+    #var tmpShort {${tmpShort}_};
+
+    #if {"$postac[$tmpShort][gildia]" != "" && "$postac[$tmpShort][gildia]" != "NPC"} {
+        #return 1;
+    } {
+        #return 0;
+    }
+};
+
 
 #function GetEnemyTarget {
     #local myTmpId @ShortToId{%0};
@@ -969,7 +1032,7 @@
 };
 
 
-#alias {render_h2} {_render_h2_4_}
+#alias {render_h2} {_render_h2_4_};
 
 
 #alias {_render_h2_0_} {

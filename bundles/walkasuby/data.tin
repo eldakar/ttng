@@ -234,11 +234,11 @@
 #action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana masakrujesz %*} {collect JATAGAN 6 $AVATAR_NAME;#line gag};
 
 #nop MAGIKI - SZCZERBA - 1 OSOBA;
-#unaction {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* zadajac %* nieznaczne obrazenia} {collect SZCZERBA 1 $AVATAR_NAME;#line gag};
-#unaction {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* kaleczac %* przy} {collect SZCZERBA 2 $AVATAR_NAME;#line gag};
-#unaction {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* lekko %* raniac} {collect SZCZERBA 3 $AVATAR_NAME;#line gag};
-#unaction {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* potwornie} {collect SZCZERBA 5 $AVATAR_NAME;#line gag};
-#unaction {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* masakrujesz} {collect SZCZERBA 6 $AVATAR_NAME;#line gag};
+#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* zadajac %* nieznaczne obrazenia%*.} {collect SZCZERBA 1 $AVATAR_NAME;#line gag};
+#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* kaleczac %* przy%*.} {collect SZCZERBA 2 $AVATAR_NAME;#line gag};
+#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* lekko %* raniac%*.} {collect SZCZERBA 3 $AVATAR_NAME;#line gag};
+#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* potwornie%*.} {collect SZCZERBA 5 $AVATAR_NAME;#line gag};
+#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* masakrujesz%*.} {collect SZCZERBA 6 $AVATAR_NAME;#line gag};
 
 #nop MAGIKI - SIHILL - 1 OSOBA;
 #action {Niezbyt czysto trafiasz %* waskim kunsztownym sihillem} {collect SIHILL 1 $AVATAR_NAME;#line gag};

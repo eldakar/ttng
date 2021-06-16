@@ -1,3 +1,5 @@
+#class pvp read bundles/ConfigManager/Profiles/pvp.data;
+
 #alias {CombatGag} {
    #var gaglevel $ConfigManager_Configs[CombatGag];
    #if {"$gaglevel" == ""} {
@@ -49,6 +51,10 @@
    };
 };
 
+#alias {/walkaja} {
+   #var collector[$CHAR_INFO[object_num]];
+} {1};
+
 #alias {/walka} {
    #local totalhits 0;
    #local totaldmg 0;
@@ -61,10 +67,10 @@
 #nop totalhits = total sent minus damage  ;
 #nop totalarmor = total received          ;
 
-      #line ignore #sh {<cba>+----------------+--------------------------+--------------------------+};
-      #line ignore #sh {<cba>|                | Zadane                   | Otrzymane                |};
-      #line ignore #sh {<cba>| KTO            | Norma  | Magic  | Specj  | Parow  | Uniki  |  Chybi |};
-      #line ignore #sh {<cba>+----------------+--------+--------+--------+--------+--------+--------+};
+      #line ignore #sh {<cba>+----------------+--------------------------------------------+};
+      #line ignore #sh {<cba>|                | Zadane          | Otrzymane                |};
+      #line ignore #sh {<cba>| KTO            | Norma  | Spe/Ma | Parow  | Uniki  |  Weszlo|};
+      #line ignore #sh {<cba>+----------------+--------+--------+--------+--------+--------+};
 
 
    #foreach {*collector[]} {collId} {
@@ -100,12 +106,16 @@
                };
             };
          };
+
+         #math {total_otrzymane} {$collector[$collId][received][par] + $collector[$collId][received][dod] + $collector[$collId][received][mis] + $collector[$collId][received][hit]};
          #math {procent_parowane} {($collector[$collId][received][par] * 100) / $total_otrzymane};
          #math {procent_unikniete} {($collector[$collId][received][dod] * 100) / $total_otrzymane};
          #math {procent_chybione} {($collector[$collId][received][mis] * 100) / $total_otrzymane};
 
+         #math {procent_weszlo} {100 - $procent_parowane - $procent_unikniete - $procent_chybione};
+
          #format tempShort {%.15s} {$collector[$collId][short]};
-         #format encounterline {<cba>|<088> %-15s<cba>|<088>%+3s %+4s<cba>|<088>%+3s %+4s<cba>|<088>%+3s %+4s<cba>|<088>%+3s %+4s<cba>|<088>%+3s %+4s<cba>|<088>%+3s %+4s<cba>|<088>} {<148>$tempShort<088>} {$collector[$collId][sent][hit]} {$procent_normalne%} {$collector[$collId][sent][magic]} {$procent_magiczne%} {$total_spec} {$procent_specjalne%} {$collector[$collId][received][par]} {$procent_parowane%} {$collector[$collId][received][dod]} {$procent_unikniete%} {$collector[$collId][received][mis]} {$procent_chybione%};
+         #format encounterline {<cba>|<088> %-15s<cba>|<088>%+3s %+4s<cba>|<088>%+3s %+4s<cba>|<088>%+3s %+4s<cba>|<088>%+3s %+4s<cba>|<088>%+3s <faa>%+4s<cba>|<088>} {<148>$tempShort<088>} {$collector[$collId][sent][hit]} {$procent_normalne%} {$total_spec} {$procent_specjalne%} {$collector[$collId][received][par]} {$procent_parowane%} {$collector[$collId][received][dod]} {$procent_unikniete%} {$collector[$collId][received][hit]} {$procent_weszlo%};
          #line ignore #sh {$encounterline};
          #unvar tempShort;
       };
@@ -242,8 +252,6 @@
 
    #class pvp close;
    #class pvp write bundles/ConfigManager/Profiles/pvp.data;
-
-   #unvar collector;
 };
 
 #alias dupsijdpsa {

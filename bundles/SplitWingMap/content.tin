@@ -134,14 +134,26 @@
 #alias {SplitWingMap_LabelBind} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
             #draw <aaf> rounded box $offsetw-3 $offsetx $offsetw-1 $offsetx+12 {<AAF><178> LOKACYJNY <088>};
-            #sh {<168> %0<088>} {$offsetw-2} {$offsetx+13};
+
+            #format {bindlen} {%L} {%0};
+            #if {$bindlen > $ConfigManager_Configs[SplitWingMapWidth]-14} {
+                #draw tile $offsetw-2 $offsetx+13 $offsetw-1 $screencols-1 <168>%0<088>;    
+            } {
+                #sh {<168> %0<088>} {$offsetw-2} {$offsetx+13};
+            };
     };
 };
 
 #alias {SplitWingMap_Warning} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
             #draw <faa> rounded box $offsetw-6 $offsetx $offsetw-4 $offsetx+12 {<FAA><178> QUICKBIND <088>};
-            #sh {<118> %0<088>} {$offsetw-5} {$offsetx+13};
+
+            #format {bindlen} {%L} {%0};
+            #if {$bindlen > $ConfigManager_Configs[SplitWingMapWidth]-14} {
+                #draw tile $offsetw-5 $offsetx+13 $offsetw-4 $screencols-1 <118>%0<088>;    
+            } {
+                #sh {<118> %0<088>} {$offsetw-5} {$offsetx+13};
+            };
     };
 };
 
