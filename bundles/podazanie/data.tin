@@ -152,7 +152,7 @@
 #action {%1 naciaga na glowe kaptur i otula sie szczelnie %2 plaszczem.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm otul sie plaszczem}};
 #action {%1 naciaga kaptur plaszcza na glowe.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm otul sie plaszczem}};
 #action {%1 schodzi z drakkara na brzeg.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zejdz ze statku}};
-#action {%1 wskazuje na dol.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm trop}};
+#action {%1 wskazuje na dol.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qb trop}};
 #action {%1 przechodzi szybko przez rozmyty row wyschnietej fosy i zabiera sie za wspinaczke po ogromnym gruzowisku.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wespnij sie po gruzowisku}}; 
 #action {%1 zaczyna wspinac sie po wielkich glazach skalnego rumowiska} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz na gore}};
 #action {%1 bierze rozbieg i przeskakuje na most} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przeskocz na most}};

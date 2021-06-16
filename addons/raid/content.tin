@@ -1455,3 +1455,35 @@
 
     #list duch size lds;
 };
+
+
+
+#nop ###################################################;
+#nop ########## /obecni ################################;
+#nop action {Druzyne prowadzi %*, zas ty jestes jej jedynym czlonkiem.} {
+};
+#action {Druzyne prowadzi %* i oprocz ciebie sa w niej jeszcze: %69.} {
+    #var ret @check_team{%69};  
+};
+
+#action {Prowadzisz druzyne, w ktorej oprocz ciebie jest jeszcze %69.} {
+    #var ret @check_team{%69};  
+};
+
+#function check_team {
+    #var teamstring {%1};
+    #replace teamstring {{ i |, }} {;};
+    #list teamlist create {$teamstring};
+
+    #foreach {*teamlist[]} {tmember} {
+        #var member_found 0;
+        #foreach {*duch[]} {duchindex} {
+            #if {"$duch[$duchindex][desc]" == "$teamlist[$tmember]"} {
+                #var member_found 1;
+            };
+        };
+        #if {$member_found == 0} {
+            #line ignore #sh {Brakuje: <158>$teamlist[$tmember]};
+        };
+    };
+};

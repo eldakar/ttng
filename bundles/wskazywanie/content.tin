@@ -80,7 +80,15 @@
   };
 
   #if {"$pzdjeciezaslon" == "auto"} {
-        przestan zaslaniac;
+    #var findenemies 0;
+    #foreach {*duch[]} {ourenemy} {
+      #if {"$duch[$ourenemy][enemy]" == "true"} {
+        #var findenemies 1;
+      };
+    };
+    #if {$findenemies == 0} {
+      przestan zaslaniac;
+    };
   };
 };
 

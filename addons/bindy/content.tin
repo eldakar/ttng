@@ -38,16 +38,13 @@
 
 #alias {qb} {
   #line sub variables {
-    #alias _quickbind_ {
-      %0;
-      #var qbvar {                                                                 };
-    }
+    #alias _quickbind_ {%0};
   };
-  #format qbvar {%-64s %.64s} {%0};
-  #var qbvar {${c_stan_wysoki}$qbvar};
-
-  #format {show_bind_} {%h} { %0 };
-  #echo {${c_stan_wysoki}$show_bind_};
+  High_GreenBar %0;
+  #nop format qbvar {%-64s %.64s} {%0};
+  #nop var qbvar {${c_stan_wysoki}$qbvar};
+  #nop format {show_bind_} {%h} { %0 };
+  #nop echo {${c_stan_wysoki}$show_bind_};
 }
 
 #nop silently;
@@ -87,8 +84,10 @@
   };
   #format {show_bind_} {%h} { %0 };
   #format qbvar {%-64s %.64s} {%0};
-  #bell;
   #echo {${c_stan_niski}$show_bind_};
+
+  #bell;
+  
   #if {"$pbindynamapie" == "wlacz"} {
     SplitWingMap_Warning %0;
   };

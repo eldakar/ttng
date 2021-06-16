@@ -38,3 +38,7 @@
 		Highlights_event <118>PULAPKA BLEKITNOKRWISCI - <028> FIOLETOWE <118> /plytkin /plytkis<088>;
 	};
 }
+
+#nop BROK;	#action {Nagle %* podlatuje w gore, robi pol salta i zawisa bezwladnie, przywiazany do drzewa, by dyndac jak kukielka.} {
+				qm przetnij rzemien;
+			};

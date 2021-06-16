@@ -32,6 +32,16 @@
 	#line ignore #sh {<118><caf>$HBar};	
 };
 
+#alias High_RedBar {
+ 	#draw <CAA><178> scroll rounded calign box 1 1 3 $screencols-$ConfigManager_Configs[SplitWingMapWidth] %0;
+};
+
+#alias High_GreenBar {
+    #line quiet #line capture lokbutton #draw <aba> scroll rounded box 1 1 3 13 {<ABA><178> QUICKBIND <088>};
+    #sh {$lokbutton[1]};
+    #sh {$lokbutton[2] <128> %0<088>};
+    #sh {$lokbutton[3]};
+};
 
 
 #alias kolormagikow {

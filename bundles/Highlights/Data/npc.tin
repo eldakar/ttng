@@ -1,3 +1,7 @@
 #nop {};
 #sub {Zlowrogi ptakopodobny mezczyzna wykrzykuje skrzekliwe slowa inkantacji!} {<FAA><178>\n\n%0\n};
 #sub {%* silnym ciosem %* oglusza cie.} {<FAA><178>\n\n%0\n};
+
+#sub {Wszystko trzesie sie. Za chwile sufit nie wytrzyma i zwali ci sie na glowe!!!} {<FAA><178>\n\n%0\n};
+
+#sub {Nagle jakas strzala wbija sie %* w nogi.} {<FAA><178>\n\n%0\n};

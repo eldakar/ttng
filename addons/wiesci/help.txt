@@ -187,6 +187,17 @@ TUTOR /conf bindynamapie wlacz|wylacz
 > Naprawione spece szczerby
 > Poprawione wyswietlanie statystyki z /walka
 
+** 16/06/21 - Brokilon **
+> Mapa Broka
+> Pulapki i bindy w Broku
+> Strzaly z nieba podswietlone
+> Zmienione podswietlanie bindow
+> Dodane liczenie minut miedzy postepami (nie wyswietla sie jeszcze)
+> Komenda DRUZYNA zwraca kogo nie ma na lokacji
+> Dodane pare GPSow w Mahakamie
+> Zdejmowanie zaslon nie dziala jesli na pokoju jest obecny wrog gildii
+>> UWAGA to zdejmowanie moze ciut spowolnic, jesli ktos czuje to pisac!
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng
