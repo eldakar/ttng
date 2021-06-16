@@ -74,35 +74,34 @@
                 };
             };
 
-#alias {RaidTable_GMCP_Objects_Nums} {
-	#var {obnu} {%0};
-	#foreach {*duch[]} {bubu} {
-		#list {obnu} find {$bubu} {vfob};
-		#if {"$vfob" == "0"} {
-			#unvar {duch[$bubu]};
-            #unvar {duch[$bubu][bot]};
-            #unvar {duch[$bubu][enemys]};
-            #unvar {duch[$bubu][shown]};
-         	}; 
-    	};
-    assign_type;
-    szukaj_wroga;
-    szukaj_team;
-    tabela_odswiez;
-    render_h2;
-    #var objectnumsRefreshed {1};
-}
+#nop EVENT; #alias {RaidTable_GMCP_Objects_Nums} {
+            	#var {obnu} {%0};
+            	#foreach {*duch[]} {bubu} {
+            		#list {obnu} find {$bubu} {vfob};
+            		#if {"$vfob" == "0"} {
+            			#unvar {duch[$bubu]};
+                        #unvar {duch[$bubu][bot]};
+                        #unvar {duch[$bubu][enemys]};
+                        #unvar {duch[$bubu][shown]};
+                     	}; 
+                	};
+                assign_type;
+                szukaj_wroga;
+                szukaj_team;
+                tabela_odswiez;
+                render_h2;
+                #var objectnumsRefreshed {1};
+            }
 
-#alias {RaidTable_GMCP_Objects_Data}
-{
-    #var {duch} {$duch} {%0};
-    assign_type;
-    szukaj_wroga;
-    szukaj_team;
-    tabela_odswiez;
-    render_h2;
-    #var objectnumsRefreshed {1};
-}
+#nop EVENT; #alias {RaidTable_GMCP_Objects_Data} {
+                #var {duch} {$duch} {%0};
+                assign_type;
+                szukaj_wroga;
+                szukaj_team;
+                tabela_odswiez;
+                render_h2;
+                #var objectnumsRefreshed {1};
+            }
 
 #nop Ranking celow ataku;
 #nop 1. Sprawdzamy kto jest wrogiem gildii;
@@ -311,6 +310,25 @@
     };
     #return 0;
 };
+
+#function IsPlayer {
+    #regex {%0} {%w %w %W} {
+        #format tmpShort {%l} {%0};
+        #replace tmpShort { } {_};
+    } {
+        #regex {%0} {%w} {
+            #var tmpShort {%0};
+        };
+    };
+    #var tmpShort {${tmpShort}_};
+
+    #if {"$postac[$tmpShort][gildia]" != "" && "$postac[$tmpShort][gildia]" != "NPC"} {
+        #return 1;
+    } {
+        #return 0;
+    }
+};
+
 
 #function GetEnemyTarget {
     #local myTmpId @ShortToId{%0};

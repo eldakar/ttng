@@ -182,6 +182,11 @@ TUTOR /conf alertkondycjatekst OPIS
 > Dodalem nowa opcje pozwalajaca wyswietlac/ukryc bindy na mapce
 TUTOR /conf bindynamapie wlacz|wylacz
 
+** 15/06/21 - Porownanie cech **
+> Poprawilem wyswietlanie porownania cech
+> Naprawione spece szczerby
+> Poprawione wyswietlanie statystyki z /walka
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng

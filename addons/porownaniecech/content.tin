@@ -34,6 +34,8 @@
 
 
 #alias {/por$} {
+	collector_offload;
+	
 	#var tmpechocmd $ConfigManager_Configs[echokomend];
 	/conf echokomend niewidoczne;
 	#var tmp_del 0;
@@ -75,13 +77,13 @@
 	#if {$pointstotal > 0} {
 		#math compDiff {$compSum * 4};
 		#math targetpoints {$pointstotal - $compDiff};
-		#if {"$pvpdb[$duch[$porId][desc]][zawod]" != ""} {
-   #class pvp read bundles/ConfigManager/Profiles/pvp.data;
-   #class pvp open;      
-			#var pvpdb[$duch[$porId][desc]][poziom] {$targetpoints};
-   #class pvp close;
-   #class pvp write bundles/ConfigManager/Profiles/pvp.data;
 
+		#if {@IsPlayer{$duch[$porId][desc]} > 0 } {		
+		   #class pvp read bundles/ConfigManager/Profiles/pvp.data;
+		   #class pvp open;      
+					#var pvpdb[$duch[$porId][desc]][poziom] {$targetpoints};
+		   #class pvp close;
+		   #class pvp write bundles/ConfigManager/Profiles/pvp.data;
 		};
 	};
 
