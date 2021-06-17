@@ -20,6 +20,12 @@
 
 #map color paths <138>;
 
+#nop CONF;  #alias {etykiety} {
+                #if {"$ConfigManager_Configs[etykiety]" =="wylacz" } {
+                    #read  tools/label-unlink.tin;
+                };
+            };
+
 #alias {dynamicznamapa} {
     #var pdynamic $ConfigManager_Configs[dynamicznamapa];
     #if {"$pdynamic" == "wlaczona"} {

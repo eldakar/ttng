@@ -17,9 +17,9 @@
 #action {Masakrujesz %*} {collect hit 6 $AVATAR_NAME;#line gag} {6};
 
 #nop WALKA BEZ BRONI;
-#action {Robisz zamach {lewa|lewym|prawa|prawym} {piescia|kolanem|stopa}, %*} {#line ignore #showme {<fcc>[bron] <bcf>[mis] <088>%0};#line gag} {1};
-#action {Ledwo muskasz %* {lewa|lewym|prawa|prawym} {piescia|kolanem|stopa}, %*} {#line ignore #showme {<fcc>[bron] <cfa>[1/6] <088>%0};#line gag} {1};
-#action {Lekko ranisz %* {lewa|lewym|prawa|prawym} {piescia|kolanem|stopa}, %*}  {#line ignore #showme {<fcc>[bron] <cfa>[2/6] <088>%0};#line gag} {1};
+#action {Robisz zamach {lewa|lewym|prawa|prawym} {piescia|kolanem|stopa}, %*} {#line ignore #showme {<fcc>[bron] <bcf>[mis] <088>%0};qm dbb;#line gag} {1};
+#action {Ledwo muskasz %* {lewa|lewym|prawa|prawym} {piescia|kolanem|stopa}, %*} {#line ignore #showme {<fcc>[bron] <cfa>[1/6] <088>%0};qm dbb;#line gag} {1};
+#action {Lekko ranisz %* {lewa|lewym|prawa|prawym} {piescia|kolanem|stopa}, %*}  {#line ignore #showme {<fcc>[bron] <cfa>[2/6] <088>%0};qm dbb;#line gag} {1};
 
 
 #nop INNE CIOSY;
