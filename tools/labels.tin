@@ -1,0 +1,20 @@
+#var reverse[n] {s};
+#var reverse[s] {n};
+#var reverse[e] {w};
+#var reverse[w] {e};
+#var reverse[ne] {sw};
+#var reverse[nw] {se};
+#var reverse[se] {nw};
+#var reverse[sw] {ne};
+
+#alias {label %w %*} {
+    #map get roomvnum voom;
+    #map dig %1;
+    #map exitflag %1 invis on;
+    #map move %1;
+    #map set roomsymbol %2;
+    #map roomflag block on;
+    #map exitflag $reverse[%1] invis on;
+    #map goto $voom;
+    #line log {tools/labels-data} {#map at {$voom} {#map unlink %1};};
+};

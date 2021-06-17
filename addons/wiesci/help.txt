@@ -198,6 +198,14 @@ TUTOR /conf bindynamapie wlacz|wylacz
 > Zdejmowanie zaslon nie dziala jesli na pokoju jest obecny wrog gildii
 >> UWAGA to zdejmowanie moze ciut spowolnic, jesli ktos czuje to pisac!
 
+** 17/06/21 - Mapa **
+> Dodalem etykietki na mapce, dzialaja tylko z nowa wersja tintina
+> Jesli mapa sie rozsuwa przez etykiety nalezy je ukryc
+TUTOR /conf etykiety wylacz
+> Dodalem przepascie w GKS
+> Dodalem Wietrzyce
+> Poprawilem Vrany
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng
