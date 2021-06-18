@@ -1,4 +1,4 @@
-#class markups read bundles/ConfigManager/Profiles/markups.tt;
+#class markups read markups.tt;
 
 #var markupsStatus off;
 #alias {/a %w} {
@@ -6,7 +6,7 @@
 	#map get roomsymbol _rs;
 	#map get roomterrain _rt;
 	#line sub variables {
-		#class markups read bundles/ConfigManager/Profiles/markups.tt;
+		#class markups read markups.tt;
 		#class markups open;
 
 		#var markupsymbols[mob] {<FFA><aaa>MOB<088>};
@@ -23,7 +23,7 @@
 			#line ignore #sh {<178>Highlighter: <028>Dodalem %1};
 		};
 		#class markups close;
-		#class markups write bundles/ConfigManager/Profiles/markups.tt;
+		#class markups write markups.tt;
 	};
 } {1};
 
@@ -32,7 +32,7 @@
 	#map get roomsymbol _rs;
 	#map get roomterrain _rt;
 	#line sub variables {
-		#class markups read bundles/ConfigManager/Profiles/markups.tt;
+		#class markups read markups.tt;
 		#class markups open;
 
 		#var m[$markupsRoomVnum][rendered] {1};
@@ -45,7 +45,7 @@
 		#nop line ignore #sh {<178>Highlighter: <028>Dodalem ext %1};
 
 		#class markups close;
-		#class markups write bundles/ConfigManager/Profiles/markups.tt;
+		#class markups write markups.tt;
 	};
 } {1};
 
@@ -62,7 +62,7 @@
 #alias {/d} {
 	#map get roomvnum markupsRoomVnum;
 	#line sub variables {
-		#class markups read bundles/ConfigManager/Profiles/markups.tt;
+		#class markups read markups.tt;
 		#class markups open;
 		#if {$m[$markupsRoomVnum][rendered] > 0} {
 			#map set roomsymbol {$m[$markupsRoomVnum][symbol]};
@@ -74,7 +74,7 @@
 		};
 		
 		#class markups close;
-		#class markups write bundles/ConfigManager/Profiles/markups.tt;
+		#class markups write markups.tt;
 	};
 } {1};
 
@@ -142,7 +142,7 @@
 #action {%*% swiata zostalo opanowane przez Ciemnosc.} {
 	#var tmpvalue %1;
 
-	#class markups read bundles/ConfigManager/Profiles/markups.tt;
+	#class markups read markups.tt;
 	#class markups open;
 	#if {$apka} {
 		#if {$tmpvalue < $apka} {
@@ -160,7 +160,7 @@
 		#unvar msize;	
 	};
 	#class markups close;
-	#class markups write bundles/ConfigManager/Profiles/markups.tt;
+	#class markups write markups.tt;
 };
 
 /show
