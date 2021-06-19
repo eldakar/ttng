@@ -8,13 +8,13 @@
 #var reverse[sw] {ne};
 
 #alias {label %w %*} {
-    #map get roomvnum voom;
+    #map get roomvnum vroom;
     #map dig %1;
     #map exitflag %1 invis on;
     #map move %1;
     #map set roomsymbol %2;
     #map roomflag block on;
     #map exitflag $reverse[%1] invis on;
-    #map goto $voom;
-    #line log {tools/labels-data} {#map at {$voom} {#map unlink %1};};
+    #map goto $vroom;
+    #line log {tools/labels-data} {#map at {$vroom} {#map unlink %1};};
 };
