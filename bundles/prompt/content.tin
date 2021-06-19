@@ -474,10 +474,12 @@
 	#nop;
 } {1};
 
-#action {Ciemne miejsce} {
+#action {{Ciemne miejsce|Otaczajace cie ciemnosci uniemozliwiaja zauwazenie czegokolwiek}} {
 	#var rozk2 {{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
 	BottomBar_Selected;
 };
+
+
 
 #nop #############################################################;
 #nop #############################################################;

@@ -250,6 +250,13 @@
     };
 };
 
+#brain #action {<PORT> PAT %d %w} {
+    #line sub {variables} {
+        #rpg #map at {%1} {
+            #map exit %2 color <fff>;
+        };
+    };
+};
 
 
 #brain #action {<PORT> LONG %d %w} {
@@ -326,6 +333,11 @@
     };
 };
 
+#brain #action {<PORT> TRAKT %d} {
+    #line substitute {variables} {
+        #rpg #map at {%1} {#map set roomsymbol {<fff> O <088>}};
+    };
+};
 
 #brain #action {<PORT> Connection made to %S.} {
     #rpg {
@@ -467,6 +479,12 @@
     } {show_ponged_error2};
 } {1};
 
+#alias {/map pat %w} {
+    #if {$PONGED == 2} {
+    #map get roomvnum v;
+    #line sub {variables} {#brain {#port send $brainId {PAT $v %1}};};
+    } {show_ponged_error2};
+} {1};
 
 #alias {/map void} {
     #if {$PONGED == 2} {
@@ -590,6 +608,13 @@
     #if {$PONGED == 2} {
         #map get roomvnum tmproomvnum;
         #line substitute {variables} {#brain {#port send $brainId {CLEAR $tmproomvnum}}};
+    } {show_ponged_error};
+} {1};
+
+#alias {/map trakt} {
+    #if {$PONGED == 2} {
+        #map get roomvnum tmproomvnum;
+        #line substitute {variables} {#brain {#port send $brainId {TRAKT $tmproomvnum}}};
     } {show_ponged_error};
 } {1};
 

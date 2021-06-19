@@ -315,6 +315,11 @@
     mapsave;
 };
 
+#action {<PORT> PAT %d %w} {
+    #map at {%1} {#map exit %2 color <fff>};
+    broadcast TRAP %1 %2;
+    mapsave;
+};
 
 #nop ####################################;
 #nop DODAJ SYMBOL I KOLOR;
@@ -334,5 +339,11 @@
     #map at {%1} {#map set roomdata};
     #map at {%1} {#map set roomnote};
     broadcast CLEAR %1;
+    mapsave;
+};
+
+#action {<PORT> TRAKT %d} {
+    #map at {%1} {#map set roomsymbol {<fff> O <088>}};
+    broadcast TRAKT %1;
     mapsave;
 };

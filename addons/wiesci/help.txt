@@ -206,6 +206,11 @@ TUTOR /conf etykiety wylacz
 > Dodalem Wietrzyce
 > Poprawilem Vrany
 
+** 19/06/21 - Mapa **
+> Okolo setki poprawek na mapce!
+> Opisane cale Gory Szare
+
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng
