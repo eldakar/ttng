@@ -278,7 +278,10 @@
 #brain #action {<PORT> VOID %d} {
     #line sub {variables} {
         #rpg #map at {%1} {
-            #line substitute variables {#map roomflag void on};
+            #line substitute variables {
+                #map roomflag void on;
+                #map set roomsymbol;
+            };
         };
     };
 };

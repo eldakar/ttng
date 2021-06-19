@@ -40,7 +40,7 @@
 #nop ###################################;
 #nop tworze pokoj w mapce glownej, zapisuje, wysylam komende wszystkim;
 #nop ###################################;
-#event {MAP CREATE ROOM} {
+#unevent {MAP CREATE ROOM} {
     #map at {%0} {#map set roomsymbol { O }};
 };
 
@@ -117,7 +117,10 @@
 
 #action {<PORT> VOID %d} {
     #map goto %1;
-    #line substitute variables {#map roomflag void on};
+    #line substitute variables {
+        #map roomflag void on;
+        #map set roomsymbol;
+    };
     broadcast VOID %1;
     mapsave;
 };
