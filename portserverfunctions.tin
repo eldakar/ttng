@@ -317,7 +317,7 @@
 
 #action {<PORT> PAT %d %w} {
     #map at {%1} {#map exit %2 color <fff>};
-    broadcast TRAP %1 %2;
+    broadcast PAT %1 %2;
     mapsave;
 };
 
