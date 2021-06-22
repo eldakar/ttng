@@ -210,6 +210,12 @@ TUTOR /conf etykiety wylacz
 > Okolo setki poprawek na mapce!
 > Opisane cale Gory Szare
 
+** 21/06/21 - Mapa **
+> Poprawiona Campagrota, zalazek gor na NW od wyvern
+> Poprawione tunele OK i polaczenia w obozie trolli
+> Dodane wiecej notek
+> Usunalem tymczasowo wyswietlanie bindow lokacyjnych na mapie
+
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
