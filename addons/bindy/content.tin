@@ -76,15 +76,11 @@
 };
 
 #alias {qm} {
-  #line sub variables {
-    #alias _quickbind_ {
-      %0;
-      #map update;
-    }
-  };
-  #format {show_bind_} {%h} { %0 };
-  #format qbvar {%-64s %.64s} {%0};
-  #echo {${c_stan_niski}$show_bind_};
+  #line sub variables {#alias _quickbind_ {%0;#map update;};};
+  #nop format {show_bind_} {%h} { %0 };
+  #nop format qbvar {%-64s %.64s} {%0};
+  #nop echo {${c_stan_niski}$show_bind_};
+  High_RedBar %0;
 
   #bell;
   
@@ -92,14 +88,3 @@
     SplitWingMap_Warning %0;
   };
 };
-
-#alias {qbk} {
-  #line sub variables {
-    #alias _quickbind_ {
-      %0;
-      #var qbvar {                                                                 };
-    }
-  };
-  #format qbvar {%-64s %.64s} {%0};
-  #var qbvar {${c_stan_niski}$qbvar};
-}
