@@ -540,8 +540,6 @@
 };
 
 #alias mapa_map_updated_vtmap {
-    #nop BIND OR COMMAND;
-    #nop if {"$rooa" != ""} {$rooa};
     #if {$roonsize > 0} {
         #local outputstr {};
         #foreach {*roon[]} {roonvec} {

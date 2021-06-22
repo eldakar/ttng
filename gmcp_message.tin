@@ -48,6 +48,8 @@
 		    };
 		};
 		#case {"room.short"} {
+			#nop BIND OR COMMAND;
+    		#if {"$rooa" != ""} {$rooa};
 			#var ilecial 0;
 			#var tmptext {$GMCPMSGS[text]};
 			#regex {$tmptext} {{.*}\\n$} {
