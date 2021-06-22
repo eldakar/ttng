@@ -540,6 +540,9 @@
 };
 
 #alias mapa_map_updated_vtmap {
+    #if {"$pbindynamapie" == "wlacz" && "$rooa" != ""} {
+        SplitWingMap_LabelBind $rooa;
+    };
     #if {$roonsize > 0} {
         #local outputstr {};
         #foreach {*roon[]} {roonvec} {
