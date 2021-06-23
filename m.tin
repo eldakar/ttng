@@ -25,6 +25,7 @@
     #read events/arka.tin;
 
     #read core/aliasy/manifest.tin;
+    #read core/atlas/content.tin;
     #read bundles/ConfigManager/manifest.tin;
     #read bundles/HelpManager/manifest.tin;
     #read bundles/SplitRefresh/manifest.tin;
