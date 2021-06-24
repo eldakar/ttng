@@ -216,6 +216,11 @@ TUTOR /conf etykiety wylacz
 > Dodane wiecej notek
 > Usunalem tymczasowo wyswietlanie bindow lokacyjnych na mapie
 
+** 24/06/21 - Atlas **
+> Dodalem nowa komende */atlas* pozwalajaca dodawac sciezki lazika
+>> Sciezki po dodaniu uruchamia sie z prefixem =
+> Poprawilem blad, gdy w ciemnosci mapka przenosi sie na ostatnie nieciemne miejsce
+>> Mam tylko 3 opisy ciemnych miejsc, takze sie to moze jeszcze zdarzyc...
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
