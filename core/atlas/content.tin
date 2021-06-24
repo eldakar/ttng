@@ -1,0 +1,26 @@
+#class atlas read bundles/ConfigManager/Profiles/atlas.tt;
+
+#alias {/atlas %S %*} {
+	#map get roomvnum voom;
+	#line sub variables {;
+		#class atlas read bundles/ConfigManager/Profiles/atlas.tt;
+		#class atlas open;
+		#var atlasdb[%1][location] {$voom};
+		#var atlasdb[%1][description] {%2};
+		#class atlas close;
+		#class atlas write bundles/ConfigManager/Profiles/atlas.tt;
+	};
+	#line ignore #showme {Od teraz <afa>=%1<088> z opisem <168>%2<088> prowadzi do <118>$voom<088>.};
+	#var rettt @atlasDB_load{};
+} {1};
+
+#alias {/atlas$} {#alias {=%*}} {1};
+
+#function {atlasDB_load} {
+	#foreach {*atlasdb[]} {_adb} {
+		#line sub {variables} {#alias {=${_adb}} {/l $atlasdb[$_adb][location] $atlasdb[$_adb][description]}};
+	};
+	#return 0;
+};
+
+#var retetete @atlasDB_load{};

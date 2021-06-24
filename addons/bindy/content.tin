@@ -69,22 +69,16 @@
     #sh {$lokbutton[1]};
     #sh {$lokbutton[2] <168> %0<088>};
     #sh {$lokbutton[3]};
-    #if {"$pbindynamapie" == "wlacz"} {
-      SplitWingMap_LabelBind %0;
-    };
+
     #alias _lokacyjny_ {%0};
 };
 
 #alias {qm} {
-  #line sub variables {
-    #alias _quickbind_ {
-      %0;
-      #map update;
-    }
-  };
+  #line sub variables {#alias _quickbind_ {%0;#map update;};};
   #format {show_bind_} {%h} { %0 };
   #format qbvar {%-64s %.64s} {%0};
   #echo {${c_stan_niski}$show_bind_};
+  #nop High_RedBar %0;
 
   #bell;
   
@@ -92,14 +86,3 @@
     SplitWingMap_Warning %0;
   };
 };
-
-#alias {qbk} {
-  #line sub variables {
-    #alias _quickbind_ {
-      %0;
-      #var qbvar {                                                                 };
-    }
-  };
-  #format qbvar {%-64s %.64s} {%0};
-  #var qbvar {${c_stan_niski}$qbvar};
-}

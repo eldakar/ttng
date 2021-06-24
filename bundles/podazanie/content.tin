@@ -186,6 +186,12 @@
 #action {%*{Podazasz|podazasz} za %1 grania do gory.} {#var retfl @follow_where{u}};
 #action {%*{Podazasz|podazasz} za %1 do gory.} {#var retfl @follow_where{u}};
 
+#action {%*{Podazasz|podazasz} za %1 w strone plazy.} {#var retfl @follow_where{ne}};
+#action {%*{Podazasz|podazasz} za %1 w strone morza.} {#var retfl @follow_where{sw}};
+
+#action {%*{Podazasz|podazasz} za %1 do wnetrza kuzni.} {#var retfl @follow_where{w}};
+
+
 #nop SPRAWDZIC ###################################################;
 #action {%*{Podazasz|podazasz} za %1 do pieczary.} {#var retfl @follow_where{pieczara}};
 #action {%*{Podazasz|podazasz} za %1 na dno przepasci.} {#var retfl @follow_where{d}};
