@@ -222,6 +222,14 @@ TUTOR /conf etykiety wylacz
 > Poprawilem blad, gdy w ciemnosci mapka przenosi sie na ostatnie nieciemne miejsce
 >> Mam tylko 3 opisy ciemnych miejsc, takze sie to moze jeszcze zdarzyc...
 
+** 27/06/21 - Mapka **
+> Donane trakty na ZC, patrole i droga czaszek
+> Dodane trolle przy mon arx
+> Poprawione kilka BOSSow
+> Powinno 'czytac' klucz z wichta i z ptaka
+> Dodana nowa komenda
+TUTOR /color kolorprzyjaciol <kod>
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng
