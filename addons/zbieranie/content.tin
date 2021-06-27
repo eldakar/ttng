@@ -63,6 +63,18 @@
 } {1};
 
 #action {%* {umarl|umarla}.} {
+	#var rettt @ktos_zdechl{%1};
+};
+
+#action {Zwalisty plomiennooki wicht zamiera na moment w bezruchu, po czym rozpada sie w proch.} {
+	#var rettt @ktos_zdechl{Zwalisty plomiennooki wicht};
+};
+
+#action {%1 zabi{l|la} zlowrogiego ptakopodobnego mezczyzne.} {
+	#var rettt @ktos_zdechl{zlowrogi ptakopodobny mezczyzna};
+};
+
+#function ktos_zdechl {
 	#var cowzial {};
 	#local umarly {%1};
 	#regex {$umarly} { } {

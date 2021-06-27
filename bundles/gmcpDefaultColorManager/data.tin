@@ -58,7 +58,7 @@
 
 #var c_char_h_mode[w] {<faa>};
 #var c_char_h_mode[n] {<038>};
-#var c_char_h_mode[p] {<138>};
+#nop var c_char_h_mode[p] {<138>};
 #var c_char_h_mode[b] {<CAF><178>}; #nop BOSS;
 #var c_char_h_mode[] {<178>};
 

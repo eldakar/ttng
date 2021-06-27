@@ -606,6 +606,7 @@
 #HIGHLIGHT {%isrebrnowlosy muskularny krasnolud} {<faa>} {5}
 #HIGHLIGHT {%isrebrnowlosy ostrouchy elf} {<faa>} {5}
 #HIGHLIGHT {%istary brodaty krasnolud} {<faa>} {5}
+#HIGHLIGHT {%istary brodaty mezczyzna} {<CAF>} {5}
 #HIGHLIGHT {%istary ciemnobrody krasnolud} {<faa>} {5}
 #HIGHLIGHT {%istary grozny elf} {<faa>} {5}
 #HIGHLIGHT {%istary kudlaty krasnolud} {<faa>} {5}
