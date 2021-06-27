@@ -228,7 +228,7 @@ TUTOR /conf etykiety wylacz
 > Poprawione kilka BOSSow
 > Powinno 'czytac' klucz z wichta i z ptaka
 > Dodana nowa komenda
-TUTOR /color kolorprzyjaciol <kod>
+TUTOR /conf kolorprzyjaciol kodkoloru
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
