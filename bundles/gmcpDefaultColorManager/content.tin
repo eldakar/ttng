@@ -6,6 +6,15 @@
     #line sub variables {#var c_char_h_mode[g] {<$pkolorgildii>}};
 };
 
+#alias {kolorprzyjaciol} {
+    #var pkolorprzyjaciol $ConfigManager_Configs[kolorprzyjaciol];
+    #if {"$pkolorprzyjaciol" == ""} {
+    	#var pkolorprzyjaciol {ffa};
+    };
+    #line sub variables {#var c_char_h_mode[p] {<$pkolorprzyjaciol>}};
+};
+
+
 #nop event {IAC SB GMCP char.colors IAC SE} {
 	#var CHAR_COLORS {%0};
 	#foreach {*CHAR_COLORS[]} {s} {
