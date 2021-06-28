@@ -359,6 +359,23 @@
 	#line gag;
 };
 #action {Rzucasz sie na %* przebijajac sie przez %*} {
+	#foreach {*duch[]} {ktoto} {
+		#if {@match{%1;$duch[$ktoto][desc]} == 0} {
+			#var manewry[$ktoto] {przelamany};
+			#line sub variables {
+				#delay {3} {
+					#unvar manewry[$ktoto];
+					tabela_odswiez;
+				    render_h2;
+				    #var objectnumsRefreshed {1};
+				};
+			};
+		};
+	};
+    tabela_odswiez;
+    render_h2;	
+	#var objectnumsRefreshed {1};
+
 	#line ignore #sh {\n<fac>[  PRZELAMALES  ] %0<088>\n};
 	manewr_start;
 	#line gag;
@@ -368,6 +385,17 @@
 	#var ktozaslonil {%1};
 	#var pokazalem 0;
 	#foreach {*duch[]} {ktoto} {
+		#if {@match{%2;$duch[$ktoto][desc]} == 0} {
+			#var manewry[$ktoto] {przelamany};
+			#line sub variables {
+				#delay {3} {
+					#unvar manewry[$ktoto];
+					tabela_odswiez;
+				    render_h2;
+				    #var objectnumsRefreshed {1};
+				};
+			};
+		};
 		#if {"$ktozaslonil" == "$duch[$ktoto][desc]"} {
 			#if {"$duch[$ktoto][team]" == "true"} {
 				#line ignore #sh { };
@@ -380,6 +408,10 @@
 			};
 		};
 	};
+    tabela_odswiez;
+    render_h2;	
+	#var objectnumsRefreshed {1};
+		
 	#if {$pokazalem != 1} {
 		#line ignore #sh {<fac>[PRZELAMAL] %0<088>};
 	};

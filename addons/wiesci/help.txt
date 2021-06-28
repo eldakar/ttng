@@ -234,6 +234,11 @@ TUTOR /conf kolorprzyjaciol kodkoloru
 > Trolle ZC
 > Polaczenia w Swiatyni MC
 
+** 29/06/21 - Kondycje Polpelne **
+> Wywaliem aliasy wrogow/druzyny z kondycji polpelnych - zglaszac sie jak ktos ma problem z tym
+> Dodalem do nich wyswietlanie przez 3 sekundy kto zostal przelamany (skopiowalem to z mudleta) - zglaszac sie jak ktos chce poprawki lub cos innego?
+
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng
