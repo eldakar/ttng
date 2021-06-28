@@ -1,7 +1,541 @@
 #CLASS {markups} OPEN
 
 #VARIABLE {apka} {95}
-#VARIABLE {m} {}
+#VARIABLE {m}
+{
+    {32} 
+    {
+        {direction} 
+        {
+            {se} {se}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {gory}
+        {type} {ext}
+    }
+    {33} 
+    {
+        {direction} 
+        {
+            {e} {e}
+            {nw} {nw}
+            {w} {w}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {gory}
+        {type} {ext}
+    }
+    {34} 
+    {
+        {direction} 
+        {
+            {w} {w}
+        }
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {gory}
+        {type} {ext}
+    }
+    {666} 
+    {
+        {direction} 
+        {
+            {e} {e}
+            {w} {w}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {las}
+        {type} {ext}
+    }
+    {733} 
+    {
+        {direction} 
+        {
+            {n} {n}
+            {nw} {nw}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {736} 
+    {
+        {direction} 
+        {
+            {e} {e}
+            {nw} {nw}
+            {s} {s}
+            {se} {se}
+            {sw} {sw}
+            {w} {w}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {737} 
+    {
+        {direction} 
+        {
+            {nw} {nw}
+        }
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {769} 
+    {
+        {direction} 
+        {
+            {s} {s}
+            {se} {se}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {771} 
+    {
+        {direction} 
+        {
+            {se} {se}
+        }
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {773} 
+    {
+        {direction} 
+        {
+            {e} {e}
+            {nw} {nw}
+            {s} {s}
+            {se} {se}
+            {w} {w}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {774} 
+    {
+        {direction} 
+        {
+            {e} {e}
+            {nw} {nw}
+            {se} {se}
+            {sw} {sw}
+            {w} {w}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {775} 
+    {
+        {direction} 
+        {
+            {e} {e}
+            {n} {n}
+            {nw} {nw}
+            {sw} {sw}
+            {w} {w}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {776} 
+    {
+        {direction} 
+        {
+            {e} {e}
+            {s} {s}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {784} 
+    {
+        {direction} 
+        {
+            {se} {se}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {785} 
+    {
+        {direction} 
+        {
+            {s} {s}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {786} 
+    {
+        {direction} 
+        {
+            {e} {e}
+            {n} {n}
+            {ne} {ne}
+            {s} {s}
+            {sw} {sw}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {787} 
+    {
+        {direction} 
+        {
+            {e} {e}
+            {ne} {ne}
+            {w} {w}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {788} 
+    {
+        {direction} 
+        {
+            {e} {e}
+            {se} {se}
+            {sw} {sw}
+            {w} {w}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {789} 
+    {
+        {direction} 
+        {
+            {n} {n}
+            {ne} {ne}
+            {nw} {nw}
+            {sw} {sw}
+            {w} {w}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {791} 
+    {
+        {direction} 
+        {
+            {nw} {nw}
+        }
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {792} 
+    {
+        {direction} 
+        {
+            {ne} {ne}
+            {w} {w}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {793} 
+    {
+        {direction} 
+        {
+            {e} {e}
+            {ne} {ne}
+            {s} {s}
+            {sw} {sw}
+            {w} {w}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {chata}
+        {type} {ext}
+    }
+    {794} 
+    {
+        {direction} 
+        {
+            {e} {e}
+            {n} {n}
+            {s} {s}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {795} 
+    {
+        {direction} 
+        {
+            {n} {n}
+            {ne} {ne}
+            {nw} {nw}
+            {se} {se}
+            {sw} {sw}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {801} 
+    {
+        {direction} 
+        {
+            {ne} {ne}
+        }
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {802} 
+    {
+        {direction} 
+        {
+            {e} {e}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {803} 
+    {
+        {direction} 
+        {
+            {n} {n}
+            {ne} {ne}
+            {nw} {nw}
+            {sw} {sw}
+            {w} {w}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {804} 
+    {
+        {direction} 
+        {
+            {n} {n}
+        }
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {809} 
+    {
+        {direction} 
+        {
+            {ne} {ne}
+        }
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {823} 
+    {
+        {direction} 
+        {
+            {se} {se}
+        }
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {824} 
+    {
+        {direction} 
+        {
+            {se} {se}
+        }
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustka}
+        {type} {ext}
+    }
+    {4390} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {4446} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {rzeka}
+        {type} {mob}
+    }
+    {4456} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {4502} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {rzeka}
+        {type} {mob}
+    }
+    {4571} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {4578} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {4613} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {4982} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5034} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mobn}
+    }
+    {5121} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {5232} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {rzeka}
+        {type} {mob}
+    }
+    {5304} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {5342} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5352} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5405} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {21783} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {21802} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {21811} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {21888} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {27961} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+}
 #VARIABLE {markupsymbols}
 {
     {ext} {<138> @ <088>}

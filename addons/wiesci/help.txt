@@ -230,6 +230,10 @@ TUTOR /conf etykiety wylacz
 > Dodana nowa komenda
 TUTOR /conf kolorprzyjaciol kodkoloru
 
+** 28/06/21 - Mapka **
+> Trolle ZC
+> Polaczenia w Swiatyni MC
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng
