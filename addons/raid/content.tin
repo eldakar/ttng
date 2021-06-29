@@ -850,7 +850,7 @@
                 #nop ORG 28-06-2021;
                 #nop var duch[$du][bar][orc] {$tmpsug [$healthbars2[$duch[$du][hp]]] $duch[$du][alias_value]<088> $tmpen$tmpled$tmpkol$tmpna_orc<088>};
                 #nop TEST;
-                #var duch[$du][bar][orc] {$tmpsug ${tmpen}[$healthbars2[$duch[$du][hp]]]$tmpled$tmpkol$tmpna_orc<088>};
+                #var duch[$du][bar][orc] {$tmpsug ${tmpen} $duch[$du][alias_value] [$healthbars2[$duch[$du][hp]]]$tmpled$tmpkol$tmpna_orc<088>};
                 
                 #math {negativecounter} {$negativecounter + 1};
             };
