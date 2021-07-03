@@ -66,7 +66,7 @@
 			#alias rysuj_czat_wlacz {
 				#if {"$ConfigManager_Configs[czatwpasku]" == "wlacz" && "$ConfigManager_Configs[pasek]" == "medium"} {
 					#if {"$ConfigManager_Configs[stylpaskow]" == "graph"} {
-						#var dlugosc_paskow 83;	
+						#var dlugosc_paskow 83;
 					} {
 						#math dlugosc_paskow {$maxBarSize * 2 + 15};
 					};
@@ -136,7 +136,7 @@
 		#var pprobymanewrow 0;
 	} {
 		#var pprobymanewrow 1;
-	};	
+	};
 }
 
 #nop CONF;	#alias {pasek} {
@@ -165,7 +165,7 @@
 				#if {"$ConfigManager_Configs[pasek]" == "medium"} {
 					#draw {$bbBGC} tile $screenrows-3 1 $screenrows-1 $screencols-1;
 				};
-				SplitRefreshRequestRefresh; 
+				SplitRefreshRequestRefresh;
 			}
 
 #alias kolorzaslonwrogow {
@@ -188,7 +188,7 @@
 #nop EVENT;	#alias {BottomBarSimple_char_state} {
 				#var charstate {%0};
 				#foreach {*charstate[]} {s} {
-					#list {state} {find} {$s} {v}; 
+					#list {state} {find} {$s} {v};
 					#if {$v > 0} {
 						#list {state}{set}{$s}{$charstate[$s]}
 					} {
@@ -251,7 +251,7 @@
 	#delay {rozkazlevel15} {#var rozkazlevel {15};BottomBar_Selected;} {15};
 	#delay {rozkazlevel14} {#var rozkazlevel {14};BottomBar_Selected;} {14};
 	#delay {rozkazlevel13} {#var rozkazlevel {13};BottomBar_Selected;} {13};
-	#delay {rozkazlevel12} {#var rozkazlevel {12};BottomBar_Selected;} {12};	
+	#delay {rozkazlevel12} {#var rozkazlevel {12};BottomBar_Selected;} {12};
 	#delay {rozkazlevel11} {#var rozkazlevel {11};BottomBar_Selected;} {11};
 	#delay {rozkazlevel10} {#var rozkazlevel {10};BottomBar_Selected;} {10};
 	#delay {rozkazlevel9} {#var rozkazlevel {9};BottomBar_Selected;} {9};
@@ -320,7 +320,7 @@
 };
 
 #action {%* probuje zaslonic %* przed ciosami %*, jednak nie jest w stanie tego uczynic.} {
-	#if {$pprobymanewrow == 1} {	
+	#if {$pprobymanewrow == 1} {
 		#line ignore #sh {<bad>[NIE ZASLANIA] %0<088>};
 	};
 	#line gag;
@@ -347,11 +347,11 @@
 }
 #action {%* przestaje zaslaniac %*} {
 	#line ignore #sh {<aaf>[  ZDEJMUJE  ] %0<088>};
-	#line gag;	
+	#line gag;
 }
 #action {%* przestaje cie zaslaniac %*} {
 	#line ignore #sh {<aaf>[  ZDEJMUJE  ] %0<088>};
-	#line gag;	
+	#line gag;
 }
 #action {%1 unosi %2 i szybko przesuwa sie za ciebie, kryjac sie przed atakami %3.} {
 	#line ignore #sh {\n<acf>[  ZASLANIASZ  ] %0<088>\n};
@@ -373,7 +373,7 @@
 		};
 	};
     tabela_odswiez;
-    render_h2;	
+    render_h2;
 	#var objectnumsRefreshed {1};
 
 	#line ignore #sh {\n<fac>[  PRZELAMALES  ] %0<088>\n};
@@ -409,9 +409,9 @@
 		};
 	};
     tabela_odswiez;
-    render_h2;	
+    render_h2;
 	#var objectnumsRefreshed {1};
-		
+
 	#if {$pokazalem != 1} {
 		#line ignore #sh {<fac>[PRZELAMAL] %0<088>};
 	};
@@ -420,10 +420,20 @@
 
 
 #action {%* rzuca sie na %* bezskutecznie %*} {
-	#if {$pprobymanewrow == 1} {	
+	#if {$pprobymanewrow == 1} {
 		#line ignore #sh {<bad>[NIE PRZELAMAL] %0<088>};
 	};
 	#line gag;
+};
+
+#nop MC wskazanie na bloka;
+#action {%* mruzac oczy z sykiem wciaga powietrze %* wyprostowuje reke i msciwym gestem wskazuje na %*.} {
+	#foreach {*duch[]} {ktoto} {
+		#if {@match{%3;$duch[$ktoto][desc]} == 0} {
+        #line sub variables {#alias zablokuj_go {zablokuj ob_$ktoto}};
+        qm zablokuj_go;
+		};
+	};
 };
 
 
@@ -519,7 +529,7 @@
 
 #var bbBGC {<088>};
 #event {VARIABLE UPDATED bbBGC} {
-	BottomBar_Selected;	
+	BottomBar_Selected;
 };
 
 #alias {BottomBar_Selected} {
@@ -576,7 +586,7 @@
 
 #alias {BottomBarTinyFugue} {
 	#nop RYSUJEMY ROZE PO LEWEJ;
-	rysuj_roze; 
+	rysuj_roze;
 	#nop RYSUJEMY CUSTOM EXITS;
 	rysuj_customs;
 	#nop RYSUJEMY PASKI GLOWNE;
@@ -616,7 +626,7 @@
 	#math {pozycjaprzyciskow} {$screencols - 37};
 	#line ignore #sh {${bbBGC}AT <088>$buttons[0][8][label]${bbBGC} <088>$buttons[0][7][label]${bbBGC} <088>$buttons[0][6][label]${bbBGC} <088>$buttons[0][5][label]${bbBGC}<088>} {-4} {$pozycjaprzyciskow};
 	#line ignore #sh {${bbBGC}ZA <088>$buttons[1][8][label]${bbBGC} <088>$buttons[1][7][label]${bbBGC} <088>$buttons[1][6][label]${bbBGC} <088>$buttons[1][5][label]${bbBGC}<088>} {-3} {$pozycjaprzyciskow};
-	#line ignore #sh {${bbBGC}OT <088>$buttons[2][8][label]${bbBGC} <088>$buttons[2][7][label]${bbBGC} <088>PLA${bbBGC} <088>$buttons[2][5][label]${bbBGC}<088>} {-2} {$pozycjaprzyciskow};	
+	#line ignore #sh {${bbBGC}OT <088>$buttons[2][8][label]${bbBGC} <088>$buttons[2][7][label]${bbBGC} <088>PLA${bbBGC} <088>$buttons[2][5][label]${bbBGC}<088>} {-2} {$pozycjaprzyciskow};
 };
 
 #alias rysuj_customs {
@@ -651,7 +661,7 @@
 #function getGraphValue {
 	#if {%1 > 0} {
 		#local curst {%1};
-		#math stslot {%3 / %2}; 
+		#math stslot {%3 / %2};
 		#math stmodu {%3 % %2};
 		#math stlen {($curst * $stslot) + $stmodu};
 	} {
@@ -673,7 +683,7 @@
 
 	#if {%1 > 0} {
 		#local curst {%1};
-		#math stslot {%3 / %2}; 
+		#math stslot {%3 / %2};
 		#math stmodu {%3 % %2};
 		#math stlen {($curst * $stslot) + $stmodu};
 		#loop {1} {$stlen-1} {stl} {#local outputbar {$outputbar#};};
@@ -694,7 +704,7 @@
 
 	#if {%1 > 0} {
 		#local curst {%1};
-		#math stslot {%3 / %2}; 
+		#math stslot {%3 / %2};
 		#math stmodu {%3 % %2};
 		#math stlen {($curst * $stslot) + $stmodu};
 		#loop {1} {$stlen-1} {stl} {#local outputbar {$outputbar#};};
@@ -755,7 +765,7 @@
 #nop POSTEP; #event {VARIABLE UPDATED ConfigManager_Configs[celpostepow]} {
 	#if {"$ConfigManager_Configs[stylpaskow]" == "graph" || $ConfigManager_Configs[pasek]" == "micro"} {
     	rysuj_paski;
-    };	
+    };
 }
 #nop PROMPT; #event {VARIABLE UPDATED postep_needed} {
 	#if {"$ConfigManager_Configs[stylpaskow]" == "graph" || $ConfigManager_Configs[pasek]" == "micro"} {
@@ -765,7 +775,7 @@
 #nop PROMPT; #event {VARIABLE UPDATED total_kill_count} {
 	#if {"$ConfigManager_Configs[stylpaskow]" == "graph" || $ConfigManager_Configs[pasek]" == "micro"} {
     	rysuj_paski;
-    };	
+    };
 }
 
 #event {VARIABLE UPDATED pwskazywanie} {
@@ -796,7 +806,7 @@
     } {
         #var buttons[0][5][label] {PRZ};
         #var buttons[0][5][status] {off};
-    };    
+    };
     #if {"$ConfigManager_Configs[pasek]" == "medium"} {
     	rysuj_przyciski;
     };
@@ -841,7 +851,7 @@
         #var buttons[2][8][status] {off};
         #if {"$ConfigManager_Configs[pasek]" == "medium"} {
 	    	rysuj_przyciski;
-    	};        
+    	};
     };
 };
 
@@ -880,7 +890,7 @@
 	};
     #if {"$ConfigManager_Configs[pasek]" == "medium"} {
     	rysuj_przyciski;
-    };	
+    };
 }
 
 #event {VARIABLE UPDATED ppowtorzenter} {
