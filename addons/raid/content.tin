@@ -785,10 +785,10 @@
             };
 
             #if {$duch[$du][enemies] < 1} {
-                #var tmpen {${colorenemies}   <088>};
+                #var tmpen {${colorenemies}  <088>};
             } {
                 #format tmpen {%+2s} {$duch[$du][enemies]};
-                #var tmpen {${colorenemies}$tmpen <088>};
+                #var tmpen {${colorenemies}$tmpen<088>};
             };
 
             #if {"$duch[$du][enemy]" == "true"} {#var tmpkol {<caf>}};
@@ -850,7 +850,7 @@
                 #nop ORG 28-06-2021;
                 #nop var duch[$du][bar][orc] {$tmpsug [$healthbars2[$duch[$du][hp]]] $duch[$du][alias_value]<088> $tmpen$tmpled$tmpkol$tmpna_orc<088>};
                 #nop TEST;
-                #var duch[$du][bar][orc] {$tmpsug ${tmpen} $duch[$du][alias_value] [$healthbars2[$duch[$du][hp]]]$tmpled$tmpkol$tmpna_orc<088>};
+                #var duch[$du][bar][orc] {$tmpsug${tmpen} $duch[$du][alias_value] [$healthbars2[$duch[$du][hp]]]$tmpled$tmpkol$tmpna_orc<088>};
                 
                 #math {negativecounter} {$negativecounter + 1};
             };
@@ -1317,7 +1317,7 @@
 #nop RESZTA WALCZACYCH WROGOW;
     #foreach {*wrogi[]} {to} {
         #if {$duch[$wrogi[$to]][shown] < 1} {
-            #var raidbartable {$raidbartable\n $duch[$wrogi[$to]][bar][orc]<088> <118>><088> $duch[$duch[$wrogi[$to]][attack_num]][desc]};
+            #var raidbartable {$raidbartable\n                                 $duch[$wrogi[$to]][bar][orc]<088> <118>><088> $duch[$duch[$wrogi[$to]][attack_num]][desc]};
 
             #math r_curLineCnt {$r_curLineCnt - 1};
             #var duch[$wrogi[$to]][shown] {1};
@@ -1330,7 +1330,7 @@
             #if {$duch[$wrogi[$wr]][attack_num] > 0} {
                 #nop;
             } {
-                #var raidbartable {$raidbartable\n $duch[$wrogi[$wr]][bar][orc]<088>};
+                #var raidbartable {$raidbartable\n                                 $duch[$wrogi[$wr]][bar][orc]<088>};
                 #math r_curLineCnt {$r_curLineCnt - 1};
                 #var duch[$wrogi[$wr]][shown] {1};
                 #math {expectedlines} {$expectedlines + 1};
@@ -1340,7 +1340,7 @@
 #nop RESZTA wszystkiego gdzie shown == 0;
     #foreach {*duch[]} {wr} {
         #if {$duch[$wr][shown] < 1} {
-            #var raidbartable {$raidbartable\n $duch[$wr][bar][orc]};
+            #var raidbartable {$raidbartable\n                                 $duch[$wr][bar][orc]};
 
             #math r_curLineCnt {$r_curLineCnt - 1};
             #var duch[$wr][shown] {1};
@@ -1422,7 +1422,7 @@
 #nop RESZTA WALCZACYCH WROGOW;
     #foreach {*wrogi[]} {to} {
         #if {$duch[$wrogi[$to]][shown] < 1} {
-            #var raidbartable {$raidbartable\n$duch[$wrogi[$to]][bar][orc]<088> <118>><088> $duch[$duch[$wrogi[$to]][attack_num]][desc]};
+            #var raidbartable {$raidbartable\n                                $duch[$wrogi[$to]][bar][orc]<088> <118>><088> $duch[$duch[$wrogi[$to]][attack_num]][desc]};
 
             #math r_curLineCnt {$r_curLineCnt - 1};
             #var duch[$wrogi[$to]][shown] {1};
@@ -1435,7 +1435,7 @@
             #if {$duch[$wrogi[$wr]][attack_num] > 0} {
                 #nop;
             } {
-                #var raidbartable {$raidbartable\n$duch[$wrogi[$wr]][bar][orc]<088>};
+                #var raidbartable {$raidbartable\n                                $duch[$wrogi[$wr]][bar][orc]<088>};
                 #math r_curLineCnt {$r_curLineCnt - 1};
                 #var duch[$wrogi[$wr]][shown] {1};
                 #math {expectedlines} {$expectedlines + 1};
@@ -1445,7 +1445,7 @@
 #nop RESZTA wszystkiego gdzie shown == 0;
     #foreach {*duch[]} {wr} {
         #if {$duch[$wr][shown] < 1} {
-            #var raidbartable {$raidbartable\n$duch[$wr][bar][orc]};
+            #var raidbartable {$raidbartable\n                                $duch[$wr][bar][orc]};
 
             #math r_curLineCnt {$r_curLineCnt - 1};
             #var duch[$wr][shown] {1};
