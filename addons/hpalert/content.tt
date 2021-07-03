@@ -24,9 +24,6 @@
                 #nop pobieram argv z eventu;
                 #var charstate {%0};
 				        #if {$charstate[hp] <= $ConfigManager_Configs[hpalertvalue]} {
-        				    #line quiet #line capture lokbutton #draw <faa> scroll box 1 1 3 12 {<FAA><178> KONDYCJA <088>};
-				            #line ignore #sh {$lokbutton[1]};
-        				    #line ignore #sh {$lokbutton[2] <118> $ConfigManager_Configs[hpalerttext]<088>};
-        				    #line ignore #sh {$lokbutton[3]};
+                    @textalert_red_button { KONDYCJA ;$ConfigManager_Configs[hpalerttext]};
 				        };
             };
