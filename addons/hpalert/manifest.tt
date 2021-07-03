@@ -1,0 +1,11 @@
+#var bundle_name {hpalert};     #nop name is also a class name, must be unique;
+#var bundle_data {0};           #nop do I load data.tin?;
+#var bundle_content {1};        #nop do I load content.tin?;
+#list bundle_configs {clear};   #nop make sure to clear temp configs;
+
+#nop all the below must be defined as aliases in content.tin;
+#list bundle_configs add {hpalertvalue};
+#list bundle_configs add {hpalerttext};
+#list event_handler_char_state add {hpalert_char_state};
+
+#nop try to load it; #var bundle_ready @bundleops_validate{bundles};
