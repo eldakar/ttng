@@ -776,16 +776,19 @@
             #var tmpava {  };
             #var tmpsug {  };
             #var tmpkol {<088>};
-            #var tmpled { };
             #var tmptar {};
 
-            #var tmpen {  };
-            #if {$duch[$du][enemies] < 1} {
-                #var tmpen {  };
+            #if {"$manewry[$du]" == "przelamany"} {
+                #var colorenemies {<FED><aaa>};
+            } {
+                #var colorenemies {<118>};
             };
-            #else {
-                #format tmpen {%+2s} {<118>$duch[$du][enemies]<088>};
-                #var tmpen {$tmpen};
+
+            #if {$duch[$du][enemies] < 1} {
+                #var tmpen {${colorenemies}  <088>};
+            } {
+                #format tmpen {%+2s} {$duch[$du][enemies]};
+                #var tmpen {${colorenemies}$tmpen<088>};
             };
 
             #if {"$duch[$du][enemy]" == "true"} {#var tmpkol {<caf>}};
@@ -800,9 +803,11 @@
 
 
             #if {"$duch[$du][team_leader]" == "true"} {
-              #var tmpled {<138>^<088>};
-              #format team_lead_lower {%l} {$duch[$du][desc]};
-              #var team_lead_id {$du};
+                #var tmpled {<138>^<088>};
+                #format team_lead_lower {%l} {$duch[$du][desc]};
+                #var team_lead_id {$du};
+            } {
+                #var tmpled { };
             };
             
             #if {"$duch[$du][team]" == "true"} {
@@ -842,8 +847,11 @@
                 #var tmptar {|$attacktargethp| $tmptarcolor$tmptar<088>};
             };
             #if {"$tmphp" != ""} {
-                #nop var duch[$du][bar][orc] {$duch[$du][alias_value] $tmpsug<088>$tmpava$tmpen [$tmphp]$tmpled$tmpkol$tmpna_orc<088> };
-                #var duch[$du][bar][orc] {$tmpsug [$healthbars2[$duch[$du][hp]]] $duch[$du][alias_value]<088> $tmpen$tmpled$tmpkol$tmpna_orc<088>};
+                #nop ORG 28-06-2021;
+                #nop var duch[$du][bar][orc] {$tmpsug [$healthbars2[$duch[$du][hp]]] $duch[$du][alias_value]<088> $tmpen$tmpled$tmpkol$tmpna_orc<088>};
+                #nop TEST;
+                #var duch[$du][bar][orc] {$tmpsug${tmpen} $duch[$du][alias_value] [$healthbars2[$duch[$du][hp]]]$tmpled$tmpkol$tmpna_orc<088>};
+                
                 #math {negativecounter} {$negativecounter + 1};
             };
         };
@@ -1309,7 +1317,7 @@
 #nop RESZTA WALCZACYCH WROGOW;
     #foreach {*wrogi[]} {to} {
         #if {$duch[$wrogi[$to]][shown] < 1} {
-            #var raidbartable {$raidbartable\n $duch[$wrogi[$to]][bar][orc]<088> <118>><088> $duch[$duch[$wrogi[$to]][attack_num]][desc]};
+            #var raidbartable {$raidbartable\n                                 $duch[$wrogi[$to]][bar][orc]<088> <118>><088> $duch[$duch[$wrogi[$to]][attack_num]][desc]};
 
             #math r_curLineCnt {$r_curLineCnt - 1};
             #var duch[$wrogi[$to]][shown] {1};
@@ -1322,7 +1330,7 @@
             #if {$duch[$wrogi[$wr]][attack_num] > 0} {
                 #nop;
             } {
-                #var raidbartable {$raidbartable\n $duch[$wrogi[$wr]][bar][orc]<088>};
+                #var raidbartable {$raidbartable\n                                 $duch[$wrogi[$wr]][bar][orc]<088>};
                 #math r_curLineCnt {$r_curLineCnt - 1};
                 #var duch[$wrogi[$wr]][shown] {1};
                 #math {expectedlines} {$expectedlines + 1};
@@ -1332,7 +1340,7 @@
 #nop RESZTA wszystkiego gdzie shown == 0;
     #foreach {*duch[]} {wr} {
         #if {$duch[$wr][shown] < 1} {
-            #var raidbartable {$raidbartable\n $duch[$wr][bar][orc]};
+            #var raidbartable {$raidbartable\n                                 $duch[$wr][bar][orc]};
 
             #math r_curLineCnt {$r_curLineCnt - 1};
             #var duch[$wr][shown] {1};
@@ -1355,7 +1363,6 @@
     #var raidbartable {};
     #var a {%0};
     #math tmplinecnt {0 - $global_bundle_slots_values[prompt][bottom]};
-    #nop loop {-6} {$tmplinecnt} {bubu} {#sh {                                                                                                       } {$bubu}};
     #var r_curLineCnt {-6};
     #var expectedlines 0;
     #list team_offenders cle;
@@ -1415,7 +1422,7 @@
 #nop RESZTA WALCZACYCH WROGOW;
     #foreach {*wrogi[]} {to} {
         #if {$duch[$wrogi[$to]][shown] < 1} {
-            #var raidbartable {$raidbartable\n$duch[$wrogi[$to]][bar][orc]<088> <118>><088> $duch[$duch[$wrogi[$to]][attack_num]][desc]};
+            #var raidbartable {$raidbartable\n                                $duch[$wrogi[$to]][bar][orc]<088> <118>><088> $duch[$duch[$wrogi[$to]][attack_num]][desc]};
 
             #math r_curLineCnt {$r_curLineCnt - 1};
             #var duch[$wrogi[$to]][shown] {1};
@@ -1428,7 +1435,7 @@
             #if {$duch[$wrogi[$wr]][attack_num] > 0} {
                 #nop;
             } {
-                #var raidbartable {$raidbartable\n$duch[$wrogi[$wr]][bar][orc]<088>};
+                #var raidbartable {$raidbartable\n                                $duch[$wrogi[$wr]][bar][orc]<088>};
                 #math r_curLineCnt {$r_curLineCnt - 1};
                 #var duch[$wrogi[$wr]][shown] {1};
                 #math {expectedlines} {$expectedlines + 1};
@@ -1438,7 +1445,7 @@
 #nop RESZTA wszystkiego gdzie shown == 0;
     #foreach {*duch[]} {wr} {
         #if {$duch[$wr][shown] < 1} {
-            #var raidbartable {$raidbartable\n$duch[$wr][bar][orc]};
+            #var raidbartable {$raidbartable\n                                $duch[$wr][bar][orc]};
 
             #math r_curLineCnt {$r_curLineCnt - 1};
             #var duch[$wr][shown] {1};
@@ -1463,7 +1470,7 @@
 #nop action {Druzyne prowadzi %*, zas ty jestes jej jedynym czlonkiem.} {
 };
 #action {Druzyne prowadzi %* i oprocz ciebie sa w niej jeszcze: %69.} {
-    #var ret @check_team{%69};  
+    #var ret @check_team{%1, %69};  
 };
 
 #action {Prowadzisz druzyne, w ktorej oprocz ciebie jest jeszcze %69.} {
@@ -1487,3 +1494,33 @@
         };
     };
 };
+
+#nop ############# dopelniacze #############################;
+#function match {
+    #var _stra_ {%1};
+    #var _strb_ {%2};
+    #var match 0;
+    #replace _stra_ { } {;};
+    #replace _strb_ { } {;};
+    #list _stra_l_ create {$_stra_};
+    #list _strb_l_ create {$_strb_};
+    #list _stra_l_ size _stra_l_s_;
+    #list _strb_l_ size _strb_l_s_;
+    #if {$_strb_l_s_ != $_stra_l_s_} {
+        #return -1;
+    };
+    #foreach {*_strb_l_[]} {stblv} {
+        #math _matchinglen_ {@StrLen{$_strb_l_[$stblv]} - (@StrLen{$_strb_l_[$stblv]} / 4)};
+        #format compareleft_a {%.${_matchinglen_}s} {$_strb_l_[$stblv]};
+        #format compareleft_b {%.${_matchinglen_}s} {$_stra_l_[$stblv]};
+        #if {"$compareleft_a" == "$compareleft_b"} {
+            #math match {$match + 1};
+        };
+    };
+
+    #if {$match == $_strb_l_s_} {
+        #return 0;
+    } {
+        #return -1;
+    };
+}
