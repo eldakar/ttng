@@ -1,0 +1,12 @@
+#nop #####################################################;
+#nop Red Button with frames;
+#nop 1 - button caption;
+#nop 2 - alert text;
+#nop #####################################################;
+#function textalert_red_button {
+    #local _button_width_ @StrLen{%1};
+    #line quiet #line capture lokbutton #draw <faa> scroll box 1 1 3 $_button_width_ {<FAA><178>%1<088>};
+		#line ignore #sh {$lokbutton[1]};
+    #line ignore #sh {$lokbutton[2] <118> %2<088>};
+    #line ignore #sh {$lokbutton[3]};
+};
