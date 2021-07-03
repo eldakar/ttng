@@ -1,28 +1,43 @@
+#nop ###########################################################;
+#nop Globalne ustawienia;
+#nop ###########################################################;
 #var global_bundle_slots_values[prompt][bottom] {1};
-#var zmeczenie[0] {w pelni wypoczety};
-#var zmeczenie[1] {wypoczety};
-#var zmeczenie[2] {troche zmeczony};
-#var zmeczenie[3] {zmeczony};
-#var zmeczenie[4] {bardzo zmeczony};
-#var zmeczenie[5] {nieco wyczerpany};
-#var zmeczenie[6] {wyczerpany};
-#var zmeczenie[7] {bardzo wyczerpany};
-#var zmeczenie[8] {wycienczony};
-#var zmeczenie[9] {calkowicie wycienczony};
-
 #var state[fatigue] {0};
 #var state[hp] {0};
 #var state[mana] {0};
-
 #var bbs_fixer 0;
 #var PONGED 0;
 
+#nop ###########################################################;
+#nop Include;
+#nop ###########################################################;
 #read tools/graph.tin;
 
+#nop ###########################################################;
+#nop Ponizej jakiej wartosci zmeczenia wyswietlic bind na szepniecie
+#nop prowadzacemu. Wartosci od 0 do 9.;
+#nop TODO: ta opcja powinna miec wlasny event gmcp.char.state;
+#nop ###########################################################;
 #nop CONF;	#alias {meldujprzy} {
 				#var pmeldujprzy $ConfigManager_Configs[meldujprzy];
 			};
+        #var zmeczenie[0] {w pelni wypoczety};
+        #var zmeczenie[1] {wypoczety};
+        #var zmeczenie[2] {troche zmeczony};
+        #var zmeczenie[3] {zmeczony};
+        #var zmeczenie[4] {bardzo zmeczony};
+        #var zmeczenie[5] {nieco wyczerpany};
+        #var zmeczenie[6] {wyczerpany};
+        #var zmeczenie[7] {bardzo wyczerpany};
+        #var zmeczenie[8] {wycienczony};
+        #var zmeczenie[9] {calkowicie wycienczony};
 
+
+#nop ###########################################################;
+#nop Ponizej jakiej wartosci kondycji wyswietlic wiadomosc o jej;
+#nop zmianie. Wartosci od 0 do 6 (!!!);
+#nop TODO: ta opcja powinna miec wlasny event gmcp.char.state;
+#nop ###########################################################;
 #nop CONF;	#alias {alertkondycja} {
 				#if {"$ConfigManager_Configs[alertkondycja]" == ""} {
 					#var palertkondycja 2;
@@ -31,9 +46,12 @@
 				};
 			};
 
+#nop ###########################################################;
+#nop Mozliwosc ustawienia tekstu przy alercie zmiany kondycji;
+#nop ###########################################################;
 #nop CONF;	#alias {alertkondycjatekst} {
 				#if {"$ConfigManager_Configs[alertkondycjatekst]" == ""} {
-					#var palertkondycjatekst {Spadla kondycja - nie masz ustawionego klawisza};
+					#var palertkondycjatekst {Kondycja ulegla zmianie.};
 				} {
 					#var palertkondycjatekst $ConfigManager_Configs[alertkondycjatekst];
 				};
