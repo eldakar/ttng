@@ -16,9 +16,10 @@
 
 #map color paths <138>;
 
+//confadd mapa etykiety wlacz;
 #nop CONF;  #alias {etykiety} {
                 #if {"$ConfigManager_Configs[etykiety]" == ""} {
-                    #local ret @bundleops_default_config{etykiety;wlacz};
+                    #local ret @bundleops_default_config{etykiety};
                 };
 
                 #if {"$ConfigManager_Configs[etykiety]" == "wylacz"} {
@@ -99,7 +100,7 @@
     #nop {};
 };
 
-#event {SESSION DISCONNECTED} {
+#nop event {SESSION DISCONNECTED} {
     /conf startowa $voom;
     #end;
 };
