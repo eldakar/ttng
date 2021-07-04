@@ -8,11 +8,6 @@
 #var bbs_fixer 0;
 #var PONGED 0;
 
-#nop ###########################################################;
-#nop Include;
-#nop ###########################################################;
-#read tools/graph.tin;
-
 #nop CONF;	#alias {stylpaskow} {
 				#if {"$ConfigManager_Configs[stylpaskow]" == "graph"} {
 					#alias rysuj_paski rysuj_paski_graph;

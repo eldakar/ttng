@@ -23,7 +23,8 @@
     #read events/screen.tin;
     #read events/arka.tin;
 
-    #read core/textalerts.tt;
+    #read core/graph.tin;
+    #read core/textalerts.tin;
 
     #read modules/alias.tin;
     #read modules/atlas.tin;
