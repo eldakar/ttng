@@ -10,9 +10,9 @@
     #ses rpg arkadia.rpg.pl {23};
 
     #read core/modulemanager.tin;
-    #read bundles/mapa/manifest.tin; #nop musi byc zaladowana przed eventami;
     #read bundles/HelpManager/manifest.tin;
     #read bundles/ConfigManager/manifest.tin;
+    #read bundles/mapa/manifest.tin;
 
     #read events/map.tin;
     #read events/gmcp.char.tin;

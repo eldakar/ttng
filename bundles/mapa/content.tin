@@ -21,9 +21,8 @@
                 #if {"$ConfigManager_Configs[etykiety]" == ""} {
                     #local ret @bundleops_default_config{etykiety};
                 };
-
                 #if {"$ConfigManager_Configs[etykiety]" == "wylacz"} {
-                    #read  tools/label-unlink.tin;
+                    #read tools/label-unlink.tin;
                 };
             };
 
@@ -100,7 +99,7 @@
     #nop {};
 };
 
-#nop event {SESSION DISCONNECTED} {
+#event {SESSION DISCONNECTED} {
     /conf startowa $voom;
     #end;
 };
@@ -369,7 +368,6 @@
             };
       };
     };
-
     #if {"$proza" == "widoczna"} {
         #line ignore #sh { };
         #line ignore #sh {   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u] <088>};
@@ -378,8 +376,6 @@
         #line ignore #sh {<168>$roza_custom};
     };
 };
-
-#nop alias /gdzie {#map get roomexits grem;#var grem;#unvar grem;} {1};
 
 #alias /gdzie {
     #line ignore #showme {<dfd>Wyjscia niestandardowe:<088>};
@@ -407,7 +403,6 @@
         };
     };
 } {1};
-
 
 
 #nop #################################################################################;
@@ -541,9 +536,6 @@
 };
 
 #alias mapa_map_updated_vtmap {
-    #if {"$pbindynamapie" == "wlacz" && "$rooa" != ""} {
-        SplitWingMap_LabelBind $rooa;
-    };
     #if {$roonsize > 0} {
         #local outputstr {};
         #foreach {*roon[]} {roonvec} {
