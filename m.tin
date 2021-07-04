@@ -31,6 +31,7 @@
     #read modules/hpalert.tin;
     #read modules/meldowanie.tin;
     #read modules/plaszcz.tin;
+    #read modules/cechy.tin;
 
     #read bundles/HelpManager/manifest.tin;
     #read bundles/SplitRefresh/manifest.tin;
@@ -38,7 +39,6 @@
     #read bundles/wskazywanie/manifest.tin;
     #read addons/postac/manifest.tin;
     #read addons/ekwipunek/manifest.tin;
-    #read addons/cechy/manifest.tin;
     #read addons/raid/manifest.tin;
     #read addons/strzalki/manifest.tin;
     #read addons/makra/manifest.tin;
