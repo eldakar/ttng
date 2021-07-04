@@ -60,7 +60,6 @@
     #read addons/bindy/manifest.tin;
     #read bundles/Highlights/manifest.tin;
     #read bundles/Vehicles/manifest.tin;
-    #nop read addons/Drakkary/manifest.tin;
     #read bundles/system/manifest.tin;
     #read bundles/Calendar/manifest.tin;
     #read bundles/walkasuby/manifest.tin;
@@ -72,6 +71,7 @@
     #read modules/kamienie.tin;
     #read modules/expowiska.tin;
     #read modules/tropienie.tin;
+    #read modules/lampa.tin;
 
     #var r @bundleops_loadglobals{};
 

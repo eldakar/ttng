@@ -9,7 +9,7 @@
 	#if {"%1" == "silny"} {#return 20};
 	#if {"%1" == "mocny"} {#return 25};
 	#if {"%1" == "potezny"} {#return 30};
-	#if {"%1" == "mocarny"} {#return 35};	
+	#if {"%1" == "mocarny"} {#return 35};
 	#if {"%1" == "epicko silny"} {#return 40};
 	#if {"%1" == "nadludzki"} {#return 45};
 	#if {"%1" == "slabiutka"} {#return 0};
@@ -32,7 +32,7 @@
 	#if {"%1" == "zwinny"} {#return 20};
 	#if {"%1" == "zreczny"} {#return 25};
 	#if {"%1" == "gibki"} {#return 30};
-	#if {"%1" == "akrobatyczny"} {#return 35};	
+	#if {"%1" == "akrobatyczny"} {#return 35};
 	#if {"%1" == "epicko zreczny"} {#return 40};
 	#if {"%1" == "nadludzki"} {#return 45};
 	#if {"%1" == "epicko zreczna"} {#return 40};
@@ -58,7 +58,7 @@
 	#if {"%1" == "twardy"} {#return 25};
 	#if {"%1" == "muskularny"} {#return 30};
 	#if {"%1" == "atletyczny"} {#return 35};
-	#if {"%1" == "nadludzki"} {#return 45};	
+	#if {"%1" == "nadludzki"} {#return 45};
 	#if {"%1" == "cherlawa"} {#return 0};
 	#if {"%1" == "rachityczna"} {#return 5};
 	#if {"%1" == "mizerna"} {#return 10};
@@ -78,7 +78,7 @@
 	#if {"%1" == "inteligentny"} {#return 20};
 	#if {"%1" == "bystry"} {#return 25};
 	#if {"%1" == "blyskotliwy"} {#return 30};
-	#if {"%1" == "genialny"} {#return 35};	
+	#if {"%1" == "genialny"} {#return 35};
 	#if {"%1" == "bezmyslna"} {#return 0};
 	#if {"%1" == "tepa"} {#return 5};
 	#if {"%1" == "ograniczona"} {#return 10};
@@ -86,7 +86,7 @@
 	#if {"%1" == "inteligentna"} {#return 20};
 	#if {"%1" == "bystra"} {#return 25};
 	#if {"%1" == "blyskotliwa"} {#return 30};
-	#if {"%1" == "genialna"} {#return 35};	
+	#if {"%1" == "genialna"} {#return 35};
 }
 
 #function {poziomodwagi}
@@ -98,7 +98,7 @@
 	#if {"%1" == "odwazny"} {#return 20};
 	#if {"%1" == "dzielny"} {#return 25};
 	#if {"%1" == "nieugiety"} {#return 30};
-	#if {"%1" == "nieustraszony"} {#return 35};	
+	#if {"%1" == "nieustraszony"} {#return 35};
 	#if {"%1" == "tchorzliwa"} {#return 0};
 	#if {"%1" == "strachliwa"} {#return 5};
 	#if {"%1" == "niepewna"} {#return 10};
@@ -106,7 +106,7 @@
 	#if {"%1" == "odwazna"} {#return 20};
 	#if {"%1" == "dzielna"} {#return 25};
 	#if {"%1" == "nieugieta"} {#return 30};
-	#if {"%1" == "nieustraszona"} {#return 35};	
+	#if {"%1" == "nieustraszona"} {#return 35};
 }
 #function {brakuje}
 {
@@ -182,7 +182,7 @@
 		#var ustawionecechy[sta] {- };
 		#var ustawionecechy[int] {- };
 		#var ustawionecechy[bra] {- };
-		
+
 		#var ustawionecechy[$zaliczasz[&1]] {<afa>++<088>};
 		#var ustawionecechy[$zaliczasz[&2]] {<afa>++<088>};
 		#var ustawionecechy[$zaliczasz[&3]] {<ffa>+ <088>};
@@ -206,7 +206,7 @@
 		#var p_str_left @brakuje{&2};
 		#format {line} {| %-15s | %+19s |%-2s| %+15s |%-1s|} {Sila} {&1} {$p_str} {$reverse_brakuje[$p_str_left]} {$ustawionecechy[str]}; #echo $line;
 		#var drawvar $drawvar {<fff>Sila;{&1};$p_str;{$reverse_brakuje[$p_str_left]};$ustawionecechy[str]};
-	};	
+	};
 	#regex {$tmpOcena} {sile%*Jestes %* i %* ci brakuje, zebys mogl wyzej ocenic swa zrecznosc} {
 		#var p_dex @poziomzrecznosci{&2};
 		#var p_dex_left @brakuje{&3};
@@ -283,9 +283,9 @@
 		#var twojpoziom {};
 		#format {line} {| %-37s | %+16s (%-3s)|} {$twojpoziomText[$level]} {${c_stan_niski}$level.$cechyleft<088>} {$pointstotal};
 		#echo $line;
-	
+
 		#echo {+---------------------------------------+-----------------------+};
-	
+
 	#line gag;
 };
 
@@ -300,7 +300,7 @@
 	#math {brak2_2} {$brak2_1 + 1};
 	#math {brak2_3} {$brak2_2 / 2};
 	#math {punkt} {$poziom2 + $brak1_2 + $brak2_3};
-	#return $punkt;	
+	#return $punkt;
 }
 
 #function {policz2}
@@ -310,7 +310,7 @@
 	#math {stapoint} {$p_sta_left + $p_sta};
 	#math {intpoint} {$p_int_left + $p_int};
 	#math {brapoint} {$p_bra_left + $p_bra};
-	
+
 	#math {pointstotal} {$strpoint + $dexpoint + $stapoint + $intpoint + $brapoint};
 	#math {average} {pointstotal / 5};
 	#math {cechylevel} {($pointstotal - 34) / 12};
@@ -320,4 +320,3 @@
 	#var levelpp $cechyleft;
 	#math {needp} {12 - $cechyleft};
 }
-
