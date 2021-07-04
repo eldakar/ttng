@@ -11,6 +11,7 @@
 
     #read core/modulemanager.tin;
     #read bundles/mapa/manifest.tin; #nop musi byc zaladowana przed eventami;
+    #read bundles/HelpManager/manifest.tin;
     #read bundles/ConfigManager/manifest.tin;
 
     #read events/map.tin;
@@ -33,7 +34,6 @@
     #read modules/plaszcz.tin;
     #read modules/cechy.tin;
 
-    #read bundles/HelpManager/manifest.tin;
     #read bundles/SplitRefresh/manifest.tin;
     #read bundles/prompt/manifest.tin;
     #read bundles/wskazywanie/manifest.tin;
