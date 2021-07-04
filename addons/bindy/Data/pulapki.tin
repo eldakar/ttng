@@ -24,6 +24,7 @@
 	  przejdz po %1 plytkach na poludnie;
     #map move s;
 	};
+    Highlights_event <118>PULAPKA TWIERDZA - <028> po %1 <118> /plytkin /plytkis<088>;
 }
 
 #nop Blekitnokrwisci;

@@ -38,5 +38,5 @@
 {
     #foreach {*event_handler_map_double_clicked_mouse_button_one[]} {ehmdcmbo} {
         $event_handler_map_double_clicked_mouse_button_one[$ehmdcmbo] %0 %1;
-    };    
+    };
 };
