@@ -1,5 +1,3 @@
-#var bundle_name {alias};
-#var bundle_help {1};
 #class aliasy read bundles/ConfigManager/Profiles/aliasy.tt;
 
 #alias {/alias %S %*} {
@@ -26,6 +24,3 @@
 };
 
 #var retetete @aliasDB_load{};
-
-
-#var bundle_ready @bundleops_validate{core};
