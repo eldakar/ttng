@@ -1,3 +1,4 @@
+#var HBar {};
 #alias {Highlights_refresh} {
 	#var HBar {};
 	#loop {1} {$screencols - $global_bundle_slots_values[prompt][left] - $global_bundle_slots_values[prompt][right]} {hbc} {
@@ -10,39 +11,31 @@
 #alias Highlights_knowledge {
 	#line ignore #sh {<118><caf>$HBar};
 	#line ignore #sh {${c_stan_wysoki}Wiedza:<088> %0};
-	#line ignore #sh {<118><caf>$HBar};	
+	#line ignore #sh {<118><caf>$HBar};
 };
 
 #alias Highlights_magic {
 	#format {_p_c_stamp_} {%t} {%H:%M:%S};
 	#line ignore #sh {<118><caf>$HBar};
 	#line ignore #sh {${c_noob}Magia ($_p_c_stamp_):<088> %0};
-	#line ignore #sh {<118><caf>$HBar};	
+	#line ignore #sh {<118><caf>$HBar};
 };
 
 #alias Highlights_event {
 	#line ignore #sh {<118><caf>$HBar};
 	#line ignore #sh {${c_wrog}Uwaga:<088> %0};
-	#line ignore #sh {<118><caf>$HBar};	
+	#line ignore #sh {<118><caf>$HBar};
 };
 
 #alias Highlights_post {
 	#line ignore #sh {<118><caf>$HBar};
 	#line ignore #sh {${c_stan_sredni}Poczta:<088> %0};
-	#line ignore #sh {<118><caf>$HBar};	
+	#line ignore #sh {<118><caf>$HBar};
 };
 
 #alias High_RedBar {
  	#draw <CAA><178> scroll rounded calign box 1 1 3 $screencols-$ConfigManager_Configs[SplitWingMapWidth] %0;
 };
-
-#alias High_GreenBar {
-    #line quiet #line capture lokbutton #draw <aba> scroll rounded box 1 1 3 13 {<ABA><178> QUICKBIND <088>};
-    #sh {$lokbutton[1]};
-    #sh {$lokbutton[2] <128> %0<088>};
-    #sh {$lokbutton[3]};
-};
-
 
 #alias kolormagikow {
 	#if {"$ConfigManager_Configs[kolormagikow]" == ""} {
@@ -68,14 +61,14 @@
 			#line sub variables {#var colmags {<$pkolormagikow>}};
 			#class colors_magiki open;
 			#read bundles/Highlights/Data/magiki.tin;
-			#class colors_magiki close;			
+			#class colors_magiki close;
 		};
 		#default {
 			#var pkolormagikow $ColorManager_Colors[magiki];
 			#line sub variables {#var colmags {<$pkolormagikow>}};
 			#class colors_magiki open;
 			#read bundles/Highlights/Data/magiki.tin;
-			#class colors_magiki close;			
+			#class colors_magiki close;
 		}
 	};
 };
@@ -87,16 +80,16 @@
 			#if {$col_ms > 1} {#class colors_mobyexpo kill};
 		};
 		#case {""} {
-			#var ColorManager_Colors[mobyexpo] wylaczony;			
+			#var ColorManager_Colors[mobyexpo] wylaczony;
 			#class colors_mobyexpo size col_ms;
-			#if {$col_ms > 1} {#class colors_mobyexpo kill};		
+			#if {$col_ms > 1} {#class colors_mobyexpo kill};
 		};
 		#default {
 			#var pkolormobyexpo $ColorManager_Colors[mobyexpo];
 			#line sub variables {#var colexpo {<$pkolormobyexpo>}};
 			#class colors_mobyexpo open;
 			#read bundles/Highlights/Data/mobyexpo.tin;
-			#class colors_mobyexpo close;			
+			#class colors_mobyexpo close;
 		}
 	};
 };
@@ -118,7 +111,7 @@
 			#line sub variables {#var colpar {<$pkolorpartyzanci>}};
 			#class colors_partyzanci open;
 			#read bundles/Highlights/Data/partyzanci.tin;
-			#class colors_partyzanci close;			
+			#class colors_partyzanci close;
 		}
 	};
 };
@@ -132,7 +125,7 @@
 		#default {
 			#class colors_ziola open;
 			#read bundles/Highlights/Data/ziola.tin;
-			#class colors_ziola close;			
+			#class colors_ziola close;
 		};
 	};
 };
@@ -146,7 +139,7 @@
 		#default {
 			#class colors_bestigory open;
 			#read bundles/Highlights/Data/bestigory.tin;
-			#class colors_bestigory close;			
+			#class colors_bestigory close;
 		};
 	};
 };

@@ -38,7 +38,7 @@
 		#case {"notification.mail"} {Highlights_post $GMCPMSGS[text];poczta_start};
 		#case {"notification.knowledge"} {Highlights_knowledge $GMCPMSGS[text]};
 		#case {"room.exits"} {
-			#replace {GMCPMSGS[text]} {\\n} {};			
+			#replace {GMCPMSGS[text]} {\\n} {};
 			#sh {$GMCPMSGS[text]};
 			#line substitute {variables} {#line strip {#var current_room_exits {$GMCPMSGS[text]}}};
 #nop DEBUG;	#line substitute {variables} {#line strip {#var gmcp_exits {$GMCPMSGS[text]}}};
@@ -102,16 +102,16 @@
 				};
 				collector_offload;
 			} {34};
-		};	
+		};
 		#case {"room.contents.object"} {
 			#var outputtext {$GMCPMSGS[text]};
 			#replace {outputtext} {\\n} {};
 			#var roomcontentsData {$outputtext};
-			#sh $outputtext;			
+			#sh $outputtext;
 
 			#replace roomcontentsData {\.} {};
 			#replace roomcontentsData {{, | i }} {;};
-			#format {roomcontentsData} {%l} {$roomcontentsData};  
+			#format {roomcontentsData} {%l} {$roomcontentsData};
 			#list roomcontentsList create {$roomcontentsData};
 			#var ilecial 0;
 			#foreach {*roomcontentsList[]} {_rcd} {
@@ -123,9 +123,9 @@
 		  		#line ignore #showme {Widzisz <ffa>$ilecial cial<088>.};
 		  	};
 		};
-		
+
 		#default {
 			#sh $GMCPMSGS[text];
 		};
-	};		
+	};
 };

@@ -8,4 +8,4 @@
 #list bundle_configs add {hpalerttext};
 #list event_handler_char_state add {hpalert_char_state};
 
-#nop try to load it; #var bundle_ready @bundleops_validate{bundles};
+#nop try to load it; #var bundle_ready @bundleops_validate{addons};
