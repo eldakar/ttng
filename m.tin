@@ -9,7 +9,6 @@
     };
     #ses rpg arkadia.rpg.pl {23};
 
-
     #read bundles/bundle_ops.tin;
     #nop mape trzeba zaladowac przed zaladowaniem eventow;
     #read bundles/mapa/manifest.tin;
@@ -24,11 +23,10 @@
     #read events/screen.tin;
     #read events/arka.tin;
 
-    #read core/aliasy/manifest.tin;
-    #read core/atlas/content.tin;
-
     #read core/textalerts.tt;
 
+    #read modules/alias.tin;
+    #read modules/atlas.tin;
     #read modules/hpalert.tin;
     #read modules/meldowanie.tin;
 
@@ -69,15 +67,14 @@
     #read addons/wiesci/manifest.tin;
     #read addons/buffer/content.tin;
 
-    #read markups.tin;
-    #read kamienie.tin;
+    #read modules/markups.tin;
+    #read modules/kamienie.tin;
+    #read modules/expowiska.tin;
 
-    #nop read bundles/SplitWingButtons/manifest.tin;
 
     #var r @bundleops_loadglobals{};
 
     #nop TODO;
-    #read expowiska.tin;
     #read gmcp_message.tin;	#nop GMCP;
     #read alias.tin;		#nop Aliasy do obslugi glownych funkcji;
     #read tropienie.tin;

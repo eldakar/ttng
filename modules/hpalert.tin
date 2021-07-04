@@ -1,12 +1,8 @@
-#var bundle_name {hpalert};
-#var bundle_data {0};           #nop data.tin?;
-#var bundle_help {0};           #nop help.txt?;
-#var bundle_content {1};        #nop content.tin?;
 #nop ###########################################################;
 #nop Ponizej jakiej wartosci kondycji wyswietlic wiadomosc o jej;
 #nop zmianie. Wartosci od 0 do 6 (!!!);
 #nop ###########################################################;
-#list bundle_configs add {hpalertvalue};
+#list bundlemanager_configs add {hpalertvalue};
     #alias {hpalertvalue} {
 		    #if {"$ConfigManager_Configs[hpalertvalue]" == ""} {
             #local ret @bundleops_default_config{hpalertvalue;6};
@@ -16,7 +12,7 @@
 #nop ###########################################################;
 #nop Mozliwosc ustawienia tekstu przy alercie zmiany kondycji;
 #nop ###########################################################;
-#list bundle_configs add {hpalerttext};
+#list bundlemanager_configs add {hpalerttext};
     #alias {hpalerttext} {
         #if {"$ConfigManager_Configs[hpalerttext]" == ""} {
             #local ret @bundleops_default_config{hpalerttext;Kondycja ulegla zmianie.};
@@ -30,7 +26,9 @@
     #alias {hpalert_char_state} {
         #nop pobieram argv z eventu;
         #local charstate {%0};
-				#if {$charstate[hp] <= $ConfigManager_Configs[hpalertvalue]} {
-            #var ret @textalert_red_button{ KONDYCJA ;$ConfigManager_Configs[hpalerttext]};
+        #list charstate size charstate_s;
+				#if {$charstate_s < 4 && $charstate[hp] <= $ConfigManager_Configs[hpalertvalue]} {
+            #var ret @textalert_red_button{KONDYCJA;$ConfigManager_Configs[hpalerttext]};
 				};
+        #unvar charstate_s;
     };

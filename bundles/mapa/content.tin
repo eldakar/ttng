@@ -1,15 +1,11 @@
 #line quiet #map create;
-
 #map flag vtmap on;
 #map legend 48 <FAA>#<088>;
-
 #map read bundles/mapa/map.map;
 #map flag static on
-
 #map goto 1;
 #var MAPPER_SYNC 0;
 #var rooa {};
-
 #map leg 197 {\\};
 #map leg 198 {/};
 #map leg 200 {/};
@@ -21,23 +17,25 @@
 #map color paths <138>;
 
 #nop CONF;  #alias {etykiety} {
-                #if {"$ConfigManager_Configs[etykiety]" =="wylacz" } {
+                #if {"$ConfigManager_Configs[etykiety]" == ""} {
+                    #local ret @bundleops_default_config{etykiety;wlacz};
+                };
+
+                #if {"$ConfigManager_Configs[etykiety]" == "wylacz"} {
                     #read  tools/label-unlink.tin;
-                } {
-                    #nop local ret @bundleops_default_config{etykiety;wlacz};
-                }
+                };
             };
 
-#alias {dynamicznamapa} {
-    #var pdynamic $ConfigManager_Configs[dynamicznamapa];
-    #if {"$pdynamic" == "wlaczona"} {
-        #map flag static off;
-        #action {Nie widzisz zadnego wyjscia %*} {undo;#var creatorMode 0};
-    } {
-        #map flag static on;
-        #unaction {Nie widzisz zadnego wyjscia %*};
-    };
-};
+#nop CONF;  #alias {dynamicznamapa} {
+                #var pdynamic $ConfigManager_Configs[dynamicznamapa];
+                #if {"$pdynamic" == "wlaczona"} {
+                    #map flag static off;
+                    #action {Nie widzisz zadnego wyjscia %*} {undo;#var creatorMode 0};
+                } {
+                    #map flag static on;
+                    #unaction {Nie widzisz zadnego wyjscia %*};
+                };
+            };
 
 #alias {myszka} {
     #if {"$ConfigManager_Configs[myszka]" =="wylaczona" } {
@@ -191,7 +189,7 @@
 } {1};
 
 #alias {/rysuj} {#line ignore #show {Zaczynam rysowac};#var highlightMode 1} {1};
-#alias {/nierysuj} {#line ignore #sh {Przestaje rysowac};#var highlightMode 0} {1};
+#alias {/nierysuj} {#line ignore #show {Przestaje rysowac};#var highlightMode 0} {1};
 
 #alias {move_n} {#send n;#var trytomove 1;#var movedir {polnoc}};
 #alias {move_s} {#send s;#var trytomove 1;#var movedir {poludnie}};
