@@ -6,10 +6,11 @@
 #nop Ponizej jakiej wartosci zmeczenia wyswietlic bind na szepniecie
 #nop prowadzacemu. Wartosci od 0 do 9.;
 #nop ###########################################################;
+//confadd meldowanie meldujprzy 5
 #list bundle_configs add {meldujprzy};
     #alias {meldujprzy} {
         #if {"$ConfigManager_Configs[meldujprzy]" == ""} {
-            #local ret @bundleops_default_config{meldujprzy;5};
+            #local ret @bundleops_default_config{meldujprzy};
         };
 		};
 
