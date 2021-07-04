@@ -29,7 +29,7 @@
 	};
 
 	#list bundlemanager_configs size bmc_size;
-	
+
 	#if {$bmc_size > 0} {
 		#echo {<138>ConfigManager: <128>Loading profile: <FAA><178>$AVATAR_NAME<088> <128>($bmc_size variables loaded.)<088>};
 	} {
@@ -64,7 +64,7 @@
 	};
 
 	#list bundlemanager_macros size bmc_size;
-	
+
 	#if {$bmc_size > 0} {
 		#echo {<148>MacroManager: <FAA><178>$AVATAR_NAME<088> <148>($bmc_size macros loaded.)<088>};
 	} {
@@ -93,7 +93,7 @@
 	};
 
 	#list bundlemanager_colors size bmc_size;
-	
+
 	#if {$bmc_size > 0} {
 		#echo {<148>ColorManager: <FAA><178>$AVATAR_NAME<088> <148>($bmc_size color settings loaded.)<088>};
 	} {
@@ -101,7 +101,26 @@
 	};
 };
 
-
+#nop ##################################################################;
+#nop Bezpieczne dodawanie konfiguracji;
+#nop nazwa_modulu nazwa_konfiga domyslna wartosc;
+#nop ##################################################################;
+#alias {//confadd %S %S %*} {
+    #var confexists 0;
+    #foreach {*bundlemanager_configs[]} {bc} {
+		    #if {"$bundlemanager_configs[$bc]" == "%2"} {
+			      #var confexists 1;
+            #break;
+		    };
+	  };
+	  #if {$confexists == 0} {
+        #list bundlemanager_configs add %2;
+        #var CONF_INFO[%2][module] {%1};
+        #var CONF_INFO[%2][default] {%3};
+    } {
+        #var ret @textalert_sys_warn{//confadd;%2 - juz istnieje!};
+    }
+} {1};
 
 #alias {/conf %S %*} {
 	#var confid 0;
@@ -189,4 +208,3 @@
 } {1};
 
 #var guild_lay[Korsarze ze Skellige] {KS};
-

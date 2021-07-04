@@ -2,7 +2,7 @@
 #nop Ponizej jakiej wartosci kondycji wyswietlic wiadomosc o jej;
 #nop zmianie. Wartosci od 0 do 6 (!!!);
 #nop ###########################################################;
-#list bundlemanager_configs add {hpalertvalue};
+//confadd hpalert hpalertvalue 6;
     #alias {hpalertvalue} {
 		    #if {"$ConfigManager_Configs[hpalertvalue]" == ""} {
             #local ret @bundleops_default_config{hpalertvalue;6};
@@ -12,7 +12,7 @@
 #nop ###########################################################;
 #nop Mozliwosc ustawienia tekstu przy alercie zmiany kondycji;
 #nop ###########################################################;
-#list bundlemanager_configs add {hpalerttext};
+//confadd hpalert hpalerttext Kondycja ulegla zmianie.
     #alias {hpalerttext} {
         #if {"$ConfigManager_Configs[hpalerttext]" == ""} {
             #local ret @bundleops_default_config{hpalerttext;Kondycja ulegla zmianie.};
