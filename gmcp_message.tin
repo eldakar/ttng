@@ -92,16 +92,15 @@
 			#sh $outputtext;
 		};
 		#case {"combat.avatar"} {
-			#var outputtext {$GMCPMSGS[text]};
-			#replace {outputtext} {\\n} {};
-			#sh $outputtext;
-			#delay {wwalce} {
-				#sh {<afa>Odsapnales po walce.<088>};
-				#if {"$pplaszcz" == "wlaczony"} {
-					qb otul sie plaszczem;
-				};
-				collector_offload;
-			} {34};
+ 		#var outputtext {$GMCPMSGS[text]};
+			  #replace {outputtext} {\\n} {};
+			  #sh $outputtext;
+    		#delay {event_trigger_combat_cooldown} {
+				    #nop TODO;collector_offload;
+            #foreach {*event_handler_combat_cooldown[]} {ehcc} {
+                $event_handler_combat_cooldown[$ehcc];
+            };
+    		} {34};
 		};
 		#case {"room.contents.object"} {
 			#var outputtext {$GMCPMSGS[text]};

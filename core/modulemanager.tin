@@ -127,6 +127,6 @@
 };
 
 #function {bundleops_default_config} {
-     /conf %1 %2;
-    #local ret @textalert_soft_warn{/conf %1 - nie ustawiony;Domyslny = %2};
+    /conf %1 $CONF_INFO[%1][default];
+    #local ret @textalert_soft_warn{/conf %1 - nieustawiony;Ustawiam domyslny = $CONF_INFO[%1][default] (modul: $CONF_INFO[%1][module])};
 }

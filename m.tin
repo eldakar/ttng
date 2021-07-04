@@ -30,6 +30,7 @@
     #read modules/atlas.tin;
     #read modules/hpalert.tin;
     #read modules/meldowanie.tin;
+    #read modules/plaszcz.tin;
 
     #read bundles/HelpManager/manifest.tin;
     #read bundles/SplitRefresh/manifest.tin;
@@ -70,14 +71,13 @@
     #read modules/markups.tin;
     #read modules/kamienie.tin;
     #read modules/expowiska.tin;
-
+    #read modules/tropienie.tin;
 
     #var r @bundleops_loadglobals{};
 
     #nop TODO;
     #read gmcp_message.tin;	#nop GMCP;
     #read alias.tin;		#nop Aliasy do obslugi glownych funkcji;
-    #read tropienie.tin;
 
     #config {debug telnet} {off};	#nop debug;
     #config {COMMAND ECHO} {off};	#nop wyswietlanie komend;

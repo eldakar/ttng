@@ -5,7 +5,7 @@
 //confadd hpalert hpalertvalue 6;
     #alias {hpalertvalue} {
 		    #if {"$ConfigManager_Configs[hpalertvalue]" == ""} {
-            #local ret @bundleops_default_config{hpalertvalue;6};
+            #local ret @bundleops_default_config{hpalertvalue};
         };
     };
 
@@ -15,7 +15,7 @@
 //confadd hpalert hpalerttext Kondycja ulegla zmianie.
     #alias {hpalerttext} {
         #if {"$ConfigManager_Configs[hpalerttext]" == ""} {
-            #local ret @bundleops_default_config{hpalerttext;Kondycja ulegla zmianie.};
+            #local ret @bundleops_default_config{hpalerttext};
     		};
     };
 
