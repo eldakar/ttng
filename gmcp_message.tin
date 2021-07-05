@@ -5,9 +5,7 @@
 	};
 	#switch {"$GMCPMSGS[type]"} {
 		#case {"other"} {
-			#if {"$GMCPMSGS[text]" != ""} {
 				#sh $GMCPMSGS[text];
-			};
 		};
 		#case {"comm"} {
 			#replace {GMCPMSGS[text]} {\\n} {};
