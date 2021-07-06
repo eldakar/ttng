@@ -1,26 +1,22 @@
-#alias _quickbind_ {
-	#echo {<118>Zaden quickbind nie zostal ustawiony!<088>};
-};
-#alias _lokacyjny_ {
-	#echo {<118>Zaden lokacyjny nie zostal ustawiony!<088>};
-};
+#alias _quickbind_ {#echo {<118>Zaden quickbind nie zostal ustawiony!<088>};};
+#alias _lokacyjny_ {#echo {<118>Zaden lokacyjny nie zostal ustawiony!<088>};};
 
+#nop NORMALNY QUICKBIND;
 #alias {qb} {
     #var ret @textalert_green_button{QUICKBIND;%0};
     #alias _quickbind_ {%0};
 }
-
-#alias {QB} {
-    #var ret @textalert_blue_button{LOKACYJNY;%0};
-    #alias _lokacyjny_ {%0};
-};
-
 #nop STATKI, PODAZANIE, PROWADZACY, DOBYWANIE;
 #alias {qm} {
     #var ret @textalert_red_button{U W A G A;%0};
     #alias _quickbind_ {%0;#map update;};
     #bell;
-    #if {"$pbindynamapie" == "wlacz"} {
+    #if {"$ConfigManager_Configs[bindynamapie]" == "wlacz"} {
         SplitWingMap_Warning %0;
     };
+};
+#nop LOKACYJNY;
+#alias {QB} {
+    #var ret @textalert_blue_button{LOKACYJNY;%0};
+    #alias _lokacyjny_ {%0};
 };
