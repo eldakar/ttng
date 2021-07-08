@@ -5,9 +5,7 @@
 	};
 	#switch {"$GMCPMSGS[type]"} {
 		#case {"other"} {
-			#if {"$GMCPMSGS[text]" != ""} {
 				#sh $GMCPMSGS[text];
-			};
 		};
 		#case {"comm"} {
 			#replace {GMCPMSGS[text]} {\\n} {};
@@ -38,7 +36,7 @@
 		#case {"notification.mail"} {Highlights_post $GMCPMSGS[text];poczta_start};
 		#case {"notification.knowledge"} {Highlights_knowledge $GMCPMSGS[text]};
 		#case {"room.exits"} {
-			#replace {GMCPMSGS[text]} {\\n} {};			
+			#replace {GMCPMSGS[text]} {\\n} {};
 			#sh {$GMCPMSGS[text]};
 			#line substitute {variables} {#line strip {#var current_room_exits {$GMCPMSGS[text]}}};
 #nop DEBUG;	#line substitute {variables} {#line strip {#var gmcp_exits {$GMCPMSGS[text]}}};
@@ -52,6 +50,17 @@
 		    	/disc;
 		    };
 		};
+    #case {"room.long"} {
+ 			  #if {"$ConfigManager_Configs[pasek]" == "medium"} {
+		        rysuj_roze;
+        };
+	      #var rozk2 {{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
+			  #sh $GMCPMSGS[text];
+  			#if {$trytomove > 0} {
+        		#var trytomove 0;
+			      #map get roomvnum roomId;
+    		};
+    };
 		#case {"room.short"} {
 			#nop BIND OR COMMAND;
     		#if {"$rooa" != ""} {
@@ -92,26 +101,25 @@
 			#sh $outputtext;
 		};
 		#case {"combat.avatar"} {
-			#var outputtext {$GMCPMSGS[text]};
-			#replace {outputtext} {\\n} {};
-			#sh $outputtext;
-			#delay {wwalce} {
-				#sh {<afa>Odsapnales po walce.<088>};
-				#if {"$pplaszcz" == "wlaczony"} {
-					qb otul sie plaszczem;
-				};
-				collector_offload;
-			} {34};
-		};	
+ 		#var outputtext {$GMCPMSGS[text]};
+			  #replace {outputtext} {\\n} {};
+			  #sh $outputtext;
+    		#delay {event_trigger_combat_cooldown} {
+				    #nop TODO;collector_offload;
+            #foreach {*event_handler_combat_cooldown[]} {ehcc} {
+                $event_handler_combat_cooldown[$ehcc];
+            };
+    		} {34};
+		};
 		#case {"room.contents.object"} {
 			#var outputtext {$GMCPMSGS[text]};
 			#replace {outputtext} {\\n} {};
 			#var roomcontentsData {$outputtext};
-			#sh $outputtext;			
+			#sh $outputtext;
 
 			#replace roomcontentsData {\.} {};
 			#replace roomcontentsData {{, | i }} {;};
-			#format {roomcontentsData} {%l} {$roomcontentsData};  
+			#format {roomcontentsData} {%l} {$roomcontentsData};
 			#list roomcontentsList create {$roomcontentsData};
 			#var ilecial 0;
 			#foreach {*roomcontentsList[]} {_rcd} {
@@ -123,9 +131,9 @@
 		  		#line ignore #showme {Widzisz <ffa>$ilecial cial<088>.};
 		  	};
 		};
-		
+
 		#default {
 			#sh $GMCPMSGS[text];
 		};
-	};		
+	};
 };

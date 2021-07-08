@@ -27,13 +27,13 @@
 		zarzuc wedke;
 };
 #action {Nagle dostrzegasz, ze zanurzony w wodzie sznurek %* wedki napina sie!} {
-	qr zetnij rybe na wedce;
+	qb zetnij rybe na wedce;
 	#bell;
 };
 #action {Slyszysz suchy trzask i dostrzegasz, ze zdobycz zerwala sie z %* wedki, lamiac ja przy tym|Nagle %* wedka zostaje wciagnieta pod wode} {
 	#bell;
 };
 #action {{Wyciagasz zlapana rybe na powierzchnie|Sznurek %* wedki opada swobodnie na wode, zapewne zlapanej nan rybie udalo sie zerwac}} {
-	qr zarzuc_wedke;
+	qb zarzuc_wedke;
 	#bell;
 };

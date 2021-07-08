@@ -1,88 +1,22 @@
-#alias {plaszcz} {
-  #var pplaszcz $ConfigManager_Configs[plaszcz];
-};
+#alias _quickbind_ {#echo {<118>Zaden quickbind nie zostal ustawiony!<088>};};
+#alias _lokacyjny_ {#echo {<118>Zaden lokacyjny nie zostal ustawiony!<088>};};
 
-#alias {bindynamapie} {
-  #var pbindynamapie $ConfigManager_Configs[bindynamapie];
-};
-
-#alias _quickbind_ {
-	#echo {<118>Zaden quickbind nie zostal ustawiony!<088>};
-};
-
-
-#alias {qr} {
-  #line sub variables {
-    #alias _quickbind_ {
-      %0;
-      #var qbvar {                                                                 };
-    }
-  };
-  #format qbvar {%-64s %.64s} {%0};
-  #var qbvar {${c_stan_sredni}$qbvar};
-
-  #format {show_bind_} {%h} { %0 };
-  #echo {${c_stan_sredni}$show_bind_};
-}
-
-#alias {qk} {
-  #var r @_print_war_bind{%0};
-  #var qkcommand %0;
-  #line sub variables {
-    #alias _quickbind_ {
-      %0;
-      #var qbvar {                                                                 };
-    }
-  };
-};
-
+#nop NORMALNY QUICKBIND;
 #alias {qb} {
-  #line sub variables {
+    #var ret @textalert_green_button{QUICKBIND;%0};
     #alias _quickbind_ {%0};
-  };
-  High_GreenBar %0;
-  #nop format qbvar {%-64s %.64s} {%0};
-  #nop var qbvar {${c_stan_wysoki}$qbvar};
-  #nop format {show_bind_} {%h} { %0 };
-  #nop echo {${c_stan_wysoki}$show_bind_};
 }
-
-#nop silently;
-#alias {qbs} {
-  #line sub variables {
-    #alias _quickbind_ {
-      %0;
-      #var qbvar {                                                                 };
-    }
-  };
-  #format qbvar {%-64s %.64s} {%0};
-  #var qbvar {${c_stan_sredni}$qbvar};
-}
-
-#nop alias {QB} {
-    #line ignore #sh {<AAB><fff>BIND LOKACJA <088><168> %0<088>};
-    
-};
-
-#alias {QB} {
-    #line quiet #line capture lokbutton #draw <aaf> scroll box 1 1 3 13 {<AAF><178> LOKACYJNY <088>};
-    #sh {$lokbutton[1]};
-    #sh {$lokbutton[2] <168> %0<088>};
-    #sh {$lokbutton[3]};
-
-    #alias _lokacyjny_ {%0};
-};
-
+#nop STATKI, PODAZANIE, PROWADZACY, DOBYWANIE;
 #alias {qm} {
-  #line sub variables {#alias _quickbind_ {%0;#map update;};};
-  #format {show_bind_} {%h} { %0 };
-  #format qbvar {%-64s %.64s} {%0};
-  #echo {${c_stan_niski}$show_bind_};
-  #nop High_RedBar %0;
-
-  #bell;
-  
-  #if {"$pbindynamapie" == "wlacz"} {
-    SplitWingMap_Warning %0;
-  };
+    #var ret @textalert_red_button{U W A G A;%0};
+    #alias _quickbind_ {%0;#map update;};
+    #bell;
+    #if {"$ConfigManager_Configs[bindynamapie]" == "wlacz"} {
+        SplitWingMap_Warning %0;
+    };
+};
+#nop LOKACYJNY;
+#alias {QB} {
+    #var ret @textalert_blue_button{LOKACYJNY;%0};
+    #alias _lokacyjny_ {%0};
 };

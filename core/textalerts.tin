@@ -1,0 +1,36 @@
+#nop #####################################################;
+#nop Color Buttons with frames;
+#nop 1 - button caption;
+#nop 2 - alert text;
+#nop #####################################################;
+
+#nop RED;#function textalert_red_button {
+            #local _button_width_ @StrLen{%1};
+            #math _button_width_ {$_button_width_ + 4};
+            #line quiet #line capture lokbutton #draw <faa> scroll box 1 1 3 $_button_width_ {<FAA><178> %1 <088>};
+        		#line ignore #sh {$lokbutton[1]\n$lokbutton[2] <118> %2<088>\n$lokbutton[3]};
+    };
+
+#nop BLU;#function textalert_blue_button {
+            #local _button_width_ @StrLen{%1};
+            #math _button_width_ {$_button_width_ + 4};
+            #line quiet #line capture lokbutton #draw <aaf> scroll box 1 1 3 $_button_width_ {<AAF><178> %1 <088>};
+            #line ignore #sh {$lokbutton[1]\n$lokbutton[2] <168> %2<088>\n$lokbutton[3]};
+        };
+
+#nop GRE;#function textalert_green_button {
+            #local _button_width_ @StrLen{%1};
+            #math _button_width_ {$_button_width_ + 4};
+            #line quiet #line capture lokbutton #draw <afa> scroll box 1 1 3 $_button_width_ {<ABA><178> %1 <088>};
+            #line ignore #sh {$lokbutton[1]\n$lokbutton[2] <128> %2<088>\n$lokbutton[3]};
+        };
+
+
+#nop GENERIC;
+        #function textalert_soft_warn {
+            #line ignore #sh {<158>## <fff>ttng<158> ## <afa>%1 <158>## <fff>%2<088>}
+        };
+
+        #function textalert_sys_warn {
+            #line ignore #sh {<158>## <fff>ttng<158> ## <faa>%1 <158>## <fff>%2<088>}
+        };

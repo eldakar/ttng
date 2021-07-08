@@ -16,7 +16,7 @@
 			};
 			#case {2} {
 				#var helptopics {$helptopics <acf>$bundlemanager_helps[$bh]<088>};
-				#local helpColorIndex 0;				
+				#local helpColorIndex 0;
 			};
 		};
 

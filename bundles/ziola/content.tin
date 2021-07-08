@@ -317,7 +317,7 @@
   #list worekA_zawartosc_nazwa {clear};
   #var worekA_pojemnosc {44};
   #var worekA_razem {0};
-  
+
   #foreach {*worekA_zawartosc[]} {i} {
     #regex {$worekA_zawartosc[$i]} {%S %S}
       {
@@ -351,7 +351,7 @@
     #if {$ilosc_workow == 4} {
         #var sortujemy {false};
     };
-  };  
+  };
   #elseif {"$currentworek" == "D"} {
       #var sortujemy {false};
   };
@@ -378,15 +378,15 @@
                 wez $zioladb[$ziolkonazwa][odmiana] z pierwszego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z pierwszego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z pierwszego woreczka;
-                
+
                 wez $zioladb[$ziolkonazwa][odmiana] z drugiego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z drugiego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z drugiego woreczka;
-                
+
                 wez $zioladb[$ziolkonazwa][odmiana] z trzeciego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z trzeciego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z trzeciego woreczka;
-                
+
                 wez $zioladb[$ziolkonazwa][odmiana] z czwartego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z czwartego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z czwartego woreczka;
@@ -436,13 +436,13 @@
     zamknij pierwszy woreczek;
     zamknij drugi woreczek;
     zamknij trzeci woreczek;
-    zamknij czwarty woreczek;    
-    zamknij piaty woreczek;     
-    zamknij szosty woreczek;    
-    zamknij siodmy woreczek; 
-    zamknij osmy woreczek; 
-    zamknij dziewiaty woreczek; 
-    zamknij dziesiaty woreczek; 
+    zamknij czwarty woreczek;
+    zamknij piaty woreczek;
+    zamknij szosty woreczek;
+    zamknij siodmy woreczek;
+    zamknij osmy woreczek;
+    zamknij dziewiaty woreczek;
+    zamknij dziesiaty woreczek;
     dobadz wszystkich broni;
 } {1};
 
@@ -464,15 +464,15 @@
                 wez $zioladb[$ziolkonazwa][odmiana] z pierwszego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z pierwszego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z pierwszego woreczka;
-                
+
                 wez $zioladb[$ziolkonazwa][odmiana] z drugiego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z drugiego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z drugiego woreczka;
-                
+
                 wez $zioladb[$ziolkonazwa][odmiana] z trzeciego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z trzeciego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z trzeciego woreczka;
-                
+
                 wez $zioladb[$ziolkonazwa][odmiana] z czwartego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z czwartego woreczka;
                 wez $zioladb[$ziolkonazwa][odmiana] z czwartego woreczka;
@@ -505,10 +505,10 @@
     zamknij pierwszy woreczek;
     zamknij drugi woreczek;
     zamknij trzeci woreczek;
-    zamknij czwarty woreczek;    
-    zamknij piaty woreczek;     
-    zamknij szosty woreczek;    
-    zamknij siodmy woreczek; 
+    zamknij czwarty woreczek;
+    zamknij piaty woreczek;
+    zamknij szosty woreczek;
+    zamknij siodmy woreczek;
     dobadz wszystkich broni;
 } {1};
 
@@ -1232,8 +1232,8 @@
 #var zioladb[Deren][sposob][o] {przezuj};
 #var zioladb[Komosa][sposob][zm] {zjedz};
 #var zioladb[Wrotycz][sposob] {};
-#var zioladb[Mandragora][sposob][mn] {przezuj};
-#var zioladb[Mandragora][sposob][o] {rozgryz};
+#var zioladb[Mandragora][sposob][s] {przezuj};
+#var zioladb[Mandragora][sposob][mn] {rozgryz};
 #var zioladb[Aralia][sposob][zm] {zjedz};
 #var zioladb[Przesl][sposob][zm] {przezuj};
 #var zioladb[Lulecznica][sposob][zm] {przezuj};

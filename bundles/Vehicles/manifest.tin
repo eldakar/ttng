@@ -4,7 +4,7 @@
 #var bundle_content {1};
 
 #list bundle_configs clear;
-	
+
 
 #nop IS HELP PRESENT;
 #var bundle_help {0};
@@ -14,7 +14,6 @@
 
 #list bundle_deps clear;
 	#list bundle_deps add {ConfigManager};
-	#list bundle_deps add {bindy};
 
 #list bundle_alias clear;
 

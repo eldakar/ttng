@@ -5,7 +5,7 @@
     obe czarne plytki;
     obe biale plytki;
   };
-  #var rr @set_quickbind_blue{plytki};
+  qb plytki;
 }
 
 #action {~^Plytki zostaly wykonane z marmuru w %1 kolorze. Wyraznie odcinaja sie od reszty kamieni, jakimi wybrukowano most. Ich rozmiar odpowiada dokladnie rozmiarowi stopy ogra.$}
@@ -16,28 +16,41 @@
 
 #action {~^Plytki zostaly wykonane z marmuru w %1 kolorze. Wyraznie odcinaja sie od reszty kamieni, jakimi wybrukowano most. Ich rozmiar odpowiada dokladnie rozmiarowi stopy ogra. Dostrzegasz, iz sa lekko zaglebione w powierzchni mostu.$}
 {
-	#alias {po_kolorze_na_n} {
+	#alias {/plytkin} {
 	  przejdz po %1 plytkach na polnoc;
-	  #chat message mapper navigate:exit:n;
+    #map move n;
 	};
-	#alias {po_kolorze_na_s} {
+	#alias {/plytkis} {
 	  przejdz po %1 plytkach na poludnie;
-	  #chat message mapper navigate:exit:s;
+    #map move s;
 	};
-	#var r @set_quickbind_green{po_kolorze_na_s};
-	#var r @set_quickbind_yellow{po_kolorze_na_n};
+    Highlights_event <118>PULAPKA TWIERDZA - <028> po %1 <118> /plytkin /plytkis<088>;
 }
 
 #nop Blekitnokrwisci;
 #action {Zauwazasz, ze plytki %1 oraz %2 sa lekko wcisniete w porownaniu z plytkami pozostalych barw.} {
-	#unalias {/plytkin};
-	#unalias {/plytkis};
-	#if {"%1" == "niebieskie" && "%2" == "czerwone"} {
+	  #unalias {/plytkin};
+	  #unalias {/plytkis};
+    #local po_jakich {};
+    #if {"%1" == "niebieskie" && "%2" == "czarne"} {#local po_jakich granatowych};
+    #if {"%1" == "czerwone" && "%2" == "zolte"} {#local po_jakich pomaranczowych};
+    #if {"%1" == "czerwone" && "%2" == "czarne"} {#local po_jakich ciemnobrazowych};
+    #if {"%1" == "niebieskie" && "%2" == "zolte"} {#local po_jakich zielonych};
+    #if {"%1" == "czerwone" && "%2" == "niebieskie"} {#local po_jakich fioletowych};
+    #if {"%1" == "biale" && "%2" == "czarne"} {#local po_jakich szarych};
 		#alias {/plytkin} {przejdz po fioletowych plytkach na polnoc;s} {1};
 		#alias {/plytkis} {przejdz po fioletowych plytkach na poludnie} {1};
-		Highlights_event <118>PULAPKA BLEKITNOKRWISCI - <028> FIOLETOWE <118> /plytkin /plytkis<088>;
-	};
-}
+		Highlights_event <118>PULAPKA BLEKITNOKRWISCI - <028> po $po_jakich <118> /plytkin /plytkis<088>;
+};
+#action {Czesc umieszczonych w podlodze plytek klika cicho, jakby zmieniajac swoje polozenie.} {
+    #unalias {/plytkin};
+    #unalias {/plytkis};
+
+    Highlights_event <118>PULAPKA BLEKITNOKRWISCI - Plytki zmienily polozenie<088>;
+    qb obejrzyj plytki;
+};
+
+
 
 #nop BROK;	#action {Nagle %* podlatuje w gore, robi pol salta i zawisa bezwladnie, przywiazany do drzewa, by dyndac jak kukielka.} {
 				qm przetnij rzemien;

@@ -1,41 +1,41 @@
 #line quiet #map create;
-
 #map flag vtmap on;
 #map legend 48 <FAA>#<088>;
-
 #map read bundles/mapa/map.map;
 #map flag static on
-
 #map goto 1;
 #var MAPPER_SYNC 0;
 #var rooa {};
-
 #map leg 197 {\\};
 #map leg 198 {/};
 #map leg 200 {/};
-#map leg 218 {\u2190};  
+#map leg 218 {\u2190};
 #map leg 217 {\u2192};
 #map leg 215 {|};
-#map leg 219 {-};   
+#map leg 219 {-};
 
 #map color paths <138>;
 
+//confadd mapa etykiety wlacz;
 #nop CONF;  #alias {etykiety} {
-                #if {"$ConfigManager_Configs[etykiety]" =="wylacz" } {
-                    #read  tools/label-unlink.tin;
+                #if {"$ConfigManager_Configs[etykiety]" == ""} {
+                    #local ret @bundleops_default_config{etykiety};
+                };
+                #if {"$ConfigManager_Configs[etykiety]" == "wylacz"} {
+                    #read tools/label-unlink.tin;
                 };
             };
 
-#alias {dynamicznamapa} {
-    #var pdynamic $ConfigManager_Configs[dynamicznamapa];
-    #if {"$pdynamic" == "wlaczona"} {
-        #map flag static off;
-        #action {Nie widzisz zadnego wyjscia %*} {undo;#var creatorMode 0};
-    } {
-        #map flag static on;
-        #unaction {Nie widzisz zadnego wyjscia %*};
-    };
-};
+#nop CONF;  #alias {dynamicznamapa} {
+                #var pdynamic $ConfigManager_Configs[dynamicznamapa];
+                #if {"$pdynamic" == "wlaczona"} {
+                    #map flag static off;
+                    #action {Nie widzisz zadnego wyjscia %*} {undo;#var creatorMode 0};
+                } {
+                    #map flag static on;
+                    #unaction {Nie widzisz zadnego wyjscia %*};
+                };
+            };
 
 #alias {myszka} {
     #if {"$ConfigManager_Configs[myszka]" =="wylaczona" } {
@@ -46,7 +46,7 @@
 };
 
 #alias {roza} {
-    #var proza $ConfigManager_Configs[roza];    
+    #var proza $ConfigManager_Configs[roza];
 };
 
 #alias {dziennamapie} {
@@ -55,7 +55,7 @@
         {
             #var roomtime {%0};
             #foreach {*roomtime[]} {s} {
-                #list {ROOM_TIME} {find} {$s} {v}; 
+                #list {ROOM_TIME} {find} {$s} {v};
                 #if {$v > 0} {
                     #list {ROOM_TIME}{set}{$s}{$roomtime[$s]}
                 } {
@@ -139,7 +139,7 @@
             #alias {move_ne} {#send przemknij ne;#map move ne;#var trytomove 1;#var movedir {polnocny-wschod}};
             #alias {move_nw} {#send przemknij nw;#map move nw;#var trytomove 1;#var movedir {polnocny-zachod}};
             #alias {move_sw} {#send przemknij sw;#map move sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
-            #alias {move_se} {#send przemknij se;#map move se;#var trytomove 1;#var movedir {poludniowy-wschod}};                
+            #alias {move_se} {#send przemknij se;#map move se;#var trytomove 1;#var movedir {poludniowy-wschod}};
         };
         #case {2} {
             #alias {move_n}  {#map flag nofollow on;sprawdz polnoc;wskaz n;#send n;#map flag nofollow off;#map move n;#var trytomove 1;#var movedir {polnoc}};
@@ -151,7 +151,7 @@
             #alias {move_ne} {#map flag nofollow on;sprawdz polnoc;wskaz ne;#send ne;#map flag nofollow off;#map move ne;#var trytomove 1;#var movedir {polnocny-wschod}};
             #alias {move_nw} {#map flag nofollow on;sprawdz polnoc;wskaz nw;#send nw;#map flag nofollow off;#map move nw;#var trytomove 1;#var movedir {polnocny-zachod}};
             #alias {move_sw} {#map flag nofollow on;sprawdz polnoc;wskaz sw;#send sw;#map flag nofollow off;#map move sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
-            #alias {move_se} {#map flag nofollow on;sprawdz polnoc;wskaz se;#send se;#map flag nofollow off;#map move se;#var trytomove 1;#var movedir {poludniowy-wschod}};                
+            #alias {move_se} {#map flag nofollow on;sprawdz polnoc;wskaz se;#send se;#map flag nofollow off;#map move se;#var trytomove 1;#var movedir {poludniowy-wschod}};
         };
     };
 };
@@ -189,7 +189,7 @@
 } {1};
 
 #alias {/rysuj} {#line ignore #show {Zaczynam rysowac};#var highlightMode 1} {1};
-#alias {/nierysuj} {#line ignore #sh {Przestaje rysowac};#var highlightMode 0} {1};
+#alias {/nierysuj} {#line ignore #show {Przestaje rysowac};#var highlightMode 0} {1};
 
 #alias {move_n} {#send n;#var trytomove 1;#var movedir {polnoc}};
 #alias {move_s} {#send s;#var trytomove 1;#var movedir {poludnie}};
@@ -222,7 +222,7 @@
 
 #alias {/dzien} {
     #map color symbols <088>;
-    #map color exits <088>;    
+    #map color exits <088>;
 } {1};
 
 
@@ -368,7 +368,6 @@
             };
       };
     };
-
     #if {"$proza" == "widoczna"} {
         #line ignore #sh { };
         #line ignore #sh {   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u] <088>};
@@ -377,8 +376,6 @@
         #line ignore #sh {<168>$roza_custom};
     };
 };
-
-#nop alias /gdzie {#map get roomexits grem;#var grem;#unvar grem;} {1};
 
 #alias /gdzie {
     #line ignore #showme {<dfd>Wyjscia niestandardowe:<088>};
@@ -408,7 +405,6 @@
 } {1};
 
 
-
 #nop #################################################################################;
 #nop EVENTY GMCP;
 #nop #################################################################################;
@@ -433,7 +429,7 @@
     };
 
     #nop ZAPISUJEMY GMPC ROOM INFO zamiast Shorta;
-    #if {$ROOM_INFO[map][x] > 0} {        
+    #if {$ROOM_INFO[map][x] > 0} {
         #var current_room_short_desc {$ROOM_INFO[map][name] $ROOM_INFO[map][x] $ROOM_INFO[map][y]};
     };
 
@@ -446,7 +442,7 @@
     #nop var current_room_short_desc;
     #local allow 0;
 
-    #if {$ROOM_INFO[map][x] > 0} {        
+    #if {$ROOM_INFO[map][x] > 0} {
         #echo {<138>MAP <028>$current_room_short_desc|$map_short|};
         #if {"$current_room_short_desc" != "$map_short"} {
             #echo {<138>MAP <118>MISMATCH<088>};
@@ -457,7 +453,7 @@
         #if {"$gmcp_short" != "$map_short"} {
             #echo {<138>MAP <118>MISMATCH<088>};
             #local allow 1
-        };            
+        };
     };
     #if {$allow == 1} {
         #var MAPPER_SYNC 0;
@@ -509,8 +505,8 @@
             #if {$listsize == 2} {
                 #var roomfound {1};
                 #if {$vexitslist[1] != $rmvnum} {#ec {Odnalazlem mapke na: $vexitslist[1]<088>};#map goto $vexitslist[1];#var roomId $vexitslist[1];#var MAPPER_SYNC $vexitslist[1]};
-                #var MAPPER_SYNC $vexitslist[1];    
-                #map flag static off;    
+                #var MAPPER_SYNC $vexitslist[1];
+                #map flag static off;
             };
             #if {$listsize == 0} {
                 #map dig test new;
@@ -540,9 +536,6 @@
 };
 
 #alias mapa_map_updated_vtmap {
-    #if {"$pbindynamapie" == "wlacz" && "$rooa" != ""} {
-        SplitWingMap_LabelBind $rooa;
-    };
     #if {$roonsize > 0} {
         #local outputstr {};
         #foreach {*roon[]} {roonvec} {
@@ -558,20 +551,20 @@
                             #var tmpF1value {$roon[$roonvec][message]};
                             #replace tmpF1value {,} {;};
                             #alias LOK1 {$tmpF1value;};
-                            #alias 1 {$tmpF1value;};                            
+                            #alias 1 {$tmpF1value;};
                         };
                         #case {"F2"} {
                             #local outputstr {$outputstr\n<168>2 <088>- <138> $roon[$roonvec][message] <088>};
                             #var tmpF2value {$roon[$roonvec][message]};
                             #replace tmpF2value {,} {;};
-                            #alias LOK2 {$tmpF2value;};                            
-                            #alias 2 {$tmpF2value;};                            
+                            #alias LOK2 {$tmpF2value;};
+                            #alias 2 {$tmpF2value;};
                         };
                         #case {"F3"} {
                             #local outputstr {$outputstr\n<168>3 <088>- <138> $roon[$roonvec][message] <088>};
                             #var tmpF3value {$roon[$roonvec][message]};
                             #replace tmpF3value {,} {;};
-                            #alias LOK3 {$tmpF3value;};                            
+                            #alias LOK3 {$tmpF3value;};
                             #alias 3 {$tmpF3value};
                             #alias {3 %w} {$tmpF3value %1};
                         };
@@ -602,7 +595,7 @@
     #nop ##################################;
 #var current_room_short_desc {unknown2};
 #var current_room_exits {unknown2};
-#alias {/f$} {findme} {1}; 
+#alias {/f$} {findme} {1};
 #nop alias findme {#echo a};
 #alias findme {
         #map get roomvnum rmvnum;
@@ -627,7 +620,7 @@
             #math noOfRooms {$listsize / 2};
             #line ignore #sh {#debug <fac>findme:<088> szukam szorta: <038>$current_room_short_desc<088> - lista zawiera: <018>$noOfRooms<088>.};
             #nop $ROOM_INFO[exits];
-        };    
+        };
         #if {$listsize == 2} {
             #var roomfound {1};
             #if {$vexitslist[1] != $rmvnum} {
@@ -636,7 +629,7 @@
                 #var creatorMode 0;
                 #if {$findmedebug} {
                     #line ignore #sh {#debug <fac>findme:<088> Przekone kulke na: <028>$vexitslist[1]<088>};
-                };    
+                };
             #nop map map ${screen_w}x15;
                 #var roomId $vexitslist[1];
                 #var MAPPER_SYNC $vexitslist[1];
@@ -656,21 +649,21 @@
         #list vexitslist {size} {listsize};
         #list vexitslist_filter clear;
         #var velf 0;
-    
+
         #if {$findmedebug} {
             #math noOfRooms {$listsize / 2};
             #line ignore #sh {#debug <fac>findme:<088> szukam szort + wyjscia: <038>$current_room_short_desc <088>| <038>$current_room_exits<088> - lista zawiera: <018>$noOfRooms<088>.};
             #nop $ROOM_INFO[exits];
-        };    
+        };
         #if {$listsize == 2} {
             #var roomfound {1};
             #if {$vexitslist[1] != $rmvnum} {#ec {Odnalazlem mapke na: $vexitslist[1]<088>};#map goto $vexitslist[1];#var creatorMode 0;#var roomId $vexitslist[1];#var MAPPER_SYNC $vexitslist[1]};
-            #var MAPPER_SYNC $vexitslist[1];     
+            #var MAPPER_SYNC $vexitslist[1];
         };
         #if {$listsize > 2} {
             #if {$listsize < 4} {
                 #echo {%s} {Znalazlem pokoj <118><ffa>$current_room_short_desc<088> z wyjsciami na: <118><aff>$current_room_exits<088> $listsize razy.<088>};
-                
+
                 #var nearestexitdistance 100000;
                 #var nearestroomid $rmvnum;
                 #foreach {*vexits[]} {exitvector} {
@@ -686,7 +679,7 @@
                     #var creatorMode 0;
                     #if {$findmedebug} {
                         #line ignore #sh {#debug <fac>findme:<088> Przekone kulke na: <028>$vexitslist[1]<088>};
-                    };    
+                    };
 
                     #var roomId $nearestroomid;
                     #var MAPPER_SYNC $nearestroomid;
@@ -720,7 +713,7 @@
             #math noOfRooms {$listsize / 2};
             #line ignore #sh {#debug <fac>findme:<088> short <038>$current_room_short_desc<088> - lista zawiera: <018>$noOfRooms<088>.};
             #nop $ROOM_INFO[exits];
-        };    
+        };
         #if {$listsize == 2} {
             #var roomfound {1};
             #if {$vexitslist[1] != $rmvnum} {
@@ -729,7 +722,7 @@
                 #var creatorMode 0;
                 #if {$findmedebug} {
                     #line ignore #sh {#debug <fac>findme:<088> short Przekone kulke na: <028>$vexitslist[1]<088>};
-                };    
+                };
             #nop map map ${screen_w}x15;
                 #var roomId $vexitslist[1];
                 #var MAPPER_SYNC $vexitslist[1];
@@ -753,7 +746,7 @@
             #math noOfRooms {$listsize / 2};
             #line ignore #sh {#debug <fac>findme:<088> exits <038>$current_room_short_desc <088>| <038>$current_room_exits<088> - lista zawiera: <018>$noOfRooms<088>.};
             #nop $ROOM_INFO[exits];
-        };    
+        };
         #if {$listsize == 2} {
             #var roomfound {1};
             #if {$vexitslist[1] != $rmvnum} {
@@ -764,7 +757,7 @@
                 #var MAPPER_SYNC $vexitslist[1]};
                 #if {$findmedebug} {
                     #line ignore #sh {#debug <fac>findme:<088> exits Przekone kulke na: <028>$vexitslist[1]<088>};
-                };    
+                };
             #var MAPPER_SYNC $vexitslist[1];
         };
 };
@@ -847,20 +840,19 @@
     };
 };
 
-#action {Znajdujesz sie w nienaturalnie ciemnym miejscu. Od czasu do czasu zauwazasz czerwone blyski, jakbyu wyglodzonych wilczych oczu} {
+#nop action {Znajdujesz sie w nienaturalnie ciemnym miejscu. Od czasu do czasu zauwazasz czerwone blyski, jakbyu wyglodzonych wilczych oczu} {
     #if {$trytomove > 0} {
         #var trytomove 0;
         #map get roomvnum roomId;
     };
     #var rozk2 {{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
-    BottomBar_Selected;    
+    BottomBar_Selected;
 };
 
-#action {{Ciemne miejsce|Otaczajace cie ciemnosci uniemozliwiaja zauwazenie czegokolwiek}} {
+#nop action {{Ciemne miejsce|Otaczajace cie ciemnosci uniemozliwiaja zauwazenie czegokolwiek|Otaczajaca cie ciemnosc w niewielkim stopniu}} {
     #if {$trytomove > 0} {
         #var trytomove 0;
         #map get roomvnum roomId;
-    };    
-    #var rozk2 {{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
+    };
     BottomBar_Selected;
 };

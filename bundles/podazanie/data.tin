@@ -21,7 +21,7 @@
 #action {%1 znika w szczelinie.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie przez szczeline}};
 #action {%1 probuje zsunac sie po scianie,} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zejdz na dol}};
 #action {%1 przeskakuje wyrwe i zgrabnie laduje na ziemi.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przeskocz na polke}};
-#action {%1 bierze rozbieg i przeskakuje przepasc.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przeskocz przepasc}}; 
+#action {%1 bierze rozbieg i przeskakuje przepasc.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przeskocz przepasc}};
 #action {%1 przeciska sie przez szczeline} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie przez szczeline}};
 #action {%1 majstruje cos przy scianie.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przekrec czaszke}};
 #action {%1 poklonil sie statui.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm poklon sie statui}};
@@ -153,7 +153,7 @@
 #action {%1 naciaga kaptur plaszcza na glowe.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm otul sie plaszczem}};
 #action {%1 schodzi z drakkara na brzeg.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zejdz ze statku}};
 #action {%1 wskazuje na dol.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qb trop}};
-#action {%1 przechodzi szybko przez rozmyty row wyschnietej fosy i zabiera sie za wspinaczke po ogromnym gruzowisku.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wespnij sie po gruzowisku}}; 
+#action {%1 przechodzi szybko przez rozmyty row wyschnietej fosy i zabiera sie za wspinaczke po ogromnym gruzowisku.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wespnij sie po gruzowisku}};
 #action {%1 zaczyna wspinac sie po wielkich glazach skalnego rumowiska} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz na gore}};
 #action {%1 bierze rozbieg i przeskakuje na most} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przeskocz na most}};
 #action {%1 bierze rozbieg i przeskakuje na polke} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przeskocz na polke}};
@@ -164,4 +164,7 @@
 #action {%1 cofa sie pare krokow, bierze gleboki oddech, rozpedza sie i zaslaniajac soie ramieniem twarz przeskakuje przez ogien.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przeskocz przez ogien}};
 #action {%1 wciska sie w skalne pekniecie w jednej ze scian.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie przez szczeline}};
 #action {%1 zaczyna ostroznie wspinac sie po sliskich belkach.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wespnij sie na brame}};
-#action {%1 lapie sie za liny i zaczyna wspinac sie do gory.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz na gore}};
+#action {%1 lapie sie za liny i zaczyna wspinac sie do gory.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz na gore}}
+#action {%1 wchodzi po trapie na ponury stary szkuner.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm wejdz na szkuner}};
+#action {%1 schodzi po trapie na lad.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm zejdz ze statku}};
+#action {%1 przeciska sie przez przejscie w szafie.} {#format {nicklower} {%l} {%1};#if {"$nicklower" == "$team_lead_lower"} {qm przecisnij sie przez otwor}};

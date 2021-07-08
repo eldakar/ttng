@@ -1,0 +1,34 @@
+#nop ###########################################################;
+#nop Ponizej jakiej wartosci kondycji wyswietlic wiadomosc o jej;
+#nop zmianie. Wartosci od 0 do 6 (!!!);
+#nop ###########################################################;
+//confadd hpalert hpalertvalue 6;
+    #alias {hpalertvalue} {
+		    #if {"$ConfigManager_Configs[hpalertvalue]" == ""} {
+            #local ret @bundleops_default_config{hpalertvalue};
+        };
+    };
+
+#nop ###########################################################;
+#nop Mozliwosc ustawienia tekstu przy alercie zmiany kondycji;
+#nop ###########################################################;
+//confadd hpalert hpalerttext Kondycja ulegla zmianie.
+    #alias {hpalerttext} {
+        #if {"$ConfigManager_Configs[hpalerttext]" == ""} {
+            #local ret @bundleops_default_config{hpalerttext};
+    		};
+    };
+
+#nop ###########################################################;
+#nop Event gmcp.char.state sprawdza hp i wyswietla tekst;
+#nop ###########################################################;
+#list event_handler_char_state add {hpalert_char_state};
+    #alias {hpalert_char_state} {
+        #nop pobieram argv z eventu;
+        #local charstate {%0};
+        #list charstate size charstate_s;
+				#if {$charstate_s < 4 && $charstate[hp] <= $ConfigManager_Configs[hpalertvalue]} {
+            #var ret @textalert_red_button{KONDYCJA;$ConfigManager_Configs[hpalerttext]};
+				};
+        #unvar charstate_s;
+    };

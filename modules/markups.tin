@@ -66,13 +66,13 @@
 		#class markups open;
 		#if {$m[$markupsRoomVnum][rendered] > 0} {
 			#map set roomsymbol {$m[$markupsRoomVnum][symbol]};
-			#map set roomterrain {$m[$markupsRoomVnum][terrain]}; 
+			#map set roomterrain {$m[$markupsRoomVnum][terrain]};
 			#unvar m[$markupsRoomVnum];
 			#line ignore #sh {<178>Highlighter: <028>Usunalem.};
 		} {
 			#line ignore #sh {<178>Highlighter: <038>Pokoj nie byl podswietlony!};
 		};
-		
+
 		#class markups close;
 		#class markups write markups.tt;
 	};
@@ -108,7 +108,7 @@
 				};
 
 			};
-		};	
+		};
 		#var showingmarkups 1;
 	};
 } {1};
@@ -120,22 +120,7 @@
 				#map exit $m[$_m][direction] color;
 			};
 		};
-		#map at {$_m} {/d};		
-	};
-} {1};
-
-#alias {/hide} {
-	#if {$showingmarkups > 0} {
-		#foreach {*m[]} {_m} {
-			#map at {$_m} {
-				#var m[$_m][rendered] {0};
-				#map set roomsymbol $m[$_m][symbol];
-				#if {"$m[$_m][type]" == "ext"} {
-					#map exit $m[$_m][direction] color;
-				};
-			};
-		};
-		#var showingmarkups 0;
+		#map at {$_m} {/d};
 	};
 } {1};
 
@@ -151,13 +136,13 @@
 			#list m size msize;
 			#line ignore #showme {<138>Podswietlanie: <088>Odswiezam stan apokalipsy. Zaladowane jest: <128>$msize<088> pokojow.};
 			#var apka $tmpvalue;
-			#unvar msize;				
+			#unvar msize;
 		}
 	} {
 		#list m size msize;
 		#line ignore #showme {<138>Podswietlanie: <088>Dodaje stan apokalipsy. Zaladowane jest: <128>$msize<088> pokojow.};
 		#var apka $tmpvalue;
-		#unvar msize;	
+		#unvar msize;
 	};
 	#class markups close;
 	#class markups write markups.tt;

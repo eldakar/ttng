@@ -238,6 +238,16 @@ TUTOR /conf kolorprzyjaciol kodkoloru
 > Wywaliem aliasy wrogow/druzyny z kondycji polpelnych - zglaszac sie jak ktos ma problem z tym
 > Dodalem do nich wyswietlanie przez 3 sekundy kto zostal przelamany (skopiowalem to z mudleta) - zglaszac sie jak ktos chce poprawki lub cos innego?
 
+** 4/7/21 - Zmiany w konfigu **
+> /conf alertkondycja to od teraz /conf hpalertvalue
+> /conf alertkondycjatekst to od teraz /conf hpalerttext
+> Dodalem kilka regexow na podazanie
+
+** 4/7/21 - Blekitnokrwisci i Twierdza Chaosu
+> Ogladanie plytek w obu miejscach ustawi bindy
+TUTOR /plytkin - idzie po danych plytkach na N
+      u blekitnych odrazu wraca na s
+TUTOR /plytkis - idzie po danych plytkach na S
 
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW

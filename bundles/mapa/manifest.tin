@@ -1,17 +1,9 @@
 #nop ############################;
 #nop Bundle template v1;
 #nop ############################;
-
-#nop NAME ###########;
 #var bundle_name {mapa};
-
-#nop IS DATA PRESENT #;
 #var bundle_data {1};
-
-#nop IS CONTENT PRESENT;
 #var bundle_content {1};
-
-#nop IS CONFIG PRSENT;
 #list bundle_configs clear;
 	#list bundle_configs add {trybmapy};
 	#list bundle_configs add {kolorowaniemapy};
@@ -20,16 +12,13 @@
 	#list bundle_configs add {roza};
 	#list bundle_configs add {dziennamapie};
 	#list bundle_configs add {myszka};
-	#list bundle_configs add {etykiety};
 
-#nop EVENTS;
 #list event_handler_room_time         add {mapa_room_time};
 #list event_handler_room_info         add {mapa_room_info};
 #list event_handler_map_enter_room    add {mapa_map_enter_room};
 #list event_handler_map_updated_vtmap add {mapa_map_updated_vtmap};
 #list event_handler_map_create_room   add {mapa_map_create_room};
 
-#nop IS HELP PRESENT;
 #var bundle_help {0};
 
 #var bundle_ready @bundleops_validate{bundles};

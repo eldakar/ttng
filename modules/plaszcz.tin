@@ -1,0 +1,20 @@
+#nop ###########################################################;
+#nop Config - Przypomnienie o plaszczu po otrzymaniu eventu;
+#nop          odsapniecia od walki;
+#nop ###########################################################;
+//confadd plaszcz plaszcz wlacz;
+#alias {plaszcz} {
+    #if {"$ConfigManager_Configs[plaszcz]" == ""} {
+        #local ret @bundleops_default_config{plaszcz};
+    };
+};
+
+#nop ###########################################################;
+#nop Event;
+#nop ###########################################################;
+#list event_handler_combat_cooldown add {plaszcz_combat_cooldown};
+#alias plaszcz_combat_cooldown {
+    #if {"$ConfigManager_Configs[plaszcz]" == "wlacz"} {
+        qb otul sie plaszczem
+    };
+};

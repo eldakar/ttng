@@ -1,0 +1,55 @@
+#var bundle_name {meldowanie};
+#var bundle_data {0};           #nop data.tin?;
+#var bundle_help {0};           #nop help.txt?;
+#var bundle_content {1};        #nop content.tin?;
+#nop ###########################################################;
+#nop Ponizej jakiej wartosci zmeczenia wyswietlic bind na szepniecie
+#nop prowadzacemu. Wartosci od 0 do 9.;
+#nop ###########################################################;
+//confadd meldowanie meldujprzy 5
+#list bundle_configs add {meldujprzy};
+    #alias {meldujprzy} {
+        #if {"$ConfigManager_Configs[meldujprzy]" == ""} {
+            #local ret @bundleops_default_config{meldujprzy};
+        };
+		};
+
+#nop Szeptany tekst;
+    #var zmeczenie[0] {w pelni wypoczety};
+    #var zmeczenie[1] {wypoczety};
+    #var zmeczenie[2] {troche zmeczony};
+    #var zmeczenie[3] {zmeczony};
+    #var zmeczenie[4] {bardzo zmeczony};
+    #var zmeczenie[5] {nieco wyczerpany};
+    #var zmeczenie[6] {wyczerpany};
+    #var zmeczenie[7] {bardzo wyczerpany};
+    #var zmeczenie[8] {wycienczony};
+    #var zmeczenie[9] {calkowicie wycienczony};
+
+
+#nop ###########################################################;
+#nop Event gmcp.char.state sprawdza fatigue i ustawia bind;
+#nop ###########################################################;
+#list event_handler_char_state add {meldowanie_char_state};
+    #alias {meldowanie_char_state} {
+        #nop pobieram argv z eventu;
+        #local charstate {%0};
+        #if {$charstate[fatigue] >= $ConfigManager_Configs[meldujprzy]} {
+					#if {"$duch[$avatarid][team]" == "true" && "$duch[$avatarid][team_leader]" == "false"} {
+						#line sub variables {
+							#alias melduj_zmeczenie {
+								szepnij ob_$team_lead_id $zmeczenie[$charstate[fatigue]];
+							};
+						};
+						qb melduj_zmeczenie;
+					};
+				};
+    };
+
+#alias {/zme} {
+	#if {"$duch[$avatarid][team]" == "true" && "$duch[$avatarid][team_leader]" == "false"} {
+		szepnij ob_$team_lead_id $zmeczenie[$charstate[fatigue]];
+	} {
+		#line ignore #sh {Nie jestes w zadnej druzynie.};
+	};
+} {1};

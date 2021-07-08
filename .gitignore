@@ -1,3 +1,5 @@
+bundles/ConfigManager/Profiles
+bundles/ConfigManager/Profiles/
 bundles/ConfigManager/Profiles/Logs*
 bundles/ConfigManager/Profiles/aliasy.tt
 bundles/ConfigManager/Profiles/*-macros
@@ -6,6 +8,7 @@ bundles/ConfigManager/Profiles/pvp.data
 bundles/ConfigManager/Profiles/klucze.tin
 tools/discord.sh
 tools/discord.chat
+tools/
 tun.tin
 addons/stansprzetu/sprzet.class
 stats-*

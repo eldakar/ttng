@@ -10280,7 +10280,7 @@
     }
     {Rivanon_} 
     {
-        {gildia} {NPC}
+        {gildia} {BOSS}
     }
     {Rivendir_} 
     {
@@ -22348,7 +22348,7 @@
     }
     {niebieskooki_potezny_mezczyzna_} 
     {
-        {gildia} {NPC}
+        {gildia} {BOSS}
         {imie} {Rivanon}
     }
     {niebieskooki_przyjacielski_halfling_} 

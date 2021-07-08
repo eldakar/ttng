@@ -1,10 +1,7 @@
 #action {Zakladasz masywny oksydowany pas.} {qb zacisnij klamre};
-#action {Chwytasz stylisko misternego obosiecznego topora w garsc i wykonujesz nim kilka probnych wymachow, oswajajac sie z nietypowym wywazeniem oreza} 
-{
-	qb przekrec stylisko
-}
+#action {Chwytasz stylisko misternego obosiecznego top} {qb przekrec stylisko}
 
-#action {Na samym srodku posadzki znajduje sie obramowana blyszczacym, krwistoczerwonej barwy kamieniem, studnia. Saczy sie z niej demoniczne, czerwone swiatlo, rzucajace ulotne blyski na sciany komnaty i zdobiace je plaskorzezby.} 
+#action {Na samym srodku posadzki znajduje sie obramowana blyszczacym, krwistoczerwonej barwy kamieniem, studnia. Saczy sie z niej demoniczne, czerwone swiatlo, rzucajace ulotne blyski na sciany komnaty i zdobiace je plaskorzezby.}
 {
 	#map link d 29531;
 	#map exit d command {wejdz do studni};

@@ -15,7 +15,7 @@
 		#case {"Skelliganski drakkar Zwiastun Smierci"} {#var tmpdrakkarname zwiastun;};
 		#case {"Korsarski drakkar Czarna Perla"} {#var tmpdrakkarname perla;};
 		#case {"Korsarski drakkar Zmora Nilfgaardu"} {#var tmpdrakkarname perla;};
-		#case {"Korsarski drakkar Demon"} {#var tmpdrakkarname demon;};	
+		#case {"Korsarski drakkar Demon"} {#var tmpdrakkarname demon;};
 		#case {"Skelliganski drakkar Krakken"} {#var tmpdrakkarname krakken;};
 		#case {"Skelliganski drakkar Zlocisty Feniks"} {#var tmpdrakkarname krakken;};
 		#case {"Skelliganski drakkar Obronca Archipelagu"} {#var tmpdrakkarname krakken;};
@@ -24,7 +24,7 @@
 	};
 	#nop narysuj drakkar %1;
 	#format {lowerc} {%l} {%1};
-	qbs wejdz na $lowerc;
+	qb wejdz na $lowerc;
 	#bell;
 	#map get roomvnum krakkenat;
 	#if {$PONGED > 0} {
@@ -55,17 +55,17 @@
 	#ticker {plyniemy} {
 		#math plyniemy_sekundy {$plyniemy_sekundy + 1};
 	} {1};
-	#line gag;	
+	#line gag;
 }
 #action {Drakkar doplywa do celu swojej podrozy.} {
 	#unticker plyniemy;
 	#echo {${c_noob}Drakkar: [ $plyniemy_sekundy sekund ]<088> %0};
-	qr porty_i_przystanie;
+	qb porty_i_przystanie;
 	#line gag;
 };
 
 #action {Drakkar odplywa od brzegu.} {
- 	qr porty_i_przystanie;
+ 	qb porty_i_przystanie;
  }
 
 #alias porty_i_przystanie {
@@ -73,20 +73,20 @@
 	wybierz;
 };
 
-#action {%* Odleglosc (mile)%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*} 
+#action {%* Odleglosc (mile)%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*\n%*}
 {
 	#var buff {%0};
 	#var index {1};
 
 	#replace {buff} {\n} {;};
-	#list portyDB create {$buff};	
-	#echo {+------+----------------------+------------+};	
+	#list portyDB create {$buff};
+	#echo {+------+----------------------+------------+};
 	#foreach {*portyDB[]} {pdb} {
 
 #regex {$portyDB[$pdb]} {%* .. %d                      %s*} {
 #nop;
 } {
-		#regex {$portyDB[$pdb]} {%* .. %d%s*%s*} {	
+		#regex {$portyDB[$pdb]} {%* .. %d%s*%s*} {
 			#format {line} {| %-4s | %-20s | %+10s |} {<118>po$index<088>} {&1} {&2};
 			#echo {$line};
 			#switch {"&1"} {
@@ -116,7 +116,7 @@
 			#line substitute {variables} {#alias po$index {$tmpname}};
 			#math {index} {$index + 1};
 		} {
-			#regex {$portyDB[$pdb]} {%* .. %d%s*} {	
+			#regex {$portyDB[$pdb]} {%* .. %d%s*} {
 				#format {line} {| %-4s | %-20s | %+10s |} {<018>po$index<088>} {&1} {&2};
 				#echo {$line};
 				#switch {"&1"} {
@@ -165,7 +165,7 @@
     #replace tmpnabrzeza { czy} {;};
     #list nabrzezaDB create {$tmpnabrzeza};
     #list nabrzezaDB size kdb;
-	#echo {+------+-----------------------------------+};	
+	#echo {+------+-----------------------------------+};
 	#foreach {*nabrzezaDB[]} {pdb} {
 		#format {line} {| %-4s | %+33s |} {<028>cu$index<088>} {$nabrzezaDB[$pdb]};
 		#line substitute {variables} {#alias cu$index {wybierz $nabrzezaDB[$pdb]}};
@@ -178,4 +178,3 @@
     #unvar nabrzezaDB;
     #line gag;
 }
-

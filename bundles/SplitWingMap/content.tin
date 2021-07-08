@@ -1,4 +1,22 @@
-#var raidbartable {};
+#nop #########################################################################;
+#nop Czy wyswietlac przyciski bindow lokacyjnych i quickbindow na mapie VT;
+#nop #########################################################################;
+//confadd splitmap bindynamapie wlacz;
+    #alias {bindynamapie} {
+        #if {"$ConfigManager_Configs[bindynamapie]" == ""} {
+            #local ret @bundleops_default_config{bindynamapie};
+        };
+    };
+#nop #########################################################################;
+#nop Event map updated vtmap;
+#nop rooa - wartosc oddawana przy evencie map room enter;
+#nop #########################################################################;
+#list event_handler_map_updated_vtmap add {raidmap_map_updated_vtmap};
+    #alias raidmap_map_updated_vtmap {
+        #if {"$ConfigManager_Configs[bindynamapie]" == "wlacz" && "$rooa" != ""} {
+            SplitWingMap_LabelBind $rooa;
+        };
+    };
 
 #alias SplitWingMap_Offset {
     #math offsety 1;
@@ -123,7 +141,7 @@
 
 #nop NIEUZYWANY;    #unalias {SplitWingMap_Journal} {
                         #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
-                                #nop                   Y          X        Y + H        X + W            ;      
+                                #nop                   Y          X        Y + H        X + W            ;
                                 #nop draw jeweled box $offsety+34 $offsetx+3 $offsetw-5 $offseth-3 <088>%0;
                                 #math maxheight { ($offsetw - 5 - $offsety) / 3 };
                                 #math bot_row {$offsetw - ($offsetw / 5)};
@@ -137,7 +155,7 @@
 
             #format {bindlen} {%L} {%0};
             #if {$bindlen > $ConfigManager_Configs[SplitWingMapWidth]-14} {
-                #draw tile $offsetw-2 $offsetx+13 $offsetw-1 $screencols-1 <168>%0<088>;    
+                #draw tile $offsetw-2 $offsetx+13 $offsetw-1 $screencols-1 <168>%0<088>;
             } {
                 #sh {<168> %0<088>} {$offsetw-2} {$offsetx+13};
             };
@@ -150,7 +168,7 @@
 
             #format {bindlen} {%L} {%0};
             #if {$bindlen > $ConfigManager_Configs[SplitWingMapWidth]-14} {
-                #draw tile $offsetw-5 $offsetx+13 $offsetw-4 $screencols-1 <118>%0<088>;    
+                #draw tile $offsetw-5 $offsetx+13 $offsetw-4 $screencols-1 <118>%0<088>;
             } {
                 #sh {<118> %0<088>} {$offsetw-5} {$offsetx+13};
             };
@@ -250,7 +268,7 @@
 };
 
 #alias raidmap_attacks {
-    #draw <088><118> rounded table $offsetw-25 $offseth-5 $offsetw-13 $offseth {<FAA><fff>CEL\n} {<AAB><fff>OBR\n} {<ABA><fff>EXP\n};  
+    #draw <088><118> rounded table $offsetw-25 $offseth-5 $offsetw-13 $offseth {<FAA><fff>CEL\n} {<AAB><fff>OBR\n} {<ABA><fff>EXP\n};
 }
 
 #alias raidmap_poczta_on {
