@@ -7,7 +7,7 @@
 #alias {^/$} {#alias {%*/%*};} {1};
 
 #alias pkup {wym;kup %0;wlm}
-#alias {wbanku} {przejrzyj depozyt} 
+#alias {wbanku} {przejrzyj depozyt}
 #alias {+kap} {naciagnij kaptur};
 #alias {-kap} {sciagnij kaptur};
 #alias {pij} {napij sie do syta};
@@ -115,6 +115,13 @@
   };
 } {1}
 
+#alias {/trop} {
+    #if {$frozen_status == 0} {
+        trop;
+    } {
+       przestan;
+    };
+}
 
 #alias {/khd} {
 	khdorznij pierwsze cialo;
@@ -187,14 +194,14 @@
         #case {"temblak"} {#unhigh {%w %w {bulawa|mlot|maczuga|}} {<BAD><fff>};};
       };
 
-      /conf przewijanie 0;      
+      /conf przewijanie 0;
     } {3};
 } {1}
 
 #alias {/wez$} {
   #replace roomcontentsData {\.} {};
   #replace roomcontentsData {{, | i }} {;};
-  #format {roomcontentsData} {%l} {$roomcontentsData};  
+  #format {roomcontentsData} {%l} {$roomcontentsData};
   #list roomcontentsList create {$roomcontentsData};
   #var wezindex 1;
     #line ignore {#sh {+---------------------------------------------------+}};

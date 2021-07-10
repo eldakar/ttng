@@ -39,7 +39,7 @@
 					} {
 						#math dlugosc_paskow {$maxBarSize * 2 + 15};
 					};
-					#draw tile $screenrows-3 24+$dlugosc_paskow $screenrows-1 $screencols-39 $topchat[48]\n$topchat[49]\n$topchat[50];
+					#draw tile $screenrows-3 24+$dlugosc_paskow $screenrows-1 $screencols-22 $topchat[48]\n$topchat[49]\n$topchat[50];
 					#nop topchat[$bcvc];
 				};
 			};
@@ -540,8 +540,7 @@
 	#nop RYSUJEMY PRZYCISKI WALKI;
 	rysuj_przyciski;
 	#nop RYSUJEMY PASEK FORMY;
-	rysuj_forme;
-
+	#nop rysuj_forme;
 };
 
 #alias rysuj_forme_standard {
@@ -567,10 +566,10 @@
 };
 
 #alias rysuj_przyciski {
-	#math {pozycjaprzyciskow} {$screencols - 37};
-	#line ignore #sh {${bbBGC}AT <088>$buttons[0][8][label]${bbBGC} <088>$buttons[0][7][label]${bbBGC} <088>$buttons[0][6][label]${bbBGC} <088>$buttons[0][5][label]${bbBGC}<088>} {-4} {$pozycjaprzyciskow};
-	#line ignore #sh {${bbBGC}ZA <088>$buttons[1][8][label]${bbBGC} <088>$buttons[1][7][label]${bbBGC} <088>$buttons[1][6][label]${bbBGC} <088>$buttons[1][5][label]${bbBGC}<088>} {-3} {$pozycjaprzyciskow};
-	#line ignore #sh {${bbBGC}OT <088>$buttons[2][8][label]${bbBGC} <088>$buttons[2][7][label]${bbBGC} <088>PLA${bbBGC} <088>$buttons[2][5][label]${bbBGC}<088>} {-2} {$pozycjaprzyciskow};
+	#math {pozycjaprzyciskow} {$screencols - 20};
+	#line ignore #sh {${bbBGC}AT <088>$buttons[0][4][label]${bbBGC} <088>$buttons[0][3][label]${bbBGC} <088>$buttons[0][2][label]${bbBGC} <088>$buttons[0][1][label]${bbBGC}<088>} {-4} {$pozycjaprzyciskow};
+	#line ignore #sh {${bbBGC}ZA <088>$buttons[1][4][label]${bbBGC} <088>$buttons[1][3][label]${bbBGC} <088>$buttons[1][2][label]${bbBGC} <088>$buttons[1][1][label]${bbBGC}<088>} {-3} {$pozycjaprzyciskow};
+	#line ignore #sh {${bbBGC}OT <088>$buttons[2][4][label]${bbBGC} <088>$buttons[2][3][label]${bbBGC} <088>PLA${bbBGC} <088>$buttons[2][1][label]${bbBGC}<088>} {-2} {$pozycjaprzyciskow};
 };
 
 #alias rysuj_customs {
@@ -724,32 +723,32 @@
 
 #event {VARIABLE UPDATED pwskazywanie} {
     #regex {$pwskazywanie} {z} {
-        #var buttons[0][8][label] {<BAA><fff>ZAB<088>};
-        #var buttons[0][8][status] {on};
+        #var buttons[0][4][label] {<BAA><fff>ZAB<088>};
+        #var buttons[0][4][status] {on};
     } {
-        #var buttons[0][8][label] {ZAB};
-        #var buttons[0][8][status] {off};
+        #var buttons[0][4][label] {ZAB};
+        #var buttons[0][4][status] {off};
     };
     #regex {$pwskazywanie} {w} {
-        #var buttons[0][7][label] {<BAB><fff>WSK<088>};
-        #var buttons[0][7][status] {on};
+        #var buttons[0][3][label] {<BAB><fff>WSK<088>};
+        #var buttons[0][3][status] {on};
     } {
-        #var buttons[0][7][label] {WSK};
-        #var buttons[0][7][status] {off};
+        #var buttons[0][3][label] {WSK};
+        #var buttons[0][3][status] {off};
     };
     #regex {$pwskazywanie} {r} {
-        #var buttons[0][6][label] {<ABB><fff>ROZ<088>};
-        #var buttons[0][6][status] {on};
+        #var buttons[0][2][label] {<ABB><fff>ROZ<088>};
+        #var buttons[0][2][status] {on};
     } {
-        #var buttons[0][6][label] {ROZ};
-        #var buttons[0][6][status] {off};
+        #var buttons[0][2][label] {ROZ};
+        #var buttons[0][2][status] {off};
     };
     #regex {$pwskazywanie} {p} {
-        #var buttons[0][5][label] {<FAA><fff>PRZ<088>};
-        #var buttons[0][5][status] {on};
+        #var buttons[0][1][label] {<FAA><fff>PRZ<088>};
+        #var buttons[0][1][status] {on};
     } {
-        #var buttons[0][5][label] {PRZ};
-        #var buttons[0][5][status] {off};
+        #var buttons[0][1][label] {PRZ};
+        #var buttons[0][1][status] {off};
     };
     #if {"$ConfigManager_Configs[pasek]" == "medium"} {
     	rysuj_przyciski;
@@ -758,25 +757,25 @@
 
 #event {VARIABLE UPDATED pzaslonaflagi} {
     #regex {$pzaslonaflagi} {z} {
-        #var buttons[1][8][label] {<AAB><fff>ZAS<088>};
-        #var buttons[1][8][status] {on};
+        #var buttons[1][4][label] {<AAB><fff>ZAS<088>};
+        #var buttons[1][4][status] {on};
     } {
-        #var buttons[1][8][label] {ZAS};
-        #var buttons[1][8][status] {off};
+        #var buttons[1][4][label] {ZAS};
+        #var buttons[1][4][status] {off};
     };
     #regex {$pzaslonaflagi} {w} {
-        #var buttons[1][7][label] {<BAB><fff>WSK<088>};
-        #var buttons[1][7][status] {on};
+        #var buttons[1][3][label] {<BAB><fff>WSK<088>};
+        #var buttons[1][3][status] {on};
     } {
-        #var buttons[1][7][label] {WSK};
-        #var buttons[1][7][status] {off};
+        #var buttons[1][3][label] {WSK};
+        #var buttons[1][3][status] {off};
     };
     #regex {$pzaslonaflagi} {r} {
-        #var buttons[1][6][label] {<ABB><fff>ROZ<088>};
-        #var buttons[1][6][status] {on};
+        #var buttons[1][2][label] {<ABB><fff>ROZ<088>};
+        #var buttons[1][2][status] {on};
     } {
-        #var buttons[1][6][label] {ROZ};
-        #var buttons[1][6][status] {off};
+        #var buttons[1][2][label] {ROZ};
+        #var buttons[1][2][status] {off};
     };
     #if {"$ConfigManager_Configs[pasek]" == "medium"} {
     	rysuj_przyciski;
@@ -785,14 +784,14 @@
 
 #event {VARIABLE UPDATED bronstatus} {
     #if {"$bronstatus" == "on"} {
-        #var buttons[2][8][label] {<FAA><fff>BRO<088>};
-        #var buttons[2][8][status] {on};
+        #var buttons[2][4][label] {<FAA><fff>BRO<088>};
+        #var buttons[2][4][status] {on};
         #if {"$ConfigManager_Configs[pasek]" == "medium"} {
 	    	rysuj_przyciski;
     	};
     } {
-        #var buttons[2][8][label] {BRO};
-        #var buttons[2][8][status] {off};
+        #var buttons[2][4][label] {BRO};
+        #var buttons[2][4][status] {off};
         #if {"$ConfigManager_Configs[pasek]" == "medium"} {
 	    	rysuj_przyciski;
     	};
@@ -801,11 +800,11 @@
 
 #event {VARIABLE UPDATED pzdjeciezaslon} {
     #if {"$pzdjeciezaslon" == "auto"} {
-        #var buttons[1][5][label] {<AAB><fff>ZDE<088>};
-        #var buttons[1][5][status] {on};
+        #var buttons[1][1][label] {<AAB><fff>ZDE<088>};
+        #var buttons[1][1][status] {on};
     } {
-        #var buttons[1][5][label] {ZDE};
-        #var buttons[1][5][status] {off};
+        #var buttons[1][1][label] {ZDE};
+        #var buttons[1][1][status] {off};
     };
     #if {"$ConfigManager_Configs[pasek]" == "medium"} {
     	rysuj_przyciski;
@@ -826,11 +825,11 @@
 
 #event {VARIABLE UPDATED lampastatus} {
 	#if {"$lampastatus" == "on"} {
-        #var buttons[2][7][label] {<FFA><aaa>LAM<088>};
-        #var buttons[2][7][status] {on};
+        #var buttons[2][3][label] {<FFA><aaa>LAM<088>};
+        #var buttons[2][3][status] {on};
 	} {
-        #var buttons[2][7][label] {LAM};
-        #var buttons[2][7][status] {off};
+        #var buttons[2][3][label] {LAM};
+        #var buttons[2][3][status] {off};
 	};
     #if {"$ConfigManager_Configs[pasek]" == "medium"} {
     	rysuj_przyciski;
@@ -839,11 +838,11 @@
 
 #event {VARIABLE UPDATED ppowtorzenter} {
     #if {"$ppowtorzenter" == "on"} {
-        #var buttons[2][5][label] {<CFF><aaa>ENT<088>};
-        #var buttons[2][5][status] {on};
+        #var buttons[2][1][label] {<CFF><aaa>ENT<088>};
+        #var buttons[2][1][status] {on};
     } {
-        #var buttons[2][5][label] {ENT};
-        #var buttons[2][5][status] {off};
+        #var buttons[2][1][label] {ENT};
+        #var buttons[2][1][status] {off};
     };
     #if {"$ConfigManager_Configs[pasek]" == "medium"} {
     	rysuj_przyciski;

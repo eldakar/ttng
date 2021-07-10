@@ -92,6 +92,7 @@
 #alias {SplitWingMap_Popup} {
     #if {$ConfigManager_Configs[SplitWingMapWidth] > 20} {
         #draw violet circled box $offsetw-15 $offsetx+3 $offsetw-7 $offseth-3 <088>%0;
+        #delay {mapupdate} {#map update} {2};
     };
 };
 

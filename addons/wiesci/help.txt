@@ -249,6 +249,13 @@ TUTOR /plytkin - idzie po danych plytkach na N
       u blekitnych odrazu wraca na s
 TUTOR /plytkis - idzie po danych plytkach na S
 
+** 10/7/21 - Tickety, paski
+> Dodalem wiecej opisow walki, arlekiny i mcka
+> Usunalem funkcje /conf naroznikpaska
+> Usunalem opsy formy itp z prawej strony
+> Przesunalem przyciski walki na prawo
+> Po ocenie przedmiotu, okno na mapce znika po 2 sekundach
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng
