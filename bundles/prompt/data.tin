@@ -57,6 +57,10 @@
 #var buttons[2][3][cmdoff] {zgas lampe};
 #var buttons[2][3][cmdon] {nap};
 
+#nop var buttons[2][2][label] {WAL};
+#nop var buttons[2][2][status] {off};
+#nop var buttons[2][2][type] {switch};
+#nop var buttons[2][2][cmdoff] {};
 
 #nop repeat enter;
 #var buttons[2][1][label] {ENT};

@@ -67,7 +67,7 @@
 	#class {_killstats} open;
 		#var _killstats_postep {666};
 	#class {_killstats} close;
-	
+
 	#class {_killstats} read stats-$AVATAR_NAME;
 	#if {$_killstats_postep == %1 } {
 		#nop recovering;
@@ -154,23 +154,37 @@
 		};
 	} {
 		#nop should never happen?;
-		#echo {ERROR in KillStats bundle: $expo[$current_postep][czas] $current_postep};		
+		#echo {ERROR in KillStats bundle: $expo[$current_postep][czas] $current_postep};
 	};
 }
 
-#alias /kills {	
-  #echo {+-----------------+------------+-----------+};
+#alias /kills {
+    #local _killscnt_ 0;
+
+  #echo {+-----------------+-czas--+-minut-+-ja/dru-+};
   #foreach {*expo[]}{exp}{
   	#var postep {@poziomy_postepow{$exp}};
 
-  	#format {line} {| %-15s | %-10s | %-9s |} {$postep} {$expo[$exp][czas]} {$expo[$exp][ownkills]/$expo[$exp][totalkills]};
+    #if {$_killscnt_ > 0} {
+        #math _killsprvs_ {$_killscnt_ - 1};
+        #math _minutes_since_ {($expo[$_killscnt_][epock] - $expo[$_killsprvs_][epock]) / 60};
+        #if {$_minutes_since_ < 25} {#var _minutes_since_ {<caf>$_minutes_since_<088>}};
+        #if {$_minutes_since_ < 35 && $_minutes_since_ > 24} {#var _minutes_since_ {<afa>$_minutes_since_<088>}};
+        #if {$_minutes_since_ < 45 && $_minutes_since_ > 34} {#var _minutes_since_ {<ffa>$_minutes_since_<088>}};
+        #if {$_minutes_since_ > 44} {#var _minutes_since_ {<faa>$_minutes_since_<088>}};
+    } {
+        #var _minutes_since_ {-};
+    };
+
+  	#format {line} {| %-15s | %-5s | %-5s | %-6s |} {$postep} {$expo[$exp][czas]} {$_minutes_since_} {$expo[$exp][ownkills]/$expo[$exp][totalkills]};
 
   	#echo {$line};
+    #math _killscnt_ {$_killscnt_ + 1};
   };
-  #echo {+-----------------+------------+-----------+};
+  #echo {+-----------------+-------+-------+--------+};
   #math niebotow {$ConfigManager_Configs[globalnypostep] / 15};
   #format {line} {| Globalny:  %+4s | Niebotow           %+3s |} {$ConfigManager_Configs[globalnypostep]} {$niebotow};
   #echo {$line};
   #echo {+------------------------------------------+};
-  #unvar niebotow;	
+  #unvar niebotow;
 }{1};
