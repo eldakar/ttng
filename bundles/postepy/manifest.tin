@@ -4,7 +4,8 @@
 
 #list bundle_configs clear;
 	#list bundle_configs add {globalnypostep};
-	#list bundle_configs add {celpostepow};
+  #list bundle_configs add {staz};
+  #list bundle_configs add {celpostepow};
 #nop IS HELP PRESENT;
 #var bundle_help {1};
 
@@ -14,7 +15,7 @@
 #list bundle_deps clear;
 	#list bundle_deps add {gmcpDefaultColorManager};
 
-	
+
 #list event_handler_char_state add {_killstats_check_progress};
 
 #list bundle_alias clear;

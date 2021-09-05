@@ -1,5 +1,13 @@
 #alias {zawod} {
 	#var pzawod $ConfigManager_Configs[zawod];
+  #switch {"$pzawod"} {
+    #case {"sc"} {#read bundles/walkasuby/spece/sc1.tin};
+    #case {"ok"} {#read bundles/walkasuby/spece/ok1.tin};
+    #case {"mc"} {#read bundles/walkasuby/spece/mc1.tin};
+    #case {"kg"} {#read bundles/walkasuby/spece/kg1.tin};
+    #case {"ks"} {#read bundles/walkasuby/spece/ks1.tin};
+    #case {"wks"} {#read bundles/walkasuby/spece/wks1.tin};
+  };
 };
 
 #alias {gildia} {

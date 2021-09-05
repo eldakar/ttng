@@ -8,9 +8,13 @@
 #var KEY_F4_B {\e[14~};
 
 #var KEY_F5_A {\e[15~};
+#var KEY_SF5_A {\e[15;2~};
 #var KEY_F6_A {\e[17~};
+#var KEY_SF6_A {\e[17;2~};
 #var KEY_F7_A {\e[18~};
+#var KEY_SF7_A {\e[18;2~};
 #var KEY_F8_A {\e[19~};
+#var KEY_SF8_A {\e[19;2~};
 #var KEY_F9_A {\e[20~};
 #var KEY_F10_A {\e[21~};
 #var KEY_F11_A {\e[23~};

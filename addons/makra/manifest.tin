@@ -13,9 +13,13 @@
 	#list bundle_macros add {F3};
 	#list bundle_macros add {F4};
 	#list bundle_macros add {F5};
+  #list bundle_macros add {SF5};
 	#list bundle_macros add {F6};
+  #list bundle_macros add {SF6};
 	#list bundle_macros add {F7};
+  #list bundle_macros add {SF7};
 	#list bundle_macros add {F8};
+  #list bundle_macros add {SF8};
 	#list bundle_macros add {F9};
 	#list bundle_macros add {F10};
 	#list bundle_macros add {F11};
@@ -34,7 +38,7 @@
 	#list bundle_macros add {eOl};
 	#list bundle_macros add {paragraf};
 
-	
+
 #list bundle_slots clear;
 	#list bundle_slots add {macros};
 #list bundle_alias clear;

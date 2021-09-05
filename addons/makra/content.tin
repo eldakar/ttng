@@ -46,6 +46,27 @@
 	#line sub variables {#macro {$KEY_F8_A} {$F8list}};
 	#line sub variables {#macro {$KEY_F8_B} {$F8list}};
 };
+#alias {SF5} {
+    	#var SF5list {$MacroManager_Macros[SF5]};
+    	#replace SF5list {,} {;};
+	#line sub variables {#macro {$KEY_SF5_A} {$SF5list}};
+};
+#alias {SF6} {
+    	#var SF6list {$MacroManager_Macros[SF6]};
+    	#replace SF6list {,} {;};
+	#line sub variables {#macro {$KEY_SF6_A} {$SF6list}};
+};
+#alias {SF7} {
+    	#var SF7list {$MacroManager_Macros[SF7]};
+    	#replace SF7list {,} {;};
+	#line sub variables {#macro {$KEY_SF7_A} {$SF7list}};
+};
+#alias {SF8} {
+    	#var SF8list {$MacroManager_Macros[SF8]};
+    	#replace SF8list {,} {;};
+	#line sub variables {#macro {$KEY_SF8_A} {$SF8list}};
+};
+
 #alias {F9} {
     	#var F9list {$MacroManager_Macros[F9]};
     	#replace F9list {,} {;};
@@ -156,8 +177,3 @@
    	#replace _macrolist {,} {;};
 	#line sub variables {#macro {§} {$_macrolist}};
 };};
-
-
-
-
-

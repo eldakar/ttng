@@ -1,0 +1,15 @@
+#nop MAGIKI - GRANIT - Z PIERWSZEJ OSOBY;
+#action {Bierzesz ogromny zamach %* zamroczylo} {collect GRANIT_OGLUCH 0 $AVATAR_NAME;#line gag};
+#nop MAGIKI - BERLO - Z PIERWSZEJ OSOBY;
+#action {{Uderzasz starozytnym|Bierzesz mocny zamach|Wykorzystujesz straszliwy ped|Bierzesz potezny zamach|Wykorzystujesz zrecznie ped|Wykorzystujesz umiejetnie ped} %* ledwie zahaczajac} {collect BERLO 1 $AVATAR_NAME;#line gag};
+#action {{Uderzasz starozytnym|Bierzesz mocny zamach|Wykorzystujesz straszliwy ped|Bierzesz potezny zamach|Wykorzystujesz zrecznie ped|Wykorzystujesz umiejetnie ped} %* nieznacznie tlukac} {collect BERLO 2 $AVATAR_NAME;#line gag};
+#action {{Uderzasz starozytnym|Bierzesz mocny zamach|Wykorzystujesz straszliwy ped|Bierzesz potezny zamach|Wykorzystujesz zrecznie ped|Wykorzystujesz umiejetnie ped} %* dotkliwie raniac} {collect BERLO 4 $AVATAR_NAME;#line gag};
+#nop MAGIKI - KOSCIANY - Z PIERWSZEJ OSOBY;
+#action {{Uderzasz niezwyklym|Bierzesz mocny zamach|Wykorzystujesz straszliwy ped|Bierzesz potezny zamach|Wykorzystujesz zrecznie ped|Wykorzystujesz umiejetnie ped} %* ledwie zahaczajac} {collect KOSCIANY 1 $AVATAR_NAME;#line gag};
+#action {{Uderzasz niezwyklym|Bierzesz mocny zamach|Wykorzystujesz straszliwy ped|Bierzesz potezny zamach|Wykorzystujesz zrecznie ped|Wykorzystujesz umiejetnie ped} %* nieznacznie raniac} {collect KOSCIANY 2 $AVATAR_NAME;#line gag};
+#action {{Uderzasz niezwyklym|Bierzesz mocny zamach|Wykorzystujesz straszliwy ped|Bierzesz potezny zamach|Wykorzystujesz zrecznie ped|Wykorzystujesz umiejetnie ped} %* dotkliwie raniac} {collect KOSCIANY 4 $AVATAR_NAME;#line gag};
+
+#nop MAGIKI - LODOWA MACZUGA - 1 OSOBA;
+#action {Dostrzegajac dogodna okazje do ataku, rzucasz sie do przodu %* fioletowego siniaka.} {collect LODOWA 1 $AVATAR_NAME;#line gag};
+#action {Dostrzegajac dogodna okazje do ataku, rzucasz sie do przodu %* zmrozonego siniaka.} {collect LODOWA 2 $AVATAR_NAME;#line gag};
+#action {Korzystajac z tego, %* nogach, unosisz} {collect LODOWA 7 $AVATAR_NAME;#line gag};

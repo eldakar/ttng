@@ -257,6 +257,20 @@ TUTOR /plytkis - idzie po danych plytkach na S
 > Po ocenie przedmiotu, okno na mapce znika po 2 sekundach
 > Poprawione wyswietlanie postepow, jest czas w minutach i kolory
 
+** 5/9/21 - Rozne **
+> Naprawilem bug, gdzie ustawienie /conf pochwa2 plecak nie dzialalo poprawnie
+> Zoptymalizowalem ladowanie specow walki:
+TUTOR /conf pochwa|pochwa2 - laduje suby magikow danego typu w 1 osobie
+TUTOR /conf zawod - laduje ciosy danego zawodu w 1 osobie
+> Dodalem komende */staz* i trigger na uzywanie +staz
+(co tydzien trzeba dodac 10 punktow recznie ustawiajac /conf staz)
+> Dodalem makra na shift+ f5/6/7/8
+> Dodalem dwa aliasy systemowe na powiekszanie/zmniejszanie paska stanow
+TUTOR /raidsize_up - powieksza o 1 linie
+TUTOR /raidsize_dn - zmniejsza o 1 linie
+> Poprawilem kolejnosc atakow na haskich (hobgoby przed normalnymi krasnalami)
+> Odswiezylem trolle
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng

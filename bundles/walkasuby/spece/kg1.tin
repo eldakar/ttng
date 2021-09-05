@@ -1,0 +1,10 @@
+#nop SPECE KG Z PIERWSZEJ OSOBY;
+#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* tylko jakims cudem %*} {collect KG 0 $AVATAR_NAME;#line gag};
+#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* ledwo zacina %*} {collect KG 1 $AVATAR_NAME;#line gag};
+#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* plytko tnie %*} {collect KG 3 $AVATAR_NAME;#line gag};
+#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* tnie %*} {collect KG 4 $AVATAR_NAME;#line gag} {6};
+#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* bolesnie zacina %*} {collect KG 2 $AVATAR_NAME;#line gag};
+#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* gleboko tnie %*} {collect KG 5 $AVATAR_NAME;#line gag};
+#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* niemalze rozcina %*} {collect KG 6 $AVATAR_NAME;#line gag};
+#action {{Ruszasz|Nie zwazajac na nic rozpoczynasz|Wyrzucasz do przodu|Niespodziewanie skrecasz|Poprawiasz} %* tnie %* w pol.} {collect KG 7 $AVATAR_NAME;#line gag};
+#action {Z okrzykiem na ustach dopadasz %*} {collect KG 7 $AVATAR_NAME;#line gag};

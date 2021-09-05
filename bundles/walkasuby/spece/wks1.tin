@@ -1,0 +1,9 @@
+#nop SPECE WKS Z PIERWSZEJ OSOBY;
+#action {Szybkim niczym mysl ruchem %* wytracasz %*} {collect WYTRACASZ 0 $AVATAR_NAME;#line gag};
+#action {Slamazarnym wymachem %* probujesz} {collect NIE_WYTRACASZ 0 $AVATAR_NAME;#line gag};
+#action {Wykorzystujac brak broni u przeciwnika, %* ledwie sinca.} {collect WKS 1 $AVATAR_NAME;#line gag};
+#action {Wykorzystujac brak broni u przeciwnika, %* krwawiace zadrapanie.} {collect WKS 2 $AVATAR_NAME;#line gag};
+#action {Wykorzystujac brak broni u przeciwnika, %* dluga, poszarpana rane.} {collect WKS 4 $AVATAR_NAME;#line gag};
+#action {Wykorzystujac brak broni u przeciwnika, %* gleboka rane z wystajacymi na wierzchu tkankami.} {collect WKS 5 $AVATAR_NAME;#line gag};
+#action {Wykorzystujac brak broni u przeciwnika, %* smiertelne obrazenia.} {collect WKS 6 $AVATAR_NAME;#line gag};
+#action {Wykorzystujac brak broni u przeciwnika, %* rownowage} {collect mis 0 $AVATAR_NAME;#line gag};

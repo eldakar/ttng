@@ -56,6 +56,18 @@
     SplitWingMap_refresh;
 }
 
+#alias {/raidsize_up} {
+    #math t {$ConfigManager_Configs[RaidSize] + 1};
+    /conf RaidSize $t;
+    #unvar t;
+} {1};
+
+#alias {/raidsize_dn} {
+    #math t {$ConfigManager_Configs[RaidSize] - 1};
+    /conf RaidSize $t;
+    #unvar t;
+} {1};
+
 #alias {doubleclick} {
     #switch {"$MacroManager_Macros[doubleclick]"} {
         #case {"walk"} {#alias raidmap_map_double_clicked_mouse_button_one {raidmap_map_double_clicked_mouse_button_one_walk}};

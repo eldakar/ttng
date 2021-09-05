@@ -19,6 +19,21 @@
 	#nop nothing to do;
 };
 
+#alias {staz} {
+  #nop nothing to do;
+};
+
+#alias {/staz} {
+    #math _staz_ {$ConfigManager_Configs[staz] * 100 / 240};
+    #line ignore #showme {<fff>arkatt: <088>Staz $ConfigManager_Configs[staz] / 240 == $_staz_%};
+    #unvar _staz_;
+} {1};
+#action {Twoja wysoka forma pozwala ci nieznacznie przyspieszyc nauke zawodu.} {
+    #math tmppst {$ConfigManager_Configs[staz] + 1};
+    /conf staz $tmppst;
+    #unvar tmppst;
+} {1};
+
 #alias {celpostepow} {
 	#if {"$ConfigManager_Configs[celpostepow]" == ""} {
 		#var ConfigManager_Configs[celpostepow] 1200;

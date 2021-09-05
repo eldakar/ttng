@@ -130,8 +130,8 @@
 }
 
 #alias {haszuty} {
-	zabij hobgoblina;
 	zabij krasnoluda chaosu;
+	zabij hobgoblina;
 	zabij dostojnego krasnoluda chaosu;
 	zabij powaznego krasnoluda chaosu;
 	zabij wladczego krasnoluda chaosu;

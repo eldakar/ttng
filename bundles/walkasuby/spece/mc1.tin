@@ -1,0 +1,10 @@
+#nop SPECE MC Z PIERWSZEJ OSOBY;
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji|Usmiechasz sie przebiegle wyczuwajac zblizajace sie zwyciestwo} %* powaznie raniac} {collect MC 4 $AVATAR_NAME;#line gag};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji|Usmiechasz sie przebiegle wyczuwajac zblizajace sie zwyciestwo} %* lekko raniac} {collect MC 2 $AVATAR_NAME;#line gag};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji|Usmiechasz sie przebiegle wyczuwajac zblizajace sie zwyciestwo} %* raniac} {collect MC 2 $AVATAR_NAME;#line gag} {8};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji|Usmiechasz sie przebiegle wyczuwajac zblizajace sie zwyciestwo} %* bardzo ciezko raniac} {collect MC 5 $AVATAR_NAME;#line gag};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji|Usmiechasz sie przebiegle wyczuwajac zblizajace sie zwyciestwo} %* masakrujac} {collect MC 6 $AVATAR_NAME;#line gag};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji|Usmiechasz sie przebiegle wyczuwajac zblizajace sie zwyciestwo} %* raniac} {collect MC 3 $AVATAR_NAME;#line gag};
+#action {{Dostrzegajac luke w obronie przeciwnika rzucasz|Krzywisz wargi w pelnym satysfakcji|Usmiechasz sie przebiegle wyczuwajac zblizajace sie zwyciestwo} %* ledwo muskajac} {collect MC 1 $AVATAR_NAME;#line gag};
+#action {Wykrzykujac%*stajesz%*umierajacego.} {collect MC 7 $AVATAR_NAME;#line gag};
+#action {Bierzesz potezny%*najmniejszej krzywdy.} {collect MC 0 $AVATAR_NAME;#line gag};
