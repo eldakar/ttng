@@ -33,6 +33,7 @@
     #read modules/meldowanie.tin;
     #read modules/plaszcz.tin;
     #read modules/cechy.tin;
+    #read modules/przemykanie.tin;
 
     #read bundles/SplitRefresh/manifest.tin;
     #read bundles/prompt/manifest.tin;
