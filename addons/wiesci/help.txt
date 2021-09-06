@@ -271,6 +271,15 @@ TUTOR /raidsize_dn - zmniejsza o 1 linie
 > Poprawilem kolejnosc atakow na haskich (hobgoby przed normalnymi krasnalami)
 > Odswiezylem trolle
 
+** 6/9/21 - Ukrywanie **
+> Dodalem timery na przemykanie (10s) i ukrywanie (15s)
+> Dodalem przesuwanie mapy pod komenda przemknij _wyjscie_
+    nie dziala jeszcze z numerykiem
+    dziala na wyjsciach specjalnych
+> Dodalem triggery na wyjscie z ukrycia
+> Dodalem wiecej trolli na ZC
+> Kalibracja nowiu (90% done)
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng
