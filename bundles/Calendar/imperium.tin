@@ -157,7 +157,7 @@
 #var kalendarz_nowie[4] {89};  #nop OK pflugzeit 22;
 #var kalendarz_nowie[5] {114}; #nop OK sigmarzeit 14;
 #var kalendarz_nowie[6] {139}; #nop OK sommerzeit 6;
-#var kalendarz_nowie[7] {163}; #nop sommerzeit 31;
+#var kalendarz_nowie[7] {164}; #nop OK sommerzeit 31;
 #var kalendarz_nowie[8] {189}; #nop OK vorgeheim 22;
 #var kalendarz_nowie[9] {214}; #nop OK nachgeheim 13;
 #var kalendarz_nowie[10] {239};#nop erntezeit 6;
@@ -204,7 +204,7 @@
             #format {nowdisplay} {%.45s} {$nowdisplay_};
             #nop format time %T;
             #nop math time $time + $now_za_RLgodzin:$now_za_RLresztam;
-            #nop echo %t {{<format>}{$time}};   
+            #nop echo %t {{<format>}{$time}};
             #if {$now_za_RLgodzin < 100} {
                 #line ignore #showme $nowdisplay;
             };
@@ -305,14 +305,3 @@ klepsydra_render_now;
     klepsydra_render;
     klepsydra_render_now;
 }
-
-
-
-
-
-
-
-
-
-
-

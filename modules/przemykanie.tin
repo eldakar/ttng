@@ -1,0 +1,32 @@
+#function stealthCooldown {
+    #var stealthCurrentValue 0;
+    #ticker stealth {
+        #math stealthCurrentValue $stealthCurrentValue + 1;
+        #line ignore #showme {<fff>stealth:<088> <128>$stealthCurrentValue/%1<088>};
+        #if {"$stealthCurrentValue" == "%1"} {
+            #untick stealth;
+            #unvar stealthCurrentValue;
+        };
+    } {1};
+};
+
+#alias {przemknij %*} {
+    #map move %1;
+    #send %0;
+    #var ret @stealthCooldown{10};
+} {1};
+
+#action {Nie mozesz tak poprostu wymknac sie z walki.} {
+    #map undo;
+    #untick stealth;
+};
+
+#action {Jest tu zbyt ciezko sie schowac, wiec jestes widoczny z powrotem.} {
+    #untick stealth;
+};
+
+#action {Chowasz sie najlepiej jak potrafisz} {
+    #var ret @stealthCooldown{15};
+};
+#action {Nie jestes juz schowany} {
+};

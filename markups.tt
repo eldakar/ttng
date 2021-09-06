@@ -537,6 +537,13 @@
         {terrain} {}
         {type} {mob}
     }
+    {5045} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
     {5052} 
     {
         {rendered} {1}
@@ -544,11 +551,25 @@
         {terrain} {}
         {type} {mob}
     }
+    {5074} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
     {5215} 
     {
         {rendered} {1}
         {symbol} { O }
         {terrain} {rzeka}
+        {type} {mob}
+    }
+    {5302} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
         {type} {mob}
     }
     {5349} 

@@ -158,21 +158,6 @@
         				BottomBar_Selected;
 			      };
 
-#nop #############################################################;
-#nop ############# UKRYWANIE               #######################;
-#nop #############################################################;
-#var hiddenlevel {0};
-#action {Chowasz sie najlepiej jak potrafisz} {
-	#var hiddenlevel {1};
-	#delay {delayhidden1} {#var hiddenlevel {2}} {5};
-	#delay {delayhidden2} {#var hiddenlevel {3}} {10};
-	#delay {delayhidden3} {#var hiddenlevel {4}} {15};
-};
-#action {Nie jestes juz schowany} {
-	#undelay {delahidden%*};
-	#var hiddenlevel {0};
-};
-
 
 #nop #############################################################;
 #nop ############# MANEWRY                 #######################;
