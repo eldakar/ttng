@@ -1,0 +1,24 @@
+#alias {/ready %d} {
+    #var howmany 0;
+    #list team size _teamsize_;
+    #math _teamsize_ {$_teamsize_ - 1};
+    #if {$_teamsize_ == 1} {
+        #send ppowiedz Gotow?;
+    } {
+        #send ppowiedz Gotowi?;
+    };
+    #action {%* kiwa glowa.} {
+        #math howmany {$howmany + 1};
+    };
+    #line ignore #showme {<fff>readycheck: <088>%1 seconds for $_teamsize_ members.};
+    #delay {%1} {
+        #unaction {%* kiwa glowa.};
+        #if {$howmany != $_teamsize_} {
+            #line ignore #showme {<fff>readycheck: <088>$howmany responded. <faa>Not ready.<088>};
+        } {
+            #line ignore #showme {<fff>readycheck: <088>$howmany responded. <afa>Ready.<088>};
+        };
+        #unvar howmany;
+        #unvar _teamsize_;
+    };
+} {1};

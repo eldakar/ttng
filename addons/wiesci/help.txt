@@ -280,6 +280,13 @@ TUTOR /raidsize_dn - zmniejsza o 1 linie
 > Dodalem wiecej trolli na ZC
 > Kalibracja nowiu (90% done)
 
+** 7/9/21 - Ready check **
+> Dodana nowa komenda, ktora pozwala zainicjowac 'ready check'
+TUTOR /ready ilosc_sekund_do_odczekania
+* Zaleznie od ilosci czlonkow druzyny, skrypt wysyla do arki 'Gotow?'/'Gotowi?'
+* Skrypt czeka zadana ilosc sekund, i zlicza kiwniecia glowa
+* Po zadanym czasie, wyswietli sie czy wszyscy kiwneli
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng
