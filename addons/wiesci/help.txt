@@ -287,6 +287,12 @@ TUTOR /ready ilosc_sekund_do_odczekania
 * Skrypt czeka zadana ilosc sekund, i zlicza kiwniecia glowa
 * Po zadanym czasie, wyswietli sie czy wszyscy kiwneli
 
+** 8/9/21 - Rozne **
+> Dodalem przemykanie pod alt+numeryk
+> Dodalem cofanie mapy przy probie przemkniecia w walce
+> Usunalem prefixy specy magicznych mieczy
+> Dodalem plik z przykladowym konfigiem w katalogu bundles/ConfigManager/
+
 ** Przydatne linki **
 DISCORD - https://discord.gg/ueHACm6jUW
 GITHUB  - https://github.com/eldakar/ttng

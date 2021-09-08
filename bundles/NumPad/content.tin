@@ -51,6 +51,16 @@
 #var KEY_PAD_SW {\eOq};
 #var KEY_PAD_SE {\eOs};
 
+#var KEY_SPAD_N {\eO3x};
+#var KEY_SPAD_S {\eO3r};
+#var KEY_SPAD_E {\eO3v};
+#var KEY_SPAD_W {\eO3t};
+#var KEY_SPAD_NW {\eO3w};
+#var KEY_SPAD_NE {\eO3y};
+#var KEY_SPAD_SW {\eO3q};
+#var KEY_SPAD_SE {\eO3s};
+
+
 #var KEY_TAB {\t};
 
 #macro {$KEY_PAD_S} {move_s}
@@ -61,6 +71,16 @@
 #macro {$KEY_PAD_NE} {move_ne}
 #macro {$KEY_PAD_SW} {move_sw}
 #macro {$KEY_PAD_SE} {move_se}
+
+#macro {$KEY_SPAD_S} {stealth_s}
+#macro {$KEY_SPAD_N} {stealth_n}
+#macro {$KEY_SPAD_W} {stealth_w}
+#macro {$KEY_SPAD_E} {stealth_e}
+#macro {$KEY_SPAD_NW} {stealth_nw}
+#macro {$KEY_SPAD_NE} {stealth_ne}
+#macro {$KEY_SPAD_SW} {stealth_sw}
+#macro {$KEY_SPAD_SE} {stealth_se}
+
 
 #unmacro {\ce} {move_nw};
 #unmacro {\cr} {move_n};

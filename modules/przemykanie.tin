@@ -16,7 +16,7 @@
     #var ret @stealthCooldown{10};
 } {1};
 
-#action {Nie mozesz tak poprostu wymknac sie z walki.} {
+#nop action {Nie mozesz tak poprostu wymknac sie z walki.} {
     #map undo;
     #untick stealth;
 };

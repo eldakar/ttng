@@ -202,6 +202,18 @@
 #alias {move_sw} {#send sw;#var trytomove 1;#var movedir {poludniowy-zachod}};
 #alias {move_se} {#send se;#var trytomove 1;#var movedir {poludniowy-wschod}};
 
+#alias {stealth_n} {#var trytomove 1;przemknij n};
+#alias {stealth_s} {#var trytomove 1;przemknij s};
+#alias {stealth_e} {#var trytomove 1;przemknij e};
+#alias {stealth_w} {#var trytomove 1;przemknij w};
+#alias {stealth_d} {#var trytomove 1;przemknij d};
+#alias {stealth_u} {#var trytomove 1;przemknij u};
+#alias {stealth_ne} {#var trytomove 1;przemknij ne};
+#alias {stealth_nw} {#var trytomove 1;przemknij nw};
+#alias {stealth_sw} {#var trytomove 1;przemknij sw};
+#alias {stealth_se} {#var trytomove 1;przemknij se};
+
+
 #alias {n} {move_n};
 #alias {s} {move_s};
 #alias {ne} {move_ne};

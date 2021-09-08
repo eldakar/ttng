@@ -1,64 +1,64 @@
 #nop MAGIKI - TASAK;
-#action {{Widok slabnacego wroga tylko dodaje ci sil|Z kazdym kolejnym ciosem nabierasz nowej sily do walki|Powolne, pozbawione sily ruchy wroga zagrzewaja cie do walki, dodajac zapalu.}} {collect TASAK_MECZY 0 $AVATAR_NAME;#line gag};
+#action {{Widok slabnacego wroga tylko dodaje ci sil|Z kazdym kolejnym ciosem nabierasz nowej sily do walki|Powolne, pozbawione sily ruchy wroga zagrzewaja cie do walki, dodajac zapalu.}} {collect hit 0 $AVATAR_NAME;#line gag};
 
 #nop MAGIKI - JATAGAN - 1 OSOBA;
-#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana ledwo muskasz %*} {collect JATAGAN 1 $AVATAR_NAME;#line gag};
-#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana lekko ranisz %*} {collect JATAGAN 2 $AVATAR_NAME;#line gag};
-#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana ranisz %*} {collect JATAGAN 3 $AVATAR_NAME;#line gag};
-#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana powaznie ranisz %*} {collect JATAGAN 4 $AVATAR_NAME;#line gag};
-#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana bardzo ciezko ranisz %*} {collect JATAGAN 5 $AVATAR_NAME;#line gag};
-#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana masakrujesz %*} {collect JATAGAN 6 $AVATAR_NAME;#line gag};
+#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana ledwo muskasz %*} {collect hit 1 $AVATAR_NAME;#line gag};
+#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana lekko ranisz %*} {collect hit 2 $AVATAR_NAME;#line gag};
+#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana ranisz %*} {collect hit 3 $AVATAR_NAME;#line gag};
+#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana powaznie ranisz %*} {collect hit 4 $AVATAR_NAME;#line gag};
+#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana bardzo ciezko ranisz %*} {collect hit 5 $AVATAR_NAME;#line gag};
+#action {{Swietlista smuga przecina powietrze|Nagly blysk rozswietla cale otoczenie|Jasniejaca luna znaczy powietrze}, {gdy dlugim cieciem|gdy szybkim pchnieciem} jasniejacego zdobionego jatagana masakrujesz %*} {collect hit 6 $AVATAR_NAME;#line gag};
 
 #nop MAGIKI - SZCZERBA - 1 OSOBA;
-#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* zadajac %* nieznaczne obrazenia%*.} {collect SZCZERBA 1 $AVATAR_NAME;#line gag};
-#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* kaleczac %* przy%*.} {collect SZCZERBA 2 $AVATAR_NAME;#line gag};
-#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* lekko %* raniac%*.} {collect SZCZERBA 3 $AVATAR_NAME;#line gag};
-#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* potwornie%*.} {collect SZCZERBA 5 $AVATAR_NAME;#line gag};
-#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* masakrujesz%*.} {collect SZCZERBA 6 $AVATAR_NAME;#line gag};
+#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* zadajac %* nieznaczne obrazenia%*.} {collect hit 1 $AVATAR_NAME;#line gag};
+#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* kaleczac %* przy%*.} {collect hit 2 $AVATAR_NAME;#line gag};
+#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* lekko %* raniac%*.} {collect hit 3 $AVATAR_NAME;#line gag};
+#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* potwornie%*.} {collect hit 5 $AVATAR_NAME;#line gag};
+#action {{Mocnym wymachem|Ostrze poszczerbionego|Koncowka swojego|Z lekkiego wymachu|Plynnym, zdecydowanym ruchem} %* masakrujesz%*.} {collect hit 6 $AVATAR_NAME;#line gag};
 
 #nop MAGIKI - SIHILL - 1 OSOBA;
-#action {Niezbyt czysto trafiasz %* waskim kunsztownym sihillem} {collect SIHILL 1 $AVATAR_NAME;#line gag};
-#action {Wykonujesz oszczedne {ciecie|pchniecie}, lekko raniac %* koncowka} {collect SIHILL 2 $AVATAR_NAME;#line gag};
-#action {Blyskawicznie kontrujesz atak %* {dzgajac|tnac}} {collect SIHILL 3 $AVATAR_NAME;#line gag};
-#action {Precyzyjnym i mocnym sztychem %* gleboko} {collect SIHILL 4 $AVATAR_NAME;#line gag};
-#action {Atakujesz waskim kunsztownym %* ogromne} {collect SIHILL 5 $AVATAR_NAME;#line gag};
-#action {Zgrabnym ruchem zwodzisz %* i gwaltownie skracajac dystans} {collect SIHILL 6 $AVATAR_NAME;#line gag};
+#action {Niezbyt czysto trafiasz %* waskim kunsztownym sihillem} {collect hit 1 $AVATAR_NAME;#line gag};
+#action {Wykonujesz oszczedne {ciecie|pchniecie}, lekko raniac %* koncowka} {collect hit 2 $AVATAR_NAME;#line gag};
+#action {Blyskawicznie kontrujesz atak %* {dzgajac|tnac}} {collect hit 3 $AVATAR_NAME;#line gag};
+#action {Precyzyjnym i mocnym sztychem %* gleboko} {collect hit 4 $AVATAR_NAME;#line gag};
+#action {Atakujesz waskim kunsztownym %* ogromne} {collect hit 5 $AVATAR_NAME;#line gag};
+#action {Zgrabnym ruchem zwodzisz %* i gwaltownie skracajac dystans} {collect hit 6 $AVATAR_NAME;#line gag};
 
 
 #nop MAGIKI - ESPADON - Z PIERWSZEJ OSOBY;
-#action {Lekko muskasz %*} {collect ESPA 1 $AVATAR_NAME;#line gag};
-#action {Bez wysilku, niezbyt mocno %*} {collect ESPA 2 $AVATAR_NAME;#line gag};
-#action {Ruszasz do przodu %* gleboko tnie %*} {collect ESPA 4 $AVATAR_NAME;#line gag};
-#action {Skutecznym uderzeniem %*} {collect ESPA 3 $AVATAR_NAME;#line gag};
-#action {Bierzesz mocny zamach i poteznym ciosem %*} {collect ESPA 4 $AVATAR_NAME;#line gag};
-#action {Wyprowadzasz znad glowy %*} {collect ESPA 5 $AVATAR_NAME;#line gag};
-#action {Korzystajac z nieuwagi %*} {collect ESPA 6 $AVATAR_NAME;#line gag};
-#action {Unosisz nagle swoj espadon %*} {collect ESPA 7 $AVATAR_NAME;#line gag};
-#action {Przerzucasz swoj %* na wysokosc ramion %*} {collect ESPA 6 $AVATAR_NAME;#line gag};
+#action {Lekko muskasz %*} {collect hit 1 $AVATAR_NAME;#line gag};
+#action {Bez wysilku, niezbyt mocno %*} {collect hit 2 $AVATAR_NAME;#line gag};
+#action {Ruszasz do przodu %* gleboko tnie %*} {collect hit 4 $AVATAR_NAME;#line gag};
+#action {Skutecznym uderzeniem %*} {collect hit 3 $AVATAR_NAME;#line gag};
+#action {Bierzesz mocny zamach i poteznym ciosem %*} {collect hit 4 $AVATAR_NAME;#line gag};
+#action {Wyprowadzasz znad glowy %*} {collect hit 5 $AVATAR_NAME;#line gag};
+#action {Korzystajac z nieuwagi %*} {collect hit 6 $AVATAR_NAME;#line gag};
+#action {Unosisz nagle swoj espadon %*} {collect hit 7 $AVATAR_NAME;#line gag};
+#action {Przerzucasz swoj %* na wysokosc ramion %*} {collect hit 6 $AVATAR_NAME;#line gag};
 
 
 #nop MAGIKI - TALWAR - Z TRZECIEJ OSOBY;
-#action {Widzac, ze na ostrzu %* talwara %*, %w wykonuje %* tam spore oparzenie} {collect TALWAR 3 %3;#line gag};
+#action {Widzac, ze na ostrzu %* talwara %*, %w wykonuje %* tam spore oparzenie} {collect hit 3 %3;#line gag};
 
 
 #nop MAGIKI - ARLEKIN - Z PIERWSZEJ OSOBY;
-#action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* ledwo musnac %*} {collect ARLEKIN 1 $AVATAR_NAME;#line gag};
-#action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* lekko zaciac %*} {collect ARLEKIN 2 $AVATAR_NAME;#line gag};
-#action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* tak mocno, %*} {collect ARLEKIN 3 $AVATAR_NAME;#line gag};
-#action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* pozostawiajac krwawiaca %*} {collect ARLEKIN 4 $AVATAR_NAME;#line gag};
-#action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* ciezko rani %*} {collect ARLEKIN 5 $AVATAR_NAME;#line gag};
-#action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* pozostawiajac rozlegla %*} {collect ARLEKIN 6 $AVATAR_NAME;#line gag};
-#action {Markujesz kilka uderzen swymi smuklymi mieczami} {collect ARLEKIN 7 $AVATAR_NAME;#line gag};
+#action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* ledwo musnac %*} {collect hit 1 $AVATAR_NAME;#line gag};
+#action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* lekko zaciac %*} {collect hit 2 $AVATAR_NAME;#line gag};
+#action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* tak mocno, %*} {collect hit 3 $AVATAR_NAME;#line gag};
+#action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* pozostawiajac krwawiaca %*} {collect hit 4 $AVATAR_NAME;#line gag};
+#action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* ciezko rani %*} {collect hit 5 $AVATAR_NAME;#line gag};
+#action {{W dzikim, nieokielznanym tancu ruszasz|Poruszajac sie niczym duch, podbiegasz|Wykonujesz szybki krok do przodu,|Z dzikim blyskiem w oku nurkujesz|Unosisz smukly|Bez trudu unikasz} %* pozostawiajac rozlegla %*} {collect hit 6 $AVATAR_NAME;#line gag};
+#action {Markujesz kilka uderzen swymi smuklymi mieczami} {collect hit 7 $AVATAR_NAME;#line gag};
 
 #action {Dziki taniec z ostrzami %*Jednak gdy rzucasz%*} {collect mis 0 $AVATAR_NAME;#line gag};
 #action {Zamierzasz sie smuklym%*sparowac twoj%*} {collect par 0 @GetEnemyTarget{$AVATAR_NAME};#line gag};
 
 #nop MAGIKI - KRUCZEK - Z PIERWSZEJ OSOBY;
-#action {Zwracasz ostrze %* rozcinajac skore %*} {collect KRUK 1 $AVATAR_NAME;#line gag};
-#action {Zwracasz ostrze %* pozostawiajac niewielka rane %*} {collect KRUK 2 $AVATAR_NAME;#line gag};
-#action {Unosisz %* lekko do gory i wykonujesz efektowne ciecie. %* pozostawiajac tam paskudna%*.} {collect KRUK 3 $AVATAR_NAME;#line gag};
-#action {Wykonujesz obszerny zamach %* tkanki.} {collect KRUK 4 $AVATAR_NAME;#line gag};
-#action {Wykonujesz zamaszyste ciecie %* swiatlem.} {collect KRUK 7 $AVATAR_NAME;#line gag};
+#action {Zwracasz ostrze %* rozcinajac skore %*} {collect hit 1 $AVATAR_NAME;#line gag};
+#action {Zwracasz ostrze %* pozostawiajac niewielka rane %*} {collect hit 2 $AVATAR_NAME;#line gag};
+#action {Unosisz %* lekko do gory i wykonujesz efektowne ciecie. %* pozostawiajac tam paskudna%*.} {collect hit 3 $AVATAR_NAME;#line gag};
+#action {Wykonujesz obszerny zamach %* tkanki.} {collect hit 4 $AVATAR_NAME;#line gag};
+#action {Wykonujesz zamaszyste ciecie %* swiatlem.} {collect hit 7 $AVATAR_NAME;#line gag};
 
 #nop MAGIKI - LEWAK - Z PIERWSZEJ OSOBY;
 #action {Wprawnie przyjmujesz cios %* na szeroki jelec swego %*.} {collect par 0 $AVATAR_NAME;#line gag};
