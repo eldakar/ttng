@@ -1,0 +1,63 @@
+#CLASS {ConfigManagerProfile} OPEN
+
+#VARIABLE {ConfigManager_Configs}
+{
+    {CombatGag} {2}
+    {PlayerDBAddress} {}
+    {RaidSize} {10}
+    {RaidTableGuild} {MC}
+    {RaidTableGuildEnemies} {KGKS,LE,TW,KG,NA,AL,SC,VR,GL,ZS,KM,OSPS,OS,WKS}
+    {RaidTableGuildFriends} {OK,KS}
+    {SplitWingMapWidth} {92}
+    {TTMapEditorAddress} {}
+    {alertkondycja} {5}
+    {alertkondycjatekst} {Twoja kondycja ulegla ZMIANIE}
+    {atakflagi} {Azwr}
+    {atakkomenda} {chzabij}
+    {bindynamapie} {wlacz}
+    {celpostepow} {600}
+    {czatwpasku} {wlacz}
+    {dummy} {0}
+    {dynamicznamapa} {wylaczona}
+    {dziennamapie} {wylaczony}
+    {echokomend} {widoczne}
+    {etykiety} {wlacz}
+    {gildia} {mc}
+    {gildie} {niewidoczne}
+    {globalnypostep} {821}
+    {hpalerttext} {Kondycja ulegla zmianie.}
+    {hpalertvalue} {6}
+    {kolorgildii} {afa}
+    {kolormagikow} {ecc}
+    {kolorowaniemapy} {wylaczone}
+    {kolorprzyjaciol} {fff}
+    {kolorzaslonwrogow} {ccc}
+    {kondycje} {polpelne}
+    {logowanie} {wlaczone}
+    {logujhtml} {wylacz}
+    {meldujprzy} {5}
+    {myszka} {wlaczona}
+    {naroznikpaska} {standard}
+    {pasek} {medium}
+    {plaszcz} {wlacz}
+    {plecak} {plecak}
+    {pochwa} {pochwa}
+    {pochwa2} {pochwa}
+    {powtorzenter} {wylaczony}
+    {probymanewrow} {niewidoczne}
+    {przewijanie} {0}
+    {roza} {widoczna}
+    {sakiewka} {plecak}
+    {startowa} {28457}
+    {staz} {36}
+    {stylpaskow} {graph}
+    {szerokoschpkow} {10}
+    {trybmapy} {unicode}
+    {walkapvp} {wylaczona}
+    {zaslonaflagi} {Az}
+    {zawod} {sc}
+    {zbieranie} {monety,kamienie,proszek}
+    {zdejmowanie} {auto}
+}
+
+#CLASS {ConfigManagerProfile} CLOSE
