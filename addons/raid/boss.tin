@@ -562,6 +562,7 @@
 #HIGHLIGHT {%isiwobrody krepy krasnolud} {<faa>} {5}
 #HIGHLIGHT {%isiwobrody muskularny krasnolud} {<faa>} {5}
 #HIGHLIGHT {%isiwobrody nerwowy krasnolud} {<CAF>} {5}
+#HIGHLIGHT {%isiwobrody powazny krasnolud} {<CAF>} {5}
 #HIGHLIGHT {%isiwobrody zlosliwy krasnolud} {<faa>} {5}
 #HIGHLIGHT {%isiwy bezwzgledny gnom} {<faa>} {5}
 #HIGHLIGHT {%iskoltuniony brzuchaty krasnolud} {<faa>} {5}
@@ -588,6 +589,7 @@
 #HIGHLIGHT {%isnieznobrody jednooki krasnolud} {<faa>} {5}
 #HIGHLIGHT {%isnieznobrody leciwy krasnolud} {<faa>} {5}
 #HIGHLIGHT {%ispiczastouchy skosnooki elf} {<faa>} {5}
+#HIGHLIGHT {%ispokojna czarnowlosa kobieta} {<faa>} {5}
 #HIGHLIGHT {%ispokojny ciemnooki mezczyzna} {<faa>} {5}
 #HIGHLIGHT {%ispokojny czarnooki krasnolud} {<faa>} {5}
 #HIGHLIGHT {%ispokojny czarnooki mezczyzna} {<faa>} {5}

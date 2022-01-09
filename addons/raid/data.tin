@@ -1091,6 +1091,10 @@
     {
         {gildia} {GP}
     }
+    {Aune_} 
+    {
+        {gildia} {ZS}
+    }
     {Aurelius_} 
     {
         {gildia} {BOSS}
@@ -6956,7 +6960,7 @@
     }
     {Khadin_} 
     {
-        {gildia} {NPC}
+        {gildia} {BOSS}
     }
     {Khagrin_} 
     {
@@ -26649,7 +26653,7 @@
     }
     {siwobrody_powazny_krasnolud_} 
     {
-        {gildia} {NPC}
+        {gildia} {BOSS}
         {imie} {Khadin}
     }
     {siwobrody_rozwscieczony_mezczyzna_} 
@@ -27389,6 +27393,11 @@
     {
         {gildia} {NPC}
         {imie} {Grold}
+    }
+    {spokojna_czarnowlosa_kobieta_} 
+    {
+        {gildia} {ZS}
+        {imie} {Aune}
     }
     {spokojna_malomowna_driada_} 
     {
