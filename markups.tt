@@ -38,6 +38,76 @@
         {terrain} {mur}
         {type} {mob}
     }
+    {4787} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {4843} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5062} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5088} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5116} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {5391} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5392} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5399} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {21728} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {rzeka}
+        {type} {mob}
+    }
+    {21757} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
 }
 #VARIABLE {markupsymbols}
 {
