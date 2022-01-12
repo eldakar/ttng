@@ -3,6 +3,41 @@
 #VARIABLE {apka} {95}
 #VARIABLE {m}
 {
+    {4326} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustka}
+        {type} {mob}
+    }
+    {4449} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {rzeka}
+        {type} {mob}
+    }
+    {4672} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustynia}
+        {type} {mob}
+    }
+    {4758} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {4792} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
     {4903} 
     {
         {rendered} {1}
@@ -22,6 +57,13 @@
         {rendered} {1}
         {symbol} { O }
         {terrain} {pustynia}
+        {type} {mob}
+    }
+    {5204} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {rzeka}
         {type} {mob}
     }
     {5388} 
