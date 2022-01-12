@@ -3,109 +3,74 @@
 #VARIABLE {apka} {95}
 #VARIABLE {m}
 {
-    {4348} 
-    {
-        {rendered} {1}
-        {symbol} {<fff> O <088>}
-        {terrain} {sciezka}
-        {type} {mob}
-    }
-    {4422} 
-    {
-        {rendered} {1}
-        {symbol} { O }
-        {terrain} {rzeka}
-        {type} {mob}
-    }
-    {4445} 
-    {
-        {rendered} {1}
-        {symbol} { O }
-        {terrain} {}
-        {type} {mob}
-    }
-    {4595} 
+    {4903} 
     {
         {rendered} {1}
         {symbol} { O }
         {terrain} {pustynia}
         {type} {mob}
     }
-    {4633} 
-    {
-        {rendered} {1}
-        {symbol} {<fff> O <088>}
-        {terrain} {mur}
-        {type} {mob}
-    }
-    {4787} 
+    {5024} 
     {
         {rendered} {1}
         {symbol} { O }
         {terrain} {}
         {type} {mob}
     }
-    {4843} 
-    {
-        {rendered} {1}
-        {symbol} { O }
-        {terrain} {}
-        {type} {mob}
-    }
-    {5062} 
-    {
-        {rendered} {1}
-        {symbol} { O }
-        {terrain} {}
-        {type} {mob}
-    }
-    {5088} 
-    {
-        {rendered} {1}
-        {symbol} { O }
-        {terrain} {}
-        {type} {mob}
-    }
-    {5116} 
+    {5105} 
     {
         {rendered} {1}
         {symbol} { O }
         {terrain} {pustynia}
         {type} {mob}
     }
-    {5391} 
+    {5388} 
     {
         {rendered} {1}
         {symbol} { O }
         {terrain} {}
         {type} {mob}
     }
-    {5392} 
+    {21743} 
     {
         {rendered} {1}
         {symbol} { O }
         {terrain} {}
         {type} {mob}
     }
-    {5399} 
-    {
-        {rendered} {1}
-        {symbol} { O }
-        {terrain} {}
-        {type} {mob}
-    }
-    {21728} 
-    {
-        {rendered} {1}
-        {symbol} { O }
-        {terrain} {rzeka}
-        {type} {mob}
-    }
-    {21757} 
+    {21760} 
     {
         {rendered} {1}
         {symbol} { O }
         {terrain} {pustynia}
+        {type} {mob}
+    }
+    {21861} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {21867} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {21869} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {21886} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
         {type} {mob}
     }
 }

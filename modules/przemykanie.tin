@@ -21,12 +21,10 @@
     #untick stealth;
 };
 
-#action {Jest tu zbyt ciezko sie schowac, wiec jestes widoczny z powrotem.|Nie jestes juz schowany} {
+#action {{Jest tu zbyt ciezko sie schowac, wiec jestes widoczny z powrotem.|Nie jestes juz schowany}} {
     #untick stealth;
 };
 
 #action {Chowasz sie najlepiej jak potrafisz} {
     #var ret @stealthCooldown{15};
-};
-#action {Nie jestes juz schowany} {
 };
