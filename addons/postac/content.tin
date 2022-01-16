@@ -1,18 +1,21 @@
 #alias {zawod} {
 	#var pzawod $ConfigManager_Configs[zawod];
-  #switch {"$pzawod"} {
-    #case {"sc"} {#read bundles/walkasuby/spece/sc1.tin};
-    #case {"ok"} {#read bundles/walkasuby/spece/ok1.tin};
-    #case {"mc"} {#read bundles/walkasuby/spece/mc1.tin};
-    #case {"kg"} {#read bundles/walkasuby/spece/kg1.tin};
-    #case {"ks"} {#read bundles/walkasuby/spece/ks1.tin};
-    #case {"wks"} {#read bundles/walkasuby/spece/wks1.tin};
+  #list bundlemanager_bundles find walkasuby walkasubyLoaded;
+  #if {$walkasubyLoaded > 0} {
+      #switch {"$pzawod"} {
+        #case {"sc"} {#read bundles/walkasuby/spece/sc1.tin};
+        #case {"ok"} {#read bundles/walkasuby/spece/ok1.tin};
+        #case {"mc"} {#read bundles/walkasuby/spece/mc1.tin};
+        #case {"kg"} {#read bundles/walkasuby/spece/kg1.tin};
+        #case {"ks"} {#read bundles/walkasuby/spece/ks1.tin};
+        #case {"wks"} {#read bundles/walkasuby/spece/wks1.tin};
+      };
   };
 };
 
 #alias {gildia} {
 	#var pgildia $ConfigManager_Configs[gildia];
-};
+}
 
 #alias {mowa} {
 	#if {"$ConfigManager_Configs[mowa]" == "wlaczona"} {

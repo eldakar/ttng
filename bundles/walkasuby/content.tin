@@ -21,7 +21,7 @@
             #case {"magic"} {#if {$gaglevel < 2} {#line ignore {#showme {<138>[$typeSent $valueSent/6] <088>$collector[$senderID][short] <138>trafia <088>$collector[$receiverID][short]}}}};
 
             #default {#line ignore {#showme {${hitcolor}[$typeSent $valueSent/6] <088>$collector[$senderID][short] ${hitcolor}trafia <088>$collector[$receiverID][short]}}};
-         };  
+         };
       };
    };
 
@@ -36,7 +36,7 @@
             #default {#line ignore {#echo {%.${offsetx}s} {<cfa>[$typeSent $valueSent/6]<088> $outputtext}};};
          };
       };
-   };   
+   };
    #else {
       #alias walka_show_hit {
          #switch {"$typeSent"} {
@@ -228,7 +228,7 @@
 #alias {collector_offload} {
    #class pvp kill;
    #class pvp read bundles/ConfigManager/Profiles/pvp.data;
-   #class pvp open;              
+   #class pvp open;
 
    #foreach {*collector[]} {mytmpID} {
 
@@ -271,9 +271,9 @@
                #case {"GP"} {#var pvpdb[$collector[$collId][short]][zawod] {GP}};
             };
    #class pvp read bundles/ConfigManager/Profiles/pvp.data;
-   #class pvp open;              
+   #class pvp open;
    #class pvp close;
-   #class pvp write bundles/ConfigManager/Profiles/pvp.data;            
+   #class pvp write bundles/ConfigManager/Profiles/pvp.data;
 
 }
 

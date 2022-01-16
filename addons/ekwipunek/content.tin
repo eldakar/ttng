@@ -1,18 +1,24 @@
 #alias {pochwa} {
 	#var ppochwa $ConfigManager_Configs[pochwa];
+  #list bundlemanager_bundles find walkasuby walkasubyLoaded;
+  #if {$walkasubyLoaded > 0} {
   #switch {"$ppochwa"} {
     #case {"pochwa"} {#read bundles/walkasuby/spece/pochwa.tin};
     #case {"temblak"} {#read bundles/walkasuby/spece/temblak.tin};
     #case {"uprzaz"} {#read bundles/walkasuby/spece/uprzaz.tin};
-  }
+  };
+  };
 };
 
 #alias {pochwa2} {
     #var ppochwa2 $ConfigManager_Configs[pochwa2];
-	  #switch {"$ppochwa2"} {
-        #case {"pochwa"} {#read bundles/walkasuby/spece/pochwa.tin};
-        #case {"temblak"} {#read bundles/walkasuby/spece/temblak.tin};
-        #case {"uprzaz"} {#read bundles/walkasuby/spece/uprzaz.tin};
+    #list bundlemanager_bundles find walkasuby walkasubyLoaded;
+    #if {$walkasubyLoaded > 0} {
+	      #switch {"$ppochwa2"} {
+            #case {"pochwa"} {#read bundles/walkasuby/spece/pochwa.tin};
+            #case {"temblak"} {#read bundles/walkasuby/spece/temblak.tin};
+            #case {"uprzaz"} {#read bundles/walkasuby/spece/uprzaz.tin};
+        };
     };
 };
 

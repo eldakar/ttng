@@ -3,6 +3,29 @@
 #VARIABLE {apka} {95}
 #VARIABLE {m}
 {
+    {1} 
+    {
+        {direction} 
+        {
+            {n} {n}
+            {s} {s}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {3761} 
+    {
+        {direction} 
+        {
+            {n} {n}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {laka}
+        {type} {ext}
+    }
     {4326} 
     {
         {rendered} {1}
@@ -72,6 +95,102 @@
         {symbol} { O }
         {terrain} {}
         {type} {mob}
+    }
+    {10327} 
+    {
+        {direction} 
+        {
+            {e} {e}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {10328} 
+    {
+        {direction} 
+        {
+            {ne} {ne}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {}
+        {type} {ext}
+    }
+    {10329} 
+    {
+        {direction} 
+        {
+            {se} {se}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {laka}
+        {type} {ext}
+    }
+    {10330} 
+    {
+        {direction} 
+        {
+            {se} {se}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {laka}
+        {type} {ext}
+    }
+    {10331} 
+    {
+        {direction} 
+        {
+            {n} {n}
+            {ne} {ne}
+            {nw} {nw}
+            {s} {s}
+            {sw} {sw}
+            {w} {w}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {laka}
+        {type} {ext}
+    }
+    {10333} 
+    {
+        {direction} 
+        {
+            {n} {n}
+            {ne} {ne}
+            {nw} {nw}
+            {sw} {sw}
+        }
+        {rendered} {1}
+        {symbol} {<138> @ <088>}
+        {terrain} {trakt}
+        {type} {ext}
+    }
+    {10334} 
+    {
+        {direction} 
+        {
+            {s} {s}
+        }
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {ext}
+    }
+    {10336} 
+    {
+        {direction} 
+        {
+            {sw} {sw}
+        }
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {laka}
+        {type} {ext}
     }
     {21743} 
     {

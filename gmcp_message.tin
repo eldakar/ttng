@@ -5,7 +5,12 @@
 	};
 	#switch {"$GMCPMSGS[type]"} {
 		#case {"other"} {
-				#sh $GMCPMSGS[text];
+        #if {{$GMCPMSGS[text]} === {}} {
+            #nop #echo {};
+            #break;
+        } {
+    		    #sh $GMCPMSGS[text];
+        };
 		};
 		#case {"comm"} {
 			#replace {GMCPMSGS[text]} {\\n} {};
@@ -104,7 +109,10 @@
 			  #replace {outputtext} {\\n} {};
 			  #sh $outputtext;
     		#delay {event_trigger_combat_cooldown} {
-				    #nop TODO;collector_offload;
+            #list bundlemanager_bundles find walkasuby walkasubyLoaded;
+            #if {$walkasubyLoaded > 0} {
+				        #nop TODO;collector_offload;
+            };
             #foreach {*event_handler_combat_cooldown[]} {ehcc} {
                 $event_handler_combat_cooldown[$ehcc];
             };
