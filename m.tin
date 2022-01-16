@@ -83,6 +83,7 @@
 
     #config {debug telnet} {off};	#nop debug;
     #config {COMMAND ECHO} {off};	#nop wyswietlanie komend;
+    #config packet_patch 0;
 
     #nop event {SEND OUTPUT} {#sh {WYSYLAM: <118>%%0<088>}};
 };
