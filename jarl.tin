@@ -39,3 +39,6 @@
 /conf zaslonaflagi Az
 /conf zbieranie monety,kamienie
 /conf zdejmowanie auto
+
+
+/alias load #alias q _quickbind_,#alias l _lokacyjny_,#alias a _sugerowanywrog_,#alias z _sugerowanaobrona_
