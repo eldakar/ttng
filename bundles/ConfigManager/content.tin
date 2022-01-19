@@ -99,6 +99,10 @@
 	} {
 		#echo {<148>ColorManager: <128>Creating profile: <FAA><178>$AVATAR_NAME<088>};
 	};
+
+  #regex {"$CHAR_INFO[guild_lay]"} {%.u%*} {
+    #read modules/markups.tin;
+  };
 };
 
 #nop ##################################################################;

@@ -69,7 +69,6 @@
     #read addons/wiesci/manifest.tin;
     #read addons/buffer/content.tin;
 
-    #read modules/markups.tin;
     #read modules/kamienie.tin;
     #read modules/expowiska.tin;
     #read modules/tropienie.tin;

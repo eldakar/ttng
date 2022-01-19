@@ -1,3 +1,12 @@
+#nop ###########################################################;
+#nop Event gmcp.char.info;
+#nop ###########################################################;
+#nop list event_handler_char_info add {markups_gmcp_char_info};
+    #nop alias {markups_gmcp_char_info} {
+	      #var _CHAR_INFO_ {%0};
+        #if {"$_CHAR_INFO_[guild_lay]" == "Kultysci Chaosu"} {
+        };
+    };
 #class markups read markups.tt;
 
 #var markupsStatus off;
