@@ -979,6 +979,21 @@
   dobadz broni;
 }
 
+#alias {siez} {
+  opusc bron;
+  otworz pierwszy przytroczony woreczek;
+  otworz drugi przytroczony woreczek;
+  otworz trzeci przytroczony woreczek;
+  otworz czwarty przytroczony woreczek;
+  wez duza granatowa jagode z pierwszego przytroczonego woreczka;
+  wez duza granatowa jagode z drugiego przytroczonego woreczka;
+  wez duza granatowa jagode z trzeciego przytroczonego woreczka;
+  wez duza granatowa jagode z czwartego przytroczonego woreczka;
+  rozgryz jagode;
+  wlziola;
+  dobadz broni;
+}
+
 #alias {delion} {
   opusc bron;
   otworz pierwszy przytroczony woreczek;
