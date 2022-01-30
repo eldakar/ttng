@@ -9,6 +9,8 @@ mkdir ~/.termux
 touch ~/.termux/termux.properties
 
 cd ttng
+mkdir bundles/ConfigManager/Profiles
+
 sh mobile/test.sh
 
 echo !!!! ZRESTARTUJ TERMUX !!!!
