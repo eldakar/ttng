@@ -1,0 +1,18 @@
+#list bundle_handler_split_request add {combat_window_refresh}
+    #alias {combat_window_refresh} {
+        #if {$ConfigManager_Configs[combat_window_width] > 0} {
+            #math global_bundle_slots_values[prompt][left] {$ConfigManager_Configs[combat_window_width] + 0};
+        };
+    };
+
+#nop ###########################################################;
+#nop Config - Wyswietlanie okna walki jako lewe skrzydlo;
+#nop          wartosci wieksze od zera uruchamiaja okno;
+#nop ###########################################################;
+//confadd combatwindow combat_window_width 20;
+#alias {combat_window_width} {
+    #if {"$ConfigManager_Configs[combat_window_width]" == ""} {
+        #local ret @bundleops_default_config{combat_window_width};
+    };
+    SplitRefreshRequestRefresh;
+};

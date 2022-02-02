@@ -1,0 +1,8 @@
+#var bundle_name {combatwindow};
+#var bundle_data {0};
+#var bundle_content {1};
+#list bundle_configs clear;
+list bundle_deps clear;
+
+#list bundle_handler_split_request                       add {combat_window_refresh}
+#var bundle_ready @bundleops_validate{bundles};

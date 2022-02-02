@@ -22,12 +22,12 @@
     #math offsety 1;
     #screen get cols screencols;
     #screen get rows screenrows;
-    #math offsetx {$screencols - $global_bundle_slots_values[prompt][right] + 1}; #nop +2;
+    #math offsetx {$screencols - $global_bundle_slots_values[prompt][right] + 3}; #nop +2;
     #math offseth {$screencols};
     #math offsetw {$screenrows - $global_bundle_slots_values[prompt][bottom] - $ConfigManager_Configs[RaidSize] - 1};
     #math raidoffsety {$praidsize + 1};
     #math raidoffsetw {$screenrows - $global_bundle_slots_values[prompt][bottom]-1};
-    #math raidoffsetx {$screencols - $global_bundle_slots_values[prompt][right]}; #nop + 1;
+    #math raidoffsetx {$screencols - $global_bundle_slots_values[prompt][right] + 2}; #nop + 1;
     #map offset $offsety $offsetx $offsetw $offseth;
 };
 
@@ -84,7 +84,10 @@
 #alias {RaidBar_refresh} {
     #if {$praidsize > 0 && "$raidbartable" != "" && $raidoffsetw > 0 && $splitwingmapwidthused == 1} {
         #draw tile $raidoffsety $raidoffsetx+1 $raidoffsetw $screencols <088>$raidbartable; #nop ORG;
-        #sh {<118>X<088>} {$raidoffsetw} {$raidoffsetx+1};
+        #var _decoBarHorizontal {};
+        #math _deco_offsetw {$ConfigManager_Configs[SplitWingMapWidth] - 1};
+        #loop {1} {$_deco_offsetw} {_sclk} {#var _decoBarHorizontal {$_decoBarHorizontal }};
+        #showme {<G02>$_decoBarHorizontal<088>} {$raidoffsety-1} {$raidoffsetx-1};
     };
 }
 

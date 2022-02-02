@@ -115,7 +115,7 @@
 					#switch {"$ConfigManager_Configs[pasek]"} {
 						#case {"medium"} {
 							#alias BottomBar_Selected {BottomBarTinyFugue};
-							#var global_bundle_slots_values[prompt][bottom] {3};
+							#var global_bundle_slots_values[prompt][bottom] {4};
 						};
 						#case {"mini"} {
 							#alias BottomBar_Selected {BottomBarMini};

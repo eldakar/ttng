@@ -619,15 +619,18 @@
     };
 };
 
-
-
+#nop ---------------;
+#nop Kondycje medium;
+#nop ---------------;
+#alias {/z %1} {_zabij_ ob_$_objs[%1]} {1};
+#alias {/x %1} {zaskocz ob_$_objs[%1]} {1};
+#alias {/wz %1} {gzwycofaj sie zaob_$_objs[%1]} {1};
+#alias {/za %1} {_zaslon_ ob_$_objs[%1]} {1};
 #alias {_tabela_odswiez_1_} {
     #var maxLinesPerType {};
     #list wrogi size {wros};
     #list neut size {neus};
     #list team size {teas};
-    #var negativecounter 1;
-    #screen get rows windowh;
     #var iterator {0};
     #foreach {*duch[]} {du} {
         #if {"$duch[$du][hp]" != ""} {
@@ -641,17 +644,7 @@
             #format indexchar {%a} {$indexvalue};
             #var duch[$du][alias_value] {$indexchar};
 
-            #line substitute {variables} {#alias k$indexchar {_zabij_ ob_$du}};
-            #line substitute {variables} {#alias zp$indexchar {zaslon przed ob_$du}};
-            #line substitute {variables} {#alias b$indexchar {zablokuj ob_$du}};
-            #line substitute {variables} {#alias p$indexchar {przelam obrone ob_$du}};
-            #line substitute {variables} {#alias z$indexchar {_zaslon_ $du}};
-            #line substitute {variables} {#alias wz${indexchar} {gzwycofaj sie za ob_$du;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-            #line substitute {variables} {#alias z${indexchar}2 {opcje grupa 2;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-            #line substitute {variables} {#alias z${indexchar}3 {opcje grupa 3;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-            #line substitute {variables} {#alias z${indexchar}4 {opcje grupa 4;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-            #line substitute {variables} {#alias O$indexchar {wskaz ob_$du jako cel obrony}};
-
+            #line sub {variables} {#var _objs[$indexchar] $du};
 
             #var tmpen {  };
             #if {$duch[$du][enemies] < 1} {
@@ -677,17 +670,14 @@
                 #if {"$duch[$du][defense_target]" == "true"} {
                     #local colorFG {<178>};
                     #local colorBG {<AAB>};
-                    #local localHP {$healthbarsp[$duch[$du][hp]]};
                 };
                 #if {"$duch[$du][team_leader]" == "true"} {
                     #local colorFG {<138>};
-                    #format team_lead_lower {%l} {$duch[$du][desc]};
                     #var team_lead_id {$du};
                 };
                 #if {"$duch[$du][bot]" == "SO1"} {
                     #local colorBG {<AAF>};
                     #local colorFG {<fff>};
-                    #local localHP {$healthbarsp[$duch[$du][hp]]};
                 };
                 #if {"$duch[$du][avatar]" == "true"} {
                     #local colorFG {<158>};
@@ -701,24 +691,20 @@
                     #local colorFG {<fac>};
                 };
                 #if {"$duch[$du][typ]" == "wrog"} {
-                    #local colorBG {<DAA>};
-                    #local colorFG {<fff>};
-                    #local localHP {$healthbarsp[$duch[$du][hp]]};
+                    #local colorBG {<088>};
+                    #local colorFG {<118>};
                 };
                 #if {"$duch[$du][typ]" == "boss"} {
-                    #local colorBG {<FCA>};
-                    #local colorFG {<aaa>};
-                    #local localHP {$healthbarsp[$duch[$du][hp]]};
+                    #local colorBG {<AAA>};
+                    #local colorFG {<bbf>};
                 };
                 #if {"$duch[$du][attack_target]" == "true"} {
                     #local colorBG {<BAC>};
                     #local colorFG {<fff>};
-                    #local localHP {$healthbarsp[$duch[$du][hp]]};
                 };
                 #if {"$duch[$du][bot]" == "SA1"} {
                     #local colorBG {<FAA>};
                     #local colorFG {<fff>};
-                    #local localHP {$healthbarsp[$duch[$du][hp]]};
                 };
             };
             #if {"$duch[$du][avatar]" == "true"} {
@@ -731,12 +717,7 @@
             #format {MyShort} {%-7s} {$MyShort};
 
 
-            #if {"$tmphp" != ""} {
-                #var duch[$du][bar][orc] {<118>$tmpen<088> $duch[$du][alias_value] ${colorFG}${colorBG}$localHP${colorFG}${colorBG} $MyShort<088>};
-
-                #nop var duch[$du][bar][orc] {$tmpsug $duch[$du][alias_value]$healthbars3[$duch[$du][hp]] $tmpen$tmpled$tmpkol$tmpna_orc<088>};
-                #math {negativecounter} {$negativecounter + 1};
-            };
+            #var duch[$du][bar][orc] {<118>$tmpen<088> $duch[$du][alias_value] $localHP ${colorFG}${colorBG}$MyShort<088>};
         };
     };
 };
