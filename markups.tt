@@ -10,11 +10,32 @@
         {terrain} {}
         {type} {mob}
     }
+    {5055} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
+    {5336} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {}
+        {type} {mob}
+    }
     {5351} 
     {
         {rendered} {1}
         {symbol} { O }
         {terrain} {}
+        {type} {mob}
+    }
+    {21727} 
+    {
+        {rendered} {1}
+        {symbol} { O }
+        {terrain} {pustka}
         {type} {mob}
     }
     {21894} 

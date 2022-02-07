@@ -587,14 +587,7 @@
                 };
             };
         };
-        #switch {"$roonsize"} {
-            #case {"1"} {SplitWingMap_Journal_1 $outputstr;};
-            #case {"2"} {SplitWingMap_Journal_2 $outputstr;};
-            #case {"3"} {SplitWingMap_Journal_3 $outputstr;};
-            #case {"4"} {SplitWingMap_Journal_4 $outputstr;};
-            #case {"5"} {SplitWingMap_Journal_5 $outputstr;};
-            #default {SplitWingMap_Journal_5 $outputstr;};
-        };
+        #line ignore #showme {$outputstr};
     };
     RaidBar_refresh;
 };

@@ -110,13 +110,21 @@
 
 #nop CONF;	#alias {pasek} {
 				#if {"$ConfigManager_Configs[pasek]" == ""} {
-					/conf pasek medium;
+					/conf pasek era;
 				} {
 					#switch {"$ConfigManager_Configs[pasek]"} {
 						#case {"medium"} {
 							#alias BottomBar_Selected {BottomBarTinyFugue};
 							#var global_bundle_slots_values[prompt][bottom] {4};
 						};
+            #case {"era"} {
+              #alias BottomBar_Selected {BottomBarNewEra};
+							#var global_bundle_slots_values[prompt][bottom] {22};
+              #map flag vtmap on;
+              #screen get rows screenrows;
+              #screen get cols screencols;
+              #map offset $screenrows-21 2+80+10 $screenrows-2 $screencols-2;
+            };
 						#case {"mini"} {
 							#alias BottomBar_Selected {BottomBarMini};
 							#var global_bundle_slots_values[prompt][bottom] {3};
@@ -295,14 +303,12 @@
 				#delay {3} {
 					#unvar manewry[$ktoto];
 					tabela_odswiez;
-				    render_h2;
 				    #var objectnumsRefreshed {1};
 				};
 			};
 		};
 	};
     tabela_odswiez;
-    render_h2;
 	#var objectnumsRefreshed {1};
 
 	#line ignore #sh {\n<fac>[  PRZELAMALES  ] %0<088>\n};
@@ -320,7 +326,6 @@
 				#delay {3} {
 					#unvar manewry[$ktoto];
 					tabela_odswiez;
-				    render_h2;
 				    #var objectnumsRefreshed {1};
 				};
 			};
@@ -338,7 +343,6 @@
 		};
 	};
     tabela_odswiez;
-    render_h2;
 	#var objectnumsRefreshed {1};
 
 	#if {$pokazalem != 1} {
@@ -512,6 +516,21 @@
 	#sh {${bbBGC}S[@graph{$realFatigue;9}${bbBGC}]O[@graph{$state[encumbrance];5}${bbBGC}]P[@graph{$state[soaked];3}${bbBGC}]P[@graph{$state[improve];15}${bbBGC}]<088>R[@graph{$rozkazlevel;14}${bbBGC}]<088>} {-3};
 	#sh {${bbBGC}M[@graph{$state[mana];8}${bbBGC}]P[@graph{$state[panic];5}${bbBGC}]U[@graph{$state[intox];10}${bbBGC}]G[@graph{$ConfigManager_Configs[globalnypostep];$ConfigManager_Configs[celpostepow]}${bbBGC}]<088>B[@graph{$blockselflevel;5}${bbBGC}]<088>} {-2};
 };
+
+#alias {BottomBarNewEra} {
+    #local horbar {};
+    #loop {1} {$screencols} {aa} {
+        #var horbar {$horbar-};
+    };
+    #nop showme {$horbar};
+}
+
+#event {VARIABLE UPDATED objectnumsRefreshed} {RaidBar_refresh};    #nop RAIDTABLE HOOK;
+#alias RaidBar_refresh {
+    #nop map offset $screenrows-21 2+80+10 $screenrows-2 $screencols-2;
+    #draw tile $screenrows-21 2+10 $screenrows-2 2+10+38 $leftraid[];
+    #draw tile $screenrows-21 2+10+39 $screenrows-2 2+10+79 $rightraid[];
+}
 
 #alias {BottomBarTinyFugue} {
 	#nop RYSUJEMY ROZE PO LEWEJ;

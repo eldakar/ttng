@@ -82,12 +82,12 @@
 };
 
 #alias {RaidBar_refresh} {
-    #if {$praidsize > 0 && "$raidbartable" != "" && $raidoffsetw > 0 && $splitwingmapwidthused == 1} {
-        #draw tile $raidoffsety $raidoffsetx+1 $raidoffsetw $screencols <088>$raidbartable; #nop ORG;
-        #var _decoBarHorizontal {};
-        #math _deco_offsetw {$ConfigManager_Configs[SplitWingMapWidth] - 1};
-        #loop {1} {$_deco_offsetw} {_sclk} {#var _decoBarHorizontal {$_decoBarHorizontal }};
-        #showme {<G02>$_decoBarHorizontal<088>} {$raidoffsety-1} {$raidoffsetx-1};
+    #if {$praidsize > 0 && $raidoffsetw > 0 && $splitwingmapwidthused == 1} {
+        #math magicsplit {($screencols - $raidoffsetx) / 2};
+        #nop draw tile $raidoffsety $raidoffsetx+1 $raidoffsetw $screencols <088>$raidbartable; #nop ORG;
+        #draw tile $raidoffsety $raidoffsetx+1 $raidoffsetw $raidoffsetx+$magicsplit $leftraid[];
+        #draw tile $raidoffsety $raidoffsetx+$magicsplit+1 $raidoffsetw $screencols $rightraid[];
+        #nop draw tile $raidoffsety $raidoffsetx+1 $raidoffsetw $screencols <088>$raidbartable; #nop ORG;
     };
 }
 
@@ -100,6 +100,10 @@
         };
         SplitWingMap_Offset;
         RaidBar_refresh;
+        #var _decoBarHorizontal {};
+        #math _deco_offsetw {$ConfigManager_Configs[SplitWingMapWidth] - 1};
+        #loop {1} {$_deco_offsetw} {_sclk} {#var _decoBarHorizontal {$_decoBarHorizontal }};
+        #showme {<G02>$_decoBarHorizontal<088>} {$raidoffsety-1} {$raidoffsetx-1};
     };
 };
 

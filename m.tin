@@ -19,7 +19,7 @@
     #read events/gmcp.object.tin;
     #read events/gmcp.room.tin;
     #read events/gmcp.ping.tin;
-    #read events/mouse.tin;
+    #nop read events/mouse.tin;
     #read events/io.tin;
     #read events/screen.tin;
     #read events/arka.tin;
@@ -58,8 +58,8 @@
     #read bundles/PlayerDB/manifest.tin;
     #read addons/stansprzetu/manifest.tin;
     #read bundles/postepy/manifest.tin;
-    #read bundles/SplitWingMap/manifest.tin;
-    #read modules/combatwindow.tin;
+    #nop read bundles/plitWingMap/manifest.tin;
+    #nop read modules/combatwindow.tin;
     #read addons/bindy/manifest.tin;
     #read bundles/Highlights/manifest.tin;
     #read bundles/Vehicles/manifest.tin;
