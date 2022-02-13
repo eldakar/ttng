@@ -98,18 +98,23 @@
 			#var outputtext {$GMCPMSGS[text]};
 			#replace {outputtext} {\\n} {};
 			#sh $outputtext;
+      #var combattext {$combattext\n$outputtext};
 		};
 		#case {"combat.others"} {
 			#var outputtext {$GMCPMSGS[text]};
 			#replace {outputtext} {\\n} {};
 			#sh $outputtext;
+      #var combattext {$combattext\n$outputtext};
 		};
 		#case {"combat.avatar"} {
  		#var outputtext {$GMCPMSGS[text]};
 			  #replace {outputtext} {\\n} {};
-			  #sh $outputtext;
+        #var combattext[$combattextcounter] {$outputtext};
+        #math combattextcounter {$combattextcounter + 1};
     		#delay {event_trigger_combat_cooldown} {
             #list bundlemanager_bundles find walkasuby walkasubyLoaded;
+            #var combattext {};
+            #var combattextcounter 0;
             #if {$walkasubyLoaded > 0} {
 				        #nop TODO;collector_offload;
             };
@@ -144,3 +149,6 @@
 		};
 	};
 };
+
+
+#var combattextcounter 0;

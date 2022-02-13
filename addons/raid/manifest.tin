@@ -18,6 +18,9 @@
 	#list bundle_configs add {gildie};
 	#list bundle_configs add {kondycje};
 
+#list bundle_colors clear;
+  #list bundle_colors add {wrogowie};
+
 #nop IS HELP PRESENT;
 #var bundle_help {1};
 
@@ -55,6 +58,7 @@
 #var gildie[ES] {n};
 #var gildie[GL] {n};
 #var gildie[GP] {n};
+#var gildie[BK] {n};
 #var gildie[KG] {n};
 #var gildie[KGKS] {n};
 #var gildie[KM] {n};

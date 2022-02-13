@@ -215,6 +215,39 @@
 
 } {1};
 
+#alias {/kolory_mudlet} {
+kolor tekst 248;
+kolor pozostali 144;
+
+kolor cel ataku 218;
+kolor cel obrony 248;
+kolor druzyna 189;
+kolor przeciwnik 218;
+kolor wrogowie 248;
+kolor mowa 123;
+kolor krzyk 123;
+kolor szept 153;
+kolor opisy walki 239;
+kolor krotki opis noca 147;
+kolor krotki opis dniem 229;
+kolor opis wyjsc z lokacji 49;
+kolor emocje do mnie 225;
+
+kolor niskie zadane obrazenia 243;
+kolor srednie zadane obrazenia 243;
+kolor wysokie zadane obrazenia 243;
+
+kolor brak otrzymanych obrazen 243;
+kolor niskie otrzymane obrazenia 243;
+kolor srednie otrzymane obrazenia 243;
+kolor wysokie otrzymane obrazenia 139;
+
+kolor niski poziom stanu 208;
+kolor sredni poziom stanu 11;
+kolor wysoki poziom stanu 156;
+
+} {1};
+
 #alias {/resetuj_kolory} {
   kolor tekstu wylaczony;
   kolor celu ataku 218;

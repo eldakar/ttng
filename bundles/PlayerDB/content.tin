@@ -14,7 +14,7 @@
     #replace tmp {,} {;};
     #list connstrdb create {$tmp};
     #unvar tmp;
-    #system {sh bundles/PlayerDB/baza_update.sh $connstrdb[1] $connstrdb[2] $connstrdb[3] $connstrdb[4] > addons/raid/data.tin};	
+    #system {sh bundles/PlayerDB/baza_update.sh $connstrdb[1] $connstrdb[2] $connstrdb[3] $connstrdb[4] > addons/raid/data.tin};
     #unvar postac;
     #read {addons/raid/data.tin};
     #class bazapostaci write addons/raid/data.tin;
@@ -109,7 +109,7 @@
 	#format {opislower} {%l} {%1 %2 %3};
 	#line substitute {variables} {
 		#script {ktotolist} {$mysqlcommand"select ImieM, OpisM, Gildia from bazapostaci where OpisM = '$opislower';" 2>/dev/null}
-	};	
+	};
 } {1};
 
 #alias {/ktoto %w$} {
@@ -117,8 +117,7 @@
 	#format {imiewielblad} {%n} {$imiewielblad};
 	#line substitute {variables} {
 		#script {ktotolist} {$mysqlcommand"select ImieM, OpisM, Gildia from bazapostaci where ImieM = '$imiewielblad';" 2>/dev/null}
-	};	
+	};
 	#line ignore #sh {<ccc>PlayerDB <128>><088> $ktotolist[1]};
 	#line ignore #sh {<ccc>PlayerDB <128>><088> $ktotolist[2]};
 } {1};
-

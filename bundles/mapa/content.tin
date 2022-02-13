@@ -327,12 +327,13 @@
     };
 }
 
-#var rozk2 {{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
+#var rozk2 {{wl}{ }{nl}{ }{el}{ }{sl}{ }{nwl}{ }{nel}{ }{swl}{ }{sel}{ }{dl}{ }{ul}{ }{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
 
 #function buduj_roze {
     #var b {0};
     #var roza_custom {};
-    #var rozk2 {{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
+    #var rozk2 {{wl}{ }{nl}{ }{el}{ }{sl}{ }{nwl}{  }{nel}{  }{swl}{  }{sel}{  }{dl}{ }{ul}{ }{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
+    #nop var rozk2 {{w}{ }{e}{ }{n}{ }{s}{ }{nw}{ }{ne}{ }{se}{  }{sw}{  }{u}{ }{d}{ }{wyjscie}{   }{nw2}{ }{n2}{   }{ne2}{   }{w2}{ }{e2}{ }{sw2}{   }{s2}{   }{se3}{   }};
 
     #list ROOM_INFO[exits] size ris;
     #if {$ris > 1}  {
@@ -340,16 +341,16 @@
         {
           #switch {"$ROOM_INFO[exits][$i]"}
           {
-            #case {"polnoc"} {#math {b} {$b + 1};#var {rozk2[n]} {|};};
-            #case {"polnocny-wschod"} {#math {b} {$b + 1};#var {rozk2[ne]} {/};};
-            #case {"polnocny-zachod"} {#math {b} {$b + 1};#var {rozk2[nw]} {\\};};
-            #case {"poludnie"} {#math {b} {$b + 1};#var {rozk2[s]} {|}};
-            #case {"poludniowy-wschod"} {#math {b} {$b + 1};#var {rozk2[se]} {\\ };};
-            #case {"poludniowy-zachod"} {#math {b} {$b + 1};#var {rozk2[sw]} { /};};
-            #case {"wschod"} {#math {b} {$b + 1};#var {rozk2[e]} {-};};
-            #case {"zachod"} {#math {b} {$b + 1};#var {rozk2[w]} {-};};
-            #case {"dol"} {#math {b} {$b + 1};#var {rozk2[d]} {V}};
-            #case {"gora"} {#math {b} {$b + 1};#var {rozk2[u]} {A}};
+            #case {"polnoc"} {#math {b} {$b + 1};#var {rozk2[n]} {|};#var rozk2[nl] {N}};
+            #case {"polnocny-wschod"} {#math {b} {$b + 1};#var {rozk2[ne]} {/};#var rozk2[nel] {NE}};
+            #case {"polnocny-zachod"} {#math {b} {$b + 1};#var {rozk2[nw]} {\\};#var rozk2[nwl] {NW}};
+            #case {"poludnie"} {#math {b} {$b + 1};#var {rozk2[s]} {|};#var rozk2[sl] {S}};
+            #case {"poludniowy-wschod"} {#math {b} {$b + 1};#var {rozk2[se]} {\\ };#var rozk2[sel] {SE}};
+            #case {"poludniowy-zachod"} {#math {b} {$b + 1};#var {rozk2[sw]} { /};#var rozk2[swl] {SW}};
+            #case {"wschod"} {#math {b} {$b + 1};#var {rozk2[e]} {-};#var rozk2[el] {E}};
+            #case {"zachod"} {#math {b} {$b + 1};#var {rozk2[w]} {-};#var rozk2[wl] {W}};
+            #case {"dol"} {#math {b} {$b + 1};#var {rozk2[d]} {V};#var rozk2[dl] {D}};
+            #case {"gora"} {#math {b} {$b + 1};#var {rozk2[u]} {A};#var rozk2[ul] {U}};
             #default {
                 #format defexitlen {%L} {$ROOM_INFO[exits][$i]};
                 #if {$defexitlen > 2} {
@@ -362,16 +363,16 @@
     #elseif {$ris > 0}  {
       #switch {"$ROOM_INFO[exits][1]"}
       {
-            #case {"polnoc"} {#math {b} {$b + 1};#var {rozk2[n]} {|};};
-            #case {"polnocny-wschod"} {#math {b} {$b + 1};#var {rozk2[ne]} {/};};
-            #case {"polnocny-zachod"} {#math {b} {$b + 1};#var {rozk2[nw]} {\\};};
-            #case {"poludnie"} {#math {b} {$b + 1};#var {rozk2[s]} {|}};
-            #case {"poludniowy-wschod"} {#math {b} {$b + 1};#var {rozk2[se]} {\\ };};
-            #case {"poludniowy-zachod"} {#math {b} {$b + 1};#var {rozk2[sw]} { /};};
-            #case {"wschod"} {#math {b} {$b + 1};#var {rozk2[e]} {-};};
-            #case {"zachod"} {#math {b} {$b + 1};#var {rozk2[w]} {-};};
-            #case {"dol"} {#math {b} {$b + 1};#var {rozk2[d]} {V}};
-            #case {"gora"} {#math {b} {$b + 1};#var {rozk2[u]} {A}};
+            #case {"polnoc"} {#math {b} {$b + 1};#var {rozk2[n]} {|};#var rozk2[nl] {N}};
+            #case {"polnocny-wschod"} {#math {b} {$b + 1};#var {rozk2[ne]} {/};#var rozk2[nel] {NE}};
+            #case {"polnocny-zachod"} {#math {b} {$b + 1};#var {rozk2[nw]} {\\};#var rozk2[nwl] {NW}};
+            #case {"poludnie"} {#math {b} {$b + 1};#var {rozk2[s]} {|};#var rozk2[sl] {S}};
+            #case {"poludniowy-wschod"} {#math {b} {$b + 1};#var {rozk2[se]} {\\ };#var rozk2[sel] {SE}};
+            #case {"poludniowy-zachod"} {#math {b} {$b + 1};#var {rozk2[sw]} { /};#var rozk2[swl] {SW}};
+            #case {"wschod"} {#math {b} {$b + 1};#var {rozk2[e]} {-};#var rozk2[el] {E}};
+            #case {"zachod"} {#math {b} {$b + 1};#var {rozk2[w]} {-};#var rozk2[wl] {W}};
+            #case {"dol"} {#math {b} {$b + 1};#var {rozk2[d]} {V};#var rozk2[dl] {D}};
+            #case {"gora"} {#math {b} {$b + 1};#var {rozk2[u]} {A};#var rozk2[ul] {U}};
             #default {
                 #format defexitlen {%L} {$ROOM_INFO[exits][1]};
                 #if {$defexitlen > 2} {
@@ -382,10 +383,13 @@
     };
     #if {"$proza" == "widoczna"} {
         #line ignore #sh { };
-        #line ignore #sh {   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u] <088>};
-        #line ignore #sh {  <138>$rozk2[w]$rozk2[w] $ptrybchodzeniasymbol <138>$rozk2[e]$rozk2[e]  <088>};
-        #line ignore #sh {  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d] <088>};
-        #line ignore #sh {<168>$roza_custom};
+        #line ignore #sh {        <bfb>$rozk2[nwl]  <bfb>$rozk2[nl]  <bfb>$rozk2[nel]          <bfb>$rozk2[ul]<088>};
+        #line ignore #sh {          <078>$rozk2[nw] $rozk2[n] $rozk2[ne]            $rozk2[u] <088>};
+        #line ignore #sh {        <bfb>$rozk2[wl]<078>$rozk2[w]$rozk2[w]$rozk2[w]<bbb>X<078>$rozk2[e]$rozk2[e]$rozk2[e]<bfb>$rozk2[el]  <088>};
+        #line ignore #sh {         <078>$rozk2[sw] $rozk2[s] $rozk2[se]           $rozk2[d] <088>};
+        #line ignore #sh {        <bfb>$rozk2[swl]  <bfb>$rozk2[sl]  <bfb>$rozk2[sel]          <bfb>$rozk2[dl]<088>};
+        #line ignore #sh { };
+        #line ignore #sh {              <158>$roza_custom};
     };
 };
 

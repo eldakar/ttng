@@ -14,41 +14,9 @@
     	$bundle_handler_split_request[$bhon] %0;
 	};
 
-  #local r @decorateBar{};
-  #local r @decorateVerticalRight{};
-  #local r @decorateVerticalLeft{};
+
+  #screen inputregion $screenrows $global_bundle_slots_values[prompt][left]+1 $screenrows $screencols-$global_bundle_slots_values[prompt][right];
 
 	#buffer down;
 	#sh {} {-1} {1};
 };
-
-
-#function decorateBar {
-    #local _decoBarHorizontal {};
-    #loop {1} {$screencols} {_sclk} {#var _decoBarHorizontal {$_decoBarHorizontal }};
-    #if {"$ConfigManager_Configs[pasek]" == "medium"} {
-        #showme {<G02>$_decoBarHorizontal<088>} {-5};
-    };
-    #unvar _decoBarHorizontal;
-}
-
-#function decorateTopRaid {
-    #var _decoBarHorizontal {};
-    #loop {1} {$_deco_offsetw} {_sclk} {#var _decoBarHorizontal {$_decoBarHorizontal }};
-    #showme {<G02>$_decoBarHorizontal<088>} {$raidoffsety-1} {$raidoffsetx-1};
-    #unvar _deco_offsetw;
-    #nop unvar _decoBarHorizontal;
-}
-
-#function decorateVerticalRight {
-    #math _deco_offsetw {$screenrows - $global_bundle_slots_values[prompt][bottom] - 1};
-    #loop {1} {$_deco_offsetw} {_dofstw} {
-        #showme {<G02>  <088>} {$_dofstw} {$screencols - $global_bundle_slots_values[prompt][right] +1};
-    };
-}
-#function decorateVerticalLeft {
-    #math _deco_offsetw {$screenrows - $global_bundle_slots_values[prompt][bottom] - 1};
-    #loop {1} {$_deco_offsetw} {_dofstw} {
-        #showme {<G02>  <088>} {$_dofstw} {$global_bundle_slots_values[prompt][left] - 1};
-    };
-}

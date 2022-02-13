@@ -1,5 +1,7 @@
 #nop NA SOBIE;
-	#sub {Trzymasz %*.} {Trzymasz <cca>%1<088>.};
+  #sub {Trzymasz oburacz %w %w %w.} {Trzymasz oburacz <138>%1 %2 %3<088>.} {1};
+	#sub {Trzymasz %* w prawej rece oraz %* w lewej rece.} {Trzymasz <138>%1<088> w prawej rece oraz <138>%2<088> w lewej rece.};
+  #sub {Trzymasz %* w %* rece.} {Trzymasz <138>%1<088> w %2 rece.};
 	#nop sub {Trzyma } {<faa>TRZYMA <088>};
 	#nop sub {Masz na sobie} {<118><fca>MASZ NA SOBIE<088>};
 	#nop sub {Ma na sobie} {<118><fca>MA NA SOBIE<088>};
@@ -8,55 +10,55 @@
 #nop SPRZET DOBREJ JAKOSCI;
 	#sub {. .} {};
 
-	#sub {zlowr%w stalow%w drann%w} {<028>%0 <088>( <038>Obstawa Wiedzm<088> )}; 
-	#sub {wask%w szkarlat%w miecz%w} {<028>%0 <088>( <038>Wiedzmy Druchii<088> )}; 
-	#sub {posep%w miecz%w katowsk%w} {<028>%0 <088>( <038>Wyspa Druchii<088> )}; 
+	#sub {zlowr%w stalow%w drann%w} {<028>%0 <088>( <038>Obstawa Wiedzm<088> )};
+	#sub {wask%w szkarlat%w miecz%w} {<028>%0 <088>( <038>Wiedzmy Druchii<088> )};
+	#sub {posep%w miecz%w katowsk%w} {<028>%0 <088>( <038>Wyspa Druchii<088> )};
 
 #nop SREBRNE;
 	#high {masywn%w posrebrzan%w flamberg%w} {<178>};
 
 #nop TARCZE;
-	#sub {wysoka masywna pawez} {<028>%0 <088>( <038>Orcall<088> )}; 
+	#sub {wysoka masywna pawez} {<028>%0 <088>( <038>Orcall<088> )};
 	#high {owalna masywna tarcza} {<028>};
 	#high {trojbarwna trojkatna tarcza} {<028>};
-	#sub {ciezka zdobiona pawez} {<028>%0 <088>( <038>Bretonia Warownia<088> )}; 
+	#sub {ciezka zdobiona pawez} {<028>%0 <088>( <038>Bretonia Warownia<088> )};
 	#sub {szeroka stalowa tarcza} {<028>%0 <088>( <038>Karawana<088> )};
-	#sub {smukla elficka tarcza} {<028>%0 <088>( <038>Ranni Scoiatel<088> )}; 
+	#sub {smukla elficka tarcza} {<028>%0 <088>( <038>Ranni Scoiatel<088> )};
 	#sub {wielka drewniana pawez} {<028>%0 <088>( <038>Arond<088> )};
-	#sub {kolczasta stalowa tarcza} {<028>%0 <088>( <038>Tilea Zjawy<088> )}; 
-	#sub {sercowa smukla tarcza} {<028>%0 <088>( <038>Abgetten Ogr<088> )}; 
-	#sub {kolista zdobiona tarcza} {<028>%0 <088>( <038>Lyria Fort<088> )}; 
+	#sub {kolczasta stalowa tarcza} {<028>%0 <088>( <038>Tilea Zjawy<088> )};
+	#sub {sercowa smukla tarcza} {<028>%0 <088>( <038>Abgetten Ogr<088> )};
+	#sub {kolista zdobiona tarcza} {<028>%0 <088>( <038>Lyria Fort<088> )};
 
 #nop CIEZKIE ZBROJE;
 	#sub {polow%w stalowa%w zbroj%w plyt%w} {<028>%0 <088>( <038>Blizniacy<088> )};
-	#sub {kolczasty brudny pancerz plytowy} {<028>%0 <088>( <038>Orcall Szef Orkow<088> )}; 
+	#sub {kolczasty brudny pancerz plytowy} {<028>%0 <088>( <038>Orcall Szef Orkow<088> )};
 	#high {solidna oficerska zbroje plytowa} {<028>};
-	#sub {czarny lsniacy napiersnik} {<028>%0 <088>( <038>Wezendorf Demon<088> )}; 
-	#sub {wytrzymaly srebrzysty helm} {<028>%0 <088>( <038>Rinde<088> )}; 
-	#sub {wytrzymale zdobione bigwanty} {<028>%0 <088>( <038>Lyria Kurhan<088> )}; 
-	#sub {spizowy solidny basinet} {<028>%0 <088>( <038>Bretonia Cmentarz<088> )}; 
-	#sub {ciezki helm z rogami} {<028>%0 <088>( <038>Tilea Kurhany<088> )}; 
-	#sub {kunsztowny matowy napiersnik} {<028>%0 <088>( <038>Smoczy Ogr<088> )}; 
+	#sub {czarny lsniacy napiersnik} {<028>%0 <088>( <038>Wezendorf Demon<088> )};
+	#sub {wytrzymaly srebrzysty helm} {<028>%0 <088>( <038>Rinde<088> )};
+	#sub {wytrzymale zdobione bigwanty} {<028>%0 <088>( <038>Lyria Kurhan<088> )};
+	#sub {spizowy solidny basinet} {<028>%0 <088>( <038>Bretonia Cmentarz<088> )};
+	#sub {ciezki helm z rogami} {<028>%0 <088>( <038>Tilea Kurhany<088> )};
+	#sub {kunsztowny matowy napiersnik} {<028>%0 <088>( <038>Smoczy Ogr<088> )};
 	#high {stalowa para nareczakow} {<028>};
-	#sub {dwuwypukly gladki napiersnik} {<028>%0 <088>( <038>Lyria Zboje<088> )}; 
-	#sub {czarn%w lsni%w zbroj%w plyt%w} {<028>%0 <088>( <038>Mekan Donegar<088> )}; 
-	#sub {fantazyjn%w grawerow%w polpanc%w} {<028>%0 <088>( <038>Elfka Grom<088> )}; 
-	#sub {peln%w srebrzyst%w zbroj%w plyt%w} {<028>%0 <088>( <038>?<088> )}; 
+	#sub {dwuwypukly gladki napiersnik} {<028>%0 <088>( <038>Lyria Zboje<088> )};
+	#sub {czarn%w lsni%w zbroj%w plyt%w} {<028>%0 <088>( <038>Mekan Donegar<088> )};
+	#sub {fantazyjn%w grawerow%w polpanc%w} {<028>%0 <088>( <038>Elfka Grom<088> )};
+	#sub {peln%w srebrzyst%w zbroj%w plyt%w} {<028>%0 <088>( <038>?<088> )};
 
 #nop SREDNIE ZBROJE;
 	#high {posepna zbroja kolcza} {<028>};
-	#sub {dwuwarstwowa stalowa kolczuga} {<028>%0 <088>( <038>Las Bretonski Szef Zbojow<088> )}; 
+	#sub {dwuwarstwowa stalowa kolczuga} {<028>%0 <088>( <038>Las Bretonski Szef Zbojow<088> )};
 	#sub {czarna zbroje kolcza} {<028>%0 <088>( <038>Lorenzo Zboj<088> )};
-	#sub {ciezka luskowa karacena} {<028>%0 <088>( <038>Las bobolakow ARONF<088> )}; 
+	#sub {ciezka luskowa karacena} {<028>%0 <088>( <038>Las bobolakow ARONF<088> )};
 	#high {ciezka dluga kolczuga} {<028>};
-	#sub {dluga misterna tunika kolcza} {<028>%0 <088>( <038>Bagna Espa Ozyw<088> )}; 
+	#sub {dluga misterna tunika kolcza} {<028>%0 <088>( <038>Bagna Espa Ozyw<088> )};
 	#sub {wygodna dwuwarstwowa kolczuga} {<028>%0 <088>( <038>Lyria Cmentarz<088> )};
 	#sub {szmaragdowozlot%w smocz%w karacen%w} {<028>%0 <088>( <038>Raon Amorgoth<088> )};
 	#high {lsniac%w smukl%w miecz%w} {<028>};
-	#sub {lsniac%w luskow%w pancerz%w} {<028>%0 <088>( <038>Grom<088> )}; 
+	#sub {lsniac%w luskow%w pancerz%w} {<028>%0 <088>( <038>Grom<088> )};
 
 #nop LEKKIE ZBROJE;
-	#sub {gigantycz%w wzmacnia%w czaszk%w} {<028>%0 <088>( <038>Szaman Wsiowy<088> )}; 
+	#sub {gigantycz%w wzmacnia%w czaszk%w} {<028>%0 <088>( <038>Szaman Wsiowy<088> )};
 
 #nop MLOTY JEDNORECZNE;
 	#sub {krotki lekki nadziak} {<028>%0 <088>( <038>Talwar<088> )};
@@ -131,17 +133,17 @@
 	#sub {ciezki matowy sztylet} {<028>%0 <088>( <038>Wsiowy Szaman<088> )};
 
 #nop BRONIE DRZEWCOWE;
-	#sub {dlug%w dwustronn%w naginat%w} {<028>%0 <088>( <038>Demon z Wezendorf<088> )}; 
+	#sub {dlug%w dwustronn%w naginat%w} {<028>%0 <088>( <038>Demon z Wezendorf<088> )};
 	#sub {bojowa dluga korseka} {<028>%0 <088>( <038>Lyria Kurhany<088> )};
 
 #nop RESZTA;
 	#unhigh {%w %w tarcz%w} {<178>} {7};
 	#unhigh {%w %w nagolennik%w} {<178>} {7};
 	#unhigh {%w %w helm%w} {<178>} {7};
-	#high {%w %w plecak%w} {<118><dba>} {8};
-	#high {%w %w worecz%w} {<068>} {8};
-	#high {%w %w lamp%w} {<038>} {8};
-	#high {nieduz%w fiolk%w} {<faa>};
+	#unhigh {%w %w plecak%w} {<118><dba>} {8};
+	#unhigh {%w %w worecz%w} {<068>} {8};
+	#unhigh {%w %w lamp%w} {<038>} {8};
+	#unhigh {nieduz%w fiolk%w} {<faa>};
 	#unhigh {%w %w plaszcz%w} {<g07>} {8}
 	#unhigh {%w %w lewak%w} {<038>};
-	#high {%w %w kolczug%w} {<028>};
+	#unhigh {%w %w kolczug%w} {<028>};

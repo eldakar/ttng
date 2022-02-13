@@ -27,7 +27,7 @@
 					#alias rysuj_czat {#nop {};};
 				};
 				#if {"$ConfigManager_Configs[pasek]" == "medium"} {
-					#draw <AAA> tile $screenrows-3 1 $screenrows-1 $screencols-1;
+					#draw <AAA> tile $screenrows-4 1 $screenrows-2 $screencols-1;
 					BottomBar_Selected;
 				};
 			}; #alias rysuj_czat {#nop {};};
@@ -39,7 +39,7 @@
 					} {
 						#math dlugosc_paskow {$maxBarSize * 2 + 15};
 					};
-					#draw tile $screenrows-3 24+$dlugosc_paskow $screenrows-1 $screencols-22 $topchat[48]\n$topchat[49]\n$topchat[50];
+					#draw tile $screenrows-4 24+$dlugosc_paskow $screenrows-2 $screencols-22 $topchat[48]\n$topchat[49]\n$topchat[50];
 					#nop topchat[$bcvc];
 				};
 			};
@@ -115,7 +115,7 @@
 					#switch {"$ConfigManager_Configs[pasek]"} {
 						#case {"medium"} {
 							#alias BottomBar_Selected {BottomBarTinyFugue};
-							#var global_bundle_slots_values[prompt][bottom] {4};
+							#var global_bundle_slots_values[prompt][bottom] {5};
 						};
             #case {"era"} {
               #alias BottomBar_Selected {BottomBarNewEra};
@@ -429,12 +429,12 @@
 {
 	#if {"$bronstatus" == "off"} {#var bronstatus on};
 };
-#action {{Gwaltownym ruchem wyszarpujesz|Dobywasz|Wiedziony naglym instynktem siegasz|Pelnym pewnosci siebie ruchem dobywasz| twego pewnego chwytu, | zaciskasz dlon |dobywajac}}
+#unaction {{Gwaltownym ruchem wyszarpujesz|Dobywasz|Wiedziony naglym instynktem siegasz|Pelnym pewnosci siebie ruchem dobywasz| twego pewnego chwytu, | zaciskasz dlon |dobywajac}}
 {
 	#if {"$bronstatus" == "off"} {#var bronstatus on};
 	#map update;
 };
-#action {{Opuszczasz | ogarniajac wzrokiem cala okolice| opuszczasz | rozluzniasz uchwyt | do tej pory twe serce }%*.}
+#unaction {{Opuszczasz | ogarniajac wzrokiem cala okolice| opuszczasz | rozluzniasz uchwyt | do tej pory twe serce }%*.}
 {
 	#line ignore #showme {<ffa>[bron]<088> %0};
 	#if {"$bronstatus" == "on"} {#var bronstatus off};
@@ -445,7 +445,7 @@
 	#if {"$bronstatus" == "on"} {#var bronstatus off};
 	#line gag;
 };
-#action {Opuszczasz obszar} {
+#unaction {Opuszczasz obszar} {
 	#nop;
 } {1};
 
@@ -518,11 +518,6 @@
 };
 
 #alias {BottomBarNewEra} {
-    #local horbar {};
-    #loop {1} {$screencols} {aa} {
-        #var horbar {$horbar-};
-    };
-    #nop showme {$horbar};
 }
 
 #event {VARIABLE UPDATED objectnumsRefreshed} {RaidBar_refresh};    #nop RAIDTABLE HOOK;
@@ -539,12 +534,6 @@
 	rysuj_customs;
 	#nop RYSUJEMY PASKI GLOWNE;
 	rysuj_paski;
-	#nop RYSUJEMY CZAT;
-	rysuj_czat;
-	#nop RYSUJEMY PRZYCISKI WALKI;
-	rysuj_przyciski;
-	#nop RYSUJEMY PASEK FORMY;
-	#nop rysuj_forme;
 };
 
 #alias rysuj_forme_standard {
@@ -555,18 +544,11 @@
 	#line ignore #sh {${bbBGC}Ciezar: $state[encumbrance] Pija: $state[intox]<088>} {-2} {$pozycjapaskaformy};
 };
 
-#alias rysuj_forme_fps {
-	#math {pozycjapaskaformy} {$screencols - 16};
-	#line ignore #sh {${bbBGC}FPS [@graph{$fpsTestResultValue;2000}]<088>} {-4} {$pozycjapaskaformy};
-	#line ignore #sh {${bbBGC}LAG $_ping_ <088>} {-3} {$pozycjapaskaformy};
-	#line ignore #sh {${bbBGC}MAP [$mapPongedValue<088>]} {-2} {$pozycjapaskaformy};
-};
-
 #var ptrybchodzeniasymbol {<128>W};
 #alias rysuj_roze {
-	#line ignore #sh {$bbBGC   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u] <088>} {-4} {1};
-	#line ignore #sh {$bbBGC  <138>$rozk2[w]$rozk2[w] $ptrybchodzeniasymbol <138>$rozk2[e]$rozk2[e]  <088>} {-3} {1};
-	#line ignore #sh {$bbBGC  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d] <088>} {-2} {1};
+	#line ignore #sh {$bbBGC   <138>$rozk2[nw] $rozk2[n] $rozk2[ne] $rozk2[u] <088>} {-5} {2+$global_bundle_slots_values[prompt][left]};
+	#line ignore #sh {$bbBGC  <138>$rozk2[w]$rozk2[w] $ptrybchodzeniasymbol <138>$rozk2[e]$rozk2[e]  <088>} {-4} {2+$global_bundle_slots_values[prompt][left]};
+	#line ignore #sh {$bbBGC  <138>$rozk2[sw] $rozk2[s] $rozk2[se]$rozk2[d] <088>} {-3} {2+$global_bundle_slots_values[prompt][left]};
 };
 
 #alias rysuj_przyciski {
@@ -577,7 +559,7 @@
 };
 
 #alias rysuj_customs {
-	#draw {<088>$bbBGC} tile $screenrows-3 12 $screenrows-1 22 $bbBGC<ffa>$roza_custom;
+	#draw {<088>$bbBGC} tile $screenrows-4 12+$global_bundle_slots_values[prompt][left] $screenrows-2 22+$global_bundle_slots_values[prompt][left] $bbBGC<ffa>$roza_custom;
 };
 
 
@@ -590,16 +572,17 @@
 	};
 
 	#math realFatigue {9 - $state[fatigue]};
-	#sh {${bbBGC}HP: [@buildBar{$state[hp];6;$maxBarSize;ada}<088>${bbBGC}]  MA: [@buildBarGreen{$manewrlevel;5;$maxBarSize;bbb}<088>${bbBGC}]<088>} {-4} {23};
-	#sh {${bbBGC}ST: [@buildBar{$realFatigue;9;$maxBarSize;ddd}<088>${bbBGC}]  RO: [@buildBar{$rozkazlevel;15;$maxBarSize;ccc}<088>${bbBGC}]<088>} {-3} {23};
-	#sh {${bbBGC}MA: [@buildBar{$state[mana];8;$maxBarSize;aad}<088>${bbBGC}]  BL: [@buildBar{$blockselflevel;5;$maxBarSize;faa}<088>${bbBGC}]<088>} {-2} {23};
+	#sh {${bbBGC}HP: [@buildBar{$state[hp];6;$maxBarSize;ada}<088>${bbBGC}]  MA: [@buildBarGreen{$manewrlevel;5;$maxBarSize;bbb}<088>${bbBGC}]<088>} {-5} {23};
+	#sh {${bbBGC}ST: [@buildBar{$realFatigue;9;$maxBarSize;ddd}<088>${bbBGC}]  RO: [@buildBar{$rozkazlevel;15;$maxBarSize;ccc}<088>${bbBGC}]<088>} {-4} {23};
+	#sh {${bbBGC}MA: [@buildBar{$state[mana];8;$maxBarSize;aad}<088>${bbBGC}]  BL: [@buildBar{$blockselflevel;5;$maxBarSize;faa}<088>${bbBGC}]<088>} {-3} {23};
 };
 
 #alias rysuj_paski_graph {
 	#math realFatigue {9 - $state[fatigue]};
-	#sh {${bbBGC}HP [@graph{$state[hp];6}${bbBGC}]  FO [@graph{$state[form];3}${bbBGC}]  GL [@graph{$state[stuffed];3}${bbBGC}]  XP [@graph{$total_kill_count;$postep_needed}${bbBGC}]<088>  MA [@graph{$manewrlevel;4}${bbBGC}]<088>} {-4} {23};
-	#sh {${bbBGC}ST [@graph{$realFatigue;9}${bbBGC}]  OB [@graph{$state[encumbrance];5}${bbBGC}]  PR [@graph{$state[soaked];3}${bbBGC}]  PO [@graph{$state[improve];15}${bbBGC}]<088>  RO [@graph{$rozkazlevel;14}${bbBGC}]<088>} {-3} {23};
-	#sh {${bbBGC}MA [@graph{$state[mana];8}${bbBGC}]  PA [@graph{$state[panic];5}${bbBGC}]  UP [@graph{$state[intox];10}${bbBGC}]  GL [@graph{$ConfigManager_Configs[globalnypostep];$ConfigManager_Configs[celpostepow]}${bbBGC}]<088>  BL [@graph{$blockselflevel;5}${bbBGC}]<088>} {-2} {23};
+  #math shiftRight {23 + $global_bundle_slots_values[prompt][left]};
+	#sh {${bbBGC}HP[@graph{$state[hp];6}${bbBGC}] FO[@graph{$state[form];3}${bbBGC}] GL[@graph{$state[stuffed];3}${bbBGC}] XP[@graph{$total_kill_count;$postep_needed}${bbBGC}]<088> MA[@graph{$manewrlevel;4}${bbBGC}]<088>} {-5} {$shiftRight};
+	#sh {${bbBGC}ST[@graph{$realFatigue;9}${bbBGC}] OB[@graph{$state[encumbrance];5}${bbBGC}] PR[@graph{$state[soaked];3}${bbBGC}] PO[@graph{$state[improve];15}${bbBGC}]<088> RO[@graph{$rozkazlevel;14}${bbBGC}]<088>} {-4} {$shiftRight};
+	#sh {${bbBGC}MA[@graph{$state[mana];8}${bbBGC}] PA[@graph{$state[panic];5}${bbBGC}] UP[@graph{$state[intox];10}${bbBGC}] GL[@graph{$ConfigManager_Configs[globalnypostep];$ConfigManager_Configs[celpostepow]}${bbBGC}]<088> BL[@graph{$blockselflevel;5}${bbBGC}]<088>} {-3} {$shiftRight};
 };
 
 #nop 1. current state;
@@ -722,133 +705,5 @@
 #nop PROMPT; #event {VARIABLE UPDATED total_kill_count} {
 	#if {"$ConfigManager_Configs[stylpaskow]" == "graph" || $ConfigManager_Configs[pasek]" == "micro"} {
     	rysuj_paski;
-    };
-}
-
-#event {VARIABLE UPDATED pwskazywanie} {
-    #regex {$pwskazywanie} {z} {
-        #var buttons[0][4][label] {<BAA><fff>ZAB<088>};
-        #var buttons[0][4][status] {on};
-    } {
-        #var buttons[0][4][label] {ZAB};
-        #var buttons[0][4][status] {off};
-    };
-    #regex {$pwskazywanie} {w} {
-        #var buttons[0][3][label] {<BAB><fff>WSK<088>};
-        #var buttons[0][3][status] {on};
-    } {
-        #var buttons[0][3][label] {WSK};
-        #var buttons[0][3][status] {off};
-    };
-    #regex {$pwskazywanie} {r} {
-        #var buttons[0][2][label] {<ABB><fff>ROZ<088>};
-        #var buttons[0][2][status] {on};
-    } {
-        #var buttons[0][2][label] {ROZ};
-        #var buttons[0][2][status] {off};
-    };
-    #regex {$pwskazywanie} {p} {
-        #var buttons[0][1][label] {<FAA><fff>PRZ<088>};
-        #var buttons[0][1][status] {on};
-    } {
-        #var buttons[0][1][label] {PRZ};
-        #var buttons[0][1][status] {off};
-    };
-    #if {"$ConfigManager_Configs[pasek]" == "medium"} {
-    	rysuj_przyciski;
-    };
-};
-
-#event {VARIABLE UPDATED pzaslonaflagi} {
-    #regex {$pzaslonaflagi} {z} {
-        #var buttons[1][4][label] {<AAB><fff>ZAS<088>};
-        #var buttons[1][4][status] {on};
-    } {
-        #var buttons[1][4][label] {ZAS};
-        #var buttons[1][4][status] {off};
-    };
-    #regex {$pzaslonaflagi} {w} {
-        #var buttons[1][3][label] {<BAB><fff>WSK<088>};
-        #var buttons[1][3][status] {on};
-    } {
-        #var buttons[1][3][label] {WSK};
-        #var buttons[1][3][status] {off};
-    };
-    #regex {$pzaslonaflagi} {r} {
-        #var buttons[1][2][label] {<ABB><fff>ROZ<088>};
-        #var buttons[1][2][status] {on};
-    } {
-        #var buttons[1][2][label] {ROZ};
-        #var buttons[1][2][status] {off};
-    };
-    #if {"$ConfigManager_Configs[pasek]" == "medium"} {
-    	rysuj_przyciski;
-    };
-};
-
-#event {VARIABLE UPDATED bronstatus} {
-    #if {"$bronstatus" == "on"} {
-        #var buttons[2][4][label] {<FAA><fff>BRO<088>};
-        #var buttons[2][4][status] {on};
-        #if {"$ConfigManager_Configs[pasek]" == "medium"} {
-	    	rysuj_przyciski;
-    	};
-    } {
-        #var buttons[2][4][label] {BRO};
-        #var buttons[2][4][status] {off};
-        #if {"$ConfigManager_Configs[pasek]" == "medium"} {
-	    	rysuj_przyciski;
-    	};
-    };
-};
-
-#event {VARIABLE UPDATED pzdjeciezaslon} {
-    #if {"$pzdjeciezaslon" == "auto"} {
-        #var buttons[1][1][label] {<AAB><fff>ZDE<088>};
-        #var buttons[1][1][status] {on};
-    } {
-        #var buttons[1][1][label] {ZDE};
-        #var buttons[1][1][status] {off};
-    };
-    #if {"$ConfigManager_Configs[pasek]" == "medium"} {
-    	rysuj_przyciski;
-    };
-}
-
-#event {VARIABLE UPDATED ptrybchodzenia} {
-	#switch {$ptrybchodzenia} {
-		#case {0} {#var ptrybchodzeniasymbol <128>W};
-		#case {1} {#var ptrybchodzeniasymbol <138>P};
-		#case {2} {#var ptrybchodzeniasymbol <118>K};
-	};
-	#if {"$ConfigManager_Configs[pasek]" == "medium"} {
-    	rysuj_roze;
-    };
-
-}
-
-#event {VARIABLE UPDATED lampastatus} {
-	#if {"$lampastatus" == "on"} {
-        #var buttons[2][3][label] {<FFA><aaa>LAM<088>};
-        #var buttons[2][3][status] {on};
-	} {
-        #var buttons[2][3][label] {LAM};
-        #var buttons[2][3][status] {off};
-	};
-    #if {"$ConfigManager_Configs[pasek]" == "medium"} {
-    	rysuj_przyciski;
-    };
-}
-
-#event {VARIABLE UPDATED ppowtorzenter} {
-    #if {"$ppowtorzenter" == "on"} {
-        #var buttons[2][1][label] {<CFF><aaa>ENT<088>};
-        #var buttons[2][1][status] {on};
-    } {
-        #var buttons[2][1][label] {ENT};
-        #var buttons[2][1][status] {off};
-    };
-    #if {"$ConfigManager_Configs[pasek]" == "medium"} {
-    	rysuj_przyciski;
     };
 }

@@ -1,28 +1,28 @@
 #nop DRUCHII;
-#sub {Jego scianki poznaczone sa czerwienia, lecz fiolka jest zupelnie pusta.} {%0 ${c_stan_niski}0/4<088>};
-#sub {W niewielkiej czesci wypelnia je czerwona, kleista substancja.} {%0 ${c_stan_niski}1/4<088>};
-#sub {Okolo polowe jej objetosci zajmuje krwistoczerwony, gesty plyn.} {%0 ${c_stan_sredni}2/4<088>};
-#sub {Wieksza czesc fiolki wypelnia czerwony, gesty plyn.} {%0 ${c_stan_wysoki}3/4<088>};
-#sub {Fiolka jest pelna krwistoczerwonej, kleistej substancji.} {%0 ${c_stan_wysoki}4/4<088>};
+#unsub {Jego scianki poznaczone sa czerwienia, lecz fiolka jest zupelnie pusta.} {%0 ${c_stan_niski}0/4<088>};
+#unsub {W niewielkiej czesci wypelnia je czerwona, kleista substancja.} {%0 ${c_stan_niski}1/4<088>};
+#unsub {Okolo polowe jej objetosci zajmuje krwistoczerwony, gesty plyn.} {%0 ${c_stan_sredni}2/4<088>};
+#unsub {Wieksza czesc fiolki wypelnia czerwony, gesty plyn.} {%0 ${c_stan_wysoki}3/4<088>};
+#unsub {Fiolka jest pelna krwistoczerwonej, kleistej substancji.} {%0 ${c_stan_wysoki}4/4<088>};
 
-#high {Skelliganski drakkar Zwiastun Smierci} {<BAC><178>};
-#high {Korsarski drakkar Zmora Nilfgaardu} {<BAC><178>};
-#high {Skelliganski drakkar Duch Hemdalla} {<BAC><178>};
-#high {Korsarski drakkar Demon} {<BAC><178>};
-#high {Korsarski snekkar Wloczega Morz} {<BAC><178>};
+#unhigh {Skelliganski drakkar Zwiastun Smierci} {<BAC><178>};
+#unhigh {Korsarski drakkar Zmora Nilfgaardu} {<BAC><178>};
+#unhigh {Skelliganski drakkar Duch Hemdalla} {<BAC><178>};
+#unhigh {Korsarski drakkar Demon} {<BAC><178>};
+#unhigh {Korsarski snekkar Wloczega Morz} {<BAC><178>};
 
 #nop WOZNICA;
 #high {Woznica wola:} {<AAB><178>};
 
 #nop MUTACJE;
-#sub {Czarnozielony kamien naszyjnika rozblyskuje lekko, tworzac niemila sensacje mrowienia i zawrot glowy.} {<afa>[mutacja]<088> %0};
-#sub {Nie wiedziec czemu, swiat ciemnieje ci na chwile przed oczami.} {<afa>[mutacja]<088> %0};
-#sub {Na chwile robi ci sie ciemno przed oczami.} {<afa>[mutacja]<088> %0};
-#sub {Czujesz sie dziwnie slabo.} {<afa>[mutacja]<088> %0};
-#sub {Czujesz, jak twoje cialo gwaltownie sie rozgrzewa.} {<afa>[mutacja]<088> %0};
-#sub {Czujesz przenikliwe, potworne zimno.} {<afa>[mutacja]<088> %0};
-#sub {Nie wiedziec czemu, ogarania cie poczucie nieskonczonej potegi.} {<afa>[mutacja]<088> %0};
-#sub {Swiat zaczyna ci wirowac przed oczami.} {<afa>[mutacja]<088> %0};
+#unsub {Czarnozielony kamien naszyjnika rozblyskuje lekko, tworzac niemila sensacje mrowienia i zawrot glowy.} {<afa>[mutacja]<088> %0};
+#unsub {Nie wiedziec czemu, swiat ciemnieje ci na chwile przed oczami.} {<afa>[mutacja]<088> %0};
+#unsub {Na chwile robi ci sie ciemno przed oczami.} {<afa>[mutacja]<088> %0};
+#unsub {Czujesz sie dziwnie slabo.} {<afa>[mutacja]<088> %0};
+#unsub {Czujesz, jak twoje cialo gwaltownie sie rozgrzewa.} {<afa>[mutacja]<088> %0};
+#unsub {Czujesz przenikliwe, potworne zimno.} {<afa>[mutacja]<088> %0};
+#unsub {Nie wiedziec czemu, ogarania cie poczucie nieskonczonej potegi.} {<afa>[mutacja]<088> %0};
+#unsub {Swiat zaczyna ci wirowac przed oczami.} {<afa>[mutacja]<088> %0};
 #nop Czujesz dziwne mrowienie;
 #nop Czujesz dziwna, nienaturalna radosc;
 

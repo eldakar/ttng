@@ -996,14 +996,14 @@
 
 #alias {delion} {
   opusc bron;
-  otworz pierwszy przytroczony woreczek;
-  otworz drugi przytroczony woreczek;
-  otworz trzeci przytroczony woreczek;
-  otworz czwarty przytroczony woreczek;
-  wez zolty jasny kwiat z pierwszego przytroczonego woreczka;
-  wez zolty jasny kwiat z drugiego przytroczonego woreczka;
-  wez zolty jasny kwiat z trzeciego przytroczonego woreczka;
-  wez zolty jasny kwiat z czwartego przytroczonego woreczka;
+  otworz wszystkie woreczki;
+  wez zolty jasny kwiat z pierwszego woreczka;
+  wez zolty jasny kwiat z drugiego woreczka;
+  wez zolty jasny kwiat z trzeciego woreczka;
+  wez zolty jasny kwiat z czwartego woreczka;
+  wez zolty jasny kwiat z piatego woreczka;
+  wez zolty jasny kwiat z szostego woreczka;
+  wez zolty jasny kwiat z siodmego woreczka;
   zjedz kwiat;
   wloz kwiaty do pierwszego woreczka;
   wloz kwiaty do drugiego woreczka;
@@ -1013,6 +1013,7 @@
   zamknij drugi przytroczony woreczek;
   zamknij trzeci przytroczony woreczek;
   zamknij czwarty przytroczony woreczek;
+  zamknij wszystkie woreczki;
   dobadz broni;
 }
 #alias {mandra} {

@@ -13,6 +13,8 @@
                 #switch {"$pkondycje"} {
                     #case {"medium"} {#alias {tabela_odswiez} {_tabela_odswiez_1_}};
                 };
+
+#nop TODO;      #local rett @textalert_soft_warn{Wpisz /zaladuj_wrogow jesli chcesz ich trzymac w pamieci.};
             }
 
 #nop SUPER ALFA;
@@ -70,6 +72,23 @@
                     #var gildie[$guildDB[$pdb]] {g};
                 };
             };
+
+#nop COLOR; #alias {wrogowie} {
+                #local tmp {$ColorManager_Colors[wrogowie]};
+                #format tmplen {%L} {$tmp};
+                #if {$tmplen == 3} {
+                    #var c_char_h_mode[w] {<$tmp>};
+                };
+            };
+
+#nop COLOR; #alias {gildia} {
+                #local tmp {$ColorManager_Colors[gildia]};
+                #format tmplen {%L} {$tmp};
+                #if {$tmplen == 3} {
+                    #var c_char_h_mode[g] {<$tmp>};
+                };
+            };
+
 
 #nop EVENT; #alias {RaidTable_GMCP_Objects_Nums} {
             	#var {obnu} {%0};
@@ -215,12 +234,12 @@
             #var imietype {};
             #var tmpim {};
             #var confirmed {};
-	        #var tmpimietype 0;
+	          #var tmpimietype 0;
             #if {$gncheck > 1} {
                 #var confirmed {$postac[$postac[$test][imie]][cached]};
                 #var tmpim $postac[$test][imie];
                 #var tmpimie {$gildie[$postac[$test][gildia]] $postac[$test][gildia] $postac[$test][imie] $duch[dudu][desc]};
-		        #var tmpimietype 1;
+		            #var tmpimietype 1;
             } {
                 #var confirmed {$postac[$test][cached]};
                 #var tmpim $test;
@@ -239,14 +258,14 @@
                     #if {"$duch[$dudu][avatar]" == "true"} {
                         #nop;
                     } {
-            			#if {"$tmpimietype" == "1"} {
+              			#if {"$tmpimietype" == "1"} {
             				#nop;
             				#format dudu2 {%n} {$duch[$dudu][desc]};
             				#line substitute variables {
                                 #if {"$ConfigManager_Configs[gildie]" == "widoczne"} {
-            #nop OPISY;             #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] - $postac[$test][imie]($postac[$test][gildia])};
-                                    #sub {$dudu2} {$dudu2 - $postac[$test][imie]($postac[$test][gildia])};
-            #nop POKOLORUJ;         #high {$duch[$dudu][desc]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
+            #nop OPISY;             #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] ($postac[$test][imie] $postac[$test][gildia])};
+                                    #sub {$dudu2} {$dudu2 ($postac[$test][imie] $postac[$test][gildia])};
+            #nop POKOLORUJ;         #high {$duch[$dudu][desc] $postac[$test][gildia]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
                                 } {
              #nop OPISY;            #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] ($postac[$test][imie])};
                                     #sub {$dudu2} {$dudu2 ($postac[$test][imie])};
@@ -259,9 +278,9 @@
             			#if {"$tmpimietype" == "2"} {
              #nop IMIE;
             				#line substitute variables {
-                                #if {"$ConfigManager_Configs[gildie]" == "widoczne"} {
-             #nop WSTAW GILDIE;     #sub {$duch[$dudu][desc]} {$duch[$dudu][desc]($postac[$test][gildia])};
-             #nop POKOLORUJ;        #high {$duch[$dudu][desc]($postac[$test][gildia])} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
+                                #if {"$ConfigManager_Configs[gildie]" == "ultra"} {
+             #nop WSTAW GILDIE;     #sub {$duch[$dudu][desc]} {$duch[$dudu][desc] $postac[$test][gildia]};
+             #nop POKOLORUJ;        #high {$duch[$dudu][desc] $postac[$test][gildia]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
                                 } {
              #nop POKOLORUJ;        #high {$duch[$dudu][desc]} {$c_char_h_mode[$gildie[$postac[$test][gildia]]]};
                                 };
@@ -527,7 +546,12 @@
             };
 #nop leader E;
             #if {"$duch[%1][team_leader]" == "true"} {
-                #local Esym {^}} {#local Esym { }};
+                #format team_lead_lower {%l} {$duch[%1][desc]};
+                #var team_lead_id %1;
+                #local Esym {^}
+            } {
+                #local Esym { }
+            };
 #nop hidden F;
             #if {"$duch[%1][hidden]" == "true"} {
                 #local FsymL {[};#local FsymR {]};
@@ -557,6 +581,9 @@
             };
             #elseif {"$duch[%1][enemy]" == "true"} {
                 #local Gcolor {<058>};
+            };
+            #if {"$duch[%1][typ]" == "boss"} {
+                #local Gcolor {<118><bbf>};
             };
             #if {%1 == $duch[$avatarid][attack_num]} {#local Gcolor <118>};
 #nop RENDER;
@@ -702,6 +729,7 @@
 #nop ########## i ustawianie brakujacych ###############;
 #action {Druzyne prowadzi %*, zas ty jestes jej jedynym czlonkiem.} {#local ret @team_reset{%1, %69}};
 #action {Druzyne prowadzi %* i oprocz ciebie sa w niej jeszcze: %69.} {#local ret @team_reset{%1, %69}};
+#action {Druzyne prowadzi %* i oprocz ciebie jest w niej jeszcze %69.} {#local ret @team_reset{%1, %69}};
 #action {Prowadzisz druzyne, w ktorej oprocz ciebie jest jeszcze %69.} {#local ret @team_reset{%69}};
 #action {Przewodzisz druzynie, w ktorej oprocz ciebie jest jeszcze %69.} {#local ret @team_reset{%69}};
 #action {Dolaczasz do druzyny %*. Od teraz jej sklad stanowicie ty, %69.} {#local ret @team_reset{%69}};
@@ -763,3 +791,25 @@
         #return -1;
     };
 }
+
+
+#alias {/zaladuj_wrogow} {
+    #foreach {*postac[]} {pk} {
+        #nop all the names;
+        #format len {%L} $postac[$pk][imie];
+        #local guild $postac[$pk][gildia];
+        #local guildstance $gildie[$guild];
+        #local guildcolor $c_char_h_mode[$guildstance];
+
+        #if {"$guildstance" != "n"} {
+            #if {$len > 0} {
+                #regex {$pk} {%w_%w_%w_} {
+                    #high {%i&1 &2 &3} {$guildcolor};
+                    #echo {KOLORUJE SHORT &1 &2 &3 na $guildstance};
+                };
+                #high {$postac[$pk][imie]} {$guildcolor};
+                #echo {KOLORUJE IMIE $postac[$pk][imie] na $guildstance};
+            };
+        };
+    };
+} {1};

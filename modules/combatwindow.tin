@@ -2,6 +2,7 @@
     #alias {combat_window_refresh} {
         #if {$ConfigManager_Configs[combat_window_width] > 0} {
             #math global_bundle_slots_values[prompt][left] {$ConfigManager_Configs[combat_window_width] + 0};
+            #draw box 1 1 $screenrows $ConfigManager_Configs[combat_window_width] $combattext[];
         };
     };
 
@@ -15,4 +16,8 @@
         #local ret @bundleops_default_config{combat_window_width};
     };
     SplitRefreshRequestRefresh;
+};
+
+#event {VARIABLE UPDATED combattext} {
+    #draw box 1 1 $screenrows $ConfigManager_Configs[combat_window_width] $combattext[];
 };
