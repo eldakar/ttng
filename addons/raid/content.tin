@@ -518,16 +518,16 @@
             #format indexchar {%a} {$indexvalue};
             #var duch[$du][alias_value] {$indexchar};
 
-            #line substitute {variables} {#alias k$indexchar {_zabij_ ob_$du}};
-            #line substitute {variables} {#alias zp$indexchar {zaslon przed ob_$du}};
-            #line substitute {variables} {#alias b$indexchar {zablokuj ob_$du}};
-            #line substitute {variables} {#alias p$indexchar {przelam obrone ob_$du}};
-            #line substitute {variables} {#alias z$indexchar {_zaslon_ $du}};
-            #line substitute {variables} {#alias wz${indexchar} {gzwycofaj sie za ob_$du;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-            #line substitute {variables} {#alias z${indexchar}2 {opcje grupa 2;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-            #line substitute {variables} {#alias z${indexchar}3 {opcje grupa 3;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-            #line substitute {variables} {#alias z${indexchar}4 {opcje grupa 4;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}};};
-            #line substitute {variables} {#alias O$indexchar {wskaz ob_$du jako cel obrony}};
+            #line substitute {variables} {#alias /k$indexchar {_zabij_ ob_$du} {1}};
+            #line substitute {variables} {#alias /zp$indexchar {zaslon przed ob_$du} {1}};
+            #line substitute {variables} {#alias /b$indexchar {zablokuj ob_$du} {1}};
+            #line substitute {variables} {#alias /p$indexchar {przelam obrone ob_$du} {1}};
+            #line substitute {variables} {#alias /z$indexchar {_zaslon_ $du} {1}};
+            #line substitute {variables} {#alias /wz${indexchar} {gzwycofaj sie za ob_$du;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}} {1}};
+            #line substitute {variables} {#alias /z${indexchar}2 {opcje grupa 2;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}} {1}};
+            #line substitute {variables} {#alias /z${indexchar}3 {opcje grupa 3;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}} {1}};
+            #line substitute {variables} {#alias /z${indexchar}4 {opcje grupa 4;zaslon ob_$du;opcje grupa 1;#if {"$pzdjeciezaslon" == "auto"} {przestan zaslaniac;}} {1}};
+          
 
 
             #var tmpen {  };
