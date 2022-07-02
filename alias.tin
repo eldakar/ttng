@@ -14,6 +14,16 @@
 #alias {rygluj_wieze} {zamknij drzwi;zarygluj drzwi};
 #alias {odrygluj_wieze} {odrygluj drzwi;otworz drzwi};
 
+#alias {drzwine} {otworz drzwi;ne};
+#alias {drzwie} {otworz drzwi;e};
+#alias {drzwiw} {otworz drzwi;w};
+#alias {drzwin} {otworz drzwi;n};
+#alias {drzwis} {otworz drzwi;s};
+#alias {drzwinw} {otworz drzwi;nw};
+#alias {drzwise} {otworz drzwi;se};
+#alias {drzwisw} {otworz drzwi;sw};
+
+
 #alias {_przelamanie_} {
 	przestan kryc sie za zaslona;
 	przelam obrone celu ataku;

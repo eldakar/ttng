@@ -54,7 +54,7 @@
     #read bundles/NumPad/manifest.tin;
     #read bundles/ItemQualitySimple/manifest.tin;
     #read bundles/ziola/manifest.tin;
-    #nop read bundles/mapeditor/manifest.tin;
+    #read bundles/mapeditor/manifest.tin;
     #read bundles/PlayerDB/manifest.tin;
     #read addons/stansprzetu/manifest.tin;
     #read bundles/postepy/manifest.tin;

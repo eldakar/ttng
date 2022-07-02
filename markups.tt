@@ -1,7 +1,9 @@
 #CLASS {markups} OPEN
 
 #VARIABLE {apka} {95}
-#VARIABLE {m} {}
+#VARIABLE {m}
+{
+}
 #VARIABLE {markupsymbols}
 {
     {ext} {<138> @ <088>}
